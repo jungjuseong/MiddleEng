@@ -1,0 +1,74 @@
+
+@mixin keyboard_sheet {
+
+	.k-tarea{
+		position: absolute;
+		width: auto;
+		height: 552px;
+		top: 0px;
+		border-style: solid;
+		border-width: 5px;
+		border-color: rgb(93, 128, 180);
+		border-radius: 5px;
+		left: 50%;
+		transform: translateX(-50%);
+		.k-tarea-bg{
+			width: width('teacher/images/bg_underline.png');
+			background-color: #fff;	
+			height: auto;
+			min-height: 100%;
+			background-image: resolve('teacher/images/bg_underline.png');
+			background-repeat: repeat-y;
+			background-position-y: -10px; 
+		}
+		textarea{
+			padding: 0px 40px;
+			caret-color: rgb(93, 128, 180);
+			line-height: height('teacher/images/bg_underline.png');
+			font-size: 40px;
+			font-family: NotoSans;
+			font-weight: bold;			
+		}
+
+		transition: height 0.3s;
+	}
+
+	.k-tarea.on{
+		height: 396px;
+	}
+	
+	.return_cnt_box{
+		@include return_cnt_box_white;
+		cursor: pointer;
+		position: absolute;
+		top: 0px; right: 75px;
+	}
+
+	.btn_back{
+		@include common_back;
+		position:absolute;
+		right: 5px;
+		bottom: 3px;
+		z-index: 2;
+	}
+	.keyboard-box{
+		transform: scale(0.65, 0.65);
+		transform-origin: 50% 100%;
+
+		&.off{
+			bottom: -255px;
+		}
+
+		.key_view{
+			left: unset;
+			right: 5px;
+		}
+		.key_hide{
+			left: unset;
+			right: 5px;
+		}
+
+	}
+
+	
+}

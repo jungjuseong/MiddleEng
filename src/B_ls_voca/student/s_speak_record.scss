@@ -1,0 +1,256 @@
+@mixin s-speak-record{
+	$recordH: 93px;
+	$likeH: 120px;
+	$swiperH: 575px;
+	
+	.s-speak-record{
+		position: relative;
+		width: 100%;
+		height: 100%;
+
+		&>.word-image{
+			position: absolute;
+			left:0px; width: 100%;
+			top:0px; height: 100%;
+			background-color: #fff;		
+		}
+		&>.content-box{
+			position: absolute;
+			left:0px; width: 100%;
+			top:0px; height: 0px;
+			overflow: visible;
+			&>.entry_box {
+				background-color: rgba(255,255,255,0.9);
+				width: 729px; height: 178px;
+				border-radius: 20px;
+				position: absolute;
+				top: 120px;
+				left: 50%;
+				transform: translateX(-50%);
+				transition: opacity 0.3s;	
+                padding-right: 25px;
+                padding-left: 23px;
+                &>.speak_entry {
+					position: relative;	
+					top: 50%;
+					transform: translateY(-50%);
+					display: inline-block;
+					width:  100%;
+                    height: auto;
+
+					color: rgb(56, 67, 186);
+					font-weight: 400;
+					letter-spacing: -1px;	
+					text-align: center;		  
+					vertical-align: middle;
+				}
+			}
+			&>.sentence_box {
+				background-color: rgba(255,255,255,0.9);
+				width: 1114px; height: 178px;
+				border-radius: 20px;
+				position: absolute;
+				top: 380px;
+				left: 50%;
+				transform: translateX(-50%);
+				transition: opacity 0.3s;	
+
+				&>.speak_sentence {	
+					position: absolute;	
+					top: 50%;
+					transform: translateY(-50%);
+					right: 30px;
+					left: 30px;
+					font-size: 55px;
+					line-height: 120%;
+					height:auto;
+					color: rgb(0, 0, 0);
+					font-weight: 600;
+					letter-spacing: -1px;
+					white-space: normal;
+					text-align: center;
+					.block{
+						color: #3843BA;
+					}
+				}
+			}
+
+			&.hide-bg {
+				&>.entry_box {
+					background: unset;
+					text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.1), -2px 2px 2px rgba(255, 255, 255, 0.1), -2px -2px 2px rgba(255, 255, 255, 0.1), 2px -2px 2px rgba(255, 255, 255, 0.1);
+				}
+				&>.sentence_box {
+					background: unset;
+					
+					&>.speak_sentence{
+						color: #fff;
+						text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -2px 2px 2px rgba(0, 0, 0, 0.1), -2px -2px 2px rgba(0, 0, 0, 0.1), 2px -2px 2px rgba(0, 0, 0, 0.1);
+						.block{
+							text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.1), -2px 2px 2px rgba(255, 255, 255, 0.1), -2px -2px 2px rgba(255, 255, 255, 0.1), 2px -2px 2px rgba(255, 255, 255, 0.1);
+						}
+					}
+				}
+			}
+		}
+
+		&>.media-box{
+			@include page;
+
+			&>.s-menu{
+				@include page;
+
+				&>video{
+					@include page;
+					object-fit: fill;
+				}
+				&>audio{
+					position: absolute;
+					opacity: 0;
+					pointer-events: none;
+				}
+
+				&>.btn-box{
+					position: absolute;
+					left: 0px; width: 100%;
+					bottom: 0px; height:  $recordH;
+					background-color: #E7E7E8;
+					padding: 7px 17px;
+					text-align: center;
+	
+					&>.left_box{
+						position: absolute;
+
+						.btn_script{
+							@include btn_on_dis(
+								resolve('student/images/btn_script.png'),
+								resolve('student/images/btn_script_down.png'),
+								resolve('student/images/btn_script.png'),
+								width('student/images/btn_script.png'),
+								height('student/images/btn_script.png')
+							);
+						}
+						/*		
+						.btn_question{
+							margin-left: 8px;
+							@include btn_on_dis(
+								resolve('student/images/btn_question.png'),
+								resolve('student/images/btn_question_down.png'),
+								resolve('student/images/btn_question.png'),
+								width('student/images/btn_question.png'),
+								height('student/images/btn_question.png')
+							);
+						}
+						*/
+					}
+	
+					&>.center-box{
+						position: absolute;
+						display: inline-block;
+						right: 640px; width: auto;
+						text-align: right;
+						.btn_record{
+							vertical-align: middle;
+
+							&.video{
+								@include btn_down_on(
+									resolve('student/images/btn_video.png'),
+									resolve('student/images/btn_video_down.png'),
+									resolve('student/images/btn_video_down.png'),
+									width('student/images/btn_video.png'),
+									height('student/images/btn_video.png')
+								);
+							}
+							&.audio{
+								@include btn_down_on(
+									resolve('student/images/btn_voice.png'),
+									resolve('student/images/btn_voice_down.png'),
+									resolve('student/images/btn_voice_down.png'),
+									width('student/images/btn_voice.png'),
+									height('student/images/btn_voice.png')
+								);
+							}
+						}
+						.btn_record_stop{
+							vertical-align: middle;
+							@include btn_down_on(
+								resolve('student/images/btn_stop.png'),
+								resolve('student/images/btn_stop_down.png'),
+								resolve('student/images/btn_stop_down.png'),
+								width('student/images/btn_stop.png'),
+								height('student/images/btn_stop.png')
+							);
+							&.noactive {background-image: resolve('student/images/btn_stop_noactive.png')}
+						}
+						.btn_play_pause{
+							vertical-align: middle;
+							margin-left: 15px;
+							@include btn_down_dis(
+								resolve('student/images/btn_play.png'),
+								resolve('student/images/btn_play_down.png'),
+								resolve('student/images/btn_play.png'),
+								width('student/images/btn_play.png'),
+								height('student/images/btn_play.png')
+							);
+							
+							&.play{
+								@include btn_down_dis(
+									resolve('student/images/btn_stop.png'),
+									resolve('student/images/btn_stop_down.png'),
+									resolve('student/images/btn_stop.png'),
+									width('student/images/btn_stop.png'),
+									height('student/images/btn_stop.png')
+								);							
+							}
+						}
+					}
+					.time-box {
+						position: absolute;
+						left: 660px;
+						line-height: $recordH - 18px;
+						font-size: 30px;	
+						font-style: bold;
+						color: #767676;
+	
+						&>img{
+							margin-right: 10px;
+							margin-bottom: 2px;
+							animation: blink_recording 1s linear infinite;
+						}
+					}
+				}
+			}
+
+			.fel_toteacher{
+				right: 10px; width: 90px;
+				bottom: 10px; height: 83px;
+			}
+		}
+
+		&.audio{
+			/* */
+		}
+		&.video{
+			background-color: transparent;
+		}
+
+		&.like-on{
+			/* */
+		}
+
+		&.hide-contents{
+			/* */
+		}
+		&.hide{
+			visibility: hidden;
+			pointer-events: none;
+			z-index: -1;
+		}
+	}
+}
+
+@keyframes blink_recording {
+	50% {
+	  opacity: 0.2;
+	}
+}

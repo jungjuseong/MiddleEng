@@ -1,0 +1,65 @@
+@mixin s_v_script{
+	.s_v_script{
+        @include page;
+        /* rw_comprehension 190425 수정사항 p.12 */
+        /* background-color: rgba(255, 255, 255, 0.2); */
+        background-image: resolve('student/images/bg_s_passage.png');
+		.page {
+             /* rw_comprehension 190425 수정사항 p.12 */
+           	/* width: 1200px; height: 100%;
+			overflow: hidden;
+            position: absolute; top: 0px; left: 40px; */
+
+			width: 1200px; height: 680px;
+			overflow: hidden;
+            position: absolute; top: 78px; left: 40px;
+			.swiper-container{
+				width: 100%; height: 100%;
+				position: absolute; top: 0px;
+				overflow: hidden; 
+				color: rgb(255, 255, 255);
+				padding: 0px 32px;
+				touch-action: none;
+				.script {
+                    line-height: 100px;
+					white-space: normal; word-break: normal;
+					font-size: 40px; letter-spacing: -1.8px;
+					height: auto;
+					.eng{
+						height: auto;
+						color: rgb(0, 0, 0);
+
+						&>span.word{
+							transition-duration: 0.3s;
+							display: inline-block;
+							vertical-align: top;
+							line-height: 60px;
+							padding: 0px 6px;
+						}
+						
+						&.on { 
+							color: rgb(0, 0, 255);
+							&.bg-on { 
+								&>span.word{
+									background-color: rgb(255, 240, 142);
+								}
+
+							}
+						}
+
+						&.selected { 
+							color: rgb(0, 0, 255);
+						}
+
+						
+					}
+				}
+				.swiper-scrollbar{
+                    /* rw_comprehension 190425 수정사항 p.12 */
+                    /* @include swiper_scrollbar(7px, rgba(255, 255, 255, 0.4), 10px); */
+					@include swiper_scrollbar(7px, rgba(0, 0, 0, 0.4), 10px);
+				}
+			}
+		}
+	}
+}

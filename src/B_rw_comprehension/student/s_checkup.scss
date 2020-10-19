@@ -1,0 +1,86 @@
+@mixin s_checkup {
+	@include page;
+	.s_checkup {
+		&>.question{
+			position: absolute;
+			top: 175px; width: 100%;
+			text-align: center;
+			letter-spacing: -1px; word-spacing: -2px;
+			font-size: 60px; line-height: 1.2; font-weight: normal;
+			&>span {
+				display: inline-block;
+				vertical-align: top;
+				white-space: normal;
+
+				&.num{
+					position: relative;
+					width: width('student/images/icon_correct_blue.png');
+					height: height('student/images/icon_correct_blue.png');
+					text-align: center;
+					background-repeat: no-repeat;
+					&>.text{
+						position: relative;
+						z-index: 1;
+					}
+					&>.icon{
+						display: inline-block;
+						vertical-align: top;
+						position: absolute;
+						width: width('student/images/icon_correct_blue.png');
+						height: height('student/images/icon_correct_blue.png');
+						&.correct{
+							left: -9px;
+							top: -9px;
+							background-image: resolve('student/images/icon_correct_blue.png');
+						}
+						&.wrong{
+							left: -5px;
+							top: -10px;
+							background-image: resolve('student/images/icon_wrong.png');
+						}
+					}
+				}
+				&.question{
+					max-width: 950px;
+					text-align: left;
+				}
+			}
+
+		}
+		&>.choice-box {
+			position: absolute;
+			bottom: 190px;
+			text-align: center;
+			width: 100%;
+			.btn_true {
+				@include btn_on_dis(
+					resolve('student/images/btn_true.png'),
+					resolve('student/images/btn_true_down.png'),
+					resolve('student/images/btn_true.png'),
+					width('student/images/btn_true.png'),
+					height('student/images/btn_true.png')
+				);
+				margin-right: 20px;
+				&.correct{background-image: resolve('student/images/btn_answer_true.png');}
+				&.wrong{background-image: resolve('student/images/box_wrong_true.png');}
+			}
+			.btn_false {
+				@include btn_on_dis(
+					resolve('student/images/btn_false.png'),
+					resolve('student/images/btn_false_down.png'),
+					resolve('student/images/btn_false.png'),
+					width('student/images/btn_false.png'),
+					height('student/images/btn_false.png')
+				);
+
+				&.correct{background-image: resolve('student/images/btn_answer_false.png');}
+				&.wrong{background-image: resolve('student/images/box_wrong_false.png');}
+				margin-left: 20px;
+			}
+		}
+
+		.fel_toteacher {
+			@include fel_toteacher;
+		}
+	}
+}

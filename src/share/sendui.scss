@@ -1,0 +1,56 @@
+@import '../common/component/button.scss';
+
+@mixin sendbtn{
+	position: absolute;
+	z-index: 11;
+	touch-action: none;
+}
+
+@mixin fel_topad{
+	@include sendbtn;
+	bottom:15px;
+	right:5px;
+	filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+	@include btn_on(
+		resolve('digenglish_lib/images/topad.svg'),
+		resolve('digenglish_lib/images/topad_on.svg'),
+		width('digenglish_lib/images/topad.svg'),
+		height('digenglish_lib/images/topad.svg')
+	);
+	&.on {
+		filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+	}
+}
+
+@mixin fel_topad_point{
+	@include sendbtn;
+	right:0px;
+	filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+	@include btn_on(
+		resolve('digenglish_lib/images/btn_down.png'),
+		resolve('digenglish_lib/images/btn_down_down.png'),
+		width('digenglish_lib/images/btn_down.png'),
+		height('digenglish_lib/images/btn_down.png')
+	);
+	&.on {
+		filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+	}
+}
+
+
+@mixin fel_toteacher{
+	@include sendbtn;
+	bottom:20px;
+	right:20px;
+	filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+	@include btn_on(
+		resolve('digenglish_lib/images/toteacher.svg'),
+		resolve('digenglish_lib/images/toteacher_on.svg'),
+		width('digenglish_lib/images/toteacher.svg'),
+		height('digenglish_lib/images/toteacher.svg')
+	);
+
+	&.on {
+		filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+	}
+}

@@ -1,0 +1,18 @@
+.k-input-div{
+	white-space: pre-wrap;
+	outline-width: 0px;
+	touch-action: none;
+
+	&::before{
+		content: "\a0";
+	}
+	&::after{
+		content: "\a0";
+	}
+	&.normal.empty {
+		&::after{
+			content: "\a0" attr(data-placeholder) "\a0";
+		}
+	}
+	br:last-child{display: none;}
+}

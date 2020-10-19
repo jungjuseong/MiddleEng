@@ -1,0 +1,264 @@
+@import './button.scss';
+
+.keyboard-box{
+	position:absolute;
+	width:100%;
+	height: 375px;
+	text-align:center;
+	background-color:#d1d4db;
+	user-select: none;
+	bottom: 0px;
+	z-index:100;
+	transition: bottom 0.3s;
+
+	&.hide{
+		display: none;
+	}
+
+	&.off{
+		bottom: -400px;
+	}
+
+	img{
+		vertical-align:middle;
+	}
+	&>div{
+		padding: 5.7px 0px;
+		height:auto;
+		white-space:nowrap;
+
+		&:nth-child(1){
+			padding-top:20px;
+			&>button{ margin:0px 5.5px; }
+		}
+		&:nth-child(2){
+			&>button{ margin: 0px 8px; }
+		}
+		&:nth-child(3){
+			&>button{ margin: 0px 8px; }
+			&>button:first-child{ margin-left:56px;}
+		}
+		&:nth-child(4){
+			padding-bottom:24px;
+			&>button{ margin:0px 8px; }
+		}
+		/*
+		&>button{
+			display:inline-block;
+			position:relative;
+			text-align:center;
+			height:74px;
+			line-height:55px;
+			vertical-align:middle;
+			font-family: myriad-pro;
+			font-size: 43px;
+			color:#4d4d4d;
+			padding-top:6px;
+			background-color:#fff;
+			border-radius:8px;
+			overflow:hidden;
+			box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.3);
+			outline-width: 0px;
+			cursor:pointer;
+
+			&.down, &.on{
+				background-color:#808080;
+				color:#ccc;
+				border-color:#666;
+				top:4px;left:0px;
+				box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.3);
+			}
+
+			&.s{
+				width:80px;
+			}
+			&.m{
+				width:101px;
+			}
+			&.b{
+				width:168px;
+			}		
+			&.capslock{
+				padding-top:2px;
+				font-size:25px;
+				line-height:120%;
+				vertical-align:middle;
+			}
+			
+			&.done {
+				background-color: #1e75f4;
+				color: rgb(250, 250, 250);
+			}
+		
+			&.key_back{
+				background-image:resolve('digenglish_lib/images/keyboard/key_back.png');
+				background-repeat : no-repeat;
+				background-position:center;
+
+				&.down{
+					background-image: resolve('digenglish_lib/images/keyboard/key_back_down.png');
+				}
+			}
+
+			&.key_hide{
+				background-image:resolve('digenglish_lib/images/keyboard/key_hide.png');
+				background-repeat : no-repeat;
+				background-position:center;
+
+				&.down{
+					background-image:resolve('digenglish_lib/images/keyboard/key_hide_down.png');
+				}
+			}
+		}
+		*/
+		&>button{
+			display:inline-block;
+			position:relative;
+			text-align:center;
+			line-height:55px;
+			vertical-align:middle;
+			font-family: myriad-pro;
+			font-size: 43px;
+			color:#4d4d4d;
+			padding-top:6px;
+
+			&.s{
+				@include btn_down_dis(
+					resolve('digenglish_lib/images/keyboard/key_num.png'),
+					resolve('digenglish_lib/images/keyboard/key_num_down.png'),
+					resolve('digenglish_lib/images/keyboard/key_num.png'),
+					width('digenglish_lib/images/keyboard/key_num.png'),
+					height('digenglish_lib/images/keyboard/key_num.png')
+				);
+
+				&.key_back {
+					@include btn_down_dis(
+						resolve('digenglish_lib/images/keyboard/key_back.png'),
+						resolve('digenglish_lib/images/keyboard/key_back_down.png'),
+						resolve('digenglish_lib/images/keyboard/key_back.png'),
+						width('digenglish_lib/images/keyboard/key_back.png'),
+						height('digenglish_lib/images/keyboard/key_back.png')
+					);
+				}
+			}			
+			&.m{
+				@include btn_down_dis(
+					resolve('digenglish_lib/images/keyboard/key_alpha.png'),
+					resolve('digenglish_lib/images/keyboard/key_alpha_down.png'),
+					resolve('digenglish_lib/images/keyboard/key_alpha.png'),
+					width('digenglish_lib/images/keyboard/key_alpha.png'),
+					height('digenglish_lib/images/keyboard/key_alpha.png')
+				);
+				/*
+				&.key_tab {
+					@include btn_down_dis(
+						resolve('digenglish_lib/images/keyboard/key_tab.png'),
+						resolve('digenglish_lib/images/keyboard/key_tab_down.png'),
+						resolve('digenglish_lib/images/keyboard/key_tab.png'),
+						width('digenglish_lib/images/keyboard/key_tab.png'),
+						height('digenglish_lib/images/keyboard/key_tab.png')
+					);
+				}
+				*/
+			}
+			&.key_shift {
+				@include btn_on_dis(
+					resolve('digenglish_lib/images/keyboard/key_shift.png'),
+					resolve('digenglish_lib/images/keyboard/key_shift_down.png'),
+					resolve('digenglish_lib/images/keyboard/key_shift.png'),
+					width('digenglish_lib/images/keyboard/key_shift.png'),
+					height('digenglish_lib/images/keyboard/key_shift.png')
+				);
+			}
+			&.key_enter {
+				@include btn_down_dis(
+					resolve('digenglish_lib/images/keyboard/key_enter.png'),
+					resolve('digenglish_lib/images/keyboard/key_enter_down.png'),
+					resolve('digenglish_lib/images/keyboard/key_enter.png'),
+					width('digenglish_lib/images/keyboard/key_enter.png'),
+					height('digenglish_lib/images/keyboard/key_enter.png')
+				);
+			}
+			&.done {
+				@include btn_down_dis(
+					resolve('digenglish_lib/images/keyboard/key_done.png'),
+					resolve('digenglish_lib/images/keyboard/key_done.png'),
+					resolve('digenglish_lib/images/keyboard/key_done.png'),
+					width('digenglish_lib/images/keyboard/key_done.png'),
+					height('digenglish_lib/images/keyboard/key_done.png')
+				);
+
+				&.dis{
+					opacity: 0.5;
+					pointer-events: none;
+				}
+			}
+			&.key_space {
+				@include btn_down_dis(
+					resolve('digenglish_lib/images/keyboard/key_space.png'),
+					resolve('digenglish_lib/images/keyboard/key_space_down.png'),
+					resolve('digenglish_lib/images/keyboard/key_space.png'),
+					width('digenglish_lib/images/keyboard/key_space.png'),
+					height('digenglish_lib/images/keyboard/key_space.png')
+				);
+			}
+		}
+	}
+
+	.key_view{
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.3s;
+		z-index:101;
+		position:absolute;
+		left:20px;
+		top:-80px;
+		@include btn_down_dis(
+			resolve('digenglish_lib/images/keyboard/key_view.png'),
+			resolve('digenglish_lib/images/keyboard/key_view_down.png'),
+			resolve('digenglish_lib/images/keyboard/key_view.png'),
+			width('digenglish_lib/images/keyboard/key_view.png'),
+			height('digenglish_lib/images/keyboard/key_view.png')
+		);
+	}
+	.key_hide {
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.3s;
+		z-index: 100;
+		position: absolute;
+		top: -55px;
+		left: 20px;
+		@include btn_down_dis(
+			resolve('digenglish_lib/images/keyboard/key_hide.png'),
+			resolve('digenglish_lib/images/keyboard/key_hide_down.png'),
+			resolve('digenglish_lib/images/keyboard/key_hide.png'),
+			width('digenglish_lib/images/keyboard/key_hide.png'),
+			height('digenglish_lib/images/keyboard/key_hide.png')
+		);
+	}
+
+	&.on {
+		.key_hide {
+			opacity: 1;
+			z-index:102;
+		}
+	}
+
+	&.off{
+		.key_view{
+			opacity: 1;
+			pointer-events: unset;
+		}
+	}
+
+	button.alpha{
+		text-transform: lowercase;
+	}
+
+	&.uppercase{
+		button.alpha{
+			text-transform: uppercase;
+		}		
+	}
+}

@@ -1,0 +1,53 @@
+@import 'button.scss';
+.ks_btn_prev_h{
+	@include btn_down_dis(
+		resolve('digenglish_lib/images/ks_btn_prev.png'),
+		resolve('digenglish_lib/images/ks_btn_prev_down.png'),
+		resolve('digenglish_lib/images/ks_btn_prev.png'),
+		width('digenglish_lib/images/ks_btn_prev.png'),
+		height('digenglish_lib/images/ks_btn_prev.png')
+	);
+	z-index: 2;
+	position:absolute;
+	top: calc(50% - height('digenglish_lib/images/ks_btn_prev.png')/2);
+	left: 10px;
+}
+.ks_btn_next_h{
+	@include btn_down_dis(
+		resolve('digenglish_lib/images/ks_btn_next.png'),
+		resolve('digenglish_lib/images/ks_btn_next_down.png'),
+		resolve('digenglish_lib/images/ks_btn_next.png'),
+		width('digenglish_lib/images/ks_btn_next.png'),
+		height('digenglish_lib/images/ks_btn_next.png')
+	);
+	z-index: 2;
+	position:absolute;
+	top: calc(50% - height('digenglish_lib/images/ks_btn_next.png')/2);
+	right: 10px;
+}
+.ks_btn_prev_v{
+	@include btn_down_dis(
+		resolve('digenglish_lib/images/ks_btn_up.png'),
+		resolve('digenglish_lib/images/ks_btn_up_down.png'),
+		resolve('digenglish_lib/images/ks_btn_up.png'),
+		width('digenglish_lib/images/ks_btn_up.png'),
+		height('digenglish_lib/images/ks_btn_up.png')
+	);
+	z-index: 2;
+	position:absolute;
+	left: calc(50% - width('digenglish_lib/images/ks_btn_prev.png')/2);
+	top: 10px;
+}
+.ks_btn_next_v{
+	@include btn_down_dis(
+		resolve('digenglish_lib/images/ks_btn_down.png'),
+		resolve('digenglish_lib/images/ks_btn_down_down.png'),
+		resolve('digenglish_lib/images/ks_btn_down.png'),
+		width('digenglish_lib/images/ks_btn_down.png'),
+		height('digenglish_lib/images/ks_btn_down.png')
+	);
+	z-index: 2;
+	position:absolute;
+	left: calc(50% - width('digenglish_lib/images/ks_btn_prev.png')/2);
+	bottom: 10px;
+}

@@ -1,0 +1,59 @@
+@mixin t_speak{
+	&>img{
+		@include page;
+	}
+	&>.speak_contents {
+		&>.entry_box {
+			background-color: rgba(255,255,255,0.9);
+			min-width: 729px; height: 178px;
+			border-radius: 20px;
+			position: absolute;
+			top: 27%; left: 50%;
+			transform: translateX(-50%);
+			transition: opacity 0.3s;
+			padding-right: 35px;
+			padding-left: 33px;	
+			&>.speak_entry {
+				position: relative;	
+				top: 50%;
+				transform: translateY(-50%);
+				display: inline-block;
+				width:  100%;
+				height: auto;
+
+				color: rgb(56, 67, 186);
+				font-weight: 400;
+				letter-spacing: -1px;	
+				text-align: center;
+			}
+		}
+		&>.sentence_box {
+			background-color: rgba(255,255,255,0.9);
+			width: 1114px; height: 178px;
+			border-radius: 20px;
+			position: absolute;
+			top: 59%;
+			left: 50%;
+			transform: translateX(-50%);
+			transition: opacity 0.3s;	
+
+			&>.speak_sentence {	
+				position: absolute;	
+				top: 50%;
+				transform: translateY(-50%);
+				right: 30px;
+				left: 30px;
+				height:auto;
+				color: rgb(0, 0, 0);
+				font-weight: 600;
+				letter-spacing: -1px;
+				white-space: normal;
+				text-align: center;
+				.block{
+					color: #3843BA;
+				}
+			}
+		}
+		
+	}
+}

@@ -1,0 +1,145 @@
+@import '../../share/sendui.scss';
+@import '../../share/QuizMCBtn.scss';
+
+@mixin s_question{
+	.s_question{
+		@include page;
+		.left {
+			background-color: rgb(223, 231, 255);
+			width: 630px; height: 800px;
+			overflow: hidden;
+			.swiper-container{
+				width: 630px; height: 100%;
+				position: absolute; top: 0px;
+				overflow: hidden; 
+				color: rgb(255, 255, 255);
+				
+				.script-wrap{
+					height: auto;
+					padding: 28px 40px 0px 40px;
+					.passage {
+                        font-size: 32px; 
+                        /* rw_comprehension 190425 수정사항 p.20 */
+                        
+                        color: rgb(0, 0, 0);    /* 색수정  color: rgb(46, 45, 43); */
+						line-height: 1.5;
+						white-space: normal; 
+						word-break: normal;
+						margin-bottom: 40px;
+						
+						/*
+						&>span{
+							padding-left: 20px;
+						}
+						*/
+					}
+				}
+				.swiper-slide{
+					height: auto;
+				}
+				.swiper-scrollbar{
+					width: 8px;    right: 7px;
+					background-color: transparent;
+					.swiper-scrollbar-drag {
+						background-color: rgba(0, 0, 0, 0.1);
+					}
+				}
+			}
+		}
+		.right {
+			width: 650px; height: 800px;
+			overflow: hidden;
+			position: absolute; top: 0px; right: 0px;
+			
+			.btn_page_box {
+				width: 100%; height: 0px;
+				overflow: visible;text-align: center;
+				z-index: 2;
+				position: relative; top: 38px;
+				cursor: pointer;
+				&>span {
+					box-sizing: border-box;
+					display: inline-block;
+					width: width('common/icon_o.png');
+					height: height('common/icon_o.png');
+					font-size: 26px;
+					line-height: 100%;
+					padding-top: 10px;  /* 값 수정 padding-top: 15px;*/
+					font-size: 34px; font-weight: bold; color: rgba(255, 255, 255, 0.4);
+					&.on {color: rgb(248, 246, 77);}
+					&.correct{	background-image: resolve('common/icon_o.png');	}
+					&.wrong{ background-image: resolve('common/icon_x.png'); }
+				}
+				&.off{display: none;}
+			}
+			.swiper-container{
+				@include page;
+				.question {
+					width: 650px;
+                    position: relative;
+					top: 130px;
+					height: 100px;
+					padding: 0px 30px;
+					font-size: 36px;
+					color: rgb(0, 0, 0);
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					&>div{
+						position: relative; 
+						width: 100%;
+                        height: auto;
+						text-align: left;
+						&>div {
+							color: rgb(0, 0, 0);
+							white-space: normal; 
+						}
+					}
+				}
+				.choice_box {
+					position: relative; 
+					top: 166px;
+					text-align: left;
+					white-space: normal;
+					left: 30px;
+					width: 582px;
+
+					.btn_choice {
+						@include btn_on(
+							resolve('student/images/btn_question_s.png'),
+							resolve('student/images/btn_question_s_down.png'),
+							width('student/images/btn_question_s.png'),
+							height('student/images/btn_question_s.png')
+						);
+						position: relative;
+						@include quiz-btn-mc;
+						margin-bottom: 19px;
+						text-align: left;
+						padding: 0px 10px 10px 55px;
+						color: rgb(0, 0, 0);
+
+						&.correct{	background-image: resolve('student/images/btn_question_s_correct.png');	}
+						&.wrong{ background-image: resolve('student/images/btn_question_s_wrong.png'); }
+					}
+				}
+			}
+			.btn_next {
+				position: absolute; 
+				bottom: 26px;
+				right: 10px; 
+				z-index: 2;
+				@include btn_down_dis(
+					resolve('student/images/btn_question_next.png'),
+					resolve('student/images/btn_question_next.png'),
+					resolve('student/images/btn_question_next.png'),
+					width('student/images/btn_question_next.png'),
+					height('student/images/btn_question_next.png')
+				);
+			}
+		}
+		.fel_toteacher {
+			@include fel_toteacher;
+		}
+	}
+}

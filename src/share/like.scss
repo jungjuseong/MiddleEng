@@ -1,0 +1,163 @@
+@import './BtnSwitch.scss';
+
+@mixin like-send($zIndex: 100){
+	z-index: $zIndex;
+	position: absolute;
+	left: 0px; width: 100%;
+	top: 0px; height: 100%;
+	overflow: hidden;
+	pointer-events: none;
+	&>svg{
+		pointer-events: none;
+	}
+	&>.emoti-bnd{
+		pointer-events: auto;
+		position: absolute;
+		left: 0px; width:100%;
+		bottom: 0px;
+
+		background-image: resolve('digenglish_lib/images/emoti_bg.png');
+		height: height('digenglish_lib/images/emoti_bg.png');
+		transform: translateY(110%);
+		transition: transform 0.3s;
+		text-align: center;
+		&.on{
+			transform: translateY(0%);
+		}
+		&>button{
+			margin: 40px 9px 0px 9px;
+		}
+		.emoti0{
+			@include btn_down_dis(
+				resolve('digenglish_lib/images/emoti_0.png'),
+				resolve('digenglish_lib/images/emoti_0_down.png'),
+				'',
+				width('digenglish_lib/images/emoti_0.png'),
+				height('digenglish_lib/images/emoti_0.png')
+			);
+		}
+		.emoti1{
+			@include btn_down_dis(
+				resolve('digenglish_lib/images/emoti_1.png'),
+				resolve('digenglish_lib/images/emoti_1_down.png'),
+				'',
+				width('digenglish_lib/images/emoti_1.png'),
+				height('digenglish_lib/images/emoti_1.png')
+			);
+		}
+		.emoti2{
+			@include btn_down_dis(
+				resolve('digenglish_lib/images/emoti_2.png'),
+				resolve('digenglish_lib/images/emoti_2_down.png'),
+				'',
+				width('digenglish_lib/images/emoti_2.png'),
+				height('digenglish_lib/images/emoti_2.png')
+			);
+		}
+		.emoti3{
+			@include btn_down_dis(
+				resolve('digenglish_lib/images/emoti_3.png'),
+				resolve('digenglish_lib/images/emoti_3_down.png'),
+				'',
+				width('digenglish_lib/images/emoti_3.png'),
+				height('digenglish_lib/images/emoti_3.png')
+			);
+		}
+		.emoti4{
+			@include btn_down_dis(
+				resolve('digenglish_lib/images/emoti_4.png'),
+				resolve('digenglish_lib/images/emoti_4_down.png'),
+				'',
+				width('digenglish_lib/images/emoti_4.png'),
+				height('digenglish_lib/images/emoti_4.png')
+			);
+		}
+
+		.emoti5{
+			@include btn_down_dis(
+				resolve('digenglish_lib/images/emoti_5.png'),
+				resolve('digenglish_lib/images/emoti_5_down.png'),
+				'',
+				width('digenglish_lib/images/emoti_5.png'),
+				height('digenglish_lib/images/emoti_5.png')
+			);
+		}
+		.emoti6{
+			@include btn_down_dis(
+				resolve('digenglish_lib/images/emoti_6.png'),
+				resolve('digenglish_lib/images/emoti_6_down.png'),
+				'',
+				width('digenglish_lib/images/emoti_6.png'),
+				height('digenglish_lib/images/emoti_6.png')
+			);
+		}
+		.emoti7{
+			@include btn_down_dis(
+				resolve('digenglish_lib/images/emoti_7.png'),
+				resolve('digenglish_lib/images/emoti_7_down.png'),
+				'',
+				width('digenglish_lib/images/emoti_7.png'),
+				height('digenglish_lib/images/emoti_7.png')
+			);
+		}
+		.emoti8{
+			@include btn_down_dis(
+				resolve('digenglish_lib/images/emoti_8.png'),
+				resolve('digenglish_lib/images/emoti_8_down.png'),
+				'',
+				width('digenglish_lib/images/emoti_8.png'),
+				height('digenglish_lib/images/emoti_8.png')
+			);
+		}
+		.emoti9{
+			@include btn_down_dis(
+				resolve('digenglish_lib/images/emoti_9.png'),
+				resolve('digenglish_lib/images/emoti_9_down.png'),
+				'',
+				width('digenglish_lib/images/emoti_9.png'),
+				height('digenglish_lib/images/emoti_9.png')
+			);
+		}
+
+	}
+	
+}
+@mixin like-btn{
+	@include btn-switch(
+		resolve('digenglish_lib/images/like/btn_heart.png'),
+		width('digenglish_lib/images/like/btn_heart.png'),
+		height('digenglish_lib/images/like/btn_heart.png')
+	);
+}
+
+@mixin like-view{
+
+	display: block;
+	position: absolute;
+	left: 105px;
+	bottom: 0px;
+	overflow: visible;
+
+	&>div{
+		position:absolute;
+		right:0px;
+		bottom:0px;	
+
+		&>svg{
+			position: absolute;
+			left: -30px;
+			width: 38px;
+			top: -23px;
+			height: 38px;
+		}
+
+		&>img{
+			vertical-align: middle;
+			width: 64px;
+			height: 64px;
+			border-radius: 50%;
+		}	
+	}
+
+
+}

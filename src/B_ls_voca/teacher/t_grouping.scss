@@ -1,0 +1,8 @@
+@import '../../share/TeamGrouping.scss';
+@mixin t_grouping{
+	.t_grouping{
+		position: relative;
+		@include share-team-grouping;
+		
+	}
+}

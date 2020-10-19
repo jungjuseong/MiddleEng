@@ -1,0 +1,41 @@
+@import '../../share/QuizTeacher.scss';
+@import '../quiz_sound.scss';
+@import '../quiz_meaning.scss';
+@import '../quiz_spelling.scss';
+@import '../quiz_usage.scss';
+
+@mixin t_quiz{
+	.t_quiz{
+		@include page;
+
+		@include share-quiz-teacher;
+
+		.btn_audio {
+			@include btn_on_dis(
+				resolve('digenglish_lib/images/quiz/btn_audio.svg'),
+				resolve('digenglish_lib/images/quiz/btn_audio_on.svg'),
+				resolve('digenglish_lib/images/quiz/btn_audio.svg'),
+				width('digenglish_lib/images/quiz/btn_audio.svg'),
+				height('digenglish_lib/images/quiz/btn_audio.svg')
+			);
+		}
+		.quiz_sound{
+			@include quiz_sound;
+		}
+		.quiz_meaning{
+			@include quiz_meaning;
+		}
+		.quiz_spelling{
+			@include quiz_spelling;
+		}
+		.quiz_usage{
+			@include quiz_usage;
+		}
+		&.sentence{
+			&>.timer {
+				top: 143px; right: 132px;
+				z-index: 1;
+			}
+		}
+	}
+}

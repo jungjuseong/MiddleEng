@@ -1,0 +1,257 @@
+@import './t_study_popup.scss';
+
+@mixin t_voca_list{
+	.t_voca_list{
+		@include page;
+		&>.num {
+			font-size: 21px;
+			color: rgba(255, 255, 255, 0.502);
+			position: absolute;
+			top: 31px;
+			right: 250px;
+			&>.on {
+				color: rgb(248, 246, 77);
+			}
+		}
+		&>.check_all {
+			position: absolute;
+			top: 32px;
+			left: 1038px;
+
+			@include btn_on(
+				resolve('teacher/images/btn_check.png'),
+				resolve('teacher/images/btn_check_all.png'),
+				width('teacher/images/btn_check.png'),
+				height('teacher/images/btn_check.png')
+			);
+		}
+
+		&>.swiper-container{
+			position: relative;
+			width: 1124px;
+			top: 62px; height: 660px;
+			white-space: normal;
+			text-align: left;
+
+			.box{
+				padding: 0px 15px;
+				.voca_box {
+					position: relative;
+					display: inline-block;
+					vertical-align: top;
+					
+					margin: 8.5px 8px 10px 10px;
+					background: resolve('teacher/images/bg_word_box.png') no-repeat;
+					border-radius: 18px;
+					width: width('teacher/images/bg_word_box.png');
+					height: height('teacher/images/bg_word_box.png');
+					
+					&.click {
+						background: resolve('teacher/images/bg_word_box.png') no-repeat;
+						z-index: 1;
+						opacity: 0.5;
+					}
+					&>.check {
+						position: relative;
+						float: left;
+					    top: 8px;
+  						left: 8px;
+						z-index: 1;
+							
+						@include btn_on_dis(
+							resolve('teacher/images/btn_check_box.png'),
+							resolve('teacher/images/btn_check_box_on.png'),
+							resolve('teacher/images/btn_check_box.png'),
+							width('teacher/images/btn_check_box.png'),
+							height('teacher/images/btn_check_box.png')
+						);
+						
+					}
+					&>img {
+						width: 175px;
+						height: 140px;
+						position: absolute;
+						top: 0;
+						left: 0;
+						border-radius: 18px 0 0 18px;
+					}				
+					&>.topic_progress{
+						position: absolute;
+						top: 10px;
+						right: 8px;
+						white-space: nowrap;
+						&>.icon_topic {
+							display: none;
+							
+							&.true {
+								position: relative;
+								/*top:1px;
+								right:80px;*/
+								display: inline-block;
+								vertical-align: top;
+								background: resolve('teacher/images/icon_topic.png') no-repeat;
+								width: width('teacher/images/icon_topic.png');
+								height: height('teacher/images/icon_topic.png');
+							}
+						}
+
+						&>.quiz_progress {
+							position: relative;
+							display: inline-block;
+							vertical-align: top;
+							margin-left: 5px;
+							width: 10px;
+							height: 92px;
+							background-color: rgba(195, 187, 211, 0.3);
+							border-radius: 9px;
+
+							.percent_data{
+
+								position: absolute;
+								width: 100%;
+								bottom: 0px;
+								border-radius: 9px;
+								background-color: rgb(0, 156, 92);
+							}
+							&>span {
+								position: absolute;
+								right: -5px;
+								bottom: -15px;
+								font-size: 10px;
+								color: rgb(0, 79, 47);
+								line-height: 1.2;						
+							}
+							
+							&.false{
+								display: none;
+							}
+						}
+					}
+					
+					&>.voca_btns {
+						position: absolute;	top: 11px;	left: 182px;
+						width: auto; 
+						&>.btn_study {		
+							position: relative;
+							/*margin-left: 195px;*/
+							margin-left: 8px;
+							@include btn_down_dis(
+								resolve('teacher/images/btn_study.png'),
+								resolve('teacher/images/btn_study_down.png'),
+								resolve('teacher/images/btn_study.png'),
+								width('teacher/images/btn_study.png'),
+								height('teacher/images/btn_study.png')
+							);
+						}
+						&>.btn_sound {
+							position: relative;
+							/*float:right;*/
+							/*margin-left:7px;*/
+							margin-left: 8px;
+							z-index: 1;
+							@include btn_down_dis(
+								resolve('teacher/images/btn_sound.png'),
+								resolve('teacher/images/btn_sound_down.png'),
+								resolve('teacher/images/btn_sound.png'),
+								width('teacher/images/btn_sound.png'),
+								height('teacher/images/btn_sound.png')
+							);
+						}
+						&>div{ 
+							font-size: 40px;
+							line-height: 1.2;
+							position: relative; 
+							top: 16px;
+							left: 8px;
+							white-space: nowrap;
+							word-spacing: -2px;
+							letter-spacing: -1px;
+							width: 305px;
+							word-break: break-all;
+						}
+
+					}
+				}
+			}
+
+			.swiper-scrollbar {
+				@include swiper_scrollbar(10px, rgba(0, 0, 0, 0.2), 5px);	
+			}			
+		}
+		&>.box {
+			top: 57px;
+			left: 140px;
+			width: 469px;
+			position: relative;
+			float: left;
+			margin-left: 20px;
+
+	
+		}
+		&>.btns {
+			position: absolute;
+			top: 727px;
+			left: 373px;
+
+			&>.watch {
+				float: left;
+
+				@include btn_down_dis(
+						resolve('teacher/images/btn_watch.png'),
+						resolve('teacher/images/btn_watch_on.png'),
+						resolve('teacher/images/btn_watch_dis.png'),
+						width('teacher/images/btn_watch.png'),
+						height('teacher/images/btn_watch.png')
+					);
+			}
+			&>.learn {
+				float: left;
+				margin-left: 21px;
+				
+				@include btn_down_dis(
+						resolve('teacher/images/btn_learn.png'),
+						resolve('teacher/images/btn_learn_on.png'),
+						resolve('teacher/images/btn_learn_dis.png'),
+						width('teacher/images/btn_learn.png'),
+						height('teacher/images/btn_learn.png')
+					);
+			}
+			&>.speak {
+				float: left;
+				margin-left: 21px;
+				
+				@include btn_down_dis(
+						resolve('teacher/images/btn_speak.png'),
+						resolve('teacher/images/btn_speak_on.png'),
+						resolve('teacher/images/btn_speak_dis.png'),
+						width('teacher/images/btn_speak.png'),
+						height('teacher/images/btn_speak.png')
+					);
+			}
+		}
+		&>.icon_txtpop {
+			opacity: 0;
+			pointer-events: none;
+			background: resolve('teacher/images/icon_txtpop.png') no-repeat;
+			width: width('teacher/images/icon_txtpop.png');;
+			height: height('teacher/images/icon_txtpop.png');
+			position: absolute;
+			top: 650px;
+			z-index: 1;
+			&.watch{
+				opacity: 1;
+				left: 310px;
+			}
+			&.learn{
+				opacity: 1;
+				left: 493px;
+			}
+			&.speak{
+				opacity: 1;
+				left: 676px;
+			}
+		}
+
+		@include t_study_popup;
+	}
+}

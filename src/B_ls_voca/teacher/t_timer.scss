@@ -1,0 +1,7 @@
+@import '../../share/QuizNumTime.scss';
+@mixin t_timer{
+.t_timer {
+	@include page;
+	@include share-quiz-num-time;
+}
+}

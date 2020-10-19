@@ -1,0 +1,11 @@
+@mixin team-pad-result{
+	position: absolute;
+	left:0px; width: 100%;
+	top:0px; height: 100%;
+	z-index: 3;
+	&.hide{
+		visibility: hidden;
+		z-index: -1;
+		pointer-events: none;
+	}	
+}

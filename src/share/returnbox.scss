@@ -1,0 +1,161 @@
+@import "./like.scss";
+@mixin return-box{
+	.return-popup{
+		position: absolute;
+		left:0px; width: 100%;
+		top:0px; height: 100%;
+		z-index: 121;
+
+		background-color: rgba(0, 0, 0, 0.4);
+		opacity : 0;
+		transform: scale(0.2, 0.2);
+		transition: transform 0.3s, opacity 0s 0.3s;
+		pointer-events: none;
+		&.on{
+			pointer-events: unset;
+			opacity: 1;
+			transform: scale(1, 1);
+			transition: transform 0.3s cubic-bezier(0.405, 0.420, 0.135, 1.200);
+		}
+		
+		&>.student{
+			position: absolute;
+			left:0px; width: 108px;
+			top: 100px;
+			text-align: center;
+			&>img{
+				box-sizing: border-box;
+				width: 90px;
+				height: 90px;
+				border-radius: 50%;
+				border: 5px solid #1CC8B2;
+			}
+			&>div{
+				margin: 5px auto;
+				width: 96px;
+				font-size:20px;
+				color: #fff;
+				line-height:30px;
+				border-radius: 15px;
+				background-color: rgba(0, 0, 0, 0.4);
+			}
+		}
+		.like-view{
+			@include like-view;
+		}
+
+		@include popup-item;
+	}
+	.return-box{
+		z-index: 120;
+		position: absolute;
+		left:0px; width: 100%;
+		top:0px; height: 100%;
+		background-color: rgba(0, 0, 0, 0.4);
+		opacity : 0;
+		transform: scale(0.2, 0.2);
+		transition: transform 0.3s, opacity 0s 0.3s;
+		pointer-events: none;
+		&.on{
+			pointer-events: unset;
+			opacity: 1;
+			transform: scale(1, 1);
+			transition: transform 0.3s cubic-bezier(0.405, 0.420, 0.135, 1.200);
+			&.popup{
+				pointer-events: none;
+				opacity: 0;
+				transition: opacity 0.3s;
+			}
+		}
+		.common_back{
+			position: absolute;
+			right: 20px;
+			bottom: 20px;
+		}
+
+		&>.count{
+			margin-top: 50px;
+			margin-left: auto;
+			margin-right: auto;
+			
+			font-weight: bold;
+			color: #fff;
+			background-color: #F02449;
+			width: 230px;
+			padding: 3px;
+			border-radius: 23px;
+			border-bottom-left-radius: 0px;
+
+			&>span{
+				display: inline-block;
+				box-sizing: border-box;
+				width: 50%;
+				height: 40px;
+				font-size: 28px;
+				padding-top:8px;
+				line-height: 28px;
+				text-align: center;
+			}
+			&>span:first-child{
+				background-color: rgba(0, 0, 0, 0.25);
+				border-top-left-radius: 20px;
+			}
+		}
+		&>.swiper-container{
+			top: 132px;
+			height: 580px;
+			.swiper-scrollbar {
+				right: 15px;
+				width: 3px;
+				border-radius: 2px;
+				.swiper-scrollbar-drag {
+					background: rgba(255, 255, 255, 0.6);
+				}
+			}
+			.return-temp{
+				height: auto !important;
+			}
+			.return-list{
+				height: auto !important;
+				padding: 10px 54px;
+
+
+				
+	
+				.return-item{
+					display:inline-block;
+					width: 20%;
+					text-align: center;
+					margin-bottom: 10px;
+					&>div:nth-child(1){
+						@include return-list-item;
+					}
+
+					&>div:nth-child(2){
+						width: 200px;
+						margin:auto;
+						margin: 10px auto;
+						text-align: left;
+						font-size: 20px;
+						line-height: 40px;
+						color: #fff;
+						&>img{
+							vertical-align: middle;
+							width:40px;
+							height:40px;
+							border-radius: 50%;
+							margin: 0px 10px;
+						}
+					}
+				}
+			}
+		}
+
+		.like-btn{
+			position: absolute;
+			right: 100px;
+			top: 88px;
+			@include like-btn();
+		}
+	}
+}

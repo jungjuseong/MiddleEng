@@ -1,0 +1,381 @@
+@charset "UTF-8";
+html, body {
+    padding: 0px;
+    margin: 0px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    border: 0px;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* 버튼 포커스시 색상 변하는 현상 방지 */
+    font-family: NotoSans !important;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+}
+
+img {
+    padding: 0px;
+    margin: 0px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    border: 0px;
+    outline: 0px solid transparent;
+}
+
+div, p {
+    padding: 0px;
+    margin: 0px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+#common_audio {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#ding_audio {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#dingend_audio {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#wrap {
+    width: 1280px;
+    height: 800px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.bg_svg {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+.swiper-scrollbar.white {
+    background: rgba(0, 0, 0, 0);
+    width: 7px;
+}
+
+.swiper-scrollbar.white .swiper-scrollbar-drag {
+    width: 7px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+}
+
+.swiper-scrollbar.black {
+    background: rgba(0, 0, 0, 0);
+    width: 7px;
+}
+
+.swiper-scrollbar.black .swiper-scrollbar-drag {
+    width: 7px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+.common_back {
+    background-size: 100% 100%;
+    -ms-touch-action: none;
+        touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/btn_back.png");
+    background-repeat: no-repeat;
+    width: 78px;
+    height: 73px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+.common_back:disabled {
+    background-image: "";
+    pointer-events: none;
+    cursor: auto;
+}
+
+.common_back.down {
+    background-image: url("/content/digenglish_lib/B/images/btn_back_down.png");
+}
+
+.common_back:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/images/btn_back.png") url("/contendigenglish_lib_lib/images/btn_back_down.png") "";
+}
+
+.common_back.down {
+    -webkit-transform: scale(1.1, 1.1);
+        -ms-transform: scale(1.1, 1.1);
+         -o-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 16px;
+}
+
+.swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    opacity: 0.3;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #47F6E9;
+    -webkit-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+#preload_hidden {
+    position: absolute;
+    pointer-events: none;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+#preload_hidden .helvetica {
+    font-family: HelveticaRounded;
+}
+
+#preload_hidden .helveticastd {
+    font-family: HelveticaRoundedLTStd;
+}
+
+.common_goodjob {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-image: url("/content/digenglish_lib/B/images/goodjob_ls.svg");
+    width: 1280px;
+    height: 800px;
+    -webkit-transform: translate(-50%, -50%) scale(0.8, 0.8);
+        -ms-transform: translate(-50%, -50%) scale(0.8, 0.8);
+         -o-transform: translate(-50%, -50%) scale(0.8, 0.8);
+            transform: translate(-50%, -50%) scale(0.8, 0.8);
+    visibility: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.common_goodjob.on {
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 100;
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) scale(1, 1);
+        -ms-transform: translate(-50%, -50%) scale(1, 1);
+         -o-transform: translate(-50%, -50%) scale(1, 1);
+            transform: translate(-50%, -50%) scale(1, 1);
+    -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2) 0s;
+    transition: -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2) 0s;
+    -o-transition: -o-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2) 0s;
+    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2) 0s;
+    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2) 0s, -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2) 0s, -o-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2) 0s;
+}
+
+.common_goodjob.off {
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 100;
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) scale(0.8, 0.8);
+        -ms-transform: translate(-50%, -50%) scale(0.8, 0.8);
+         -o-transform: translate(-50%, -50%) scale(0.8, 0.8);
+            transform: translate(-50%, -50%) scale(0.8, 0.8);
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    transition: opacity 0.3s, -webkit-transform 0.3s;
+    -o-transition: opacity 0.3s, -o-transform 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s, -o-transform 0.3s;
+}
+
+#wrap {
+    background-image: url("/content/digenglish_lib/B/images/theme2_p_bg.png");
+    font-family: NotoSans;
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+#wrap > .eyeon_svg {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    pointer-events: none;
+}
+
+#wrap > .page_direction {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    background-image: url("/content/digenglish_lib/B/math_pf/common/bg0.jpg");
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#wrap > .page_direction.hide {
+    display: none;
+}
+
+#wrap > .page_direction > div.direction_step {
+    position: absolute;
+    -webkit-transform: translateY(100px);
+        -ms-transform: translateY(100px);
+         -o-transform: translateY(100px);
+            transform: translateY(100px);
+    -webkit-transition: opacity 0.5s, -webkit-transform 0.5s ease-out;
+    transition: opacity 0.5s, -webkit-transform 0.5s ease-out;
+    -o-transition: opacity 0.5s, -o-transform 0.5s ease-out;
+    transition: transform 0.5s ease-out, opacity 0.5s;
+    transition: transform 0.5s ease-out, opacity 0.5s, -webkit-transform 0.5s ease-out, -o-transform 0.5s ease-out;
+    opacity: 0;
+}
+
+#wrap > .page_direction.on > div {
+    -webkit-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+         -o-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+}
+
+#wrap > .page_direction.hide > div {
+    visibility: hidden;
+}
+
+#wrap > .page_direction > div {
+    position: absolute;
+    background-image: url("/content/digenglish_lib/B/math_pf/student/images/direction.png");
+    width: 800px;
+    height: 600px;
+    left: calc(50% - 800px/2);
+    top: calc(50% - 600px/2);
+}
+
+#wrap > .page_direction.hide {
+    visibility: hidden;
+}
+
+#wrap .fel_toteacher {
+    position: absolute;
+    z-index: 11;
+    -ms-touch-action: none;
+        touch-action: none;
+    bottom: 20px;
+    right: 20px;
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/images/toteacher.svg");
+    background-repeat: no-repeat;
+    width: 95px;
+    height: 87px;
+    cursor: pointer;
+    pointer-events: unset;
+}
+
+#wrap .fel_toteacher.on {
+    background-image: url("/content/digenglish_lib/B/images/toteacher_on.svg");
+}
+
+#wrap .fel_toteacher:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/images/toteacher.svg") url("/contendigenglish_lib_lib/images/toteacher_on.svg");
+}
+
+#wrap .fel_toteacher.on {
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+}
+
+/* @font-face {
+    font-family: Visang_e_HT;
+    src: url(/content/digenglish_lib/B/font/Visang_e_HT.woff) format('woff');
+}
+@font-face {
+    font-family: Visang_e_HT;
+    font-weight:bold;
+    src: url(/content/digenglish_lib/B/font/Visang_e_HT_Bold.woff) format('woff');
+} */
+@font-face {
+    font-family: NotoSans_bold;
+    font-weight: bold;
+    src: url(/content/digenglish_lib/B/font/NotoSansCJKkr-Bold.woff) format("woff");
+}
+
+/* @font-face {
+  font-family: NotoSans_light;
+  font-weight:lighter;
+  src: url(/content/digenglish_lib/B/font/NotoSans-Light.woff) format('woff');
+} */
+@font-face {
+    font-family: NotoSans;
+    /* src: url(/content/digenglish_lib/B/font/NotoSansCJKkr-Medium.woff) format('woff'); */
+    src: url(/content/digenglish_lib/B/font/NotoSansCJK-Medium-en.woff) format("woff");
+}
+
+/* @font-face {
+  font-family: HelveticaRounded;
+    font-weight:bold;
+    src: url(/content/digenglish_lib/B/font/HelveticaRounded-Bold.woff) format('woff');
+}
+@font-face {
+    font-family: HelveticaRoundedLTStd;
+    font-weight:bold;
+    src: url(/content/digenglish_lib/B/font/HelveticaRoundedLTStd-Bd.woff) format('woff');
+} */
+@font-face {
+    font-family: NotoSerif;
+    src: url(/content/digenglish_lib/B/font/NotoSerif-Regular.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSerif_bold;
+    font-weight: bold;
+    src: url(/content/digenglish_lib/B/font/NotoSerif-Bold.woff) format("woff");
+}
+

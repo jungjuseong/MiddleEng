@@ -1,0 +1,32 @@
+@import '../../share/penui.scss';
+
+@mixin s_pentool {
+	.s-pentool{
+		overflow: hidden;
+		text-align: center;
+		.draw_box{
+			position: relative;
+			display: inline-block;
+			margin-top: 66px;
+			width: auto;
+			height: auto;
+			background-color: #fff;
+			border-radius: 6px;
+			&>img{
+				position: absolute;
+				top:0px; left: 0px;
+			}
+			&>canvas{
+				position: relative;
+				touch-action: none;
+				z-index: 11;
+				display: inline-block;
+				vertical-align: top;
+			}
+
+		}
+		.penui{
+			@include penui();
+		}
+	}
+}

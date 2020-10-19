@@ -1,0 +1,31 @@
+@mixin video-direction{
+	position: absolute;
+	left:0px; width:100%;
+	top:0px; height: 100%;
+	background-color: rgba(0, 0, 0, 0); 
+
+	&>img{
+        z-index: 2;
+    }
+    &>div.direction{
+		position: absolute;
+		transform: translateY(100px);
+		transition: transform 0.5s ease-out, opacity 0.5s;
+		opacity: 0;
+	}
+	&.on>div.direction{
+		transform: translateY(0px);
+		opacity: 1;
+	}
+	&.hide{
+		&>div.direction{
+			visibility: hidden;
+		}
+	}
+
+	&.loaded{
+		&>video{
+			opacity: 1;		
+		}		
+	}
+}

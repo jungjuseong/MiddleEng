@@ -1,0 +1,499 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <script type="text/javascript" src="./obj.js"></script>
+ </head>
+
+
+
+ <body>
+
+	<textarea id="area" style="width: 100%; height: 500px" resize="no"></textarea>
+	<script>
+var obj_e = {};
+obj_e.TYPE_TEXT = "text";
+obj_e.TYPE_YESORNO = "yesorno";
+obj_e.TYPE_INT = "int";
+obj_e.TYPE_FLOAT = "float";
+obj_e.TYPE_SECOND = "second";
+obj_e.TYPE_LIST = "list";
+obj_e.TYPE_ARRAY = "array";
+obj_e.TYPE_IMAGE = "image";
+obj_e.TYPE_SOUND = "sound";
+obj_e.TYPE_MOVIE = "movie";
+obj_e.TYPE_OBJECT = "object";
+obj_e.TYPE_RANGE = "range";
+obj_e.TYPE_RANGE_SE = "range_se";
+obj_e.TYPE_SELECT = "select";
+obj_e.TYPE_MULTI_LANG = "multi_lang";
+obj_e.TYPE_FOLDER = 'folder';
+var ls_voca = {
+	_type:obj_e.TYPE_OBJECT,
+	page1: {
+		_type:obj_e.TYPE_OBJECT,
+		words: {
+			_type : obj_e.TYPE_LIST,
+			_excelSheets:"word",
+			_startRow:2,
+			_typeOfQuiz: 'pz',
+			_key:"seq",			
+			_item: {
+				_type:obj_e.TYPE_OBJECT,
+				seq: {_type:obj_e.TYPE_INT, _excel:"A", _column: 'tmq_key'},
+				idx: {_type:obj_e.TYPE_TEXT, _excel:"B"},
+				entry: {_type:obj_e.TYPE_TEXT, _excel:"C", _column: 'tmq_sample_text1'},
+				SC_DIV1: {_type:obj_e.TYPE_TEXT, _excel:"D", _column: 'SC_DIV1'},
+				SC_DIV2: {_type:obj_e.TYPE_TEXT, _excel:"E", _column: 'SC_DIV2'},
+				SC_DIV3: {_type:obj_e.TYPE_TEXT, _excel:"F", _column: 'SC_DIV3'},
+				SC_DIV4: {_type:obj_e.TYPE_TEXT, _excel:"G", _column: 'SC_DIV4'},
+				SC_SAVE: {_type:obj_e.TYPE_YESORNO, _excel:"H", _column: 'SC_SAVE'},
+				pumsa: {_type:obj_e.TYPE_TEXT, _excel:"I"},
+				meaning: {_type:obj_e.TYPE_TEXT, _excel:"J"},
+				image: {_type:obj_e.TYPE_IMAGE, _excel:"K"},
+				thumbnail: {_type:obj_e.TYPE_IMAGE, _excel:"L"},
+				image_pad: {_type:obj_e.TYPE_IMAGE, _excel:"M"},
+				audio: {_type:obj_e.TYPE_SOUND, _excel:"N"},
+				meaning_eng: {_type:obj_e.TYPE_TEXT, _excel:"O"},
+				meaning_audio:  {_type:obj_e.TYPE_SOUND, _excel:"P"},
+				sentence: {_type:obj_e.TYPE_TEXT, _excel:"Q"},
+				sentence_audio: {_type:obj_e.TYPE_SOUND, _excel:"R"},
+				video:  {_type:obj_e.TYPE_MOVIE, _excel:"S"},
+				sound_start: {_type:obj_e.TYPE_FLOAT, _excel:"T"},
+				sound_end: {_type:obj_e.TYPE_FLOAT, _excel:"U"},
+				meaning_start: {_type:obj_e.TYPE_FLOAT, _excel:"V"},
+				meaning_end: {_type:obj_e.TYPE_FLOAT, _excel:"W"},
+				sentence_start: {_type:obj_e.TYPE_FLOAT, _excel:"X"},
+				sentence_end: {_type:obj_e.TYPE_FLOAT, _excel:"Y"},
+				usage_video: {_type:obj_e.TYPE_MOVIE, _excel:"Z"},
+				usage_start: {_type:obj_e.TYPE_FLOAT, _excel:"AA"},
+				usage_end: {_type:obj_e.TYPE_FLOAT, _excel:"AB"},
+				usage_script: {_type:obj_e.TYPE_TEXT, _excel:"AC"},
+				topic: {_type:obj_e.TYPE_YESORNO, _excel:"AD"},	
+				tmq_seq: {_type:obj_e.TYPE_INT, _isInsertSeq: true}	
+			}			
+		},
+		quiz_sounds: {
+			_type : obj_e.TYPE_LIST,
+			_excelSheets:"quiz_sound",
+			_startRow:2,
+			_typeOfQuiz: 'mc',
+			_key:"seq",	
+			_item: {
+				_type: obj_e.TYPE_OBJECT,
+				seq: {_type:obj_e.TYPE_INT, _excel:"A", _column: 'tmq_key'},
+				idx: {_type:obj_e.TYPE_TEXT, _excel:"B"},
+				entry: {_type:obj_e.TYPE_TEXT, _excel:"C", _column: 'tmq_sample_text1'},	
+				SC_DIV1: {_type:obj_e.TYPE_TEXT, _excel:"D", _column: 'SC_DIV1'},
+				SC_DIV2: {_type:obj_e.TYPE_TEXT, _excel:"E", _column: 'SC_DIV2'},
+				SC_DIV3: {_type:obj_e.TYPE_TEXT, _excel:"F", _column: 'SC_DIV3'},
+				SC_DIV4: {_type:obj_e.TYPE_TEXT, _excel:"G", _column: 'SC_DIV4'},
+				SC_SAVE: {_type:obj_e.TYPE_YESORNO, _excel:"H", _column: 'SC_SAVE'},
+				audio: {_type:obj_e.TYPE_SOUND, _excel:"I", _column: 'tmq_sample_sound'},
+				correct: {_type:obj_e.TYPE_INT, _excel:"J", _column: 'tmq_answer'},
+				choice1: {_type:obj_e.TYPE_TEXT, _excel:"K", _column: 'tmq_data1_text1'},
+				choice2: {_type:obj_e.TYPE_TEXT, _excel:"L", _column: 'tmq_data2_text1'},
+				choice3: {_type:obj_e.TYPE_TEXT, _excel:"M", _column: 'tmq_data3_text1'},
+				choice4: {_type:obj_e.TYPE_TEXT, _excel:"N", _column: 'tmq_data4_text1', _default: ""},
+				tmq_seq: {_type:obj_e.TYPE_INT, _isInsertSeq: true}
+			}
+		},
+		quiz_meanings: {
+			_type : obj_e.TYPE_LIST,
+			_excelSheets:"quiz_meaning",
+			_startRow:2,
+			_typeOfQuiz: 'mc',
+			_key:"seq",				
+			
+			_item: {
+				_type: obj_e.TYPE_OBJECT,
+				seq: {_type:obj_e.TYPE_INT, _excel:"A", _column: 'tmq_key'},
+				idx: {_type:obj_e.TYPE_TEXT, _excel:"B"},
+				entry: {_type:obj_e.TYPE_TEXT, _excel:"C", _column: 'tmq_sample_text1'},
+				SC_DIV1: {_type:obj_e.TYPE_TEXT, _excel:"D", _column: 'SC_DIV1'},
+				SC_DIV2: {_type:obj_e.TYPE_TEXT, _excel:"E", _column: 'SC_DIV2'},
+				SC_DIV3: {_type:obj_e.TYPE_TEXT, _excel:"F", _column: 'SC_DIV3'},
+				SC_DIV4: {_type:obj_e.TYPE_TEXT, _excel:"G", _column: 'SC_DIV4'},
+				SC_SAVE: {_type:obj_e.TYPE_YESORNO, _excel:"H", _column: 'SC_SAVE'},
+				audio: {_type:obj_e.TYPE_SOUND, _excel:"I", _column: 'tmq_sample_sound'},
+				correct: {_type:obj_e.TYPE_INT, _excel:"J", _column: 'tmq_answer'},
+				choice1: {_type:obj_e.TYPE_TEXT, _excel:"K", _column: 'tmq_data1_text1'},
+				choice2: {_type:obj_e.TYPE_TEXT, _excel:"L", _column: 'tmq_data2_text1'},
+				choice3: {_type:obj_e.TYPE_TEXT, _excel:"M", _column: 'tmq_data3_text1'},
+				tmq_seq: {_type:obj_e.TYPE_INT, _isInsertSeq: true}
+			}
+		},
+		quiz_usages: {
+			_type : obj_e.TYPE_LIST,
+			_excelSheets:"quiz_usage",
+			_startRow:2,
+			_typeOfQuiz: 'mc',
+			_key:"seq",	
+			_item: {
+				_type: obj_e.TYPE_OBJECT,
+				seq: {_type:obj_e.TYPE_INT, _excel:"A", _column: 'tmq_key'},
+				idx: {_type:obj_e.TYPE_TEXT, _excel:"B"},
+				entry: {_type:obj_e.TYPE_TEXT, _excel:"C"},
+				SC_DIV1: {_type:obj_e.TYPE_TEXT, _excel:"D", _column: 'SC_DIV1'},
+				SC_DIV2: {_type:obj_e.TYPE_TEXT, _excel:"E", _column: 'SC_DIV2'},
+				SC_DIV3: {_type:obj_e.TYPE_TEXT, _excel:"F", _column: 'SC_DIV3'},
+				SC_DIV4: {_type:obj_e.TYPE_TEXT, _excel:"G", _column: 'SC_DIV4'},
+				SC_SAVE: {_type:obj_e.TYPE_YESORNO, _excel:"H", _column: 'SC_SAVE'},
+				sentence: {_type:obj_e.TYPE_TEXT, _excel:"I", _column: 'tmq_sample_text1'},
+				image: {_type:obj_e.TYPE_IMAGE, _excel:"J", _column: 'tmq_sample_image'},
+				correct: {_type:obj_e.TYPE_INT, _excel:"K", _column: 'tmq_answer'},
+				choice1: {_type:obj_e.TYPE_TEXT, _excel:"L", _column: 'tmq_data1_text1'},
+				choice2: {_type:obj_e.TYPE_TEXT, _excel:"M", _column: 'tmq_data2_text1'},
+				choice3: {_type:obj_e.TYPE_TEXT, _excel:"N", _column: 'tmq_data3_text1'},
+				tmq_seq: {_type:obj_e.TYPE_INT, _isInsertSeq: true}
+			}
+		},
+		quiz_spellings: {
+			_type : obj_e.TYPE_LIST,
+			_excelSheets:"quiz_spelling",
+			_startRow:2,
+			_typeOfQuiz: 'pz',
+			_key:"seq",	
+			_item: {
+				_type: obj_e.TYPE_OBJECT,
+				seq: {_type:obj_e.TYPE_INT, _excel:"A", _column: 'tmq_key'},
+				idx: {_type:obj_e.TYPE_TEXT, _excel:"B"},
+				entry: {_type:obj_e.TYPE_TEXT, _excel:"C", _column: 'tmq_sample_text1'},
+				SC_DIV1: {_type:obj_e.TYPE_TEXT, _excel:"D", _column: 'SC_DIV1'},
+				SC_DIV2: {_type:obj_e.TYPE_TEXT, _excel:"E", _column: 'SC_DIV2'},
+				SC_DIV3: {_type:obj_e.TYPE_TEXT, _excel:"F", _column: 'SC_DIV3'},
+				SC_DIV4: {_type:obj_e.TYPE_TEXT, _excel:"G", _column: 'SC_DIV4'},
+				SC_SAVE: {_type:obj_e.TYPE_YESORNO, _excel:"H", _column: 'SC_SAVE'},
+				tmq_seq: {_type:obj_e.TYPE_INT, _isInsertSeq: true}
+			}
+		},	
+	}
+};
+
+var ls_comprehension = {
+	_type:obj_e.TYPE_OBJECT,
+	_excelSheets:"comprehension",
+	_startRow:3,	
+	video: {_type:obj_e.TYPE_MOVIE, _excel:"A"},
+    video_start: {_type:obj_e.TYPE_SECOND, _excel:"Q", default: 0},
+	speakerA: {
+		_type:obj_e.TYPE_OBJECT,
+		name: {_type:obj_e.TYPE_TEXT, _excel:"B"},
+		image_s: {_type:obj_e.TYPE_IMAGE, _excel:"C"},
+		image_l: {_type:obj_e.TYPE_IMAGE, _excel:"D"},
+	},
+	speakerB: {
+		_type:obj_e.TYPE_OBJECT,
+		name: {_type:obj_e.TYPE_TEXT, _excel:"E"},
+		image_s: {_type:obj_e.TYPE_IMAGE, _excel:"F"},
+		image_l: {_type:obj_e.TYPE_IMAGE, _excel:"G"},
+	},
+	speakerC: {
+		_type:obj_e.TYPE_OBJECT,
+		name: {_type:obj_e.TYPE_TEXT, _excel:"H", _default: ""},
+		image_s: {_type:obj_e.TYPE_IMAGE, _excel:"I", _default: ""},
+		image_l: {_type:obj_e.TYPE_IMAGE, _excel:"J", _default: ""},
+	},
+	speakerD: {
+		_type:obj_e.TYPE_OBJECT,
+		name: {_type:obj_e.TYPE_TEXT, _excel:"K", _default: ""},
+		image_s: {_type:obj_e.TYPE_IMAGE, _excel:"L", _default: ""},
+		image_l: {_type:obj_e.TYPE_IMAGE, _excel:"M", _default: ""},
+	},
+	speakerE: {
+		_type:obj_e.TYPE_OBJECT,
+		name: {_type:obj_e.TYPE_TEXT, _excel:"N", _default: ""},
+		image_s: {_type:obj_e.TYPE_IMAGE, _excel:"O", _default: ""},
+		image_l: {_type:obj_e.TYPE_IMAGE, _excel:"P", _default: ""},
+	},
+	quizs: {
+		_type:obj_e.TYPE_LIST,
+		_excelSheets:"quiz",
+		_startRow:2,
+		_typeOfQuiz: 'mc',
+		_key:"seq",		
+		_item: {
+			_type: obj_e.TYPE_OBJECT,
+			seq: {_type:obj_e.TYPE_INT, _excel:"A", _column: 'tmq_key'},
+			SC_DIV1: {_type:obj_e.TYPE_TEXT, _excel:"B", _column: 'SC_DIV1'},
+			SC_DIV2: {_type:obj_e.TYPE_TEXT, _excel:"C", _column: 'SC_DIV2'},
+			SC_DIV3: {_type:obj_e.TYPE_TEXT, _excel:"D", _column: 'SC_DIV3'},
+			SC_DIV4: {_type:obj_e.TYPE_TEXT, _excel:"E", _column: 'SC_DIV4'},
+			SC_SAVE: {_type:obj_e.TYPE_YESORNO, _excel:"F", _column: 'SC_SAVE'},
+			question: {_type:obj_e.TYPE_TEXT, _excel:"G", _column: 'tmq_sample_text1'},
+			audio: {_type:obj_e.TYPE_SOUND, _excel:"H", _column: 'tmq_sample_sound'},
+			answer: {_type:obj_e.TYPE_INT, _excel:"I", _column: 'tmq_answer'},
+			choice_1: {_type:obj_e.TYPE_TEXT, _excel:"J", _column: 'tmq_data1_text1'},
+			choice_2: {_type:obj_e.TYPE_TEXT, _excel:"K", _column: 'tmq_data2_text1'},
+			choice_3: {_type:obj_e.TYPE_TEXT, _excel:"L", _column: 'tmq_data3_text1'},
+			tmq_seq: {_type:obj_e.TYPE_INT, _isInsertSeq: true}
+		}
+	},
+	scripts: {
+		_type:obj_e.TYPE_LIST,
+		_excelSheets:"script",
+		_startRow:2,
+		_key:"seq",			
+		
+		_item: {
+			_type: obj_e.TYPE_OBJECT,
+			seq: {_type:obj_e.TYPE_INT, _excel:"A"},
+			dms_seq: {_type:obj_e.TYPE_INT, _excel:"B"},
+			dms_speaker: {_type:obj_e.TYPE_TEXT, _excel:"C"},
+			dms_start: {_type:obj_e.TYPE_SECOND, _excel:"D"},
+			dms_end: {_type:obj_e.TYPE_SECOND, _excel:"E"},
+			qnums: {_type:obj_e.TYPE_ARRAY, _excel:"F", _default: []},
+			dms_eng: {_type:obj_e.TYPE_TEXT, _excel:"G"},
+			dms_kor: {_type:obj_e.TYPE_MULTI_LANG, _excel:"H", _langs:["ko", "ja", "zh-Hans", "zh-Hant", "vi", "id", "es"]},
+		}
+	},
+	letstalk: {
+		_type:obj_e.TYPE_OBJECT,
+		_excelSheets:"lets_talk",
+		_startRow:2,
+		_type: obj_e.TYPE_OBJECT,
+        sentence: {_type:obj_e.TYPE_TEXT, _excel:"A", _default: ''},
+        audio: {_type:obj_e.TYPE_SOUND, _excel:"B", _default: ''},
+        img1: {_type:obj_e.TYPE_IMAGE, _excel:"C", _default: ''},
+        img2: {_type:obj_e.TYPE_IMAGE, _excel:"D", _default: ''},
+        sample: {_type:obj_e.TYPE_TEXT, _excel:"E", _default: ''},
+        hint: {_type:obj_e.TYPE_TEXT, _excel:"F", _default: ''}
+	}
+};
+
+var b_rw_comprehension = {
+	_type: obj_e.TYPE_OBJECT,
+	_excelSheets:"comprehension",
+	_startRow:2,
+	video: {_type:obj_e.TYPE_MOVIE, _excel:"A"},
+	audio: {_type:obj_e.TYPE_SOUND, _excel:"B"},
+	visualizing_type: {_type:obj_e.TYPE_INT, _excel:"C"},	
+	warmup_type: {_type:obj_e.TYPE_INT, _excel:"D"},	
+	warmup_video: {_type:obj_e.TYPE_MOVIE, _excel:"E", _default: ''},
+	summary_audio: {_type:obj_e.TYPE_SOUND, _excel:"F"},
+    warmup_video_start: {_type:obj_e.TYPE_SECOND, _excel:"G", default: 0},
+    video_start: {_type:obj_e.TYPE_SECOND, _excel:"H", default: 0},
+	scripts: {
+		_type:obj_e.TYPE_LIST,
+		_excelSheets:"script",
+		_startRow:2,
+		_key:"seq",	
+		_item: {
+			_type: obj_e.TYPE_OBJECT,
+			seq: {_type:obj_e.TYPE_INT, _excel:"A"},	
+			dms_seq: {_type:obj_e.TYPE_INT, _excel:"B"},
+			passage_page: {_type:obj_e.TYPE_INT, _excel:"C"},
+			checkup_num: {_type:obj_e.TYPE_INT, _excel:"D"},
+			dms_start: {_type:obj_e.TYPE_SECOND, _excel:"E"},
+			dms_end: {_type:obj_e.TYPE_SECOND, _excel:"F"},
+			audio_start: {_type:obj_e.TYPE_SECOND, _excel:"G"},
+			audio_end: {_type:obj_e.TYPE_SECOND, _excel:"H"},
+			dms_eng: {_type:obj_e.TYPE_TEXT, _excel:"I"},
+			dms_passage: {_type:obj_e.TYPE_TEXT, _excel:"J"},
+			dms_kor: {_type:obj_e.TYPE_MULTI_LANG, _excel:"K", _langs:["ko"]},
+		}		
+	},
+	warmup_scripts: {
+		_type:obj_e.TYPE_LIST,
+		_excelSheets:"warmup_script",
+		_startRow:2,
+		_key:"seq",	
+		_item: {
+			_type: obj_e.TYPE_OBJECT,
+			seq: {_type:obj_e.TYPE_INT, _excel:"A"},	
+			dms_seq: {_type:obj_e.TYPE_INT, _excel:"B"},
+			dms_start: {_type:obj_e.TYPE_SECOND, _excel:"C"},
+			dms_end: {_type:obj_e.TYPE_SECOND, _excel:"D"},
+			dms_eng: {_type:obj_e.TYPE_TEXT, _excel:"E"},
+			dms_kor: {_type:obj_e.TYPE_MULTI_LANG, _excel:"F", _langs:["ko"]},
+		}		
+	},
+	warmup: {
+		_type:obj_e.TYPE_LIST,
+		_excelSheets:"warmup",
+		_startRow:2,
+		_key:"seq",	
+		_item: {
+			_type: obj_e.TYPE_OBJECT,
+			seq: {_type:obj_e.TYPE_INT, _excel:"A"},
+			question: {_type:obj_e.TYPE_TEXT, _excel:"B"},
+			audio:{_type:obj_e.TYPE_SOUND, _excel:"C"},
+			speaker: {_type:obj_e.TYPE_IMAGE, _excel:"D"},
+			image: {_type:obj_e.TYPE_IMAGE, _excel:"E", _default: ""},
+		}
+	},
+	passage: {
+		_type:obj_e.TYPE_LIST,
+		_excelSheets:"passage",
+		_startRow:2,
+		_key:"page",
+		_item: {
+			_type: obj_e.TYPE_OBJECT,
+			page: {_type:obj_e.TYPE_INT, _excel:"A"},
+			start: {_type:obj_e.TYPE_SECOND, _excel:"B"},
+			end: {_type:obj_e.TYPE_SECOND, _excel:"C"},
+			image: {_type:obj_e.TYPE_IMAGE, _excel:"D"},
+		}		
+	},
+	question: {
+		_type:obj_e.TYPE_LIST,
+		_excelSheets:"question",
+		_startRow:2,
+		_typeOfQuiz: 'mc',
+		_key:"seq",	
+		_item: {
+			_type: obj_e.TYPE_OBJECT,
+			seq: {_type:obj_e.TYPE_INT, _excel:"A", _column: 'tmq_key'},
+			SC_DIV1: {_type:obj_e.TYPE_TEXT, _excel:"B", _column: 'SC_DIV1'},
+			SC_DIV2: {_type:obj_e.TYPE_TEXT, _excel:"C", _column: 'SC_DIV2'},
+			SC_DIV3: {_type:obj_e.TYPE_TEXT, _excel:"D", _column: 'SC_DIV3'},
+			SC_DIV4: {_type:obj_e.TYPE_TEXT, _excel:"E", _column: 'SC_DIV4'},
+			SC_SAVE: {_type:obj_e.TYPE_YESORNO, _excel:"F", _column: 'SC_SAVE'},
+			question: {_type:obj_e.TYPE_TEXT, _excel:"G", _column: 'tmq_sample_text1'},
+			audio: {_type:obj_e.TYPE_SOUND, _excel:"H", _column: 'tmq_sample_sound'},
+			answer: {_type:obj_e.TYPE_INT, _excel:"I", _column: 'tmq_answer'},
+			choice_1: {_type:obj_e.TYPE_TEXT, _excel:"J", _column: 'tmq_data1_text1'},
+			choice_2: {_type:obj_e.TYPE_TEXT, _excel:"K", _column: 'tmq_data2_text1'},
+			choice_3: {_type:obj_e.TYPE_TEXT, _excel:"L", _column: 'tmq_data3_text1'},
+			choice_4: {_type:obj_e.TYPE_TEXT, _excel:"M", _column: 'tmq_data4_text1', _default: ""},
+			hint: {_type:obj_e.TYPE_TEXT, _excel:"N"},
+			tmq_seq: {_type:obj_e.TYPE_INT, _isInsertSeq: true}
+		}
+	},
+	checkup: {
+		_type:obj_e.TYPE_LIST,
+		_excelSheets:"checkup",
+		_startRow:2,
+		_typeOfQuiz: 'mc',
+		_key:"seq",	
+		_item: {
+			_type: obj_e.TYPE_OBJECT,
+			seq: {_type:obj_e.TYPE_INT, _excel:"A"},
+			question: {_type:obj_e.TYPE_TEXT, _excel:"B"},
+			answer: {_type:obj_e.TYPE_INT, _excel:"C"},
+			choice_1: {_type:obj_e.TYPE_TEXT, _excel:"D"},
+			choice_2: {_type:obj_e.TYPE_TEXT, _excel:"E"},
+			SC_DIV1: {_type:obj_e.TYPE_TEXT, _excel:"F", _column: 'SC_DIV1'},
+			SC_DIV2: {_type:obj_e.TYPE_TEXT, _excel:"G", _column: 'SC_DIV2'},
+			SC_DIV3: {_type:obj_e.TYPE_TEXT, _excel:"H", _column: 'SC_DIV3'},
+			SC_DIV4: {_type:obj_e.TYPE_TEXT, _excel:"I", _column: 'SC_DIV4'},
+			SC_SAVE: {_type:obj_e.TYPE_YESORNO, _excel:"J", _column: 'SC_SAVE'},			
+			tmq_seq: {_type:obj_e.TYPE_INT, _isInsertSeq: true}
+		}
+	},
+	graphic: {
+		_type:obj_e.TYPE_LIST,
+		_excelSheets:"visualizing",
+		_startRow:3,
+		_typeOfQuiz: 'mc',
+		_key:"seq",	
+		_item: {
+			_type: obj_e.TYPE_OBJECT,
+			seq: {_type:obj_e.TYPE_INT, _excel:"A", _column: 'tmq_key'},
+			title: {_type:obj_e.TYPE_TEXT, _excel:"B"},
+			question: {_type:obj_e.TYPE_TEXT, _excel:"C", _default: '', _column: 'tmq_sample_text1'},
+			answer: {_type:obj_e.TYPE_INT, _excel:"D", _default: 0},
+			choice_1: {_type:obj_e.TYPE_TEXT, _excel:"E", _default: ''},
+			choice_2: {_type:obj_e.TYPE_TEXT, _excel:"F", _default: ''},
+			choice_3: {_type:obj_e.TYPE_TEXT, _excel:"G", _default: ''},
+			choice_4: {_type:obj_e.TYPE_TEXT, _excel:"H", _default: ''},
+			answer2: {_type:obj_e.TYPE_INT, _excel:"I", _default: 0},
+			choice2_1: {_type:obj_e.TYPE_TEXT, _excel:"J", _default: ''},
+			choice2_2: {_type:obj_e.TYPE_TEXT, _excel:"K", _default: ''},
+			choice2_3: {_type:obj_e.TYPE_TEXT, _excel:"L", _default: ''},
+			choice2_4: {_type:obj_e.TYPE_TEXT, _excel:"M", _default: ''},
+			answer3: {_type:obj_e.TYPE_INT, _excel:"N", _default: 0},
+			choice3_1: {_type:obj_e.TYPE_TEXT, _excel:"O", _default: ''},
+			choice3_2: {_type:obj_e.TYPE_TEXT, _excel:"P", _default: ''},
+			choice3_3: {_type:obj_e.TYPE_TEXT, _excel:"Q", _default: ''},
+			choice3_4: {_type:obj_e.TYPE_TEXT, _excel:"R", _default: ''},
+			answer4: {_type:obj_e.TYPE_INT, _excel:"S", _default: 0},
+			choice4_1: {_type:obj_e.TYPE_TEXT, _excel:"T", _default: ''},
+			choice4_2: {_type:obj_e.TYPE_TEXT, _excel:"U", _default: ''},
+			choice4_3: {_type:obj_e.TYPE_TEXT, _excel:"V", _default: ''},
+			choice4_4: {_type:obj_e.TYPE_TEXT, _excel:"W", _default: ''},
+			SC_DIV1: {_type:obj_e.TYPE_TEXT, _excel:"X", _column: 'SC_DIV1'},
+			SC_DIV2: {_type:obj_e.TYPE_TEXT, _excel:"Y", _column: 'SC_DIV2'},
+			SC_DIV3: {_type:obj_e.TYPE_TEXT, _excel:"Z", _column: 'SC_DIV3'},
+			SC_DIV4: {_type:obj_e.TYPE_TEXT, _excel:"AA", _column: 'SC_DIV4'},
+			SC_SAVE: {_type:obj_e.TYPE_YESORNO, _excel:"AB", _column: 'SC_SAVE'},			
+			tmq_seq: {_type:obj_e.TYPE_INT, _isInsertSeq: true}
+		}
+	},
+	summarizing: {
+		_type:obj_e.TYPE_LIST,
+		_excelSheets:"summarizing",
+		_startRow:2,
+		_typeOfQuiz: 'mc',
+		_key:"seq",	
+		_item: {
+			_type: obj_e.TYPE_OBJECT,
+			seq: {_type:obj_e.TYPE_INT, _excel:"A"},
+			image: {_type:obj_e.TYPE_IMAGE, _excel:"B"},
+			question: {_type:obj_e.TYPE_TEXT, _excel:"C"},	
+			script_seq: {_type:obj_e.TYPE_INT, _excel:"D"},
+			answer: {_type:obj_e.TYPE_INT, _excel:"E"},
+			choice_1: {_type:obj_e.TYPE_TEXT, _excel:"F"},	
+			choice_2: {_type:obj_e.TYPE_TEXT, _excel:"G"},	
+			choice_3: {_type:obj_e.TYPE_TEXT, _excel:"H"},
+			SC_DIV1: {_type:obj_e.TYPE_TEXT, _excel:"I", _column: 'SC_DIV1'},
+			SC_DIV2: {_type:obj_e.TYPE_TEXT, _excel:"J", _column: 'SC_DIV2'},
+			SC_DIV3: {_type:obj_e.TYPE_TEXT, _excel:"K", _column: 'SC_DIV3'},
+			SC_DIV4: {_type:obj_e.TYPE_TEXT, _excel:"L", _column: 'SC_DIV4'},
+			SC_SAVE: {_type:obj_e.TYPE_YESORNO, _excel:"M", _column: 'SC_SAVE'},			
+			tmq_seq: {_type:obj_e.TYPE_INT, _isInsertSeq: true}		
+		}
+	},
+	summarizing_scripts: {
+		_type:obj_e.TYPE_LIST,
+		_excelSheets:"summarizing_script",
+		_startRow:2,
+		_key:"seq",	
+		_item: {
+			_type: obj_e.TYPE_OBJECT,
+			seq: {_type:obj_e.TYPE_INT, _excel:"A"},	
+			summary_seq: {_type:obj_e.TYPE_INT, _excel:"B"},
+			audio_start: {_type:obj_e.TYPE_SECOND, _excel:"C"},
+			audio_end: {_type:obj_e.TYPE_SECOND, _excel:"D"},
+			dms_eng: {_type:obj_e.TYPE_TEXT, _excel:"E"},
+		}
+	},
+	letstalk: {
+		_type:obj_e.TYPE_OBJECT,
+		_excelSheets:"lets_talk",
+		_startRow:2,
+		_type: obj_e.TYPE_OBJECT,
+        sentence: {_type:obj_e.TYPE_TEXT, _excel:"A", _default:''},
+        audio: {_type:obj_e.TYPE_SOUND, _excel:"B", _default:''},
+        img1: {_type:obj_e.TYPE_IMAGE, _excel:"C", _default:''},
+        img2: {_type:obj_e.TYPE_IMAGE, _excel:"D", _default: ''},
+        sample: {_type:obj_e.TYPE_TEXT, _excel:"E", _default:''},
+        hint: {_type:obj_e.TYPE_TEXT, _excel:"F", _default:''}
+	},
+	storybook: {
+		_type:obj_e.TYPE_LIST,
+		_excelSheets:"storybook",
+		_startRow:2,
+		_key:"seq",	
+		_item: {
+			_type: obj_e.TYPE_OBJECT,
+			seq: {_type:obj_e.TYPE_INT, _excel:"A"},
+			image: {_type:obj_e.TYPE_IMAGE, _excel:"B"}
+		}
+	}
+}
+
+
+
+var area = document.getElementById('area');
+alert('b_rw_comprehension_y3');
+area.value = JSON.stringify(b_rw_comprehension_y3);
+// document.write(JSON.stringify(korea_speak_quiz ))
+console.log(JSON.stringify(b_rw_comprehension_y3));
+	</script>
+ </body>
+</html>

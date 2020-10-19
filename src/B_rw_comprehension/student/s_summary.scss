@@ -1,0 +1,248 @@
+@import '../../share/sendui.scss';
+@import '../../share/QuizMCBtn.scss';
+
+@mixin s_summary{
+	.s_summary{
+		@include page;
+
+		.btn_page_box {
+			width: 100%; height: 0px;
+			display: inline-block;
+			position: absolute; top: 40px;
+			overflow: visible;text-align: center;
+			z-index: 2;
+			cursor: pointer;
+			&>span {
+				margin: 0px 22px;
+				font-size: 30px;
+				font-weight: bold; 
+				color: rgba(255, 255, 255, 0.4);
+				&.on {color: rgb(248, 246, 77);}
+				}
+			&.off{display: none;}
+		}
+		.table-container {
+			@include page;
+			overflow: hidden;
+			.table-wrapper{
+				@include page;
+				overflow: visible;
+				white-space: nowrap;
+				transition: left 0.3s;
+				&>div{
+					position: relative;
+					width: 100%; height: 100%;
+					display: inline-block;
+					vertical-align: top;
+
+					text-align: center;
+
+					&.summary-item {
+						.quizs_box {
+							position: relative;
+							margin: 95px auto 40px auto;
+							width: 1080px;
+							height: 357px;
+							background-color: rgba(255, 255, 255, 0.9);
+							border-radius: 20px;
+
+							text-align: left;
+
+							&>img {
+								display: inline-block;
+								vertical-align: top;
+								margin: 0px 40px;
+								width: 413px; height: 247px;
+								border-radius: 4px;
+								box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.4);
+
+								position: relative;
+								top: 50%; transform: translateY(-50%);
+							}							
+
+							&>div{
+								display: inline-block;
+								vertical-align: top;	
+								white-space: normal;
+                                width: 560px;
+                                height: 357px; 
+                                padding: 40px 0 40px 0;
+								position: relative;
+                                overflow: hidden;
+                                &>.swiper-container{
+                                    width: 560px;
+                                    height: 260px;
+                                    top: 50%; transform: translateY(-50%);
+                                    .txt_box{
+                                        width: 547px;
+                                        font-size: 40px; letter-spacing: -1px;
+                                        font-family: NotoSans;
+                                        color: rgb(0, 0, 0);
+                                        margin: 10px 0 10px 0;
+                                        .block {
+                                            color: transparent;
+                                            border-bottom: 2px solid rgb(0, 0, 0);
+                                            &.view{
+                                                color: rgb(0, 0, 0);
+                                                border-bottom: 2px solid rgb(0, 0, 0);	
+                                            }
+                                        }
+                                    }
+
+                                    .swiper-slide{
+                                        height: auto;
+                                    }
+                                    .swiper-scrollbar{
+                                        margin-right: 0px;
+                                        width: 7px;
+                                        background-color: transparent;
+                                        .swiper-scrollbar-drag {
+                                            background-color: rgba(0, 0, 0, 0.3);
+                                        }
+                                    }
+                                }
+
+							}
+						}
+						.choice_box {
+							text-align: center;
+							white-space: normal;
+							.btn_choice {
+								@include btn_on(
+									resolve('student/images/btn_summary_s.png'),
+									resolve('student/images/btn_summary_s_down.png'),
+									width('student/images/btn_summary_s.png'),
+									height('student/images/btn_summary_s.png')
+								);
+								position: relative;
+								@include quiz-btn-mc;
+
+								padding: 0px 10px 6px 55px;
+								margin-bottom: 11.5px;
+								
+								&>div {
+									position: relative; top: -5px;
+									color: rgb(0, 0, 0);
+									text-align: left;
+								}
+								
+							}
+						}
+					}
+					&.s_summary_result{
+						.swiper-container{
+							width: 100%;
+							height: 100%;
+
+							.summary_box {
+								margin-top: 0px;
+								
+								.quiz_box {	
+                                    width: 1158px; 
+                                    min-height: 204px;
+									background-color: #E0EFFE;
+									margin-left: 52px;
+									border-radius: 5px;
+									overflow: hidden;
+									z-index: 1;
+									text-align: left;
+                                    box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.2);
+                                    display: table;
+									
+									.img-box {
+                                        /* rw_comprehension 190425 수정사항 p.27 */
+                                        width: 288px; height: 180px;
+                                        padding-left: 12px;
+										&>img {
+											position: relative;
+											width: 288px; 
+                                            height: 180px;
+                                            top: 5px;
+										}
+									}					
+									&>div {
+                                        display: table-cell;
+                                        vertical-align: middle;
+										font-size: 32px;
+										letter-spacing: -1.2px;
+										text-align: left; 
+										height: auto;
+										white-space: normal;
+                                        margin-left: 20px;
+										
+										&>.block{
+											color: transparent;
+											border-bottom: 2px solid transparent;
+
+											&.wrong{
+												color: #f00;
+												border-bottom-color: transparent;
+											}
+											&.correct{
+												color: rgb(0, 0, 255);
+												border-bottom-color: transparent;
+											}
+											&.view{
+												color: rgb(0, 0, 255);
+											}
+										}
+				
+										&.view-correct{
+											&>.block{
+												color: rgb(0, 0, 255);
+												border-bottom-color: transparent;
+											}							
+                                        }
+                                        
+                                        &:nth-child(2){ 
+                                           padding: 15px 40px 15px 40px;
+                                        }
+									}
+								}
+								.btn_arrow_down {
+									background-image: resolve('student/images/btn_arrow_down.png');
+									width: width('student/images/btn_arrow_down.png'); 
+									height: height('student/images/btn_arrow_down.png');
+									position: relative;
+									margin: 0px auto;
+								}
+							}
+							.summary_box:first-child{
+								margin-top: 50px;
+							}
+							.summary_box:last-child{
+								margin-bottom: 50px;
+							}
+							.swiper-slide{
+								height: auto;
+							}
+							.swiper-scrollbar{
+								margin-right: 5px;
+								width: 7px;
+								background-color: transparent;
+								.swiper-scrollbar-drag {
+									background-color: rgba(255, 255, 255, 0.6);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.btn_next {
+			@include btn_down_dis(
+				resolve('student/images/btn_next.png'),
+				resolve('student/images/btn_next_down.png'),
+				resolve('student/images/btn_next.png'),
+				width('student/images/btn_next.png'),
+				height('student/images/btn_next.png')
+			);
+			position: absolute; top: 50%; right: 25px; transform: translateY(-50%);
+		}
+		.fel_toteacher {
+			@include fel_toteacher;
+		}
+
+
+	}
+}

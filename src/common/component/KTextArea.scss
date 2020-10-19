@@ -1,0 +1,53 @@
+.k-tarea{
+	box-sizing: border-box;
+	overflow: hidden;
+	font-family: NotoSans;
+	.k-tarea-bg{
+		position: relative;
+	}
+	textarea {
+		box-sizing: border-box;
+		position: absolute;
+		left:0px; width: 100%;
+		top:0px; bottom: 2px;
+		resize: none;
+		border-width: 0px;
+		outline-width: 0px;
+		background-color: transparent;
+		overflow: hidden;
+	}
+
+	.k-tarea-bar{
+		touch-action: none;
+		position: absolute;
+		right: 0px;width: 29px;
+		top: 1%; height: 98%;
+		.k-tarea-drag {
+			position: absolute;
+			width: 9px;right:5px;
+			background: rgba(0, 0, 0, 0.3);
+			border-radius: 10px;
+		}
+	}
+
+	&.auto-resize{
+		height: auto;
+		textarea {
+			bottom: unset;
+		}
+		.k-tarea-bar{
+			display: none;
+		}
+	}
+	/*
+	@mixin k_trea_bar($width, $color, $radius) {
+		background: rgba(0, 0, 0, 0);
+		width:$width;
+		.swiper-scrollbar-drag {
+			width:$width;
+			background: $color;
+			border-radius: $radius;
+		}
+	}
+	*/
+}

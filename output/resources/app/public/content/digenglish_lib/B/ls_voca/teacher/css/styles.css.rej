@@ -1,0 +1,9 @@
+diff a/output/resources/app/public/content/digenglish_lib/B/ls_voca/teacher/css/styles.css b/output/resources/app/public/content/digenglish_lib/B/ls_voca/teacher/css/styles.css	(rejected hunks)
+@@ -641,7 +641,6 @@
+     outline: none;
+     background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_check_box.png");
+     background-repeat: no-repeat;
+-    height: 36px;
+     width: 33px;
+     height: 33px;
+     pointer-events: unset;

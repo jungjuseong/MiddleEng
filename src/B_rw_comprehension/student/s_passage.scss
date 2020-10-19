@@ -1,0 +1,135 @@
+@import '../../share/sendui.scss';
+
+@mixin s_passage{
+	.s_passage{
+		@include page;
+		/* background-color: rgba(255, 255, 255, 0.2); */
+		background-image: resolve('student/images/bg_s_passage.png');
+		.passage_page {
+			width: 74px; height: 36px;
+			/*background-color: rgba(195, 169, 191,0.9);
+			border-radius: 50px; */
+			position: absolute; top: 7px; right: 30px;
+			text-align: right;
+			&>span {
+				font-size: 20px;   font-weight: bold;
+				color: rgb(255, 255, 255);
+				line-height: 33px;
+			}
+		}
+		.page {
+			width: 1200px; height: 680px;
+			overflow: hidden;
+			position: absolute; top: 78px; left: 40px;
+			.swiper-container{
+				width: 100%; height: 100%;
+				position: absolute; top: 0px;
+				overflow: hidden; 
+				color: rgb(255, 255, 255);
+				padding: 0px 32px;
+				touch-action: none;
+				.script {
+					line-height: 75px;
+					white-space: normal; word-break: normal;
+					font-size: 40px; letter-spacing: -1.8px;
+					height: auto;
+					.eng{
+						height: auto;
+						color: rgb(0, 0, 0);
+						&>span.word{
+							transition-duration: 0.3s;
+							display: inline-block;
+							vertical-align: top;
+							line-height: 60px;
+							padding: 0px 6px;
+						}
+						
+						&.on { 
+							color: rgb(0, 0, 255);
+							&.bg-on { 
+    							&>span{
+									background-color: rgb(255, 240, 142);
+								}
+							}
+						}
+
+						&.selected { 
+							color: rgb(0, 0, 255);
+						}
+
+						&.view-trans{
+							line-height: 1.3;
+						}
+					}
+					.trans {
+						padding: 0px 6px;
+						position: relative;
+						font-size: 34px;
+						line-height: 1.3;
+						font-weight: bold;
+						color: rgb(0, 0, 255);
+						margin-bottom: 20px;
+						&>span {background-color: rgb(255, 240, 142);}
+					}
+				}
+				.swiper-slide{
+					height: auto;
+				}
+				.swiper-scrollbar{
+					@include swiper_scrollbar(7px, rgba(0, 0, 0, 0.25), 10px);
+				}
+			}
+		}
+		.img_pop {
+			pointer-events: none;
+			opacity: 0;
+			position: absolute;	bottom: 21px; left: 275px;
+			background-image: resolve('student/images/pop_click.png');
+			width:  width('student/images/pop_click.png');
+			height: height('student/images/pop_click.png');
+			z-index: 2;
+			transition: opacity 0.3s;
+			&.on{
+				opacity: 1;
+			}
+		}
+		.btn_box {
+			$MYH: 142px;
+			border-top-left-radius: 25px;
+			border-top-right-radius: 25px;
+			width: 664px; 
+			height: $MYH;
+			position: absolute; bottom: -$MYH; 
+			left: 50%; transform: translate(-50%, 0%);
+			background-color: rgba(0, 0, 0, 0.8);
+			z-index: 5;
+			text-align: center;
+
+			transition: bottom 0.3s;
+			.btn_yes {
+				margin: 25px 10px;
+				@include btn_on(
+					resolve('student/images/btn_yes.png'),
+					resolve('student/images/btn_yes_down.png'),
+					width('student/images/btn_yes.png'),
+					height('student/images/btn_yes.png')
+				);
+			}
+			.btn_no {
+				margin: 25px 10px;
+				@include btn_on(
+					resolve('student/images/btn_no.png'),
+					resolve('student/images/btn_no_down.png'),
+					width('student/images/btn_no.png'),
+					height('student/images/btn_no.png')
+				);
+			}
+			&.on{
+				bottom: 0px; 
+			}
+		}
+		.fel_toteacher {
+			@include fel_toteacher;
+		}
+	}
+}

@@ -1,0 +1,214 @@
+@import '../share/Timer.scss';
+
+@mixin quiz_spelling{
+	position: relative;
+	&>.btn_audio {
+		position: absolute;
+		top: 172px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	&>.spelling {
+		position: absolute;
+		left:0px;width: 100%;
+		top: 303px;height: auto;
+		text-align: center;
+
+		&>.target-box {
+			position: relative;	
+			width: 100%;
+			text-align: center;
+			&>.pz-tgt{
+				display: inline-block;
+				position: relative;
+				
+				&>span{
+					display: none;
+					line-height: 100%;
+				}
+				&.wrong{
+					&>span{
+						position: absolute;
+						display: inline-block;
+						left:0px;
+						font-weight: bold;
+						/* color: rgba(238, 26, 47, 0.749); */
+						color: rgb(0, 13, 255);
+						line-height: 130%;
+					}
+				}
+			}
+			&.big{
+				&>.pz-tgt{
+					margin: 0 9px;
+					background: resolve('teacher/images/btn_blank_L.png') no-repeat;
+					width: width('teacher/images/btn_blank_L.png');
+					height: height('teacher/images/btn_blank_L.png');
+				}
+				&>.pz-tgt.wrong{
+					&>span{
+						font-size: 100px;
+						background: resolve('teacher/images/btn_alpha_L_answer.png') no-repeat;
+						width: width('teacher/images/btn_alpha_L_answer.png');
+						height: height('teacher/images/btn_alpha_L_answer.png');
+						/* top: height('teacher/images/btn_blank_L.png'); */
+					}
+				}
+			}
+			&.middle{
+				&>.pz-tgt{
+					margin: 0 6px;
+					background: resolve('teacher/images/btn_blank_M.png') no-repeat;
+					width: width('teacher/images/btn_blank_M.png');
+					height: height('teacher/images/btn_blank_M.png');
+				}
+				&>.pz-tgt.wrong{
+					&>span{
+						font-size: 70px;
+						background: resolve('teacher/images/btn_alpha_M_answer.png') no-repeat;
+						width: width('teacher/images/btn_alpha_M_answer.png');
+						height: height('teacher/images/btn_alpha_M_answer.png');
+						/* top: height('teacher/images/btn_blank_M.png'); */
+					}
+				}
+			}
+			&.small{
+				&>.pz-tgt{
+					margin: 0 2px;
+					background: resolve('teacher/images/btn_blank_S.png') no-repeat;
+					width: width('teacher/images/btn_blank_S.png');
+					height: height('teacher/images/btn_blank_S.png');
+				}
+				&>.pz-tgt.wrong{
+					&>span{
+						font-size: 54px;
+						background: resolve('teacher/images/btn_alpha_S_answer.png') no-repeat;
+						width: width('teacher/images/btn_alpha_S_answer.png');
+						height: height('teacher/images/btn_alpha_S_answer.png');
+						/* top: height('teacher/images/btn_blank_S.png'); */
+					}
+				}
+			}
+			&.x-small{
+				&>.pz-tgt{
+					margin: 0 1.5px;
+					background: resolve('teacher/images/btn_blank_S.png') no-repeat;
+					width : width('teacher/images/btn_alpha_S.png') * 0.84;
+					height : height('teacher/images/btn_alpha_S.png') * 0.84;
+					background-size: contain;
+					background-position: 50% 0;
+				}
+				&>.pz-tgt.wrong{
+					&>span{
+						font-size: 52px;
+						background: resolve('teacher/images/btn_alpha_S_answer.png') no-repeat;
+						width: width('teacher/images/btn_alpha_S_answer.png') * 0.84;
+						height: height('teacher/images/btn_alpha_S_answer.png') * 0.84;
+						background-size: contain;
+						background-position: 50% 0;
+						/* top: height('teacher/images/btn_blank_S.png'); */
+					}
+				}
+			}
+		}
+		&>.source-box {
+			position: relative;
+			margin-top: 50px;
+			text-align: center;
+			&>.pz-src{
+				position: relative;
+				display: inline-block;
+				white-space: pre;
+				color: rgb(0,0,0);
+				text-align: center;
+				line-height: 100%;
+				font-weight: bold;
+			}
+			&.big{
+				&>.pz-src{
+					@include btn_down_dis(
+						resolve('teacher/images/btn_alpha_L.png'),
+						resolve('teacher/images/btn_alpha_L_down.png'),
+						resolve('teacher/images/btn_alpha_L.png'),
+						width('teacher/images/btn_alpha_L.png'),
+						height('teacher/images/btn_alpha_L.png')
+					);
+					font-size: 90px;
+					margin:0px 9px;
+					padding-bottom: 18px;
+				}
+				&>.pz-src.wrong{
+					background: transparent;
+					top: height('teacher/images/btn_blank_L.png');
+				}
+			}
+			&.middle{
+				&>.pz-src{
+					@include btn_down_dis(
+						resolve('teacher/images/btn_alpha_M.png'),
+						resolve('teacher/images/btn_alpha_M_down.png'),
+						resolve('teacher/images/btn_alpha_M.png'),
+						width('teacher/images/btn_alpha_M.png'),
+						height('teacher/images/btn_alpha_M.png')
+					);
+					font-size: 70px;
+					margin:0px 6px;
+					padding-bottom: 22px;
+				}
+				&>.pz-src.wrong{
+					background: transparent;
+					top: height('teacher/images/btn_blank_M.png');
+				}
+			}
+			&.small{
+				&>.pz-src{
+					@include btn_down_dis(
+						resolve('teacher/images/btn_alpha_S.png'),
+						resolve('teacher/images/btn_alpha_S_down.png'),
+						resolve('teacher/images/btn_alpha_S.png'),
+						width('teacher/images/btn_alpha_S.png'),
+						height('teacher/images/btn_alpha_S.png')
+					);
+					font-size: 54px;
+					margin:0px 2px;
+					padding-bottom: 12px;
+				}
+				&>.pz-src.wrong{
+					background: transparent;
+					top: height('teacher/images/btn_blank_S.png');
+				}
+			}
+			&.x-small{
+				&>.pz-src{
+					@include btn_down_dis(
+						resolve('teacher/images/btn_alpha_S.png'),
+						resolve('teacher/images/btn_alpha_S_down.png'),
+						resolve('teacher/images/btn_alpha_S.png'),
+						width('teacher/images/btn_alpha_S.png'),
+						height('teacher/images/btn_alpha_S.png')
+					);
+					width : width('teacher/images/btn_alpha_S.png') * 0.84;
+					height : height('teacher/images/btn_alpha_S.png') * 0.84;
+					background-size: contain;
+					background-position: 50% 0;
+					padding-bottom: 16px;
+					font-size: 47px;
+					margin:0 1.5px;
+				}
+				&>.pz-src.wrong{
+					background: transparent;
+					top: height('teacher/images/btn_blank_S.png') * 0.84;
+				}
+			}
+
+		}
+	
+	}
+
+	&.student{
+		&>.btn_audio{ display: none; }
+		&>.spelling { top: 293px; }		
+	}
+
+}
+

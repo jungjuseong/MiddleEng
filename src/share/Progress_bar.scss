@@ -1,0 +1,304 @@
+@mixin share-progress {
+	&>.progress_box {
+		border-radius: 5px;
+		background-color: rgba(0, 0, 0,0.15);
+		position: absolute;
+		left: 1013px;
+		top: 20px;
+		width: 184px;
+		height: 79px;
+		&>.title {
+			font-size: 10px;
+			color: rgb(255, 255, 255);
+			line-height: 1.2;
+			position: relative;
+			top: 1px;
+			left: 12px;
+			float: left;
+			width: 100px;
+			margin-top: 5px;
+			&.on {
+				color: rgb(0, 156, 92);
+			}
+		}
+		&>.progress_bar {
+			position: relative;
+			top: 3px;
+			left: -30px;
+			width: 72px;
+			height: 9px;		
+			border-radius: 4px;
+			background-color: rgba(0, 0, 0,0.2);
+			float: left;
+			margin-top: 5px;
+			&>.data {
+				position: relative;
+				display: inline-block;
+				vertical-align: top;
+				height: 100%;
+				background-color: rgb(43, 97, 75);
+				border-radius: 4px;
+				&.on {
+					background-color: rgb(0, 156, 92);
+				}
+			}
+			&>.data_percent {
+				float: left;
+				position: absolute;
+				top: 0px;
+				left: 80px;
+				font-size: 10px;
+				color: rgb(255, 255, 255);
+				line-height: 1.2;
+				&.on {
+					color: rgb(0, 156, 92);
+				}
+			}
+			
+		}
+	}
+	&>.correct_box {
+		border-radius: 5px;
+		background-color: rgba(0, 0, 0,0.15);
+		position: absolute;
+		left: 1016px;
+		top: 57px;
+		width: 181px;
+		height: 61px;
+		&>.progress_bar {
+			border-radius: 4px;
+			width: 109px;
+			height: 9px;
+			background-color: rgba(0, 0, 0,0.25);
+
+			position: relative;
+			top: -1px;
+			left: 0px;
+			margin: 15px;
+			.colorA {
+				position: relative;
+				display: inline-block;
+				vertical-align: top;
+				height: 100%;
+				background-color: rgb(0, 202, 162);
+				border-radius: 4px;
+			}
+			.colorB {
+				position: relative;
+				display: inline-block;
+				vertical-align: top;
+				height: 100%;
+				background-color: rgb(249, 255, 94);
+				border-radius: 4px;
+			}
+			&>.data_percent {				
+				font-size: 14px;
+				color: rgba(255, 255, 255, 0.5);
+				line-height: 1.2;
+				text-align: left;	
+
+				float: left;
+				position: absolute;
+				top: -5px;
+				left: 121px;
+			}
+		}  
+		&.sentence {
+			position: absolute;
+			left: 840px;
+			top: 20px;
+		}
+	}
+	&>.none {
+		display: none;
+	}
+}
+
+@mixin correct_box ($top, $right){
+	border-radius: 5px;
+	background-color: rgba(0, 0, 0,0.15);
+	position: absolute;
+	right: $right;
+	top: $top;
+	width: 181px;
+	height: 61px;
+	&>.progress_bar {
+		border-radius: 4px;
+		width: 79px;
+		height: 6.5px;
+		background-color: rgba(0, 0, 0,0.25);
+
+		position: relative;
+		top: -1px;
+		left: 0px;
+		margin: 15px;
+		.colorA {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			height: 100%;
+			background-color: rgb(0, 202, 162);
+			border-radius: 4px;
+		}
+		.colorB {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			height: 100%;
+			background-color: rgb(249, 255, 94);
+			border-radius: 4px;
+		}
+		&>.data_percent {				
+			font-size: 10px;
+			color: rgba(255, 255, 255, 0.5);
+			line-height: 1.2;
+			text-align: left;	
+
+			float: left;
+			position: absolute;
+			top: -5px;
+			left: 121px;
+		}
+	}  
+}
+
+@mixin correct_rate($top, $left) {
+	.correct_rate {
+		width: 151px; /* 200730 Y1-Y6_개발수정사항 p26수정 */
+		height: auto;	/* 19-02-01 190108_검수사항 p.22 수정*/
+		border-radius: 5px;
+		background-color: rgba(0, 0, 0,0.15);
+		/* background-color: transparent; */
+		position: absolute;
+		top: $top;
+		left: $left;
+		padding: 3px;
+
+		.title {
+			position: relative;
+			margin-left: 4px;
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 12px;
+			color: rgba(255, 255, 255, 0.8);
+			line-height: 1.2;
+			text-align: left;
+		}
+		
+		&>.progress_bar {
+			border-radius: 4px;
+			width: 47px; height: 7px;
+			background-color: rgba(0, 0, 0,0.25);
+
+			position: relative;
+			top: -9px;
+			margin-left: 60px;
+			
+			.colorA {
+				position: absolute;
+				display: inline-block;
+				vertical-align: middle;
+				height: 100%;
+				background-color: rgb(0, 202, 162);
+				border-radius: 4px;
+			}
+			.colorB {
+				position: absolute;
+				display: inline-block;
+				vertical-align: top;
+				height: 100%;
+				background-color: rgb(249, 255, 94);
+				border-radius: 4px;
+			}
+			&>.data_percent { /* 200730 Y1-Y6_개발수정사항 p26수정 */		
+				font-size: 12px;
+				color: rgba(255, 255, 255, 0.5);
+				line-height: 1.2;
+				position: relative;	top: -5px;
+				margin-left: 47px;
+				display: inline-block; 
+				width: 37px;
+				text-align: center;
+			}
+		}  
+	}
+}
+
+@mixin compre_correct ($top, $left){
+	position: absolute;
+	left: $left;
+	top: $top;
+	&>.progress_bar {
+		border-radius: 4px;
+		width: 87px;
+		height: 7px;
+		background-color: rgba(0, 0, 0,0.25);
+
+		position: relative;
+		top: -1px;
+		left: 0px;
+		margin: 12px;
+		.colorA {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			height: 100%;
+			background-color: rgb(0, 202, 162);
+			border-radius: 4px;
+		}
+		.colorB {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			height: 100%;
+			background-color: rgb(249, 255, 94);
+			border-radius: 4px;
+		}
+		&>.data_percent {				
+			font-size: 11px;
+			color: rgba(255, 255, 255, 0.5);
+			line-height: 1.2;
+			text-align: left;	
+
+			float: left;
+			position: absolute;
+			top: -5px;
+			left: 95px;
+		}
+	}  
+}
+
+@mixin StandBar ($top, $left, $width, $height){
+	.stand_bar {
+		position: absolute;
+		left: $left;
+		top: $top;
+		width: $width;
+		text-align: center;
+		white-space: normal;
+
+		&>.prog_bnd{
+			display: inline-block;
+			position: relative;
+			border-radius: $width / 2;
+			background-color: rgba(0, 0, 0,0.25);
+			text-align: center;
+			width: $width;
+			height: $height;
+			&>.prog_bar {
+				position:absolute;
+				bottom:0px;
+				height: $height;
+				background-color: #00caa2;
+				border-radius: $width / 2;
+			}
+		}
+		&>.data_percent {		
+			display: inline-block;
+			font-size: 6px;
+			line-height: 120%;
+			color: rgb(255, 255, 255);
+		}
+		 
+	}
+}

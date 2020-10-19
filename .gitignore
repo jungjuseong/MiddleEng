@@ -1,0 +1,44 @@
+Thumbs.db
+.DS_Store
+node_modules
+
+tempOutDir
+temp
+.awcache
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+*.suo
+*.orig
+*.ntvs*
+*.njsproj
+*.sln
+.~lock*
+
+vscode-project.hxml
+
+/output/*
+!/output/resources
+/output/resources/*
+!/output/resources/app
+/output/resources/app/*
+!/output/resources/app/public
+/output/resources/app/public/*
+!/output/resources/app/public/content
+/output/resources/app/public/content/api_sample
+
+# vscode setting
+/.vscode/*
+
+/tempOutDir/*
+
+*.bat

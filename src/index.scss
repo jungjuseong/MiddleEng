@@ -1,0 +1,108 @@
+@import "./config.scss";
+@import "./common/component/button.scss";
+
+html, body{
+	padding:0px; margin:0px; 
+	user-select: none;
+	border:0px;
+	backface-visibility: hidden;
+	user-select:none;
+	-webkit-tap-highlight-color:rgba(0, 0, 0, 0);    /* 버튼 포커스시 색상 변하는 현상 방지 */
+	@include font;
+	font-size:8px;
+	overflow:hidden;
+}
+button{
+	@include font;
+}
+img{
+	padding:0px; margin:0px; user-select: none;border:0px;
+	outline:0px solid transparent;
+}
+div, p{
+	padding:0px;
+	margin:0px;
+	box-sizing:border-box; 	
+}
+#common_audio{
+	position:absolute;
+	left:0px;
+	right:0px;
+}
+#ding_audio{
+	position:absolute;
+	left:0px;
+	right:0px;
+}
+#dingend_audio{
+	position:absolute;
+	left:0px;
+	right:0px;
+}
+#wrap{
+	width:1280px;
+	height:800px;
+	margin:auto;
+	overflow:hidden;
+	position:relative;
+}
+
+.bg_svg{
+	@include page;
+}
+
+.swiper-scrollbar.white {
+	@include swiper_scrollbar(7px, rgba(255, 255, 255, 0.6), 10px);	
+}
+.swiper-scrollbar.black {
+	@include swiper_scrollbar(7px, rgba(0, 0, 0, 0.6), 10px);
+}
+
+.common_back{
+	background-size: 100% 100%;
+	@include btn_down_dis(
+		resolve('digenglish_lib/images/btn_back.png'), 
+		resolve('digenglish_lib/images/btn_back_down.png'),
+		'',
+		width('digenglish_lib/images/btn_back.png'),
+		height('digenglish_lib/images/btn_back.png')
+	);
+	&.down{
+		transform: scale(1.1, 1.1);
+	}
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 16px;
+}
+.swiper-pagination-bullet {
+    width: 15px;
+	height: 15px;
+	background-color: #fff;
+	opacity:0.3;
+}
+.swiper-pagination-bullet-active {
+    opacity: 1;
+	background: #47F6E9;
+	box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+
+#preload_hidden{
+	position: absolute;
+	pointer-events: none;
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+	overflow: hidden;
+
+	.helvetica {
+		font-family: HelveticaRounded;
+
+	}
+	.helveticastd {
+		font-family: HelveticaRoundedLTStd;
+		
+	}
+}

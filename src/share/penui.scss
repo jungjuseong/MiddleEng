@@ -1,0 +1,165 @@
+@import '../common/component/button.scss';
+
+@mixin penui() {
+	position: absolute;
+	background-image: resolve("digenglish_lib/images/penui/pen_box.png");
+	left: 50%;
+	width: width("digenglish_lib/images/penui/pen_box.png");
+	transform: translateX(-50%);
+	bottom: -1 * height("digenglish_lib/images/penui/pen_box.png");
+	height: height("digenglish_lib/images/penui/pen_box.png");
+	z-index: 10;
+	
+	transition: bottom 0.3s;
+	&.on {
+		bottom: 0px;
+	}
+
+	&>.pen_select{
+		position: absolute;
+		left: 315px;
+		top: 37px;
+
+		&>.pen_icon {
+			@include btn_on_dis(
+				resolve("digenglish_lib/images/penui/icon_pen.png"),
+				resolve("digenglish_lib/images/penui/icon_pen_on.png"),
+				resolve("digenglish_lib/images/penui/icon_pen_dis.png"),
+				width("digenglish_lib/images/penui/icon_pen.png"),
+				height("digenglish_lib/images/penui/icon_pen.png")
+			);
+			cursor: pointer;
+		}
+		&>.pen_thick {
+			@include btn_on_dis(
+				resolve("digenglish_lib/images/penui/icon_thick.png"),
+				resolve("digenglish_lib/images/penui/icon_thick_on.png"),
+				resolve("digenglish_lib/images/penui/icon_thick_dis.png"),
+				width("digenglish_lib/images/penui/icon_thick.png"),
+				height("digenglish_lib/images/penui/icon_thick.png")
+			);
+			cursor: pointer;
+		}
+	}
+
+	&>.pen_color {
+		position: absolute;
+		left:45px;
+		top: 37px;
+		&>.btn_000000{
+			vertical-align: top;
+			@include btn_on_dis(
+				resolve("digenglish_lib/images/penui/btn_000000.png"),
+				resolve("digenglish_lib/images/penui/btn_000000_on.png"),
+				resolve("digenglish_lib/images/penui/btn_000000_dis.png"),
+				width("digenglish_lib/images/penui/btn_000000.png"),
+				height("digenglish_lib/images/penui/btn_000000.png")
+			);
+		}
+		&>.btn_1347e9{
+			vertical-align: top;
+			@include btn_on_dis(
+				resolve("digenglish_lib/images/penui/btn_1347e9.png"),
+				resolve("digenglish_lib/images/penui/btn_1347e9_on.png"),
+				resolve("digenglish_lib/images/penui/btn_1347e9_dis.png"),
+				width("digenglish_lib/images/penui/btn_1347e9.png"),
+				height("digenglish_lib/images/penui/btn_1347e9.png")
+			);
+		}
+		&>.btn_ec1919{
+			vertical-align: top;
+			@include btn_on_dis(
+				resolve("digenglish_lib/images/penui/btn_ec1919.png"),
+				resolve("digenglish_lib/images/penui/btn_ec1919_on.png"),
+				resolve("digenglish_lib/images/penui/btn_ec1919_dis.png"),
+				width("digenglish_lib/images/penui/btn_ec1919.png"),
+				height("digenglish_lib/images/penui/btn_ec1919.png")
+			);
+		}
+		&>.btn_30aa01{
+			vertical-align: top;
+			@include btn_on_dis(
+				resolve("digenglish_lib/images/penui/btn_30aa01.png"),
+				resolve("digenglish_lib/images/penui/btn_30aa01_on.png"),
+				resolve("digenglish_lib/images/penui/btn_30aa01_dis.png"),
+				width("digenglish_lib/images/penui/btn_30aa01.png"),
+				height("digenglish_lib/images/penui/btn_30aa01.png")
+			);
+		}
+		&>.btn_fddc00{
+			vertical-align: top;
+			@include btn_on_dis(
+				resolve("digenglish_lib/images/penui/btn_fddc00.png"),
+				resolve("digenglish_lib/images/penui/btn_fddc00_on.png"),
+				resolve("digenglish_lib/images/penui/btn_fddc00_dis.png"),
+				width("digenglish_lib/images/penui/btn_fddc00.png"),
+				height("digenglish_lib/images/penui/btn_fddc00.png")
+			);
+		}
+	}
+
+	&>.pen_button {
+		position: absolute;
+		right: 30px;
+		top: 37px;
+		.btn_eraser{
+			vertical-align: top;
+			@include btn_on_dis(
+				resolve("digenglish_lib/images/penui/btn_eraser.png"),
+				resolve("digenglish_lib/images/penui/btn_eraser_on.png"),
+				resolve("digenglish_lib/images/penui/btn_eraser_dis.png"),
+				width("digenglish_lib/images/penui/btn_eraser.png"),
+				height("digenglish_lib/images/penui/btn_eraser.png")
+			);
+		}
+		.btn_undo{
+			vertical-align: top;
+			@include btn_down_dis(
+				resolve("digenglish_lib/images/penui/btn_undo.png"),
+				resolve("digenglish_lib/images/penui/btn_undo_on.png"),
+				resolve("digenglish_lib/images/penui/btn_undo_dis.png"),
+				width("digenglish_lib/images/penui/btn_undo.png"),
+				height("digenglish_lib/images/penui/btn_undo.png")
+			);
+		}
+		.btn_reset{
+			vertical-align: top;
+			@include btn_down_dis(
+				resolve("digenglish_lib/images/penui/btn_reset.png"),
+				resolve("digenglish_lib/images/penui/btn_reset_on.png"),
+				resolve("digenglish_lib/images/penui/btn_reset_dis.png"),
+				width("digenglish_lib/images/penui/btn_reset.png"),
+				height("digenglish_lib/images/penui/btn_reset.png")
+			);
+		}
+
+
+	}
+	/*
+	&>div{
+		border:0px solid #f00;
+		margin-top: 30px;
+		text-align: center;
+		.btn_reset{
+			vertical-align: top;
+			@include btn_down_dis(
+				resolve("digenglish_lib/images/penui/btn_reset.png"),
+				resolve("digenglish_lib/images/penui/btn_reset_on.png"),
+				'',
+				width("digenglish_lib/images/penui/btn_reset.png"),
+				height("digenglish_lib/images/penui/btn_reset.png")
+			);
+		}
+		.btn_undo{
+			vertical-align: top;
+			@include btn_down_dis(
+				resolve("digenglish_lib/images/penui/btn_undo.png"),
+				resolve("digenglish_lib/images/penui/btn_undo_on.png"),
+				'',
+				width("digenglish_lib/images/penui/btn_undo.png"),
+				height("digenglish_lib/images/penui/btn_undo.png")
+			);
+		}
+	}
+	*/
+}

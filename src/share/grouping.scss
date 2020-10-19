@@ -1,0 +1,115 @@
+@mixin grouping-box{
+	.grouping{
+		position: relative;
+		margin-top: 120px;
+		margin-left:auto;
+		margin-right:auto;
+		background-image: resolve('teacher/images/bg_gana.png');
+		width: width('teacher/images/bg_gana.png');
+		height: height('teacher/images/bg_gana.png');
+		text-align: center;
+
+		&>.resort{
+			display: inline-block;
+			position: relative;
+			height: auto;
+			width: auto;
+			top: -40px;
+			background-color: #aaa;
+			border-radius: 50%;
+			box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.2);
+			&>.btn_resort{
+				display: inline-block;
+				vertical-align: top;
+				position: relative;
+				top: -3px;
+				@include btn_down_on(
+					resolve('digenglish_lib/images/grouping/btn_resort.png'),
+					resolve('digenglish_lib/images/grouping/btn_resort_on.png'),
+					resolve('digenglish_lib/images/grouping/btn_resort_on.png'),
+					width('digenglish_lib/images/grouping/btn_resort.png'),
+					height('digenglish_lib/images/grouping/btn_resort.png')
+				);
+				&.rotate{
+					transition: transform 1s;
+					transform: rotate(-360deg);
+				}
+			}
+
+			&.on{
+				background-color: #aa0;
+				box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+				&>.btn_resort{
+					top: -2px;
+				}
+			}
+		}
+
+		&>.groupbox{
+			position:absolute;
+			top: 80px;
+			width:500px;
+			height:435px;
+			&.ga{
+				left: 25px;
+			}
+			&.na{
+				right: 25px;
+			}
+
+			.swiper-scrollbar{
+				background-color: transparent;
+				width:3px;
+				.swiper-scrollbar-drag{
+					background-color: rgba(255, 255, 255, 0.6) !important;
+				}
+			}
+
+			.student-list{
+				height: auto !important;
+				padding: 0px 25px;
+				text-align: left;
+				&>.student{
+					display: inline-block;
+					margin: 10px 0px;
+					width: 33%;
+					font-size: 20px;
+					color: #fff;
+					&>img{
+						width: 92px;
+						height: 92px;
+						border-radius: 50%;
+						margin-bottom: 3px;
+					}
+					text-align: center;
+					opacity: 0;
+					transform: scale(0.1, 0.1);
+
+					&.on{
+						opacity: 1;
+						transform: scale(1, 1);
+						transition: transform 0.3s cubic-bezier(.17,.67,.71,1.93);
+					}
+				}
+			}
+		}
+
+		&>.btn_start{
+			position: absolute;
+			left: 50%;
+			bottom: -90px;
+			transform: translateX(-50%);
+			@include btn_down_dis(
+				resolve('digenglish_lib/images/grouping/btn_start.png'),
+				resolve('digenglish_lib/images/grouping/btn_start_down.png'),
+				resolve('digenglish_lib/images/grouping/btn_start.png'),
+				width('digenglish_lib/images/grouping/btn_start.png'),
+				height('digenglish_lib/images/grouping/btn_start.png')
+			);
+
+			&:disabled{
+				opacity: 0.5;
+			}
+		}
+	}
+}

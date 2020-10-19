@@ -1,0 +1,3526 @@
+.pre-in-class-box {
+    width: 155px;
+    height: auto;
+    padding: 5px 10px;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.pre-in-class-box > div {
+    height: 25px;
+    font-size: 11px;
+    padding-top: 3px;
+    color: rgba(255, 255, 255, 0.8);
+    white-space: nowrap;
+}
+
+.pre-in-class-box > div > div {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+
+.pre-in-class-box > div > div:nth-child(1) {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: 55px;
+}
+
+.pre-in-class-box > div > div:nth-child(2) {
+    margin-top: 6px;
+    margin-right: 5px;
+    width: 47px;
+    height: 7px;
+    border-radius: 3.5px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.pre-in-class-box > div > div:nth-child(2) > span {
+    display: inline-block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 7px;
+    border-radius: 3.5px;
+    background-color: #F9FF5E;
+}
+
+.pre-in-class-box > div:nth-child(2) {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.pre-in-class-box > div:nth-child(2) > div:nth-child(2) > span {
+    background-color: #00CAA2;
+}
+
+.keyboard-box {
+    position: absolute;
+    width: 100%;
+    height: 375px;
+    text-align: center;
+    background-color: #d1d4db;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    bottom: 0px;
+    z-index: 100;
+    transition: bottom 0.3s;
+}
+
+.keyboard-box.hide {
+    display: none;
+}
+
+.keyboard-box.off {
+    bottom: -400px;
+}
+
+.keyboard-box img {
+    vertical-align: middle;
+}
+
+.keyboard-box > div {
+    padding: 5.7px 0px;
+    height: auto;
+    white-space: nowrap;
+    /*
+		&>button{
+			display:inline-block;
+			position:relative;
+			text-align:center;
+			height:74px;
+			line-height:55px;
+			vertical-align:middle;
+			font-family: myriad-pro;
+			font-size: 43px;
+			color:#4d4d4d;
+			padding-top:6px;
+			background-color:#fff;
+			border-radius:8px;
+			overflow:hidden;
+			box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.3);
+			outline-width: 0px;
+			cursor:pointer;
+
+			&.down, &.on{
+				background-color:#808080;
+				color:#ccc;
+				border-color:#666;
+				top:4px;left:0px;
+				box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.3);
+			}
+
+			&.s{
+				width:80px;
+			}
+			&.m{
+				width:101px;
+			}
+			&.b{
+				width:168px;
+			}		
+			&.capslock{
+				padding-top:2px;
+				font-size:25px;
+				line-height:120%;
+				vertical-align:middle;
+			}
+			
+			&.done {
+				background-color: #1e75f4;
+				color: rgb(250, 250, 250);
+			}
+		
+			&.key_back{
+				background-image:resolve('digenglish_lib/images/keyboard/key_back.png');
+				background-repeat : no-repeat;
+				background-position:center;
+
+				&.down{
+					background-image: resolve('digenglish_lib/images/keyboard/key_back_down.png');
+				}
+			}
+
+			&.key_hide{
+				background-image:resolve('digenglish_lib/images/keyboard/key_hide.png');
+				background-repeat : no-repeat;
+				background-position:center;
+
+				&.down{
+					background-image:resolve('digenglish_lib/images/keyboard/key_hide_down.png');
+				}
+			}
+		}
+		*/
+}
+
+.keyboard-box > div:nth-child(1) {
+    padding-top: 20px;
+}
+
+.keyboard-box > div:nth-child(1) > button {
+    margin: 0px 5.5px;
+}
+
+.keyboard-box > div:nth-child(2) > button {
+    margin: 0px 8px;
+}
+
+.keyboard-box > div:nth-child(3) > button {
+    margin: 0px 8px;
+}
+
+.keyboard-box > div:nth-child(3) > button:first-child {
+    margin-left: 56px;
+}
+
+.keyboard-box > div:nth-child(4) {
+    padding-bottom: 24px;
+}
+
+.keyboard-box > div:nth-child(4) > button {
+    margin: 0px 8px;
+}
+
+.keyboard-box > div > button {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    line-height: 55px;
+    vertical-align: middle;
+    font-family: myriad-pro;
+    font-size: 43px;
+    color: #4d4d4d;
+    padding-top: 6px;
+}
+
+.keyboard-box > div > button.s {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/keyboard/key_num.png");
+    background-repeat: no-repeat;
+    width: 78px;
+    height: 75px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+.keyboard-box > div > button.s:disabled {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_num.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+.keyboard-box > div > button.s.down {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_num_down.png");
+}
+
+.keyboard-box > div > button.s:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/keyboard/key_num.png") url("/content/digenglish_lib/images/keyboard/key_num_down.png") url("/content/digenglish_lib/images/keyboard/key_num.png");
+}
+
+.keyboard-box > div > button.s.key_back {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/keyboard/key_back.png");
+    background-repeat: no-repeat;
+    width: 78px;
+    height: 75px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+.keyboard-box > div > button.s.key_back:disabled {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_back.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+.keyboard-box > div > button.s.key_back.down {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_back_down.png");
+}
+
+.keyboard-box > div > button.s.key_back:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/keyboard/key_back.png") url("/content/digenglish_lib/images/keyboard/key_back_down.png") url("/content/digenglish_lib/images/keyboard/key_back.png");
+}
+
+.keyboard-box > div > button.m {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/keyboard/key_alpha.png");
+    background-repeat: no-repeat;
+    width: 98px;
+    height: 75px;
+    pointer-events: unset;
+    cursor: pointer;
+    /*
+				&.key_tab {
+					@include btn_down_dis(
+						resolve('digenglish_lib/images/keyboard/key_tab.png'),
+						resolve('digenglish_lib/images/keyboard/key_tab_down.png'),
+						resolve('digenglish_lib/images/keyboard/key_tab.png'),
+						width('digenglish_lib/images/keyboard/key_tab.png'),
+						height('digenglish_lib/images/keyboard/key_tab.png')
+					);
+				}
+				*/
+}
+
+.keyboard-box > div > button.m:disabled {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_alpha.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+.keyboard-box > div > button.m.down {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_alpha_down.png");
+}
+
+.keyboard-box > div > button.m:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/keyboard/key_alpha.png") url("/content/digenglish_lib/images/keyboard/key_alpha_down.png") url("/content/digenglish_lib/images/keyboard/key_alpha.png");
+}
+
+.keyboard-box > div > button.key_shift {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/keyboard/key_shift.png");
+    background-repeat: no-repeat;
+    width: 98px;
+    height: 75px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+.keyboard-box > div > button.key_shift:disabled {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_shift.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+.keyboard-box > div > button.key_shift.on {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_shift_down.png");
+}
+
+.keyboard-box > div > button.key_shift:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/keyboard/key_shift.png") url("/content/digenglish_lib/images/keyboard/key_shift_down.png") url("/content/digenglish_lib/images/keyboard/key_shift.png");
+}
+
+.keyboard-box > div > button.key_enter {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/keyboard/key_enter.png");
+    background-repeat: no-repeat;
+    width: 166px;
+    height: 75px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+.keyboard-box > div > button.key_enter:disabled {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_enter.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+.keyboard-box > div > button.key_enter.down {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_enter_down.png");
+}
+
+.keyboard-box > div > button.key_enter:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/keyboard/key_enter.png") url("/content/digenglish_lib/images/keyboard/key_enter_down.png") url("/content/digenglish_lib/images/keyboard/key_enter.png");
+}
+
+.keyboard-box > div > button.done {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/keyboard/key_done.png");
+    background-repeat: no-repeat;
+    width: 166px;
+    height: 75px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+.keyboard-box > div > button.done:disabled {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_done.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+.keyboard-box > div > button.done.down {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_done.png");
+}
+
+.keyboard-box > div > button.done:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/keyboard/key_done.png") url("/content/digenglish_lib/images/keyboard/key_done.png") url("/content/digenglish_lib/images/keyboard/key_done.png");
+}
+
+.keyboard-box > div > button.done.dis {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.keyboard-box > div > button.key_space {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/keyboard/key_space.png");
+    background-repeat: no-repeat;
+    width: 260px;
+    height: 75px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+.keyboard-box > div > button.key_space:disabled {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_space.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+.keyboard-box > div > button.key_space.down {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_space_down.png");
+}
+
+.keyboard-box > div > button.key_space:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/keyboard/key_space.png") url("/content/digenglish_lib/images/keyboard/key_space_down.png") url("/content/digenglish_lib/images/keyboard/key_space.png");
+}
+
+.keyboard-box .key_view {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 101;
+    position: absolute;
+    left: 20px;
+    top: -80px;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/keyboard/key_view.png");
+    background-repeat: no-repeat;
+    width: 85px;
+    height: 76px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+.keyboard-box .key_view:disabled {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_view.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+.keyboard-box .key_view.down {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_view_down.png");
+}
+
+.keyboard-box .key_view:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/keyboard/key_view.png") url("/content/digenglish_lib/images/keyboard/key_view_down.png") url("/content/digenglish_lib/images/keyboard/key_view.png");
+}
+
+.keyboard-box .key_hide {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 100;
+    position: absolute;
+    top: -55px;
+    left: 20px;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/keyboard/key_hide.png");
+    background-repeat: no-repeat;
+    width: 83px;
+    height: 59px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+.keyboard-box .key_hide:disabled {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_hide.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+.keyboard-box .key_hide.down {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_hide_down.png");
+}
+
+.keyboard-box .key_hide:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/keyboard/key_hide.png") url("/content/digenglish_lib/images/keyboard/key_hide_down.png") url("/content/digenglish_lib/images/keyboard/key_hide.png");
+}
+
+.keyboard-box.on .key_hide {
+    opacity: 1;
+    z-index: 102;
+}
+
+.keyboard-box.off .key_view {
+    opacity: 1;
+    pointer-events: unset;
+}
+
+.keyboard-box button.alpha {
+    text-transform: lowercase;
+}
+
+.keyboard-box.uppercase button.alpha {
+    text-transform: uppercase;
+}
+
+@charset "UTF-8";
+@-webkit-keyframes blink_recording {
+    50% {
+        opacity: 0.2;
+    }
+}
+@keyframes blink_recording {
+    50% {
+        opacity: 0.2;
+    }
+}
+
+#wrap {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/bg_ls.png");
+    font-family: NotoSans;
+    /*	
+	.new-direction{
+		@include new-direction;
+		background-image: resolve('common/bg1.jpg');
+		&>div.direction{
+			position: absolute;
+			background-image: resolve("common/direction.png");
+			width: width("common/direction.png");
+			height:  height("common/direction.png");
+			left: calc(50% - width("common/direction.png")/2);
+			top: calc(50% - height("common/direction.png")/2);
+		}
+		&>div.icon{
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			background-image: resolve("common/bear.png");
+			width: width("common/bear.png");
+			height:  height("common/bear.png");
+		}
+		&>div.lesson{
+			font-size: 40px;
+			position: absolute;
+			left: 30px;
+			top: 20px;		
+			color: #fff;
+		}
+	}
+*/
+}
+
+#wrap .eyeon_svg {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    pointer-events: none;
+}
+
+#wrap .goodjob-svg {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+#wrap .content-container {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+#wrap .content-container .content-wrapper {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    transition: left 0.3s ease-in-out;
+}
+
+#wrap .content-container .content-wrapper > div {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+}
+
+#wrap .video-direction {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("/content/digenglish_lib/B/ls_voca/common/bg1.jpg");
+}
+
+#wrap .video-direction > img {
+    z-index: 2;
+}
+
+#wrap .video-direction > div.direction {
+    position: absolute;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+    transition: opacity 0.5s, -webkit-transform 0.5s ease-out;
+    transition: transform 0.5s ease-out, opacity 0.5s;
+    transition: transform 0.5s ease-out, opacity 0.5s, -webkit-transform 0.5s ease-out;
+    opacity: 0;
+}
+
+#wrap .video-direction.on > div.direction {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+}
+
+#wrap .video-direction.hide > div.direction {
+    visibility: hidden;
+}
+
+#wrap .video-direction.loaded > video {
+    opacity: 1;
+}
+
+#wrap .video-direction > .movieclip {
+    position: absolute;
+    right: 20px;
+    bottom: -40px;
+    width: 330px;
+    height: 550px;
+}
+
+#wrap .video-direction > div.direction {
+    position: absolute;
+    background-image: url("/content/digenglish_lib/B/ls_voca/common/direction.png");
+    width: 339px;
+    height: 94px;
+    left: calc(50% - 339px/2);
+    top: calc(50% - 94px/2);
+}
+
+#wrap .video-direction > div.lesson {
+    font-size: 40px;
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    color: #fff;
+}
+
+#wrap .s_quiz {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    /*	검수사항 sentence의 타이머도 모두 통일
+	&.sentence{
+		&>.timer {
+			top: 23px;	right: 35px;
+		}
+	}
+	*/
+}
+
+#wrap .s_quiz .btn_page_box {
+    pointer-events: none;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    height: 0px;
+    overflow: visible;
+    text-align: center;
+    z-index: 2;
+    cursor: pointer;
+}
+
+#wrap .s_quiz .btn_page_box > span {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 66px;
+    height: 66px;
+    font-size: 25px;
+    line-height: 100%;
+    padding-top: 15px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+#wrap .s_quiz .btn_page_box > span.on {
+    color: #f8f64d;
+}
+
+#wrap .s_quiz .btn_page_box > span.correct {
+    background-image: url("/content/digenglish_lib/images/quiz/icon_o.png");
+}
+
+#wrap .s_quiz .btn_page_box > span.wrong {
+    background-image: url("/content/digenglish_lib/images/quiz/icon_x.png");
+}
+
+#wrap .s_quiz .btn_page_box.off {
+    display: none;
+}
+
+#wrap .s_quiz > .timer {
+    /* 
+	&>div{
+		position:absolute;
+		left:16px;right:17px;
+		top:24px;bottom:17px;
+		border-radius:50%;
+		padding-top: 18px;
+		text-align: center;
+		font-size:16px;
+		font-weight: bold;
+		color:#fff;
+	}
+	*/
+    position: absolute;
+    top: 23px;
+    right: 35px;
+}
+
+#wrap .s_quiz > .timer .q_timer {
+    position: relative;
+    width: 82px;
+    height: 92px;
+}
+
+#wrap .s_quiz > .timer .q_timer > svg {
+    position: absolute;
+    left: 9px;
+    top: 19px;
+}
+
+#wrap .s_quiz > .timer .q_timer > div {
+    position: absolute;
+    background: url("/content/digenglish_lib/images/icon_timer.png") no-repeat;
+    width: 82px;
+    height: 92px;
+    padding-top: 40px;
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+#wrap .s_quiz .quiz-result-box {
+    display: none;
+    top: 143px;
+    left: unset;
+    right: 132px;
+}
+
+#wrap .s_quiz .icon_crown {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+
+#wrap .s_quiz .icon_crown.ga {
+    background-image: url("/content/digenglish_lib/team/icon_ga_s.png");
+    background-repeat: no-repeat;
+    width: 103px;
+    height: 100px;
+}
+
+#wrap .s_quiz .icon_crown.ga.win {
+    background-image: url("/content/digenglish_lib/team/icon_ga_crown.png");
+}
+
+#wrap .s_quiz .icon_crown.na {
+    background-image: url("/content/digenglish_lib/team/icon_na_s.png");
+    background-repeat: no-repeat;
+    width: 103px;
+    height: 100px;
+}
+
+#wrap .s_quiz .icon_crown.na.win {
+    background-image: url("/content/digenglish_lib/team/icon_na_crown.png");
+}
+
+#wrap .s_quiz .icon_point {
+    width: 175px;
+    height: 95px;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-bottom-right-radius: 20px;
+}
+
+#wrap .s_quiz .icon_point > .icon_team {
+    position: absolute;
+    top: -3px;
+    left: 0px;
+}
+
+#wrap .s_quiz .icon_point > .icon_team.ga {
+    background: url("/content/digenglish_lib/team/icon_ga_s.png") no-repeat;
+    width: 103px;
+    height: 100px;
+}
+
+#wrap .s_quiz .icon_point > .icon_team.na {
+    background: url("/content/digenglish_lib/team/icon_na_s.png") no-repeat;
+    width: 103px;
+    height: 100px;
+}
+
+#wrap .s_quiz .icon_point > div {
+    position: absolute;
+    left: 100px;
+    top: 20px;
+    text-align: center;
+}
+
+#wrap .s_quiz .icon_point > div > span:nth-child(1) {
+    display: block;
+    font-size: 26px;
+    color: white;
+    font-weight: bold;
+    line-height: 100%;
+    margin-bottom: 5px;
+}
+
+#wrap .s_quiz .icon_point > div > span:nth-child(2) {
+    display: block;
+    font-size: 18px;
+    color: white;
+    font-weight: 400;
+    line-height: 100%;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2);
+}
+
+#wrap .s_quiz .swiper-container {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+#wrap .s_quiz .box-gana {
+    background-image: url("/content/digenglish_lib/team/ready.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+#wrap .s_quiz .box-gana > svg {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    visibility: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+#wrap .s_quiz .box-gana > .icon {
+    position: absolute;
+}
+
+#wrap .s_quiz .box-gana.hide {
+    visibility: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+#wrap .s_quiz .box-gana.hide-bg {
+    background-image: unset;
+}
+
+#wrap .s_quiz .box-gana.hide-bg > .icon {
+    visibility: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+#wrap .s_quiz .box-gana.view-ani {
+    background-image: unset;
+}
+
+#wrap .s_quiz .box-gana.view-ani > .icon {
+    visibility: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+#wrap .s_quiz .box-gana.view-ani > svg {
+    visibility: visible;
+    z-index: 0;
+    pointer-events: auto;
+}
+
+#wrap .s_quiz.view-gana .icon_point {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+#wrap .s_quiz.view-gana .btn_page_box {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+#wrap .s_quiz.view-gana > .timer {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+#wrap .s_quiz.view-gana .swiper-container {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+#wrap .s_quiz.view-gana .btn_audio {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+#wrap .s_quiz.view-gana .box-gana {
+    opacity: 1;
+    pointer-events: unset;
+    z-index: 0;
+}
+
+#wrap .s_quiz.can-swipe .btn_page_box {
+    pointer-events: unset;
+}
+
+#wrap .s_quiz.hide {
+    z-index: -1;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+#wrap .s_quiz .team-pad-result {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    z-index: 3;
+}
+
+#wrap .s_quiz .team-pad-result.hide {
+    visibility: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+#wrap .s_quiz .btn_audio {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/quiz/btn_audio.svg");
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 80px;
+    pointer-events: unset;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+#wrap .s_quiz .btn_audio:disabled {
+    background-image: url("/content/digenglish_lib/images/quiz/btn_audio.svg");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_quiz .btn_audio.on {
+    background-image: url("/content/digenglish_lib/images/quiz/btn_audio_on.svg");
+}
+
+#wrap .s_quiz .btn_audio:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/quiz/btn_audio.svg") url("/content/digenglish_lib/images/quiz/btn_audio_on.svg") url("/content/digenglish_lib/images/quiz/btn_audio.svg");
+}
+
+#wrap .s_quiz .btn_audio.result {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+#wrap .s_quiz .quiz_sound {
+    position: relative;
+    /*
+	.correct {
+		background: resolve('student/images/icon_correct_s.png') no-repeat ;
+		width: width('student/images/icon_correct_s.png');
+		height: height('student/images/icon_correct_s.png');
+	}
+	.wrong {
+		background: resolve('student/images/icon_wrong_s.png') no-repeat ;
+		width: width('student/images/icon_wrong_s.png');
+		height: height('student/images/icon_wrong_s.png');
+	}
+	*/
+}
+
+#wrap .s_quiz .quiz_sound .btn_audio {
+    position: absolute;
+    top: 172px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    /* 위치조정 2018-12-26*/
+}
+
+#wrap .s_quiz .quiz_sound .mc-box {
+    position: relative;
+    top: 280px;
+    left: 140px;
+    /* 위치조정 2018-12-26*/
+    white-space: normal;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sound.png");
+    background-repeat: no-repeat;
+    width: 420px;
+    height: 156px;
+    pointer-events: unset;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 55px;
+    margin-top: 26px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 54px;
+    word-break: normal;
+    padding: 0px 30px 12px 35px;
+    line-height: 120%;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box:disabled {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sound.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box.on {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sound_down.png");
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sound.png") url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sound_down.png") url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sound.png");
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box.btn-mc-1::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "A";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box.btn-mc-1.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box.btn-mc-2::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "B";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box.btn-mc-2.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box.btn-mc-3::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "C";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box.btn-mc-3.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box.btn-mc-4::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "D";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box.btn-mc-4.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box.btn-mc-5::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "E";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box.btn-mc-5.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box.btn-mc-6::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "F";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box.btn-mc-6.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box:disabled {
+    color: #000;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box.on::after {
+    top: 4px;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box.correct {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sound_correct.png");
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box.wrong {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sound_wrong.png");
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box > div {
+    width: 100% !important;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box.big span.big {
+    font-size: 52px;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box.middle span.middle {
+    font-size: 40px;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box > .quiz_box.small span.small {
+    font-size: 33px;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three {
+    position: relative;
+    width: 100%;
+    top: 300px;
+    margin-left: 75px;
+    margin-right: 65px;
+    white-space: normal;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div {
+    display: inline-block;
+    position: relative;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sound3.png");
+    background-repeat: no-repeat;
+    width: 344px;
+    height: 156px;
+    pointer-events: unset;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin: 26px 17px 0px 17px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 54px;
+    word-break: normal;
+    padding: 0px 15px 12px 30px;
+    /* p3 수정 */
+    line-height: 120%;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box:disabled {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sound3.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box.on {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sound3_down.png");
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sound3.png") url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sound3_down.png") url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sound3.png");
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box.btn-mc-1::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "A";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box.btn-mc-1.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box.btn-mc-2::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "B";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box.btn-mc-2.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box.btn-mc-3::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "C";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box.btn-mc-3.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box.btn-mc-4::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "D";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box.btn-mc-4.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box.btn-mc-5::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "E";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box.btn-mc-5.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box.btn-mc-6::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "F";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box.btn-mc-6.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box:disabled {
+    color: #000;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box.on::after {
+    top: 4px;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box.correct {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sound3_correct.png");
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box.wrong {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sound3_wrong.png");
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box > div {
+    width: 100% !important;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box.big span.big {
+    font-size: 52px;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box.middle span.middle {
+    font-size: 40px;
+}
+
+#wrap .s_quiz .quiz_sound .mc-box-three > div > .quiz_box.small span.small {
+    font-size: 33px;
+}
+
+#wrap .s_quiz .quiz_sound.student .btn_audio {
+    display: none;
+}
+
+#wrap .s_quiz .quiz_sound.student .mc-box {
+    top: 240px;
+    left: 100px;
+    /* 위치조정 2019-02-15 */
+}
+
+#wrap .s_quiz .quiz_sound.student .mc-box > .quiz_box {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sound_s.png");
+    background-repeat: no-repeat;
+    width: 466px;
+    height: 172px;
+    pointer-events: unset;
+    cursor: pointer;
+    padding: 0px 30px 12px 35px;
+}
+
+#wrap .s_quiz .quiz_sound.student .mc-box > .quiz_box:disabled {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sound_s.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_quiz .quiz_sound.student .mc-box > .quiz_box.on {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sound_down_s.png");
+}
+
+#wrap .s_quiz .quiz_sound.student .mc-box > .quiz_box:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sound_s.png") url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sound_down_s.png") url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sound_s.png");
+}
+
+#wrap .s_quiz .quiz_sound.student .mc-box > .quiz_box.correct {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sound_correct_s.png");
+}
+
+#wrap .s_quiz .quiz_sound.student .mc-box > .quiz_box.wrong {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sound_wrong_s.png");
+}
+
+#wrap .s_quiz .quiz_sound.student .mc-box-three {
+    width: 100%;
+    top: 300px;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+#wrap .s_quiz .quiz_sound.student .mc-box-three > div {
+    display: inline-block;
+    position: relative;
+}
+
+#wrap .s_quiz .quiz_sound.student .mc-box-three > div > .quiz_box {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sound3_s.png");
+    background-repeat: no-repeat;
+    width: 367px;
+    height: 172px;
+    pointer-events: unset;
+    cursor: pointer;
+    padding: 0px 15px 12px 15px;
+}
+
+#wrap .s_quiz .quiz_sound.student .mc-box-three > div > .quiz_box:disabled {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sound3_s.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_quiz .quiz_sound.student .mc-box-three > div > .quiz_box.on {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sound3_down_s.png");
+}
+
+#wrap .s_quiz .quiz_sound.student .mc-box-three > div > .quiz_box:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sound3_s.png") url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sound3_down_s.png") url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sound3_s.png");
+}
+
+#wrap .s_quiz .quiz_sound.student .mc-box-three > div > .quiz_box.correct {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sound3_correct_s.png");
+}
+
+#wrap .s_quiz .quiz_sound.student .mc-box-three > div > .quiz_box.wrong {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sound3_wrong_s.png");
+}
+
+#wrap .s_quiz .quiz_meaning {
+    position: relative;
+    /*
+	.correct {
+		background: resolve('student/images/icon_correct_s.png') no-repeat ;
+		width: width('student/images/icon_correct_s.png');
+		height: height('student/images/icon_correct_s.png');
+	}
+	.wrong {
+		background: resolve('student/images/icon_wrong_s.png') no-repeat ;
+		width: width('student/images/icon_wrong_s.png');
+		height: height('student/images/icon_wrong_s.png');
+	}
+	*/
+}
+
+#wrap .s_quiz .quiz_meaning > .btn_audio {
+    position: absolute;
+    top: 142px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+}
+
+#wrap .s_quiz .quiz_meaning > .word {
+    font-size: 80px;
+    color: white;
+    font-weight: 600;
+    position: absolute;
+    top: 220px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+}
+
+#wrap .s_quiz .quiz_meaning > .mean {
+    position: relative;
+    margin-top: 347px;
+    white-space: normal;
+    /* word-break: break-all; */
+    text-align: center;
+}
+
+#wrap .s_quiz .quiz_meaning > .mean > .quiz_box {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_meaning.png");
+    background-repeat: no-repeat;
+    width: 1004px;
+    height: 100px;
+    pointer-events: unset;
+    cursor: pointer;
+    position: relative;
+    margin-top: 18px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 36px;
+    padding: 0px 30px 12px 80px;
+    line-height: 110%;
+    vertical-align: middle;
+}
+
+#wrap .s_quiz .quiz_meaning > .mean > .quiz_box:disabled {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_meaning.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_quiz .quiz_meaning > .mean > .quiz_box.on {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_meaning_down.png");
+}
+
+#wrap .s_quiz .quiz_meaning > .mean > .quiz_box:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_meaning.png") url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_meaning_down.png") url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_meaning.png");
+}
+
+#wrap .s_quiz .quiz_meaning > .mean > .quiz_box.btn-mc-1::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "A";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_meaning > .mean > .quiz_box.btn-mc-1.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_meaning > .mean > .quiz_box.btn-mc-2::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "B";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_meaning > .mean > .quiz_box.btn-mc-2.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_meaning > .mean > .quiz_box.btn-mc-3::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "C";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_meaning > .mean > .quiz_box.btn-mc-3.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_meaning > .mean > .quiz_box.btn-mc-4::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "D";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_meaning > .mean > .quiz_box.btn-mc-4.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_meaning > .mean > .quiz_box.btn-mc-5::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "E";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_meaning > .mean > .quiz_box.btn-mc-5.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_meaning > .mean > .quiz_box.btn-mc-6::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "F";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_meaning > .mean > .quiz_box.btn-mc-6.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_meaning > .mean > .quiz_box.on::after {
+    top: 4px;
+}
+
+#wrap .s_quiz .quiz_meaning > .mean > .quiz_box:disabled {
+    color: #000;
+}
+
+#wrap .s_quiz .quiz_meaning > .mean > .quiz_box.correct {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_meaning_correct.png");
+}
+
+#wrap .s_quiz .quiz_meaning > .mean > .quiz_box.wrong {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_meaning_wrong.png");
+}
+
+#wrap .s_quiz .quiz_meaning.student .btn_audio {
+    display: none;
+}
+
+#wrap .s_quiz .quiz_meaning.student > .word {
+    top: 160px;
+}
+
+#wrap .s_quiz .quiz_meaning.student > .mean {
+    margin-top: 287px;
+}
+
+#wrap .s_quiz .quiz_meaning.student > .mean > .quiz_box {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_meaning_s.png");
+    background-repeat: no-repeat;
+    width: 1114px;
+    height: 132px;
+    pointer-events: unset;
+    cursor: pointer;
+    padding: 0px 30px 12px 70px;
+    line-height: 120%;
+}
+
+#wrap .s_quiz .quiz_meaning.student > .mean > .quiz_box:disabled {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_meaning_s.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_quiz .quiz_meaning.student > .mean > .quiz_box.on {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_meaning_down_s.png");
+}
+
+#wrap .s_quiz .quiz_meaning.student > .mean > .quiz_box:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_meaning_s.png") url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_meaning_down_s.png") url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_meaning_s.png");
+}
+
+#wrap .s_quiz .quiz_meaning.student > .mean > .quiz_box.correct {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_meaning_correct_s.png");
+}
+
+#wrap .s_quiz .quiz_meaning.student > .mean > .quiz_box.wrong {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_meaning_wrong_s.png");
+}
+
+#wrap .s_quiz .quiz_spelling {
+    position: relative;
+}
+
+#wrap .s_quiz .quiz_spelling > .btn_audio {
+    position: absolute;
+    top: 172px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 303px;
+    height: auto;
+    text-align: center;
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .target-box {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .target-box > .pz-tgt {
+    display: inline-block;
+    position: relative;
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .target-box > .pz-tgt > span {
+    display: none;
+    line-height: 100%;
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .target-box > .pz-tgt.wrong > span {
+    position: absolute;
+    display: inline-block;
+    left: 0px;
+    font-weight: bold;
+    /* color: rgba(238, 26, 47, 0.749); */
+    color: #000dff;
+    line-height: 130%;
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .target-box.big > .pz-tgt {
+    margin: 0 9px;
+    background: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_blank_L.png") no-repeat;
+    width: 138px;
+    height: 148px;
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .target-box.big > .pz-tgt.wrong > span {
+    font-size: 100px;
+    background: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_L_answer.png") no-repeat;
+    width: 138px;
+    height: 148px;
+    /* top: height('teacher/images/btn_blank_L.png'); */
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .target-box.middle > .pz-tgt {
+    margin: 0 6px;
+    background: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_blank_M.png") no-repeat;
+    width: 95px;
+    height: 107px;
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .target-box.middle > .pz-tgt.wrong > span {
+    font-size: 70px;
+    background: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_M_answer.png") no-repeat;
+    width: 95px;
+    height: 107px;
+    /* top: height('teacher/images/btn_blank_M.png'); */
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .target-box.small > .pz-tgt {
+    margin: 0 2px;
+    background: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_blank_S.png") no-repeat;
+    width: 83px;
+    height: 93px;
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .target-box.small > .pz-tgt.wrong > span {
+    font-size: 54px;
+    background: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_S_answer.png") no-repeat;
+    width: 83px;
+    height: 93px;
+    /* top: height('teacher/images/btn_blank_S.png'); */
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .target-box.x-small > .pz-tgt {
+    margin: 0 1.5px;
+    background: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_blank_S.png") no-repeat;
+    width: 69.72px;
+    height: 78.12px;
+    background-size: contain;
+    background-position: 50% 0;
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .target-box.x-small > .pz-tgt.wrong > span {
+    font-size: 52px;
+    background: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_S_answer.png") no-repeat;
+    width: 69.72px;
+    height: 78.12px;
+    background-size: contain;
+    background-position: 50% 0;
+    /* top: height('teacher/images/btn_blank_S.png'); */
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .source-box {
+    position: relative;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .source-box > .pz-src {
+    position: relative;
+    display: inline-block;
+    white-space: pre;
+    color: black;
+    text-align: center;
+    line-height: 100%;
+    font-weight: bold;
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .source-box.big > .pz-src {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_L.png");
+    background-repeat: no-repeat;
+    width: 138px;
+    height: 148px;
+    pointer-events: unset;
+    cursor: pointer;
+    font-size: 90px;
+    margin: 0px 9px;
+    padding-bottom: 18px;
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .source-box.big > .pz-src:disabled {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_L.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .source-box.big > .pz-src.down {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_L_down.png");
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .source-box.big > .pz-src:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_L.png") url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_L_down.png") url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_L.png");
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .source-box.big > .pz-src.wrong {
+    background: transparent;
+    top: 148px;
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .source-box.middle > .pz-src {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_M.png");
+    background-repeat: no-repeat;
+    width: 95px;
+    height: 107px;
+    pointer-events: unset;
+    cursor: pointer;
+    font-size: 70px;
+    margin: 0px 6px;
+    padding-bottom: 22px;
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .source-box.middle > .pz-src:disabled {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_M.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .source-box.middle > .pz-src.down {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_M_down.png");
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .source-box.middle > .pz-src:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_M.png") url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_M_down.png") url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_M.png");
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .source-box.middle > .pz-src.wrong {
+    background: transparent;
+    top: 107px;
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .source-box.small > .pz-src {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_S.png");
+    background-repeat: no-repeat;
+    width: 83px;
+    height: 93px;
+    pointer-events: unset;
+    cursor: pointer;
+    font-size: 54px;
+    margin: 0px 2px;
+    padding-bottom: 12px;
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .source-box.small > .pz-src:disabled {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_S.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .source-box.small > .pz-src.down {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_S_down.png");
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .source-box.small > .pz-src:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_S.png") url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_S_down.png") url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_S.png");
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .source-box.small > .pz-src.wrong {
+    background: transparent;
+    top: 93px;
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .source-box.x-small > .pz-src {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_S.png");
+    background-repeat: no-repeat;
+    width: 83px;
+    height: 93px;
+    pointer-events: unset;
+    cursor: pointer;
+    width: 69.72px;
+    height: 78.12px;
+    background-size: contain;
+    background-position: 50% 0;
+    padding-bottom: 16px;
+    font-size: 47px;
+    margin: 0 1.5px;
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .source-box.x-small > .pz-src:disabled {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_S.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .source-box.x-small > .pz-src.down {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_S_down.png");
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .source-box.x-small > .pz-src:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_S.png") url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_S_down.png") url("/content/digenglish_lib/B/ls_voca/teacher/images/btn_alpha_S.png");
+}
+
+#wrap .s_quiz .quiz_spelling > .spelling > .source-box.x-small > .pz-src.wrong {
+    background: transparent;
+    top: 78.12px;
+}
+
+#wrap .s_quiz .quiz_spelling.student > .btn_audio {
+    display: none;
+}
+
+#wrap .s_quiz .quiz_spelling.student > .spelling {
+    top: 293px;
+}
+
+#wrap .s_quiz .quiz_usage {
+    position: relative;
+    text-align: center;
+}
+
+#wrap .s_quiz .quiz_usage > .img_box {
+    display: inline-block;
+    position: relative;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 131px;
+    width: 1043px;
+    height: 480px;
+    text-align: center;
+    /* @include progress; */
+}
+
+#wrap .s_quiz .quiz_usage > .img_box > img {
+    position: relative;
+    width: 438px;
+    height: 260px;
+    margin-top: 25px;
+    border-radius: 5px;
+}
+
+#wrap .s_quiz .quiz_usage > .img_box > .quiz_usage {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 10px;
+    height: 175px;
+    font-size: 48px;
+    color: white;
+    font-weight: bold;
+}
+
+#wrap .s_quiz .quiz_usage > .img_box > .quiz_usage > div {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    height: auto;
+    padding: 0px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    line-height: 120%;
+    vertical-align: bottom;
+    white-space: normal;
+    text-align: center;
+}
+
+#wrap .s_quiz .quiz_usage > .img_box > .quiz_usage > div > div > .block {
+    box-sizing: border-box;
+    white-space: nowrap;
+    vertical-align: baseline;
+    color: transparent;
+    border-bottom: 4px solid white;
+    line-height: 80%;
+}
+
+#wrap .s_quiz .quiz_usage > .img_box > .quiz_usage > div > div > .block.view {
+    color: white;
+    /* border-bottom-color: #34CAE2;	*/
+}
+
+#wrap .s_quiz .quiz_usage > .img_box > .quiz_usage.result > div > div > .block {
+    color: #34CAE2;
+    border-bottom-color: #34CAE2;
+}
+
+#wrap .s_quiz .quiz_usage > .usage {
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+}
+
+#wrap .s_quiz .quiz_usage > .usage > .quiz_box {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sentence.png");
+    background-repeat: no-repeat;
+    width: 320px;
+    height: 102px;
+    pointer-events: unset;
+    cursor: pointer;
+    position: relative;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0px 15px;
+    vertical-align: top;
+    white-space: normal;
+    padding: 0px 10px 10px 10px;
+}
+
+#wrap .s_quiz .quiz_usage > .usage > .quiz_box:disabled {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sentence.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_quiz .quiz_usage > .usage > .quiz_box.on {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sentence_down.png");
+}
+
+#wrap .s_quiz .quiz_usage > .usage > .quiz_box:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sentence.png") url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sentence_down.png") url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sentence.png");
+}
+
+#wrap .s_quiz .quiz_usage > .usage > .quiz_box.btn-mc-1::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "A";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_usage > .usage > .quiz_box.btn-mc-1.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_usage > .usage > .quiz_box.btn-mc-2::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "B";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_usage > .usage > .quiz_box.btn-mc-2.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_usage > .usage > .quiz_box.btn-mc-3::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "C";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_usage > .usage > .quiz_box.btn-mc-3.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_usage > .usage > .quiz_box.btn-mc-4::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "D";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_usage > .usage > .quiz_box.btn-mc-4.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_usage > .usage > .quiz_box.btn-mc-5::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "E";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_usage > .usage > .quiz_box.btn-mc-5.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_usage > .usage > .quiz_box.btn-mc-6::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "F";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_quiz .quiz_usage > .usage > .quiz_box.btn-mc-6.correct::after {
+    color: #fff;
+}
+
+#wrap .s_quiz .quiz_usage > .usage > .quiz_box.on::after {
+    top: 4px;
+}
+
+#wrap .s_quiz .quiz_usage > .usage > .quiz_box:disabled {
+    color: #000;
+}
+
+#wrap .s_quiz .quiz_usage > .usage > .quiz_box.correct {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sentence_correct.png");
+}
+
+#wrap .s_quiz .quiz_usage > .usage > .quiz_box.wrong {
+    background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/box_quiz_sentence_wrong.png");
+}
+
+#wrap .s_quiz .quiz_usage > .usage > .quiz_box.small {
+    font-size: 32px;
+    padding-left: 24px;
+}
+
+#wrap .s_quiz .quiz_usage.student > .img_box {
+    background-color: transparent;
+    margin-top: 152px;
+}
+
+#wrap .s_quiz .quiz_usage.student > .img_box > img {
+    width: 487px;
+    height: 290px;
+    margin-top: 25px;
+}
+
+#wrap .s_quiz .quiz_usage.student > .img_box > .quiz_usage {
+    color: black;
+    font-size: 55px;
+    height: 130px;
+}
+
+#wrap .s_quiz .quiz_usage.student > .img_box > .quiz_usage > div > div > .block {
+    border-bottom: 4px solid black;
+}
+
+#wrap .s_quiz .quiz_usage.student > .img_box > .quiz_usage > div > div > .block.view {
+    color: black;
+    /* border-bottom-color: #34CAE2;	*/
+}
+
+#wrap .s_quiz .quiz_usage.student > .img_box > .quiz_usage.result > div > div > .block {
+    color: #34CAE2;
+    border-bottom-color: #34CAE2;
+}
+
+#wrap .s_quiz .quiz_usage.student > .usage > .quiz_box {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sentence_s.png");
+    background-repeat: no-repeat;
+    width: 354px;
+    height: 90px;
+    pointer-events: unset;
+    cursor: pointer;
+    padding: 0px 10px 10px 10px;
+}
+
+#wrap .s_quiz .quiz_usage.student > .usage > .quiz_box:disabled {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sentence_s.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_quiz .quiz_usage.student > .usage > .quiz_box.on {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sentence_down_s.png");
+}
+
+#wrap .s_quiz .quiz_usage.student > .usage > .quiz_box:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sentence_s.png") url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sentence_down_s.png") url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sentence_s.png");
+}
+
+#wrap .s_quiz .quiz_usage.student > .usage > .quiz_box.correct {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sentence_correct_s.png");
+}
+
+#wrap .s_quiz .quiz_usage.student > .usage > .quiz_box.wrong {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/box_quiz_sentence_wrong_s.png");
+}
+
+#wrap .s_quiz .quiz_usage.student > .usage > .quiz_box.small {
+    font-size: 32px;
+    padding-left: 24px;
+}
+
+#wrap .s_quiz .quiz_usage .btn_back {
+    background-size: 100% 100%;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/btn_back.png");
+    background-repeat: no-repeat;
+    width: 78px;
+    height: 73px;
+    pointer-events: unset;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+#wrap .s_quiz .quiz_usage .btn_back:disabled {
+    background-image: "";
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_quiz .quiz_usage .btn_back.down {
+    background-image: url("/content/digenglish_lib/images/btn_back_down.png");
+}
+
+#wrap .s_quiz .quiz_usage .btn_back:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/btn_back.png") url("/content/digenglish_lib/images/btn_back_down.png") "";
+}
+
+#wrap .s_quiz .quiz_usage .btn_back.down {
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
+}
+
+#wrap .s_voca_typing {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+#wrap .s_voca_typing > .typing_box {
+    width: 100%;
+    height: 280px;
+    position: absolute;
+    top: 310px;
+    transition: top 0.3s;
+    text-align: center;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    /* wrong일 경우 아래의 정답 */
+}
+
+#wrap .s_voca_typing > .typing_box > input[type='text'] {
+    touch-action: none;
+    box-sizing: border-box;
+    display: inline-block;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    background-color: transparent;
+    border-width: 0px;
+    outline-width: 0px;
+    outline: none;
+    text-align: center;
+    font-weight: bold;
+    line-height: 100%;
+    caret-color: #000;
+    border-bottom: 4px solid #000;
+    margin: 0px 5px;
+    vertical-align: bottom;
+    padding: 0px;
+    color: #000;
+    /* wrong일 경우 색깔 수정*/
+}
+
+#wrap .s_voca_typing > .typing_box > input[type='text'].blank {
+    border-bottom-color: transparent;
+}
+
+#wrap .s_voca_typing > .typing_box > input[type='text']:disabled {
+    color: #000;
+    outline: none;
+}
+
+#wrap .s_voca_typing > .typing_box > input[type='text']::-moz-selection {
+    background: transparent;
+}
+
+#wrap .s_voca_typing > .typing_box > input[type='text']::selection {
+    background: transparent;
+}
+
+#wrap .s_voca_typing > .typing_box > input[type='text'].underline_L {
+    font-size: 100px;
+    width: 109px;
+    height: 140px;
+}
+
+#wrap .s_voca_typing > .typing_box > input[type='text'].underline_L.blank {
+    width: 50px;
+}
+
+#wrap .s_voca_typing > .typing_box > input[type='text'].underline_L.wrong {
+    color: #000dff;
+}
+
+#wrap .s_voca_typing > .typing_box > input[type='text'].underline_M {
+    font-size: 95px;
+    width: 94px;
+    height: 140px;
+}
+
+#wrap .s_voca_typing > .typing_box > input[type='text'].underline_M.blank {
+    width: 40px;
+}
+
+#wrap .s_voca_typing > .typing_box > input[type='text'].underline_M.wrong {
+    color: #000dff;
+}
+
+#wrap .s_voca_typing > .typing_box > input[type='text'].underline_S {
+    font-size: 90px;
+    width: 79px;
+    height: 140px;
+}
+
+#wrap .s_voca_typing > .typing_box > input[type='text'].underline_S.blank {
+    width: 35px;
+}
+
+#wrap .s_voca_typing > .typing_box > input[type='text'].underline_S.wrong {
+    color: #000dff;
+}
+
+#wrap .s_voca_typing > .typing_box > input[type='text'].underline_XS {
+    font-size: 70px;
+    width: 64px;
+    height: 140px;
+}
+
+#wrap .s_voca_typing > .typing_box > input[type='text'].underline_XS.blank {
+    width: 30px;
+}
+
+#wrap .s_voca_typing > .typing_box > input[type='text'].underline_XS.wrong {
+    color: #000dff;
+}
+
+#wrap .s_voca_typing > .typing_box .answer {
+    width: 100%;
+    position: absolute;
+    top: -150px;
+    font-size: 100px;
+    font-weight: bold;
+    color: rgba(238, 26, 47, 0.749);
+    text-align: center;
+}
+
+#wrap .s_voca_typing > .typing_box .answer > span.underline_L, #wrap .s_voca_typing > .typing_box .answer > span.underline_M, #wrap .s_voca_typing > .typing_box .answer > span.underline_S {
+    overflow: visible;
+    margin: 0px 5px;
+    border: 4px solid transparent;
+    box-sizing: border-box;
+}
+
+#wrap .s_voca_typing > .typing_box .answer > span.underline_L.wrong, #wrap .s_voca_typing > .typing_box .answer > span.underline_M.wrong, #wrap .s_voca_typing > .typing_box .answer > span.underline_S.wrong {
+    visibility: visible;
+}
+
+#wrap .s_voca_typing > .typing_box .answer .underline_L {
+    visibility: hidden;
+    display: inline-block;
+    width: 109px;
+    height: 140px;
+}
+
+#wrap .s_voca_typing > .typing_box .answer .underline_L.blank {
+    width: 50px;
+}
+
+#wrap .s_voca_typing > .typing_box .answer .underline_M {
+    font-size: 95px;
+    visibility: hidden;
+    display: inline-block;
+    width: 94px;
+    height: 140px;
+}
+
+#wrap .s_voca_typing > .typing_box .answer .underline_M.blank {
+    width: 40px;
+}
+
+#wrap .s_voca_typing > .typing_box .answer .underline_S {
+    font-size: 90px;
+    visibility: hidden;
+    display: inline-block;
+    width: 79px;
+    height: 140px;
+}
+
+#wrap .s_voca_typing > .typing_box .answer .underline_S.blank {
+    width: 35px;
+}
+
+#wrap .s_voca_typing > .typing_box .answer .underline_XS {
+    font-size: 70px;
+    visibility: hidden;
+    display: inline-block;
+    width: 64px;
+    height: 140px;
+}
+
+#wrap .s_voca_typing > .typing_box .answer .underline_XS.blank {
+    width: 30px;
+}
+
+#wrap .s_voca_typing > .typing_box.on {
+    top: 145px;
+}
+
+#wrap .s_voca_typing .icon_answer {
+    pointer-events: none;
+    position: absolute;
+    top: -35px;
+    left: 0px;
+    width: 100%;
+    z-index: -1;
+    opacity: 0;
+    -webkit-transform: scale(0.2, 0.2);
+            transform: scale(0.2, 0.2);
+    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+}
+
+#wrap .s_voca_typing .icon_answer.correct {
+    background: url("/content/digenglish_lib/B/ls_voca/student/images/icon_correct.png") no-repeat;
+    background-position: 50% 50%;
+    height: 220px;
+}
+
+#wrap .s_voca_typing .icon_answer.wrong {
+    background: url("/content/digenglish_lib/B/ls_voca/student/images/icon_wrong.png") no-repeat;
+    background-position: 50% 50%;
+    height: 220px;
+}
+
+#wrap .s_voca_typing .icon_answer.on {
+    pointer-events: unset;
+    z-index: 10;
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    transition: -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2), -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+}
+
+#wrap .s-speak-record {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#wrap .s-speak-record > .word-image {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    background-color: #fff;
+}
+
+#wrap .s-speak-record > .content-box {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 0px;
+    overflow: visible;
+}
+
+#wrap .s-speak-record > .content-box > .entry_box {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 729px;
+    height: 178px;
+    border-radius: 20px;
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    transition: opacity 0.3s;
+    padding-right: 25px;
+    padding-left: 23px;
+}
+
+#wrap .s-speak-record > .content-box > .entry_box > .speak_entry {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    color: #3843ba;
+    font-weight: 400;
+    letter-spacing: -1px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#wrap .s-speak-record > .content-box > .sentence_box {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 1114px;
+    height: 178px;
+    border-radius: 20px;
+    position: absolute;
+    top: 380px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    transition: opacity 0.3s;
+}
+
+#wrap .s-speak-record > .content-box > .sentence_box > .speak_sentence {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    right: 30px;
+    left: 30px;
+    font-size: 55px;
+    line-height: 120%;
+    height: auto;
+    color: black;
+    font-weight: 600;
+    letter-spacing: -1px;
+    white-space: normal;
+    text-align: center;
+}
+
+#wrap .s-speak-record > .content-box > .sentence_box > .speak_sentence .block {
+    color: #3843BA;
+}
+
+#wrap .s-speak-record > .content-box.hide-bg > .entry_box {
+    background: unset;
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.1), -2px 2px 2px rgba(255, 255, 255, 0.1), -2px -2px 2px rgba(255, 255, 255, 0.1), 2px -2px 2px rgba(255, 255, 255, 0.1);
+}
+
+#wrap .s-speak-record > .content-box.hide-bg > .sentence_box {
+    background: unset;
+}
+
+#wrap .s-speak-record > .content-box.hide-bg > .sentence_box > .speak_sentence {
+    color: #fff;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -2px 2px 2px rgba(0, 0, 0, 0.1), -2px -2px 2px rgba(0, 0, 0, 0.1), 2px -2px 2px rgba(0, 0, 0, 0.1);
+}
+
+#wrap .s-speak-record > .content-box.hide-bg > .sentence_box > .speak_sentence .block {
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.1), -2px 2px 2px rgba(255, 255, 255, 0.1), -2px -2px 2px rgba(255, 255, 255, 0.1), 2px -2px 2px rgba(255, 255, 255, 0.1);
+}
+
+#wrap .s-speak-record > .media-box {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+#wrap .s-speak-record > .media-box > .s-menu {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > video {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    -o-object-fit: fill;
+       object-fit: fill;
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > audio {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    bottom: 0px;
+    height: 93px;
+    background-color: #E7E7E8;
+    padding: 7px 17px;
+    text-align: center;
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .left_box {
+    position: absolute;
+    /*		
+						.btn_question{
+							margin-left: 8px;
+							@include btn_on_dis(
+								resolve('student/images/btn_question.png'),
+								resolve('student/images/btn_question_down.png'),
+								resolve('student/images/btn_question.png'),
+								width('student/images/btn_question.png'),
+								height('student/images/btn_question.png')
+							);
+						}
+						*/
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .left_box .btn_script {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/btn_script.png");
+    background-repeat: no-repeat;
+    width: 74px;
+    height: 74px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .left_box .btn_script:disabled {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/btn_script.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .left_box .btn_script.on {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/btn_script_down.png");
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .left_box .btn_script:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_voca/student/images/btn_script.png") url("/content/digenglish_lib/B/ls_voca/student/images/btn_script_down.png") url("/content/digenglish_lib/B/ls_voca/student/images/btn_script.png");
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .center-box {
+    position: absolute;
+    display: inline-block;
+    right: 640px;
+    width: auto;
+    text-align: right;
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .center-box .btn_record {
+    vertical-align: middle;
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .center-box .btn_record.video {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/btn_video.png");
+    background-repeat: no-repeat;
+    width: 74px;
+    height: 74px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .center-box .btn_record.video.on {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/btn_video_down.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .center-box .btn_record.video.down {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/btn_video_down.png");
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .center-box .btn_record.video:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_voca/student/images/btn_video.png") url("/content/digenglish_lib/B/ls_voca/student/images/btn_video_down.png") url("/content/digenglish_lib/B/ls_voca/student/images/btn_video_down.png");
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .center-box .btn_record.audio {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/btn_voice.png");
+    background-repeat: no-repeat;
+    width: 74px;
+    height: 74px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .center-box .btn_record.audio.on {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/btn_voice_down.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .center-box .btn_record.audio.down {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/btn_voice_down.png");
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .center-box .btn_record.audio:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_voca/student/images/btn_voice.png") url("/content/digenglish_lib/B/ls_voca/student/images/btn_voice_down.png") url("/content/digenglish_lib/B/ls_voca/student/images/btn_voice_down.png");
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .center-box .btn_record_stop {
+    vertical-align: middle;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/btn_stop.png");
+    background-repeat: no-repeat;
+    width: 74px;
+    height: 74px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .center-box .btn_record_stop.on {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/btn_stop_down.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .center-box .btn_record_stop.down {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/btn_stop_down.png");
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .center-box .btn_record_stop:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_voca/student/images/btn_stop.png") url("/content/digenglish_lib/B/ls_voca/student/images/btn_stop_down.png") url("/content/digenglish_lib/B/ls_voca/student/images/btn_stop_down.png");
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .center-box .btn_record_stop.noactive {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/btn_stop_noactive.png");
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .center-box .btn_play_pause {
+    vertical-align: middle;
+    margin-left: 15px;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/btn_play.png");
+    background-repeat: no-repeat;
+    width: 74px;
+    height: 74px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .center-box .btn_play_pause:disabled {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/btn_play.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .center-box .btn_play_pause.down {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/btn_play_down.png");
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .center-box .btn_play_pause:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_voca/student/images/btn_play.png") url("/content/digenglish_lib/B/ls_voca/student/images/btn_play_down.png") url("/content/digenglish_lib/B/ls_voca/student/images/btn_play.png");
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .center-box .btn_play_pause.play {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/btn_stop.png");
+    background-repeat: no-repeat;
+    width: 74px;
+    height: 74px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .center-box .btn_play_pause.play:disabled {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/btn_stop.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .center-box .btn_play_pause.play.down {
+    background-image: url("/content/digenglish_lib/B/ls_voca/student/images/btn_stop_down.png");
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box > .center-box .btn_play_pause.play:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_voca/student/images/btn_stop.png") url("/content/digenglish_lib/B/ls_voca/student/images/btn_stop_down.png") url("/content/digenglish_lib/B/ls_voca/student/images/btn_stop.png");
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box .time-box {
+    position: absolute;
+    left: 660px;
+    line-height: 75px;
+    font-size: 30px;
+    font-style: bold;
+    color: #767676;
+}
+
+#wrap .s-speak-record > .media-box > .s-menu > .btn-box .time-box > img {
+    margin-right: 10px;
+    margin-bottom: 2px;
+    -webkit-animation: blink_recording 1s linear infinite;
+            animation: blink_recording 1s linear infinite;
+}
+
+#wrap .s-speak-record > .media-box .fel_toteacher {
+    right: 10px;
+    width: 90px;
+    bottom: 10px;
+    height: 83px;
+}
+
+#wrap .s-speak-record.audio {
+    /* */
+}
+
+#wrap .s-speak-record.video {
+    background-color: transparent;
+}
+
+#wrap .s-speak-record.like-on {
+    /* */
+}
+
+#wrap .s-speak-record.hide-contents {
+    /* */
+}
+
+#wrap .s-speak-record.hide {
+    visibility: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+#wrap .fel_toteacher {
+    position: absolute;
+    z-index: 11;
+    touch-action: none;
+    bottom: 20px;
+    right: 20px;
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/toteacher.svg");
+    background-repeat: no-repeat;
+    width: 95px;
+    height: 87px;
+    cursor: pointer;
+    pointer-events: unset;
+}
+
+#wrap .fel_toteacher.on {
+    background-image: url("/content/digenglish_lib/images/toteacher_on.svg");
+}
+
+#wrap .fel_toteacher:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/toteacher.svg") url("/content/digenglish_lib/images/toteacher_on.svg");
+}
+
+#wrap .fel_toteacher.on {
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+}
+
+@font-face {
+    font-family: Visang_e_HT;
+    src: url(/content/digenglish_lib/font/Visang_e_HT.woff) format("woff");
+}
+
+@font-face {
+    font-family: Visang_e_HT;
+    font-weight: bold;
+    src: url(/content/digenglish_lib/font/Visang_e_HT_Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans_bold;
+    font-weight: bold;
+    src: url(/content/digenglish_lib/font/NotoSansCJKkr-Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans_light;
+    font-weight: lighter;
+    src: url(/content/digenglish_lib/font/NotoSans-Light.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans;
+    /* src: url(/content/digenglish_lib/font/NotoSansCJKkr-Medium.woff) format('woff'); */
+    src: url(/content/digenglish_lib/font/NotoSansCJK-Medium-en.woff) format("woff");
+}
+
+@font-face {
+    font-family: HelveticaRounded;
+    font-weight: bold;
+    src: url(/content/digenglish_lib/font/HelveticaRounded-Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: HelveticaRoundedLTStd;
+    font-weight: bold;
+    src: url(/content/digenglish_lib/font/HelveticaRoundedLTStd-Bd.woff) format("woff");
+}
+
+@charset "UTF-8";
+html, body {
+    padding: 0px;
+    margin: 0px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    border: 0px;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* 버튼 포커스시 색상 변하는 현상 방지 */
+    font-family: NotoSans !important;
+    -webkit-font-smoothing: antialiased;
+    font-size: 8px;
+    overflow: hidden;
+}
+
+button {
+    font-family: NotoSans !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    padding: 0px;
+    margin: 0px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    border: 0px;
+    outline: 0px solid transparent;
+}
+
+div, p {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+#common_audio {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#ding_audio {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#dingend_audio {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#wrap {
+    width: 1280px;
+    height: 800px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.bg_svg {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+.swiper-scrollbar.white {
+    background: rgba(0, 0, 0, 0);
+    width: 7px;
+}
+
+.swiper-scrollbar.white .swiper-scrollbar-drag {
+    width: 7px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+}
+
+.swiper-scrollbar.black {
+    background: rgba(0, 0, 0, 0);
+    width: 7px;
+}
+
+.swiper-scrollbar.black .swiper-scrollbar-drag {
+    width: 7px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+.common_back {
+    background-size: 100% 100%;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/btn_back.png");
+    background-repeat: no-repeat;
+    width: 78px;
+    height: 73px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+.common_back:disabled {
+    background-image: "";
+    pointer-events: none;
+    cursor: auto;
+}
+
+.common_back.down {
+    background-image: url("/content/digenglish_lib/images/btn_back_down.png");
+}
+
+.common_back:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/btn_back.png") url("/content/digenglish_lib/images/btn_back_down.png") "";
+}
+
+.common_back.down {
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 16px;
+}
+
+.swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    opacity: 0.3;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #47F6E9;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+#preload_hidden {
+    position: absolute;
+    pointer-events: none;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+#preload_hidden .helvetica {
+    font-family: HelveticaRounded;
+}
+
+#preload_hidden .helveticastd {
+    font-family: HelveticaRoundedLTStd;
+}
+

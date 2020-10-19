@@ -1,0 +1,36 @@
+@import '../../share/penui.scss';
+
+@mixin pentool_sheet {
+	overflow: hidden;
+	text-align: center;
+	.draw_box{
+		display: inline-block;
+		margin-top: 0px;
+		width: auto;
+		height: auto;
+		background-color: #fff;
+		border: 5px solid rgb(93, 128, 180);
+		border-radius: 6px;
+		&>canvas{
+			position: relative;
+			touch-action: none;
+			z-index: 11;
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+	.return_cnt_box{
+		@include return_cnt_box_white;
+		cursor: pointer;
+		position: absolute;
+		top: 0px; right: 70px;
+	}
+	.penui{
+		@include penui();
+	}
+	.btn_back{
+		@include common_back;
+		position:absolute; right: 5px;	bottom: 3px;
+		z-index: 2;
+	}
+}

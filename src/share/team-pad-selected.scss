@@ -1,0 +1,44 @@
+@mixin team-pad-selected{
+	background-image: resolve('digenglish_lib/team/ready.png');
+	background-repeat: no-repeat;
+	&>svg{
+		position: absolute;
+		left:0px;
+		top:0px;
+		visibility: hidden;
+		z-index: -1;
+		pointer-events: none;
+	}
+
+	&>.icon{
+		position: absolute;
+	}
+
+	&.hide{
+		visibility: hidden;
+		z-index: -1;
+		pointer-events: none;
+	}
+	&.hide-bg{
+		background-image: unset;
+		&>.icon{
+			visibility: hidden;
+			z-index: -1;
+			pointer-events: none;
+		}
+	}
+	&.view-ani{
+		background-image: unset;
+		&>.icon{
+			visibility: hidden;
+			z-index: -1;
+			pointer-events: none;
+		}
+		&>svg{
+			visibility: visible;
+			z-index: 0;
+			pointer-events: auto;
+		}
+	}
+
+}

@@ -1,0 +1,46 @@
+@import "../common/component/button.scss";
+@import "../config.scss";
+@import "../share/navi.scss";
+@import "../share/sendui.scss";
+@import "./teacher/t_contentbox.scss";
+
+
+body{
+	background-color: transparent;
+}
+#wrap{
+	background-image: resolve('teacher/images/bg_ls.png');
+	&>.btn_box{
+		@include btn_12;
+		.btn_1{
+			@include btn_down_dis(
+				resolve('teacher/images/btn_1_dis.png'),
+				resolve('teacher/images/btn_1_down.png'),
+				resolve('teacher/images/btn_1.png'),
+				width('teacher/images/btn_1.png'),
+				height('teacher/images/btn_1.png')
+			);
+			
+		}
+		.btn_2{
+			@include btn_down_dis(
+				resolve('teacher/images/btn_2_dis.png'),
+				resolve('teacher/images/btn_2_down.png'),
+				resolve('teacher/images/btn_2.png'),
+				width('teacher/images/btn_2.png'),
+				height('teacher/images/btn_2.png')
+			);
+		}
+	}
+
+	@include t_contentbox;
+
+	.fel_topad{
+		@include fel_topad;
+	}
+
+	.preview-box{
+		border-radius: 5px;
+		background-color: rgba(0, 0, 0,0.15);
+	}
+}

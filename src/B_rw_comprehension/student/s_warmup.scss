@@ -1,0 +1,111 @@
+@import '../../share/sendui.scss';
+
+@mixin s_warmup{
+	.s_warmup{
+
+
+		&>.box{
+			position: absolute;
+			left: 0px; width: 100%;
+			top: 50%; height: auto;
+			transform: translateY(-50%);
+			transition: top 0.3s;
+			
+			&>.speaker {
+				position: relative; left: 205px;
+				transition: top 0.3s;
+				&>img{
+					display: inline-block;
+					vertical-align: middle;			
+				}
+				&>div {
+					position: relative;
+					display: inline-block;
+					vertical-align: middle;
+					width: 863px; height: 130px;
+					background-color: rgb(255, 255, 255);
+					border-radius: 20px;
+					text-align: center; 
+					padding: 0px 30px;
+					box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.2);
+					&>div{
+						position: relative;
+						top: 50%;
+						transform: translateY(-52%);
+						/*font-size: 52px;*/
+						font-weight: bold;
+						line-height: 1.2;
+						height:auto;
+					}
+				}
+				&.key-on { top: 36px; }
+			}
+
+			&>.s_typing {
+				position: relative; left: 205px;
+				transition: margin-top 0.3s;
+				margin-top: 40px;
+				.area-bnd{
+					position: relative;
+					display:inline-block;
+					vertical-align: top;
+					width: 894px;
+					margin-right: 5px;
+					.k-tarea{
+						position: relative;
+						width: 100%;
+						height: auto;
+						min-height: 64px;
+						textarea{
+							box-sizing: border-box;
+							font-size: 52px;
+							padding: 30px 35px 30px 30px;
+							color: #000;
+							font-family: NotoSans;
+							font-weight: bold;
+							&::disabled{
+								color: #000;
+							}
+						}
+						.k-tarea-bg{
+							height: 0px;
+							min-height: 100%; 
+						}
+						.k-tarea-bar{
+							display: none;
+						}				
+					}
+					canvas{
+						position: absolute;
+						left:0px; top: 0px;
+					}
+				}
+				&>img {
+					display:inline-block;
+					vertical-align: top;
+					box-sizing: border-box;
+					width: 115px; 
+					height: 115px;
+					border-width: 6px;
+					border-style: solid;
+					border-radius: 50%;
+					&.pink{border-color: rgb(206, 116, 225);}
+					&.green{border-color: rgb(34,205,172);}
+					&.orange{border-color: rgb(255,186,0);}
+					&.purple{border-color: rgb(116,113,236);}
+
+				}
+			}
+
+			&.key-on{
+				top: 28%;
+				&>.s_typing {
+					margin-top: 20px;
+				}
+			}
+		}
+		.fel_toteacher {
+			@include fel_toteacher;
+		}
+	}
+}

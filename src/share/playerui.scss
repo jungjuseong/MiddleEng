@@ -1,0 +1,160 @@
+@import '../common/component/button.scss';
+@mixin k-playerui{
+	position: relative;
+
+
+	&>video{
+		position: absolute;
+		left: 0px; width: 100%;
+		top: 0px; height: calc(100% - 0.8 * height('digenglish_lib/images/playerui/btn_play.png'));
+		object-fit: fill;
+	}
+
+
+	&>.control{
+		position: absolute;
+		width: 100%; bottom: 0px;
+		height: auto;
+		background-image: resolve('digenglish_lib/images/playerui/bg_player.png');
+		background-repeat: repeat-x;
+		background-size: auto;
+		display: flex;
+		flex-wrap: nowrap;
+		&>.control_left{
+			flex: auto;
+
+			&>.btn_play_pause{
+				@include btn_down_on(
+					resolve('digenglish_lib/images/playerui/btn_play.png'),
+					resolve('digenglish_lib/images/playerui/btn_play_on.png'),
+					resolve('digenglish_lib/images/playerui/btn_play_on.png'),
+					0.8 * width('digenglish_lib/images/playerui/btn_play.png'),
+					0.8 * height('digenglish_lib/images/playerui/btn_play.png')
+				);
+				background-size: 100% 100%;
+				vertical-align: bottom;
+			}
+			&>.btn_stop{
+				@include btn_down_on(
+					resolve('digenglish_lib/images/playerui/btn_stop.png'),
+					resolve('digenglish_lib/images/playerui/btn_stop_on.png'),
+					resolve('digenglish_lib/images/playerui/btn_stop_on.png'),
+					0.8 * width('digenglish_lib/images/playerui/btn_stop.png'),
+					0.8 * height('digenglish_lib/images/playerui/btn_play.png')
+				);
+				background-size: 100% 100%;
+				vertical-align: bottom;
+			}
+		}
+		&>.control_top{
+			font-size:0px;
+			flex: 10000;
+			padding: 0px 15px 0px 15px;
+			.prog_box{
+				position: relative;
+				height: 100%;
+
+				.prog_bg{
+					position: relative;
+					top: 26px;
+					height: 8px;
+					border-radius: 10px;
+					width: 100%;
+					font-size: 0px;
+					display: inline-block;
+					background-color: #999;
+
+					.prog_bar {
+						height: 8px;
+						border-radius: 10px;
+						background-color: #22C8FF;						
+					}
+					.prog_btn{
+						@include btn_down_on(
+							resolve('digenglish_lib/images/playerui/btn_prog.png'),
+							resolve('digenglish_lib/images/playerui/btn_prog_down.png'),
+							resolve('digenglish_lib/images/playerui/btn_prog_down.png'),
+							0.8 * width('digenglish_lib/images/playerui/btn_prog.png'),
+							0.8 * height('digenglish_lib/images/playerui/btn_prog.png')
+						);
+						position: absolute;
+						top: 50%;
+						transform: translate(-50%, -50%);
+						background-size: 100% 100%;
+					}
+				}
+			}
+		}
+		&>.video_time{
+			flex: auto;
+			white-space: nowrap;
+			font-size: 16px;
+			color: #767676;
+			line-height: 0.8 * height('digenglish_lib/images/playerui/btn_play.png');
+		}
+		&>.control_right{
+			flex: auto;
+			&>.btn_fullscreen{
+				@include btn_down_on(
+					resolve('digenglish_lib/images/playerui/btn_fullscreen.png'),
+					resolve('digenglish_lib/images/playerui/btn_fullscreen_off.png'),
+					resolve('digenglish_lib/images/playerui/btn_fullscreen_off.png'),
+					0.8 * width('digenglish_lib/images/playerui/btn_fullscreen.png'),
+					0.8 * height('digenglish_lib/images/playerui/btn_play.png')
+				);
+				background-size: 100% 100%;
+				vertical-align: bottom;
+			}
+		}
+	}
+
+
+	&:fullscreen {
+		&>video{
+			height: 100%;
+		}
+		&>.control{
+			&>.control_left{
+				.btn_play_pause{
+					width: width('digenglish_lib/images/playerui/btn_play.png');
+					height: height('digenglish_lib/images/playerui/btn_play.png');			
+				}
+
+				.btn_stop{
+					width: width('digenglish_lib/images/playerui/btn_stop.png');
+					height: height('digenglish_lib/images/playerui/btn_play.png');
+				}
+			}
+			&>.control_top{
+				padding: 0px 25px 0px 25px;
+				.prog_box{
+					.prog_bg{
+						top: 33px;
+						height: 10px;
+						border-radius: 5px;
+						.prog_bar {
+							height: 10px;
+							border-radius: 5px;						
+						}
+						.prog_btn{
+							width: width('digenglish_lib/images/playerui/btn_prog.png');
+							height: height('digenglish_lib/images/playerui/btn_prog.png');
+						}
+					}
+				}
+			}
+			&>.video_time{
+				line-height:height('digenglish_lib/images/playerui/btn_play.png');
+				font-size: 20px;
+			}
+			&>.control_right{
+				&>.btn_fullscreen{
+					width: width('digenglish_lib/images/playerui/btn_fullscreen.png');
+					height: height('digenglish_lib/images/playerui/btn_play.png');
+				}
+			}
+		}
+
+
+	}
+}

@@ -1,0 +1,132 @@
+@import '../../share/sendui.scss';
+@import '../../share/QuizMCBtn.scss';
+@mixin s_question{
+	.s_question{
+		@include page;
+		z-index: 2;
+		background-image:resolve("student/images/bg_ls.png");
+
+		.btn_SCRIPT {
+			position: absolute; top: 19px; left: 26px;
+			z-index: 2;
+			@include btn_down_dis(
+				resolve('student/images/btn_script.png'),
+				resolve('student/images/btn_script_down.png'),
+				resolve('student/images/btn_script.png'),
+				width('student/images/btn_script.png'),
+				height('student/images/btn_script.png')
+			);
+		}
+		.btn_page_box {
+			position: absolute;	top: 25px; width: 100%;	height: 0px;
+			overflow: visible;text-align: center;
+			z-index: 2;
+			cursor: pointer;
+			&>span {
+				display: inline-block;
+				vertical-align: top;
+				width: width("common/icon_o.png");
+				height:  height("common/icon_o.png");
+				background-repeat: no-repeat;
+				background-position: 50% 50%; 
+
+				line-height: 5 * height("common/icon_o.png") / 6;
+				&.O{
+					background-image: resolve("common/icon_o.png");
+				}
+				&.X{
+					background-image: resolve("common/icon_x.png");
+				}
+				
+				font-size: 34px; font-weight: bold; color: rgba(255, 255, 255, 0.4);
+				&.on {
+					color: rgb(248, 246, 77);
+				}
+			}
+			&.off{display: none;}
+		}
+		.question {
+			position: absolute;
+			top: 0px; height: 100%;
+			left: 0px; width: 100%;
+
+			.swiper-container{
+				@include page;
+			}
+			.q-item {
+				.quiz {
+					position: relative;	
+					top: 100px;
+					height: 180px;
+
+					width: 100%;
+					text-align: center;
+					/* background-color: rgba(0, 0, 0, 0.2); */
+					padding: 0px 30px;
+					&>div {
+						position: relative;
+						top: 50%; transform: translateY(-50%);
+						display: inline-block; 
+						white-space: normal; 
+						word-break: normal; 
+						line-height: 120%;
+						font-size: 55px; 
+						color: rgb(0, 0, 0);
+
+						/* background-color: rgba(255, 0, 0, 0.2); */
+					}
+				}
+				.choice {
+					position: absolute;
+					top: 315px; text-align: center;
+					white-space: normal;
+					.btn_choice {
+						@include btn_on(
+							resolve('student/images/box_select_s.png'),
+							resolve('student/images/box_select_down_s.png'),
+							width('student/images/box_select_s.png'),
+							height('student/images/box_select_s.png')
+						);
+						position: relative;
+						@include  quiz-btn-mc;
+
+						font-size: 40px; 
+						font-family: NotoSans;
+						text-align: left;
+						padding: 0px 70px;
+						color: rgb(0, 0, 0);
+						margin-bottom: 11px;
+						&.correct {
+							background-image: resolve('student/images/box_select_correct_s.png');
+						}
+						&.wrong {
+							background-image: resolve('student/images/box_select_wrong_s.png');
+						}
+						&.on{
+							&::after{
+								top: 4px;
+							}
+						}
+
+					}
+				}
+			}
+			
+		}
+		.btn_next {
+			position: absolute; top: 355px; right: 12px;
+			z-index: 2;
+			@include btn_down_dis(
+				resolve('student/images/btn_next.png'),
+				resolve('student/images/btn_next_down.png'),
+				resolve('student/images/btn_next.png'),
+				width('student/images/btn_next.png'),
+				height('student/images/btn_next.png')
+			);
+		}
+		.fel_toteacher {
+			@include fel_toteacher;
+			position: absolute; bottom: 7px; right: 7px;
+		}
+	}
+}

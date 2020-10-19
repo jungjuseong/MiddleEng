@@ -1,0 +1,204 @@
+@import '../../share/CoverPopup.scss';
+@import './t_warmup.scss';
+@import './t_passage.scss';
+@import './t_question.scss';
+@import './t_graphic.scss';
+@import './t_summary.scss';
+@import './t_video_box.scss';
+@import './t_storybook.scss';
+@mixin t_comprehension{
+	.t_compre {
+		
+		&>.top {
+			position: absolute; top: 48px; left: 50%; transform: translateX(-50%);
+			z-index: 1;
+			.btn_comprehension {
+				@include btn_down_dis (
+					resolve('teacher/images/btn_comprehension.png'),
+					resolve('teacher/images/btn_comprehension_down.png'),
+					resolve('teacher/images/btn_comprehension.png'),
+					width('teacher/images/btn_comprehension.png'),
+					height('teacher/images/btn_comprehension.png')
+				);
+				&.on { background-image: resolve('teacher/images/btn_comprehension_on.png');}
+			}
+			.btn_visualizing {
+				@include btn_down_dis (
+					resolve('teacher/images/btn_visualizing.png'),
+					resolve('teacher/images/btn_visualizing_down.png'),
+					resolve('teacher/images/btn_visualizing.png'),
+					width('teacher/images/btn_visualizing.png'),
+					height('teacher/images/btn_visualizing.png')
+				);
+				&.on { background-image: resolve('teacher/images/btn_visualizing_on.png');}
+			}
+			.btn_summarizing {
+				@include btn_down_dis (
+					resolve('teacher/images/btn_summarizing.png'),
+					resolve('teacher/images/btn_summarizing_down.png'),
+					resolve('teacher/images/btn_summarizing.png'),
+					width('teacher/images/btn_summarizing.png'),
+					height('teacher/images/btn_summarizing.png')
+				);
+				&.on { background-image: resolve('teacher/images/btn_summarizing_on.png');}
+			}
+		}
+		.btn_book {
+			position: absolute; top: 79px; right: 136px;
+			z-index: 1;
+			@include btn_down_dis(
+				resolve('teacher/images/btn_book.png'),
+				resolve('teacher/images/btn_book_down.png'),
+				resolve('teacher/images/btn_book_dis.png'),
+				width('teacher/images/btn_book.png'),
+				height('teacher/images/btn_book.png')
+			);
+			&.up { position: absolute; top:56.5px; right: 136px; }
+		}
+		.btn_video {
+			position: absolute; top: 80px; right: 67px;
+			z-index: 1;
+			@include btn_down_dis(
+				resolve('teacher/images/btn_video.png'),
+				resolve('teacher/images/btn_video_down.png'),
+				resolve('teacher/images/btn_video_dis.png'),
+				width('teacher/images/btn_video.png'),
+				height('teacher/images/btn_video.png')
+			);
+			&.up { position: absolute; top:58px; right: 67px; }
+		}
+		.btn_tab {
+			position: absolute; top: 100px; left: 74px;
+			z-index: 1;
+			.btn_warmup {
+				margin-left: 11px;
+				@include btn_down_dis(
+					resolve('teacher/images/btn_warmup.png'),
+					resolve('teacher/images/btn_warmup_down.png'),
+					resolve('teacher/images/btn_warmup.png'),
+					width('teacher/images/btn_warmup.png'),
+					height('teacher/images/btn_warmup.png')
+				);
+				&.on { background-image: resolve('teacher/images/btn_warmup_down.png');}
+			}
+			.btn_passage {
+				margin-left: 11px;
+				@include btn_down_dis(
+					resolve('teacher/images/btn_passage.png'),
+					resolve('teacher/images/btn_passage_down.png'),
+					resolve('teacher/images/btn_passage.png'),
+					width('teacher/images/btn_passage.png'),
+					height('teacher/images/btn_passage.png')
+				);
+				&.on { background-image: resolve('teacher/images/btn_passage_down.png');}
+			}
+			.btn_question {
+				margin-left: 11px;
+				@include btn_down_dis(
+					resolve('teacher/images/btn_question.png'),
+					resolve('teacher/images/btn_question_down.png'),
+					resolve('teacher/images/btn_question.png'),
+					width('teacher/images/btn_question.png'),
+					height('teacher/images/btn_question.png')
+				);
+				&.on { background-image: resolve('teacher/images/btn_question_down.png');}
+			}
+			.btn_graphicorganizer {
+				margin-left: 11px;
+				@include btn_down_dis(
+					resolve('teacher/images/btn_graphicorganizer.png'),
+					resolve('teacher/images/btn_graphicorganizer_down.png'),
+					resolve('teacher/images/btn_graphicorganizer.png'),
+					width('teacher/images/btn_graphicorganizer.png'),
+					height('teacher/images/btn_graphicorganizer.png')
+				);
+				&.on { background-image: resolve('teacher/images/btn_graphicorganizer_down.png');}
+			}
+			.btn_summary {
+				margin-left: 11px;
+				@include btn_down_dis(
+					resolve('teacher/images/btn_summary.png'),
+					resolve('teacher/images/btn_summary_down.png'),
+					resolve('teacher/images/btn_summary.png'),
+					width('teacher/images/btn_summary.png'),
+					height('teacher/images/btn_summary.png')
+				);
+				&.on { background-image: resolve('teacher/images/btn_summary_down.png');}
+			}
+		}
+		@include t_video_popup;
+		@include t_storybook;
+		&.COMPREHENSION {
+			background-image: resolve('teacher/images/bg_compre.png');
+			width: 100%; height: height('teacher/images/bg_compre.png');
+
+			@include WARMUP;
+			@include PASSAGE;
+			@include QUESTION;
+		}
+		&.VISUALIZING {
+			background-image: resolve('teacher/images/bg_visual.png');
+			width: 100%; height: height('teacher/images/bg_visual.png');
+
+			@include GRAPHICORANIZER;
+		}
+		&.SUMMARIZING {
+			background-image: resolve('teacher/images/bg_visual.png');
+			width: 100%; height: height('teacher/images/bg_visual.png');
+
+			@include SUMMARY;
+		}
+
+		.img_popup{
+			@include CoverPopup(10001);
+			background-color: rgba(0, 0, 0, 0.8);
+			text-align: center;
+			&>div{
+				display: inline-block;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+				width: auto;
+				height: auto;
+				&>img {
+					border-radius: 11px;
+					width: 980px;
+				}
+				.btn_zoom {
+					position: absolute;
+					top: -20px; right: -20px;
+					@include btn_down_dis(
+						resolve('teacher/images/btn_popup_close.png'),
+						resolve('teacher/images/btn_popup_close_down.png'),
+						resolve('teacher/images/btn_popup_close.png'),
+						width('teacher/images/btn_popup_close.png'),
+						height('teacher/images/btn_popup_close.png')
+					);
+				}
+			}
+			
+		}
+	}
+}
+
+@mixin mixin_nav{
+	width: 100%; height: 0px;
+	position: absolute;	
+	top: 150px;	
+}
+@mixin mixin_page_box{
+	.btn_page_box {
+		width: 100%; height: 0px;
+		overflow: visible;text-align: center;
+		z-index: 2;
+		cursor: pointer;
+		&>span {
+			margin: 0px 10px;
+			font-size: 25px; font-weight: bold; color: rgba(179, 179, 179, 0.5);
+			&.on {color: rgb(248, 246, 77);}
+			}
+		&.off{display: none;}
+	}
+}
+
+

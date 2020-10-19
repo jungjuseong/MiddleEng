@@ -1,0 +1,445 @@
+@import './Timer.scss';
+@import './team-curtain.scss';
+@import './team-winner.scss';
+@mixin share-team-spindle{
+	&:before{
+		position:absolute; 
+		pointer-events:none; 
+		width:0px; height:0px; 
+		visibility: hidden;
+		overflow:hidden; 
+		z-index:-1;
+		content: 	resolve('digenglish_lib/team/board/spindle_bg_on.png') 
+					resolve('digenglish_lib/team/board/pointer_on.png')
+					resolve('digenglish_lib/team/board/spindle_result_10.png')
+					resolve('digenglish_lib/team/board/spindle_result_20.png')
+					resolve('digenglish_lib/team/board/spindle_result_30.png')
+					resolve('digenglish_lib/team/board/spindle_result_40.png')
+					resolve('digenglish_lib/team/board/spindle_result_50.png')
+		;
+	}
+	position: absolute;
+	left: 0px; top: 0px;
+	background-image: resolve('digenglish_lib/team/board/spindle_background.png');
+	width: width('digenglish_lib/team/board/spindle_background.png');
+	height: height('digenglish_lib/team/board/spindle_background.png');
+
+	.quizbox{
+		position: absolute;
+		left:0px;width:100%;
+		top: 50px;
+		text-align: center;
+		&>div{
+			display: inline-block;
+			vertical-align: top;
+			/* margin: 3.5px; */
+			margin: 0px 8px;
+			font-size: 22px;
+			font-weight: normal;
+			color: rgba(255, 255, 255, 0.6);
+			background: resolve('digenglish_lib/team/board/bg_num.png') no-repeat;
+			width: width('digenglish_lib/team/board/bg_num.png');
+			height: height('digenglish_lib/team/board/bg_num.png');
+			&>div{
+				position: relative;
+				top: 0px;
+				width: 59px;
+				height: 55px;
+				background-position: 50% 50%;
+				background-repeat: no-repeat;
+			}
+			&.current{
+				color: rgb(255, 252, 0);
+				&>div{
+					border-radius: 10px;
+					border:3px solid rgb(255, 252, 0);
+					background-color: rgba(255, 252, 0, 0.302);
+				}
+				&.ga>div{
+					background-image: resolve("digenglish_lib/team/board/icon_ga_on.png");
+				}
+				&.na>div{
+					background-image: resolve("digenglish_lib/team/board/icon_na_on.png");
+				}
+				&.tie>div{
+					background-image: resolve("digenglish_lib/team/board/icon_gana_on.png");
+				}
+				&.zero>div{
+					background-image: resolve("digenglish_lib/team/board/icon_zero_on.png");
+				}
+			}
+			&.complete{
+				&>div{
+					border-color: transparent;
+					background-color: transparent;	
+				}
+				&.ga>div{
+					background-image: resolve("digenglish_lib/team/board/icon_ga_on.png");
+				}
+				&.na>div{
+					background-image: resolve("digenglish_lib/team/board/icon_na_on.png");
+				}
+				&.tie>div{
+					background-image: resolve("digenglish_lib/team/board/icon_gana_on.png");
+				}
+				&.zero>div{
+					background-image: resolve("digenglish_lib/team/board/icon_zero_on.png");
+				}
+			}
+		}
+		/* 10문제 이상일 경우 */
+		&.small {
+			top: 52px;
+			&>div {
+				font-size: 18px;
+				line-height: 35px;
+				margin: 0px;
+				background: resolve('digenglish_lib/team/board/bg_num_s.png') no-repeat;
+				width: width('digenglish_lib/team/board/bg_num_s.png');
+				height: height('digenglish_lib/team/board/bg_num_s.png');
+				&>div { width: 50px; height: 50px; }
+				&.current{
+					&.ga>div{ background-image: resolve("digenglish_lib/team/board/icon_ga_s_on.png"); }
+					&.na>div{ background-image: resolve("digenglish_lib/team/board/icon_na_s_on.png"); }
+					&.tie>div{ background-image: resolve("digenglish_lib/team/board/icon_gana_s_on.png"); }
+				}
+				&.complete{
+					&.ga>div{ background-image: resolve("digenglish_lib/team/board/icon_ga_s_on.png"); }
+					&.na>div{ background-image: resolve("digenglish_lib/team/board/icon_na_s_on.png"); }
+					&.tie>div{ background-image: resolve("digenglish_lib/team/board/icon_gana_s_on.png"); }
+				}
+			}
+		}
+	}
+	.btn_audio {
+		position: absolute; top: 155px; left: 50%; transform: translateX(-50%);
+		@include btn_on_dis(
+			resolve('common/btn_audio.svg'),
+			resolve('common/btn_audio_on.svg'),
+			resolve('common/btn_audio.svg'),
+			57px,
+			50px
+		);
+		background-size: cover;
+		/* 
+			z-index: 1;
+			&.hide { display: none; }
+		*/
+	}
+	.spindle_box{
+		position: absolute;
+		left: 392px;
+		top: 216px;
+
+		background-image: resolve('digenglish_lib/team/board/spindle_bg.png');
+		background-repeat: no-repeat;
+		width: width('digenglish_lib/team/board/spindle_bg.png');
+		height: height('digenglish_lib/team/board/spindle_bg.png');
+
+		&.on{
+			background-image: resolve('digenglish_lib/team/board/spindle_bg_on.png');
+			background-repeat: no-repeat;
+		}
+
+		.spindle{
+			position: absolute;
+			left: 65px;
+			top: 55px;
+			background-image: resolve('digenglish_lib/team/board/spindle.png');
+			background-repeat: no-repeat;
+			width: width('digenglish_lib/team/board/spindle.png');
+			height: height('digenglish_lib/team/board/spindle.png');
+
+			transition: transform 1.3s cubic-bezier(0.165, 0.840, 0.235, 0.995);
+
+			.btn_start{
+				position:absolute;
+				left: 126px;
+   				top: 126px;
+				@include btn_down_dis(
+					resolve('digenglish_lib/team/board/btn_spindle.png'),
+					resolve('digenglish_lib/team/board/btn_spindle_on.png'),
+					resolve('digenglish_lib/team/board/btn_spindle.png'),
+					width('digenglish_lib/team/board/btn_spindle.png'),
+					height('digenglish_lib/team/board/btn_spindle.png')
+				);
+
+				&.on{
+					animation: share-btn-start-blinker 0.5s linear infinite;
+				}
+			}			
+		}
+	}
+
+	.point_result{
+		position: absolute;
+		left: 457px;
+		top: 271px;
+		
+		background-image: resolve('digenglish_lib/team/board/spindle_result_10.png');
+		width: width('digenglish_lib/team/board/spindle.png');
+		height: height('digenglish_lib/team/board/spindle.png');
+		background-size: cover;		
+
+
+		text-align: center;
+		z-index: -1;
+		opacity: 0;
+		transform: scale(0.2, 0.2);
+
+		&.on{
+			z-index: 0;
+			opacity: 1;
+			transition: transform 0.3s cubic-bezier(0.405, 0.420, 0.135, 1.200);
+			transform: scale(1, 1);
+		}
+		.fel_topad{
+			@include fel_topad_point;
+			position: relative;
+			top: 10px;
+		}
+		
+		.btn_repoint{
+			position: relative;
+			z-index: 2;
+			margin-top: 20px;
+			@include btn_down_dis(
+				resolve('digenglish_lib/team/board/btn_reselect.png'),
+				resolve('digenglish_lib/team/board/btn_reselect_down.png'),
+				resolve('digenglish_lib/team/board/btn_reselect.png'),
+				width('digenglish_lib/team/board/btn_reselect.png'),
+				height('digenglish_lib/team/board/btn_reselect.png')
+			);
+		}
+		.point{
+			text-align: center;
+			&>span{
+				color:#fff;
+				font-size: 150px;
+				font-weight: bold;
+				display: block;
+				line-height: 0.7;
+				letter-spacing: -1px;
+			}
+			.icon{
+				margin-top: 25px;
+				display: inline-block;
+				background-image: resolve('digenglish_lib/team/board/point.png');
+				background-repeat: no-repeat;
+				width: width('digenglish_lib/team/board/point.png');
+				height: height('digenglish_lib/team/board/point.png');					
+			}
+			&>div{
+				font-size: 35px;
+				color: rgba(250, 250, 250,0.5);
+				font-weight: normal;
+				letter-spacing: -1px;
+			}
+		}
+
+		&.p10{
+			background-image: resolve('digenglish_lib/team/board/spindle_result_10.png');
+			background-size: cover;	
+		}
+		&.p20{
+			background: resolve('digenglish_lib/team/board/spindle_result_20.png') no-repeat;
+			background-size: cover;	
+		}
+		&.p30{
+			background-image: resolve('digenglish_lib/team/board/spindle_result_30.png');
+			background-size: cover;	
+		}
+		&.p40{
+			background-image: resolve('digenglish_lib/team/board/spindle_result_40.png');
+			background-size: cover;	
+		}
+		&.p50{
+			background-image: resolve('digenglish_lib/team/board/spindle_result_50.png');
+			background-size: cover;	
+		}
+	}
+	.pointer{
+		position: absolute;
+		left: 595px;
+		top: 212px;
+		background-image: resolve('digenglish_lib/team/board/pointer.png');
+		width: width('digenglish_lib/team/board/pointer.png');
+		height: height('digenglish_lib/team/board/pointer.png');
+
+		&.on{
+			background-image: resolve('digenglish_lib/team/board/pointer_on.png');
+		}
+	}
+	.cover{
+		position: absolute;
+		left: 0px; width: 100%; 
+		top: 0px; height: 100%;
+		background-color: rgba(0, 0, 0, 0.6);
+	}
+	.timer{
+		@include q_timer;
+		position: absolute;
+		top: 55px;
+		right: 125px;
+
+		.q_timer>.m_text{
+			text-shadow: 	2px 2px 2px rgba(255, 255, 255, 0.4), 
+							-2px 2px 2px rgba(255, 255, 255, 0.4), 
+							-2px -2px 2px rgba(255, 255, 255, 0.4), 
+							2px -2px 2px rgba(255, 255, 255, 0.4);
+		}
+		.btn_done {
+			position: absolute; top: 102px; left: 13px;
+			@include btn_down_dis(
+				resolve('digenglish_lib/team/board/btn_done.png'),
+				resolve('digenglish_lib/team/board/btn_done.png'),
+				resolve('digenglish_lib/team/board/btn_done_dis.png'),
+				width('digenglish_lib/team/board/btn_done.png'),
+				height('digenglish_lib/team/board/btn_done.png')
+			);
+		}
+	}
+
+	.info{
+		$MW: 342px;
+		position: absolute;
+		top: 316px;
+		width: $MW;
+		text-align: center;
+
+		.prog_box{
+			vertical-align: middle;
+			&>span{
+				display: inline-block;
+				position: relative;
+				top: 55px;
+				left: 177px;
+				font-size: 30px;
+				color: rgb(255, 255, 255);
+				line-height: 1.2;
+			}
+			.bnd{
+				position: absolute;
+				overflow: hidden;
+				z-index: 1;
+				width: 285px;
+   				height: 16px;
+   				top: 66px;
+    			left: 17px;
+				background-color: rgba(255, 255, 255, 0.1);
+				border-radius: 8px;
+
+				&>span{
+					display: inline-block;
+					position: absolute;
+					left:0px; top: 0px;
+					height: 100%;
+					border-top-right-radius: 7px;
+					border-bottom-right-radius: 7px;
+				}
+			}
+
+			.text{
+				&.all_zero {
+					z-index: 2;
+					animation: share-all-zero-percent 1s linear;
+					animation-iteration-count: 1;
+				}
+			}
+		}
+
+		.point{
+			position: absolute;
+			left: 0px; width: $MW;
+			top: 10px; height: auto;
+			text-align: center;
+			font-weight: bold;
+			pointer-events: none;
+			background-color: rgba(255, 255, 255, 0.8);
+			transform: scale(0.66, 0.66);
+			transition: transform 0.3s;
+
+			.board-gana{
+				position: absolute;
+				width: auto;
+				top: -127px;
+				&>div{
+					position: absolute;
+					left: 0px; width: 100%;
+					top: 200px;
+					font-size: 210px;
+					line-height: 210px;
+					text-align: center;
+				}
+			}
+
+			&.zoomin{
+				transform: scale(1, 1);
+			}
+			&.onani{
+				z-index: 2;
+			}
+
+		}
+		&.ga{
+			left: 42px;
+ 			height: 500px;
+			.point{
+				color:#ff00ff;
+				transform-origin: 50% 100px;
+				.board-gana{
+					left: -190px;
+				}
+			}
+			.prog_box{
+				text-align: center;
+				.bnd>span{
+					background-color:#ff00ff;
+				}
+			}
+		}
+		&.na{
+			right: 80px;
+			.point{
+				color: #00c8ff;
+				transform-origin: 50% 100px;
+				.board-gana{
+					left: -214px;
+				}
+			}
+			.prog_box{
+				text-align: center;
+				.bnd>span{
+					background-color: #00c8ff;
+				}
+			}
+		}
+	}
+
+	.team-curtain{
+		@include team-curtain;
+	}
+	.team-winner{
+		@include team-winner;
+	}
+
+	.btn_back{
+		@include common_back;
+		position:absolute;
+		right: 5px;
+		bottom: 3px;
+		z-index: 2;
+	}
+}
+
+@keyframes share-btn-start-blinker{
+	50% {
+		background-image: resolve('digenglish_lib/team/board/btn_spindle_on.png');
+	}
+}
+@keyframes share-all-zero-percent{
+	0% {transform : scale(1 , 1);}
+	45% {transform : scale(2 , 2);}
+	55% {transform : scale(2 , 2);}
+	100% {transform : scale(1 , 1);}
+}

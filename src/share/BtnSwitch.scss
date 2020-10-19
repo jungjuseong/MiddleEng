@@ -1,0 +1,39 @@
+@mixin btn-switch($btn-image, $btn-width, $btn-height){
+	cursor:pointer;
+	width: 65px;
+	height: 34px;
+	border-radius: 17px;
+	line-height: 34px;
+	font-size: 14px;
+	padding-left: 8px;
+	padding-right: 12px;
+	font-weight: bold;
+	transition-duration: 0.1s;
+
+	&>span{
+		position: absolute;
+		display: inline-block;
+		top: -2px;
+		background-image: $btn-image;
+		width: $btn-width;
+		height: $btn-height;
+
+		transition-duration: 0.1s;
+	}
+	&.ON{
+		color: #fff;
+		text-align: right;
+		background-color: rgba(247, 14, 79, 1);
+		&>span{
+			left: -10px;
+		}
+	}
+	&.OFF{
+		text-align: left;
+		color: rgba(255 ,255, 255, 0.5);
+		background-color: rgba(247, 14, 79, 0.2);
+		&>span{
+			left: 37px;
+		}
+	}
+}

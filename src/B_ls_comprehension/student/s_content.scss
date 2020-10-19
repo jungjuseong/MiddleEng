@@ -1,0 +1,59 @@
+@import "./s_question.scss";
+@import "./s_script.scss";
+
+@mixin s_content{
+	.s_content{
+		@include page;
+		@include s_question;
+		@include s_script;
+		.img_pop {
+			pointer-events: none;
+			opacity: 0;
+			position: absolute;	bottom: 21px; left: 275px;
+			background-image: resolve('student/images/pop_click.png');
+			width:  width('student/images/pop_click.png');
+			height: height('student/images/pop_click.png');
+			z-index: 2;
+			transition: opacity 0.3s;
+			&.on{
+				opacity: 1;
+			}
+		}
+		.btn_box {
+			$MYH: 142px;
+			border-top-left-radius: 25px;
+			border-top-right-radius: 25px;
+			width: 664px; 
+			height: $MYH;
+			position: absolute; bottom: -$MYH; 
+			left: 50%; transform: translate(-50%, 0%);
+			background-color: rgba(0, 0, 0, 0.8);
+			z-index: 5;
+			text-align: center;
+
+			transition: bottom 0.3s;
+			.btn_yes {
+				margin: 25px 10px;
+				@include btn_on(
+					resolve('student/images/btn_yes.png'),
+					resolve('student/images/btn_yes_down.png'),
+					width('student/images/btn_yes.png'),
+					height('student/images/btn_yes.png')
+				);
+			}
+			.btn_no {
+				margin: 25px 10px;
+				@include btn_on(
+					resolve('student/images/btn_no.png'),
+					resolve('student/images/btn_no_down.png'),
+					width('student/images/btn_no.png'),
+					height('student/images/btn_no.png')
+				);
+			}
+
+			&.on{
+				bottom: 0px; 
+			}
+		}
+	}
+}

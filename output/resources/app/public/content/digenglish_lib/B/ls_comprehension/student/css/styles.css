@@ -1,0 +1,1545 @@
+#wrap {
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/student/images/bg_ls.png");
+    font-family: NotoSans;
+}
+
+#wrap .eyeon_svg {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    pointer-events: none;
+}
+
+#wrap .goodjob-svg {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    z-index: 100;
+}
+
+#wrap .content-container {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+#wrap .content-container .content-wrapper {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    transition: left 0.3s ease-in-out;
+}
+
+#wrap .content-container .content-wrapper > div {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+}
+
+#wrap .video-direction {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/common/bg1.jpg");
+}
+
+#wrap .video-direction > img {
+    z-index: 2;
+}
+
+#wrap .video-direction > div.direction {
+    position: absolute;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+    transition: opacity 0.5s, -webkit-transform 0.5s ease-out;
+    transition: transform 0.5s ease-out, opacity 0.5s;
+    transition: transform 0.5s ease-out, opacity 0.5s, -webkit-transform 0.5s ease-out;
+    opacity: 0;
+}
+
+#wrap .video-direction.on > div.direction {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+}
+
+#wrap .video-direction.hide > div.direction {
+    visibility: hidden;
+}
+
+#wrap .video-direction.loaded > video {
+    opacity: 1;
+}
+
+#wrap .video-direction > .movieclip {
+    position: absolute;
+    right: -30px;
+    bottom: -70px;
+    width: 330px;
+    height: 550px;
+}
+
+#wrap .video-direction > div.direction {
+    position: absolute;
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/common/direction.png");
+    width: 787px;
+    height: 181px;
+    left: calc(50% - 787px/2);
+    top: calc(50% - 181px/2);
+}
+
+#wrap .video-direction > div.lesson {
+    font-size: 40px;
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    color: #fff;
+}
+
+#wrap .s_content {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+#wrap .s_content .s_question {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    z-index: 2;
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/student/images/bg_ls.png");
+}
+
+#wrap .s_content .s_question .btn_SCRIPT {
+    position: absolute;
+    top: 19px;
+    left: 26px;
+    z-index: 2;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_script.png");
+    background-repeat: no-repeat;
+    width: 131px;
+    height: 54px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#wrap .s_content .s_question .btn_SCRIPT:disabled {
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_script.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_content .s_question .btn_SCRIPT.down {
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_script_down.png");
+}
+
+#wrap .s_content .s_question .btn_SCRIPT:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_script.png") url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_script_down.png") url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_script.png");
+}
+
+#wrap .s_content .s_question .btn_page_box {
+    position: absolute;
+    top: 25px;
+    width: 100%;
+    height: 0px;
+    overflow: visible;
+    text-align: center;
+    z-index: 2;
+    cursor: pointer;
+}
+
+#wrap .s_content .s_question .btn_page_box > span {
+    display: inline-block;
+    vertical-align: top;
+    width: 66px;
+    height: 66px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    line-height: 55px;
+    font-size: 34px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+#wrap .s_content .s_question .btn_page_box > span.O {
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/common/icon_o.png");
+}
+
+#wrap .s_content .s_question .btn_page_box > span.X {
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/common/icon_x.png");
+}
+
+#wrap .s_content .s_question .btn_page_box > span.on {
+    color: #f8f64d;
+}
+
+#wrap .s_content .s_question .btn_page_box.off {
+    display: none;
+}
+
+#wrap .s_content .s_question .question {
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    left: 0px;
+    width: 100%;
+}
+
+#wrap .s_content .s_question .question .swiper-container {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+#wrap .s_content .s_question .question .q-item .quiz {
+    position: relative;
+    top: 100px;
+    height: 180px;
+    width: 100%;
+    text-align: center;
+    /* background-color: rgba(0, 0, 0, 0.2); */
+    padding: 0px 30px;
+}
+
+#wrap .s_content .s_question .question .q-item .quiz > div {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    display: inline-block;
+    white-space: normal;
+    word-break: normal;
+    line-height: 120%;
+    font-size: 55px;
+    color: black;
+    /* background-color: rgba(255, 0, 0, 0.2); */
+}
+
+#wrap .s_content .s_question .question .q-item .choice {
+    position: absolute;
+    top: 315px;
+    text-align: center;
+    white-space: normal;
+}
+
+#wrap .s_content .s_question .question .q-item .choice .btn_choice {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/student/images/box_select_s.png");
+    background-repeat: no-repeat;
+    width: 1114px;
+    height: 132px;
+    cursor: pointer;
+    pointer-events: unset;
+    position: relative;
+    font-size: 40px;
+    font-family: NotoSans;
+    text-align: left;
+    padding: 0px 70px;
+    color: black;
+    margin-bottom: 11px;
+}
+
+#wrap .s_content .s_question .question .q-item .choice .btn_choice.on {
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/student/images/box_select_down_s.png");
+}
+
+#wrap .s_content .s_question .question .q-item .choice .btn_choice:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_comprehension/student/images/box_select_s.png") url("/content/digenglish_lib/B/ls_comprehension/student/images/box_select_down_s.png");
+}
+
+#wrap .s_content .s_question .question .q-item .choice .btn_choice.btn-mc-1::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "A";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_content .s_question .question .q-item .choice .btn_choice.btn-mc-1.correct::after {
+    color: #fff;
+}
+
+#wrap .s_content .s_question .question .q-item .choice .btn_choice.btn-mc-2::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "B";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_content .s_question .question .q-item .choice .btn_choice.btn-mc-2.correct::after {
+    color: #fff;
+}
+
+#wrap .s_content .s_question .question .q-item .choice .btn_choice.btn-mc-3::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "C";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_content .s_question .question .q-item .choice .btn_choice.btn-mc-3.correct::after {
+    color: #fff;
+}
+
+#wrap .s_content .s_question .question .q-item .choice .btn_choice.btn-mc-4::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "D";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_content .s_question .question .q-item .choice .btn_choice.btn-mc-4.correct::after {
+    color: #fff;
+}
+
+#wrap .s_content .s_question .question .q-item .choice .btn_choice.btn-mc-5::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "E";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_content .s_question .question .q-item .choice .btn_choice.btn-mc-5.correct::after {
+    color: #fff;
+}
+
+#wrap .s_content .s_question .question .q-item .choice .btn_choice.btn-mc-6::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "F";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_content .s_question .question .q-item .choice .btn_choice.btn-mc-6.correct::after {
+    color: #fff;
+}
+
+#wrap .s_content .s_question .question .q-item .choice .btn_choice.correct {
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/student/images/box_select_correct_s.png");
+}
+
+#wrap .s_content .s_question .question .q-item .choice .btn_choice.wrong {
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/student/images/box_select_wrong_s.png");
+}
+
+#wrap .s_content .s_question .question .q-item .choice .btn_choice.on::after {
+    top: 4px;
+}
+
+#wrap .s_content .s_question .btn_next {
+    position: absolute;
+    top: 355px;
+    right: 12px;
+    z-index: 2;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_next.png");
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 96px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#wrap .s_content .s_question .btn_next:disabled {
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_next.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_content .s_question .btn_next.down {
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_next_down.png");
+}
+
+#wrap .s_content .s_question .btn_next:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_next.png") url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_next_down.png") url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_next.png");
+}
+
+#wrap .s_content .s_question .fel_toteacher {
+    position: absolute;
+    z-index: 11;
+    touch-action: none;
+    bottom: 20px;
+    right: 20px;
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/toteacher.svg");
+    background-repeat: no-repeat;
+    width: 95px;
+    height: 87px;
+    cursor: pointer;
+    pointer-events: unset;
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
+}
+
+#wrap .s_content .s_question .fel_toteacher.on {
+    background-image: url("/content/digenglish_lib/images/toteacher_on.svg");
+}
+
+#wrap .s_content .s_question .fel_toteacher:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/toteacher.svg") url("/content/digenglish_lib/images/toteacher_on.svg");
+}
+
+#wrap .s_content .s_question .fel_toteacher.on {
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+}
+
+#wrap .s_content .s_script .btn_QUESTION {
+    position: absolute;
+    top: 19px;
+    right: 26px;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_question.png");
+    background-repeat: no-repeat;
+    width: 171px;
+    height: 54px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#wrap .s_content .s_script .btn_QUESTION:disabled {
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_question_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_content .s_script .btn_QUESTION.down {
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_question_down.png");
+}
+
+#wrap .s_content .s_script .btn_QUESTION:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_question.png") url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_question_down.png") url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_question_dis.png");
+}
+
+#wrap .s_content .s_script .script_container {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 70px;
+    bottom: 0px;
+    padding: 0px 18px;
+    overflow: hidden;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container {
+    height: 100%;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .swiper-scrollbar {
+    top: 4%;
+    height: 93%;
+    background-color: transparent;
+    width: 8px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .swiper-scrollbar .swiper-scrollbar-drag {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box {
+    width: 454px;
+    height: auto;
+    vertical-align: middle;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-bottom: 22px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 74px;
+    height: 74px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb .progress .stand_bar {
+    position: absolute;
+    left: 25px;
+    top: 54px;
+    width: 40px;
+    text-align: center;
+    white-space: normal;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb .progress .stand_bar > .prog_bnd {
+    display: inline-block;
+    position: relative;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.25);
+    text-align: center;
+    width: 40px;
+    height: 7px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb .progress .stand_bar > .prog_bnd > .prog_bar {
+    position: absolute;
+    bottom: 0px;
+    height: 7px;
+    background-color: #00caa2;
+    border-radius: 20px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb .progress .stand_bar > .data_percent {
+    display: inline-block;
+    font-size: 6px;
+    line-height: 120%;
+    color: white;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb .progress .stand_bar {
+    margin-top: 3px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb .progress .stand_bar > .data_percent {
+    font-size: 14px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb > .img_cls {
+    position: absolute;
+    top: 4px;
+    left: 15px;
+    width: 54px;
+    height: 54px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb > div.img_cls {
+    box-sizing: border-box;
+    border: 3px solid transparent;
+    border-radius: 50%;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb > img.img_cls {
+    border-radius: 50%;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb > span {
+    display: none;
+    position: absolute;
+    left: 4px;
+    top: 0px;
+    width: 26px;
+    height: 22px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb.rollA > div.img_cls {
+    border-color: #9628ca;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb.rollA.in-roll > span {
+    display: inline-block;
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/common/icon_check1.png");
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb.rollA.on-roll > div.img_cls {
+    /* border-color: $focus; */
+    border-width: 4px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb.rollA.shadowing > div.img_cls {
+    /* border-color: $focus; */
+    border-width: 4px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb.rollB > div.img_cls {
+    border-color: #002ae3;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb.rollB.in-roll > span {
+    display: inline-block;
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/common/icon_check2.png");
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb.rollB.on-roll > div.img_cls {
+    /* border-color: $focus; */
+    border-width: 4px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb.rollB.shadowing > div.img_cls {
+    /* border-color: $focus; */
+    border-width: 4px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb.rollC > div.img_cls {
+    border-color: #c137a9;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb.rollC.shadowing > div.img_cls {
+    /* border-color: $focus; */
+    border-width: 4px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb.rollD > div.img_cls {
+    border-color: #ff7200;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb.rollD.shadowing > div.img_cls {
+    /* border-color: $focus; */
+    border-width: 4px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb.rollE > div.img_cls {
+    border-color: #0092ee;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .thumb.rollE.shadowing > div.img_cls {
+    /* border-color: $focus; */
+    border-width: 4px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon {
+    touch-action: none;
+    display: inline-block;
+    vertical-align: top;
+    /* width: 437px; */
+    width: 378px;
+    height: auto;
+    position: relative;
+    word-spacing: 2px;
+    /*
+		&.focus{
+			&.rollA{
+				&>span{
+					color: $colorA;
+				}
+			}
+			&.rollB{
+				&>span{
+					color: $colorB;
+				}
+			}		
+			&.rollC{
+				&>span{
+					color: $colorC;
+				}
+			}
+		}
+		*/
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon > span {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    text-align: left;
+    font-size: 35px;
+    color: white;
+    word-break: keep-all;
+    white-space: normal;
+    padding: 14px 13px 10px 24px;
+    z-index: 2;
+    line-height: 120%;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon > span > span {
+    padding: 0px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon > span > span > span {
+    border-bottom: 2px solid transparent;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon > span > span > span.block {
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon > span > span > span.space {
+    display: inline;
+    vertical-align: baseline;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon > span.view-trans {
+    font-size: 28px;
+    padding: 18px 2px 6px 24px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon > canvas {
+    position: absolute;
+    left: 0px;
+    top: -5px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon.hide-script > span > span > span.block {
+    color: transparent;
+    border-bottom-color: #fff;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon .student-clue {
+    position: absolute;
+    top: -38px;
+    left: 10px;
+    white-space: nowrap;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon .student-clue .clue_qnum {
+    vertical-align: middle;
+    font-size: 16px;
+    line-height: 100%;
+    display: none;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon .student-clue .clue_qnum > span {
+    display: inline-block;
+    vertical-align: top;
+    width: 30px;
+    border-radius: 8px;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 4px;
+    margin: 0px 2px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon .student-clue .clue_qnum > span.qnum1 {
+    background-color: #59cdee;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon .student-clue .clue_qnum > span.qnum2 {
+    background-color: #002ae3;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon .student-clue .clue_qnum > span.qnum3 {
+    background-color: #c137a9;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon .student-clue .clue_qnum > span.qnum4 {
+    background-color: #ff7200;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon .student-clue .clue_qnum > span.qnum5 {
+    background-color: #0092ee;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon .student-clue .btn_student {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/teacher/images/btn_student.png");
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 28px;
+    pointer-events: unset;
+    cursor: pointer;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    padding-left: 8px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon .student-clue .btn_student:disabled {
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/teacher/images/btn_student.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon .student-clue .btn_student.down {
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/teacher/images/btn_student_down.png");
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon .student-clue .btn_student:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_comprehension/teacher/images/btn_student.png") url("/content/digenglish_lib/B/ls_comprehension/teacher/images/btn_student_down.png") url("/content/digenglish_lib/B/ls_comprehension/teacher/images/btn_student.png");
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon .student-clue .btn_student.single {
+    position: relative;
+    top: 5px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon.clue.qnum1 > span > span > span.block {
+    background-color: #59cdee;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon.clue.qnum2 > span > span > span.block {
+    background-color: #002ae3;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon.clue.qnum3 > span > span > span.block {
+    background-color: #c137a9;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon.clue.qnum4 > span > span > span.block {
+    background-color: #ff7200;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon.clue.qnum5 > span > span > span.block {
+    background-color: #0092ee;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box .ballon.clue .student-clue .clue_qnum {
+    display: inline-block;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.COMPREHENSION {
+    margin-bottom: 10px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.COMPREHENSION .thumb.teacher {
+    vertical-align: middle;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.COMPREHENSION .ballon.teacher {
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.COMPREHENSION .ballon.teacher > span {
+    /*
+				padding-top: 5px;
+				padding-left: 18px;
+				padding-top: 0px;
+				
+				*/
+    margin: 10px 0px;
+    padding-top: 0px;
+    padding-left: 5px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.COMPREHENSION .ballon.teacher > span > span {
+    line-height: 1.2;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.COMPREHENSION .ballon.teacher > span > span > span {
+    line-height: 1;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.COMPREHENSION .ballon.teacher > span > span > span.space {
+    display: none;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.COMPREHENSION .ballon.teacher > span > span > span.block {
+    height: 36px;
+    /*padding-right: 12px;*/
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.COMPREHENSION .ballon.teacher > span > span > span.block::before {
+    color: transparent;
+    font-size: 20px;
+    content: 'i';
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.COMPREHENSION .ballon.teacher > span > span > span.block::after {
+    color: transparent;
+    font-size: 20px;
+    content: 'i';
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student {
+    width: 100%;
+    margin-bottom: 32px;
+    padding-left: 57px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student .thumb {
+    width: 118px;
+    height: 105px;
+    /*.progress {	display: none }*/
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student .thumb > .img_cls {
+    width: 100px;
+    height: 100px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student .thumb > div.img_cls {
+    border-width: 4px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2) inset;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student .thumb > img.img_cls {
+    border-radius: 50%;
+    box-shadow: 1px 5px 4px rgba(0, 0, 0, 0.2);
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student .thumb > span {
+    left: -8px;
+    top: 0px;
+    width: 46px;
+    height: 38px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student .thumb.rollA.on-roll > div.img_cls {
+    box-shadow: none;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student .thumb.rollA.on-roll > img.img_cls {
+    box-shadow: none;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student .thumb.rollA.shadowing > div.img_cls {
+    box-shadow: none;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student .thumb.rollA.shadowing > img.img_cls {
+    box-shadow: none;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student .thumb.rollB.on-roll > div.img_cls {
+    box-shadow: none;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student .thumb.rollB.on-roll > img.img_cls {
+    box-shadow: none;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student .thumb.rollB.shadowing > div.img_cls {
+    box-shadow: none;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student .thumb.rollB.shadowing > img.img_cls {
+    box-shadow: none;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student .thumb.rollC.shadowing > div.img_cls {
+    box-shadow: none;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student .thumb.rollC.shadowing > img.img_cls {
+    box-shadow: none;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student .thumb.focus > div.img_cls {
+    border-width: 5px;
+    /*
+					border-color: $focus;
+					
+					*/
+    box-shadow: none;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student .thumb.focus > img.img_cls {
+    border-width: 5px;
+    /*
+					border-color: $focus;
+					
+					*/
+    box-shadow: none;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student > .ballon {
+    width: 995px;
+    /*
+			.clue_qnum{
+				top: -12px;
+				left: 40px;
+				width: 40px;
+				border-radius: 12px;
+
+
+				font-size: 20px;
+				line-height: 100%;
+				padding-top: 2px;
+				padding-bottom: 4px;
+			}
+			*/
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student > .ballon > span {
+    font-size: 40px;
+    padding: 25px 35px 20px 35px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student > .ballon > span > span > span {
+    line-height: 1;
+    height: 44px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student > .ballon > span > span > span.block::before {
+    color: transparent;
+    font-size: 24px;
+    content: 'i';
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student > .ballon > span > span > span.block::after {
+    color: transparent;
+    font-size: 24px;
+    content: 'i';
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student > .ballon > span > span > span.space {
+    display: none;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student > .ballon .student-clue {
+    position: absolute;
+    top: -40px;
+    left: 34px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box.student > .ballon .student-clue .clue_qnum {
+    vertical-align: middle;
+    font-size: 20px;
+    line-height: 100%;
+    padding-top: 2px;
+    padding-bottom: 4px;
+    width: 40px;
+}
+
+#wrap .s_content .s_script .script_container .swiper-container .script_box:first-child {
+    margin-top: 20px;
+}
+
+#wrap .s_content .s_script .script_container.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#wrap .s_content .s_script .fel_toteacher {
+    position: absolute;
+    z-index: 11;
+    touch-action: none;
+    bottom: 20px;
+    right: 20px;
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/toteacher.svg");
+    background-repeat: no-repeat;
+    width: 95px;
+    height: 87px;
+    cursor: pointer;
+    pointer-events: unset;
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
+}
+
+#wrap .s_content .s_script .fel_toteacher.on {
+    background-image: url("/content/digenglish_lib/images/toteacher_on.svg");
+}
+
+#wrap .s_content .s_script .fel_toteacher:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/toteacher.svg") url("/content/digenglish_lib/images/toteacher_on.svg");
+}
+
+#wrap .s_content .s_script .fel_toteacher.on {
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+}
+
+#wrap .s_content .s_script.DIALOGUE .script_container {
+    top: 0px;
+}
+
+#wrap .s_content .s_script.DIALOGUE .script_container .script_box:first-child {
+    margin-top: 60px;
+}
+
+#wrap .s_content .s_script.DIALOGUE .script_container .script_box:last-child {
+    margin-bottom: 60px;
+}
+
+#wrap .s_content .s_script.DIALOGUE .script_container .swiper-scrollbar {
+    top: 60px;
+    bottom: 60px;
+    height: unset;
+}
+
+#wrap .s_content .img_pop {
+    pointer-events: none;
+    opacity: 0;
+    position: absolute;
+    bottom: 21px;
+    left: 275px;
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/student/images/pop_click.png");
+    width: 730px;
+    height: 76px;
+    z-index: 2;
+    transition: opacity 0.3s;
+}
+
+#wrap .s_content .img_pop.on {
+    opacity: 1;
+}
+
+#wrap .s_content .btn_box {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    width: 664px;
+    height: 142px;
+    position: absolute;
+    bottom: -142px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 5;
+    text-align: center;
+    transition: bottom 0.3s;
+}
+
+#wrap .s_content .btn_box .btn_yes {
+    margin: 25px 10px;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_yes.png");
+    background-repeat: no-repeat;
+    width: 297px;
+    height: 96px;
+    cursor: pointer;
+    pointer-events: unset;
+}
+
+#wrap .s_content .btn_box .btn_yes.on {
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_yes_down.png");
+}
+
+#wrap .s_content .btn_box .btn_yes:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_yes.png") url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_yes_down.png");
+}
+
+#wrap .s_content .btn_box .btn_no {
+    margin: 25px 10px;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_no.png");
+    background-repeat: no-repeat;
+    width: 297px;
+    height: 96px;
+    cursor: pointer;
+    pointer-events: unset;
+}
+
+#wrap .s_content .btn_box .btn_no.on {
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_no_down.png");
+}
+
+#wrap .s_content .btn_box .btn_no:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_no.png") url("/content/digenglish_lib/B/ls_comprehension/student/images/btn_no_down.png");
+}
+
+#wrap .s_content .btn_box.on {
+    bottom: 0px;
+}
+
+#wrap .fel_toteacher {
+    position: absolute;
+    z-index: 11;
+    touch-action: none;
+    bottom: 20px;
+    right: 20px;
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/toteacher.svg");
+    background-repeat: no-repeat;
+    width: 95px;
+    height: 87px;
+    cursor: pointer;
+    pointer-events: unset;
+}
+
+#wrap .fel_toteacher.on {
+    background-image: url("/content/digenglish_lib/images/toteacher_on.svg");
+}
+
+#wrap .fel_toteacher:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/toteacher.svg") url("/content/digenglish_lib/images/toteacher_on.svg");
+}
+
+#wrap .fel_toteacher.on {
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+}
+
+@font-face {
+    font-family: Visang_e_HT;
+    src: url(/content/digenglish_lib/font/Visang_e_HT.woff) format("woff");
+}
+
+@font-face {
+    font-family: Visang_e_HT;
+    font-weight: bold;
+    src: url(/content/digenglish_lib/font/Visang_e_HT_Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans_bold;
+    font-weight: bold;
+    src: url(/content/digenglish_lib/font/NotoSansCJKkr-Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans_light;
+    font-weight: lighter;
+    src: url(/content/digenglish_lib/font/NotoSans-Light.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans;
+    /* src: url(/content/digenglish_lib/font/NotoSansCJKkr-Medium.woff) format('woff'); */
+    src: url(/content/digenglish_lib/font/NotoSansCJK-Medium-en.woff) format("woff");
+}
+
+@font-face {
+    font-family: HelveticaRounded;
+    font-weight: bold;
+    src: url(/content/digenglish_lib/font/HelveticaRounded-Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: HelveticaRoundedLTStd;
+    font-weight: bold;
+    src: url(/content/digenglish_lib/font/HelveticaRoundedLTStd-Bd.woff) format("woff");
+}
+
+@charset "UTF-8";
+html, body {
+    padding: 0px;
+    margin: 0px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    border: 0px;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* 버튼 포커스시 색상 변하는 현상 방지 */
+    font-family: NotoSans !important;
+    -webkit-font-smoothing: antialiased;
+    font-size: 8px;
+    overflow: hidden;
+}
+
+button {
+    font-family: NotoSans !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    padding: 0px;
+    margin: 0px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    border: 0px;
+    outline: 0px solid transparent;
+}
+
+div, p {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+#common_audio {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#ding_audio {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#dingend_audio {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#wrap {
+    width: 1280px;
+    height: 800px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.bg_svg {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+.swiper-scrollbar.white {
+    background: rgba(0, 0, 0, 0);
+    width: 7px;
+}
+
+.swiper-scrollbar.white .swiper-scrollbar-drag {
+    width: 7px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+}
+
+.swiper-scrollbar.black {
+    background: rgba(0, 0, 0, 0);
+    width: 7px;
+}
+
+.swiper-scrollbar.black .swiper-scrollbar-drag {
+    width: 7px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+.common_back {
+    background-size: 100% 100%;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/btn_back.png");
+    background-repeat: no-repeat;
+    width: 78px;
+    height: 73px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+.common_back:disabled {
+    background-image: "";
+    pointer-events: none;
+    cursor: auto;
+}
+
+.common_back.down {
+    background-image: url("/content/digenglish_lib/images/btn_back_down.png");
+}
+
+.common_back:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/btn_back.png") url("/content/digenglish_lib/images/btn_back_down.png") "";
+}
+
+.common_back.down {
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 16px;
+}
+
+.swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    opacity: 0.3;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #47F6E9;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+#preload_hidden {
+    position: absolute;
+    pointer-events: none;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+#preload_hidden .helvetica {
+    font-family: HelveticaRounded;
+}
+
+#preload_hidden .helveticastd {
+    font-family: HelveticaRoundedLTStd;
+}
+

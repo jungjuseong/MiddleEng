@@ -1,0 +1,202 @@
+@import '../../share/CoverPopup.scss';
+@import '../../share/Progress_bar.scss';
+
+@import '../../share/QuizMCBtn.scss';
+
+@mixin QUESTION {
+	.QUESTION{
+		@include page;
+		.nav {
+			@include mixin_nav;
+			@include mixin_page_box;
+			top: 170px;
+			.right {
+				position: absolute; 
+				top: -12px;
+				right: 90px;
+				z-index: 2;
+				.return_cnt_box{
+					@include return_cnt_box_white;
+					display: inline-block;
+					vertical-align: top;
+					cursor: pointer;
+					margin-right: 10px;
+					margin-top: 10px;
+				}
+				.btn_answer {
+					@include btn_on(
+						resolve('teacher/images/btn_answer.png'),
+						resolve('teacher/images/btn_answer_down.png'),
+						width('teacher/images/btn_answer.png'),
+						height('teacher/images/btn_answer.png')
+					);
+					display: inline-block;
+					vertical-align: top;
+					margin-right: 65px;
+				}
+				.btn_clue {
+					position: absolute; top: 0px; right: 0px;
+					@include btn_on(
+						resolve('teacher/images/btn_clue.png'),
+						resolve('teacher/images/btn_clue_down.png'),
+						width('teacher/images/btn_clue.png'),
+						height('teacher/images/btn_clue.png')
+					);
+				}
+			}
+		}
+		.choice-item {
+			position: absolute;
+			top: 110px; height: 0px;
+			left:0px; width:100%;
+			white-space: normal;
+			.correct_rate_box{
+				@include correct_rate(55px, 90px);
+			}
+			
+			.quizs_box {
+				color: rgb(255, 255, 255);
+				letter-spacing: -1.5px;
+				text-align: left;
+				height: 120px; width: 100%;
+				margin: 40px 0px 50px 0px;
+				padding: 0px 179px;
+				position: relative;
+				top: 45px;
+
+				&>div{
+					height: auto;
+					font-size: 38px;
+					display: inline-block;
+					position: relative;
+					top: 50%; transform: translateY(-50%);
+					line-height: 120%;
+				}
+			}
+			.choice_box {
+				position: relative;
+				text-align: left;
+				margin-left: 179px;
+				margin-right: 179px;
+				height: auto;
+
+				.btn_choice {
+					@include btn_on(
+						resolve('teacher/images/btn_question_t.png'),
+						resolve('teacher/images/btn_question_t_down.png'),
+						width('teacher/images/btn_question_t.png'),
+						height('teacher/images/btn_question_t.png')
+					);
+					position: relative;
+					@include quiz-btn-mc;
+					margin-bottom: 28px;
+					text-align: left;
+					padding: 0px 10px 10px 55px;
+					color: rgb(0, 0, 0);
+
+					&.correct{ background-image: resolve('teacher/images/btn_question_t_correct.png');}
+					&.wrong{ background-image: resolve('teacher/images/btn_question_t_wrong.png'); }
+				}
+				&>span {
+					position: absolute;
+					right: -65px; top: 15px;
+					display: inline-block;
+					background: resolve('teacher/images/icon_man.png') no-repeat;
+					width: 65px; height: 40px;
+					font-size: 14px; color: rgb(167,161,177); text-align: center;
+					line-height: 2.6;
+					cursor: pointer;
+				}
+			}
+		}
+		.clue_popup {
+			@include CoverPopup(10001);
+			background-image: resolve('teacher/images/bg_trans_popup.png');
+			width: width('teacher/images/bg_trans_popup.png'); height: height('teacher/images/bg_trans_popup.png');
+			.title {
+				display: inline-block;
+				position: absolute;	top: 90px;	left: 90px;
+				font-size: 18px; color: rgba(0, 0, 0, 0.5);
+				line-height: 1.2;
+			}
+			.clue_script {
+                width: 1115px; height: 590px;
+                position: absolute;
+				top: 130px; left: 85px;
+				.swiper-container{
+					width: 100%; height: 100%;
+					position: absolute; top: 0px;
+					overflow: hidden; 
+                    /* rw_comprehension 190425 수정사항 p.22 */
+                    .clue_question {
+                        display: inline-block;
+						width: 100%; height: auto;
+						font-family: NotoSans;
+                        font-size: 38px;
+                        color: rgb(0, 0, 0);
+                        font-weight: bold;
+                        line-height: 120%;
+                        text-align: left;
+                        white-space: normal;
+						padding:  50px 10px 0px 50px;
+                       .icon_question {
+                            background: resolve('teacher/images/icon_question.png') no-repeat;
+                            width: width('teacher/images/icon_question.png');
+                            height: height('teacher/images/icon_question.png');
+							position: relative;
+							padding-bottom: 70px;
+                        }
+                        &>.block { 
+							color: rgb(19, 34, 181); 
+						}
+                    }
+					.script { 
+                        display: inline-block;
+						width: 100%; height: auto;
+						padding: 80px 10px 0px 50px;
+						font-family: NotoSans;
+						font-size: 38px;
+						text-align: left;
+						line-height: 120%;
+						font-weight: bold;
+                        white-space: normal;
+                        .icon_clue {
+                            background: resolve('teacher/images/icon_clue.png') no-repeat;
+                            width: width('teacher/images/icon_clue.png');
+                            height: height('teacher/images/icon_clue.png');
+                            position: relative;
+                            padding-bottom: 70px;
+                        }
+                        .script_speaker {
+                            width: auto; height: 100%;
+                        }
+						&>.block { 
+                            color: rgb(19, 34, 181);  /* color: rgb(26, 112, 255); */
+						}
+					}
+					.swiper-slide{
+						height: auto;
+					}
+					.swiper-scrollbar{
+						width: 6px;
+						background-color: transparent;
+						.swiper-scrollbar-drag {
+							background-color: rgba(0, 0, 0, 0.25);
+						}
+					}
+				}
+			}
+
+			.btn_close {
+				position: absolute; top: 90px; right: 90px;
+				@include btn_down_dis(
+					resolve('teacher/images/btn_pop_close.png'),
+					resolve('teacher/images/btn_pop_close_down.png'),
+					resolve('teacher/images/btn_pop_close.png'),
+					width('teacher/images/btn_pop_close.png'),
+					height('teacher/images/btn_pop_close.png')
+				);
+			}
+		}
+	}
+}

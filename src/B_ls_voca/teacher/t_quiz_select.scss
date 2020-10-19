@@ -1,0 +1,195 @@
+@mixin t_quiz_select{
+.t_quiz_select {
+	@include page;
+
+	.title {
+		position: absolute;
+		top: 106px;
+		left: 50%;
+		transform: translateX(-50%);
+
+		font-size: 48px;
+		color: rgb(196, 198, 255);
+		font-weight: bold;
+		line-height: 1.2;
+		text-align: center;
+	}
+
+	&>.quiz {
+		font-size:0px;
+		position: absolute;
+		top: 220px;
+		width: 100%;
+		
+		text-align: center;
+		&>div{
+			margin: 0px 15px;
+			text-align: center;
+		}
+		&>.quiz_sound {
+			display: inline-block;
+			vertical-align: top;
+			position: relative;
+			&>.btn_quiz_sound {
+				@include btn_on_dis(
+					resolve('teacher/images/btn_quiz_sound.png'),
+					resolve('teacher/images/btn_quiz_sound_down.png'),
+					resolve('teacher/images/btn_quiz_sound.png'),
+					width('teacher/images/btn_quiz_sound.png'),
+					height('teacher/images/btn_quiz_sound.png')
+				);
+			}
+		}
+		&>.quiz_meaning {
+			display: inline-block;
+			vertical-align: top;
+			position: relative;
+			&>.btn_quiz_meaning {
+				@include btn_on_dis(
+					resolve('teacher/images/btn_quiz_meaning.png'),
+					resolve('teacher/images/btn_quiz_meaning_down.png'),
+					resolve('teacher/images/btn_quiz_meaning.png'),
+					width('teacher/images/btn_quiz_meaning.png'),
+					height('teacher/images/btn_quiz_meaning.png')
+				);
+			}
+		}
+		&>.quiz_spelling {
+			display: inline-block;
+			vertical-align: top;
+			position: relative;
+			&>.btn_quiz_spelling {
+				@include btn_on_dis(
+					resolve('teacher/images/btn_quiz_spelling.png'),
+					resolve('teacher/images/btn_quiz_spelling_down.png'),
+					resolve('teacher/images/btn_quiz_spelling.png'),
+					width('teacher/images/btn_quiz_spelling.png'),
+					height('teacher/images/btn_quiz_spelling.png')
+				);
+			}
+		}
+		&>.quiz_usage {
+			display: inline-block;
+			vertical-align: top;
+			position: relative;
+			&>.btn_quiz_usage {
+				@include btn_on_dis(
+					resolve('teacher/images/btn_quiz_usage.png'),
+					resolve('teacher/images/btn_quiz_usage_down.png'),
+					resolve('teacher/images/btn_quiz_usage.png'),
+					width('teacher/images/btn_quiz_usage.png'),
+					height('teacher/images/btn_quiz_usage.png')
+				);
+			}
+		}
+
+        .result_btns {
+            position: relative;
+            text-align: center;
+            width: 243px;
+            white-space: normal;
+            margin-top: 20px;
+        
+            .quiz_progress {
+                position: relative;
+                width: 100%;
+                display: inline-block;
+                vertical-align: top;
+                margin-bottom: 18px;
+                &>.percent_data {
+                    width: 121px;
+                    height: 10px;
+                    background-color: rgba(0, 0, 0,0.4);
+                    border-radius: 9px;
+                    display: inline-block;
+                    vertical-align: top;
+                    margin-top: 4px;
+                    margin-right: 8px;
+                    text-align: left;
+                    &>span {
+                        position: relative;
+                        display: inline-block;
+                        vertical-align: top;
+                        height: 100%;
+                        border-radius: 9px;
+                        background-color: rgb(0, 197, 116);
+                    }
+                }
+                &>span {
+                    display: inline-block;
+                    vertical-align: top;
+                    font-size: 12px;
+                    color: rgba(255, 255, 255, 0.7);
+                    line-height: 1.2;
+                    text-align: left;				  
+                }
+            }
+
+            .btn_result_single{
+                
+                @include btn_down_dis(
+                    resolve('teacher/images/btn_result_s.png'),
+                    resolve('teacher/images/btn_result_s_on.png'),
+                    resolve('teacher/images/btn_result_s.png'),
+                    width('teacher/images/btn_result_s.png'),
+                    height('teacher/images/btn_result_s.png')
+                );
+                display: inline-block;
+                vertical-align: top;
+                margin-bottom: 10px;
+                &.hide{
+                    opacity: 0;
+                    pointer-events: none;
+                }
+                &.off{
+                    display: none;
+                }
+            }
+            .btn_result_group{
+                
+                @include btn_down_dis(
+                    resolve('teacher/images/btn_result_g.png'),
+                    resolve('teacher/images/btn_result_g_on.png'),
+                    resolve('teacher/images/btn_result_g.png'),
+                    width('teacher/images/btn_result_g.png'),
+                    height('teacher/images/btn_result_g.png')
+                );
+                display:inline-block;
+                vertical-align: top;
+                &.hide{
+                    opacity: 0;
+                    pointer-events: none;
+                }
+                &.off{
+                    display: none;
+                }
+            }				
+        }
+	}
+	&>.t_choice {
+		position: absolute; bottom: 82px; left: 50%; transform: translateX(-50%);
+		.single{
+			@include btn_down_dis(
+				resolve('teacher/images/btn_single.png'),
+				resolve('teacher/images/btn_single_down.png'),
+				resolve('teacher/images/btn_single_down.png'),
+				width('teacher/images/btn_single.png'),
+				height('teacher/images/btn_single.png')
+			);
+		}
+		.group{
+			margin-left: 13px;
+			@include btn_down_dis(
+				resolve('teacher/images/btn_team.png'),
+				resolve('teacher/images/btn_team_down.png'),
+				resolve('teacher/images/btn_team_down.png'),
+				width('teacher/images/btn_team.png'),
+				height('teacher/images/btn_team.png')
+			);
+			&.hide{
+				background-image:resolve('teacher/images/btn_team_dis.png');
+			}
+		}
+	}
+}
+}

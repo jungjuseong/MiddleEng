@@ -1,0 +1,181 @@
+@mixin mixin_select_box($normal, $on, $width, $height) {
+  .select-box {
+    position: relative;
+    display: inline-block;
+    vertical-align: baseline;
+    white-space: nowrap;
+    border: 1.5px solid #ccc;
+    border-radius: $height * 0.1;
+    padding-left: $height * 0.15;
+    line-height: $height;
+
+    & > .text-box {
+      touch-action: none;
+      display: inline-block;
+      vertical-align: bottom;
+      height: $height;
+      & > .size-box {
+        height: 0px;
+        color: transparent;
+        overflow: hidden;
+      }
+    }
+    & > .btn-drop {
+      @include btn_on($normal, $on, $width, $height);
+      display: inline-block;
+      vertical-align: top;
+      margin-left: $height * 0.15;
+    }
+
+    & > .options-box {
+      position: absolute;
+      left: -2px;
+      right: -2px;
+      z-index: 2;
+      background-color: rgb(168, 223, 255);
+      opacity: 0;
+      pointer-events: none;
+      &.bottom {
+        width: 100%;
+        bottom: 2px;
+        transform: translateY(100%);
+      }
+      &.top {
+        width: 100%;
+        top: 2px;
+        transform: translateY(-100%);
+      }
+      &.on {
+        opacity: 1;
+        pointer-events: unset;
+      }
+      & > div {
+        width: 100%;
+        padding-left: $height * 0.15 + 2px;
+        &.on {
+          background-color: rgb(148, 203, 255);
+        }
+        &.correct {
+          background-color: #249bfa;
+          color: #fff;
+          pointer-events: none;
+        }
+        &.wrong {
+          background-color: #cacaca;
+          color: #878787;
+          pointer-events: none;
+        }
+      }
+      & > div:hover {
+        background-color: rgb(128, 183, 255);
+      }
+    }
+  }
+}
+
+@mixin mixin_table_item(
+  $min-height,
+  $min-width,
+  $head-font-size,
+  $head-line-height,
+  $content-font-size,
+  $content-padding,
+  $radius,
+  $box-shadow,
+  $normal,
+  $on,
+  $width,
+  $height,
+  $line-height
+) {
+  .table-item {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: auto;
+    height: auto;
+    min-width: $min-width;
+    border-radius: $radius;
+    background-color: rgb(255, 255, 255);
+    box-shadow: $box-shadow;
+    .head {
+      border-top-left-radius: $radius;
+      border-top-right-radius: $radius;
+      text-align: center;
+      font-size: $head-font-size;
+      line-height: $head-line-height;
+      color: rgb(255, 255, 255);
+
+      em {
+        font-style: unset;
+      }
+    }
+    .content-box {
+      display: table;
+      width: 100%;
+      min-height: $min-height;
+      height: auto;
+      & > div {
+        display: table-cell;
+        vertical-align: middle;
+
+        .content {
+          /* rw_comprehension 190425 수정사항 p.23 */
+          box-sizing: border-box;
+          color: rgb(50, 50, 50);
+          font-size: $content-font-size;
+          text-align: left;
+          width: 100%;
+          height: auto;
+          padding: $content-padding;
+          white-space: normal;
+          /* margin: 0px; 삭제 */
+          list-style: none;
+          margin-block-end: 0px;
+          margin-block-start: 0px;
+          & > li {
+            line-height: $line-height;
+          }
+
+          @include mixin_select_box($normal, $on, $width, $height);
+        }
+      }
+    }
+    &.purple {
+      .head {
+        background-color: rgb(176, 122, 225);
+      }
+      .content li::before {
+        color: rgb(176, 122, 225); /* or whatever color you prefer */
+      }
+    }
+    &.green {
+      .head {
+        background-color: rgb(28, 201, 175);
+      }
+      .content li::before {
+        color: rgb(28, 201, 175); /* or whatever color you prefer */
+      }
+    }
+    &.blue {
+      .head {
+        background-color: rgb(79, 122, 209);
+      }
+      .content li::before {
+        color: rgb(79, 122, 209); /* or whatever color you prefer */
+      }
+    }
+
+    &.type_2 {
+      .head {
+        background-color: #0d4696;
+      }
+      & > li {
+        line-height: $height + 5px;
+      }
+      li::before {
+        content: "";
+      }
+    }
+  }
+}

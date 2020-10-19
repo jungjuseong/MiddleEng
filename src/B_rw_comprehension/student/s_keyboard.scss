@@ -1,0 +1,48 @@
+
+@mixin s_keyboard {
+	.s-keyboard{
+		@include page;
+		.area-bnd{
+			position: relative;
+			width: 1205px; 
+			height: 654px;
+			background-color: #fff;
+			border-radius: 6px;
+
+			margin: 40px auto 0px auto;
+			padding-left: 10px;
+
+			&.on{
+				height: 356px;
+			}
+			transition: height 0.3s;
+		}
+
+		.k-tarea{
+			position: relative;
+			width: 1195px;
+			height: 100%;
+			.k-tarea-bg{
+				width: width('student/images/bg_underline.png');
+				height: auto;
+				min-height: 100%;
+                background-image: resolve('student/images/bg_underline.png');
+				background-repeat: repeat-y;
+                background-position-y: -5px;
+			}
+			textarea{
+				padding: 0px 41px 0px 10px;
+				caret-color: #00F;
+				line-height: height('student/images/bg_underline.png');
+				font-size: 60px;
+				font-family: NotoSans;
+				font-weight: normal;		
+			}
+			.k-tarea-bar{
+				right: 2px;
+			}
+		}
+
+
+	}
+}

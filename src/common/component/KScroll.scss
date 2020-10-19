@@ -1,0 +1,24 @@
+.kscroll-container{
+	overflow: hidden;
+	touch-action: none;
+	.kscroll-wrapper{
+		position: relative;
+		width: 100%;
+		height: auto;
+	}
+
+	.kscroll-bar{
+		position: absolute;
+		touch-action: none;
+		right: 0px; width: 7px;
+		top: 1%; height: 98%;
+
+		background-color: transparent;
+		.kscroll-drag{
+			position: absolute;
+			left: 0px; width: 100%;
+			border-radius: 4px;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+	}
+}

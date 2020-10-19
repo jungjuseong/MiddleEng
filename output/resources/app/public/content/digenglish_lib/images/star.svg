@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="어휘연습" image-rendering="auto" baseProfile="basic" version="1.1" x="0px" y="0px" width="140" height="160"  viewBox="0 0 140 160" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<g id=".__EC.__9B.__9003" overflow="visible">
+<path fill="#FFF" stroke="none" d="M1.5 6.95Q2.6 8.05 4.2 8.1 5.75 8.05 6.85 6.95 8 5.85 8 4.25 8 2.65 6.85 1.55 5.75 .45 4.2 .45 2.6 .45 1.5 1.55 .4 2.65 .4 4.25 .4 5.85 1.5 6.95Z"/>
+</g>
+<g id=".__EC.__9B.__9004" overflow="visible">
+<path fill="#C796EA" stroke="none" d="M1.55 6.95Q2.65 8.05 4.25 8.1 5.8 8.05 6.9 6.95 8.05 5.85 8.05 4.25 8.05 2.65 6.9 1.55 5.8 .45 4.25 .45 2.65 .45 1.55 1.55 .45 2.65 .45 4.25 .45 5.85 1.55 6.95Z"/>
+</g>
+<g id=".__EC.__9B.__9005" overflow="visible">
+<path fill="#33B9A8" stroke="none" d="M4.3 0Q2.5 0 1.25 1.2 .05 2.45 .05 4.25 .05 6 1.25 7.2 2.5 8.45 4.3 8.5 6.05 8.45 7.25 7.2 8.5 6 8.5 4.25 8.5 2.45 7.25 1.2 6.05 0 4.3 0Z"/>
+</g>
+<g id=".__EB.__B3.__8403" overflow="visible">
+<path fill="#FFF" stroke="none" d="M.6 14.55L6.6 13.2 11.1 17.35 11.65 11.3 17 8.35 11.35 5.95 10.1 -.05 6.1 4.55 0 3.75 3.15 9.05 .6 14.55Z"/>
+</g>
+<g id=".__EB.__B3.__8404" overflow="visible">
+<path fill="#C796EA" stroke="none" d="M11.65 11.35L17 8.4 11.35 6 10.1 0 6.1 4.6 0 3.8 3.15 9.1 .6 14.6 6.6 13.25 11.1 17.4 11.65 11.35Z"/>
+</g>
+<g id=".__EB.__B3.__8405" overflow="visible">
+<path fill="#33B9A8" stroke="none" d="M17 8.35L11.35 5.95 10.1 0 6.1 4.55 0 3.8 3.15 9.1 .6 14.6 6.6 13.25 11.1 17.4 11.65 11.35 17 8.35Z"/>
+</g>
+</defs>
+<g id="Scene-1" overflow="visible">
+<g id="**.__EB.__B4.__89.__ED.__9A.__A8.__EA.__B3.__BC" transform="translate(50 75)">
+
+<g display="none">
+<use xlink:href="#.__EB.__B3.__8405" transform="translate(13.9 3.95)">
+<animateTransform attributeName="transform" additive="replace" type="translate" repeatCount="1" dur="1.0s" keyTimes="0;.429;.857;1" values="22.4,12.65;-28.68,-3.698;-32.025,-4.858;-32.025,-4.858" keySplines=".25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+<animateTransform attributeName="transform" additive="sum" type="rotate" repeatCount="1" dur="1.0s" keyTimes="0;.429;.857;1" values="0,0,0;-21.061,0,0;-22.556,0,0;-22.556,0,0" keySplines=".25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+<animateTransform attributeName="transform" additive="sum" type="scale" repeatCount="1" dur="1.0s" keyTimes="0;.429;.857;1" values="1,1;.997,.997;.998,.998;.998,.998" keySplines=".25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+<animateTransform attributeName="transform" additive="sum" type="translate" repeatCount="1" dur="1.0s" keyTimes="0;.429;.857;1" values="-8.5,-8.7;-8.5,-8.7;-8.45,-8.6;-8.45,-8.6" keySplines=".25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+<animate attributeName="opacity" repeatCount="1" dur="1.0s" keyTimes="0;.429;.857;1" values="1;1;0;0" keySplines=".25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+</use>
+<animate attributeName="display" repeatCount="1" dur="1.0s" keyTimes="0;.095;1" values="none;inline;inline"/>
+</g>
+<g display="none">
+<use xlink:href="#.__EB.__B3.__8405" transform="matrix(.81 0 0 .81 15.55 5.6)">
+<animateTransform attributeName="transform" additive="replace" type="translate" repeatCount="1" dur="1.0s" keyTimes="0;.095;.524;.952;1" values="22.466,12.637;22.466,12.637;-18.66,30.739;-21.477,31.887;-21.477,31.887" keySplines=".25 .5 .5 1;.25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+<animateTransform attributeName="transform" additive="sum" type="rotate" repeatCount="1" dur="1.0s" keyTimes="0;.095;.524;.952;1" values="0,0,0;0,0,0;17.798,0,0;19.063,0,0;19.063,0,0" keySplines=".25 .5 .5 1;.25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+<animateTransform attributeName="transform" additive="sum" type="scale" repeatCount="1" dur="1.0s" keyTimes="0;.095;.524;1" values=".81,.81;.81,.81;.808,.808;.808,.808" keySplines=".25 .5 .5 1;.25 .5 .5 1;0 0 1 1" calcMode="spline"/>
+<animateTransform attributeName="transform" additive="sum" type="translate" repeatCount="1" dur="1.0s" keyTimes="0;.095;.524;.952;1" values="-8.6,-8.75;-8.6,-8.75;-8.4,-8.8;-8.35,-8.75;-8.35,-8.75" keySplines=".25 .5 .5 1;.25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+<animate attributeName="opacity" repeatCount="1" dur="1.0s" keyTimes="0;.524;.952;1" values="1;1;0;0" keySplines=".25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+</use>
+<animate attributeName="display" repeatCount="1" dur="1.0s" keyTimes="0;.095;1" values="none;inline;inline"/>
+</g>
+<g display="none">
+<use xlink:href="#.__EB.__B3.__8404" transform="translate(13.9 3.95)">
+<animateTransform attributeName="transform" additive="replace" type="translate" repeatCount="1" dur="1.0s" keyTimes="0;.143;.571;.952;1" values="22.4,12.65;22.4,12.65;11.112,67.104;10.496,70.455;10.496,70.455" keySplines=".25 .5 .5 1;.25 .5 .5 1;0 0 1 1;0 0 1 1" calcMode="spline"/>
+<animateTransform attributeName="transform" additive="sum" type="rotate" repeatCount="1" dur="1.0s" keyTimes="0;.143;.571;.952;1" values="0,0,0;0,0,0;18.785,0,0;19.816,0,0;19.816,0,0" keySplines=".25 .5 .5 1;.25 .5 .5 1;0 0 1 1;0 0 1 1" calcMode="spline"/>
+<animateTransform attributeName="transform" additive="sum" type="scale" repeatCount="1" dur="1.0s" keyTimes="0;.143;.571;1" values="1,1;1,1;.997,.997;.997,.997" keySplines=".25 .5 .5 1;.25 .5 .5 1;0 0 1 1" calcMode="spline"/>
+<animateTransform attributeName="transform" additive="sum" type="translate" repeatCount="1" dur="1.0s" keyTimes="0;.143;.571;.952;1" values="-8.5,-8.7;-8.5,-8.7;-8.55,-8.75;-8.6,-8.8;-8.6,-8.8" keySplines=".25 .5 .5 1;.25 .5 .5 1;0 0 1 1;0 0 1 1" calcMode="spline"/>
+<animate attributeName="opacity" repeatCount="1" dur="1.0s" keyTimes="0;.571;.952;1" values="1;1;.11;.11" keySplines=".25 .5 .5 1;0 0 1 1;0 0 1 1" calcMode="spline"/>
+</use>
+<animate attributeName="display" repeatCount="1" dur="1.0s" keyTimes="0;.143;1" values="none;inline;inline"/>
+</g>
+<g display="none">
+<use xlink:href="#.__EB.__B3.__8404" transform="translate(13.9 3.95)">
+<animateTransform attributeName="transform" additive="replace" type="translate" repeatCount="1" dur="1.0s" keyTimes="0;.095;.524;.952;1" values="22.4,12.65;22.4,12.65;27.154,-53.64;27.366,-58.057;27.366,-58.057" keySplines=".25 .5 .5 1;.25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+<animateTransform attributeName="transform" additive="sum" type="rotate" repeatCount="1" dur="1.0s" keyTimes="0;.095;.524;.952;1" values="0,0,0;0,0,0;37.106,0,0;39.626,0,0;39.626,0,0" keySplines=".25 .5 .5 1;.25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+<animateTransform attributeName="transform" additive="sum" type="scale" repeatCount="1" dur="1.0s" keyTimes="0;.095;.524;.952;1" values="1,1;1,1;.995,.995;.996,.996;.996,.996" keySplines=".25 .5 .5 1;.25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+<animateTransform attributeName="transform" additive="sum" type="translate" repeatCount="1" dur="1.0s" keyTimes="0;.095;.524;.952;1" values="-8.5,-8.7;-8.5,-8.7;-8.5,-8.65;-8.4,-8.55;-8.4,-8.55" keySplines=".25 .5 .5 1;.25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+<animate attributeName="opacity" repeatCount="1" dur="1.0s" keyTimes="0;.524;.952;1" values="1;1;0;0" keySplines=".25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+</use>
+<animate attributeName="display" repeatCount="1" dur="1.0s" keyTimes="0;.095;1" values="none;inline;inline"/>
+</g>
+<g display="none">
+	<use xlink:href="#.__EB.__B3.__8403" transform="translate(13.9 3.95)">
+	<animateTransform attributeName="transform" additive="replace" type="translate" repeatCount="1" dur="1.0s" keyTimes="0;.429;.857;1" values="22.4,12.65;60.285,12.867;62.91,12.936;62.91,12.936" keySplines=".25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+	<animateTransform attributeName="transform" additive="sum" type="rotate" repeatCount="1" dur="1.0s" keyTimes="0;.429;.857;1" values="0,0,0;17.793,0,0;19.045,0,0;19.045,0,0" keySplines=".25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+	<animateTransform attributeName="transform" additive="sum" type="scale" repeatCount="1" dur="1.0s" keyTimes="0;.429;.857;1" values="1,1;.997,.997;.998,.998;.998,.998" keySplines=".25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+	<animateTransform attributeName="transform" additive="sum" type="translate" repeatCount="1" dur="1.0s" keyTimes="0;.429;.857;1" values="-8.5,-8.7;-8.55,-8.65;-8.7,-8.75;-8.7,-8.75" keySplines=".25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+	<animate attributeName="opacity" repeatCount="1" dur="1.0s" keyTimes="0;.429;.857;1" values="1;1;0;0" keySplines=".25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+	</use>
+<animate attributeName="display" repeatCount="1" dur="1.0s" keyTimes="0;.095;1" values="none;inline;inline"/>
+</g>
+<g display="none">
+	<use xlink:href="#.__EB.__B3.__8403" transform="translate(13.9 3.95)">
+	<animateTransform attributeName="transform" additive="replace" type="translate" repeatCount="1" dur="1.0s" keyTimes="0;.095;.524;.952;1" values="22.4,12.65;22.4,12.65;-22.073,-44.798;-25.048,-48.761;-25.048,-48.761" keySplines=".25 .5 .5 1;.25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+	<animateTransform attributeName="transform" additive="sum" type="rotate" repeatCount="1" dur="1.0s" keyTimes="0;.095;.524;.952;1" values="0,0,0;0,0,0;-28.833,0,0;-30.837,0,0;-30.837,0,0" keySplines=".25 .5 .5 1;.25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+	<animateTransform attributeName="transform" additive="sum" type="scale" repeatCount="1" dur="1.0s" keyTimes="0;.095;.524;.952;1" values="1,1;1,1;.996,.996;.997,.997;.997,.997" keySplines=".25 .5 .5 1;.25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+	<animateTransform attributeName="transform" additive="sum" type="translate" repeatCount="1" dur="1.0s" keyTimes="0;.095;.524;.952;1" values="-8.5,-8.7;-8.5,-8.7;-8.4,-8.75;-8.45,-8.65;-8.45,-8.65" keySplines=".25 .5 .5 1;.25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+	<animate attributeName="opacity" repeatCount="1" dur="1.0s" keyTimes="0;.524;.952;1" values="1;1;0;0" keySplines=".25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+	</use>
+	<animate attributeName="display" repeatCount="1" dur="1.0s" keyTimes="0;.095;1" values="none;inline;inline"/>
+</g>
+<g display="none">
+	<use xlink:href="#.__EC.__9B.__9005" transform="matrix(.95 0 0 .95 18.4 8.6)">
+	<animateTransform attributeName="transform" additive="replace" type="translate" repeatCount="1" dur="1.0s" keyTimes="0;.048;.476;.905;1" values="18.35,8.55;18.35,8.55;73.5,-24.4;77.2,-26.6;77.2,-26.6" keySplines=".25 .5 .5 1;.25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+	<animateTransform attributeName="transform" additive="sum" type="scale" repeatCount="1" dur="1.0s" keyTimes="0;1" values=".95,.95;.95,.95" keySplines=".25 .5 .5 1" calcMode="spline"/>
+	<animate attributeName="opacity" repeatCount="1" dur="1.0s" keyTimes="0;.476;.905;1" values="1;1;0;0" keySplines=".25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+	</use>
+	<animate attributeName="display" repeatCount="1" dur="1.0s" keyTimes="0;.048;1" values="none;inline;inline"/>
+</g>
+<g display="none">
+	<use xlink:href="#.__EC.__9B.__9005" transform="matrix(.769 0 0 .769 19.15 9.4)">
+	<animateTransform attributeName="transform" additive="replace" type="translate" repeatCount="1" dur="1.0s" keyTimes="0;.095;.524;.952;1" values="19.1,9.35;19.1,9.35;21.75,46.9;21.9,49.4;21.9,49.4" keySplines=".25 .5 .5 1;.25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+	<animateTransform attributeName="transform" additive="sum" type="scale" repeatCount="1" dur="1.0s" keyTimes="0;1" values=".769,.769;.769,.769" keySplines=".25 .5 .5 1" calcMode="spline"/>
+	<animate attributeName="opacity" repeatCount="1" dur="1.0s" keyTimes="0;.524;.952;1" values="1;1;0;0" keySplines=".25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+	</use>
+	<animate attributeName="display" repeatCount="1" dur="1.0s" keyTimes="0;.095;1" values="none;inline;inline"/>
+</g>
+<g display="none">
+	<use xlink:href="#.__EC.__9B.__9004" transform="matrix(.769 0 0 .769 19.2 9.35)">
+	<animateTransform attributeName="transform" additive="replace" type="translate" repeatCount="1" dur="1.0s" keyTimes="0;.143;.571;.952;1" values="19.15,9.3;19.15,9.3;.7,9.05;-.3,9.05;-.3,9.05" keySplines=".25 .5 .5 1;.25 .5 .5 1;0 0 1 1;0 0 1 1" calcMode="spline"/>
+	<animateTransform attributeName="transform" additive="sum" type="scale" repeatCount="1" dur="1.0s" keyTimes="0;1" values=".769,.769;.769,.769" keySplines=".25 .5 .5 1" calcMode="spline"/>
+	<animate attributeName="opacity" repeatCount="1" dur="1.0s" keyTimes="0;.571;.952;1" values="1;1;.11;.11" keySplines=".25 .5 .5 1;0 0 1 1;0 0 1 1" calcMode="spline"/>
+	</use>
+	<animate attributeName="display" repeatCount="1" dur="1.0s" keyTimes="0;.143;1" values="none;inline;inline"/>
+</g>
+<g display="none">
+	<use xlink:href="#.__EC.__9B.__9004" transform="matrix(.769 0 0 .769 19.2 9.35)">
+	<animateTransform attributeName="transform" additive="replace" type="translate" repeatCount="1" dur="1.0s" keyTimes="0;.095;.524;.952;1" values="19.15,9.3;19.15,9.3;.7,41.85;-.45,44;-.45,44" keySplines=".25 .5 .5 1;.25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+	<animateTransform attributeName="transform" additive="sum" type="scale" repeatCount="1" dur="1.0s" keyTimes="0;1" values=".769,.769;.769,.769" keySplines=".25 .5 .5 1" calcMode="spline"/>
+	<animate attributeName="opacity" repeatCount="1" dur="1.0s" keyTimes="0;.524;.952;1" values="1;1;0;0" keySplines=".25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+	</use>
+	<animate attributeName="display" repeatCount="1" dur="1.0s" keyTimes="0;.095;1" values="none;inline;inline"/>
+</g>
+<g display="none">
+	<use xlink:href="#.__EC.__9B.__9003" transform="matrix(.769 0 0 .769 19.2 9.35)">
+	<animateTransform attributeName="transform" additive="replace" type="translate" repeatCount="1" dur="1.0s" keyTimes="0;.429;.857;1" values="19.15,9.3;-25.7,-32.9;-28.7,-35.7;-28.7,-35.7" keySplines=".25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+	<animateTransform attributeName="transform" additive="sum" type="scale" repeatCount="1" dur="1.0s" keyTimes="0;1" values=".769,.769;.769,.769" keySplines=".25 .5 .5 1" calcMode="spline"/>
+	<animate attributeName="opacity" repeatCount="1" dur="1.0s" keyTimes="0;.429;.857;1" values="1;1;0;0" keySplines=".25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+	</use>
+	<animate attributeName="display" repeatCount="1" dur="1.0s" keyTimes="0;.095;1" values="none;inline;inline"/>
+</g>
+<g display="none">
+	<use xlink:href="#.__EC.__9B.__9003" transform="matrix(.769 0 0 .769 19.2 9.35)">
+	<animateTransform attributeName="transform" additive="replace" type="translate" repeatCount="1" dur="1.0s" keyTimes="0;.095;.524;.952;1" values="19.15,9.3;19.15,9.3;54.9,-58.5;57.3,-63.05;57.3,-63.05" keySplines=".25 .5 .5 1;.25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+	<animateTransform attributeName="transform" additive="sum" type="scale" repeatCount="1" dur="1.0s" keyTimes="0;1" values=".769,.769;.769,.769" keySplines=".25 .5 .5 1" calcMode="spline"/>
+	<animate attributeName="opacity" repeatCount="1" dur="1.0s" keyTimes="0;.524;.952;1" values="1;1;0;0" keySplines=".25 .5 .5 1;0 0 1 1;.1 .1 .9 .9" calcMode="spline"/>
+	</use>
+	<animate attributeName="display" repeatCount="1" dur="1.0s" keyTimes="0;.095;1" values="none;inline;inline"/>
+</g>
+</g>
+</g>
+</svg>

@@ -1,0 +1,48 @@
+@mixin quiz-btn-mc-after($content, $bg, $width, $height) {
+	&::after{
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		text-align: left;
+		content: $content;
+		font-size: 24px;
+		padding-top: 10px;
+		padding-left: 10px;
+		line-height: 100%;
+		
+		background-image: $bg;
+		width: $width;
+		height: $height;
+		background-repeat: no-repeat;
+	}
+	&.correct::after{
+		color: #fff;
+	}
+}
+
+@mixin quiz-btn-mc{
+	$bg: resolve('digenglish_lib/images/mc_num_bg.png');
+	$width: width('digenglish_lib/images/mc_num_bg.png');
+	$height: height('digenglish_lib/images/mc_num_bg.png');
+
+
+	&.btn-mc-1{
+		@include quiz-btn-mc-after("A", $bg, $width, $height); 
+
+	}
+	&.btn-mc-2{
+		@include quiz-btn-mc-after("B", $bg, $width, $height); 	
+	}
+	&.btn-mc-3{
+		@include quiz-btn-mc-after("C", $bg, $width, $height); 			
+	}
+	&.btn-mc-4{
+		@include quiz-btn-mc-after("D", $bg, $width, $height); 		
+	}
+	&.btn-mc-5{
+		@include quiz-btn-mc-after("E", $bg, $width, $height); 			
+	}
+	&.btn-mc-6{
+		@include quiz-btn-mc-after("F", $bg, $width, $height); 		
+	}
+}

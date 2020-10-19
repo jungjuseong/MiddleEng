@@ -1,0 +1,117 @@
+@mixin btn_down_on($src, $src_down, $src_on, $width, $height){
+	touch-action: none;
+	padding: 0px;
+	border: none;
+	background-color: transparent;
+	outline: none;
+	background-image: $src;
+	background-repeat: no-repeat;
+	width: $width;
+	height: $height;
+	pointer-events: unset;
+	cursor: pointer;
+	&.on{
+		background-image: $src_on;
+		pointer-events: none;
+		cursor: auto;
+	}
+	&.down{
+		background-image: $src_down;
+	}
+	&:before{
+		position:absolute; 
+		pointer-events:none; 
+		width:0px; height:0px; 
+		visibility: hidden;
+		overflow:hidden; 
+		z-index:-1;
+		content:$src $src_down $src_on;
+	}
+}
+
+@mixin btn_down_dis($src, $src_down, $src_dis, $width, $height){
+	touch-action: none;
+	padding: 0px;
+	border: none;
+	background-color: transparent;
+	outline: none;
+	background-image: $src;
+	background-repeat: no-repeat;
+	width: $width;
+	height: $height;
+	pointer-events: unset;
+	cursor: pointer;
+	&:disabled{
+		background-image: $src_dis;
+		pointer-events: none;
+		cursor: auto;
+	}
+	&.down{
+		background-image: $src_down;
+	}
+	&:before{
+		position:absolute; 
+		pointer-events:none; 
+		width:0px; height:0px; 
+		visibility: hidden;
+		overflow:hidden; 
+		z-index:-1;
+		content:$src $src_down $src_dis;
+	}
+}
+
+@mixin btn_on_dis($src, $src_on, $src_dis, $width, $height){
+	touch-action: none;
+	padding: 0px;
+	border: none;
+	background-color: transparent;
+	outline: none;
+	background-image: $src;
+	background-repeat: no-repeat;
+	width: $width;
+	height: $height;
+	pointer-events: unset;
+	cursor: pointer;
+	&:disabled{
+		background-image: $src_dis;
+		pointer-events: none;
+		cursor: auto;
+	}
+	&.on{
+		background-image: $src_on;
+	}
+	&:before{
+		position:absolute; 
+		pointer-events:none; 
+		width:0px; height:0px; 
+		visibility: hidden;
+		overflow:hidden; 
+		z-index:-1;
+		content:$src $src_on $src_dis;
+	}
+}
+@mixin btn_on($src, $src_on, $width, $height){
+	touch-action: none;
+	padding: 0px;
+	border: none;
+	background-color: transparent;
+	outline: none;
+	background-image: $src;
+	background-repeat: no-repeat;
+	width: $width;
+	height: $height;
+	cursor: pointer;
+	pointer-events: unset;
+	&.on{
+		background-image: $src_on;
+	}
+	&:before{
+		position:absolute; 
+		pointer-events:none; 
+		width:0px; height:0px; 
+		visibility: hidden;
+		overflow:hidden; 
+		z-index:-1;
+		content:$src $src_on;
+	}
+}

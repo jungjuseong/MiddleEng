@@ -1,0 +1,214 @@
+@mixin time_mask() {
+	position: absolute;
+	overflow: hidden;
+	&>div{
+		position: absolute;
+		width: 100%;
+		transition: transform 0.3s;
+		&>div{
+			text-align: center;
+			width: 100%;
+		}
+	}
+}
+
+@mixin selector_base {
+	position: relative;
+	background-color: #fff;
+	border-radius: 15px;
+	border-width: 0px;
+}
+@mixin selector_mask1($left, $fontSize) {
+	&>.mask1{
+		left: $left;
+		width: 120px;
+		top: 0px;
+		bottom: 5px;
+		@include time_mask();
+		&>div{
+			top: 0px;
+			&>div{
+				height: 73px;
+				padding-top: 20 - (60px - $fontSize)/2;
+				font-size: $fontSize;
+				font-weight: normal;
+				color: rgba(0, 0, 0, 0.3);
+			}
+			&>div:first-child{
+				padding: 0px;
+			}
+		}
+	}
+}
+@mixin selector_up($bg, $width){
+	&>.up{
+		position: relative;
+		background-image: $bg;
+		background-repeat: no-repeat;
+		width: $width;
+		height:  82px;	
+	}
+}
+@mixin selector_middle($left, $fontSize, $bg, $width, $height){
+	&>.middle{
+		position: relative;
+		&>.unlimit{
+			position:absolute;
+			top: 36px;
+			left: 0px;
+			width: 100%;
+			text-align: center;
+			font-weight: bold;
+			font-size: 45px;
+			color: rgba(0, 0, 0, 0.3);
+			}
+		&>.mask2{
+			top: 0px;
+			bottom: 0px;
+
+			left: $left;
+			width: 120px;
+			z-index: 100;
+			@include time_mask();
+			&>div{
+				&>div{
+					height: 73px;
+					padding-top: (70px - $fontSize)/2 - 10 ;
+					font-size: $fontSize;
+					font-weight: bold;
+					color: rgb(0, 0, 0);
+				}
+			}
+		}
+		&>.bg{
+			position:relative;
+			background-image: $bg;
+			width: $width;
+			height:  $height;
+		}
+	}
+}
+@mixin selector_down($bg, $width){
+	&>.down{
+		position: relative;
+		background-image: $bg;
+		background-repeat: no-repeat;
+		background-position: 0% 100%;
+		width: $width;
+		height:  82px;	
+	}
+}
+
+@mixin selector_btnbox($left){
+	&>.btnbox{
+		position:absolute;
+		top:0px;
+		left: $left;
+		text-align: center;
+
+		&>.btn_up{
+			margin-top: 45px;
+			@include btn_down_dis(
+				resolve('teacher/images/btn_up.png'),
+				resolve('teacher/images/btn_up_down.png'),
+				resolve('teacher/images/btn_up_dis.png'),
+				width('teacher/images/btn_up.png'),
+				height('teacher/images/btn_up.png')
+			);
+		}
+		&>.mins{
+			margin-top: 40px;
+			font-weight: 400;
+			font-size: 22px;
+			color: rgba(0, 0, 0, 0.5);
+			height: 66px;
+		}
+		&>.btn_down{
+			@include btn_down_dis(
+				resolve('teacher/images/btn_down.png'),
+				resolve('teacher/images/btn_down_down.png'),
+				resolve('teacher/images/btn_down_dis.png'),
+				width('teacher/images/btn_down.png'),
+				height('teacher/images/btn_down.png')
+			);
+		}
+	}
+}
+@mixin selector_disabled(){
+	&.disabled{
+		&>.middle>.mask2>div>div {
+			color: rgba(0, 0, 0, 0.3);
+		}
+		&>.mask1>div>div {
+			color: rgba(0, 0, 0, 0.3);
+		}
+	/*
+		&>.btnbox>.mins{
+			margin-top: 75px;
+			font-size: 22px;
+			font-weight: bold;
+			color: rgba(0, 0, 0, 0.3);
+		}
+	*/
+	}
+}
+
+@mixin selector{
+	$left: 65px;
+	@include selector_base;
+	@include selector_mask1($left, 45px);
+	@include selector_up(resolve("teacher/images/timer_select_top.png"), width("teacher/images/timer_select_top.png"));
+
+	@include selector_middle(
+		$left,
+		45px,
+		resolve("teacher/images/timer_select_middle.png"),
+		width("teacher/images/timer_select_middle.png"), 
+		height("teacher/images/timer_select_middle.png")
+	);
+
+	@include selector_down(resolve("teacher/images/timer_select_bottom.png"), width("teacher/images/timer_select_bottom.png"));
+
+
+	@include selector_btnbox(188px);
+	@include selector_disabled;
+}
+@mixin selector_L{
+	$left: 0px;
+	@include selector_base;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	@include selector_mask1($left, 45px);
+	@include selector_up(resolve("teacher/images/timer_select_L_top.png"), width("teacher/images/timer_select_L_top.png"));
+
+	@include selector_middle(
+		$left,
+		45px,
+		resolve("teacher/images/timer_select_L_middle.png"),
+		width("teacher/images/timer_select_L_middle.png"), 
+		height("teacher/images/timer_select_L_middle.png")
+	);
+
+	@include selector_down(resolve("teacher/images/timer_select_L_bottom.png"), width("teacher/images/timer_select_L_bottom.png"));
+	@include selector_btnbox(112px);
+	@include selector_disabled;
+}
+@mixin selector_R{
+	$left: 0px;
+	@include selector_base;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	@include selector_mask1($left, 45px);
+	@include selector_up(resolve("teacher/images/timer_select_R_top.png"), width("teacher/images/timer_select_R_top.png"));
+
+	@include selector_middle(
+		$left,
+		45px,
+		resolve("teacher/images/timer_select_R_middle.png"),
+		width("teacher/images/timer_select_R_middle.png"), 
+		height("teacher/images/timer_select_R_middle.png")
+	);
+	@include selector_down(resolve("teacher/images/timer_select_R_bottom.png"), width("teacher/images/timer_select_R_bottom.png"));
+	@include selector_btnbox(108px);
+	@include selector_disabled;
+}

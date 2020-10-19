@@ -1,0 +1,4559 @@
+@font-face {
+    font-family: Visang_e_HT;
+    src: url(/content/digenglish_lib/font/Visang_e_HT.woff) format("woff");
+}
+
+@font-face {
+    font-family: Visang_e_HT;
+    font-weight: bold;
+    src: url(/content/digenglish_lib/font/Visang_e_HT_Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans_bold;
+    font-weight: bold;
+    src: url(/content/digenglish_lib/font/NotoSansCJKkr-Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans_light;
+    font-weight: lighter;
+    src: url(/content/digenglish_lib/font/NotoSans-Light.woff) format("woff");
+}
+
+@font-face {
+    font-family: NotoSans;
+    /* src: url(/content/digenglish_lib/font/NotoSansCJKkr-Medium.woff) format('woff'); */
+    src: url(/content/digenglish_lib/font/NotoSansCJK-Medium-en.woff) format("woff");
+}
+
+@font-face {
+    font-family: HelveticaRounded;
+    font-weight: bold;
+    src: url(/content/digenglish_lib/font/HelveticaRounded-Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: HelveticaRoundedLTStd;
+    font-weight: bold;
+    src: url(/content/digenglish_lib/font/HelveticaRoundedLTStd-Bd.woff) format("woff");
+}
+
+@charset "UTF-8";
+#wrap {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/bg_ls.png");
+    font-family: NotoSans;
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+#wrap .eyeon_svg {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    pointer-events: none;
+}
+
+#wrap .goodjob-svg {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    z-index: 100;
+}
+
+#wrap .content-container {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+#wrap .content-container .content-wrapper {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    transition: left 0.3s ease-in-out;
+}
+
+#wrap .content-container .content-wrapper > div {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+}
+
+#wrap .video-direction {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/common/bg_direction.jpg");
+}
+
+#wrap .video-direction > img {
+    z-index: 2;
+}
+
+#wrap .video-direction > div.direction {
+    position: absolute;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+    transition: opacity 0.5s, -webkit-transform 0.5s ease-out;
+    transition: transform 0.5s ease-out, opacity 0.5s;
+    transition: transform 0.5s ease-out, opacity 0.5s, -webkit-transform 0.5s ease-out;
+    opacity: 0;
+}
+
+#wrap .video-direction.on > div.direction {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+}
+
+#wrap .video-direction.hide > div.direction {
+    visibility: hidden;
+}
+
+#wrap .video-direction.loaded > video {
+    opacity: 1;
+}
+
+#wrap .video-direction > .movieclip {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 330px;
+    height: 550px;
+}
+
+#wrap .video-direction > div.direction {
+    position: absolute;
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/common/direction.png");
+    width: 787px;
+    height: 181px;
+    left: calc(43% - 787px/2);
+    top: calc(50% - 181px/2);
+}
+
+#wrap .video-direction > div.lesson {
+    font-size: 40px;
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    color: #fff;
+}
+
+#wrap .s_warmup > .box {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 50%;
+    height: auto;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    transition: top 0.3s;
+}
+
+#wrap .s_warmup > .box > .speaker {
+    position: relative;
+    left: 205px;
+    transition: top 0.3s;
+}
+
+#wrap .s_warmup > .box > .speaker > img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#wrap .s_warmup > .box > .speaker > div {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 863px;
+    height: 130px;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    padding: 0px 30px;
+    box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+#wrap .s_warmup > .box > .speaker > div > div {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-52%);
+            transform: translateY(-52%);
+    /*font-size: 52px;*/
+    font-weight: bold;
+    line-height: 1.2;
+    height: auto;
+}
+
+#wrap .s_warmup > .box > .speaker.key-on {
+    top: 36px;
+}
+
+#wrap .s_warmup > .box > .s_typing {
+    position: relative;
+    left: 205px;
+    transition: margin-top 0.3s;
+    margin-top: 40px;
+}
+
+#wrap .s_warmup > .box > .s_typing .area-bnd {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 894px;
+    margin-right: 5px;
+}
+
+#wrap .s_warmup > .box > .s_typing .area-bnd .k-tarea {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 64px;
+}
+
+#wrap .s_warmup > .box > .s_typing .area-bnd .k-tarea textarea {
+    box-sizing: border-box;
+    font-size: 52px;
+    padding: 30px 35px 30px 30px;
+    color: #000;
+    font-family: NotoSans;
+    font-weight: bold;
+}
+
+#wrap .s_warmup > .box > .s_typing .area-bnd .k-tarea textarea::disabled {
+    color: #000;
+}
+
+#wrap .s_warmup > .box > .s_typing .area-bnd .k-tarea .k-tarea-bg {
+    height: 0px;
+    min-height: 100%;
+}
+
+#wrap .s_warmup > .box > .s_typing .area-bnd .k-tarea .k-tarea-bar {
+    display: none;
+}
+
+#wrap .s_warmup > .box > .s_typing .area-bnd canvas {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+#wrap .s_warmup > .box > .s_typing > img {
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    width: 115px;
+    height: 115px;
+    border-width: 6px;
+    border-style: solid;
+    border-radius: 50%;
+}
+
+#wrap .s_warmup > .box > .s_typing > img.pink {
+    border-color: #ce74e1;
+}
+
+#wrap .s_warmup > .box > .s_typing > img.green {
+    border-color: #22cdac;
+}
+
+#wrap .s_warmup > .box > .s_typing > img.orange {
+    border-color: #ffba00;
+}
+
+#wrap .s_warmup > .box > .s_typing > img.purple {
+    border-color: #7471ec;
+}
+
+#wrap .s_warmup > .box.key-on {
+    top: 28%;
+}
+
+#wrap .s_warmup > .box.key-on > .s_typing {
+    margin-top: 20px;
+}
+
+#wrap .s_warmup .fel_toteacher {
+    position: absolute;
+    z-index: 11;
+    touch-action: none;
+    bottom: 20px;
+    right: 20px;
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/toteacher.svg");
+    background-repeat: no-repeat;
+    width: 95px;
+    height: 87px;
+    cursor: pointer;
+    pointer-events: unset;
+}
+
+#wrap .s_warmup .fel_toteacher.on {
+    background-image: url("/content/digenglish_lib/images/toteacher_on.svg");
+}
+
+#wrap .s_warmup .fel_toteacher:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/toteacher.svg") url("/content/digenglish_lib/images/toteacher_on.svg");
+}
+
+#wrap .s_warmup .fel_toteacher.on {
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+}
+
+#wrap .s_passage {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/bg_s_passage.png");
+}
+
+#wrap .s_passage .passage_page {
+    width: 74px;
+    height: 36px;
+    /*background-color: rgba(195, 169, 191,0.9);
+			border-radius: 50px; */
+    position: absolute;
+    top: 7px;
+    right: 30px;
+    text-align: right;
+}
+
+#wrap .s_passage .passage_page > span {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    line-height: 33px;
+}
+
+#wrap .s_passage .page {
+    width: 1200px;
+    height: 680px;
+    overflow: hidden;
+    position: absolute;
+    top: 78px;
+    left: 40px;
+}
+
+#wrap .s_passage .page .swiper-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    overflow: hidden;
+    color: white;
+    padding: 0px 32px;
+    touch-action: none;
+}
+
+#wrap .s_passage .page .swiper-container .script {
+    line-height: 75px;
+    white-space: normal;
+    word-break: normal;
+    font-size: 40px;
+    letter-spacing: -1.8px;
+    height: auto;
+}
+
+#wrap .s_passage .page .swiper-container .script .eng {
+    height: auto;
+    color: black;
+}
+
+#wrap .s_passage .page .swiper-container .script .eng > span.word {
+    transition-duration: 0.3s;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 60px;
+    padding: 0px 6px;
+}
+
+#wrap .s_passage .page .swiper-container .script .eng.on {
+    color: blue;
+}
+
+#wrap .s_passage .page .swiper-container .script .eng.on.bg-on > span {
+    background-color: #fff08e;
+}
+
+#wrap .s_passage .page .swiper-container .script .eng.selected {
+    color: blue;
+}
+
+#wrap .s_passage .page .swiper-container .script .eng.view-trans {
+    line-height: 1.3;
+}
+
+#wrap .s_passage .page .swiper-container .script .trans {
+    padding: 0px 6px;
+    position: relative;
+    font-size: 34px;
+    line-height: 1.3;
+    font-weight: bold;
+    color: blue;
+    margin-bottom: 20px;
+}
+
+#wrap .s_passage .page .swiper-container .script .trans > span {
+    background-color: #fff08e;
+}
+
+#wrap .s_passage .page .swiper-container .swiper-slide {
+    height: auto;
+}
+
+#wrap .s_passage .page .swiper-container .swiper-scrollbar {
+    background: rgba(0, 0, 0, 0);
+    width: 7px;
+}
+
+#wrap .s_passage .page .swiper-container .swiper-scrollbar .swiper-scrollbar-drag {
+    width: 7px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+#wrap .s_passage .img_pop {
+    pointer-events: none;
+    opacity: 0;
+    position: absolute;
+    bottom: 21px;
+    left: 275px;
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/pop_click.png");
+    width: 730px;
+    height: 76px;
+    z-index: 2;
+    transition: opacity 0.3s;
+}
+
+#wrap .s_passage .img_pop.on {
+    opacity: 1;
+}
+
+#wrap .s_passage .btn_box {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    width: 664px;
+    height: 142px;
+    position: absolute;
+    bottom: -142px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 5;
+    text-align: center;
+    transition: bottom 0.3s;
+}
+
+#wrap .s_passage .btn_box .btn_yes {
+    margin: 25px 10px;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_yes.png");
+    background-repeat: no-repeat;
+    width: 297px;
+    height: 96px;
+    cursor: pointer;
+    pointer-events: unset;
+}
+
+#wrap .s_passage .btn_box .btn_yes.on {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_yes_down.png");
+}
+
+#wrap .s_passage .btn_box .btn_yes:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_yes.png") url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_yes_down.png");
+}
+
+#wrap .s_passage .btn_box .btn_no {
+    margin: 25px 10px;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_no.png");
+    background-repeat: no-repeat;
+    width: 297px;
+    height: 96px;
+    cursor: pointer;
+    pointer-events: unset;
+}
+
+#wrap .s_passage .btn_box .btn_no.on {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_no_down.png");
+}
+
+#wrap .s_passage .btn_box .btn_no:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_no.png") url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_no_down.png");
+}
+
+#wrap .s_passage .btn_box.on {
+    bottom: 0px;
+}
+
+#wrap .s_passage .fel_toteacher {
+    position: absolute;
+    z-index: 11;
+    touch-action: none;
+    bottom: 20px;
+    right: 20px;
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/toteacher.svg");
+    background-repeat: no-repeat;
+    width: 95px;
+    height: 87px;
+    cursor: pointer;
+    pointer-events: unset;
+}
+
+#wrap .s_passage .fel_toteacher.on {
+    background-image: url("/content/digenglish_lib/images/toteacher_on.svg");
+}
+
+#wrap .s_passage .fel_toteacher:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/toteacher.svg") url("/content/digenglish_lib/images/toteacher_on.svg");
+}
+
+#wrap .s_passage .fel_toteacher.on {
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+}
+
+#wrap .s_question {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+#wrap .s_question .left {
+    background-color: #dfe7ff;
+    width: 630px;
+    height: 800px;
+    overflow: hidden;
+}
+
+#wrap .s_question .left .swiper-container {
+    width: 630px;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    overflow: hidden;
+    color: white;
+}
+
+#wrap .s_question .left .swiper-container .script-wrap {
+    height: auto;
+    padding: 28px 40px 0px 40px;
+}
+
+#wrap .s_question .left .swiper-container .script-wrap .passage {
+    font-size: 32px;
+    /* rw_comprehension 190425 수정사항 p.20 */
+    color: black;
+    /* 색수정  color: rgb(46, 45, 43); */
+    line-height: 1.5;
+    white-space: normal;
+    word-break: normal;
+    margin-bottom: 40px;
+    /*
+						&>span{
+							padding-left: 20px;
+						}
+						*/
+}
+
+#wrap .s_question .left .swiper-container .swiper-slide {
+    height: auto;
+}
+
+#wrap .s_question .left .swiper-container .swiper-scrollbar {
+    width: 8px;
+    right: 7px;
+    background-color: transparent;
+}
+
+#wrap .s_question .left .swiper-container .swiper-scrollbar .swiper-scrollbar-drag {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#wrap .s_question .right {
+    width: 650px;
+    height: 800px;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+#wrap .s_question .right .btn_page_box {
+    width: 100%;
+    height: 0px;
+    overflow: visible;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    top: 38px;
+    cursor: pointer;
+}
+
+#wrap .s_question .right .btn_page_box > span {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 66px;
+    height: 66px;
+    font-size: 26px;
+    line-height: 100%;
+    padding-top: 10px;
+    /* 값 수정 padding-top: 15px;*/
+    font-size: 34px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+#wrap .s_question .right .btn_page_box > span.on {
+    color: #f8f64d;
+}
+
+#wrap .s_question .right .btn_page_box > span.correct {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/common/icon_o.png");
+}
+
+#wrap .s_question .right .btn_page_box > span.wrong {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/common/icon_x.png");
+}
+
+#wrap .s_question .right .btn_page_box.off {
+    display: none;
+}
+
+#wrap .s_question .right .swiper-container {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+#wrap .s_question .right .swiper-container .question {
+    width: 650px;
+    position: relative;
+    top: 130px;
+    height: 100px;
+    padding: 0px 30px;
+    font-size: 36px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#wrap .s_question .right .swiper-container .question > div {
+    position: relative;
+    width: 100%;
+    height: auto;
+    text-align: left;
+}
+
+#wrap .s_question .right .swiper-container .question > div > div {
+    color: black;
+    white-space: normal;
+}
+
+#wrap .s_question .right .swiper-container .choice_box {
+    position: relative;
+    top: 166px;
+    text-align: left;
+    white-space: normal;
+    left: 30px;
+    width: 582px;
+}
+
+#wrap .s_question .right .swiper-container .choice_box .btn_choice {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_question_s.png");
+    background-repeat: no-repeat;
+    width: 582px;
+    height: 88px;
+    cursor: pointer;
+    pointer-events: unset;
+    position: relative;
+    margin-bottom: 19px;
+    text-align: left;
+    padding: 0px 10px 10px 55px;
+    color: black;
+}
+
+#wrap .s_question .right .swiper-container .choice_box .btn_choice.on {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_question_s_down.png");
+}
+
+#wrap .s_question .right .swiper-container .choice_box .btn_choice:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_question_s.png") url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_question_s_down.png");
+}
+
+#wrap .s_question .right .swiper-container .choice_box .btn_choice.btn-mc-1::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "A";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_question .right .swiper-container .choice_box .btn_choice.btn-mc-1.correct::after {
+    color: #fff;
+}
+
+#wrap .s_question .right .swiper-container .choice_box .btn_choice.btn-mc-2::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "B";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_question .right .swiper-container .choice_box .btn_choice.btn-mc-2.correct::after {
+    color: #fff;
+}
+
+#wrap .s_question .right .swiper-container .choice_box .btn_choice.btn-mc-3::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "C";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_question .right .swiper-container .choice_box .btn_choice.btn-mc-3.correct::after {
+    color: #fff;
+}
+
+#wrap .s_question .right .swiper-container .choice_box .btn_choice.btn-mc-4::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "D";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_question .right .swiper-container .choice_box .btn_choice.btn-mc-4.correct::after {
+    color: #fff;
+}
+
+#wrap .s_question .right .swiper-container .choice_box .btn_choice.btn-mc-5::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "E";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_question .right .swiper-container .choice_box .btn_choice.btn-mc-5.correct::after {
+    color: #fff;
+}
+
+#wrap .s_question .right .swiper-container .choice_box .btn_choice.btn-mc-6::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "F";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_question .right .swiper-container .choice_box .btn_choice.btn-mc-6.correct::after {
+    color: #fff;
+}
+
+#wrap .s_question .right .swiper-container .choice_box .btn_choice.correct {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_question_s_correct.png");
+}
+
+#wrap .s_question .right .swiper-container .choice_box .btn_choice.wrong {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_question_s_wrong.png");
+}
+
+#wrap .s_question .right .btn_next {
+    position: absolute;
+    bottom: 26px;
+    right: 10px;
+    z-index: 2;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_question_next.png");
+    background-repeat: no-repeat;
+    width: 190px;
+    height: 103px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#wrap .s_question .right .btn_next:disabled {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_question_next.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_question .right .btn_next.down {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_question_next.png");
+}
+
+#wrap .s_question .right .btn_next:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_question_next.png") url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_question_next.png") url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_question_next.png");
+}
+
+#wrap .s_question .fel_toteacher {
+    position: absolute;
+    z-index: 11;
+    touch-action: none;
+    bottom: 20px;
+    right: 20px;
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/toteacher.svg");
+    background-repeat: no-repeat;
+    width: 95px;
+    height: 87px;
+    cursor: pointer;
+    pointer-events: unset;
+}
+
+#wrap .s_question .fel_toteacher.on {
+    background-image: url("/content/digenglish_lib/images/toteacher_on.svg");
+}
+
+#wrap .s_question .fel_toteacher:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/toteacher.svg") url("/content/digenglish_lib/images/toteacher_on.svg");
+}
+
+#wrap .s_question .fel_toteacher.on {
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+}
+
+#wrap .s_graphic {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+#wrap .s_graphic .btn_page_box {
+    width: 100%;
+    height: 0px;
+    display: inline-block;
+    position: absolute;
+    top: 40px;
+    overflow: visible;
+    text-align: center;
+    z-index: 2;
+    cursor: pointer;
+}
+
+#wrap .s_graphic .btn_page_box > span {
+    margin: 0px 22px;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+#wrap .s_graphic .btn_page_box > span.on {
+    color: #f8f64d;
+}
+
+#wrap .s_graphic .btn_page_box.off {
+    display: none;
+}
+
+#wrap .s_graphic .table-container {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+#wrap .s_graphic .table-container .table-wrapper {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    overflow: visible;
+    white-space: nowrap;
+    transition: left 0.3s;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single {
+    /*  rw_comprehension 190425 수정사항 p.24,5 스크롤기능 삭제 */
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    bottom: 0px;
+    height: 720px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: auto;
+    height: auto;
+    min-width: 1000px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 4px 2.8px 1.2px rgba(0, 0, 0, 0.3);
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item .head {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    font-size: 48px;
+    line-height: 73px;
+    color: white;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item .head em {
+    font-style: unset;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item .content-box {
+    display: table;
+    width: 100%;
+    min-height: 505px;
+    height: auto;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item .content-box > div {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item .content-box > div .content {
+    /* rw_comprehension 190425 수정사항 p.23 */
+    box-sizing: border-box;
+    color: #323232;
+    font-size: 40px;
+    text-align: left;
+    width: 100%;
+    height: auto;
+    padding: 5px 40px 15px 40px;
+    white-space: normal;
+    /* margin: 0px; 삭제 */
+    list-style: none;
+    -webkit-margin-after: 0px;
+            margin-block-end: 0px;
+    -webkit-margin-before: 0px;
+            margin-block-start: 0px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item .content-box > div .content > li {
+    line-height: 83px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item .content-box > div .content .select-box {
+    position: relative;
+    display: inline-block;
+    vertical-align: baseline;
+    white-space: nowrap;
+    border: 1.5px solid #ccc;
+    border-radius: 6.8px;
+    padding-left: 10.2px;
+    line-height: 68px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item .content-box > div .content .select-box > .text-box {
+    touch-action: none;
+    display: inline-block;
+    vertical-align: bottom;
+    height: 68px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item .content-box > div .content .select-box > .text-box > .size-box {
+    height: 0px;
+    color: transparent;
+    overflow: hidden;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item .content-box > div .content .select-box > .btn-drop {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_dropdown_down.png");
+    background-repeat: no-repeat;
+    width: 68px;
+    height: 68px;
+    cursor: pointer;
+    pointer-events: unset;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10.2px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item .content-box > div .content .select-box > .btn-drop.on {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_dropdown_up.png");
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item .content-box > div .content .select-box > .btn-drop:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_dropdown_down.png") url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_dropdown_up.png");
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item .content-box > div .content .select-box > .options-box {
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    z-index: 2;
+    background-color: #a8dfff;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item .content-box > div .content .select-box > .options-box.bottom {
+    width: 100%;
+    bottom: 2px;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item .content-box > div .content .select-box > .options-box.top {
+    width: 100%;
+    top: 2px;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item .content-box > div .content .select-box > .options-box.on {
+    opacity: 1;
+    pointer-events: unset;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item .content-box > div .content .select-box > .options-box > div {
+    width: 100%;
+    padding-left: 12.2px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item .content-box > div .content .select-box > .options-box > div.on {
+    background-color: #94cbff;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item .content-box > div .content .select-box > .options-box > div.correct {
+    background-color: #249bfa;
+    color: #fff;
+    pointer-events: none;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item .content-box > div .content .select-box > .options-box > div.wrong {
+    background-color: #cacaca;
+    color: #878787;
+    pointer-events: none;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item .content-box > div .content .select-box > .options-box > div:hover {
+    background-color: #80b7ff;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.purple .head {
+    background-color: #b07ae1;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.purple .content li::before {
+    color: #b07ae1;
+    /* or whatever color you prefer */
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.green .head {
+    background-color: #1cc9af;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.green .content li::before {
+    color: #1cc9af;
+    /* or whatever color you prefer */
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.blue .head {
+    background-color: #4f7ad1;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.blue .content li::before {
+    color: #4f7ad1;
+    /* or whatever color you prefer */
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_2 .head {
+    background-color: #0d4696;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_2 > li {
+    line-height: 73px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_2 li::before {
+    content: "";
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item {
+    margin-top: 60px;
+    /*margin-bottom: 240px;*/
+    margin-bottom: 60px;
+    background: #fff;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_3 ul.content > li, #wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_7 ul.content > li {
+    position: relative;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_3 ul.content > li + li, #wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_7 ul.content > li + li {
+    margin-top: 18px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_4, #wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_5 {
+    max-width: 1109px !important;
+    margin-top: 60px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_4 > .head, #wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_5 > .head {
+    width: 278px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: 32px;
+    vertical-align: middle;
+    border-radius: 10px 0 0 10px;
+    font-weight: normal;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_4 > .head > span, #wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_5 > .head > span {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    align-items: center;
+    justify-content: center;
+    white-space: normal;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_4 > .content-box, #wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_5 > .content-box {
+    width: 1109px;
+    padding-left: 278px;
+    overflow: visible;
+    display: block;
+    min-height: auto;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_4 > .content-box > div, #wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_5 > .content-box > div {
+    width: 100%;
+    display: block;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_4 > .content-box > div > .content, #wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_5 > .content-box > div > .content {
+    padding: 60px 15px 60px 36px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_4 > .content-box > div > .content > li, #wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_5 > .content-box > div > .content > li {
+    min-height: 44px;
+    font-size: 32px;
+    line-height: 56px;
+    margin-right: 30px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_4 > .content-box > div > .content > li + li, #wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_5 > .content-box > div > .content > li + li {
+    margin-top: 46px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_4 > .content-box > div > .content > li > div, #wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_5 > .content-box > div > .content > li > div {
+    color: #323232;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_4 > .content-box > div > .content > li > div > .select-box, #wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_5 > .content-box > div > .content > li > div > .select-box {
+    line-height: 45px;
+    vertical-align: middle;
+    margin-bottom: 7px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_4 > .content-box > div > .content > li > div > .select-box > .text-box, #wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_5 > .content-box > div > .content > li > div > .select-box > .text-box {
+    height: 47px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_4 > .content-box > div > .content > li > div > .select-box > .btn-drop, #wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_5 > .content-box > div > .content > li > div > .select-box > .btn-drop {
+    width: 47px;
+    height: 47px;
+    background-size: 46px;
+    background-position: center 2px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_4 > .content-box > div > .content > li > div > .select-box > .options-box.bottom, #wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_5 > .content-box > div > .content > li > div > .select-box > .options-box.bottom {
+    left: 0;
+    bottom: 1px;
+    overflow: hidden;
+    border-radius: 0 0 7px 7px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_4 > .content-box > div > .content:after, #wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_5 > .content-box > div > .content:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_5 > .swiper-container > .swiper-wrapper > .content-box > div > .content > li > div {
+    text-indent: -45px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_6 {
+    width: 916px;
+    height: 605px;
+    border-radius: 60px;
+    background: #ffd966;
+    padding: 20px 0;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_6 > .head {
+    display: inline-block;
+    background: #c39e2f;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 45px;
+    font-weight: normal;
+    line-height: 1.2;
+    color: #000;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_6 > .swiper-container {
+    height: 490px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_6 > .swiper-container .content-box {
+    min-height: 490px;
+    padding-bottom: 30px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_6 > .swiper-container .content-box > div > .content > li {
+    color: #000;
+    margin-bottom: 30px;
+    font-size: 35px;
+    line-height: 70px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_6 > .swiper-container .content-box > div > .content > li > div {
+    text-indent: -45px;
+    padding-left: 45px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_6 > .swiper-container .content-box > div > .content > li > div > .select-box {
+    line-height: 48px;
+    vertical-align: middle;
+    background: #fff;
+    margin-bottom: 4px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_6 > .swiper-container .content-box > div > .content > li > div > .select-box > .text-box {
+    height: 52px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_6 > .swiper-container .content-box > div > .content > li > div > .select-box > .btn-drop {
+    width: 46px;
+    height: 52px;
+    background-size: 60px;
+    background-position: center -4px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_6 > .swiper-container .content-box > div > .content > li > div > .select-box > .options-box > div {
+    line-height: 50px;
+    padding-bottom: 5px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_6 > .swiper-container .content-box > div > .content > li > div > .select-box > .options-box.bottom {
+    left: 0;
+    bottom: 1px;
+    overflow: hidden;
+    border-radius: 0 0 7px 7px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_6 > .swiper-container .swiper-scrollbar {
+    width: 7px;
+    height: 88%;
+    top: 0;
+    right: 10px;
+    background-color: transparent;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item.type_6 > .swiper-container .swiper-scrollbar .swiper-scrollbar-drag {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item > .swiper-container
+> .swiper-wrapper
+> .swiper-slide
+> div
+> .content
+> li.add {
+    padding-left: 25px;
+    margin-top: 10px !important;
+    margin-bottom: 5px !important;
+    line-height: 1.3;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item > .swiper-container
+> .swiper-wrapper
+> .swiper-slide
+> div
+> .content
+> li.add > div {
+    text-indent: 0 !important;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item > .swiper-container
+> .swiper-wrapper
+> .swiper-slide
+> div
+> .content
+> li.add:last-child {
+    margin-bottom: 30px !important;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single > div .table-item > .head > span > em {
+    font-style: normal;
+    margin: 0 6px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single:nth-child(2) .table-item.type_6 {
+    background: #2e75b6;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single:nth-child(2) .table-item.type_6 > .head {
+    background: #215d8f;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single:nth-child(3) .table-item.type_6 {
+    background: #188f85;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single:nth-child(3) .table-item.type_6 > .head {
+    background: #137169;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single .swiper-container {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    bottom: 0px;
+    height: 720px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single .swiper-container .swiper-slide {
+    height: auto;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single .swiper-container .swiper-scrollbar {
+    width: 7px;
+    background-color: transparent;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single .swiper-container .swiper-scrollbar .swiper-scrollbar-drag {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single .table-item {
+    margin-top: 60px;
+    /*margin-bottom: 240px;*/
+    margin-bottom: 60px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single .table-item .content > li > div {
+    text-indent: -50px;
+    padding-left: 50px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single .table-item .content > li > div .select-box {
+    text-indent: 0;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single .table-item .content > li > div .select-box > .options-box {
+    /*&>div {
+                                            line-height: 50px;
+                                            padding-bottom: 5px;
+                                        }*/
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single .table-item .content > li > div .select-box > .options-box.bottom {
+    left: 0;
+    bottom: 1px;
+    overflow: hidden;
+    border-radius: 0 0 7px 7px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.single .table-item .content > li > div .select-box > .options-box.top {
+    left: 1px;
+    overflow: hidden;
+    border-radius: 7px 7px 0 0;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result > .swiper-container {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result > .swiper-container .swiper-slide {
+    height: auto;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result > .swiper-container .swiper-scrollbar {
+    width: 7px;
+    background-color: transparent;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result > .swiper-container .swiper-scrollbar .swiper-scrollbar-drag {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box {
+    height: auto;
+    padding-top: 90px;
+    padding-bottom: 22px;
+    /*20*/
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_1 .content-box .content > li > div, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_2 .content-box .content > li > div, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_3 .content-box .content > li > div, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_4 .content-box .content > li > div, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_5 .content-box .content > li > div, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_6 .content-box .content > li > div, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_7 .content-box .content > li > div {
+    text-indent: -38.5px;
+    padding-left: 38.5px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_1 .content-box .content > li > div .select-box, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_2 .content-box .content > li > div .select-box, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_3 .content-box .content > li > div .select-box, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_4 .content-box .content > li > div .select-box, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_5 .content-box .content > li > div .select-box, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_6 .content-box .content > li > div .select-box, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_7 .content-box .content > li > div .select-box {
+    line-height: 47.3px;
+    vertical-align: middle;
+    text-indent: 0;
+    background: #fff;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_1 .content-box .content > li > div .select-box > .text-box, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_2 .content-box .content > li > div .select-box > .text-box, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_3 .content-box .content > li > div .select-box > .text-box, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_4 .content-box .content > li > div .select-box > .text-box, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_5 .content-box .content > li > div .select-box > .text-box, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_6 .content-box .content > li > div .select-box > .text-box, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_7 .content-box .content > li > div .select-box > .text-box {
+    height: 49.5px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_1 .content-box .content > li > div .select-box > .btn-drop, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_2 .content-box .content > li > div .select-box > .btn-drop, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_3 .content-box .content > li > div .select-box > .btn-drop, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_4 .content-box .content > li > div .select-box > .btn-drop, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_5 .content-box .content > li > div .select-box > .btn-drop, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_6 .content-box .content > li > div .select-box > .btn-drop, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_7 .content-box .content > li > div .select-box > .btn-drop {
+    width: 49.5px;
+    height: 49.5px;
+    background-size: 52.8px;
+    background-position: center -2.2px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_1 .content-box .content > li > div .select-box > .options-box.bottom, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_2 .content-box .content > li > div .select-box > .options-box.bottom, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_3 .content-box .content > li > div .select-box > .options-box.bottom, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_4 .content-box .content > li > div .select-box > .options-box.bottom, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_5 .content-box .content > li > div .select-box > .options-box.bottom, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_6 .content-box .content > li > div .select-box > .options-box.bottom, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_7 .content-box .content > li > div .select-box > .options-box.bottom {
+    left: 0;
+    bottom: 1.1px;
+    overflow: hidden;
+    border-radius: 0 0 7.7px 7.7px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_1 {
+    padding-bottom: 50px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_1 .swiper-container {
+    overflow: visible;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_1 > .link_line {
+    display: block;
+    margin: 0px auto;
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/link_line.png");
+    width: 629px;
+    height: 48px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_1 > .middle {
+    display: table;
+    width: 1232px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_1 > .middle > div {
+    display: table-cell;
+    width: 50%;
+    text-align: center;
+    position: relative;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_1 > .middle > div .table-item {
+    min-height: 100%;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_1 > .middle > div:after {
+    display: block;
+    content: "";
+    width: 4px;
+    height: 100%;
+    background: #1f9cfa;
+    position: absolute;
+    left: 50%;
+    bottom: -22px;
+    margin-left: -4px;
+    z-index: -1;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_1 > .middle > div:nth-child(2)::after {
+    margin-left: 0.1px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_1 > .middle > div:first-child {
+    padding-right: 10px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_1 > .middle > div:last-child {
+    padding-left: 10px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_1 > .link_line_down {
+    display: block;
+    margin: 0px auto;
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/link_line_down.png");
+    width: 623.7px;
+    height: 49.5px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_2 {
+    height: auto;
+    text-align: center;
+    white-space: normal;
+    min-width: 600px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_2 .swiper-container {
+    overflow: visible;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_2 > .top {
+    position: relative;
+    margin-top: 0px;
+    display: inline-block;
+    background-color: #085fbb;
+    border-radius: 18px;
+    width: 1174.8px;
+    height: auto;
+    padding: 22px 0px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_2 > .top > div {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_2 > .top > div:first-child {
+    padding-right: 10px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_2 > .top > div:nth-child(3) {
+    padding-left: 10px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_2 > .top .icon_arrow {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/icon_arrow_s.png");
+    width: 45.1px;
+    height: 44px;
+    position: absolute;
+    top: 155px;
+    left: 562.34px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_2 > .link_line {
+    display: inline-block;
+    background: url("/content/digenglish_lib/B/rw_comprehension/student/images/bg_table_top_s.png") no-repeat;
+    width: 1196px;
+    height: 50px;
+    background-position-y: -380px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_2 > .middle {
+    position: relative;
+    top: 20px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_2 > .middle > div {
+    height: auto;
+    padding-bottom: 60px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_2 > .middle > div > .btn_table_zoom {
+    right: 320px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_3 > .top > div > .table-item {
+    min-width: 361px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_3, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_7 {
+    height: 594px;
+    /*540*/
+    margin: 0 auto;
+    text-align: center;
+    white-space: normal;
+    padding-top: 0;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_3 > .title, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_7 > .title {
+    height: 170px;
+    padding-top: 80px;
+    margin: 0 auto;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_3 > .top, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_7 > .top {
+    position: relative;
+    margin-top: 0px;
+    border-radius: 18px;
+    width: 100%;
+    height: 100%;
+    padding: 20px 0px;
+    text-align: center;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_3 > .top > div, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_7 > .top > div {
+    height: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    font-size: 0;
+    vertical-align: middle;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_3 > .top > div + div, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_7 > .top > div + div {
+    margin-left: 25px;
+    padding-left: 0;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_3 > .top > div > .table-item, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_7 > .top > div > .table-item {
+    height: 100%;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_3 > .top > div > .table-item > .head, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_7 > .top > div > .table-item > .head {
+    line-height: 64.9px;
+    height: 64.9px;
+    font-weight: normal;
+    z-index: 2;
+    position: relative;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_3 > .top > div > .table-item > .swiper-container, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_7 > .top > div > .table-item > .swiper-container {
+    height: 467.1px;
+    width: 100%;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_3 > .top > div > .table-item > .swiper-container > .swiper-scrollbar, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_7 > .top > div > .table-item > .swiper-container > .swiper-scrollbar {
+    display: unset;
+    width: 7px;
+    background-color: transparent;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_3 > .top > div > .table-item > .swiper-container > .swiper-scrollbar .swiper-scrollbar-drag, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_7 > .top > div > .table-item > .swiper-container > .swiper-scrollbar .swiper-scrollbar-drag {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_3 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_7 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box {
+    width: 100%;
+    display: block;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_3 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_7 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div {
+    width: 100%;
+    display: block;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_3 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div > .content, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_7 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div > .content {
+    padding: 37.4px 24.2px 39.6px 22px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_3 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div > .content > li + li, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_7 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div > .content > li + li {
+    margin-top: 30.8px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_3 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div > .content > li > div, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_7 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div > .content > li > div {
+    color: #323232;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_4, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_5 {
+    height: auto;
+    margin: 0 auto;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_4 > .title, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_5 > .title {
+    height: 90px;
+    margin: 0 auto;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_4 > .top, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_5 > .top {
+    padding-bottom: 100px;
+    position: relative;
+    margin-top: 0px;
+    border-radius: 18px;
+    width: 100%;
+    padding: 20px 0px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_4 > .top > .table-item, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_5 > .top > .table-item {
+    display: block;
+    text-align: center;
+    position: relative;
+    width: 1199px;
+    margin: 0 auto 20px;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_4 > .top > .table-item > .head, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_5 > .top > .table-item > .head {
+    width: 305.8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    vertical-align: middle;
+    border-radius: 10px 0 0 10px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_4 > .top > .table-item > .head span, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_5 > .top > .table-item > .head span {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_4 > .top > .table-item > .head span > em, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_5 > .top > .table-item > .head span > em {
+    display: block;
+    width: 100%;
+    font-style: normal;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_4 > .top > .table-item > .content-box, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_5 > .top > .table-item > .content-box {
+    width: 893.2px;
+    margin-left: 305.8px;
+    overflow: visible;
+    display: block;
+    min-height: 1px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_4 > .top > .table-item > .content-box > div, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_5 > .top > .table-item > .content-box > div {
+    width: 100%;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_4 > .top > .table-item > .content-box > div > .content, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_5 > .top > .table-item > .content-box > div > .content {
+    width: 100%;
+    padding: 33px 16.5px 33px 39.6px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_4 > .top > .table-item > .content-box > div > .content > li, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_5 > .top > .table-item > .content-box > div > .content > li {
+    display: block;
+    min-height: 48.4px;
+    margin-right: 33px;
+    line-height: 41.8px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_4 > .top > .table-item > .content-box > div > .content > li + li, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_5 > .top > .table-item > .content-box > div > .content > li + li {
+    margin-top: 22px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_4 > .top > .table-item > .content-box > div > .content > li:after, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_5 > .top > .table-item > .content-box > div > .content > li:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_4 > .top > .table-item > .content-box > div > .content > li > div, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_5 > .top > .table-item > .content-box > div > .content > li > div {
+    color: #323232;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_4 > .top > .table-item > .table-item-btn, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_5 > .top > .table-item > .table-item-btn {
+    z-index: 1;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_4 > .top + div, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_5 > .top + div {
+    margin-top: 21px;
+    z-index: 0;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_4 > .top + div .content > li, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_5 > .top + div .content > li {
+    min-width: 100%;
+    width: 100%;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_4 > .top:after, #wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_5 > .top:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_5 > .top + div {
+    z-index: 1;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_5 > .top + div .content > li {
+    min-width: 100%;
+    width: 100%;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_5 > .top + div + div {
+    z-index: 0;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 {
+    width: 1254px;
+    height: 792px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top {
+    width: 1218.8px;
+    height: 550px;
+    position: relative;
+    margin: 11px auto 0;
+    border-radius: 150px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div {
+    width: 528px;
+    height: 550px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div:nth-child(1) {
+    background: #ffd966;
+    border-radius: 150px 0 0 150px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div:nth-child(1) > .table-item {
+    float: left;
+    margin-left: 22px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div:nth-child(1) > .table-item > .head {
+    background: #c39e2f;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div:nth-child(1) > .table-item > .swiper-container .swiper-scrollbar {
+    right: 11px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div:nth-child(1) > .table-item > .swiper-container .swiper-scrollbar > .swiper-scrollbar-drag {
+    background-color: rgba(255, 255, 255, 0.65);
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div:nth-child(2) {
+    background: #188f85;
+    width: 473px;
+    left: 369.6px;
+    z-index: 2;
+    border-radius: 150px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div:nth-child(2) > .table-item {
+    width: 473px;
+    height: 550px;
+    text-align: center;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div:nth-child(2) > .table-item > .head {
+    background: #137169;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div:nth-child(2) > .table-item > .swiper-container .swiper-scrollbar {
+    right: 0;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div:nth-child(3) {
+    background: #2e75b6;
+    right: 0;
+    left: auto;
+    border-radius: 0 150px 150px 0;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div:nth-child(3) > .table-item {
+    float: right;
+    margin-right: 22px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div:nth-child(3) > .table-item > .head {
+    background: #215d8f;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div:nth-child(3) > .table-item > .swiper-container .swiper-scrollbar {
+    right: 5.5px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div > .table-item {
+    padding: 38.5px 0 0;
+    width: 352px;
+    min-width: 352px;
+    height: 100%;
+    box-shadow: none;
+    position: relative;
+    background: transparent;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div > .table-item > .head {
+    display: inline-block;
+    border-radius: 5px;
+    font-weight: normal;
+    color: #fff;
+    line-height: 34px;
+    padding: 0 5px 5px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div > .table-item > .swiper-container {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 104.5px;
+    padding: 0 22px 0 0;
+    height: 100%;
+    max-height: 357.5px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div > .table-item > .swiper-container .content-box > div {
+    width: 100%;
+    display: block;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div > .table-item > .swiper-container .content-box > div > .content {
+    padding-right: 0;
+    padding-bottom: 0;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div > .table-item > .swiper-container .content-box > div > .content > li {
+    margin-bottom: 16.5px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div > .table-item > .swiper-container .content-box > div > .content > li:last-child {
+    margin-bottom: 0;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div > .table-item > .swiper-container .content-box > div > .content > li > div {
+    color: #000;
+    text-indent: -33px;
+    padding-left: 33px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div > .table-item > .swiper-container .swiper-scrollbar {
+    height: 68%;
+    top: 5%;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_6 > .top > div > .table-item > .swiper-container .swiper-scrollbar > .swiper-scrollbar-drag {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_7 > .top > div > .table-item {
+    min-width: 517px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box.type_7 > .top > div > div + div {
+    padding-left: 40px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box > .title {
+    font-size: 35.2px;
+    width: 1130px;
+    margin: 0 auto 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box > div > .table-item > .head > span > em,
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box > div > div > .table-item > .head > span > em {
+    font-style: normal;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item > .swiper-container
+> .swiper-wrapper
+> .swiper-slide
+> div
+> .content
+> li.add {
+    padding-left: 25px !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    line-height: 1.2;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item > .swiper-container
+> .swiper-wrapper
+> .swiper-slide
+> div
+> .content
+> li.add > div {
+    text-indent: 0 !important;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item > .swiper-container
+> .swiper-wrapper
+> .swiper-slide
+> div
+> .content
+> li.add:last-child {
+    margin-bottom: 25px !important;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .content > li > div > .select-box {
+    text-indent: 0;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .content > li > div > .select-box > .options-box {
+    overflow: hidden;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .content > li > div > .select-box > .options-box.bottom {
+    left: 1px;
+    border-radius: 0 0 7px 7px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .content > li > div > .select-box > .options-box.top {
+    border-radius: 7px 7px 0 0;
+    left: 0px;
+    overflow: hidden;
+    top: 1px !important;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: auto;
+    height: auto;
+    min-width: 550px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 4px 2.8px 1.2px rgba(0, 0, 0, 0.3);
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .head {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    font-size: 25.3px;
+    line-height: 44px;
+    color: white;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .head em {
+    font-style: unset;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .content-box {
+    display: table;
+    width: 100%;
+    min-height: 220px;
+    height: auto;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .content-box > div {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .content-box > div .content {
+    /* rw_comprehension 190425 수정사항 p.23 */
+    box-sizing: border-box;
+    color: #323232;
+    font-size: 29.7px;
+    text-align: left;
+    width: 100%;
+    height: auto;
+    padding: 11px 16.5px 16.5px 16.5px;
+    white-space: normal;
+    /* margin: 0px; 삭제 */
+    list-style: none;
+    -webkit-margin-after: 0px;
+            margin-block-end: 0px;
+    -webkit-margin-before: 0px;
+            margin-block-start: 0px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .content-box > div .content > li {
+    line-height: 60.5px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .content-box > div .content .select-box {
+    position: relative;
+    display: inline-block;
+    vertical-align: baseline;
+    white-space: nowrap;
+    border: 1.5px solid #ccc;
+    border-radius: 5.5px;
+    padding-left: 8.25px;
+    line-height: 55px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .content-box > div .content .select-box > .text-box {
+    touch-action: none;
+    display: inline-block;
+    vertical-align: bottom;
+    height: 55px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .content-box > div .content .select-box > .text-box > .size-box {
+    height: 0px;
+    color: transparent;
+    overflow: hidden;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .content-box > div .content .select-box > .btn-drop {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_dropdown_down.png");
+    background-repeat: no-repeat;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    pointer-events: unset;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 8.25px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .content-box > div .content .select-box > .btn-drop.on {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_dropdown_up.png");
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .content-box > div .content .select-box > .btn-drop:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_dropdown_down.png") url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_dropdown_up.png");
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .content-box > div .content .select-box > .options-box {
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    z-index: 2;
+    background-color: #a8dfff;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .content-box > div .content .select-box > .options-box.bottom {
+    width: 100%;
+    bottom: 2px;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .content-box > div .content .select-box > .options-box.top {
+    width: 100%;
+    top: 2px;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .content-box > div .content .select-box > .options-box.on {
+    opacity: 1;
+    pointer-events: unset;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .content-box > div .content .select-box > .options-box > div {
+    width: 100%;
+    padding-left: 10.25px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .content-box > div .content .select-box > .options-box > div.on {
+    background-color: #94cbff;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .content-box > div .content .select-box > .options-box > div.correct {
+    background-color: #249bfa;
+    color: #fff;
+    pointer-events: none;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .content-box > div .content .select-box > .options-box > div.wrong {
+    background-color: #cacaca;
+    color: #878787;
+    pointer-events: none;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item .content-box > div .content .select-box > .options-box > div:hover {
+    background-color: #80b7ff;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.purple .head {
+    background-color: #b07ae1;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.purple .content li::before {
+    color: #b07ae1;
+    /* or whatever color you prefer */
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.green .head {
+    background-color: #1cc9af;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.green .content li::before {
+    color: #1cc9af;
+    /* or whatever color you prefer */
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.blue .head {
+    background-color: #4f7ad1;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.blue .content li::before {
+    color: #4f7ad1;
+    /* or whatever color you prefer */
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_2 .head {
+    background-color: #0d4696;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_2 > li {
+    line-height: 60px;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .table-item.type_2 li::before {
+    content: "";
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .text-box.correct {
+    color: #00f !important;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .text-box.wrong {
+    color: #f00 !important;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .options-box.on {
+    background-color: #a8dfff !important;
+    color: #323232 !important;
+}
+
+#wrap .s_graphic .table-container .table-wrapper > div.s_graphic_result .table_box .options-box.on > div.on {
+    background-color: #94cbff !important;
+    color: #323232 !important;
+}
+
+#wrap .s_graphic .btn_next {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_next.png");
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 96px;
+    pointer-events: unset;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    z-index: 1;
+}
+
+#wrap .s_graphic .btn_next:disabled {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_next.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_graphic .btn_next.down {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_next_down.png");
+}
+
+#wrap .s_graphic .btn_next:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_next.png") url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_next_down.png") url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_next.png");
+}
+
+#wrap .s_graphic .s-pentool {
+    overflow: hidden;
+    text-align: center;
+}
+
+#wrap .s_graphic .s-pentool .draw_box {
+    position: relative;
+    display: inline-block;
+    margin-top: 66px;
+    width: auto;
+    height: auto;
+    background-color: #fff;
+    border-radius: 6px;
+}
+
+#wrap .s_graphic .s-pentool .draw_box > img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#wrap .s_graphic .s-pentool .draw_box > canvas {
+    position: relative;
+    touch-action: none;
+    z-index: 11;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#wrap .s_graphic .s-pentool .penui {
+    position: absolute;
+    background-image: url("/content/digenglish_lib/images/penui/pen_box.png");
+    left: 50%;
+    width: 622px;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    bottom: -102px;
+    height: 102px;
+    z-index: 10;
+    transition: bottom 0.3s;
+    /*
+	&>div{
+		border:0px solid #f00;
+		margin-top: 30px;
+		text-align: center;
+		.btn_reset{
+			vertical-align: top;
+			@include btn_down_dis(
+				resolve("digenglish_lib/images/penui/btn_reset.png"),
+				resolve("digenglish_lib/images/penui/btn_reset_on.png"),
+				'',
+				width("digenglish_lib/images/penui/btn_reset.png"),
+				height("digenglish_lib/images/penui/btn_reset.png")
+			);
+		}
+		.btn_undo{
+			vertical-align: top;
+			@include btn_down_dis(
+				resolve("digenglish_lib/images/penui/btn_undo.png"),
+				resolve("digenglish_lib/images/penui/btn_undo_on.png"),
+				'',
+				width("digenglish_lib/images/penui/btn_undo.png"),
+				height("digenglish_lib/images/penui/btn_undo.png")
+			);
+		}
+	}
+	*/
+}
+
+#wrap .s_graphic .s-pentool .penui.on {
+    bottom: 0px;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_select {
+    position: absolute;
+    left: 315px;
+    top: 37px;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_select > .pen_icon {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/penui/icon_pen.png");
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    pointer-events: unset;
+    cursor: pointer;
+    cursor: pointer;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_select > .pen_icon:disabled {
+    background-image: url("/content/digenglish_lib/images/penui/icon_pen_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_select > .pen_icon.on {
+    background-image: url("/content/digenglish_lib/images/penui/icon_pen_on.png");
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_select > .pen_icon:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/penui/icon_pen.png") url("/content/digenglish_lib/images/penui/icon_pen_on.png") url("/content/digenglish_lib/images/penui/icon_pen_dis.png");
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_select > .pen_thick {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/penui/icon_thick.png");
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    pointer-events: unset;
+    cursor: pointer;
+    cursor: pointer;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_select > .pen_thick:disabled {
+    background-image: url("/content/digenglish_lib/images/penui/icon_thick_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_select > .pen_thick.on {
+    background-image: url("/content/digenglish_lib/images/penui/icon_thick_on.png");
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_select > .pen_thick:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/penui/icon_thick.png") url("/content/digenglish_lib/images/penui/icon_thick_on.png") url("/content/digenglish_lib/images/penui/icon_thick_dis.png");
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_color {
+    position: absolute;
+    left: 45px;
+    top: 37px;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_color > .btn_000000 {
+    vertical-align: top;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/penui/btn_000000.png");
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_color > .btn_000000:disabled {
+    background-image: url("/content/digenglish_lib/images/penui/btn_000000_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_color > .btn_000000.on {
+    background-image: url("/content/digenglish_lib/images/penui/btn_000000_on.png");
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_color > .btn_000000:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/penui/btn_000000.png") url("/content/digenglish_lib/images/penui/btn_000000_on.png") url("/content/digenglish_lib/images/penui/btn_000000_dis.png");
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_color > .btn_1347e9 {
+    vertical-align: top;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/penui/btn_1347e9.png");
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_color > .btn_1347e9:disabled {
+    background-image: url("/content/digenglish_lib/images/penui/btn_1347e9_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_color > .btn_1347e9.on {
+    background-image: url("/content/digenglish_lib/images/penui/btn_1347e9_on.png");
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_color > .btn_1347e9:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/penui/btn_1347e9.png") url("/content/digenglish_lib/images/penui/btn_1347e9_on.png") url("/content/digenglish_lib/images/penui/btn_1347e9_dis.png");
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_color > .btn_ec1919 {
+    vertical-align: top;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/penui/btn_ec1919.png");
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_color > .btn_ec1919:disabled {
+    background-image: url("/content/digenglish_lib/images/penui/btn_ec1919_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_color > .btn_ec1919.on {
+    background-image: url("/content/digenglish_lib/images/penui/btn_ec1919_on.png");
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_color > .btn_ec1919:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/penui/btn_ec1919.png") url("/content/digenglish_lib/images/penui/btn_ec1919_on.png") url("/content/digenglish_lib/images/penui/btn_ec1919_dis.png");
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_color > .btn_30aa01 {
+    vertical-align: top;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/penui/btn_30aa01.png");
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_color > .btn_30aa01:disabled {
+    background-image: url("/content/digenglish_lib/images/penui/btn_30aa01_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_color > .btn_30aa01.on {
+    background-image: url("/content/digenglish_lib/images/penui/btn_30aa01_on.png");
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_color > .btn_30aa01:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/penui/btn_30aa01.png") url("/content/digenglish_lib/images/penui/btn_30aa01_on.png") url("/content/digenglish_lib/images/penui/btn_30aa01_dis.png");
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_color > .btn_fddc00 {
+    vertical-align: top;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/penui/btn_fddc00.png");
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_color > .btn_fddc00:disabled {
+    background-image: url("/content/digenglish_lib/images/penui/btn_fddc00_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_color > .btn_fddc00.on {
+    background-image: url("/content/digenglish_lib/images/penui/btn_fddc00_on.png");
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_color > .btn_fddc00:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/penui/btn_fddc00.png") url("/content/digenglish_lib/images/penui/btn_fddc00_on.png") url("/content/digenglish_lib/images/penui/btn_fddc00_dis.png");
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_button {
+    position: absolute;
+    right: 30px;
+    top: 37px;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_button .btn_eraser {
+    vertical-align: top;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/penui/btn_eraser.png");
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_button .btn_eraser:disabled {
+    background-image: url("/content/digenglish_lib/images/penui/btn_eraser_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_button .btn_eraser.on {
+    background-image: url("/content/digenglish_lib/images/penui/btn_eraser_on.png");
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_button .btn_eraser:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/penui/btn_eraser.png") url("/content/digenglish_lib/images/penui/btn_eraser_on.png") url("/content/digenglish_lib/images/penui/btn_eraser_dis.png");
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_button .btn_undo {
+    vertical-align: top;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/penui/btn_undo.png");
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_button .btn_undo:disabled {
+    background-image: url("/content/digenglish_lib/images/penui/btn_undo_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_button .btn_undo.down {
+    background-image: url("/content/digenglish_lib/images/penui/btn_undo_on.png");
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_button .btn_undo:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/penui/btn_undo.png") url("/content/digenglish_lib/images/penui/btn_undo_on.png") url("/content/digenglish_lib/images/penui/btn_undo_dis.png");
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_button .btn_reset {
+    vertical-align: top;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/penui/btn_reset.png");
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_button .btn_reset:disabled {
+    background-image: url("/content/digenglish_lib/images/penui/btn_reset_dis.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_button .btn_reset.down {
+    background-image: url("/content/digenglish_lib/images/penui/btn_reset_on.png");
+}
+
+#wrap .s_graphic .s-pentool .penui > .pen_button .btn_reset:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/penui/btn_reset.png") url("/content/digenglish_lib/images/penui/btn_reset_on.png") url("/content/digenglish_lib/images/penui/btn_reset_dis.png");
+}
+
+#wrap .s_graphic .s-keyboard {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+#wrap .s_graphic .s-keyboard .area-bnd {
+    position: relative;
+    width: 1205px;
+    height: 654px;
+    background-color: #fff;
+    border-radius: 6px;
+    margin: 40px auto 0px auto;
+    padding-left: 10px;
+    transition: height 0.3s;
+}
+
+#wrap .s_graphic .s-keyboard .area-bnd.on {
+    height: 356px;
+}
+
+#wrap .s_graphic .s-keyboard .k-tarea {
+    position: relative;
+    width: 1195px;
+    height: 100%;
+}
+
+#wrap .s_graphic .s-keyboard .k-tarea .k-tarea-bg {
+    width: 1144px;
+    height: auto;
+    min-height: 100%;
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/bg_underline.png");
+    background-repeat: repeat-y;
+    background-position-y: -5px;
+}
+
+#wrap .s_graphic .s-keyboard .k-tarea textarea {
+    padding: 0px 41px 0px 10px;
+    caret-color: #00F;
+    line-height: 92px;
+    font-size: 60px;
+    font-family: NotoSans;
+    font-weight: normal;
+}
+
+#wrap .s_graphic .s-keyboard .k-tarea .k-tarea-bar {
+    right: 2px;
+}
+
+#wrap .s_graphic .fel_toteacher {
+    position: absolute;
+    z-index: 11;
+    touch-action: none;
+    bottom: 20px;
+    right: 20px;
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/toteacher.svg");
+    background-repeat: no-repeat;
+    width: 95px;
+    height: 87px;
+    cursor: pointer;
+    pointer-events: unset;
+}
+
+#wrap .s_graphic .fel_toteacher.on {
+    background-image: url("/content/digenglish_lib/images/toteacher_on.svg");
+}
+
+#wrap .s_graphic .fel_toteacher:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/toteacher.svg") url("/content/digenglish_lib/images/toteacher_on.svg");
+}
+
+#wrap .s_graphic .fel_toteacher.on {
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+}
+
+#wrap .s_summary {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+#wrap .s_summary .btn_page_box {
+    width: 100%;
+    height: 0px;
+    display: inline-block;
+    position: absolute;
+    top: 40px;
+    overflow: visible;
+    text-align: center;
+    z-index: 2;
+    cursor: pointer;
+}
+
+#wrap .s_summary .btn_page_box > span {
+    margin: 0px 22px;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+#wrap .s_summary .btn_page_box > span.on {
+    color: #f8f64d;
+}
+
+#wrap .s_summary .btn_page_box.off {
+    display: none;
+}
+
+#wrap .s_summary .table-container {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    overflow: hidden;
+}
+
+#wrap .s_summary .table-container .table-wrapper {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    overflow: visible;
+    white-space: nowrap;
+    transition: left 0.3s;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .quizs_box {
+    position: relative;
+    margin: 95px auto 40px auto;
+    width: 1080px;
+    height: 357px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    text-align: left;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .quizs_box > img {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0px 40px;
+    width: 413px;
+    height: 247px;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.4);
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .quizs_box > div {
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+    width: 560px;
+    height: 357px;
+    padding: 40px 0 40px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .quizs_box > div > .swiper-container {
+    width: 560px;
+    height: 260px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .quizs_box > div > .swiper-container .txt_box {
+    width: 547px;
+    font-size: 40px;
+    letter-spacing: -1px;
+    font-family: NotoSans;
+    color: black;
+    margin: 10px 0 10px 0;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .quizs_box > div > .swiper-container .txt_box .block {
+    color: transparent;
+    border-bottom: 2px solid black;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .quizs_box > div > .swiper-container .txt_box .block.view {
+    color: black;
+    border-bottom: 2px solid black;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .quizs_box > div > .swiper-container .swiper-slide {
+    height: auto;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .quizs_box > div > .swiper-container .swiper-scrollbar {
+    margin-right: 0px;
+    width: 7px;
+    background-color: transparent;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .quizs_box > div > .swiper-container .swiper-scrollbar .swiper-scrollbar-drag {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .choice_box {
+    text-align: center;
+    white-space: normal;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .choice_box .btn_choice {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_summary_s.png");
+    background-repeat: no-repeat;
+    width: 1074px;
+    height: 76px;
+    cursor: pointer;
+    pointer-events: unset;
+    position: relative;
+    padding: 0px 10px 6px 55px;
+    margin-bottom: 11.5px;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .choice_box .btn_choice.on {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_summary_s_down.png");
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .choice_box .btn_choice:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_summary_s.png") url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_summary_s_down.png");
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .choice_box .btn_choice.btn-mc-1::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "A";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .choice_box .btn_choice.btn-mc-1.correct::after {
+    color: #fff;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .choice_box .btn_choice.btn-mc-2::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "B";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .choice_box .btn_choice.btn-mc-2.correct::after {
+    color: #fff;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .choice_box .btn_choice.btn-mc-3::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "C";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .choice_box .btn_choice.btn-mc-3.correct::after {
+    color: #fff;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .choice_box .btn_choice.btn-mc-4::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "D";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .choice_box .btn_choice.btn-mc-4.correct::after {
+    color: #fff;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .choice_box .btn_choice.btn-mc-5::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "E";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .choice_box .btn_choice.btn-mc-5.correct::after {
+    color: #fff;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .choice_box .btn_choice.btn-mc-6::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: left;
+    content: "F";
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 100%;
+    background-image: url("/content/digenglish_lib/images/mc_num_bg.png");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .choice_box .btn_choice.btn-mc-6.correct::after {
+    color: #fff;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.summary-item .choice_box .btn_choice > div {
+    position: relative;
+    top: -5px;
+    color: black;
+    text-align: left;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.s_summary_result .swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.s_summary_result .swiper-container .summary_box {
+    margin-top: 0px;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.s_summary_result .swiper-container .summary_box .quiz_box {
+    width: 1158px;
+    min-height: 204px;
+    background-color: #E0EFFE;
+    margin-left: 52px;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1;
+    text-align: left;
+    box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.2);
+    display: table;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.s_summary_result .swiper-container .summary_box .quiz_box .img-box {
+    /* rw_comprehension 190425 수정사항 p.27 */
+    width: 288px;
+    height: 180px;
+    padding-left: 12px;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.s_summary_result .swiper-container .summary_box .quiz_box .img-box > img {
+    position: relative;
+    width: 288px;
+    height: 180px;
+    top: 5px;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.s_summary_result .swiper-container .summary_box .quiz_box > div {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 32px;
+    letter-spacing: -1.2px;
+    text-align: left;
+    height: auto;
+    white-space: normal;
+    margin-left: 20px;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.s_summary_result .swiper-container .summary_box .quiz_box > div > .block {
+    color: transparent;
+    border-bottom: 2px solid transparent;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.s_summary_result .swiper-container .summary_box .quiz_box > div > .block.wrong {
+    color: #f00;
+    border-bottom-color: transparent;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.s_summary_result .swiper-container .summary_box .quiz_box > div > .block.correct {
+    color: blue;
+    border-bottom-color: transparent;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.s_summary_result .swiper-container .summary_box .quiz_box > div > .block.view {
+    color: blue;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.s_summary_result .swiper-container .summary_box .quiz_box > div.view-correct > .block {
+    color: blue;
+    border-bottom-color: transparent;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.s_summary_result .swiper-container .summary_box .quiz_box > div:nth-child(2) {
+    padding: 15px 40px 15px 40px;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.s_summary_result .swiper-container .summary_box .btn_arrow_down {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_arrow_down.png");
+    width: 70px;
+    height: 42px;
+    position: relative;
+    margin: 0px auto;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.s_summary_result .swiper-container .summary_box:first-child {
+    margin-top: 50px;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.s_summary_result .swiper-container .summary_box:last-child {
+    margin-bottom: 50px;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.s_summary_result .swiper-container .swiper-slide {
+    height: auto;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.s_summary_result .swiper-container .swiper-scrollbar {
+    margin-right: 5px;
+    width: 7px;
+    background-color: transparent;
+}
+
+#wrap .s_summary .table-container .table-wrapper > div.s_summary_result .swiper-container .swiper-scrollbar .swiper-scrollbar-drag {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+#wrap .s_summary .btn_next {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_next.png");
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 96px;
+    pointer-events: unset;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+
+#wrap .s_summary .btn_next:disabled {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_next.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_summary .btn_next.down {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_next_down.png");
+}
+
+#wrap .s_summary .btn_next:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_next.png") url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_next_down.png") url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_next.png");
+}
+
+#wrap .s_summary .fel_toteacher {
+    position: absolute;
+    z-index: 11;
+    touch-action: none;
+    bottom: 20px;
+    right: 20px;
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/toteacher.svg");
+    background-repeat: no-repeat;
+    width: 95px;
+    height: 87px;
+    cursor: pointer;
+    pointer-events: unset;
+}
+
+#wrap .s_summary .fel_toteacher.on {
+    background-image: url("/content/digenglish_lib/images/toteacher_on.svg");
+}
+
+#wrap .s_summary .fel_toteacher:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/toteacher.svg") url("/content/digenglish_lib/images/toteacher_on.svg");
+}
+
+#wrap .s_summary .fel_toteacher.on {
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+}
+
+#wrap .s_v_script {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    /* rw_comprehension 190425 수정사항 p.12 */
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/bg_s_passage.png");
+}
+
+#wrap .s_v_script .page {
+    /* rw_comprehension 190425 수정사항 p.12 */
+    /* width: 1200px; height: 100%;
+			overflow: hidden;
+            position: absolute; top: 0px; left: 40px; */
+    width: 1200px;
+    height: 680px;
+    overflow: hidden;
+    position: absolute;
+    top: 78px;
+    left: 40px;
+}
+
+#wrap .s_v_script .page .swiper-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    overflow: hidden;
+    color: white;
+    padding: 0px 32px;
+    touch-action: none;
+}
+
+#wrap .s_v_script .page .swiper-container .script {
+    line-height: 100px;
+    white-space: normal;
+    word-break: normal;
+    font-size: 40px;
+    letter-spacing: -1.8px;
+    height: auto;
+}
+
+#wrap .s_v_script .page .swiper-container .script .eng {
+    height: auto;
+    color: black;
+}
+
+#wrap .s_v_script .page .swiper-container .script .eng > span.word {
+    transition-duration: 0.3s;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 60px;
+    padding: 0px 6px;
+}
+
+#wrap .s_v_script .page .swiper-container .script .eng.on {
+    color: blue;
+}
+
+#wrap .s_v_script .page .swiper-container .script .eng.on.bg-on > span.word {
+    background-color: #fff08e;
+}
+
+#wrap .s_v_script .page .swiper-container .script .eng.selected {
+    color: blue;
+}
+
+#wrap .s_v_script .page .swiper-container .swiper-scrollbar {
+    /* rw_comprehension 190425 수정사항 p.12 */
+    /* @include swiper_scrollbar(7px, rgba(255, 255, 255, 0.4), 10px); */
+    background: rgba(0, 0, 0, 0);
+    width: 7px;
+}
+
+#wrap .s_v_script .page .swiper-container .swiper-scrollbar .swiper-scrollbar-drag {
+    width: 7px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+#wrap .s_checkup > .question {
+    position: absolute;
+    top: 175px;
+    width: 100%;
+    text-align: center;
+    letter-spacing: -1px;
+    word-spacing: -2px;
+    font-size: 60px;
+    line-height: 1.2;
+    font-weight: normal;
+}
+
+#wrap .s_checkup > .question > span {
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+}
+
+#wrap .s_checkup > .question > span.num {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    text-align: center;
+    background-repeat: no-repeat;
+}
+
+#wrap .s_checkup > .question > span.num > .text {
+    position: relative;
+    z-index: 1;
+}
+
+#wrap .s_checkup > .question > span.num > .icon {
+    display: inline-block;
+    vertical-align: top;
+    position: absolute;
+    width: 110px;
+    height: 110px;
+}
+
+#wrap .s_checkup > .question > span.num > .icon.correct {
+    left: -9px;
+    top: -9px;
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/icon_correct_blue.png");
+}
+
+#wrap .s_checkup > .question > span.num > .icon.wrong {
+    left: -5px;
+    top: -10px;
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/icon_wrong.png");
+}
+
+#wrap .s_checkup > .question > span.question {
+    max-width: 950px;
+    text-align: left;
+}
+
+#wrap .s_checkup > .choice-box {
+    position: absolute;
+    bottom: 190px;
+    text-align: center;
+    width: 100%;
+}
+
+#wrap .s_checkup > .choice-box .btn_true {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_true.png");
+    background-repeat: no-repeat;
+    width: 373px;
+    height: 118px;
+    pointer-events: unset;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+#wrap .s_checkup > .choice-box .btn_true:disabled {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_true.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_checkup > .choice-box .btn_true.on {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_true_down.png");
+}
+
+#wrap .s_checkup > .choice-box .btn_true:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_true.png") url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_true_down.png") url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_true.png");
+}
+
+#wrap .s_checkup > .choice-box .btn_true.correct {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_answer_true.png");
+}
+
+#wrap .s_checkup > .choice-box .btn_true.wrong {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/box_wrong_true.png");
+}
+
+#wrap .s_checkup > .choice-box .btn_false {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_false.png");
+    background-repeat: no-repeat;
+    width: 374px;
+    height: 118px;
+    pointer-events: unset;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+#wrap .s_checkup > .choice-box .btn_false:disabled {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_false.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .s_checkup > .choice-box .btn_false.on {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_false_down.png");
+}
+
+#wrap .s_checkup > .choice-box .btn_false:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_false.png") url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_false_down.png") url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_false.png");
+}
+
+#wrap .s_checkup > .choice-box .btn_false.correct {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_answer_false.png");
+}
+
+#wrap .s_checkup > .choice-box .btn_false.wrong {
+    background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/box_wrong_false.png");
+}
+
+#wrap .s_checkup .fel_toteacher {
+    position: absolute;
+    z-index: 11;
+    touch-action: none;
+    bottom: 20px;
+    right: 20px;
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/toteacher.svg");
+    background-repeat: no-repeat;
+    width: 95px;
+    height: 87px;
+    cursor: pointer;
+    pointer-events: unset;
+}
+
+#wrap .s_checkup .fel_toteacher.on {
+    background-image: url("/content/digenglish_lib/images/toteacher_on.svg");
+}
+
+#wrap .s_checkup .fel_toteacher:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/toteacher.svg") url("/content/digenglish_lib/images/toteacher_on.svg");
+}
+
+#wrap .s_checkup .fel_toteacher.on {
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+}
+
+#wrap .fel_toteacher {
+    position: absolute;
+    z-index: 11;
+    touch-action: none;
+    bottom: 20px;
+    right: 20px;
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/toteacher.svg");
+    background-repeat: no-repeat;
+    width: 95px;
+    height: 87px;
+    cursor: pointer;
+    pointer-events: unset;
+}
+
+#wrap .fel_toteacher.on {
+    background-image: url("/content/digenglish_lib/images/toteacher_on.svg");
+}
+
+#wrap .fel_toteacher:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/toteacher.svg") url("/content/digenglish_lib/images/toteacher_on.svg");
+}
+
+#wrap .fel_toteacher.on {
+    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+}
+
+.keyboard-box {
+    position: absolute;
+    width: 100%;
+    height: 375px;
+    text-align: center;
+    background-color: #d1d4db;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    bottom: 0px;
+    z-index: 100;
+    transition: bottom 0.3s;
+}
+
+.keyboard-box.hide {
+    display: none;
+}
+
+.keyboard-box.off {
+    bottom: -400px;
+}
+
+.keyboard-box img {
+    vertical-align: middle;
+}
+
+.keyboard-box > div {
+    padding: 5.7px 0px;
+    height: auto;
+    white-space: nowrap;
+    /*
+		&>button{
+			display:inline-block;
+			position:relative;
+			text-align:center;
+			height:74px;
+			line-height:55px;
+			vertical-align:middle;
+			font-family: myriad-pro;
+			font-size: 43px;
+			color:#4d4d4d;
+			padding-top:6px;
+			background-color:#fff;
+			border-radius:8px;
+			overflow:hidden;
+			box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.3);
+			outline-width: 0px;
+			cursor:pointer;
+
+			&.down, &.on{
+				background-color:#808080;
+				color:#ccc;
+				border-color:#666;
+				top:4px;left:0px;
+				box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.3);
+			}
+
+			&.s{
+				width:80px;
+			}
+			&.m{
+				width:101px;
+			}
+			&.b{
+				width:168px;
+			}		
+			&.capslock{
+				padding-top:2px;
+				font-size:25px;
+				line-height:120%;
+				vertical-align:middle;
+			}
+			
+			&.done {
+				background-color: #1e75f4;
+				color: rgb(250, 250, 250);
+			}
+		
+			&.key_back{
+				background-image:resolve('digenglish_lib/images/keyboard/key_back.png');
+				background-repeat : no-repeat;
+				background-position:center;
+
+				&.down{
+					background-image: resolve('digenglish_lib/images/keyboard/key_back_down.png');
+				}
+			}
+
+			&.key_hide{
+				background-image:resolve('digenglish_lib/images/keyboard/key_hide.png');
+				background-repeat : no-repeat;
+				background-position:center;
+
+				&.down{
+					background-image:resolve('digenglish_lib/images/keyboard/key_hide_down.png');
+				}
+			}
+		}
+		*/
+}
+
+.keyboard-box > div:nth-child(1) {
+    padding-top: 20px;
+}
+
+.keyboard-box > div:nth-child(1) > button {
+    margin: 0px 5.5px;
+}
+
+.keyboard-box > div:nth-child(2) > button {
+    margin: 0px 8px;
+}
+
+.keyboard-box > div:nth-child(3) > button {
+    margin: 0px 8px;
+}
+
+.keyboard-box > div:nth-child(3) > button:first-child {
+    margin-left: 56px;
+}
+
+.keyboard-box > div:nth-child(4) {
+    padding-bottom: 24px;
+}
+
+.keyboard-box > div:nth-child(4) > button {
+    margin: 0px 8px;
+}
+
+.keyboard-box > div > button {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    line-height: 55px;
+    vertical-align: middle;
+    font-family: myriad-pro;
+    font-size: 43px;
+    color: #4d4d4d;
+    padding-top: 6px;
+}
+
+.keyboard-box > div > button.s {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/keyboard/key_num.png");
+    background-repeat: no-repeat;
+    width: 78px;
+    height: 75px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+.keyboard-box > div > button.s:disabled {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_num.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+.keyboard-box > div > button.s.down {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_num_down.png");
+}
+
+.keyboard-box > div > button.s:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/keyboard/key_num.png") url("/content/digenglish_lib/images/keyboard/key_num_down.png") url("/content/digenglish_lib/images/keyboard/key_num.png");
+}
+
+.keyboard-box > div > button.s.key_back {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/keyboard/key_back.png");
+    background-repeat: no-repeat;
+    width: 78px;
+    height: 75px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+.keyboard-box > div > button.s.key_back:disabled {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_back.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+.keyboard-box > div > button.s.key_back.down {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_back_down.png");
+}
+
+.keyboard-box > div > button.s.key_back:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/keyboard/key_back.png") url("/content/digenglish_lib/images/keyboard/key_back_down.png") url("/content/digenglish_lib/images/keyboard/key_back.png");
+}
+
+.keyboard-box > div > button.m {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/keyboard/key_alpha.png");
+    background-repeat: no-repeat;
+    width: 98px;
+    height: 75px;
+    pointer-events: unset;
+    cursor: pointer;
+    /*
+				&.key_tab {
+					@include btn_down_dis(
+						resolve('digenglish_lib/images/keyboard/key_tab.png'),
+						resolve('digenglish_lib/images/keyboard/key_tab_down.png'),
+						resolve('digenglish_lib/images/keyboard/key_tab.png'),
+						width('digenglish_lib/images/keyboard/key_tab.png'),
+						height('digenglish_lib/images/keyboard/key_tab.png')
+					);
+				}
+				*/
+}
+
+.keyboard-box > div > button.m:disabled {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_alpha.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+.keyboard-box > div > button.m.down {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_alpha_down.png");
+}
+
+.keyboard-box > div > button.m:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/keyboard/key_alpha.png") url("/content/digenglish_lib/images/keyboard/key_alpha_down.png") url("/content/digenglish_lib/images/keyboard/key_alpha.png");
+}
+
+.keyboard-box > div > button.key_shift {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/keyboard/key_shift.png");
+    background-repeat: no-repeat;
+    width: 98px;
+    height: 75px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+.keyboard-box > div > button.key_shift:disabled {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_shift.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+.keyboard-box > div > button.key_shift.on {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_shift_down.png");
+}
+
+.keyboard-box > div > button.key_shift:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/keyboard/key_shift.png") url("/content/digenglish_lib/images/keyboard/key_shift_down.png") url("/content/digenglish_lib/images/keyboard/key_shift.png");
+}
+
+.keyboard-box > div > button.key_enter {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/keyboard/key_enter.png");
+    background-repeat: no-repeat;
+    width: 166px;
+    height: 75px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+.keyboard-box > div > button.key_enter:disabled {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_enter.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+.keyboard-box > div > button.key_enter.down {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_enter_down.png");
+}
+
+.keyboard-box > div > button.key_enter:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/keyboard/key_enter.png") url("/content/digenglish_lib/images/keyboard/key_enter_down.png") url("/content/digenglish_lib/images/keyboard/key_enter.png");
+}
+
+.keyboard-box > div > button.done {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/keyboard/key_done.png");
+    background-repeat: no-repeat;
+    width: 166px;
+    height: 75px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+.keyboard-box > div > button.done:disabled {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_done.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+.keyboard-box > div > button.done.down {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_done.png");
+}
+
+.keyboard-box > div > button.done:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/keyboard/key_done.png") url("/content/digenglish_lib/images/keyboard/key_done.png") url("/content/digenglish_lib/images/keyboard/key_done.png");
+}
+
+.keyboard-box > div > button.done.dis {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.keyboard-box > div > button.key_space {
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/keyboard/key_space.png");
+    background-repeat: no-repeat;
+    width: 260px;
+    height: 75px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+.keyboard-box > div > button.key_space:disabled {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_space.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+.keyboard-box > div > button.key_space.down {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_space_down.png");
+}
+
+.keyboard-box > div > button.key_space:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/keyboard/key_space.png") url("/content/digenglish_lib/images/keyboard/key_space_down.png") url("/content/digenglish_lib/images/keyboard/key_space.png");
+}
+
+.keyboard-box .key_view {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 101;
+    position: absolute;
+    left: 20px;
+    top: -80px;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/keyboard/key_view.png");
+    background-repeat: no-repeat;
+    width: 85px;
+    height: 76px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+.keyboard-box .key_view:disabled {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_view.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+.keyboard-box .key_view.down {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_view_down.png");
+}
+
+.keyboard-box .key_view:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/keyboard/key_view.png") url("/content/digenglish_lib/images/keyboard/key_view_down.png") url("/content/digenglish_lib/images/keyboard/key_view.png");
+}
+
+.keyboard-box .key_hide {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 100;
+    position: absolute;
+    top: -55px;
+    left: 20px;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/keyboard/key_hide.png");
+    background-repeat: no-repeat;
+    width: 83px;
+    height: 59px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+.keyboard-box .key_hide:disabled {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_hide.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+.keyboard-box .key_hide.down {
+    background-image: url("/content/digenglish_lib/images/keyboard/key_hide_down.png");
+}
+
+.keyboard-box .key_hide:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/keyboard/key_hide.png") url("/content/digenglish_lib/images/keyboard/key_hide_down.png") url("/content/digenglish_lib/images/keyboard/key_hide.png");
+}
+
+.keyboard-box.on .key_hide {
+    opacity: 1;
+    z-index: 102;
+}
+
+.keyboard-box.off .key_view {
+    opacity: 1;
+    pointer-events: unset;
+}
+
+.keyboard-box button.alpha {
+    text-transform: lowercase;
+}
+
+.keyboard-box.uppercase button.alpha {
+    text-transform: uppercase;
+}
+
+.k-tarea {
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: NotoSans;
+    /*
+	@mixin k_trea_bar($width, $color, $radius) {
+		background: rgba(0, 0, 0, 0);
+		width:$width;
+		.swiper-scrollbar-drag {
+			width:$width;
+			background: $color;
+			border-radius: $radius;
+		}
+	}
+	*/
+}
+
+.k-tarea .k-tarea-bg {
+    position: relative;
+}
+
+.k-tarea textarea {
+    box-sizing: border-box;
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    bottom: 2px;
+    resize: none;
+    border-width: 0px;
+    outline-width: 0px;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.k-tarea .k-tarea-bar {
+    touch-action: none;
+    position: absolute;
+    right: 0px;
+    width: 29px;
+    top: 1%;
+    height: 98%;
+}
+
+.k-tarea .k-tarea-bar .k-tarea-drag {
+    position: absolute;
+    width: 9px;
+    right: 5px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.k-tarea.auto-resize {
+    height: auto;
+}
+
+.k-tarea.auto-resize textarea {
+    bottom: unset;
+}
+
+.k-tarea.auto-resize .k-tarea-bar {
+    display: none;
+}
+
+@charset "UTF-8";
+html, body {
+    padding: 0px;
+    margin: 0px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    border: 0px;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* 버튼 포커스시 색상 변하는 현상 방지 */
+    font-family: NotoSans !important;
+    -webkit-font-smoothing: antialiased;
+    font-size: 8px;
+    overflow: hidden;
+}
+
+button {
+    font-family: NotoSans !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    padding: 0px;
+    margin: 0px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    border: 0px;
+    outline: 0px solid transparent;
+}
+
+div, p {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+#common_audio {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#ding_audio {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#dingend_audio {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#wrap {
+    width: 1280px;
+    height: 800px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.bg_svg {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+.swiper-scrollbar.white {
+    background: rgba(0, 0, 0, 0);
+    width: 7px;
+}
+
+.swiper-scrollbar.white .swiper-scrollbar-drag {
+    width: 7px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+}
+
+.swiper-scrollbar.black {
+    background: rgba(0, 0, 0, 0);
+    width: 7px;
+}
+
+.swiper-scrollbar.black .swiper-scrollbar-drag {
+    width: 7px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+.common_back {
+    background-size: 100% 100%;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/images/btn_back.png");
+    background-repeat: no-repeat;
+    width: 78px;
+    height: 73px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+.common_back:disabled {
+    background-image: "";
+    pointer-events: none;
+    cursor: auto;
+}
+
+.common_back.down {
+    background-image: url("/content/digenglish_lib/images/btn_back_down.png");
+}
+
+.common_back:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/images/btn_back.png") url("/content/digenglish_lib/images/btn_back_down.png") "";
+}
+
+.common_back.down {
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 16px;
+}
+
+.swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    opacity: 0.3;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #47F6E9;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+#preload_hidden {
+    position: absolute;
+    pointer-events: none;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+#preload_hidden .helvetica {
+    font-family: HelveticaRounded;
+}
+
+#preload_hidden .helveticastd {
+    font-family: HelveticaRoundedLTStd;
+}
+

@@ -1,0 +1,424 @@
+
+@import '../../share/CoverPopup.scss';
+@import './t_voca_detail.scss';
+@import './t_speak.scss';
+
+@mixin t_study_popup{
+	.t_study_popup{
+		@include CoverPopup(9999);
+		background-image: resolve('teacher/images/bg_ls.png');
+
+		&>.swiper-container{
+			@include page;
+			&>.swiper-wrapper{
+				width: auto;
+			}
+			.swiper-slide{
+				&.swiper-slide-active{
+					z-index:2;
+				  }
+			}
+		}
+		.btn_play {
+			backface-visibility:hidden;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+
+			@include btn_down_dis(
+				resolve('teacher/images/btn_popup_play.png'),
+				resolve('teacher/images/btn_popup_play_down.png'),
+				resolve('teacher/images/btn_popup_play.png'),
+				width('teacher/images/btn_popup_play.png'),
+				height('teacher/images/btn_popup_play.png')
+			);
+
+			&.play{display:none;}
+		}		
+
+		.btn_page_box {
+			position: absolute;
+			top: 80px; 
+			width: 100%;
+			height: 0px;
+			overflow: visible;
+			text-align: center;
+			z-index: 2;
+
+			cursor: pointer;
+			&>span {
+				/* 19-02-11 190208 LS_voca 15문제에 맞춘 size 수정*/
+				margin: 0px 16px;
+				font-size: 16px;
+				color: rgba(179, 179, 179, 0.5);
+				font-weight: bold;
+				&.on {
+					color: rgb(248, 246, 77);
+				}
+				text-shadow: 1px 1px 1px rgba(0,0,0,0.1),
+							-1px 1px 1px rgba(0,0,0,0.1),
+							-1px -1px 1px rgba(0,0,0,0.1),
+							1px -1px 1px rgba(0,0,0,0.1);
+			}
+			&.off{display: none;}
+		}
+
+		.t_btns {
+			position: absolute;
+			top: 100px;
+			right: 73px;
+			z-index: 3;
+			display: none;
+			&>.return_cnt_box{
+				@include return_cnt_box_white;
+				
+				position: absolute;
+				top: -26px;
+				right: 15px;
+				display: none;
+				
+				vertical-align: middle;
+				cursor: pointer;
+			}	
+			.btn_t_video {
+				@include btn_on_dis(
+					resolve('teacher/images/btn_t_video.png'),
+					resolve('teacher/images/btn_t_video_down.png'),
+					resolve('teacher/images/btn_t_video_dis.png'),
+					width('teacher/images/btn_t_video.png'),
+					height('teacher/images/btn_t_video.png')
+				);
+			}
+			.btn_t_voice {
+				margin-left: -15px;
+				@include btn_on_dis(
+					resolve('teacher/images/btn_t_voice.png'),
+					resolve('teacher/images/btn_t_voice_down.png'),
+					resolve('teacher/images/btn_t_voice_dis.png'),
+					width('teacher/images/btn_t_voice.png'),
+					height('teacher/images/btn_t_voice.png')
+				);
+			}
+			.btn_t_auto {
+				margin-left: -15px;
+				@include btn_on_dis(
+					resolve('teacher/images/btn_t_auto.png'),
+					resolve('teacher/images/btn_t_auto_down.png'),
+					resolve('teacher/images/btn_t_auto_dis.png'),
+					width('teacher/images/btn_t_auto.png'),
+					height('teacher/images/btn_t_auto.png')
+				);
+			}
+		}
+
+
+		.btn_back{
+			@include common_back;
+			position:absolute;
+			right: 5px;
+			bottom: 3px;
+			z-index: 2;
+		}
+		.t_voca_detail{
+			@include t_voca_detail;
+		}
+
+		.USAGE_script {
+			display: none;
+			background-color: rgba(0, 0, 0,0.7);
+			position: absolute;
+			bottom: 0px;
+			left: 0px;
+			width: 100%;
+			height: 115px;
+			text-align: left;
+			align-items: center;
+			&>span {
+				position: absolute;	
+				top: 50%;
+				transform: translateY(-50%);
+				display: block;
+				height:auto;
+				color: rgb(255, 255, 255);
+				font-weight: 400;
+				line-height: 1.2;	
+				margin-left: 35px;
+				margin-right: 35px;
+				white-space: normal;
+			}
+			&.video {
+                display: unset;
+                border-bottom-left-radius: 7px;
+                border-bottom-right-radius: 7px;
+			}
+		}
+		.lecture_popup {
+			@include CoverPopup(10001);
+			/*background-image: resolve('teacher/images/bg_lecture_popup.png');*/
+			background-color: rgba(0,0,0,0.7);
+			&>.nav {
+				width: 1033px;
+				height: 52px;
+				position: absolute;
+				top: 72px;
+                left: 124px;
+                background-color: rgb(255, 255, 255);
+                border-top-left-radius: 7px;
+                border-top-right-radius: 7px;
+	
+				&>.type{
+					font-size: 18px;
+					color: rgba(0, 0, 0, 0.502);
+					font-weight: 400;
+					
+					position: absolute;
+					top: 10px;		  
+					left: 19px;
+				}
+	
+				&>.entry {
+					font-size: 30px;
+					color: rgb(0, 0, 0);
+					font-weight: 600;				
+					text-align: center;  		  
+				}
+	
+				&>.btn_close {
+					position: absolute;
+					top: 12px;
+					left: 990px;
+					@include btn_down_dis(
+						resolve('teacher/images/btn_close.png'),
+						resolve('teacher/images/btn_close_on.png'),
+						resolve('teacher/images/btn_close.png'),
+						width('teacher/images/btn_close.png'),
+						height('teacher/images/btn_close.png')
+					);
+				}			
+			}
+			&>.video {
+				width: 1033px;
+				height: 604px;
+				position: absolute;
+				top: 124px;
+				left: 124px;
+				&>video{
+					/*background-color: #000;*/
+					object-fit: fill;
+					width: 100%;
+                    height: 100%;
+                    border-bottom-left-radius: 7px;
+                    border-bottom-right-radius: 7px;
+				}
+				/*
+				&.usage {
+					&>.USAGE_script {
+						display: unset;
+					}
+				}
+				*/
+				&.play{
+					&>.btn_play{display: none;}
+				}
+			}
+		}
+
+	
+		.drill_popup {
+			@include CoverPopup(10001);
+			background-color: rgba(0,0,0,0.7);
+			background-image: resolve('teacher/images/bg_drill_popup.png');
+			&>.nav {
+				width: 788px;
+				height: 48px;
+				position: absolute;
+				top: 162px;
+				left: 246px;
+	
+				&>.type{
+					font-size: 18px;
+					color: rgba(0, 0, 0, 0.5);
+										
+					position: absolute;	top: 9px; left: 18px;
+				}
+				&>.btn_close {
+					position: absolute;	top: 13px; left: 746px;
+					@include btn_down_dis(
+						resolve('teacher/images/btn_close.png'),
+						resolve('teacher/images/btn_close_on.png'),
+						resolve('teacher/images/btn_close.png'),
+						width('teacher/images/btn_close.png'),
+						height('teacher/images/btn_close.png')
+					);
+				}			
+			}
+			&>.content {
+				width: 788px; height: 411px;
+				position: absolute;
+				top: 209px; left: 246px;
+				text-align: center;	
+				&.spelling {
+					&>.entry_spell {
+						cursor: pointer;
+						font-size: 80px;
+						color: rgb(0, 0, 0);
+						font-weight: 600;
+						letter-spacing: -0.8px;
+						line-height: 1;
+	
+						position: relative;
+						top: 158px;
+						word-break: break-all;
+						max-width: 740px;
+						margin:0 auto;
+					}
+					.p_btns {
+						position: absolute;	top: 10px; right: 6px;
+						&>.return_cnt_box{
+							@include return_cnt_box_white;
+							
+							position: absolute;	top: 12px; right: 15px;
+							
+							vertical-align: middle;
+							cursor: pointer;
+						}
+					}
+				}
+				&.speak {
+					&>.btn_audio {
+						top: 40px;
+					}
+					.p_btns {
+						position: absolute;	top: 10px; right: 6px;
+						&>.return_cnt_box{
+							@include return_cnt_box_white;
+							
+							position: absolute;	top: 87px; right: 15px;
+							
+							vertical-align: middle;
+							cursor: pointer;
+						}	
+						.btn_p_video {
+							@include btn_on_dis(
+								resolve('teacher/images/btn_t_video.png'),
+								resolve('teacher/images/btn_t_video_down.png'),
+								resolve('teacher/images/btn_t_video_dis.png'),
+								width('teacher/images/btn_t_video.png'),
+								height('teacher/images/btn_t_video.png')
+							);
+						}
+						.btn_p_voice {
+							margin-left: -15px;
+							@include btn_on_dis(
+								resolve('teacher/images/btn_t_voice.png'),
+								resolve('teacher/images/btn_t_voice_down.png'),
+								resolve('teacher/images/btn_t_voice_dis.png'),
+								width('teacher/images/btn_t_voice.png'),
+								height('teacher/images/btn_t_voice.png')
+							);
+						}
+					}
+
+					&>.entry_spell {
+						cursor: pointer;
+						font-size: 80px;
+						color: rgb(0, 0, 0);
+						line-height: 1;
+	
+						letter-spacing: -0.8px;
+						
+						position: relative;
+						top: 130px;
+						word-break: break-all;
+						max-width: 740px;
+						margin:0 auto;
+					}
+					&>.line {
+						position: absolute; top: 240px; left: 50%; transform: translateX(-50%);
+						background: resolve('teacher/images/line.png');
+						width: width('teacher/images/line.png');
+						height: height('teacher/images/line.png');
+					}
+					&>.meaning_eng {
+						
+						position: absolute;
+						top: 240px; height: 160px;
+						width: 100%;
+						padding: 0px 20px;
+						white-space: normal;
+						text-align: center;
+						&>div{
+							cursor: pointer;
+							font-size: 43px;
+							color: rgb(0, 0, 0);
+							line-height: 1.3;	
+							
+							letter-spacing: -0.5px;
+							word-spacing: -1.3px;
+
+							position: relative;
+							top: 50%;
+							transform: translateY(-50%);
+						}
+						.block{
+							color: rgb(19, 34, 181);
+						}
+					}
+				}
+		
+				.btn_audio {
+					position: absolute;
+					top: 65px; left: 50%; transform: translateX(-50%);
+					@include btn_on_dis(
+						resolve('teacher/images/btn_audio.png'),
+						resolve('teacher/images/btn_audio_down.png'),
+						resolve('teacher/images/btn_audio.png'),
+						width('teacher/images/btn_audio.png'),
+						height('teacher/images/btn_audio.png')
+					);
+				}
+			}
+		}
+
+
+		.t_watch{
+			&>video{
+				background-color: #000;
+				object-fit: fill;
+				width: 100%;
+				height: 100%;
+			}			
+			.icon_entry {
+				font-size: 40px;
+				color:rgb(255, 185, 46);
+				font-weight: bold;
+				line-height: 1.2;	
+				text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.004);	  
+	
+				position: absolute;
+				top: 20px;
+				left: 27px;
+			}
+		}
+
+		.t_speak{
+			@include t_speak;
+		}
+
+		&.auto{
+			.btn_page_box{pointer-events: none;}
+		}
+		&.recording{
+			.btn_page_box{pointer-events: none;}
+			.return_cnt_box{ display: inline-block;}
+		}
+		&.speak{
+			.t_btns{display: unset;}
+		}
+
+		&.hide-navi{
+			.btn_page_box{display: none;}
+		}
+	}
+}

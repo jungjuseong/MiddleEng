@@ -1,0 +1,149 @@
+@import "./common/component/button.scss";
+$BTN_AUDIO_SMALL: 35px;
+$BTN_AUDIO_MIDIUM: 82px;
+$BTN_AUDIO_NORMAL: 92px;
+
+@mixin page{
+	position: absolute;
+	left:0px;width:100%;
+	top:0px;height:100%;
+}
+@mixin btn_audio($wh) {
+	background-size: 100% 100%;
+	@include btn_on_dis(
+		resolve('digenglish_lib/images/btn_audio.svg'),
+		resolve('digenglish_lib/images/btn_audio_on.svg'),
+		resolve('digenglish_lib/images/btn_audio_dis.svg'),
+		$wh,
+		$wh
+	);	
+	filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.3));
+}
+@mixin btn_audio_s() {
+	background-size: 100% 100%;
+	@include btn_on_dis(
+		resolve('digenglish_lib/images/btn_audio_s.svg'),
+		resolve('digenglish_lib/images/btn_audio_s_on.svg'),
+		resolve('digenglish_lib/images/btn_audio_s.svg'),
+		width('digenglish_lib/images/btn_audio_s.svg'),
+		height('digenglish_lib/images/btn_audio_s.svg')
+	);	
+
+	filter: drop-shadow(-4px 4px 3px rgba(0, 0, 0, 0.3));
+	&.on{
+		filter: drop-shadow(-2px 2px 1px rgba(0, 0, 0, 0.4));
+	}
+	&.down{
+		filter: drop-shadow(-2px 2px 1px rgba(0, 0, 0, 0.4));
+	}
+}
+
+@mixin shadow_normal{
+	box-shadow: 6px 4px 7px 0 rgba(0, 0, 0, 0.3);
+}
+
+@mixin font{
+	font-family: NotoSans !important;
+	-webkit-font-smoothing: antialiased;
+}
+
+@mixin btn_12{
+	position: absolute;
+	white-space: nowrap;
+	right: 76px; width:183px;
+	top: 40px; height: 39px;
+	z-index: 11;
+	padding:1px;
+	background-color: rgba(0, 0, 0, 0.2);
+	border-radius: 19.5px;
+	.btn_1{
+		display: inline-block;
+		vertical-align: top;
+	}
+	.btn_2{
+		margin-left: 6px;
+		display: inline-block;
+		vertical-align: top;
+	}
+}
+@mixin info_box{
+	position: absolute;
+	top: 36px;
+	right: 280px;
+	width: auto;
+	height: auto;
+	z-index: 2;
+
+	opacity: 0;
+	transition: opacity 0.3s;
+	pointer-events: none;
+	&.on{
+		pointer-events: auto;
+		opacity: 1;
+		transition: opacity 0.5s;
+	}
+
+	&>.btn_answer{
+		display: inline-block;
+		vertical-align: middle;
+		@include btn_on(
+			resolve('digenglish_lib/images/btn_answer.png'),
+			resolve('digenglish_lib/images/btn_answer_on.png'),
+			width('digenglish_lib/images/btn_answer.png'),
+			height('digenglish_lib/images/btn_answer.png')
+		);
+		margin-right:3px;
+		pointer-events: unset;	
+	}
+	&>.return_cnt_box{
+		display: inline-block;
+		vertical-align: middle;
+		cursor: pointer;
+
+		@include return_cnt_box_white;
+	}
+}
+
+@mixin return_cnt_box_white{
+	width: auto;
+	height: auto;
+	border: none;
+	&>div{
+		width: 70px;
+    	height: 30px;
+		/* background-color 추가 */
+		background-color: rgba(0, 0, 0, 0.3);
+		border: 3px solid rgba(255, 255, 255, 0.6);
+		border-radius: 16px;
+		text-align: center;
+		font-family: NotoSans;
+		color: rgba(255, 255, 255, 0.6);
+		line-height: 23px;
+		font-size: 18px;
+		box-shadow: 2px 2px 2px rgba(0,0,0,0.2) inset;
+		text-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+	}
+}
+
+@mixin swiper_scrollbar($width, $color, $radius) {
+	background: rgba(0, 0, 0, 0);
+	width:$width;
+	.swiper-scrollbar-drag {
+		width:$width;
+		background: $color;
+		border-radius: $radius;
+	}
+}
+@mixin common_back{
+	background-size: 100% 100%;
+	@include btn_down_dis(
+		resolve('digenglish_lib/images/btn_back.png'), 
+		resolve('digenglish_lib/images/btn_back_down.png'),
+		'',
+		width('digenglish_lib/images/btn_back.png'),
+		height('digenglish_lib/images/btn_back.png')
+	);
+	&.down{
+		transform: scale(1.1, 1.1);
+	}
+}

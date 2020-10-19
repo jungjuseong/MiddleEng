@@ -1,0 +1,155 @@
+@mixin s_voca_typing{
+	.s_voca_typing{
+		@include page;
+
+		&>.typing_box {
+			width: 100%;
+			height: 280px;
+			position: absolute; top: 310px;	transition:  top 0.3s;
+			text-align: center;
+			user-select: none;
+
+			$H: 140px;
+			$W_L: 109px;	$B_L: 50px;	  $F_L:100px;
+			$W_M: 94px; 	$B_M: 40px;	  $F_M:95px;
+			$W_S: 79px; 	$B_S: 35px;	  $F_S:90px;
+			$W_XS: 64px; 	$B_XS: 30px;  $F_XS:70px;
+
+			&>input[type='text'] {
+				touch-action: none;
+				box-sizing: border-box;
+				display: inline-block;
+				user-select: none;
+				
+				background-color: transparent;
+				border-width: 0px;
+				outline-width: 0px;
+				outline: none;
+				text-align: center;
+				font-weight: bold;
+				line-height: 100%;
+				caret-color: #000;
+
+				border-bottom: 4px solid #000;
+				margin: 0px 5px;
+				vertical-align: bottom;
+				padding: 0px;
+				color: #000;
+
+				&.blank{border-bottom-color: transparent;}
+				&:disabled{
+					color: #000;
+					outline: none;
+				}
+				&::selection { background: transparent; }
+				/* wrong일 경우 색깔 수정*/
+				&.underline_L {
+					font-size: $F_L;
+					width: $W_L; height: $H;	
+					&.blank{width: $B_L;}
+					&.wrong { color: rgb(0, 13, 255);}		
+				}
+				&.underline_M {
+					font-size: $F_M;
+					width: $W_M; height: $H;	
+					&.blank{width: $B_M;}
+					&.wrong { color: rgb(0, 13, 255);}	
+				}
+				&.underline_S {
+					font-size: $F_S;
+					width: $W_S; height: $H;	
+					&.blank{width: $B_S;}
+
+					&.wrong { color: rgb(0, 13, 255);}	
+				}
+				&.underline_XS {
+					font-size: $F_XS;
+					width: $W_XS; height: $H;	
+					&.blank{width: $B_XS;}
+
+					&.wrong { color: rgb(0, 13, 255);}	
+				}
+				
+			}
+
+			/* wrong일 경우 아래의 정답 */
+			.answer {
+				width: 100%; position: absolute; top: -150px;
+				font-size: 100px; font-weight: bold;
+				color: rgba(238, 26, 47, 0.749);
+				text-align: center;
+				&>span {
+					&.underline_L, &.underline_M, &.underline_S {
+						overflow: visible;
+						margin: 0px 5px;
+						border: 4px solid transparent;
+						box-sizing: border-box;
+						&.wrong {
+							visibility: visible;
+						}
+					}
+				}
+				.underline_L {
+					visibility: hidden;
+					display: inline-block;
+					width: $W_L; height: $H;	
+					&.blank{width: $B_L;}
+				}
+				.underline_M {
+                    font-size: $F_M;	
+					visibility: hidden;
+					display: inline-block;
+                    width: $W_M; height: $H;
+					&.blank{width: $B_M;}
+				}
+				.underline_S {
+                    font-size: $F_S;	
+					visibility: hidden;
+					display: inline-block;
+					width: $W_S; height: $H;	
+					&.blank{width: $B_S;}
+				}
+				.underline_XS {
+					font-size: $F_XS;
+					visibility: hidden;
+					display: inline-block;
+					width: $W_XS; height: $H;	
+					&.blank{width: $B_XS;}
+				}
+			}
+			&.on {
+				top: 145px;
+			}
+		}
+
+		.icon_answer {
+			pointer-events: none;
+			position: absolute;
+			top:-35px;
+			left:0px;
+			width: 100%;
+			z-index: -1;
+			opacity : 0;
+			transform: scale(0.2, 0.2);
+			transition: transform 0.3s, opacity 0.3s;
+
+			&.correct {
+				background: resolve('student/images/icon_correct.png') no-repeat;
+				background-position: 50% 50%;
+				height: height('student/images/icon_correct.png');			
+			}
+			&.wrong {
+				background: resolve('student/images/icon_wrong.png') no-repeat;
+				background-position: 50% 50%;
+				height: height('student/images/icon_wrong.png');		
+			}
+			&.on{
+				pointer-events: unset;
+				z-index: 10;
+				opacity: 1;
+				transform: scale(1, 1);
+				transition: transform 0.3s cubic-bezier(0.405, 0.420, 0.135, 1.200);
+			}
+		}
+	}
+}

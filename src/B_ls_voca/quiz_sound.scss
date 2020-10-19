@@ -1,0 +1,171 @@
+@import '../share/Timer.scss';
+@import '../share/QuizMCBtn.scss';
+
+@mixin quiz_sound{
+	position: relative;
+	.btn_audio {
+		position: absolute; top: 172px; left: 50%; transform: translateX(-50%); 	/* 위치조정 2018-12-26*/
+	}
+	.mc-box {
+		position: relative;
+		top: 280px;
+		left: 140px; 	/* 위치조정 2018-12-26*/
+		white-space: normal;
+	
+		&>.quiz_box {
+			@include btn_on_dis(
+				resolve('teacher/images/box_quiz_sound.png'),
+				resolve('teacher/images/box_quiz_sound_down.png'),
+				resolve('teacher/images/box_quiz_sound.png'),
+				width('teacher/images/box_quiz_sound.png'),
+				height('teacher/images/box_quiz_sound.png')
+			);
+			position: relative;
+			@include quiz-btn-mc;
+
+			display: inline-block;
+			vertical-align: top;
+			margin-left: 55px;
+			margin-top: 26px;
+			font-weight: bold;
+			text-align: center;	
+			font-size: 54px;
+			word-break: normal;
+
+			padding: 0px 30px 12px 35px;
+			line-height: 120%;
+			&:disabled{
+				color: #000;
+			}
+
+			&.on::after{
+				top: 4px;
+			}
+			&.correct {	background-image: resolve('teacher/images/box_quiz_sound_correct.png'); }
+			&.wrong { background-image: resolve('teacher/images/box_quiz_sound_wrong.png');	}
+            > div{
+                width:100% !important;
+            }
+            &.big span.big {
+                font-size: 52px;
+            }
+            &.middle span.middle {
+                font-size: 40px;
+            }
+            &.small span.small {
+                font-size: 33px;
+            }
+        }
+	}
+	.mc-box-three {
+		position: relative;
+		width: 100%;
+		top: 300px;
+		margin-left: 75px; 
+		margin-right: 65px; 
+		white-space: normal;
+	
+		&>div {
+			display: inline-block;
+			position: relative;
+			
+			&>.quiz_box {
+				@include btn_on_dis(
+					resolve('teacher/images/box_quiz_sound3.png'),
+					resolve('teacher/images/box_quiz_sound3_down.png'),
+					resolve('teacher/images/box_quiz_sound3.png'),
+					width('teacher/images/box_quiz_sound3.png'),
+					height('teacher/images/box_quiz_sound3.png')
+				);
+				position: relative;
+				@include quiz-btn-mc;
+
+				display: inline-block;
+				vertical-align: top;
+				margin: 26px 17px 0px 17px;
+				font-weight: bold;
+				text-align: center;	
+				font-size: 54px;
+				word-break: normal;
+
+				padding: 0px 15px 12px 30px; /* p3 수정 */
+				line-height: 120%;
+				&:disabled{
+					color: #000;
+				}
+
+				&.on::after{
+					top: 4px;
+				}
+				&.correct {	background-image: resolve('teacher/images/box_quiz_sound3_correct.png'); }
+				&.wrong { background-image: resolve('teacher/images/box_quiz_sound3_wrong.png');	}
+                > div{
+                    width:100% !important;
+                }
+				&.big span.big {
+					font-size: 52px;
+				}
+				&.middle span.middle {
+					font-size: 40px;
+				}
+				&.small span.small {
+					font-size: 33px;
+				}
+			}
+		}
+	}
+	&.student{
+		.btn_audio{ display: none; }
+		.mc-box { 
+			top: 240px; left: 100px;  /* 위치조정 2019-02-15 */
+			&>.quiz_box {
+				@include btn_on_dis(
+					resolve('student/images/box_quiz_sound_s.png'),
+					resolve('student/images/box_quiz_sound_down_s.png'),
+					resolve('student/images/box_quiz_sound_s.png'),
+					width('student/images/box_quiz_sound_s.png'),
+					height('student/images/box_quiz_sound_s.png')
+				);
+
+				padding: 0px 30px 12px 35px;
+				&.correct { background-image: resolve('student/images/box_quiz_sound_correct_s.png'); }
+				&.wrong { background-image: resolve('student/images/box_quiz_sound_wrong_s.png'); }
+			}
+		}
+		.mc-box-three { 
+			width: 100%;
+			top: 300px;
+			margin-left: 35px; 
+			margin-right: 35px; 
+			&>div {
+				display: inline-block;
+				position: relative;
+				&>.quiz_box {
+					@include btn_on_dis(
+						resolve('student/images/box_quiz_sound3_s.png'),
+						resolve('student/images/box_quiz_sound3_down_s.png'),
+						resolve('student/images/box_quiz_sound3_s.png'),
+						width('student/images/box_quiz_sound3_s.png'),
+						height('student/images/box_quiz_sound3_s.png')
+					);
+
+					padding: 0px 15px 12px 15px;
+					&.correct { background-image: resolve('student/images/box_quiz_sound3_correct_s.png'); }
+					&.wrong { background-image: resolve('student/images/box_quiz_sound3_wrong_s.png'); }
+				}
+			}
+		}
+	}
+/*
+	.correct {
+		background: resolve('student/images/icon_correct_s.png') no-repeat ;
+		width: width('student/images/icon_correct_s.png');
+		height: height('student/images/icon_correct_s.png');
+	}
+	.wrong {
+		background: resolve('student/images/icon_wrong_s.png') no-repeat ;
+		width: width('student/images/icon_wrong_s.png');
+		height: height('student/images/icon_wrong_s.png');
+	}
+	*/
+}

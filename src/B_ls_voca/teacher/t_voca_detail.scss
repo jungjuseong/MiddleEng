@@ -1,0 +1,304 @@
+@import '../../share/CoverPopup.scss';
+
+@mixin t_voca_detail{
+	&>.btn_page_box {
+		width: 100%;
+		position: absolute;
+		top: 55px;
+		left: 50%;
+		transform: translateX(-50%);
+		padding-left: 37px;
+
+		&>.btn_page {
+			position: relative;
+			top: 19px;
+			margin-left: 50px;
+			font-size: 16px;
+
+			color: rgba(179, 179, 179, 0.5);
+			font-weight: bold;
+			text-transform: uppercase;
+
+			&.on {
+				color: rgb(248, 246, 77);
+				text-shadow: 0px 0px 10.5px rgba(0, 0, 0, 0.1);
+			}
+			
+		}
+	}
+	
+	.preview-box{
+		position: absolute; top: 62px; right: 83px;
+		width: 184px; height: 79px;
+		padding: 5px 10px;
+		&>div{
+			$BARH: 5px;
+			white-space: nowrap;
+			height: 17px;
+			color: rgba(255, 255, 255, 0.3);
+			&>div{
+				display: inline-block;
+				vertical-align: top;
+				font-size: 10px;
+			}
+			&>div:nth-child(1) {width: 62px;}
+			&>div:nth-child(2) {
+				margin-right: 7px;
+				margin-top: 4px;
+				width: 73px;
+				height: $BARH;
+				background-color: rgba(0, 0, 0,0.2);
+				border-radius: $BARH/2;
+
+				&>span{
+					display: inline-block;
+					vertical-align: top;
+					height: $BARH;
+					border-radius: $BARH/2;
+					background-color: rgb(0, 174, 124);
+				}
+			}
+
+			&.on{
+				color: rgb(255, 255, 255);
+				&>div:nth-child(2)>span{
+					background-color: rgb(0, 255, 212);
+				}
+			}
+		}
+	}
+
+	/* 19-02-11 190208 LS_voca 검수사항 p.8 수정*/
+	/* 단어 84px, 의미 35px, 예문 45px로 통일 */
+	&>.detail_box {
+		background-image: resolve('teacher/images/bg_detail.png');
+		width: width('teacher/images/bg_detail.png');
+		height: height('teacher/images/bg_detail.png');
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+
+		&>img {
+			width: 408px;
+			height: 247px;
+			position: absolute;
+			top: 160px;
+			left: 82px;
+			border-radius: 20px;
+		}	
+		&>.entry_box {
+			position: absolute;
+			top: 160px;		
+			left: 520px;
+			width: 675px;
+			height: 250px;
+
+			&>.entry {		
+				width: 675px;
+				height: 112px;
+				position: absolute;
+				top: 10px;
+				left: 0px;
+				
+				text-align: left;
+				display: flex;
+				align-items: center;
+
+				&>.re_entry {
+					position: relative;	
+					display: inline-block;
+					width:  10px;
+					flex-grow: 1;
+					margin-right: 25px;
+					margin-left: 33px;
+					height:auto;
+					font-size:70px;
+					color: rgb(255, 255, 255);
+					line-height: 1.2;
+					white-space: normal;	
+					letter-spacing: -2.3px;
+					word-break: break-all;
+
+					&.small {
+						font-size: 60px;
+					}
+				}
+
+				&>.btn_audio {
+					position: relative;
+					margin-top: 10px;
+					margin-left: 46px;	
+					flex-grow: 0;
+				}	
+			}
+			&>.meaning_eng {
+				width: 675px;
+				height: 145px;
+				position: absolute;
+				bottom: 5px;
+				left: 0px;
+				text-align: left;
+				display: flex;
+				align-items: center;				
+				&>.re_meaning {
+					position: relative;	
+					display: inline-block;
+					width:  10px;
+					flex-grow: 1;
+
+					margin-left: 35px;
+					margin-right: 25px;
+					height:auto;
+					font-size: 32px;
+					color: rgb(255, 255, 255);
+					line-height: 1.2;
+					white-space: normal;	
+					letter-spacing: -0.8px;
+				}							
+				&>.btn_audio {
+					position: relative;
+					margin-left: 46px;	
+					margin-top: 10px;
+					flex-grow: 0;
+				}
+			}			
+		}
+
+		&>.sentence_box {
+			&>.sentence {
+				position: absolute;
+				width: 1116px;
+				height: 180px;
+				top: 435px;		
+				left: 85px;
+				text-align: left;
+				display: flex;
+				align-items: center;
+
+				&>.re_sentence {
+					position: relative;	
+					display: inline-block;
+					width:  10px;
+					flex-grow: 1;
+
+					margin-left: 35px;
+					margin-right: 35px;
+					height:auto;
+					font-size: 45px;
+					color: rgb(0, 0, 0);
+					line-height: 1.2;
+					white-space: normal;	
+					letter-spacing: -0.8px;
+
+					.block{
+						color: rgb(19, 34, 181);
+					}
+				}	
+				&>.btn_audio {						
+					position: relative;
+					margin-left: 46px;
+					flex-grow: 0;
+				}
+
+			}
+
+		}
+	}
+	.btn_audio {
+		@include btn_on_dis(
+			resolve('teacher/images/btn_audio_detail.png'),
+			resolve('teacher/images/btn_audio_down_detail.png'),
+			resolve('teacher/images/btn_audio_detail.png'),
+			width('teacher/images/btn_audio_detail.png'),
+			height('teacher/images/btn_audio_detail.png')
+		);
+	}
+	&>.lecture_btns {
+		position: absolute;
+		top: 694px;
+		left: 166px;
+		float: left;
+		&>.btn_sound {
+			@include btn_down_dis(
+				resolve('teacher/images/btn_sound_L.png'),
+				resolve('teacher/images/btn_sound_on.png'),
+				resolve('teacher/images/btn_sound_L.png'),
+				width('teacher/images/btn_sound_L.png'),
+				height('teacher/images/btn_sound_L.png')
+			);
+		}
+		&>.btn_meaning {
+			margin-left: 10px;
+			@include btn_down_dis(
+				resolve('teacher/images/btn_meaning.png'),
+				resolve('teacher/images/btn_meaning_on.png'),
+				resolve('teacher/images/btn_meaning.png'),
+				width('teacher/images/btn_meaning.png'),
+				height('teacher/images/btn_meaning.png')
+			);
+		}
+		&>.btn_sentence {
+			margin-left: 10px;
+			@include btn_down_dis(
+				resolve('teacher/images/btn_sentence.png'),
+				resolve('teacher/images/btn_sentence_on.png'),
+				resolve('teacher/images/btn_sentence.png'),
+				width('teacher/images/btn_sentence.png'),
+				height('teacher/images/btn_sentence.png')
+			);
+		}
+		&>.btn_video {
+			margin-left: 10px;
+			@include btn_down_dis(
+				resolve('teacher/images/btn_video.png'),
+				resolve('teacher/images/btn_video_on.png'),
+				resolve('teacher/images/btn_video.png'),
+				width('teacher/images/btn_video.png'),
+				height('teacher/images/btn_video.png')
+			);
+		}
+		&>.btn_usage {
+			margin-left: 10px;
+			@include btn_down_dis(
+				resolve('teacher/images/btn_usage.png'),
+				resolve('teacher/images/btn_usage_on.png'),
+				resolve('teacher/images/btn_usage.png'),
+				width('teacher/images/btn_usage.png'),
+				height('teacher/images/btn_usage.png')
+			);
+		}
+	}
+	&>.drill_btns {			
+		position: absolute;
+		top: 694px;
+		left: 868px;
+		float: left;
+
+		&>.btn_spelling {
+			@include btn_down_dis(
+				resolve('teacher/images/btn_spelling.png'),
+				resolve('teacher/images/btn_spelling_on.png'),
+				resolve('teacher/images/btn_spelling.png'),
+				width('teacher/images/btn_spelling.png'),
+				height('teacher/images/btn_spelling.png')
+			);
+		}
+		&>.btn_speaking {
+			margin-left: 10px;
+			@include btn_down_dis(
+				resolve('teacher/images/btn_speaking.png'),
+				resolve('teacher/images/btn_speaking_on.png'),
+				resolve('teacher/images/btn_speaking.png'),
+				width('teacher/images/btn_speaking.png'),
+				height('teacher/images/btn_speaking.png')
+			);
+		}
+	}
+
+	.btn_back{
+		@include common_back;
+		position:absolute;
+		right: 5px;
+		bottom: 3px;
+	}
+}

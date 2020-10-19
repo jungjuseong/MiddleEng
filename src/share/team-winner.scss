@@ -1,0 +1,12 @@
+@mixin team-winner {
+	position: absolute;
+	left:0px; width: 100%;
+	top:0px; height: 100%;
+	z-index: 99;
+
+	&.hide{
+		visibility: hidden;
+		z-index: -1;
+		pointer-events: none;
+	}
+}

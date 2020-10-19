@@ -1,0 +1,117 @@
+@import './selector.scss';
+@mixin share-quiz-num-time{
+	&>.timer {
+		background-image: resolve('digenglish_lib/images/quiz/bg_timer.png');
+		width: 100%;
+		height: height('digenglish_lib/images/quiz/bg_timer.png');
+
+		&>.title {
+			box-sizing: border-box;
+			font-size: 28px;
+			color: rgb(255, 255, 255);
+			font-weight: 400;
+			letter-spacing: -0.5px;
+			
+			position: absolute;
+			top: 18px;
+			text-transform: uppercase;
+			width: auto;
+			min-width: 200px;
+			text-align: center;
+			padding-left: 20px;
+			padding-right: 30px;
+
+			height: 62px;
+			line-height: 60px;
+			border-top-right-radius: 31px;
+			border-bottom-right-radius: 31px;
+			background-color: #173987;
+		}
+	}
+	&>.check_btns {
+		width: 700px;
+		height: 60px;
+		position: absolute;
+		top: 105px;
+		left: 50%;
+		transform: translateX(-50%);
+		text-align: center;
+
+		&>.btn_all {
+			@include btn_on_dis(
+				resolve('digenglish_lib/images/quiz/btn_all.png'),
+				resolve('digenglish_lib/images/quiz/btn_all_on.png'),
+				resolve('digenglish_lib/images/quiz/btn_all_dis.png'),
+				width('digenglish_lib/images/quiz/btn_all.png'),
+				height('digenglish_lib/images/quiz/btn_all.png')
+			);
+		}
+		&>.btn_studied {
+			margin-left: 20px;
+			@include btn_on_dis(
+				resolve('digenglish_lib/images/quiz/btn_studied.png'),
+				resolve('digenglish_lib/images/quiz/btn_studied_on.png'),
+				resolve('digenglish_lib/images/quiz/btn_studied_dis.png'),
+				width('digenglish_lib/images/quiz/btn_studied.png'),
+				height('digenglish_lib/images/quiz/btn_studied.png')
+			);
+		}
+		&>.btn_ai {
+			margin-left: 20px;
+			@include btn_on_dis(
+				resolve('digenglish_lib/images/quiz/btn_ai.png'),
+				resolve('digenglish_lib/images/quiz/btn_ai_on.png'),
+				resolve('digenglish_lib/images/quiz/btn_ai_dis.png'),
+				width('digenglish_lib/images/quiz/btn_ai.png'),
+				height('digenglish_lib/images/quiz/btn_ai.png')
+			);
+		}
+	}
+	&>.selector_box {
+		&>.number_select{		
+			position: absolute;
+			top: 316px;
+			left: 266px;	
+			&>.selector{
+				@include selector;
+			}
+		}
+		&>.timer_select{
+			position: absolute;
+			top: 316px;
+			left: 644px;
+			&>.selector_L {
+				float: left;
+				&>.selector{
+					@include selector_L;
+				}
+			}
+			&>.selector_R {
+				float: left;
+				&>.selector{
+					@include selector_R;
+				}
+			}
+		}
+	}
+	&>.btn_start {
+		position: absolute;
+		top: 630px;
+		left: 50%;
+		transform: translateX(-50%);
+		@include btn_down_dis(
+			resolve('digenglish_lib/images/quiz/btn_start.png'),
+			resolve('digenglish_lib/images/quiz/btn_start_down.png'),
+			resolve('digenglish_lib/images/quiz/btn_start_down.png'),
+			width('digenglish_lib/images/quiz/btn_start.png'),
+			height('digenglish_lib/images/quiz/btn_start.png')
+		);
+	}
+	.btn_back{
+		@include common_back;
+		position:absolute;
+		right: 5px;
+		bottom: 3px;
+		z-index: 2;
+	}
+}

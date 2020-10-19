@@ -1,0 +1,120 @@
+@import "../../share/video-direction.scss";
+@import "./t_voca_list.scss";
+@import './t_quiz_select.scss';
+@import './t_timer.scss';
+@import './t_quiz.scss';
+@import './t_grouping.scss';
+@import './t_board.scss';
+
+@mixin my-scroll-container($W, $H){
+	width: $W;
+	height: $H;
+	overflow: hidden;
+}
+@mixin my-scroll-wrapper($W, $H){
+	position: relative;
+	white-space: nowrap;
+	width:auto;
+	height: $H;
+	transition: left 0.3s;
+	transition-timing-function: ease-in;
+	&>div{
+		position: relative;
+		display: inline-block;
+		white-space: unset;
+		width: $W;
+		height: $H;
+		overflow: hidden;
+	}
+}
+
+@mixin t_contentbox{
+	$W: 1280px;
+	$H: 800px;
+
+
+
+
+	.content-container{
+		@include my-scroll-container($W, $H);
+		position: absolute;
+		.content-wrapper{
+			@include my-scroll-wrapper($W, $H);
+
+			.sub-container{
+				.sub-wrapper {
+					@include my-scroll-wrapper($W, $H);
+				}
+			}
+		}
+		&.hide{
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+	.video-direction{
+		@include video-direction;
+		overflow: hidden;
+		&>.movieclip{
+			position: absolute;
+			right: 20px;
+			bottom: -40px;
+			width: 330px;
+			height: 550px;
+		}
+
+		background-image: resolve('common/bg1.jpg');
+		&>div.direction{
+			position: absolute;
+			background-image: resolve("common/direction.png");
+			width: width("common/direction.png");
+			height:  height("common/direction.png");
+			left: calc(50% - width("common/direction.png")/2);
+			top: calc(50% - height("common/direction.png")/2);
+		}
+		&>div.lesson{
+			font-size: 40px;
+			position: absolute;
+			left: 30px;
+			top: 20px;		
+			color: #fff;
+		}
+	}
+	/*
+	.new-direction{
+		@include new-direction;
+		background-image: resolve('common/bg1.jpg');
+		&>div.direction{
+			position: absolute;
+			background-image: resolve("common/direction.png");
+			width: width("common/direction.png");
+			height:  height("common/direction.png");
+			left: calc(50% - width("common/direction.png")/2);
+			top: calc(50% - height("common/direction.png")/2);
+		}
+		&>div.icon{
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			background-image: resolve("common/bear.png");
+			width: width("common/bear.png");
+			height:  height("common/bear.png");
+		}
+		&>div.lesson{
+			font-size: 40px;
+			position: absolute;
+			left: 30px;
+			top: 20px;		
+			color: #fff;
+		}
+	}
+	*/
+	@include t_voca_list;
+	@include t_quiz_select;
+	@include t_timer;
+	@include t_quiz;
+	@include t_grouping;
+	@include t_board;
+
+	
+}

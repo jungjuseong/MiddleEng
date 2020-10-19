@@ -1,0 +1,105 @@
+{
+  "extends": [
+	"tslint:recommended",
+	"tslint-react"
+	],
+  "rules": {
+      "align": [
+          true,
+          "parameters",
+          "statements"
+      ],
+      "ban": false,
+      "class-name": true,
+      "comment-format": [
+          true,
+          "check-space"
+      ],
+      "curly": [true, "ignore-same-line"],
+      "eofline": false,
+      "forin": true,
+      "indent": [ false, "spaces" ],
+      "interface-name": [true, "prefix"],
+      "jsdoc-format": false,
+      "jsx-no-lambda": false,
+      "jsx-no-multiline-js": false,
+	  "label-position": true,
+	  "max-classes-per-file": false,
+      "max-line-length": false,
+      "member-ordering": false,
+      "no-any": false,
+      "no-arg": true,
+      "no-bitwise": true,
+      "no-console": [
+          false,
+          "log",
+          "error",
+          "debug",
+          "info",
+          "time",
+          "timeEnd",
+          "trace"
+	  ],
+	  "no-conditional-assignment": false,
+      "no-consecutive-blank-lines": false,
+      "no-construct": true,
+      "no-debugger": true,
+      "no-duplicate-variable": true,
+	  "no-empty": [true, "allow-empty-catch"],
+	  "no-empty-interface": false,
+      "no-eval": true,
+      "no-shadowed-variable": true,
+	  "no-string-literal": true,
+	  "no-string-throw": false,
+      "no-switch-case-fall-through": true,
+      "no-trailing-whitespace": false,
+      "no-unused-expression": true,
+	  "no-use-before-declare": true,
+	  "no-var-requires": false,
+	  "object-literal-sort-keys": false,
+      "one-line": [
+          true,
+          "check-catch",
+          "check-else",
+          "check-open-brace",
+          "check-whitespace"
+	  ],
+	  "one-variable-per-declaration": false,
+	  "ordered-imports": false,
+	  "prefer-const": false,
+	  "prefer-for-of": false,
+
+      "quotemark": [true, "single", "jsx-double"],
+      "radix": true,
+      "semicolon": [true, "always"],
+      "switch-default": true,
+
+      "trailing-comma": [false],
+
+      "triple-equals": [ true, "allow-null-check" ],
+      "typedef": [
+          true,
+          "parameter",
+          "property-declaration"
+      ],
+      "typedef-whitespace": [
+          true,
+          {
+              "call-signature": "nospace",
+              "index-signature": "nospace",
+              "parameter": "nospace",
+              "property-declaration": "nospace",
+              "variable-declaration": "nospace"
+          }
+      ],
+      "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case", "allow-snake-case"],
+      "whitespace": [
+          true,
+          "check-decl",
+          "check-module",
+          "check-operator",
+          "check-type",
+          "check-typecast"
+      ]
+  }
+}

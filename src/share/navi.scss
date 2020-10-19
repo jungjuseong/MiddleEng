@@ -1,0 +1,119 @@
+@mixin common_navi{
+	position:absolute;
+	display:table;
+	width:auto;
+	top:0px;height:100%;
+	pointer-events: none;
+	transition: left 0.5s, right 0.5s;
+	/* transition-property: left right; */
+	z-index:10000;
+	
+	&>div{
+		width:auto;
+		height:100%;
+		display:table-cell;
+		vertical-align:middle;
+		pointer-events: none;
+		&>div{
+			position:relative;
+			width:auto;
+			height:auto;
+			vertical-align:middle;
+			pointer-events: auto;
+			background-color:rgba(0, 0, 0, 0);
+		}
+	}
+}
+
+#common_navi_left{
+	left:0px;	
+	@include common_navi;
+	&.off{
+
+		left:-46px;	
+		button.left{
+			pointer-events: none;
+		}
+		button.right{
+			pointer-events: none;
+		}
+	}
+	button.left{
+		display:block;
+		margin-top:40px;
+		margin-bottom:40px;
+		@include btn_down_dis(
+			resolve('digenglish_lib/images/page_left_L.png'), 
+			resolve('digenglish_lib/images/page_left_L_down.png'),
+			resolve('digenglish_lib/images/page_left_L_dis.png'),
+			width('digenglish_lib/images/page_left_L.png'),
+			height('digenglish_lib/images/page_left_L.png')			
+		);
+	}
+	button.right{
+		display:block;
+		margin-top:40px;
+		margin-bottom:40px;
+		pointer-events: auto;
+		@include btn_down_dis(
+			resolve('digenglish_lib/images/page_right_L.png'), 
+			resolve('digenglish_lib/images/page_right_L_down.png'),
+			resolve('digenglish_lib/images/page_right_L_dis.png'),
+			width('digenglish_lib/images/page_right_L.png'),
+			height('digenglish_lib/images/page_right_L.png')			
+		);
+	}
+}
+#common_navi_right{
+	right:0px;	
+	@include common_navi;
+	&.off{
+		right:-46px;
+		button.left{
+			pointer-events: none;
+		}
+		button.right{
+			pointer-events: none;
+		}	
+	}
+	button.left{
+		display:block;
+		margin-top:40px;
+		margin-bottom:40px;
+		@include btn_down_dis(
+			resolve('digenglish_lib/images/page_left_R.png'), 
+			resolve('digenglish_lib/images/page_left_R_down.png'),
+			resolve('digenglish_lib/images/page_left_R_dis.png'),
+			width('digenglish_lib/images/page_left_R.png'),
+			height('digenglish_lib/images/page_left_R.png')			
+		);
+	}
+	button.right{
+		display:block;
+		margin-top:40px;
+		margin-bottom:40px;
+		pointer-events: auto;
+		@include btn_down_dis(
+			resolve('digenglish_lib/images/page_right_R.png'), 
+			resolve('digenglish_lib/images/page_right_R_down.png'),
+			resolve('digenglish_lib/images/page_right_R_dis.png'),
+			width('digenglish_lib/images/page_right_R.png'),
+			height('digenglish_lib/images/page_right_R.png')			
+		);
+	}
+}
+
+/*
+#common_navi_left.off{
+	left:-46px;	
+}
+
+
+
+#common_navi_right{
+	right:0px;	
+}
+#common_navi_right.off{
+	right:-46px;	
+}
+*/

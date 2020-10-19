@@ -1,0 +1,30 @@
+@mixin CoverPopup($z-index) {
+
+	position: absolute;
+	left: 0px; width: 100%;
+	top: 0px; height: 100%;
+	z-index: -1;
+
+	pointer-events: none;
+	opacity : 0;
+	transform: scale(0.2, 0.2);
+	transition: transform 0.3s, opacity 0.3s;
+
+	&.open{
+		pointer-events: unset;
+		z-index: $z-index;
+		opacity: 1;
+		transform: scale(1, 1);
+		transition: transform 0.3s cubic-bezier(0.405, 0.420, 0.135, 1.200);
+	}
+	&.closing{
+		pointer-events: unset;
+		z-index: $z-index;
+		opacity : 0;
+		transform: scale(0.2, 0.2);
+		transition: transform 0.3s, opacity 0.3s;
+	}
+	&.closed{
+		display: none;
+	}
+}

@@ -1,0 +1,60 @@
+$className: pre-in-class-box;
+
+:export {
+	className: $className;
+}
+
+
+
+.pre-in-class-box {
+	width: 155px;
+	height: auto;
+	padding: 5px 10px;
+	text-align: left;
+	background-color: rgba(0, 0, 0, 0.15);
+	border-radius: 5px;
+	z-index:10;
+	&>div{
+		$BARH: 7px;
+		height: 25px;
+		font-size: 11px;
+		padding-top: 3px;
+		color: rgba(255, 255, 255, 0.8);
+		white-space: nowrap;
+		&>div{
+			display: inline-block;
+			vertical-align: top;
+			position: relative;
+		}
+		&>div:nth-child(1){
+			display: inline-block;
+			vertical-align: top;
+			position: relative;
+			width: 55px;
+		}
+		&>div:nth-child(2) {
+			margin-top: 6px;
+			margin-right: 5px;
+			width: 47px;
+			height: $BARH;
+			border-radius: $BARH/2;
+			background-color: rgba(0, 0, 0,0.3);
+
+			&>span{
+				display: inline-block;
+				position: absolute;
+				left:0px;
+				top:0px;
+				height: $BARH;
+				border-radius: $BARH/2;
+				background-color: #F9FF5E;
+			}
+		}
+	}
+	&>div:nth-child(2){
+		color: rgba(255, 255, 255, 0.8);
+		&>div:nth-child(2)>span{
+			background-color: #00CAA2;
+		}
+	}
+}
