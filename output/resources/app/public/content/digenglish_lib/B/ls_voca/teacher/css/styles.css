@@ -305,39 +305,31 @@
 
 @-webkit-keyframes share-all-zero-percent {
     0% {
-        -webkit-transform: scale(1, 1);
-                transform: scale(1, 1);
+        transform: scale(1, 1);
     }
     45% {
-        -webkit-transform: scale(2, 2);
-                transform: scale(2, 2);
+        transform: scale(2, 2);
     }
     55% {
-        -webkit-transform: scale(2, 2);
-                transform: scale(2, 2);
+        transform: scale(2, 2);
     }
     100% {
-        -webkit-transform: scale(1, 1);
-                transform: scale(1, 1);
+        transform: scale(1, 1);
     }
 }
 
 @keyframes share-all-zero-percent {
     0% {
-        -webkit-transform: scale(1, 1);
-                transform: scale(1, 1);
+        transform: scale(1, 1);
     }
     45% {
-        -webkit-transform: scale(2, 2);
-                transform: scale(2, 2);
+        transform: scale(2, 2);
     }
     55% {
-        -webkit-transform: scale(2, 2);
-                transform: scale(2, 2);
+        transform: scale(2, 2);
     }
     100% {
-        -webkit-transform: scale(1, 1);
-                transform: scale(1, 1);
+        transform: scale(1, 1);
     }
 }
 
@@ -537,17 +529,13 @@ body {
 
 #wrap .video-direction > div.direction {
     position: absolute;
-    -webkit-transform: translateY(100px);
-            transform: translateY(100px);
-    transition: opacity 0.5s, -webkit-transform 0.5s ease-out;
+    transform: translateY(100px);
     transition: transform 0.5s ease-out, opacity 0.5s;
-    transition: transform 0.5s ease-out, opacity 0.5s, -webkit-transform 0.5s ease-out;
     opacity: 0;
 }
 
 #wrap .video-direction.on > div.direction {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    transform: translateY(0px);
     opacity: 1;
 }
 
@@ -1038,11 +1026,8 @@ body {
     z-index: -1;
     pointer-events: none;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
     background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/bg_ls.png");
 }
 
@@ -1050,22 +1035,16 @@ body {
     pointer-events: unset;
     z-index: 9999;
     opacity: 1;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    transition: -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+    transform: scale(1, 1);
     transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
-    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2), -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
 }
 
 #wrap .t_voca_list .t_study_popup.closing {
     pointer-events: unset;
     z-index: 9999;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
 }
 
 #wrap .t_voca_list .t_study_popup.closed {
@@ -1094,8 +1073,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     touch-action: none;
     padding: 0px;
     border: none;
@@ -1346,8 +1324,7 @@ body {
 }
 
 #wrap .t_voca_list .t_study_popup .btn_back.down {
-    -webkit-transform: scale(1.1, 1.1);
-            transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
 }
 
 #wrap .t_voca_list .t_study_popup .t_voca_detail {
@@ -1360,8 +1337,7 @@ body {
     position: absolute;
     top: 55px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     padding-left: 37px;
 }
 
@@ -1436,8 +1412,7 @@ body {
     height: 800px;
     position: relative;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 #wrap .t_voca_list .t_study_popup .t_voca_detail > .detail_box > img {
@@ -1903,8 +1878,7 @@ body {
 }
 
 #wrap .t_voca_list .t_study_popup .t_voca_detail .btn_back.down {
-    -webkit-transform: scale(1.1, 1.1);
-            transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
 }
 
 #wrap .t_voca_list .t_study_popup .USAGE_script {
@@ -1922,8 +1896,7 @@ body {
 #wrap .t_voca_list .t_study_popup .USAGE_script > span {
     position: absolute;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     display: block;
     height: auto;
     color: white;
@@ -1949,11 +1922,8 @@ body {
     z-index: -1;
     pointer-events: none;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
     /*background-image: resolve('teacher/images/bg_lecture_popup.png');*/
     background-color: rgba(0, 0, 0, 0.7);
 }
@@ -1962,22 +1932,16 @@ body {
     pointer-events: unset;
     z-index: 10001;
     opacity: 1;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    transition: -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+    transform: scale(1, 1);
     transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
-    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2), -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
 }
 
 #wrap .t_voca_list .t_study_popup .lecture_popup.closing {
     pointer-events: unset;
     z-index: 10001;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
 }
 
 #wrap .t_voca_list .t_study_popup .lecture_popup.closed {
@@ -2087,11 +2051,8 @@ body {
     z-index: -1;
     pointer-events: none;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
     background-color: rgba(0, 0, 0, 0.7);
     background-image: url("/content/digenglish_lib/B/ls_voca/teacher/images/bg_drill_popup.png");
 }
@@ -2100,22 +2061,16 @@ body {
     pointer-events: unset;
     z-index: 10001;
     opacity: 1;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    transition: -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+    transform: scale(1, 1);
     transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
-    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2), -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
 }
 
 #wrap .t_voca_list .t_study_popup .drill_popup.closing {
     pointer-events: unset;
     z-index: 10001;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
 }
 
 #wrap .t_voca_list .t_study_popup .drill_popup.closed {
@@ -2357,8 +2312,7 @@ body {
     position: absolute;
     top: 240px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     background: url("/content/digenglish_lib/B/ls_voca/teacher/images/line.png");
     width: 747px;
     height: 4px;
@@ -2383,8 +2337,7 @@ body {
     word-spacing: -1.3px;
     position: relative;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 #wrap .t_voca_list .t_study_popup .drill_popup > .content.speak > .meaning_eng .block {
@@ -2395,8 +2348,7 @@ body {
     position: absolute;
     top: 65px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     touch-action: none;
     padding: 0px;
     border: none;
@@ -2466,8 +2418,7 @@ body {
     position: absolute;
     top: 27%;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     transition: opacity 0.3s;
     padding-right: 35px;
     padding-left: 33px;
@@ -2476,8 +2427,7 @@ body {
 #wrap .t_voca_list .t_study_popup .t_speak > .speak_contents > .entry_box > .speak_entry {
     position: relative;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     display: inline-block;
     width: 100%;
     height: auto;
@@ -2495,16 +2445,14 @@ body {
     position: absolute;
     top: 59%;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     transition: opacity 0.3s;
 }
 
 #wrap .t_voca_list .t_study_popup .t_speak > .speak_contents > .sentence_box > .speak_sentence {
     position: absolute;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     right: 30px;
     left: 30px;
     height: auto;
@@ -2551,8 +2499,7 @@ body {
     position: absolute;
     top: 106px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     font-size: 48px;
     color: #c4c6ff;
     font-weight: bold;
@@ -2880,8 +2827,7 @@ body {
     position: absolute;
     bottom: 82px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 #wrap .t_quiz_select > .t_choice .single {
@@ -3000,8 +2946,7 @@ body {
     position: absolute;
     top: 105px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     text-align: center;
 }
 
@@ -3137,9 +3082,7 @@ body {
 #wrap .t_timer > .selector_box > .number_select > .selector > .mask1 > div {
     position: absolute;
     width: 100%;
-    transition: -webkit-transform 0.3s;
     transition: transform 0.3s;
-    transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 #wrap .t_timer > .selector_box > .number_select > .selector > .mask1 > div > div {
@@ -3199,9 +3142,7 @@ body {
 #wrap .t_timer > .selector_box > .number_select > .selector > .middle > .mask2 > div {
     position: absolute;
     width: 100%;
-    transition: -webkit-transform 0.3s;
     transition: transform 0.3s;
-    transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 #wrap .t_timer > .selector_box > .number_select > .selector > .middle > .mask2 > div > div {
@@ -3369,9 +3310,7 @@ body {
 #wrap .t_timer > .selector_box > .timer_select > .selector_L > .selector > .mask1 > div {
     position: absolute;
     width: 100%;
-    transition: -webkit-transform 0.3s;
     transition: transform 0.3s;
-    transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 #wrap .t_timer > .selector_box > .timer_select > .selector_L > .selector > .mask1 > div > div {
@@ -3431,9 +3370,7 @@ body {
 #wrap .t_timer > .selector_box > .timer_select > .selector_L > .selector > .middle > .mask2 > div {
     position: absolute;
     width: 100%;
-    transition: -webkit-transform 0.3s;
     transition: transform 0.3s;
-    transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 #wrap .t_timer > .selector_box > .timer_select > .selector_L > .selector > .middle > .mask2 > div > div {
@@ -3595,9 +3532,7 @@ body {
 #wrap .t_timer > .selector_box > .timer_select > .selector_R > .selector > .mask1 > div {
     position: absolute;
     width: 100%;
-    transition: -webkit-transform 0.3s;
     transition: transform 0.3s;
-    transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 #wrap .t_timer > .selector_box > .timer_select > .selector_R > .selector > .mask1 > div > div {
@@ -3657,9 +3592,7 @@ body {
 #wrap .t_timer > .selector_box > .timer_select > .selector_R > .selector > .middle > .mask2 > div {
     position: absolute;
     width: 100%;
-    transition: -webkit-transform 0.3s;
     transition: transform 0.3s;
-    transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 #wrap .t_timer > .selector_box > .timer_select > .selector_R > .selector > .middle > .mask2 > div > div {
@@ -3800,8 +3733,7 @@ body {
     position: absolute;
     top: 630px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     touch-action: none;
     padding: 0px;
     border: none;
@@ -3877,8 +3809,7 @@ body {
 }
 
 #wrap .t_timer .btn_back.down {
-    -webkit-transform: scale(1.1, 1.1);
-            transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
 }
 
 #wrap .t_quiz {
@@ -4034,8 +3965,7 @@ body {
 }
 
 #wrap .t_quiz .btn_back.down {
-    -webkit-transform: scale(1.1, 1.1);
-            transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
 }
 
 #wrap .t_quiz.quiz .btn_page_box {
@@ -4808,8 +4738,7 @@ body {
     position: absolute;
     top: 172px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     /* 위치조정 2018-12-26*/
 }
 
@@ -5361,8 +5290,7 @@ body {
     position: absolute;
     top: 142px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 #wrap .t_quiz .quiz_meaning > .word {
@@ -5372,8 +5300,7 @@ body {
     position: absolute;
     top: 220px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 #wrap .t_quiz .quiz_meaning > .mean {
@@ -5628,8 +5555,7 @@ body {
     position: absolute;
     top: 172px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 #wrap .t_quiz .quiz_spelling > .spelling {
@@ -5974,8 +5900,7 @@ body {
     height: auto;
     padding: 0px;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     line-height: 120%;
     vertical-align: bottom;
     white-space: normal;
@@ -6310,8 +6235,7 @@ body {
 }
 
 #wrap .t_quiz .quiz_usage .btn_back.down {
-    -webkit-transform: scale(1.1, 1.1);
-            transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
 }
 
 #wrap .t_quiz.sentence > .timer {
@@ -6377,11 +6301,8 @@ body {
 }
 
 #wrap .t_grouping > .resort > .btn_resort.rotate {
-    transition: -webkit-transform 1s;
     transition: transform 1s;
-    transition: transform 1s, -webkit-transform 1s;
-    -webkit-transform: rotate(-360deg);
-            transform: rotate(-360deg);
+    transform: rotate(-360deg);
 }
 
 #wrap .t_grouping > .resort.on {
@@ -6443,8 +6364,7 @@ body {
     color: #fafafa;
     text-align: center;
     opacity: 0;
-    -webkit-transform: scale(0.1, 0.1);
-            transform: scale(0.1, 0.1);
+    transform: scale(0.1, 0.1);
 }
 
 #wrap .t_grouping > .groupbox .student-list > .student > img {
@@ -6458,19 +6378,15 @@ body {
 #wrap .t_grouping > .groupbox .student-list > .student.on {
     position: relative;
     opacity: 1;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    transition: -webkit-transform 0.3s cubic-bezier(0.17, 0.67, 0.71, 1.93);
+    transform: scale(1, 1);
     transition: transform 0.3s cubic-bezier(0.17, 0.67, 0.71, 1.93);
-    transition: transform 0.3s cubic-bezier(0.17, 0.67, 0.71, 1.93), -webkit-transform 0.3s cubic-bezier(0.17, 0.67, 0.71, 1.93);
 }
 
 #wrap .t_grouping > .btn_start {
     position: absolute;
     left: 50%;
     bottom: 20px;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     touch-action: none;
     padding: 0px;
     border: none;
@@ -6546,8 +6462,7 @@ body {
 }
 
 #wrap .t_grouping .btn_back.down {
-    -webkit-transform: scale(1.1, 1.1);
-            transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
 }
 
 #wrap .t_board {
@@ -6694,8 +6609,7 @@ body {
     position: absolute;
     top: 155px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     touch-action: none;
     padding: 0px;
     border: none;
@@ -6758,9 +6672,7 @@ body {
     background-repeat: no-repeat;
     width: 365px;
     height: 365px;
-    transition: -webkit-transform 1.3s cubic-bezier(0.165, 0.84, 0.235, 0.995);
     transition: transform 1.3s cubic-bezier(0.165, 0.84, 0.235, 0.995);
-    transition: transform 1.3s cubic-bezier(0.165, 0.84, 0.235, 0.995), -webkit-transform 1.3s cubic-bezier(0.165, 0.84, 0.235, 0.995);
 }
 
 #wrap .t_board .spindle_box .spindle .btn_start {
@@ -6817,18 +6729,14 @@ body {
     text-align: center;
     z-index: -1;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
+    transform: scale(0.2, 0.2);
 }
 
 #wrap .t_board .point_result.on {
     z-index: 0;
     opacity: 1;
-    transition: -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
     transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
-    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2), -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
+    transform: scale(1, 1);
 }
 
 #wrap .t_board .point_result .fel_topad {
@@ -6836,8 +6744,7 @@ body {
     z-index: 11;
     touch-action: none;
     right: 0px;
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
     touch-action: none;
     padding: 0px;
     border: none;
@@ -6869,8 +6776,7 @@ body {
 }
 
 #wrap .t_board .point_result .fel_topad.on {
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
 }
 
 #wrap .t_board .point_result .btn_repoint {
@@ -7134,11 +7040,8 @@ body {
     font-weight: bold;
     pointer-events: none;
     background-color: rgba(255, 255, 255, 0.8);
-    -webkit-transform: scale(0.66, 0.66);
-            transform: scale(0.66, 0.66);
-    transition: -webkit-transform 0.3s;
+    transform: scale(0.66, 0.66);
     transition: transform 0.3s;
-    transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 #wrap .t_board .info .point .board-gana {
@@ -7158,8 +7061,7 @@ body {
 }
 
 #wrap .t_board .info .point.zoomin {
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
+    transform: scale(1, 1);
 }
 
 #wrap .t_board .info .point.onani {
@@ -7173,8 +7075,7 @@ body {
 
 #wrap .t_board .info.ga .point {
     color: #ff00ff;
-    -webkit-transform-origin: 50% 100px;
-            transform-origin: 50% 100px;
+    transform-origin: 50% 100px;
 }
 
 #wrap .t_board .info.ga .point .board-gana {
@@ -7195,8 +7096,7 @@ body {
 
 #wrap .t_board .info.na .point {
     color: #00c8ff;
-    -webkit-transform-origin: 50% 100px;
-            transform-origin: 50% 100px;
+    transform-origin: 50% 100px;
 }
 
 #wrap .t_board .info.na .point .board-gana {
@@ -7281,8 +7181,7 @@ body {
 }
 
 #wrap .t_board .btn_back.down {
-    -webkit-transform: scale(1.1, 1.1);
-            transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
 }
 
 #wrap .fel_topad {
@@ -7291,8 +7190,7 @@ body {
     touch-action: none;
     bottom: 15px;
     right: 5px;
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
     touch-action: none;
     padding: 0px;
     border: none;
@@ -7322,8 +7220,7 @@ body {
 }
 
 #wrap .fel_topad.on {
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
 }
 
 #wrap .preview-box {
@@ -7524,8 +7421,7 @@ div, p {
 }
 
 .common_back.down {
-    -webkit-transform: scale(1.1, 1.1);
-            transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {

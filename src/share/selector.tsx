@@ -33,8 +33,8 @@ export class SelectorState {
 	get step() {return this.m_step;}
 	get isSecond() {return this.m_isSecond;}
 
-	private f_add: ((v: number) => boolean) & _.Cancelable;
-	private f_run: ((f: number) => void) & _.Cancelable;
+	private f_add: _.DebouncedFunc<(v: number) => boolean>;
+	private f_run: _.DebouncedFunc<(f: number) => void>;
 	constructor(min: number, max: number, step?: number, def?: number, isSecond?: boolean) {
 		if(isUndefined(step)) step = 1;
 		if(isUndefined(isSecond)) isSecond = false;

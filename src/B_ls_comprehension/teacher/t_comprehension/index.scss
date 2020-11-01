@@ -1,10 +1,10 @@
-@import '../../share/sendui.scss';
-@import '../../share/Progress_bar.scss';
-@import '../../share/CoverPopup.scss';
-@import '../script-container.scss';
-@import './t_video_box.scss';
+@import '../../../share/sendui.scss';
+@import '../../../share/Progress_bar.scss';
+@import '../../../share/CoverPopup.scss';
+@import '../script_container/index.scss';
+@import '../t_video_box/index.scss';
 
-@import '../../share/QuizMCBtn.scss';
+@import '../../../share/QuizMCBtn.scss';
 
 @mixin comprehension{
 	.t_comprehension {

@@ -27,7 +27,6 @@ export interface IQNAMsg extends IMsg {
 	etime: number;
 }
 
-
 export interface IRollMsg extends IMsg {
 	roll: 'A'|'B';
 }

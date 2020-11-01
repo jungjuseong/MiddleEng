@@ -1,11 +1,10 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { observable, action } from 'mobx';
+
 import { observer, Observer } from 'mobx-react';
 import { hot } from 'react-hot-loader';
 import * as _ from 'lodash';
 
-import { SVGBg, SVGEmbed, SVGAni } from '../share/svg_object';
+import { SVGEmbed, SVGAni } from '../share/svg_object';
 import VideoDirection from '../share/video-direction';
 import { 
 	sContext, 
@@ -18,8 +17,6 @@ import {
 } from './student/s_store';
 import { Loading } from '../share/loading';
 import SContent from './student/s_content';
-
-
 
 import './student.scss';
 import '../font.scss';

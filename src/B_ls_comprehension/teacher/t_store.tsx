@@ -7,10 +7,7 @@ import * as felsocket from '../../felsocket';
 import * as common from '../common';
 import { TeacherContextBase, VIEWDIV, IStateBase, IActionsBase } from '../../share/tcontext';
 import * as StrUtil from '@common/util/StrUtil';
-/*
-			this.state.numOfStudent = 0;
-			this.state.retCnt = 0;
-*/
+
 const enum SENDPROG {
 	READY,
 	SENDING,
@@ -26,7 +23,6 @@ interface IValArr {
 	txt: string;
 }
 
-
 interface IQuizResult {
 	numOfCorrect: number;
 	c1: number;
@@ -37,7 +33,6 @@ interface IQuizResult {
 	u3: string[];
 } 
 
-
 interface IStateCtx extends IStateBase {
 	hasPreview: boolean;
 	questionProg: SENDPROG;
@@ -46,6 +41,7 @@ interface IStateCtx extends IStateBase {
 	dialogueProg: SENDPROG;
 	scriptResult: number[];
 }
+
 interface IActionsCtx extends IActionsBase {
 	getData: () => common.IData;
 	getResult: () => IQuizResult[];
@@ -74,16 +70,11 @@ class TeacherContext extends TeacherContextBase {
 	public actions!: IActionsCtx;
 	private _data!: common.IData;
 
-
 	private _result: IQuizResult[] = [];
 	private _returnUsers: string[] = [];
 
 	private _returnUsersForQuiz: string[] = [];
-
-	// private _quizReturns: common.IReturn[] = [];
-	
 	private _qnaReturns: common.IQnaReturn[] = [];
-
 
 	constructor() {
 		super();
@@ -92,7 +83,6 @@ class TeacherContext extends TeacherContextBase {
 		this.state.scriptProg = SENDPROG.READY;
 		this.state.qnaProg = SENDPROG.READY;
 		this.state.dialogueProg = SENDPROG.READY;
-
 
 		this.actions.getData = () => this._data;
 		this.actions.getResult = () => this._result;
@@ -109,23 +99,10 @@ class TeacherContext extends TeacherContextBase {
 			this._returnUsersForQuiz = [];
 		};
 		
-		/*
-		this.actions.getQuizReturns = () => this._quizReturns;
-		this.actions.clearQuizReturns = () => {
-			
-			this._returnUsers = [];
-			for(let i = 0; i < this._data.quizs.length; i++) {
-				this._quizReturns[i] = {num: 0, users: []};
-			}
-			this.actions.setRetCnt(0);
-		};
-		*/
 		this.actions.getQnaReturns = () => this._qnaReturns;
-
 		this.actions.quizComplete = () => {
 			this.state.questionProg = SENDPROG.COMPLETE;
 		};
-
 		this.actions.clearQnaReturns = () => {
 			
 			this._returnUsers = [];
@@ -135,9 +112,7 @@ class TeacherContext extends TeacherContextBase {
 			this.actions.setRetCnt(0);
 		};
 
-		this.actions.init = () => {
-			// console.log('init');
-			
+		this.actions.init = () => {			
 			this.state.scriptProg = SENDPROG.READY;
 			this.state.qnaProg = SENDPROG.READY;
 			this.state.dialogueProg = SENDPROG.READY;
@@ -150,17 +125,11 @@ class TeacherContext extends TeacherContextBase {
 					this._result[i] = {numOfCorrect: 0, c1: 0, u1: [], c2: 0, u2: [], c3: 0, u3: [],};
 				}
 			}
-			/*
-			for(let i = 0; i < this._data.quizs.length; i++) {
-				this._quizReturns[i] = {num: 0, users: []};
-			}
-			*/
 			for(let i = 0; i < this._data.scripts.length; i++) {
 				this._qnaReturns[i] = {num: 0, users: []};
 			}
 		};
 	}
-	
 
 	@action protected _setViewDiv(viewDiv: VIEWDIV) {
 		if(this.state.viewDiv !== viewDiv) {
@@ -173,7 +142,6 @@ class TeacherContext extends TeacherContextBase {
 
 	private _uploadInclassReport = (qmsg: common.IQuizReturnMsg) => {
 		const quizs = this._data.quizs;
-
 		const userReports: IInClassReport[] = [];
 
 		quizs.forEach((quiz, idx) => {
@@ -319,6 +287,7 @@ class TeacherContext extends TeacherContextBase {
 		}
 
 	}
+	
 	public async setData(data: any) {
 		this._data = data as common.IData;
 		this.state.hasPreview = true;
@@ -344,9 +313,9 @@ class TeacherContext extends TeacherContextBase {
 				val_arr[idx].txt = txt;
 			
 			}
-		}// 사전 학습 관련 데이터 셋팅 을 위한 함수 (문장별 학생 전체 평균값 구하기) 
-		const q_arr = [70, 60, 80];
-		
+		}
+		// 사전 학습 관련 데이터 셋팅 을 위한 함수 (문장별 학생 전체 평균값 구하기) 
+		const q_arr = [70, 60, 80];		
 
 		const scripts = this._data.scripts;
 		const speakerA = this._data.speakerA.name;
@@ -372,7 +341,6 @@ class TeacherContext extends TeacherContextBase {
 
 		for(let i = 0; i < this._data.quizs.length; i++) {
 			const q = this._data.quizs[i];
-
 			const question = q.question.replace(/\<br\>/g, ' ');
 
 			q.app_question = (<>{question}</>);
@@ -430,7 +398,7 @@ class TeacherContext extends TeacherContextBase {
 						resultScript.push(script);
 					}
 				}
-				//console.log("resultScript",resultScript)
+
 				for(let i = 0; i < resultScript.length; i++) {
 					resultScript[i].app_preview = val_arr_meaning[i].avg;
 				}
@@ -459,8 +427,6 @@ class TeacherContext extends TeacherContextBase {
 	
 	}
 }
-
-
 
 
 const tContext = new TeacherContext();

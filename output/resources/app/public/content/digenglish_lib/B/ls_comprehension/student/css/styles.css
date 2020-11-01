@@ -63,17 +63,13 @@
 
 #wrap .video-direction > div.direction {
     position: absolute;
-    -webkit-transform: translateY(100px);
-            transform: translateY(100px);
-    transition: opacity 0.5s, -webkit-transform 0.5s ease-out;
+    transform: translateY(100px);
     transition: transform 0.5s ease-out, opacity 0.5s;
-    transition: transform 0.5s ease-out, opacity 0.5s, -webkit-transform 0.5s ease-out;
     opacity: 0;
 }
 
 #wrap .video-direction.on > div.direction {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    transform: translateY(0px);
     opacity: 1;
 }
 
@@ -236,8 +232,7 @@
 #wrap .s_content .s_question .question .q-item .quiz > div {
     position: relative;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     display: inline-block;
     white-space: normal;
     word-break: normal;
@@ -467,8 +462,7 @@
     touch-action: none;
     bottom: 20px;
     right: 20px;
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
     touch-action: none;
     padding: 0px;
     border: none;
@@ -501,8 +495,7 @@
 }
 
 #wrap .s_content .s_question .fel_toteacher.on {
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
 }
 
 #wrap .s_content .s_script .btn_QUESTION {
@@ -1135,8 +1128,7 @@
     touch-action: none;
     bottom: 20px;
     right: 20px;
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
     touch-action: none;
     padding: 0px;
     border: none;
@@ -1169,8 +1161,7 @@
 }
 
 #wrap .s_content .s_script .fel_toteacher.on {
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
 }
 
 #wrap .s_content .s_script.DIALOGUE .script_container {
@@ -1216,8 +1207,7 @@
     position: absolute;
     bottom: -142px;
     left: 50%;
-    -webkit-transform: translate(-50%, 0%);
-            transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 5;
     text-align: center;
@@ -1294,8 +1284,7 @@
     touch-action: none;
     bottom: 20px;
     right: 20px;
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
     touch-action: none;
     padding: 0px;
     border: none;
@@ -1325,8 +1314,7 @@
 }
 
 #wrap .fel_toteacher.on {
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
 }
 
 @font-face {
@@ -1505,8 +1493,7 @@ div, p {
 }
 
 .common_back.down {
-    -webkit-transform: scale(1.1, 1.1);
-            transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {

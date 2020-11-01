@@ -1,17 +1,124 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { hot } from 'react-hot-loader';
-import { observable, action, trace, } from 'mobx';
-import { observer, Observer } from 'mobx-react';
+import { observable } from 'mobx';
+import { observer } from 'mobx-react';
 
 import ReactResizeDetector from 'react-resize-detector';
-const SwiperComponent = require('react-id-swiper').default;
 
-import { App } from '../App';
-import { StandBar } from '../share/Progress_bar';
+import { App } from '../../../App';
+import { StandBar } from '../../../share/Progress_bar';
 
-import * as common from './common';
+import * as common from '../../common';
 import { ToggleBtn } from '@common/component/button';
+
+interface IRGBA {
+	r: number;
+	g: number;
+	b: number;
+	a: number;
+}
+
+function _RGBA(r: number, g: number, b: number, a: number) {
+	return {r, g, b, a};
+}
+
+function _rgbaToString(rgba: IRGBA) {
+	const {r, g, b, a} = rgba;
+	return `rgba(${r}, ${g}, ${b}, ${a})`;
+}
+
+function _drawBalloon(
+	ctx: CanvasRenderingContext2D, 
+	x: number, 
+	y: number, 
+	w: number, 
+	h: number, 
+	px: number,
+	py: number, 
+	r: number,
+	skin: IBallon,
+
+	min_gap: number = 10, 
+	r_gap: number = 0.2,
+) {
+	const { brdThick, brdColor, bgColor, shadowX, shadowY, shadowBlur, shadowColor} = skin;
+
+	// const hgap = Math.min(w - 2 * r, Math.max(min_gap, w * r_gap));
+	// const left = (px <= x + w / 2) ? (Math.max(x + r, px)) : (Math.min(x + w - r - hgap, px - hgap));
+	// const right = (px <= (x + w / 2)) ? (Math.max(x + r + hgap, px + hgap)) : (Math.min(x + w - r, px));
+	
+	let vgap = (x - px) * 1.8;
+
+
+	const bShadow = ((shadowX !== 0 || shadowY !== 0 || shadowBlur > 0) && shadowColor.a > 0);
+
+	let bgAlpha = bgColor.a;
+	if (bShadow && bgAlpha < 1) bgColor.a = 1;
+	
+	ctx.lineWidth = brdThick;
+	ctx.lineCap = 'butt';
+	ctx.lineJoin = 'miter';
+	ctx.strokeStyle = _rgbaToString(brdColor);
+	ctx.fillStyle = _rgbaToString(bgColor);
+
+	ctx.beginPath();
+	/* 우측 하단 라운드 */
+	ctx.moveTo(x + w, y + h - r);
+	if(r > 0) ctx.arc(x + w - r, y + h - r, r, 0, Math.PI / 2);
+	
+	/* 하단 선, 좌측 하단 라운드 */
+	ctx.lineTo(x + r, y + h);
+	if (r > 0) ctx.arc(x + r, y + h - r, r, Math.PI / 2, Math.PI);
+
+	/* 좌측 선(꼭지점), 좌측 상단 라운드 */
+	// console.log(h, py, vgap);
+	ctx.lineTo(x, py + vgap / 2);
+	ctx.lineTo(px, py);
+	ctx.lineTo(x, py - vgap / 2);
+	ctx.lineTo(x, y + r);
+	if (r > 0) ctx.arc(x + r, y + r, r, Math.PI , 3 * Math.PI / 2);
+
+	/* 상단 선, 우측 상단 라운드 */
+	ctx.lineTo(x + w - r, y);
+	if (r > 0) ctx.arc(x + w - r, y + r, r, 3 * Math.PI / 2 , 2 * Math.PI);
+	
+	ctx.closePath();
+	
+	if (bShadow) {
+		ctx.shadowColor = _rgbaToString(shadowColor);
+		ctx.shadowBlur = shadowBlur;
+		ctx.shadowOffsetX = shadowX;
+		ctx.shadowOffsetY = shadowY;
+		ctx.fill();
+
+		if (bgAlpha < 1) {
+			ctx.globalCompositeOperation = 'destination-out';
+			ctx.shadowColor = 'rgba(0, 0, 0, 0)';
+			ctx.shadowBlur = 0;
+			ctx.shadowOffsetX = 0;
+			ctx.shadowOffsetY = 0;
+			ctx.fill();
+			if (brdThick > 0) ctx.stroke();
+
+			ctx.globalCompositeOperation = 'source-over';
+			bgColor.a = bgAlpha;
+			ctx.fillStyle = _rgbaToString(bgColor);
+			
+			ctx.fill();
+			if (brdThick > 0) ctx.stroke();
+			
+		} else if(brdThick > 0) {
+			ctx.shadowColor = 'rgba(0, 0, 0, 0)';
+			ctx.shadowBlur = 0;
+			ctx.shadowOffsetX = 0;
+			ctx.shadowOffsetY = 0;
+			ctx.stroke();
+		}
+	} else {
+		ctx.fill();		
+		if (brdThick > 0) ctx.stroke();	
+	}
+	ctx.globalCompositeOperation = 'source-over';
+}
 
 interface IBallon {
 	readonly brdThick: number;
@@ -22,6 +129,7 @@ interface IBallon {
 	readonly shadowBlur: number;
 	readonly shadowColor: IRGBA;
 }
+
 const _brd_focus = _RGBA(255, 250, 23, 1);
 const _bg_normal = _RGBA(0, 0, 0, 0.2);
 const _brdThick = 2;
@@ -475,298 +583,4 @@ class ScriptBox  extends React.Component<IScriptBox> {
 	}
 }
 
-interface IRGBA {
-	r: number;
-	g: number;
-	b: number;
-	a: number;
-}
-function _RGBA(r: number, g: number, b: number, a: number) {
-	return {r, g, b, a};
-}
-function _rgbaToString(rgba: IRGBA) {
-	const {r, g, b, a} = rgba;
-	return `rgba(${r}, ${g}, ${b}, ${a})`;
-}
-
-function _drawBalloon(
-	ctx: CanvasRenderingContext2D, 
-	x: number, 
-	y: number, 
-	w: number, 
-	h: number, 
-	px: number,
-	py: number, 
-	r: number,
-	skin: IBallon,
-
-	min_gap: number = 10, 
-	r_gap: number = 0.2,
-) {
-	const { brdThick, brdColor, bgColor, shadowX, shadowY, shadowBlur, shadowColor} = skin;
-
-	// const hgap = Math.min(w - 2 * r, Math.max(min_gap, w * r_gap));
-	// const left = (px <= x + w / 2) ? (Math.max(x + r, px)) : (Math.min(x + w - r - hgap, px - hgap));
-	// const right = (px <= (x + w / 2)) ? (Math.max(x + r + hgap, px + hgap)) : (Math.min(x + w - r, px));
-	
-	let vgap = (x - px) * 1.8;
-
-
-	const bShadow = ((shadowX !== 0 || shadowY !== 0 || shadowBlur > 0) && shadowColor.a > 0);
-
-	let bgAlpha = bgColor.a;
-	if (bShadow && bgAlpha < 1) bgColor.a = 1;
-	
-	ctx.lineWidth = brdThick;
-	ctx.lineCap = 'butt';
-	ctx.lineJoin = 'miter';
-	ctx.strokeStyle = _rgbaToString(brdColor);
-	ctx.fillStyle = _rgbaToString(bgColor);
-
-	ctx.beginPath();
-	/* 우측 하단 라운드 */
-	ctx.moveTo(x + w, y + h - r);
-	if(r > 0) ctx.arc(x + w - r, y + h - r, r, 0, Math.PI / 2);
-	
-	/* 하단 선, 좌측 하단 라운드 */
-	ctx.lineTo(x + r, y + h);
-	if (r > 0) ctx.arc(x + r, y + h - r, r, Math.PI / 2, Math.PI);
-
-	/* 좌측 선(꼭지점), 좌측 상단 라운드 */
-	// console.log(h, py, vgap);
-	ctx.lineTo(x, py + vgap / 2);
-	ctx.lineTo(px, py);
-	ctx.lineTo(x, py - vgap / 2);
-	ctx.lineTo(x, y + r);
-	if (r > 0) ctx.arc(x + r, y + r, r, Math.PI , 3 * Math.PI / 2);
-
-	/* 상단 선, 우측 상단 라운드 */
-	ctx.lineTo(x + w - r, y);
-	if (r > 0) ctx.arc(x + w - r, y + r, r, 3 * Math.PI / 2 , 2 * Math.PI);
-	
-	ctx.closePath();
-	
-	if (bShadow) {
-		ctx.shadowColor = _rgbaToString(shadowColor);
-		ctx.shadowBlur = shadowBlur;
-		ctx.shadowOffsetX = shadowX;
-		ctx.shadowOffsetY = shadowY;
-		
-
-		ctx.fill();
-
-		if (bgAlpha < 1) {
-			ctx.globalCompositeOperation = 'destination-out';
-			ctx.shadowColor = 'rgba(0, 0, 0, 0)';
-			ctx.shadowBlur = 0;
-			ctx.shadowOffsetX = 0;
-			ctx.shadowOffsetY = 0;
-			ctx.fill();
-			if (brdThick > 0) ctx.stroke();
-
-			ctx.globalCompositeOperation = 'source-over';
-			bgColor.a = bgAlpha;
-			ctx.fillStyle = _rgbaToString(bgColor);
-			
-			ctx.fill();
-			if (brdThick > 0) ctx.stroke();
-			
-		} else if(brdThick > 0) {
-			ctx.shadowColor = 'rgba(0, 0, 0, 0)';
-			ctx.shadowBlur = 0;
-			ctx.shadowOffsetX = 0;
-			ctx.shadowOffsetY = 0;
-			ctx.stroke();
-		}
-	} else {
-		ctx.fill();		
-		if (brdThick > 0) ctx.stroke();	
-	}
-	ctx.globalCompositeOperation = 'source-over';
-}
-
-interface IScriptContainer {
-	data: common.IData;
-	focusIdx: number;
-	selected: number[];
-	qnaReturns: common.IQnaReturn[];
-	clickThumb: (idx: number, script: common.IScript) => void;
-	clickText?: (idx: number, script: common.IScript) => void;
-	qnaReturnsClick?: (idx: number) => void;
-	view: boolean;
-	roll: ''|'A'|'B';
-	shadowing: boolean;
-	noSwiping: boolean;
-	compDiv: 'COMPREHENSION'|'DIALOGUE';
-	viewClue: boolean;
-	viewScript: boolean;
-	viewTrans: boolean;
-	numRender?: number;
-}
-
-@observer
-class ScriptContainer extends React.Component<IScriptContainer> {
-	private m_soption: SwiperOptions = {
-		direction: 'vertical',
-		observer: true,
-		slidesPerView: 'auto',
-		freeMode: true,
-		mousewheel: true,			
-		noSwiping: false,
-		followFinger: true,
-		noSwipingClass: 'swiper-no-swiping',
-		scrollbar: {el: '.swiper-scrollbar',draggable: true, hide: false},		
-	};
-	private m_swiper!: Swiper;
-
-	private _refSwiper = (el: SwiperComponent) => {
-		if(this.m_swiper || !el) return;
-		this.m_swiper = el.swiper;
-
-	}
-	public scrollTo(fidx: number, dur?: number) {
-		fidx = fidx - 1;
-		if(fidx < 0) fidx = 0;
-		this.m_swiper.slideTo(fidx, dur);
-	}
-	public componentDidUpdate(prev: IScriptContainer) {
-		// console.log(this.props.selected);
-		if(!this.m_swiper) return;
-		
-		let bUpdate = false;
-		
-		if(prev.focusIdx !== this.props.focusIdx && this.props.focusIdx >= 0) {
-			let fidx = this.props.focusIdx - 1;
-			if(fidx < 0) fidx = 0;
-			this.m_swiper.slideTo(fidx);
-		}
-		if(this.props.view !== prev.view) {
-			bUpdate = true;
-			this.m_swiper.slideTo(0, 0);
-		}
-		if(this.props.compDiv !== prev.compDiv) {
-			bUpdate = true;
-			this.m_swiper.slideTo(0, 0);
-		}
-		if(this.props.roll !== prev.roll && this.props.roll !== '') {
-			bUpdate = true;
-			this.m_swiper.slideTo(0);
-		}
-		if(this.props.shadowing && !prev.shadowing) {
-			bUpdate = true;
-			this.m_swiper.slideTo(0);
-		}		
-		if(this.props.noSwiping !== prev.noSwiping) {
-			bUpdate = true;
-			this.m_soption.noSwiping = this.props.noSwiping;
-			this.m_swiper.params.noSwiping = this.props.noSwiping;
-			this.m_soption.followFinger = !this.props.noSwiping;
-			this.m_swiper.params.followFinger = !this.props.noSwiping;
-			
-			if(this.m_soption.scrollbar) this.m_soption.scrollbar.draggable = !this.props.noSwiping;
-			if(this.m_swiper.params.scrollbar) this.m_swiper.params.scrollbar.draggable = !this.props.noSwiping;
-			
-			if(this.props.noSwiping) {
-				this.m_soption.noSwipingClass = 'swiper-wrapper';
-				this.m_swiper.params.noSwipingClass = 'swiper-wrapper';
-			} else {
-				this.m_soption.noSwipingClass = 'swiper-no-swiping';
-				this.m_swiper.params.noSwipingClass = 'swiper-no-swiping';				
-			}
-		}
-		let tidx = -1;
-		if(this.props.viewTrans !== prev.viewTrans) {
-			if(!this.props.noSwiping) tidx = this.m_swiper.activeIndex;
-			bUpdate = true;
-		}
-		if(this.props.viewClue && !prev.viewClue) {
-            bUpdate = true;
-            if(tidx <= 0) {
-                const scripts = this.props.data.scripts;
-                for(let i = 0; i < scripts.length; i++) {
-                    if(scripts[i].qnums !== undefined && scripts[i].qnums!.length > 0) {
-                        if(scripts[i].qnums!.indexOf(1) >= 0) {
-                            if(i > 1) tidx = i - 1;
-                            else tidx = 0;
-                            break;
-                        } 
-                    }
-                }
-            }
-        }
-		// console.log(tidx, this.m_swiper.activeIndex);
-
-		if(bUpdate && this.props.view) {
-			this.m_swiper.update();
-			if(this.m_swiper.scrollbar) this.m_swiper.scrollbar.updateSize();
-			if(tidx >= 0) {
-				this.m_swiper.slideTo(tidx, 0);
-			}
-		}
-	}
-	public render() {
-		const { data, selected, qnaReturns } = this.props;
-		const thumbA = data.speakerA.image_s;
-		const thumbB = data.speakerB.image_s;
-		const thumbC = data.speakerC.image_s;
-		const thumbD = data.speakerD.image_s;
-		const thumbE = data.speakerE.image_s;
-
-		const arr: string[] = ['script_box'];
-
-		if(b_ls_comprehension_s) {
-			arr.push('student');
-			arr.push('DIALOGUE');
-		} else {
-			arr.push(this.props.compDiv);
-		}
-
-		
-		const boxClass = arr.join(' ');
-		return (
-			<>
-			<SwiperComponent {...this.m_soption} ref={this._refSwiper}>
-				{data.scripts.map((script, idx) => {
-					let thumb;
-					if (script.roll === 'E')  thumb = thumbE;
-					else if (script.roll === 'D')  thumb = thumbD;
-					else if (script.roll === 'C')  thumb = thumbC;
-					else if (script.roll === 'B')  thumb = thumbB;
-					else thumb = thumbA;
-					const sidx = selected.indexOf(idx); 
-
-					let numOfReturn = (idx < qnaReturns.length) ? qnaReturns[idx].num : 0;
-
-					return (
-						<div className={boxClass} key={'script_' + idx}>
-							<ScriptBox  
-								view={this.props.view}
-								script={script} 
-								image_s={thumb} 
-								idx={idx}
-								focus={idx === this.props.focusIdx}
-								selected={sidx >= 0}
-								numOfReturn={numOfReturn}
-								roll={script.roll}
-								sroll={this.props.roll}
-								shadowing={this.props.shadowing}
-								clickThumb={this.props.clickThumb}
-								clickText={this.props.clickText}
-								qnaReturnsClick={this.props.qnaReturnsClick}
-								compDiv={this.props.compDiv}
-								viewClue={this.props.viewClue}
-								viewScript={this.props.viewScript}
-								viewTrans={this.props.viewTrans}								
-							/>
-						</div>
-					);
-				})}
-			</SwiperComponent>
-			<div style={{display: 'none'}}>{this.props.numRender}</div>
-			</>
-		);
-	}
-}
-
-export default ScriptContainer;
-// export default ScriptContainer;
+export default ScriptBox;

@@ -364,17 +364,13 @@ body {
 
 #wrap .video-direction > div.direction {
     position: absolute;
-    -webkit-transform: translateY(100px);
-            transform: translateY(100px);
-    transition: opacity 0.5s, -webkit-transform 0.5s ease-out;
+    transform: translateY(100px);
     transition: transform 0.5s ease-out, opacity 0.5s;
-    transition: transform 0.5s ease-out, opacity 0.5s, -webkit-transform 0.5s ease-out;
     opacity: 0;
 }
 
 #wrap .video-direction.on > div.direction {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    transform: translateY(0px);
     opacity: 1;
 }
 
@@ -415,8 +411,7 @@ body {
     position: absolute;
     top: 48px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     z-index: 1;
 }
 
@@ -843,11 +838,8 @@ body {
     z-index: -1;
     pointer-events: none;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
     background-color: rgba(0, 0, 0, 0.6);
 }
 
@@ -855,22 +847,16 @@ body {
     pointer-events: unset;
     z-index: 10001;
     opacity: 1;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    transition: -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+    transform: scale(1, 1);
     transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
-    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2), -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
 }
 
 #wrap .t_compre .video_popup.closing {
     pointer-events: unset;
     z-index: 10001;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
 }
 
 #wrap .t_compre .video_popup.closed {
@@ -897,10 +883,6 @@ body {
 }
 
 #wrap .t_compre .video_popup > .wrapper .video_box:-webkit-full-screen {
-    border-radius: 0;
-}
-
-#wrap .t_compre .video_popup > .wrapper .video_box:-moz-full-screen {
     border-radius: 0;
 }
 
@@ -933,8 +915,7 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     touch-action: none;
     padding: 0px;
     border: none;
@@ -1068,31 +1049,25 @@ body {
 
 @-webkit-keyframes on_ani {
     0% {
-        -webkit-transform: translateX(0%);
-                transform: translateX(0%);
+        transform: translateX(0%);
     }
     50% {
-        -webkit-transform: translateX(-50%);
-                transform: translateX(-50%);
+        transform: translateX(-50%);
     }
     100% {
-        -webkit-transform: translateX(0%);
-                transform: translateX(0%);
+        transform: translateX(0%);
     }
 }
 
 @keyframes on_ani {
     0% {
-        -webkit-transform: translateX(0%);
-                transform: translateX(0%);
+        transform: translateX(0%);
     }
     50% {
-        -webkit-transform: translateX(-50%);
-                transform: translateX(-50%);
+        transform: translateX(-50%);
     }
     100% {
-        -webkit-transform: translateX(0%);
-                transform: translateX(0%);
+        transform: translateX(0%);
     }
 }
 
@@ -1237,17 +1212,13 @@ body {
     height: auto;
     border-radius: 50%;
     background-color: #5D2F8D;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
+    transform: scale(1, 1);
     opacity: 1;
 }
 
 #wrap .t_compre .video_popup > .wrapper .video_box .video .countdown2 .countdown.hide {
-    transition: opacity 0.3s, -webkit-transform 0.3s;
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
+    transform: scale(0.2, 0.2);
     opacity: 0.1;
 }
 
@@ -1508,8 +1479,7 @@ body {
     left: 0%;
     top: 50%;
     z-index: 2;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     touch-action: none;
     padding: 0px;
     border: none;
@@ -1547,8 +1517,7 @@ body {
 #wrap .t_compre .video_popup > .wrapper .video_box .control .control_top > div .prog_box .prog_bg > .checkup {
     position: absolute;
     top: -3px;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     width: 15px;
     height: 15px;
     background-color: #162BCC;
@@ -1879,15 +1848,6 @@ body {
     border-radius: 0;
 }
 
-#wrap .t_compre .video_popup > .wrapper:-moz-full-screen .video_box {
-    position: absolute;
-    left: 0px;
-    width: 100%;
-    top: 0px;
-    height: 100%;
-    border-radius: 0;
-}
-
 #wrap .t_compre .video_popup > .wrapper:-ms-fullscreen .video_box {
     position: absolute;
     left: 0px;
@@ -1910,10 +1870,6 @@ body {
     font-size: 40px;
 }
 
-#wrap .t_compre .video_popup > .wrapper:-moz-full-screen .video_box > .video > .caption_box {
-    font-size: 40px;
-}
-
 #wrap .t_compre .video_popup > .wrapper:-ms-fullscreen .video_box > .video > .caption_box {
     font-size: 40px;
 }
@@ -1926,10 +1882,6 @@ body {
     min-height: 58px;
 }
 
-#wrap .t_compre .video_popup > .wrapper:-moz-full-screen .video_box > .video > .caption_box > div {
-    min-height: 58px;
-}
-
 #wrap .t_compre .video_popup > .wrapper:-ms-fullscreen .video_box > .video > .caption_box > div {
     min-height: 58px;
 }
@@ -1939,42 +1891,6 @@ body {
 }
 
 #wrap .t_compre .video_popup > .wrapper:-webkit-full-screen .video_box > .control {
-    /*
-						.control_top{
-							margin-top: 20px; 
-							padding:0 30px;
-							&>div{
-								.prog_box {
-									$PH: 10px;
-									
-									.prog_bg{ 
-										height: $PH;
-										border-radius: $PH/2;
-										.prog_bar {
-											height: $PH;
-											border-radius: $PH/2;
-										}
-										.prog_btn {
-											@include btn_down_dis(
-												resolve('digenglish_lib/images/mplayer/btn_play_bar_L.png'),
-												resolve('digenglish_lib/images/mplayer/btn_play_bar_L_down.png'),
-												resolve('digenglish_lib/images/mplayer/btn_play_bar_L.png'),
-												width('digenglish_lib/images/mplayer/btn_play_bar_L.png'),
-												height('digenglish_lib/images/mplayer/btn_play_bar_L.png')
-											);
-										}
-									}
-									
-								}
-								
-		
-								.video_time{ top: -15px; right: 4px;}	
-							}
-						}
-						*/
-}
-
-#wrap .t_compre .video_popup > .wrapper:-moz-full-screen .video_box > .control {
     /*
 						.control_top{
 							margin-top: 20px; 
@@ -2084,12 +2000,6 @@ body {
 
 #wrap .t_compre .video_popup > .wrapper:-webkit-full-screen .video_box > .control .control_center {
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-}
-
-#wrap .t_compre .video_popup > .wrapper:-moz-full-screen .video_box > .control .control_center {
-    left: 50%;
     transform: translateX(-50%);
 }
 
@@ -2100,15 +2010,10 @@ body {
 
 #wrap .t_compre .video_popup > .wrapper:fullscreen .video_box > .control .control_center {
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 #wrap .t_compre .video_popup > .wrapper:-webkit-full-screen .video_box > .control .btn_fullscreen {
-    display: none;
-}
-
-#wrap .t_compre .video_popup > .wrapper:-moz-full-screen .video_box > .control .btn_fullscreen {
     display: none;
 }
 
@@ -2124,10 +2029,6 @@ body {
     display: unset;
 }
 
-#wrap .t_compre .video_popup > .wrapper:-moz-full-screen .video_box > .control .btn_fullscreen_off {
-    display: unset;
-}
-
 #wrap .t_compre .video_popup > .wrapper:-ms-fullscreen .video_box > .control .btn_fullscreen_off {
     display: unset;
 }
@@ -2137,10 +2038,6 @@ body {
 }
 
 #wrap .t_compre .video_popup > .wrapper:-webkit-full-screen .video_box > .control .control_right {
-    right: 17px;
-}
-
-#wrap .t_compre .video_popup > .wrapper:-moz-full-screen .video_box > .control .control_right {
     right: 17px;
 }
 
@@ -2193,8 +2090,7 @@ body {
 }
 
 #wrap .t_compre .video_popup .btn_back.down {
-    -webkit-transform: scale(1.1, 1.1);
-            transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
 }
 
 #wrap .t_compre .v_popup {
@@ -2206,11 +2102,8 @@ body {
     z-index: -1;
     pointer-events: none;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
     background-color: rgba(0, 0, 0, 0.6);
 }
 
@@ -2218,22 +2111,16 @@ body {
     pointer-events: unset;
     z-index: 10001;
     opacity: 1;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    transition: -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+    transform: scale(1, 1);
     transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
-    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2), -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
 }
 
 #wrap .t_compre .v_popup.closing {
     pointer-events: unset;
     z-index: 10001;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
 }
 
 #wrap .t_compre .v_popup.closed {
@@ -2244,8 +2131,7 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     width: 790px;
     height: auto;
     background-color: #fff;
@@ -2564,8 +2450,7 @@ body {
     touch-action: none;
     bottom: 15px;
     right: 5px;
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
     touch-action: none;
     padding: 0px;
     border: none;
@@ -2598,8 +2483,7 @@ body {
 }
 
 #wrap .t_compre .v_popup > div > .fel_topad.on {
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
 }
 
 #wrap .t_compre .t-storybook {
@@ -2611,11 +2495,8 @@ body {
     z-index: -1;
     pointer-events: none;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
     background-color: rgba(0, 0, 0, 0.8);
     text-align: center;
 }
@@ -2624,22 +2505,16 @@ body {
     pointer-events: unset;
     z-index: 9999;
     opacity: 1;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    transition: -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+    transform: scale(1, 1);
     transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
-    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2), -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
 }
 
 #wrap .t_compre .t-storybook.closing {
     pointer-events: unset;
     z-index: 9999;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
 }
 
 #wrap .t_compre .t-storybook.closed {
@@ -2654,8 +2529,7 @@ body {
     height: 100%;
     white-space: nowrap;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     transition: left 0.5s ease-in-out;
 }
 
@@ -2685,8 +2559,7 @@ body {
 
 #wrap .t_compre .t-storybook > .page-wrapper > div > .page > img {
     top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     position: relative;
     border-radius: 11px;
 }
@@ -2732,8 +2605,7 @@ body {
 }
 
 #wrap .t_compre .t-storybook .btn_back.down {
-    -webkit-transform: scale(1.1, 1.1);
-            transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
 }
 
 #wrap .t_compre.COMPREHENSION {
@@ -3106,16 +2978,12 @@ body {
 #wrap .t_compre.COMPREHENSION .WARMUP > .warmup.image .conversation .swiper-container .msg-item {
     position: relative;
     margin: 8px 20px;
-    -webkit-transform: scale(1, 0);
-            transform: scale(1, 0);
-    transition: -webkit-transform 0.5s;
+    transform: scale(1, 0);
     transition: transform 0.5s;
-    transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 #wrap .t_compre.COMPREHENSION .WARMUP > .warmup.image .conversation .swiper-container .msg-item.on {
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
+    transform: scale(1, 1);
 }
 
 #wrap .t_compre.COMPREHENSION .WARMUP > .warmup.image .conversation .swiper-container .msg-item > img {
@@ -3327,16 +3195,12 @@ body {
 #wrap .t_compre.COMPREHENSION .WARMUP > .warmup.video .conversation .swiper-container .msg-item {
     position: relative;
     margin: 8px 0px;
-    -webkit-transform: scale(1, 0);
-            transform: scale(1, 0);
-    transition: -webkit-transform 0.5s;
+    transform: scale(1, 0);
     transition: transform 0.5s;
-    transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 #wrap .t_compre.COMPREHENSION .WARMUP > .warmup.video .conversation .swiper-container .msg-item.on {
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
+    transform: scale(1, 1);
 }
 
 #wrap .t_compre.COMPREHENSION .WARMUP > .warmup.video .conversation .swiper-container .msg-item > img {
@@ -3520,16 +3384,13 @@ body {
 
 @keyframes on_ani {
     0% {
-        -webkit-transform: translateX(0%);
-                transform: translateX(0%);
+        transform: translateX(0%);
     }
     50% {
-        -webkit-transform: translateX(-50%);
-                transform: translateX(-50%);
+        transform: translateX(-50%);
     }
     100% {
-        -webkit-transform: translateX(0%);
-                transform: translateX(0%);
+        transform: translateX(0%);
     }
 }
 
@@ -3674,17 +3535,13 @@ body {
     height: auto;
     border-radius: 50%;
     background-color: #5D2F8D;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
+    transform: scale(1, 1);
     opacity: 1;
 }
 
 #wrap .t_compre.COMPREHENSION .WARMUP > .video_container .video_box .video .countdown2 .countdown.hide {
-    transition: opacity 0.3s, -webkit-transform 0.3s;
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
+    transform: scale(0.2, 0.2);
     opacity: 0.1;
 }
 
@@ -3781,8 +3638,7 @@ body {
     left: 0%;
     top: 50%;
     z-index: 2;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     touch-action: none;
     padding: 0px;
     border: none;
@@ -4160,10 +4016,6 @@ body {
     border-radius: 0;
 }
 
-#wrap .t_compre.COMPREHENSION .WARMUP > .video_container .video_box:-moz-full-screen {
-    border-radius: 0;
-}
-
 #wrap .t_compre.COMPREHENSION .WARMUP > .video_container .video_box:-ms-fullscreen {
     border-radius: 0;
 }
@@ -4173,10 +4025,6 @@ body {
 }
 
 #wrap .t_compre.COMPREHENSION .WARMUP > .video_container .video_box:-webkit-full-screen .video {
-    bottom: 80px;
-}
-
-#wrap .t_compre.COMPREHENSION .WARMUP > .video_container .video_box:-moz-full-screen .video {
     bottom: 80px;
 }
 
@@ -4192,10 +4040,6 @@ body {
     font-size: 40px;
 }
 
-#wrap .t_compre.COMPREHENSION .WARMUP > .video_container .video_box:-moz-full-screen .video > .caption_box {
-    font-size: 40px;
-}
-
 #wrap .t_compre.COMPREHENSION .WARMUP > .video_container .video_box:-ms-fullscreen .video > .caption_box {
     font-size: 40px;
 }
@@ -4205,10 +4049,6 @@ body {
 }
 
 #wrap .t_compre.COMPREHENSION .WARMUP > .video_container .video_box:-webkit-full-screen .video > .caption_box > div {
-    min-height: 58px;
-}
-
-#wrap .t_compre.COMPREHENSION .WARMUP > .video_container .video_box:-moz-full-screen .video > .caption_box > div {
     min-height: 58px;
 }
 
@@ -4224,10 +4064,6 @@ body {
     height: 80px;
 }
 
-#wrap .t_compre.COMPREHENSION .WARMUP > .video_container .video_box:-moz-full-screen .control {
-    height: 80px;
-}
-
 #wrap .t_compre.COMPREHENSION .WARMUP > .video_container .video_box:-ms-fullscreen .control {
     height: 80px;
 }
@@ -4237,11 +4073,6 @@ body {
 }
 
 #wrap .t_compre.COMPREHENSION .WARMUP > .video_container .video_box:-webkit-full-screen .control .control_top {
-    margin-top: 15px;
-    margin-bottom: 0px;
-}
-
-#wrap .t_compre.COMPREHENSION .WARMUP > .video_container .video_box:-moz-full-screen .control .control_top {
     margin-top: 15px;
     margin-bottom: 0px;
 }
@@ -4260,10 +4091,6 @@ body {
     bottom: 8px;
 }
 
-#wrap .t_compre.COMPREHENSION .WARMUP > .video_container .video_box:-moz-full-screen .control .control_left {
-    bottom: 8px;
-}
-
 #wrap .t_compre.COMPREHENSION .WARMUP > .video_container .video_box:-ms-fullscreen .control .control_left {
     bottom: 8px;
 }
@@ -4273,11 +4100,6 @@ body {
 }
 
 #wrap .t_compre.COMPREHENSION .WARMUP > .video_container .video_box:-webkit-full-screen .control .control_right {
-    right: 10px;
-    bottom: 8px;
-}
-
-#wrap .t_compre.COMPREHENSION .WARMUP > .video_container .video_box:-moz-full-screen .control .control_right {
     right: 10px;
     bottom: 8px;
 }
@@ -4296,10 +4118,6 @@ body {
     display: none;
 }
 
-#wrap .t_compre.COMPREHENSION .WARMUP > .video_container .video_box:-moz-full-screen .control .control_right .btn_fullscreen {
-    display: none;
-}
-
 #wrap .t_compre.COMPREHENSION .WARMUP > .video_container .video_box:-ms-fullscreen .control .control_right .btn_fullscreen {
     display: none;
 }
@@ -4309,10 +4127,6 @@ body {
 }
 
 #wrap .t_compre.COMPREHENSION .WARMUP > .video_container .video_box:-webkit-full-screen .control .control_right .btn_fullscreen_off {
-    display: inline-block;
-}
-
-#wrap .t_compre.COMPREHENSION .WARMUP > .video_container .video_box:-moz-full-screen .control .control_right .btn_fullscreen_off {
     display: inline-block;
 }
 
@@ -4636,17 +4450,13 @@ body {
     height: auto;
     border-radius: 50%;
     background-color: #5D2F8D;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
+    transform: scale(1, 1);
     opacity: 1;
 }
 
 #wrap .t_compre.COMPREHENSION .PASSAGE .script_box .countdown2 .countdown.hide {
-    transition: opacity 0.3s, -webkit-transform 0.3s;
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
+    transform: scale(0.2, 0.2);
     opacity: 0.1;
 }
 
@@ -4832,11 +4642,8 @@ body {
     z-index: -1;
     pointer-events: none;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/bg_read_popup.png");
     width: 1280px;
     height: 800px;
@@ -4846,22 +4653,16 @@ body {
     pointer-events: unset;
     z-index: 10001;
     opacity: 1;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    transition: -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+    transform: scale(1, 1);
     transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
-    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2), -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
 }
 
 #wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup.closing {
     pointer-events: unset;
     z-index: 10001;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
 }
 
 #wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup.closed {
@@ -4922,8 +4723,7 @@ body {
     touch-action: none;
     bottom: 15px;
     right: 5px;
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
     touch-action: none;
     padding: 0px;
     border: none;
@@ -4956,8 +4756,7 @@ body {
 }
 
 #wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup > .fel_topad.on {
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
 }
 
 #wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup .popup_content {
@@ -5055,11 +4854,8 @@ body {
     z-index: -1;
     pointer-events: none;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
     background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -5067,22 +4863,16 @@ body {
     pointer-events: unset;
     z-index: 10001;
     opacity: 1;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    transition: -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+    transform: scale(1, 1);
     transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
-    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2), -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
 }
 
 #wrap .t_compre.COMPREHENSION .PASSAGE .img_passage.closing {
     pointer-events: unset;
     z-index: 10001;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
 }
 
 #wrap .t_compre.COMPREHENSION .PASSAGE .img_passage.closed {
@@ -5146,11 +4936,8 @@ body {
     z-index: -1;
     pointer-events: none;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/bg_trans_popup.png");
     width: 1280px;
     height: 800px;
@@ -5160,22 +4947,16 @@ body {
     pointer-events: unset;
     z-index: 10001;
     opacity: 1;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    transition: -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+    transform: scale(1, 1);
     transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
-    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2), -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
 }
 
 #wrap .t_compre.COMPREHENSION .PASSAGE .trans_popup.closing {
     pointer-events: unset;
     z-index: 10001;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
 }
 
 #wrap .t_compre.COMPREHENSION .PASSAGE .trans_popup.closed {
@@ -5284,8 +5065,7 @@ body {
     touch-action: none;
     bottom: 15px;
     right: 5px;
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
     touch-action: none;
     padding: 0px;
     border: none;
@@ -5315,8 +5095,7 @@ body {
 }
 
 #wrap .t_compre.COMPREHENSION .PASSAGE > .fel_topad.on {
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
 }
 
 #wrap .t_compre.COMPREHENSION .QUESTION {
@@ -5550,8 +5329,7 @@ body {
     display: inline-block;
     position: relative;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     line-height: 120%;
 }
 
@@ -5749,11 +5527,8 @@ body {
     z-index: -1;
     pointer-events: none;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/bg_trans_popup.png");
     width: 1280px;
     height: 800px;
@@ -5763,22 +5538,16 @@ body {
     pointer-events: unset;
     z-index: 10001;
     opacity: 1;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    transition: -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+    transform: scale(1, 1);
     transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
-    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2), -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
 }
 
 #wrap .t_compre.COMPREHENSION .QUESTION .clue_popup.closing {
     pointer-events: unset;
     z-index: 10001;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
 }
 
 #wrap .t_compre.COMPREHENSION .QUESTION .clue_popup.closed {
@@ -6826,15 +6595,13 @@ body {
 #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content-box > div .content .select-box > .options-box.bottom {
     width: 100%;
     bottom: 2px;
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
+    transform: translateY(100%);
 }
 
 #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content-box > div .content .select-box > .options-box.top {
     width: 100%;
     top: 2px;
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
+    transform: translateY(-100%);
 }
 
 #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content-box > div .content .select-box > .options-box.on {
@@ -7023,11 +6790,8 @@ body {
     z-index: -1;
     pointer-events: none;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
     background-color: rgba(0, 0, 0, 0.65);
 }
 
@@ -7035,22 +6799,16 @@ body {
     pointer-events: unset;
     z-index: 10001;
     opacity: 1;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    transition: -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+    transform: scale(1, 1);
     transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
-    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2), -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
 }
 
 #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup.closing {
     pointer-events: unset;
     z-index: 10001;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
 }
 
 #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup.closed {
@@ -7204,15 +6962,13 @@ body {
 #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .options-box.bottom {
     width: 100%;
     bottom: 2px;
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
+    transform: translateY(100%);
 }
 
 #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .options-box.top {
     width: 100%;
     top: 2px;
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
+    transform: translateY(-100%);
 }
 
 #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .options-box.on {
@@ -7465,11 +7221,8 @@ body {
     z-index: -1;
     pointer-events: none;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/bg_read_popup.png");
     width: 1280px;
     height: 800px;
@@ -7479,22 +7232,16 @@ body {
     pointer-events: unset;
     z-index: 10001;
     opacity: 1;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    transition: -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+    transform: scale(1, 1);
     transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
-    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2), -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
 }
 
 #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup.closing {
     pointer-events: unset;
     z-index: 10001;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
 }
 
 #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup.closed {
@@ -7637,8 +7384,7 @@ body {
     touch-action: none;
     bottom: 15px;
     right: 5px;
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
     touch-action: none;
     padding: 0px;
     border: none;
@@ -7650,8 +7396,7 @@ body {
     height: 75px;
     cursor: pointer;
     pointer-events: unset;
-    -webkit-transform: translateY(0%);
-            transform: translateY(0%);
+    transform: translateY(0%);
     position: absolute;
     bottom: 180px;
     right: 253px;
@@ -7673,8 +7418,7 @@ body {
 }
 
 #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup > .fel_topad.on {
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
 }
 
 #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool {
@@ -7737,8 +7481,7 @@ body {
     background-image: url("/content/digenglish_lib/images/penui/pen_box.png");
     left: 50%;
     width: 622px;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     bottom: -102px;
     height: 102px;
     z-index: 10;
@@ -8195,8 +7938,7 @@ body {
 }
 
 #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .btn_back.down {
-    -webkit-transform: scale(1.1, 1.1);
-            transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
 }
 
 #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .keyboard {
@@ -8219,8 +7961,7 @@ body {
     border-color: #5d80b4;
     border-radius: 5px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     transition: height 0.3s;
 }
 
@@ -8314,15 +8055,12 @@ body {
 }
 
 #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .keyboard .btn_back.down {
-    -webkit-transform: scale(1.1, 1.1);
-            transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
 }
 
 #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .keyboard .keyboard-box {
-    -webkit-transform: scale(0.65, 0.65);
-            transform: scale(0.65, 0.65);
-    -webkit-transform-origin: 50% 100%;
-            transform-origin: 50% 100%;
+    transform: scale(0.65, 0.65);
+    transform-origin: 50% 100%;
 }
 
 #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .keyboard .keyboard-box.off {
@@ -8439,11 +8177,8 @@ body {
     z-index: -1;
     pointer-events: none;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
     background-color: rgba(0, 0, 0, 0.9);
     padding-top: 60px;
 }
@@ -8452,22 +8187,16 @@ body {
     pointer-events: unset;
     z-index: 10001;
     opacity: 1;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    transition: -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+    transform: scale(1, 1);
     transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
-    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2), -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
 }
 
 #wrap .t_compre.SUMMARIZING .SUMMARY .lets_talk.closing {
     pointer-events: unset;
     z-index: 10001;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
 }
 
 #wrap .t_compre.SUMMARIZING .SUMMARY .lets_talk.closed {
@@ -8729,8 +8458,7 @@ body {
     position: relative;
     display: inline-block;
     top: 80px;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 #wrap .t_compre.SUMMARIZING .SUMMARY .lets_talk .pop_bg .popbox .sentence_box > div .btn_audio {
@@ -9133,8 +8861,7 @@ body {
     position: relative;
     top: 0px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 #wrap .t_compre.SUMMARIZING .SUMMARY > .swiper-container .swiper-slide {
@@ -9157,8 +8884,7 @@ body {
     touch-action: none;
     bottom: 15px;
     right: 5px;
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
     touch-action: none;
     padding: 0px;
     border: none;
@@ -9191,8 +8917,7 @@ body {
 }
 
 #wrap .t_compre.SUMMARIZING .SUMMARY .fel_topad.on {
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
 }
 
 #wrap .t_compre.SUMMARIZING .SUMMARY .img_popup {
@@ -9204,11 +8929,8 @@ body {
     z-index: -1;
     pointer-events: none;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
     background-color: rgba(0, 0, 0, 0.8);
     text-align: center;
 }
@@ -9217,22 +8939,16 @@ body {
     pointer-events: unset;
     z-index: 10001;
     opacity: 1;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    transition: -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+    transform: scale(1, 1);
     transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
-    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2), -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
 }
 
 #wrap .t_compre.SUMMARIZING .SUMMARY .img_popup.closing {
     pointer-events: unset;
     z-index: 10001;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
 }
 
 #wrap .t_compre.SUMMARIZING .SUMMARY .img_popup.closed {
@@ -9243,8 +8959,7 @@ body {
     display: inline-block;
     position: relative;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     width: auto;
     height: auto;
 }
@@ -9301,11 +9016,8 @@ body {
     z-index: -1;
     pointer-events: none;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
     background-color: rgba(0, 0, 0, 0.8);
     text-align: center;
 }
@@ -9314,22 +9026,16 @@ body {
     pointer-events: unset;
     z-index: 10001;
     opacity: 1;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    transition: -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+    transform: scale(1, 1);
     transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
-    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2), -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
 }
 
 #wrap .t_compre .img_popup.closing {
     pointer-events: unset;
     z-index: 10001;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
 }
 
 #wrap .t_compre .img_popup.closed {
@@ -9340,8 +9046,7 @@ body {
     display: inline-block;
     position: relative;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     width: auto;
     height: auto;
 }
@@ -9395,8 +9100,7 @@ body {
     touch-action: none;
     bottom: 15px;
     right: 5px;
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
     touch-action: none;
     padding: 0px;
     border: none;
@@ -9428,8 +9132,7 @@ body {
 }
 
 #wrap .fel_topad.on {
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
 }
 
 .keyboard-box {
@@ -10136,8 +9839,7 @@ div, p {
 }
 
 .common_back.down {
-    -webkit-transform: scale(1.1, 1.1);
-            transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {

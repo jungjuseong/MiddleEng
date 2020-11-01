@@ -24,7 +24,7 @@ interface ILikeBtn {
 export class LikeBtn extends React.Component<ILikeBtn> {
 	public render() {
 		return (
-			<BtnSwitch className={this.props.className} {...this.props}/>
+			<BtnSwitch {...this.props}/>
 		);
 	}
 

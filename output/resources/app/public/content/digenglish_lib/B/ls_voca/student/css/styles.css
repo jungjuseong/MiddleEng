@@ -666,17 +666,13 @@
 
 #wrap .video-direction > div.direction {
     position: absolute;
-    -webkit-transform: translateY(100px);
-            transform: translateY(100px);
-    transition: opacity 0.5s, -webkit-transform 0.5s ease-out;
+    transform: translateY(100px);
     transition: transform 0.5s ease-out, opacity 0.5s;
-    transition: transform 0.5s ease-out, opacity 0.5s, -webkit-transform 0.5s ease-out;
     opacity: 0;
 }
 
 #wrap .video-direction.on > div.direction {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    transform: translateY(0px);
     opacity: 1;
 }
 
@@ -1095,8 +1091,7 @@
     position: absolute;
     top: 172px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     /* 위치조정 2018-12-26*/
 }
 
@@ -1648,8 +1643,7 @@
     position: absolute;
     top: 142px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 #wrap .s_quiz .quiz_meaning > .word {
@@ -1659,8 +1653,7 @@
     position: absolute;
     top: 220px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 #wrap .s_quiz .quiz_meaning > .mean {
@@ -1915,8 +1908,7 @@
     position: absolute;
     top: 172px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 #wrap .s_quiz .quiz_spelling > .spelling {
@@ -2261,8 +2253,7 @@
     height: auto;
     padding: 0px;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     line-height: 120%;
     vertical-align: bottom;
     white-space: normal;
@@ -2597,8 +2588,7 @@
 }
 
 #wrap .s_quiz .quiz_usage .btn_back.down {
-    -webkit-transform: scale(1.1, 1.1);
-            transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
 }
 
 #wrap .s_voca_typing {
@@ -2800,11 +2790,8 @@
     width: 100%;
     z-index: -1;
     opacity: 0;
-    -webkit-transform: scale(0.2, 0.2);
-            transform: scale(0.2, 0.2);
-    transition: opacity 0.3s, -webkit-transform 0.3s;
+    transform: scale(0.2, 0.2);
     transition: transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
 }
 
 #wrap .s_voca_typing .icon_answer.correct {
@@ -2823,11 +2810,8 @@
     pointer-events: unset;
     z-index: 10;
     opacity: 1;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    transition: -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
+    transform: scale(1, 1);
     transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
-    transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2), -webkit-transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
 }
 
 #wrap .s-speak-record {
@@ -2862,8 +2846,7 @@
     position: absolute;
     top: 120px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     transition: opacity 0.3s;
     padding-right: 25px;
     padding-left: 23px;
@@ -2872,8 +2855,7 @@
 #wrap .s-speak-record > .content-box > .entry_box > .speak_entry {
     position: relative;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     display: inline-block;
     width: 100%;
     height: auto;
@@ -2892,16 +2874,14 @@
     position: absolute;
     top: 380px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     transition: opacity 0.3s;
 }
 
 #wrap .s-speak-record > .content-box > .sentence_box > .speak_sentence {
     position: absolute;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     right: 30px;
     left: 30px;
     font-size: 55px;
@@ -3275,8 +3255,7 @@
     touch-action: none;
     bottom: 20px;
     right: 20px;
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.8));
     touch-action: none;
     padding: 0px;
     border: none;
@@ -3306,8 +3285,7 @@
 }
 
 #wrap .fel_toteacher.on {
-    -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
-            filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
 }
 
 @font-face {
@@ -3486,8 +3464,7 @@ div, p {
 }
 
 .common_back.down {
-    -webkit-transform: scale(1.1, 1.1);
-            transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {

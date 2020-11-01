@@ -1,7 +1,6 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { observable, action } from 'mobx';
-import { observer, inject, Observer } from 'mobx-react';
+
+import { observer, Observer } from 'mobx-react';
 import { hot } from 'react-hot-loader/root';
 import * as _ from 'lodash';
 

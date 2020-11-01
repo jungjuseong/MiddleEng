@@ -13,7 +13,6 @@ function _initStudent<T extends IStudent|null>(student: T): T {
 	return student;
 }
 
-
 export interface IMain {
 	start: () => void;
 	receive: (data: ISocketData) => void;
@@ -61,11 +60,9 @@ export class App {
 	private static _students_inited: string[] = [];
 	static get students() {return App._students; }
 	
-	
 	// Pad 에서 사용
 	private static _student: IStudent|null = null;
 	static get student() {return App._student; }
-	
 	
 	private static _lang = 'ko';
 	static get lang() {return App._lang; }
@@ -89,8 +86,6 @@ export class App {
 
 	private static _start_idx = -1;
 	public static isStarted = false;
-
-
 
 	public static pub_load(students: IStudent[]|null , student: IStudent|null, book: string, lesson: string, nextBook: boolean, prevBook: boolean) {
 		App._lesson = lesson;
