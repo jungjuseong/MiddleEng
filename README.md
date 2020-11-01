@@ -29,5 +29,26 @@ yarn run ts-node ./add_project.ts -prefix {prefix} -project {project}
 	{PREFIX_project}/teacher/index.html
 
 
-
 	
+## install
+
+- yarn install
+
+- yarn upgrade
+
+## build
+
+- yarn run b_ls_comprehension_s
+
+- yarn run b_ls_comprehension_t
+
+- yarn run serve
+
+## browser
+
+http://localhost:8082/content/B_ls_comprehension/teacher.html?kdmtdvlp=y
+
+
+
+
+
