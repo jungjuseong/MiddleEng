@@ -4,10 +4,10 @@ import { observer } from 'mobx-react';
 
 import ReactResizeDetector from 'react-resize-detector';
 
-import { App } from '../../../App';
-import { StandBar } from '../../../share/Progress_bar';
+import { App } from '../../App';
+import { StandBar } from '../../share/Progress_bar';
 
-import * as common from '../../common';
+import * as common from '../common';
 import { ToggleBtn } from '@common/component/button';
 
 interface IRGBA {
@@ -26,29 +26,9 @@ function _rgbaToString(rgba: IRGBA) {
 	return `rgba(${r}, ${g}, ${b}, ${a})`;
 }
 
-function _drawBalloon(
-	ctx: CanvasRenderingContext2D, 
-	x: number, 
-	y: number, 
-	w: number, 
-	h: number, 
-	px: number,
-	py: number, 
-	r: number,
-	skin: IBallon,
-
-	min_gap: number = 10, 
-	r_gap: number = 0.2,
-) {
+function _drawBalloon(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, px: number,py: number, r: number,skin: IBallon,min_gap: number = 10, r_gap: number = 0.2) {
 	const { brdThick, brdColor, bgColor, shadowX, shadowY, shadowBlur, shadowColor} = skin;
-
-	// const hgap = Math.min(w - 2 * r, Math.max(min_gap, w * r_gap));
-	// const left = (px <= x + w / 2) ? (Math.max(x + r, px)) : (Math.min(x + w - r - hgap, px - hgap));
-	// const right = (px <= (x + w / 2)) ? (Math.max(x + r + hgap, px + hgap)) : (Math.min(x + w - r, px));
-	
 	let vgap = (x - px) * 1.8;
-
-
 	const bShadow = ((shadowX !== 0 || shadowY !== 0 || shadowBlur > 0) && shadowColor.a > 0);
 
 	let bgAlpha = bgColor.a;

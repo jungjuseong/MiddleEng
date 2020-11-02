@@ -8,7 +8,7 @@ import * as kutil from '@common/util/kutil';
 
 import { IStateCtx, IActionsCtx, QPROG, SPROG } from './s_store';
 import SendUINew from '../../share/sendui_new';
-import ScriptContainer from '../teacher/script_container';
+import ScriptContainer from '../script_container';
 import * as common from '../common';
 import { App } from '../../App';
 

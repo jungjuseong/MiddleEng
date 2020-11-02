@@ -17,7 +17,7 @@ import { CorrectBar } from '../../../share/Progress_bar';
 
 import * as common from '../../common';
 
-import ScriptContainer from '../script_container';
+import ScriptContainer from '../../script_container';
 
 import VideoBox from '../t_video_box';
 import { TimerState } from '../../../share/Timer';
