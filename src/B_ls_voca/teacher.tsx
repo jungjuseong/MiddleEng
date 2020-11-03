@@ -23,7 +23,7 @@ interface ITeacher {
 }
 
 @observer
-class Comp extends React.Component<ITeacher> {
+class TeacherComponent extends React.Component<ITeacher> {
 
 	public componentDidUpdate() {
 		this.props.state.hasPreview = true; // pre-class 초록색그래프 사전 학습 원상복구 
@@ -50,7 +50,7 @@ class Comp extends React.Component<ITeacher> {
 	}
 }
 
-const Teacher = useTeacher((store: TeacherContext) => <Comp state={store.state} actions={store.actions}/>);
+const Teacher = useTeacher((store: TeacherContext) => <TeacherComponent state={store.state} actions={store.actions}/>);
 
 export { TeacherProvider as AppProvider, tContext as appContext };
 export default hot(module)(Teacher);

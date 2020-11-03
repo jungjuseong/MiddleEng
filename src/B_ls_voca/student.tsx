@@ -48,7 +48,7 @@ class PreLoad extends React.Component<{words: IWordData[]}> {
 }
 */
 @observer
-class Comp extends React.Component<{state: IStateCtx, actions: IActionsCtx}> {
+class StudentComponent extends React.Component<{state: IStateCtx, actions: IActionsCtx}> {
 	public render() {
 		const {state, actions} = this.props;
 		let left = state.viewDiv === 'direction' ? 0 : -1280;
@@ -99,12 +99,11 @@ class Comp extends React.Component<{state: IStateCtx, actions: IActionsCtx}> {
 			</>
 		);
 	}
-	
-
 }
+
 const Student = useStudent((store: StudentContext) => (
 	<Observer>{() => (
-		<Comp 
+		<StudentComponent 
 			state={store.state} 
 			actions={store.actions}
 		/>

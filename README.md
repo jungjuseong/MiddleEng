@@ -29,6 +29,10 @@ yarn run ts-node ./add_project.ts -prefix {prefix} -project {project}
 	{PREFIX_project}/teacher/index.html
 
 
+
+## prerequisite
+
+node version 10.22.1
 	
 ## install
 
