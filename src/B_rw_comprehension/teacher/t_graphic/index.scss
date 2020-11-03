@@ -1,10 +1,10 @@
-@import "../../share/CoverPopup.scss";
-@import "./t_pentool_sheet.scss";
-@import "./t_keyboard_sheet.scss";
+@import "../../../share/CoverPopup.scss";
+@import "../t_pentool_sheet.scss";
+@import "../t_keyboard_sheet.scss";
 
-@import "../table-item.scss";
-@mixin GRAPHICORANIZER {
-  .GRAPHICORANIZER {
+@import "../../table-item/index.scss";
+@mixin GraphicOrganizer {
+  .GraphicOrganizer {
     @include page;
     & > .nav {
       width: 100%;

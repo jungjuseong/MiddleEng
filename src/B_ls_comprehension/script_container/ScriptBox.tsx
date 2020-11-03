@@ -321,8 +321,6 @@ class ScriptBox  extends React.Component<IScriptBox> {
 		} else {
 			this.m_clue = <></>;
 		}
-
-
 		this.m_prog = <StandBar percent={this.props.script.app_preview} />;
 		// else this.m_prog = <></>;
 	}
@@ -387,9 +385,7 @@ class ScriptBox  extends React.Component<IScriptBox> {
 			} else {
 				skin = _normalE;
 			}
-		}
-
-		
+		}	
 
 		let brdR;  // 코너 각
 		let left;	// 좌측 면
@@ -460,9 +456,6 @@ class ScriptBox  extends React.Component<IScriptBox> {
 	private _onClickThumb = (ev: React.MouseEvent<HTMLElement>) => {
 		this.props.clickThumb(this.props.idx, this.props.script);
 	}
-
-
-
 	private _onTextDown = (ev: React.MouseEvent<HTMLElement>) => {
 		const tgt = ev.target as HTMLElement;
 		_isBtnStudent = (tgt && tgt.classList.contains('btn_student'));
@@ -490,8 +483,6 @@ class ScriptBox  extends React.Component<IScriptBox> {
 			} else if(_isBtnStudent && this.props.qnaReturnsClick) {
 				this.props.qnaReturnsClick(this.props.idx);
 			} 
-			
-			// else this.props.clickThumb(this.props.idx, this.props.script);
 		}		
 	}
 	private _onTextCancel = (ev: React.MouseEvent<HTMLElement>) => {
@@ -523,15 +514,10 @@ class ScriptBox  extends React.Component<IScriptBox> {
 		}
 		
 		if(focus && shadowing) arr.push('shadowing');
-		let jsx;
-		if(viewTrans) jsx = this.m_trans;
-		else jsx = this.m_jsx;	
 
-		// console.log('viewTrans', viewTrans, 'viewScript', viewScript);
-
+		let jsx = (viewTrans) ? this.m_trans : this.m_jsx;	
 		const cname = arr.join(' ');
 
-		// console.log(cname);
 		return (
 			<>
 				<div className={'thumb ' + cname} onClick={this._onClickThumb}>

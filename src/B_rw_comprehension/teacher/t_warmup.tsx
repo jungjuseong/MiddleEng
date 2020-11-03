@@ -387,7 +387,7 @@ interface IWARMUP {
 	state: IStateCtx;
 	actions: IActionsCtx;
 	onStudy: (studying: BTN_DISABLE) => void;
-	onSetNavi: (title: 'COMPREHENSION', tab: 'PASSAGE') => void;
+	onSetNavi: (title: 'COMPREHENSION', tab: 'Passage') => void;
 }
 
 @observer
@@ -429,7 +429,7 @@ class WARMUP extends React.Component<IWARMUP> {
 			},
 			() => {
 				if(this._curIdx_tgt >= this.props.data.warmup.length - 1) {
-					this.props.onSetNavi('COMPREHENSION','PASSAGE');
+					this.props.onSetNavi('COMPREHENSION','Passage');
 				} else {
 					App.pub_stop();
 					App.pub_playBtnPage();

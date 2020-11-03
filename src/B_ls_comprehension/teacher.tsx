@@ -24,7 +24,7 @@ interface ITeacher {
 }
 
 @observer
-class Comp extends React.Component<ITeacher> {
+class TeacherPage extends React.Component<ITeacher> {
 	constructor(props: ITeacher) {
 		super(props);
 
@@ -72,7 +72,7 @@ class Comp extends React.Component<ITeacher> {
 }
 const Teacher = t_store.useTeacher((val: t_store.TeacherContext) => (
 	<Observer>{() => (
-		<Comp state={val.state} actions={val.actions}/>
+		<TeacherPage state={val.state} actions={val.actions}/>
 	)}</Observer>
 ));
 

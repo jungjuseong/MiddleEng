@@ -1,214 +1,34 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import * as _ from 'lodash';
-import { Observer, observer } from 'mobx-react';
+import { observer } from 'mobx-react';
 
-import { IStateCtx, IActionsCtx, SENDPROG, BTN_DISABLE } from './t_store';
-import { App } from '../../App';
-import * as felsocket from '../../felsocket';
+import { IStateCtx, IActionsCtx, SENDPROG, BTN_DISABLE } from '../t_store';
+import { App } from '../../../App';
+import * as felsocket from '../../../felsocket';
 import { ToggleBtn } from '@common/component/button';
 import NItem from '@common/component/NItem';
 import * as kutil from '@common/util/kutil';
-import * as common from '../common';
+import * as common from '../../common';
 import { observable } from 'mobx';
-import { CoverPopup } from '../../share/CoverPopup';
-import SendUI from '../../share/sendui_new';
-import * as style from '../../share/style';
+import SendUI from '../../../share/sendui_new';
+import * as style from '../../../share/style';
 import { MPlayer, MConfig, IMedia, MPRState } from '@common/mplayer/mplayer';
-import { CountDown2, TimerState } from '../../share/Timer';
-import Yourturn from '../../share/yourturn';
+import { CountDown2, TimerState } from '../../../share/Timer';
+import Yourturn from '../../../share/yourturn';
+
+import TransPopup from './TransPopup';
+import PassagePopup from './PassagePopup';
+import ImgPassage from './ImgPassage';
+import ScriptItem from './ScriptItem';
 
 const SwiperComponent = require('react-id-swiper').default;
-
-interface ITrans {
-	view: boolean;
-	scripts: common.IScript[];
-	onClosed: () => void;
-}
-@observer
-class TransPopup extends React.Component<ITrans> {
-	@observable private m_view = false;
-	@observable private _swiper: Swiper|null = null;
-
-	private _refSwiper = (el: SwiperComponent) => {
-		if(this._swiper || !el) return;
-		this._swiper = el.swiper;
-	}
-	private _onClose = () => {
-		App.pub_playBtnTab();
-		this.m_view = false;
-	}
-	public componentDidUpdate(prev: ITrans) {
-		if (this.props.view && !prev.view) {
-			this.m_view = true;
-			if(this._swiper) {
-				this._swiper.slideTo(0, 0);
-			}
-			_.delay(() => {
-				if(this._swiper) {
-					this._swiper.update();
-					if(this._swiper.scrollbar) this._swiper.scrollbar.updateSize();
-					this._swiper.slideTo(0, 0);
-				}
-			}, 500);
-		} else if (!this.props.view && prev.view) {
-			this.m_view = false;
-		}
-	}
-	public render() {
-		const { view, scripts } = this.props;
-		return (
-			<CoverPopup className="trans_popup" view={this.props.view && this.m_view} onClosed={this.props.onClosed} >
-				<span className="title">TRANSLATION</span><ToggleBtn className="btn_close" onClick={this._onClose} />
-				<div className="trans_script">
-					<SwiperComponent
-						ref={this._refSwiper}
-						direction="vertical"
-						scrollbar={{ el: '.swiper-scrollbar', draggable: true,}}
-						observer={true}
-						slidesPerView="auto"
-						freeMode={true}						
-					>
-						{scripts.map((script, idx) => {
-							return (
-							<div key={idx} className="script_eng">
-								{script.dms_eng}
-								<div>{script.dms_kor.ko}</div>
-							</div>
-							);
-						})}
-					</SwiperComponent>
-				</div>
-			</CoverPopup>
-		);
-	}
-}
-interface IPopupItem {
-	type: 'off'|'READALOUD'|'SHADOWING'|'QNA';
-	view: boolean;
-	onClosed: () => void;
-	onSend: () => void;
-}
-@observer
-class PassagePopup extends React.Component<IPopupItem> {
-	@observable private m_view = false;
-
-	private _onClose = () => {
-		App.pub_playBtnTab();
-		this.m_view = false;
-	}
-	public componentDidUpdate(prev: IPopupItem) {
-		if (this.props.view && !prev.view) {
-			this.m_view = true;
-		} else if (!this.props.view && prev.view) {
-			this.m_view = false;
-		}
-	}
-	public render() {
-		let title;
-		if(this.props.type === 'READALOUD') title = 'READ ALONG';
-		else if(this.props.type === 'SHADOWING') title = 'LISTEN & REPEAT';
-		else if(this.props.type === 'QNA') title = 'Q & A';
-		else title = this.props.type;
-
-		return (
-			<CoverPopup className={'passage_popup ' + this.props.type} view={this.props.view && this.m_view} onClosed={this.props.onClosed} >
-				<span>{title}</span><ToggleBtn className="btn_close" onClick={this._onClose} />
-				<div className="popup_content">
-					<span>Read along together.</span>
-					<span>Listen and repeat.</span>
-					<span>Do you have any questions?</span>
-				</div>
-				<SendUI
-					view={this.props.view}
-					type={'teacher'}
-					sended={false}
-					originY={0}
-					onSend={this.props.onSend}
-				/>
-			</CoverPopup>
-		);
-	}
-}
-interface IImgPassage { 
-	view: boolean;
-	passage: common.IPassage;
-	onClosed: () => void;
-}
-@observer
-class ImgPassage extends React.Component<IImgPassage> {
-	@observable private m_view = false;
-
-	private _onClose = () => {
-		App.pub_playBtnTab();
-		this.m_view = false;
-	}
-	public componentDidUpdate(prev: IImgPassage) {
-		if(this.props.view && !prev.view) {
-			this.m_view = true;
-		} else if(!this.props.view && prev.view) {
-			this.m_view = false;
-		}
-	}
-	public render() {
-		const { passage } = this.props;
-		return (
-			<CoverPopup className="img_passage" view={this.m_view} onClosed={this.props.onClosed}>
-				<img src={App.data_url + passage.image} draggable={false} />
-				<ToggleBtn className="btn_close" onClick={this._onClose} />
-			</CoverPopup>
-		);
-	}
-}
-
-interface IScriptItem {
-	script: common.IScript;
-	curSeq: number;
-	retCnt: number;
-	qnaRet: common.IQnaReturn;
-	viewReturn: boolean;
-	onChoose: (script: common.IScript) => void;
-}
-@observer
-class ScriptItem extends React.Component<IScriptItem> {
-	
-	private _clickReturn = () => {
-		if(this.props.viewReturn) {
-			App.pub_playBtnTab();
-			felsocket.startStudentReportProcess($ReportType.JOIN, this.props.qnaRet.users);	
-		}
-	}
-	private _onClick = (evt: React.MouseEvent) => {
-		
-		if(evt.target && evt.target instanceof HTMLElement) {
-			const el = evt.target as HTMLElement;
-			if(el.classList && el.classList.contains('ret-num')) return; 
-		}
-		this.props.onChoose(this.props.script);
-	}
-	// 	script.seq === curSeq ? 'on' : '' 
-	public render() {
-		const { script, curSeq, qnaRet, retCnt, viewReturn } = this.props;
-		const arr: string[] = [
-			'script_line', 
-			(script.seq === curSeq) ? 'on' : ''
-		];
-		return (
-			<span id={'script_' + script.seq} className={arr.join(' ')} onClick={this._onClick}>
-				<span onClick={this._clickReturn} className="ret-num" style={{display: viewReturn && qnaRet.num > 0 ? '' : 'none'}}>{qnaRet.num}</span>
-				<span className="ret-cnt" style={{display: 'none'}}>{retCnt}</span>
-				{/* {script.dms_eng} */}
-				<span dangerouslySetInnerHTML={{__html: script.dms_passage}}/>
-			</span>
-		);
-	}
-}
 
 interface IInfo {
 	passage: common.IPassage;
 	scripts: common.IScript[];
 	qnaRets: common.IQnaReturn[];
 }
+
 interface IPassage {
 	view: boolean;
     videoPopup: boolean;
@@ -221,6 +41,7 @@ interface IPassage {
 	onStudy: (studying: BTN_DISABLE) => void;
 	onSetNavi: (title: 'COMPREHENSION', tab: 'WARMUP'|'QUESTION') => void;
 }
+
 @observer
 class Passage extends React.Component<IPassage> {
 	private _player = new MPlayer(new MConfig(false));
@@ -999,6 +820,7 @@ class Passage extends React.Component<IPassage> {
 		);
 	}
 }
+
 export default Passage;
 
 

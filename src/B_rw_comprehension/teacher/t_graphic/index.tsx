@@ -4,22 +4,25 @@ import * as _ from 'lodash';
 import { observable } from 'mobx';
 import { observer } from 'mobx-react';
 
-import { IStateCtx, IActionsCtx, SENDPROG, BTN_DISABLE } from './t_store';
-import { App } from '../../App';
-import * as felsocket from '../../felsocket';
+import { IStateCtx, IActionsCtx, SENDPROG, BTN_DISABLE } from '../t_store';
+import { App } from '../../../App';
+import * as felsocket from '../../../felsocket';
 import { ToggleBtn } from '@common/component/button';
 
 import * as kutil from '@common/util/kutil';
-import * as common from '../common';
+import * as common from '../../common';
 
-import { CoverPopup } from '../../share/CoverPopup';
-import SendUI from '../../share/sendui_new';
+import { CoverPopup } from '../../../share/CoverPopup';
+import SendUI from '../../../share/sendui_new';
 
-import * as style from '../../share/style';
+import * as style from '../../../share/style';
 
-import { PentoolSheet } from './t_pentool_sheet';
-import { KeyboardSheet } from './t_keyborad_sheet';
-import TableItem from '../table-item';
+import { PentoolSheet } from '../t_pentool_sheet';
+import { KeyboardSheet } from '../t_keyborad_sheet';
+import TableItem from '../../table-item';
+
+import SheetPopup from './SheetPopup';
+import TablePopup from './TablePopup';
 
 const SwiperComponent = require('react-id-swiper').default;
 
@@ -35,171 +38,7 @@ const m_soption: SwiperOptions = {
 	scrollbar: { el: '.swiper-scrollbar', draggable: true, hide: false },
 };
 
-interface ISheetPopup {
-	view: boolean;
-	onClosed: () => void;
-	onSend: (sheetpage: common.SHEETPAGE) => void;
-}
-@observer
-class SheetPopup extends React.Component<ISheetPopup> {
-	@observable private m_view = false;
-
-	@observable private _sheetpage: common.SHEETPAGE = '';
-	@observable private _prog = SENDPROG.READY;
-
-	private _onKeyboard = () => {
-		if (!this.props.view) return;
-		else if (this._prog !== SENDPROG.READY) return;
-		else if (this._sheetpage === 'keyboard') return;
-		App.pub_playBtnTab();
-		this._sheetpage = 'keyboard';
-	}
-	private _onPentool = () => {
-		if (!this.props.view) return;
-		else if (this._prog !== SENDPROG.READY) return;
-		else if (this._sheetpage === 'pentool') return;
-		App.pub_playBtnTab();
-		this._sheetpage = 'pentool';
-	}
-	private _onSend = async () => {
-		if (!this.props.view) return;
-		else if (this._prog !== SENDPROG.READY) return;
-		else if (this._sheetpage === '') return;
-
-		App.pub_playToPad();
-		this._prog = SENDPROG.SENDING;
-
-		await kutil.wait(500);
-
-		if (!this.props.view) return;
-		else if (this._prog !== SENDPROG.SENDING) return;
-
-		this._prog = SENDPROG.SENDED;
-
-		this.props.onSend(this._sheetpage);
-	}
-	private _onClose = () => {
-		App.pub_playBtnTab();
-		this.m_view = false;
-	}
-	public componentDidUpdate(prev: ISheetPopup) {
-		if (this.props.view && !prev.view) {
-			this.m_view = true;
-			this._sheetpage = '';
-			this._prog = SENDPROG.READY;
-		} else if (!this.props.view && prev.view) {
-			this.m_view = false;
-			this._prog = SENDPROG.READY;
-		}
-	}
-	public render() {
-		return (
-			<CoverPopup className="sheet_popup" view={this.m_view} onClosed={this.props.onClosed}>
-				<span className="title">NEW SHEET</span><ToggleBtn className="btn_close" onClick={this._onClose} />
-				<div>
-					<span className="content">Make your own graphic organizer.</span>
-					<div className="sheet_btns">
-						<ToggleBtn className="btn_pentool" on={this._sheetpage === 'pentool'} onClick={this._onPentool} />
-						<ToggleBtn className="btn_keyboard" on={this._sheetpage === 'keyboard'} onClick={this._onKeyboard} />
-					</div>
-				</div>
-				<SendUI
-					view={this.props.view && this._sheetpage !== '' && this._prog < SENDPROG.SENDED}
-					type={'teacher'}
-					sended={false}
-					originY={0}
-					preventUpWhenView={true}
-					onSend={this._onSend}
-				/>
-			</CoverPopup>
-		);
-	}
-}
-
-interface ITablePopup {
-	className: string;
-	headerColor?: string | null;
-	prog: SENDPROG;
-	graphic: common.IGraphicOrganizer;
-	renderCnt: number;
-	onChange: (value: string, idx: number) => void;
-	onClosed: () => void;
-}
-
-
-@observer
-class TablePopup extends React.Component<ITablePopup> {
-	@observable private m_view = false;
-
-	private m_swiper?: Swiper;
-	private _onClose = () => {
-		App.pub_playBtnTab();
-		this.m_view = false;
-	}
-	private _refSwiper = (el: SwiperComponent) => {
-		if (this.m_swiper || !el) return;
-		this.m_swiper = el.swiper;
-	}
-
-	public componentDidUpdate(prev: ITablePopup) {
-		if (this.props.className !== '' && prev.className === '') {
-			this.m_view = true;
-
-			if (this.m_swiper) {
-				this.m_swiper.slideTo(0, 0);
-				_.delay(() => {
-					if (this.m_swiper) {
-						this.m_swiper.update();
-						if (this.m_swiper.scrollbar) this.m_swiper.scrollbar.updateSize();
-
-						const _el = this.m_swiper.wrapperEl;
-						const _h = _el.children[0].clientHeight;
-						const _parent = _el.clientHeight;
-
-						if (_h > _parent) {
-							_el.classList.remove('swiper-no-swiping');
-							this.m_swiper.$wrapperEl[0].querySelector('.swiper-slide').classList.remove('swiper-no-swiping');
-						} else {
-							_el.classList.add('swiper-no-swiping');
-							this.m_swiper.$wrapperEl[0].querySelector('.swiper-slide').classList.add('swiper-no-swiping');
-						}
-					}
-				}, 100);
-			}
-
-		} else if (this.props.className === '' && prev.className !== '') {
-			this.m_view = false;
-		}
-	}
-	public render() {
-		const { className, prog, graphic, renderCnt } = this.props;
-		return (
-			<CoverPopup className="table_popup" view={this.m_view} onClosed={this.props.onClosed}>
-				<SwiperComponent {...m_soption} ref={this._refSwiper}>
-					<div>
-
-						<TableItem
-							viewCorrect={prog === SENDPROG.COMPLETE}
-							disableSelect={prog === SENDPROG.COMPLETE}
-							inview={this.props.className !== ''}
-							graphic={graphic}
-							className={this.props.className + ' zoom-in'}
-							headerColor={this.props.headerColor}
-							maxWidth={1030}
-							optionBoxPosition="bottom"
-							viewBtn={true}
-							renderCnt={renderCnt}
-							onClickBtn={this._onClose}
-							onChange={this.props.onChange}
-						/>
-					</div>
-				</SwiperComponent>
-			</CoverPopup>
-		);
-	}
-}
-
-interface IGRAPHICORANIZER {
+interface IGraphicOrganizer {
 	view: boolean;
 	inview: boolean;
 	videoPopup: boolean;
@@ -211,7 +50,7 @@ interface IGRAPHICORANIZER {
 	onSetNavi: (title: 'COMPREHENSION' | 'SUMMARIZING', tab: 'QUESTION' | 'SUMMARY') => void;
 }
 @observer
-class GRAPHICORANIZER extends React.Component<IGRAPHICORANIZER> {
+class GraphicOrganizer extends React.Component<IGraphicOrganizer> {
 	@observable private _retCnt = 0;
 	@observable private _numOfStudent = 0;
 
@@ -234,7 +73,7 @@ class GRAPHICORANIZER extends React.Component<IGRAPHICORANIZER> {
 	private m_swiper!: Swiper;
 	private _cont!: JSX.Element;
 
-	constructor(props: IGRAPHICORANIZER) {
+	constructor(props: IGraphicOrganizer) {
 		super(props);
 		this._table_graphic = props.data.graphic[0];
 	}
@@ -437,7 +276,7 @@ class GRAPHICORANIZER extends React.Component<IGRAPHICORANIZER> {
 		this.props.actions.setGraphFnc(null);
 		felsocket.sendPAD($SocketType.PAD_ONSCREEN, null);
 	}
-	public componentDidUpdate(prev: IGRAPHICORANIZER) {
+	public componentDidUpdate(prev: IGraphicOrganizer) {
 		if (this.props.videoPopup && !prev.videoPopup) {
 			if (this.props.state.isVideoStudied) this.props.state.isVideoStudied = false;
 		} else if (!this.props.videoPopup && prev.videoPopup) {
@@ -897,7 +736,7 @@ class GRAPHICORANIZER extends React.Component<IGRAPHICORANIZER> {
 		if (!graphicTitle.trim()) isTitle = <></>;
 
 		return (
-			<div className={'GRAPHICORANIZER ' + this._sheetpage + this._done} style={inview ? undefined : style.NONE}>
+			<div className={'GraphicOrganizer ' + this._sheetpage + this._done} style={inview ? undefined : style.NONE}>
 				<div className="nav">
 					{isTitle}
 					<ToggleBtn className="btn_sheet" on={this._sheet} disabled={this._prog === SENDPROG.SENDED} onClick={this._clickSheet} />
@@ -963,6 +802,4 @@ class GRAPHICORANIZER extends React.Component<IGRAPHICORANIZER> {
 	}
 }
 
-export default GRAPHICORANIZER;
-
-
+export default GraphicOrganizer;

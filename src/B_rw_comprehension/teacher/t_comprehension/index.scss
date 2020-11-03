@@ -1,11 +1,11 @@
-@import '../../share/CoverPopup.scss';
-@import './t_warmup.scss';
-@import './t_passage.scss';
-@import './t_question.scss';
-@import './t_graphic.scss';
-@import './t_summary.scss';
-@import './t_video_box.scss';
-@import './t_storybook.scss';
+@import '../../../share/CoverPopup.scss';
+@import '../t_warmup.scss';
+@import '../t_passage.scss';
+@import '../t_question.scss';
+@import '../t_graphic/index.scss';
+@import '../t_summary.scss';
+@import '../t_video_box.scss';
+@import '../t_storybook.scss';
 @mixin t_comprehension{
 	.t_compre {
 		
@@ -133,14 +133,14 @@
 			width: 100%; height: height('teacher/images/bg_compre.png');
 
 			@include WARMUP;
-			@include PASSAGE;
+			@include Passage;
 			@include QUESTION;
 		}
 		&.VISUALIZING {
 			background-image: resolve('teacher/images/bg_visual.png');
 			width: 100%; height: height('teacher/images/bg_visual.png');
 
-			@include GRAPHICORANIZER;
+			@include GraphicOrganizer;
 		}
 		&.SUMMARIZING {
 			background-image: resolve('teacher/images/bg_visual.png');

@@ -1,23 +1,17 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { hot } from 'react-hot-loader';
 import { observer } from 'mobx-react';
-
 import { observable } from 'mobx';
-import { App } from '../../App';
-import * as felsocket from '../../felsocket';
+
+import { App } from '../../../App';
+import * as felsocket from '../../../felsocket';
 import { ToggleBtn } from '@common/component/button';
 import * as kutil from '@common/util/kutil';
-import * as StrUtil from '@common/util/StrUtil';
 
-import { IStateCtx, IActionsCtx, QPROG, SPROG } from '../student/s_store';
-import * as common from '../common';
-import WrapTextNew from '@common/component/WrapTextNew';
+import { IStateCtx, IActionsCtx, QPROG, SPROG } from '../s_store';
+import * as common from '../../common';
+import SendUINew from '../../../share/sendui_new';
 
-import SendUINew from '../../share/sendui_new';
-
-import QuizMCBtn from '../../share/QuizMCBtn';
-
+import QuizItem from './QuizItem';
 
 const SwiperComponent = require('react-id-swiper').default;
 
@@ -40,80 +34,6 @@ class NItem extends React.Component<INItem> {
 	}
 }
 
-interface IQuizChoice {
-	view: boolean;
-	choice: number;
-	answer: number;
-	on: boolean;
-	questionProg: QPROG;
-	onClick: (choice: number) => void;
-
-}
-class QuizChoice extends React.Component<IQuizChoice> {
-	private _click = () => {
-		this.props.onClick(this.props.choice);
-	}
-	public render() {
-		const { choice, on, questionProg, answer } = this.props;
-		let isOn = on;
-		const arr: string[] = ['btn_choice'];
-		if(questionProg === QPROG.COMPLETE || questionProg === QPROG.READYA) {
-			if(choice === answer) arr.push('correct');
-			else if(on) arr.push('wrong');
-
-			isOn = false;
-		}
-		return (
-			<QuizMCBtn 
-				className={arr.join(' ')} 
-				num={choice} 
-				on={isOn} 
-				onClick={this._click} 
-				disabled={questionProg !== QPROG.ON}
-			>
-				<WrapTextNew view={this.props.view} maxLineNum={1} minSize={38} maxSize={44} lineHeight={120} textAlign="left">
-					{this.props.children}
-				</WrapTextNew>
-			</QuizMCBtn>
-
-		);
-	}
-}
-
-interface IQuizItem {
-	view: boolean;
-	idx: number;
-	choice: number;
-	quiz: common.IQuiz;
-	questionProg: QPROG;
-	onChoice: (idx: number, choice: number) => void;
-}
-class QuizItem extends React.Component<IQuizItem> {
-	private _onChoice = (choice: number) => {
-		this.props.onChoice(this.props.idx, choice);
-	}
-	public render() {
-		const {view, idx, choice, quiz, questionProg} = this.props;
-		const answer = quiz.answer;
-		return (
-			<>
-				<div className="quiz"><div>
-					<WrapTextNew 
-						view={view}
-					>
-						{quiz.app_question}
-					</WrapTextNew>
-				</div></div>
-				<div className="choice">
-					<QuizChoice view={view} choice={1} answer={answer} on={choice === 1} questionProg={questionProg} onClick={this._onChoice}>{quiz.choice_1}</QuizChoice>
-					<QuizChoice view={view} choice={2} answer={answer} on={choice === 2} questionProg={questionProg} onClick={this._onChoice}>{quiz.choice_2}</QuizChoice>
-					<QuizChoice view={view} choice={3} answer={answer} on={choice === 3} questionProg={questionProg} onClick={this._onChoice}>{quiz.choice_3}</QuizChoice>
-				</div>
-			</>		
-		);
-	}
-}
-
 interface ISQuestion {
 	view: boolean;
 	questionView: boolean;
@@ -121,7 +41,6 @@ interface ISQuestion {
 	scriptProg: SPROG;
 	scriptMode: 'COMPREHENSION'|'DIALOGUE';
 	qsMode: ''|'question'|'script';
-
 	state: IStateCtx;
 	actions: IActionsCtx;
 }
@@ -130,18 +49,15 @@ interface ISQuestion {
 class SQuestion extends React.Component<ISQuestion> {
 	@observable private _curIdx = 0;
 	@observable private _curIdx_tgt = 0;
-
 	@observable private _choices: common.IQuizReturn[] = [];
 
 	private _style: React.CSSProperties = {};
-
 	private _swiper: Swiper|null = null;
 
 	constructor(props: ISQuestion) {
 		super(props);
 		const quizs = props.actions.getData().quizs;
 		for(let i = 0; i < quizs.length; i++) {
-			let quiz = quizs[i];
 			this._choices[i] = {
 				answer: 0,
 				stime: 0,
@@ -166,7 +82,7 @@ class SQuestion extends React.Component<ISQuestion> {
 		this._swiper = swiper;
 	}
 
-		/* 페이지 관련 */
+	/* 페이지 관련 */
 	private _onPage = (idx: number) => {
 		if(this.props.questionProg === QPROG.ON) return; 
 
@@ -318,8 +234,6 @@ class SQuestion extends React.Component<ISQuestion> {
 		const canNext = curAnswer > 0 && questionProg === QPROG.ON;
 		const isLast = this._curIdx === quizs.length - 1;
 		
-		// const arr: string[] = ['s_question'];
-
 		return (
 			<div className="s_question" style={{...this._style}}>
 				<ToggleBtn className="btn_SCRIPT" onClick={this._gotoScript} view={state.scriptProg > SPROG.UNMOUNT}/>
@@ -377,5 +291,3 @@ class SQuestion extends React.Component<ISQuestion> {
 	}
 }
 export default SQuestion;
-
-

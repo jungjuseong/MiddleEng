@@ -4138,7 +4138,7 @@ body {
     display: inline-block;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .nav {
+#wrap .t_compre.COMPREHENSION .Passage .nav {
     width: 100%;
     height: 0px;
     position: absolute;
@@ -4147,7 +4147,7 @@ body {
     font-weight: normal;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .nav .btn_page_box {
+#wrap .t_compre.COMPREHENSION .Passage .nav .btn_page_box {
     width: 100%;
     height: 0px;
     overflow: visible;
@@ -4156,22 +4156,22 @@ body {
     cursor: pointer;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .nav .btn_page_box > span {
+#wrap .t_compre.COMPREHENSION .Passage .nav .btn_page_box > span {
     margin: 0px 10px;
     font-size: 25px;
     font-weight: bold;
     color: rgba(179, 179, 179, 0.5);
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .nav .btn_page_box > span.on {
+#wrap .t_compre.COMPREHENSION .Passage .nav .btn_page_box > span.on {
     color: #f8f64d;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .nav .btn_page_box.off {
+#wrap .t_compre.COMPREHENSION .Passage .nav .btn_page_box.off {
     display: none;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .nav .right {
+#wrap .t_compre.COMPREHENSION .Passage .nav .right {
     position: absolute;
     top: -10px;
     right: 80px;
@@ -4206,7 +4206,7 @@ body {
 				*/
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .nav .right .return_cnt_box {
+#wrap .t_compre.COMPREHENSION .Passage .nav .right .return_cnt_box {
     width: auto;
     height: auto;
     border: none;
@@ -4216,7 +4216,7 @@ body {
     margin-right: 10px;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .nav .right .return_cnt_box > div {
+#wrap .t_compre.COMPREHENSION .Passage .nav .right .return_cnt_box > div {
     width: 70px;
     height: 30px;
     /* background-color 추가 */
@@ -4232,7 +4232,7 @@ body {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .nav .right .btn_trans {
+#wrap .t_compre.COMPREHENSION .Passage .nav .right .btn_trans {
     touch-action: none;
     padding: 0px;
     border: none;
@@ -4248,17 +4248,17 @@ body {
     vertical-align: middle;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .nav .right .btn_trans:disabled {
+#wrap .t_compre.COMPREHENSION .Passage .nav .right .btn_trans:disabled {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_trans_dis.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .nav .right .btn_trans.down {
+#wrap .t_compre.COMPREHENSION .Passage .nav .right .btn_trans.down {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_trans_down.png");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .nav .right .btn_trans:before {
+#wrap .t_compre.COMPREHENSION .Passage .nav .right .btn_trans:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -4269,11 +4269,11 @@ body {
     content: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_trans.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_trans_down.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_trans_dis.png");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .nav .right .btn_trans.on {
+#wrap .t_compre.COMPREHENSION .Passage .nav .right .btn_trans.on {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_trans.png");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .nav .right .btn_img {
+#wrap .t_compre.COMPREHENSION .Passage .nav .right .btn_img {
     touch-action: none;
     padding: 0px;
     border: none;
@@ -4289,17 +4289,17 @@ body {
     vertical-align: middle;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .nav .right .btn_img:disabled {
+#wrap .t_compre.COMPREHENSION .Passage .nav .right .btn_img:disabled {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_image_dis.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .nav .right .btn_img.down {
+#wrap .t_compre.COMPREHENSION .Passage .nav .right .btn_img.down {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_image_down.png");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .nav .right .btn_img:before {
+#wrap .t_compre.COMPREHENSION .Passage .nav .right .btn_img:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -4310,7 +4310,7 @@ body {
     content: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_image.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_image_down.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_image_dis.png");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .nav .right .btn_audio_drop {
+#wrap .t_compre.COMPREHENSION .Passage .nav .right .btn_audio_drop {
     touch-action: none;
     padding: 0px;
     border: none;
@@ -4326,17 +4326,17 @@ body {
     vertical-align: middle;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .nav .right .btn_audio_drop:disabled {
+#wrap .t_compre.COMPREHENSION .Passage .nav .right .btn_audio_drop:disabled {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_audio_dis.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .nav .right .btn_audio_drop.on {
+#wrap .t_compre.COMPREHENSION .Passage .nav .right .btn_audio_drop.on {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_audio_down.png");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .nav .right .btn_audio_drop:before {
+#wrap .t_compre.COMPREHENSION .Passage .nav .right .btn_audio_drop:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -4347,7 +4347,7 @@ body {
     content: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_audio.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_audio_down.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_audio_dis.png");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .script_box {
+#wrap .t_compre.COMPREHENSION .Passage .script_box {
     width: 1144px;
     height: 510px;
     background-color: #e0efff;
@@ -4359,7 +4359,7 @@ body {
     border-bottom-right-radius: 10px;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .script_box .swiper-container {
+#wrap .t_compre.COMPREHENSION .Passage .script_box .swiper-container {
     width: 100%;
     height: auto;
     max-height: 100%;
@@ -4368,7 +4368,7 @@ body {
     overflow: hidden;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .script_box .swiper-container .script-bnd {
+#wrap .t_compre.COMPREHENSION .Passage .script_box .swiper-container .script-bnd {
     white-space: normal;
     padding: 30px 55px;
     text-align: left;
@@ -4379,20 +4379,20 @@ body {
     height: auto;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .script_box .swiper-container .script-bnd .script_line {
+#wrap .t_compre.COMPREHENSION .Passage .script_box .swiper-container .script-bnd .script_line {
     position: relative;
     /* padding-right: 20px; */
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .script_box .swiper-container .script-bnd .script_line::after {
+#wrap .t_compre.COMPREHENSION .Passage .script_box .swiper-container .script-bnd .script_line::after {
     content: " ";
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .script_box .swiper-container .script-bnd .script_line.on {
+#wrap .t_compre.COMPREHENSION .Passage .script_box .swiper-container .script-bnd .script_line.on {
     color: #ff850c;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .script_box .swiper-container .script-bnd .script_line > .ret-num {
+#wrap .t_compre.COMPREHENSION .Passage .script_box .swiper-container .script-bnd .script_line > .ret-num {
     box-sizing: border-box;
     position: absolute;
     left: 0px;
@@ -4410,23 +4410,23 @@ body {
     text-shadow: 2px 2px 2px #8BA5E9, -2px 2px 2px #8BA5E9, -2px -2px 2px #8BA5E9, 2px -2px 2px #8BA5E9;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .script_box .swiper-container .swiper-slide {
+#wrap .t_compre.COMPREHENSION .Passage .script_box .swiper-container .swiper-slide {
     height: auto;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .script_box .swiper-container .swiper-scrollbar {
+#wrap .t_compre.COMPREHENSION .Passage .script_box .swiper-container .swiper-scrollbar {
     margin-right: 10px;
     background: rgba(0, 0, 0, 0);
     width: 7px;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .script_box .swiper-container .swiper-scrollbar .swiper-scrollbar-drag {
+#wrap .t_compre.COMPREHENSION .Passage .script_box .swiper-container .swiper-scrollbar .swiper-scrollbar-drag {
     width: 7px;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 10px;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .script_box .countdown2 {
+#wrap .t_compre.COMPREHENSION .Passage .script_box .countdown2 {
     display: flex;
     position: absolute;
     left: 0px;
@@ -4441,11 +4441,11 @@ body {
     overflow: hidden;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .script_box .countdown2.hide {
+#wrap .t_compre.COMPREHENSION .Passage .script_box .countdown2.hide {
     display: none;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .script_box .countdown2 .countdown {
+#wrap .t_compre.COMPREHENSION .Passage .script_box .countdown2 .countdown {
     width: auto;
     height: auto;
     border-radius: 50%;
@@ -4454,17 +4454,17 @@ body {
     opacity: 1;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .script_box .countdown2 .countdown.hide {
+#wrap .t_compre.COMPREHENSION .Passage .script_box .countdown2 .countdown.hide {
     transition: transform 0.3s, opacity 0.3s;
     transform: scale(0.2, 0.2);
     opacity: 0.1;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .script_box .countdown2 .countdown canvas {
+#wrap .t_compre.COMPREHENSION .Passage .script_box .countdown2 .countdown canvas {
     vertical-align: middle;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .script_box .countdown2 .countdown > div {
+#wrap .t_compre.COMPREHENSION .Passage .script_box .countdown2 .countdown > div {
     border-radius: 50%;
     position: absolute;
     left: 0px;
@@ -4473,7 +4473,7 @@ body {
     height: 100%;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .script_box .countdown2 .countdown > div > div {
+#wrap .t_compre.COMPREHENSION .Passage .script_box .countdown2 .countdown > div > div {
     position: absolute;
     left: 0px;
     width: 100%;
@@ -4487,7 +4487,7 @@ body {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .script_box > .yourturn {
+#wrap .t_compre.COMPREHENSION .Passage .script_box > .yourturn {
     pointer-events: none;
     position: absolute;
     left: 0px;
@@ -4499,16 +4499,16 @@ body {
     z-index: 10;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .script_box > .yourturn.hide {
+#wrap .t_compre.COMPREHENSION .Passage .script_box > .yourturn.hide {
     opacity: 0;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .script_box > .yourturn > svg {
+#wrap .t_compre.COMPREHENSION .Passage .script_box > .yourturn > svg {
     width: 100%;
     height: 100%;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .popup_btns {
+#wrap .t_compre.COMPREHENSION .Passage .popup_btns {
     position: absolute;
     bottom: 58px;
     height: 0px;
@@ -4516,7 +4516,7 @@ body {
     text-align: center;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .popup_btns .btn_listen_repeat {
+#wrap .t_compre.COMPREHENSION .Passage .popup_btns .btn_listen_repeat {
     touch-action: none;
     padding: 0px;
     border: none;
@@ -4530,17 +4530,17 @@ body {
     cursor: pointer;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .popup_btns .btn_listen_repeat:disabled {
+#wrap .t_compre.COMPREHENSION .Passage .popup_btns .btn_listen_repeat:disabled {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_listen_repeat_dis.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .popup_btns .btn_listen_repeat.down {
+#wrap .t_compre.COMPREHENSION .Passage .popup_btns .btn_listen_repeat.down {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_listen_repeat_down.png");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .popup_btns .btn_listen_repeat:before {
+#wrap .t_compre.COMPREHENSION .Passage .popup_btns .btn_listen_repeat:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -4551,11 +4551,11 @@ body {
     content: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_listen_repeat.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_listen_repeat_down.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_listen_repeat_dis.png");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .popup_btns .btn_listen_repeat.on {
+#wrap .t_compre.COMPREHENSION .Passage .popup_btns .btn_listen_repeat.on {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_listen_repeat_on.png");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .popup_btns .btn_readalong {
+#wrap .t_compre.COMPREHENSION .Passage .popup_btns .btn_readalong {
     touch-action: none;
     padding: 0px;
     border: none;
@@ -4569,17 +4569,17 @@ body {
     cursor: pointer;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .popup_btns .btn_readalong:disabled {
+#wrap .t_compre.COMPREHENSION .Passage .popup_btns .btn_readalong:disabled {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_readalong_dis.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .popup_btns .btn_readalong.down {
+#wrap .t_compre.COMPREHENSION .Passage .popup_btns .btn_readalong.down {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_readalong_down.png");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .popup_btns .btn_readalong:before {
+#wrap .t_compre.COMPREHENSION .Passage .popup_btns .btn_readalong:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -4590,11 +4590,11 @@ body {
     content: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_readalong.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_readalong_down.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_readalong_dis.png");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .popup_btns .btn_readalong.on {
+#wrap .t_compre.COMPREHENSION .Passage .popup_btns .btn_readalong.on {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_readalong_on.png");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .popup_btns .btn_qna {
+#wrap .t_compre.COMPREHENSION .Passage .popup_btns .btn_qna {
     touch-action: none;
     padding: 0px;
     border: none;
@@ -4608,17 +4608,17 @@ body {
     cursor: pointer;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .popup_btns .btn_qna:disabled {
+#wrap .t_compre.COMPREHENSION .Passage .popup_btns .btn_qna:disabled {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_qna_dis.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .popup_btns .btn_qna.down {
+#wrap .t_compre.COMPREHENSION .Passage .popup_btns .btn_qna.down {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_qna_down.png");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .popup_btns .btn_qna:before {
+#wrap .t_compre.COMPREHENSION .Passage .popup_btns .btn_qna:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -4629,11 +4629,11 @@ body {
     content: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_qna.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_qna_down.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_qna_dis.png");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .popup_btns .btn_qna.on {
+#wrap .t_compre.COMPREHENSION .Passage .popup_btns .btn_qna.on {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_qna_on.png");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup {
     position: absolute;
     left: 0px;
     width: 100%;
@@ -4649,7 +4649,7 @@ body {
     height: 800px;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup.open {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup.open {
     pointer-events: unset;
     z-index: 10001;
     opacity: 1;
@@ -4657,7 +4657,7 @@ body {
     transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup.closing {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup.closing {
     pointer-events: unset;
     z-index: 10001;
     opacity: 0;
@@ -4665,11 +4665,11 @@ body {
     transition: transform 0.3s, opacity 0.3s;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup.closed {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup.closed {
     display: none;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup > span {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup > span {
     display: inline-block;
     position: absolute;
     top: 185px;
@@ -4679,7 +4679,7 @@ body {
     line-height: 1.2;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup .btn_close {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup .btn_close {
     position: absolute;
     top: 183px;
     right: 260px;
@@ -4696,17 +4696,17 @@ body {
     cursor: pointer;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup .btn_close:disabled {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup .btn_close:disabled {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_pop_close.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup .btn_close.down {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup .btn_close.down {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_pop_close_down.png");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup .btn_close:before {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup .btn_close:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -4717,7 +4717,7 @@ body {
     content: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_pop_close.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_pop_close_down.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_pop_close.png");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup > .fel_topad {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup > .fel_topad {
     position: absolute;
     z-index: 11;
     touch-action: none;
@@ -4740,11 +4740,11 @@ body {
     right: 253px;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup > .fel_topad.on {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup > .fel_topad.on {
     background-image: url("/content/digenglish_lib/images/topad_on.svg");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup > .fel_topad:before {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup > .fel_topad:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -4755,11 +4755,11 @@ body {
     content: url("/content/digenglish_lib/images/topad.svg") url("/content/digenglish_lib/images/topad_on.svg");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup > .fel_topad.on {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup > .fel_topad.on {
     filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup .popup_content {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup .popup_content {
     width: 788px;
     height: 411px;
     position: absolute;
@@ -4768,7 +4768,7 @@ body {
     text-align: center;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup .popup_content > span:nth-child(1) {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup .popup_content > span:nth-child(1) {
     font-size: 50px;
     letter-spacing: -2px;
     word-spacing: -1px;
@@ -4776,19 +4776,19 @@ body {
     top: 150px;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup .popup_content > span:nth-child(2) {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup .popup_content > span:nth-child(2) {
     display: none;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup .popup_content > span:nth-child(3) {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup .popup_content > span:nth-child(3) {
     display: none;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup.SHADOWING > span {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup.SHADOWING > span {
     letter-spacing: 0px;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup.SHADOWING > div {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup.SHADOWING > div {
     width: 788px;
     height: 411px;
     position: absolute;
@@ -4797,11 +4797,11 @@ body {
     text-align: center;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup.SHADOWING > div > span:nth-child(1) {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup.SHADOWING > div > span:nth-child(1) {
     display: none;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup.SHADOWING > div > span:nth-child(2) {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup.SHADOWING > div > span:nth-child(2) {
     display: inline-block;
     letter-spacing: -1px;
     word-spacing: -4px;
@@ -4811,15 +4811,15 @@ body {
     top: 150px;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup.SHADOWING > div > span:nth-child(3) {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup.SHADOWING > div > span:nth-child(3) {
     display: none;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup.QNA > span {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup.QNA > span {
     letter-spacing: 0px;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup.QNA > div {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup.QNA > div {
     width: 788px;
     height: 411px;
     position: absolute;
@@ -4828,15 +4828,15 @@ body {
     text-align: center;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup.QNA > div > span:nth-child(1) {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup.QNA > div > span:nth-child(1) {
     display: none;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup.QNA > div > span:nth-child(2) {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup.QNA > div > span:nth-child(2) {
     display: none;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .passage_popup.QNA > div > span:nth-child(3) {
+#wrap .t_compre.COMPREHENSION .Passage .passage_popup.QNA > div > span:nth-child(3) {
     display: inline-block;
     font-size: 50px;
     letter-spacing: -2px;
@@ -4845,7 +4845,7 @@ body {
     top: 150px;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .img_passage {
+#wrap .t_compre.COMPREHENSION .Passage .img_passage {
     position: absolute;
     left: 0px;
     width: 100%;
@@ -4859,7 +4859,7 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .img_passage.open {
+#wrap .t_compre.COMPREHENSION .Passage .img_passage.open {
     pointer-events: unset;
     z-index: 10001;
     opacity: 1;
@@ -4867,7 +4867,7 @@ body {
     transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .img_passage.closing {
+#wrap .t_compre.COMPREHENSION .Passage .img_passage.closing {
     pointer-events: unset;
     z-index: 10001;
     opacity: 0;
@@ -4875,11 +4875,11 @@ body {
     transition: transform 0.3s, opacity 0.3s;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .img_passage.closed {
+#wrap .t_compre.COMPREHENSION .Passage .img_passage.closed {
     display: none;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .img_passage > img {
+#wrap .t_compre.COMPREHENSION .Passage .img_passage > img {
     border-radius: 11px;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.4);
     width: 1088px;
@@ -4889,7 +4889,7 @@ body {
     left: 100px;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .img_passage .btn_close {
+#wrap .t_compre.COMPREHENSION .Passage .img_passage .btn_close {
     position: absolute;
     top: 25px;
     right: 75px;
@@ -4906,17 +4906,17 @@ body {
     cursor: pointer;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .img_passage .btn_close:disabled {
+#wrap .t_compre.COMPREHENSION .Passage .img_passage .btn_close:disabled {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_popup_close.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .img_passage .btn_close.down {
+#wrap .t_compre.COMPREHENSION .Passage .img_passage .btn_close.down {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_popup_close_down.png");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .img_passage .btn_close:before {
+#wrap .t_compre.COMPREHENSION .Passage .img_passage .btn_close:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -4927,7 +4927,7 @@ body {
     content: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_popup_close.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_popup_close_down.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_popup_close.png");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .trans_popup {
+#wrap .t_compre.COMPREHENSION .Passage .trans_popup {
     position: absolute;
     left: 0px;
     width: 100%;
@@ -4943,7 +4943,7 @@ body {
     height: 800px;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .trans_popup.open {
+#wrap .t_compre.COMPREHENSION .Passage .trans_popup.open {
     pointer-events: unset;
     z-index: 10001;
     opacity: 1;
@@ -4951,7 +4951,7 @@ body {
     transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .trans_popup.closing {
+#wrap .t_compre.COMPREHENSION .Passage .trans_popup.closing {
     pointer-events: unset;
     z-index: 10001;
     opacity: 0;
@@ -4959,11 +4959,11 @@ body {
     transition: transform 0.3s, opacity 0.3s;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .trans_popup.closed {
+#wrap .t_compre.COMPREHENSION .Passage .trans_popup.closed {
     display: none;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .trans_popup .title {
+#wrap .t_compre.COMPREHENSION .Passage .trans_popup .title {
     display: inline-block;
     position: absolute;
     top: 90px;
@@ -4973,7 +4973,7 @@ body {
     line-height: 1.2;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .trans_popup .trans_script {
+#wrap .t_compre.COMPREHENSION .Passage .trans_popup .trans_script {
     width: 1115px;
     height: 590px;
     position: absolute;
@@ -4982,7 +4982,7 @@ body {
     text-align: center;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .trans_popup .trans_script .swiper-container {
+#wrap .t_compre.COMPREHENSION .Passage .trans_popup .trans_script .swiper-container {
     width: 100%;
     height: auto;
     max-height: 100%;
@@ -4991,7 +4991,7 @@ body {
     overflow: hidden;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .trans_popup .trans_script .swiper-container .script_eng {
+#wrap .t_compre.COMPREHENSION .Passage .trans_popup .trans_script .swiper-container .script_eng {
     width: 97%;
     height: auto;
     margin: 15px 10px 5px 10px;
@@ -5001,27 +5001,27 @@ body {
     white-space: normal;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .trans_popup .trans_script .swiper-container .script_eng > div {
+#wrap .t_compre.COMPREHENSION .Passage .trans_popup .trans_script .swiper-container .script_eng > div {
     margin-top: 10px;
     color: #1a70ff;
     white-space: normal;
     font-size: 28px;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .trans_popup .trans_script .swiper-container .swiper-slide {
+#wrap .t_compre.COMPREHENSION .Passage .trans_popup .trans_script .swiper-container .swiper-slide {
     height: auto;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .trans_popup .trans_script .swiper-container .swiper-scrollbar {
+#wrap .t_compre.COMPREHENSION .Passage .trans_popup .trans_script .swiper-container .swiper-scrollbar {
     width: 6px;
     background-color: transparent;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .trans_popup .trans_script .swiper-container .swiper-scrollbar .swiper-scrollbar-drag {
+#wrap .t_compre.COMPREHENSION .Passage .trans_popup .trans_script .swiper-container .swiper-scrollbar .swiper-scrollbar-drag {
     background-color: rgba(0, 0, 0, 0.25);
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .trans_popup .btn_close {
+#wrap .t_compre.COMPREHENSION .Passage .trans_popup .btn_close {
     position: absolute;
     top: 90px;
     right: 90px;
@@ -5038,17 +5038,17 @@ body {
     cursor: pointer;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .trans_popup .btn_close:disabled {
+#wrap .t_compre.COMPREHENSION .Passage .trans_popup .btn_close:disabled {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_pop_close.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .trans_popup .btn_close.down {
+#wrap .t_compre.COMPREHENSION .Passage .trans_popup .btn_close.down {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_pop_close_down.png");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE .trans_popup .btn_close:before {
+#wrap .t_compre.COMPREHENSION .Passage .trans_popup .btn_close:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -5059,7 +5059,7 @@ body {
     content: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_pop_close.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_pop_close_down.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_pop_close.png");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE > .fel_topad {
+#wrap .t_compre.COMPREHENSION .Passage > .fel_topad {
     position: absolute;
     z-index: 11;
     touch-action: none;
@@ -5079,11 +5079,11 @@ body {
     pointer-events: unset;
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE > .fel_topad.on {
+#wrap .t_compre.COMPREHENSION .Passage > .fel_topad.on {
     background-image: url("/content/digenglish_lib/images/topad_on.svg");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE > .fel_topad:before {
+#wrap .t_compre.COMPREHENSION .Passage > .fel_topad:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -5094,7 +5094,7 @@ body {
     content: url("/content/digenglish_lib/images/topad.svg") url("/content/digenglish_lib/images/topad_on.svg");
 }
 
-#wrap .t_compre.COMPREHENSION .PASSAGE > .fel_topad.on {
+#wrap .t_compre.COMPREHENSION .Passage > .fel_topad.on {
     filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
 }
 
@@ -5695,7 +5695,7 @@ body {
     height: 800px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer {
     position: absolute;
     left: 0px;
     width: 100%;
@@ -5703,14 +5703,14 @@ body {
     height: 100%;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .nav {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .nav {
     width: 100%;
     height: 70px;
     position: absolute;
     top: 123px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .nav .btn_sheet {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .nav .btn_sheet {
     touch-action: none;
     padding: 0px;
     border: none;
@@ -5728,17 +5728,17 @@ body {
     z-index: 3;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .nav .btn_sheet:disabled {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .nav .btn_sheet:disabled {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_newsheet_down.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .nav .btn_sheet.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .nav .btn_sheet.on {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_newsheet_down.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .nav .btn_sheet:before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .nav .btn_sheet:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -5749,14 +5749,14 @@ body {
     content: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_newsheet.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_newsheet_down.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_newsheet_down.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .nav .right {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .nav .right {
     position: absolute;
     top: 5px;
     right: 75px;
     z-index: 3;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .nav .right .return_cnt_box {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .nav .right .return_cnt_box {
     width: auto;
     height: auto;
     border: none;
@@ -5766,7 +5766,7 @@ body {
     margin-right: 10px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .nav .right .return_cnt_box > div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .nav .right .return_cnt_box > div {
     width: 70px;
     height: 30px;
     /* background-color 추가 */
@@ -5782,7 +5782,7 @@ body {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .nav .right .btn_answer {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .nav .right .btn_answer {
     touch-action: none;
     padding: 0px;
     border: none;
@@ -5799,17 +5799,17 @@ body {
     vertical-align: middle;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .nav .right .btn_answer:disabled {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .nav .right .btn_answer:disabled {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_answer_dis.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .nav .right .btn_answer.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .nav .right .btn_answer.on {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_answer_down.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .nav .right .btn_answer:before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .nav .right .btn_answer:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -5820,7 +5820,7 @@ body {
     content: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_answer.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_answer_down.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_answer_dis.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .nav > .title {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .nav > .title {
     font-size: 32px;
     line-height: 85px;
     color: #fff;
@@ -5832,43 +5832,43 @@ body {
     text-align: center;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .swiper-container {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .swiper-container {
     width: 1140px;
     height: 520px;
     margin-top: 195px;
     overflow: hidden;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box {
     width: 1120px;
     height: auto;
     text-align: center;
     margin: 0 auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .swiper-container {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .swiper-container {
     overflow: visible;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_1 .content-box > div .content .select-box, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_2 .content-box > div .content .select-box, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_3 .content-box > div .content .select-box, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_4 .content-box > div .content .select-box, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_5 .content-box > div .content .select-box, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_6 .content-box > div .content .select-box, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_7 .content-box > div .content .select-box {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_1 .content-box > div .content .select-box, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_2 .content-box > div .content .select-box, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_3 .content-box > div .content .select-box, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_4 .content-box > div .content .select-box, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_5 .content-box > div .content .select-box, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_6 .content-box > div .content .select-box, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_7 .content-box > div .content .select-box {
     line-height: 43px;
     vertical-align: middle;
     text-indent: 0;
     background: #fff;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_1 .content-box > div .content .select-box > .text-box, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_2 .content-box > div .content .select-box > .text-box, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_3 .content-box > div .content .select-box > .text-box, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_4 .content-box > div .content .select-box > .text-box, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_5 .content-box > div .content .select-box > .text-box, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_6 .content-box > div .content .select-box > .text-box, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_7 .content-box > div .content .select-box > .text-box {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_1 .content-box > div .content .select-box > .text-box, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_2 .content-box > div .content .select-box > .text-box, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_3 .content-box > div .content .select-box > .text-box, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_4 .content-box > div .content .select-box > .text-box, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_5 .content-box > div .content .select-box > .text-box, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_6 .content-box > div .content .select-box > .text-box, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_7 .content-box > div .content .select-box > .text-box {
     height: 45px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_1 .content-box > div .content .select-box > .btn-drop, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_2 .content-box > div .content .select-box > .btn-drop, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_3 .content-box > div .content .select-box > .btn-drop, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_4 .content-box > div .content .select-box > .btn-drop, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_5 .content-box > div .content .select-box > .btn-drop, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_6 .content-box > div .content .select-box > .btn-drop, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_7 .content-box > div .content .select-box > .btn-drop {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_1 .content-box > div .content .select-box > .btn-drop, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_2 .content-box > div .content .select-box > .btn-drop, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_3 .content-box > div .content .select-box > .btn-drop, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_4 .content-box > div .content .select-box > .btn-drop, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_5 .content-box > div .content .select-box > .btn-drop, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_6 .content-box > div .content .select-box > .btn-drop, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_7 .content-box > div .content .select-box > .btn-drop {
     width: 45px;
     height: 45px;
     background-size: 48px;
     background-position: center -2px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_1 .content-box > div .content .select-box > .options-box.bottom, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_2 .content-box > div .content .select-box > .options-box.bottom, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_3 .content-box > div .content .select-box > .options-box.bottom, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_4 .content-box > div .content .select-box > .options-box.bottom, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_5 .content-box > div .content .select-box > .options-box.bottom, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_6 .content-box > div .content .select-box > .options-box.bottom, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_7 .content-box > div .content .select-box > .options-box.bottom {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_1 .content-box > div .content .select-box > .options-box.bottom, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_2 .content-box > div .content .select-box > .options-box.bottom, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_3 .content-box > div .content .select-box > .options-box.bottom, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_4 .content-box > div .content .select-box > .options-box.bottom, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_5 .content-box > div .content .select-box > .options-box.bottom, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_6 .content-box > div .content .select-box > .options-box.bottom, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_7 .content-box > div .content .select-box > .options-box.bottom {
     position: absolute;
     left: 0;
     bottom: 1px;
@@ -5876,11 +5876,11 @@ body {
     border-radius: 0 0 7px 7px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_1 {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_1 {
     padding-top: 15px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_1 > .link_line {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_1 > .link_line {
     display: block;
     margin: 0px auto;
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/link_line.png");
@@ -5888,24 +5888,24 @@ body {
     height: 44px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_1 > .middle {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_1 > .middle {
     display: table;
     width: 1120px;
     padding: 0px 0px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_1 > .middle > div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_1 > .middle > div {
     display: table-cell;
     width: 50%;
     text-align: center;
     position: relative;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_1 > .middle > div .table-item {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_1 > .middle > div .table-item {
     min-height: 100%;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_1 > .middle > div:after {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_1 > .middle > div:after {
     display: block;
     content: "";
     width: 4px;
@@ -5918,19 +5918,19 @@ body {
     z-index: -1;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_1 > .middle > div:nth-child(2)::after {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_1 > .middle > div:nth-child(2)::after {
     margin-left: 0;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_1 > .middle > div:first-child {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_1 > .middle > div:first-child {
     padding-left: 10px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_1 > .middle > div:last-child {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_1 > .middle > div:last-child {
     padding-right: 10px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_1 > .link_line_down {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_1 > .link_line_down {
     display: block;
     margin: 0px auto;
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/link_line_down.png");
@@ -5938,22 +5938,22 @@ body {
     height: 45px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_1 > .bottom {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_1 > .bottom {
     margin-bottom: 100px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_1 .table-item {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_1 .table-item {
     background: #fff;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_2 {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_2 {
     height: auto;
     text-align: center;
     white-space: normal;
     padding-top: 15px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_2 > .top {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_2 > .top {
     position: relative;
     margin-top: 0px;
     display: inline-table;
@@ -5964,26 +5964,26 @@ body {
     padding: 20px 0px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_2 > .top > div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_2 > .top > div {
     display: table-cell;
     text-align: center;
     position: relative;
     z-index: 1;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_2 > .top > div.top_left {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_2 > .top > div.top_left {
     text-align: right;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_2 > .top > div.top_right {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_2 > .top > div.top_right {
     text-align: left;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_2 > .top > div .table-item {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_2 > .top > div .table-item {
     height: 100%;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_2 > .top .icon_arrow {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_2 > .top .icon_arrow {
     background: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/icon_arrow.png") no-repeat;
     width: 41px;
     background-position: 0px 50%;
@@ -5991,7 +5991,7 @@ body {
     z-index: 0;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_2 > .link_line {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_2 > .link_line {
     display: inline-block;
     background: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/bg_table_top.png") no-repeat;
     width: 1068px;
@@ -5999,26 +5999,26 @@ body {
     background-position-y: -335px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_2 > .middle {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_2 > .middle {
     position: relative;
     margin-top: 10px;
     margin-bottom: 120px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_2 > .middle > div > .table-item {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_2 > .middle > div > .table-item {
     min-width: 640px;
     min-height: 250px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_2 > .middle > div > .btn_table_zoom {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_2 > .middle > div > .btn_table_zoom {
     right: 320px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_2 .table-item {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_2 .table-item {
     background: #fff;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_3, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_7 {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_3, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_7 {
     overflow: hidden;
     width: 1120px;
     height: 520px;
@@ -6031,7 +6031,7 @@ body {
     z-index: 1;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_3 > .title, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_7 > .title {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_3 > .title, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_7 > .title {
     color: #fff;
     white-space: nowrap;
     overflow: hidden;
@@ -6042,7 +6042,7 @@ body {
     margin: auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_3 > .top, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_7 > .top {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_3 > .top, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_7 > .top {
     position: relative;
     margin-top: 0px;
     border-radius: 18px;
@@ -6052,7 +6052,7 @@ body {
     text-align: center;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_3 > .top > div, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_7 > .top > div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_3 > .top > div, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_7 > .top > div {
     text-align: center;
     position: relative;
     font-size: 0;
@@ -6062,68 +6062,68 @@ body {
     vertical-align: middle;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_3 > .top > div > .table-item, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_7 > .top > div > .table-item {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_3 > .top > div > .table-item, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_7 > .top > div > .table-item {
     height: 100%;
     min-width: 361px;
     box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.3);
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_3 > .top > div > .table-item > .head, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_7 > .top > div > .table-item > .head {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_3 > .top > div > .table-item > .head, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_7 > .top > div > .table-item > .head {
     line-height: 59px;
     height: 59px;
     font-weight: normal;
     text-indent: -25px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_3 > .top > div > .table-item > .swiper-container, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_7 > .top > div > .table-item > .swiper-container {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_3 > .top > div > .table-item > .swiper-container, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_7 > .top > div > .table-item > .swiper-container {
     height: calc(100vh - 378px);
     width: 100%;
     overflow: hidden;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_3 > .top > div > .table-item > .swiper-container > .swiper-scrollbar > .swiper-scrollbar-drag, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_7 > .top > div > .table-item > .swiper-container > .swiper-scrollbar > .swiper-scrollbar-drag {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_3 > .top > div > .table-item > .swiper-container > .swiper-scrollbar > .swiper-scrollbar-drag, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_7 > .top > div > .table-item > .swiper-container > .swiper-scrollbar > .swiper-scrollbar-drag {
     background-color: rgba(0, 0, 0, 0.25);
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_3 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_7 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_3 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_7 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box {
     width: 100%;
     display: block;
     min-height: 100%;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_3 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_7 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_3 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_7 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div {
     width: 100%;
     display: block;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_3 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div > .content, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_7 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div > .content {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_3 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div > .content, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_7 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div > .content {
     padding: 34px 22px 36px 20px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_3 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div > .content > li + li, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_7 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div > .content > li + li {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_3 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div > .content > li + li, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_7 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div > .content > li + li {
     margin-top: 28px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_3 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div > .content > li > div, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_7 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div > .content > li > div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_3 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div > .content > li > div, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_7 > .top > div > .table-item > .swiper-container > .swiper-wrapper > .content-box > div > .content > li > div {
     color: #323232;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_3 > .top > div + div, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_7 > .top > div + div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_3 > .top > div + div, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_7 > .top > div + div {
     padding-left: 13px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_3 .table-item, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_7 .table-item {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_3 .table-item, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_7 .table-item {
     background: #fff;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_4, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_5 {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_4, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_5 {
     height: auto;
     margin: 0 auto;
     text-align: center;
     white-space: normal;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_4 > .title, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_5 > .title {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_4 > .title, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_5 > .title {
     font-size: 32px;
     color: #fff;
     white-space: nowrap;
@@ -6135,7 +6135,7 @@ body {
     margin: auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_4 > .top, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_5 > .top {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_4 > .top, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_5 > .top {
     padding-bottom: 100px;
     position: relative;
     margin-top: 0px;
@@ -6145,7 +6145,7 @@ body {
     text-align: center;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_4 > .top > .table-item, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_5 > .top > .table-item {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_4 > .top > .table-item, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_5 > .top > .table-item {
     display: block;
     text-align: center;
     position: relative;
@@ -6155,7 +6155,7 @@ body {
     box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.3);
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_4 > .top > .table-item > .head, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_5 > .top > .table-item > .head {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_4 > .top > .table-item > .head, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_5 > .top > .table-item > .head {
     width: 278px;
     position: absolute;
     top: 0;
@@ -6166,7 +6166,7 @@ body {
     border-radius: 10px 0 0 10px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_4 > .top > .table-item > .head span, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_5 > .top > .table-item > .head span {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_4 > .top > .table-item > .head span, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_5 > .top > .table-item > .head span {
     display: flex;
     width: 100%;
     height: 100%;
@@ -6175,13 +6175,13 @@ body {
     flex-direction: column;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_4 > .top > .table-item > .head span > em, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_5 > .top > .table-item > .head span > em {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_4 > .top > .table-item > .head span > em, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_5 > .top > .table-item > .head span > em {
     display: block;
     width: 100%;
     font-style: normal;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_4 > .top > .table-item > .content-box, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_5 > .top > .table-item > .content-box {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_4 > .top > .table-item > .content-box, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_5 > .top > .table-item > .content-box {
     width: 812px;
     margin-left: 278px;
     overflow: visible;
@@ -6189,16 +6189,16 @@ body {
     min-height: 1px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_4 > .top > .table-item > .content-box > div, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_5 > .top > .table-item > .content-box > div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_4 > .top > .table-item > .content-box > div, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_5 > .top > .table-item > .content-box > div {
     width: 100%;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_4 > .top > .table-item > .content-box > div > .content, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_5 > .top > .table-item > .content-box > div > .content {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_4 > .top > .table-item > .content-box > div > .content, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_5 > .top > .table-item > .content-box > div > .content {
     width: 100%;
     padding: 30px 15px 30px 36px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_4 > .top > .table-item > .content-box > div > .content > li, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_5 > .top > .table-item > .content-box > div > .content > li {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_4 > .top > .table-item > .content-box > div > .content > li, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_5 > .top > .table-item > .content-box > div > .content > li {
     display: block;
     min-height: 44px;
     line-height: 40px;
@@ -6206,45 +6206,45 @@ body {
     line-height: 38px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_4 > .top > .table-item > .content-box > div > .content > li + li, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_5 > .top > .table-item > .content-box > div > .content > li + li {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_4 > .top > .table-item > .content-box > div > .content > li + li, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_5 > .top > .table-item > .content-box > div > .content > li + li {
     margin-top: 20px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_4 > .top > .table-item > .content-box > div > .content > li:after, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_5 > .top > .table-item > .content-box > div > .content > li:after {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_4 > .top > .table-item > .content-box > div > .content > li:after, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_5 > .top > .table-item > .content-box > div > .content > li:after {
     display: block;
     content: "";
     clear: both;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_4 > .top > .table-item > .content-box > div > .content > li > div, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_5 > .top > .table-item > .content-box > div > .content > li > div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_4 > .top > .table-item > .content-box > div > .content > li > div, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_5 > .top > .table-item > .content-box > div > .content > li > div {
     color: #323232;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_4 > .top > .table-item > .table-item-btn, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_5 > .top > .table-item > .table-item-btn {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_4 > .top > .table-item > .table-item-btn, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_5 > .top > .table-item > .table-item-btn {
     z-index: 1;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_4 > .top + div, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_5 > .top + div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_4 > .top + div, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_5 > .top + div {
     margin-top: 21px;
     z-index: 0;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_4 > .top + div .content > li, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_5 > .top + div .content > li {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_4 > .top + div .content > li, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_5 > .top + div .content > li {
     min-width: 100%;
     width: 100%;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_4 > .top:after, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_5 > .top:after {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_4 > .top:after, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_5 > .top:after {
     display: block;
     content: "";
     clear: both;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_4 .table-item, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_5 .table-item {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_4 .table-item, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_5 .table-item {
     background: #fff;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 {
     width: 1140px;
     height: 520px;
     overflow: hidden;
@@ -6253,7 +6253,7 @@ body {
     white-space: normal;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top {
     width: 1108px;
     height: 500px;
     position: relative;
@@ -6262,7 +6262,7 @@ body {
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div {
     width: 480px;
     height: 500px;
     position: absolute;
@@ -6270,32 +6270,32 @@ body {
     left: 0;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div .table-item {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div .table-item {
     background-color: unset;
     height: 100%;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div:nth-child(1) {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div:nth-child(1) {
     background: #ffd966;
     border-radius: 150px 0 0 150px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div:nth-child(1) > .table-item {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div:nth-child(1) > .table-item {
     float: left;
     margin-left: 20px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div:nth-child(1) > .table-item > .head {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div:nth-child(1) > .table-item > .head {
     background: #c39e2f;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div:nth-child(1) > .table-item > .swiper-container
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div:nth-child(1) > .table-item > .swiper-container
 > .swiper-scrollbar
 > .swiper-scrollbar-drag {
     background-color: rgba(255, 255, 255, 0.65);
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div:nth-child(2) {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div:nth-child(2) {
     background: #188f85;
     width: 430px;
     left: 336px;
@@ -6303,41 +6303,41 @@ body {
     border-radius: 150px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div:nth-child(2) > .table-item {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div:nth-child(2) > .table-item {
     width: 430px;
     height: 500px;
     text-align: center;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div:nth-child(2) > .table-item > .head {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div:nth-child(2) > .table-item > .head {
     background: #137169;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div:nth-child(2) > .table-item > .swiper-container .swiper-scrollbar {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div:nth-child(2) > .table-item > .swiper-container .swiper-scrollbar {
     right: 0;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div:nth-child(3) {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div:nth-child(3) {
     background: #2e75b6;
     right: 0;
     left: auto;
     border-radius: 0 150px 150px 0;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div:nth-child(3) > .table-item {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div:nth-child(3) > .table-item {
     float: right;
     margin-right: 20px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div:nth-child(3) > .table-item > .head {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div:nth-child(3) > .table-item > .head {
     background: #215d8f;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div:nth-child(3) > .table-item > .swiper-container .swiper-scrollbar {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div:nth-child(3) > .table-item > .swiper-container .swiper-scrollbar {
     right: 5px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div > .table-item {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div > .table-item {
     padding: 35px 0 0;
     width: 320px;
     min-width: 320px;
@@ -6345,7 +6345,7 @@ body {
     position: relative;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div > .table-item > .head {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div > .table-item > .head {
     display: inline-block;
     border-radius: 5px;
     font-weight: normal;
@@ -6354,7 +6354,7 @@ body {
     padding: 0 5px 5px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div > .table-item > .swiper-container {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div > .table-item > .swiper-container {
     display: block;
     position: absolute;
     left: 0;
@@ -6365,63 +6365,63 @@ body {
     overflow: hidden;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div > .table-item > .swiper-container > .swiper-wrapper {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div > .table-item > .swiper-container > .swiper-wrapper {
     min-height: 325px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div > .table-item > .swiper-container > .swiper-wrapper .content-box > div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div > .table-item > .swiper-container > .swiper-wrapper .content-box > div {
     width: 100%;
     display: block;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div > .table-item > .swiper-container > .swiper-wrapper .content-box > div > .content {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div > .table-item > .swiper-container > .swiper-wrapper .content-box > div > .content {
     padding-right: 0;
     padding-bottom: 0;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div > .table-item > .swiper-container > .swiper-wrapper .content-box > div > .content > li {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div > .table-item > .swiper-container > .swiper-wrapper .content-box > div > .content > li {
     margin-bottom: 15px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div > .table-item > .swiper-container > .swiper-wrapper .content-box > div > .content > li:last-child {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div > .table-item > .swiper-container > .swiper-wrapper .content-box > div > .content > li:last-child {
     margin-bottom: 0;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div > .table-item > .swiper-container > .swiper-wrapper .content-box > div > .content > li > div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div > .table-item > .swiper-container > .swiper-wrapper .content-box > div > .content > li > div {
     color: #000;
     text-indent: -30px;
     padding-left: 30px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div > .table-item > .swiper-container .swiper-scrollbar {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div > .table-item > .swiper-container .swiper-scrollbar {
     height: 68%;
     top: 5%;
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_6 > .top > div > .table-item > .swiper-container .swiper-scrollbar > .swiper-scrollbar-drag {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_6 > .top > div > .table-item > .swiper-container .swiper-scrollbar > .swiper-scrollbar-drag {
     background-color: rgba(255, 255, 255, 0.5);
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_7 > .top > div > .table-item {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_7 > .top > div > .table-item {
     min-width: 470px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_7 > .top > div > .table-item > .table-item-btn {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_7 > .top > div > .table-item > .table-item-btn {
     top: 11px;
     right: 10px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box.type_7 > .top > div + div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box.type_7 > .top > div + div {
     padding-left: 65px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item > .head > span > em {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item > .head > span > em {
     width: 100%;
     font-style: normal;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item > .swiper-container
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item > .swiper-container
 > .swiper-wrapper
 > .swiper-slide
 > div
@@ -6433,7 +6433,7 @@ body {
     line-height: 1.2;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item > .swiper-container
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item > .swiper-container
 > .swiper-wrapper
 > .swiper-slide
 > div
@@ -6442,7 +6442,7 @@ body {
     text-indent: 0 !important;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item > .swiper-container
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item > .swiper-container
 > .swiper-wrapper
 > .swiper-slide
 > div
@@ -6451,23 +6451,23 @@ body {
     margin-bottom: 20px !important;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content > li > div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .content > li > div {
     text-indent: -35px;
     padding-left: 35px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content > li > div > .select-box {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .content > li > div > .select-box {
     text-indent: 0;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content > li > div > .select-box > .options-box.top {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .content > li > div > .select-box > .options-box.top {
     border-radius: 7px 7px 0 0;
     left: -1px;
     overflow: hidden;
     top: 0 !important;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item {
     position: relative;
     display: inline-block;
     vertical-align: top;
@@ -6479,7 +6479,7 @@ body {
     box-shadow: 0px 0px 2px 0px rgba(152, 152, 152, 0.6);
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .head {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .head {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     text-align: center;
@@ -6488,23 +6488,23 @@ body {
     color: white;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .head em {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .head em {
     font-style: unset;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content-box {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .content-box {
     display: table;
     width: 100%;
     min-height: 200px;
     height: auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content-box > div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .content-box > div {
     display: table-cell;
     vertical-align: middle;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content-box > div .content {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .content-box > div .content {
     /* rw_comprehension 190425 수정사항 p.23 */
     box-sizing: border-box;
     color: #323232;
@@ -6522,11 +6522,11 @@ body {
             margin-block-start: 0px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content-box > div .content > li {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .content-box > div .content > li {
     line-height: 55px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content-box > div .content .select-box {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .content-box > div .content .select-box {
     position: relative;
     display: inline-block;
     vertical-align: baseline;
@@ -6537,20 +6537,20 @@ body {
     line-height: 50px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content-box > div .content .select-box > .text-box {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .content-box > div .content .select-box > .text-box {
     touch-action: none;
     display: inline-block;
     vertical-align: bottom;
     height: 50px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content-box > div .content .select-box > .text-box > .size-box {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .content-box > div .content .select-box > .text-box > .size-box {
     height: 0px;
     color: transparent;
     overflow: hidden;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content-box > div .content .select-box > .btn-drop {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .content-box > div .content .select-box > .btn-drop {
     touch-action: none;
     padding: 0px;
     border: none;
@@ -6567,11 +6567,11 @@ body {
     margin-left: 7.5px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content-box > div .content .select-box > .btn-drop.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .content-box > div .content .select-box > .btn-drop.on {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_dropdown_t_up.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content-box > div .content .select-box > .btn-drop:before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .content-box > div .content .select-box > .btn-drop:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -6582,7 +6582,7 @@ body {
     content: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_dropdown_t_down.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_dropdown_t_up.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content-box > div .content .select-box > .options-box {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .content-box > div .content .select-box > .options-box {
     position: absolute;
     left: -2px;
     right: -2px;
@@ -6592,92 +6592,92 @@ body {
     pointer-events: none;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content-box > div .content .select-box > .options-box.bottom {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .content-box > div .content .select-box > .options-box.bottom {
     width: 100%;
     bottom: 2px;
     transform: translateY(100%);
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content-box > div .content .select-box > .options-box.top {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .content-box > div .content .select-box > .options-box.top {
     width: 100%;
     top: 2px;
     transform: translateY(-100%);
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content-box > div .content .select-box > .options-box.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .content-box > div .content .select-box > .options-box.on {
     opacity: 1;
     pointer-events: unset;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content-box > div .content .select-box > .options-box > div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .content-box > div .content .select-box > .options-box > div {
     width: 100%;
     padding-left: 9.5px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content-box > div .content .select-box > .options-box > div.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .content-box > div .content .select-box > .options-box > div.on {
     background-color: #94cbff;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content-box > div .content .select-box > .options-box > div.correct {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .content-box > div .content .select-box > .options-box > div.correct {
     background-color: #249bfa;
     color: #fff;
     pointer-events: none;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content-box > div .content .select-box > .options-box > div.wrong {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .content-box > div .content .select-box > .options-box > div.wrong {
     background-color: #cacaca;
     color: #878787;
     pointer-events: none;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .content-box > div .content .select-box > .options-box > div:hover {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .content-box > div .content .select-box > .options-box > div:hover {
     background-color: #80b7ff;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.purple .head {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.purple .head {
     background-color: #b07ae1;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.purple .content li::before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.purple .content li::before {
     color: #b07ae1;
     /* or whatever color you prefer */
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.green .head {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.green .head {
     background-color: #1cc9af;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.green .content li::before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.green .content li::before {
     color: #1cc9af;
     /* or whatever color you prefer */
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.blue .head {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.blue .head {
     background-color: #4f7ad1;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.blue .content li::before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.blue .content li::before {
     color: #4f7ad1;
     /* or whatever color you prefer */
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_2 .head {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_2 .head {
     background-color: #0d4696;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_2 > li {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_2 > li {
     line-height: 55px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_2 li::before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_2 li::before {
     content: "";
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item {
     /*position: relative;*/
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .table-item-btn {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .table-item-btn {
     position: absolute;
     top: 2px;
     right: 2px;
@@ -6694,17 +6694,17 @@ body {
     cursor: pointer;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .table-item-btn:disabled {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .table-item-btn:disabled {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_table_zoom.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .table-item-btn.down {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .table-item-btn.down {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_table_zoom_down.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item .table-item-btn:before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item .table-item-btn:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -6715,12 +6715,12 @@ body {
     content: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_table_zoom.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_table_zoom_down.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_table_zoom.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_2 .table-item-btn {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_2 .table-item-btn {
     top: 1px;
     right: 2px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_3 .table-item-btn {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_3 .table-item-btn {
     top: 12px;
     right: 8px;
     width: 34px;
@@ -6728,7 +6728,7 @@ body {
     background-size: cover;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_4 .table-item-btn, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_5 .table-item-btn {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_4 .table-item-btn, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_5 .table-item-btn {
     top: 8px;
     right: 8px;
     touch-action: none;
@@ -6745,17 +6745,17 @@ body {
     background-position: 50% 50%;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_4 .table-item-btn:disabled, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_5 .table-item-btn:disabled {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_4 .table-item-btn:disabled, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_5 .table-item-btn:disabled {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_zoom_2.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_4 .table-item-btn.down, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_5 .table-item-btn.down {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_4 .table-item-btn.down, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_5 .table-item-btn.down {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_table_zoom_down.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_4 .table-item-btn:before, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER .table_box .table-item.type_5 .table-item-btn:before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_4 .table-item-btn:before, #wrap .t_compre.VISUALIZING .GraphicOrganizer .table_box .table-item.type_5 .table-item-btn:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -6766,22 +6766,22 @@ body {
     content: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_zoom_2.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_table_zoom_down.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_zoom_2.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .swiper-slide {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .swiper-slide {
     height: auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .swiper-scrollbar {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .swiper-scrollbar {
     display: unset;
     width: 7px;
     background-color: transparent;
     right: 10px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER .swiper-scrollbar .swiper-scrollbar-drag {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer .swiper-scrollbar .swiper-scrollbar-drag {
     background-color: rgba(255, 255, 255, 0.25);
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup {
     position: absolute;
     left: 0px;
     width: 100%;
@@ -6795,7 +6795,7 @@ body {
     background-color: rgba(0, 0, 0, 0.65);
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup.open {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup.open {
     pointer-events: unset;
     z-index: 10001;
     opacity: 1;
@@ -6803,7 +6803,7 @@ body {
     transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup.closing {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup.closing {
     pointer-events: unset;
     z-index: 10001;
     opacity: 0;
@@ -6811,30 +6811,30 @@ body {
     transition: transform 0.3s, opacity 0.3s;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup.closed {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup.closed {
     display: none;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container {
     position: absolute;
     width: 100%;
     top: 0px;
     height: 100%;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper.swiper-no-swiping {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper.swiper-no-swiping {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide {
     text-align: center;
     height: auto;
     padding: 50px 0;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item {
     position: relative;
     display: inline-block;
     vertical-align: top;
@@ -6846,7 +6846,7 @@ body {
     box-shadow: 0px 4px 2.8px 1.2px rgba(0, 0, 0, 0.3);
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .head {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .head {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     text-align: center;
@@ -6855,23 +6855,23 @@ body {
     color: white;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .head em {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .head em {
     font-style: unset;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box {
     display: table;
     width: 100%;
     min-height: 285px;
     height: auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div {
     display: table-cell;
     vertical-align: middle;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content {
     /* rw_comprehension 190425 수정사항 p.23 */
     box-sizing: border-box;
     color: #323232;
@@ -6889,11 +6889,11 @@ body {
             margin-block-start: 0px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content > li {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content > li {
     line-height: 82px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box {
     position: relative;
     display: inline-block;
     vertical-align: baseline;
@@ -6904,20 +6904,20 @@ body {
     line-height: 68px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .text-box {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .text-box {
     touch-action: none;
     display: inline-block;
     vertical-align: bottom;
     height: 68px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .text-box > .size-box {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .text-box > .size-box {
     height: 0px;
     color: transparent;
     overflow: hidden;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .btn-drop {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .btn-drop {
     touch-action: none;
     padding: 0px;
     border: none;
@@ -6934,11 +6934,11 @@ body {
     margin-left: 10.2px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .btn-drop.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .btn-drop.on {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_dropdown_up.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .btn-drop:before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .btn-drop:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -6949,7 +6949,7 @@ body {
     content: url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_dropdown_down.png") url("/content/digenglish_lib/B/rw_comprehension/student/images/btn_dropdown_up.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .options-box {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .options-box {
     position: absolute;
     left: -2px;
     right: -2px;
@@ -6959,129 +6959,129 @@ body {
     pointer-events: none;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .options-box.bottom {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .options-box.bottom {
     width: 100%;
     bottom: 2px;
     transform: translateY(100%);
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .options-box.top {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .options-box.top {
     width: 100%;
     top: 2px;
     transform: translateY(-100%);
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .options-box.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .options-box.on {
     opacity: 1;
     pointer-events: unset;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .options-box > div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .options-box > div {
     width: 100%;
     padding-left: 12.2px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .options-box > div.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .options-box > div.on {
     background-color: #94cbff;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .options-box > div.correct {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .options-box > div.correct {
     background-color: #249bfa;
     color: #fff;
     pointer-events: none;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .options-box > div.wrong {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .options-box > div.wrong {
     background-color: #cacaca;
     color: #878787;
     pointer-events: none;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .options-box > div:hover {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item .content-box > div .content .select-box > .options-box > div:hover {
     background-color: #80b7ff;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item.purple .head {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item.purple .head {
     background-color: #b07ae1;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item.purple .content li::before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item.purple .content li::before {
     color: #b07ae1;
     /* or whatever color you prefer */
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item.green .head {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item.green .head {
     background-color: #1cc9af;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item.green .content li::before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item.green .content li::before {
     color: #1cc9af;
     /* or whatever color you prefer */
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item.blue .head {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item.blue .head {
     background-color: #4f7ad1;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item.blue .content li::before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item.blue .content li::before {
     color: #4f7ad1;
     /* or whatever color you prefer */
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item.type_2 .head {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item.type_2 .head {
     background-color: #0d4696;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item.type_2 > li {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item.type_2 > li {
     line-height: 73px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item.type_2 li::before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide .table-item.type_2 li::before {
     content: "";
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item {
     position: relative;
     background: #fff;
     vertical-align: middle;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item .content-box > div > .content > li {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item .content-box > div > .content > li {
     line-height: 82px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item .content-box > div > .content > li > div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item .content-box > div > .content > li > div {
     text-indent: -52px;
     padding-left: 52px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item .content-box > div > .content > li > div .select-box {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item .content-box > div > .content > li > div .select-box {
     text-indent: 0;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item .content-box > div > .content > li > div .select-box > .options-box.bottom {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item .content-box > div > .content > li > div .select-box > .options-box.bottom {
     border-radius: 0 0 7px 7px;
     left: 0px;
     overflow: hidden;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item .content-box > div > .content > li > div .select-box > .options-box.top {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item .content-box > div > .content > li > div .select-box > .options-box.top {
     border-radius: 7px 7px 0 0;
     left: 0px;
     overflow: hidden;
     top: 0 !important;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item .swiper-container {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item .swiper-container {
     overflow: visible;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item .head > span > em {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item .head > span > em {
     font-style: normal;
     margin: 0 6px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item .table-item-btn {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item .table-item-btn {
     position: absolute;
     top: 15px;
     right: 15px;
@@ -7098,17 +7098,17 @@ body {
     cursor: pointer;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item .table-item-btn:disabled {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item .table-item-btn:disabled {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/zoomout.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item .table-item-btn.down {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item .table-item-btn.down {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/zoomout.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item .table-item-btn:before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item .table-item-btn:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -7119,24 +7119,24 @@ body {
     content: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/zoomout.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/zoomout.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/zoomout.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_2 .table-item-btn {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_2 .table-item-btn {
     top: 16px;
     right: 16px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_3 .head, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_4 .head, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_5 .head {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_3 .head, #wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_4 .head, #wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_5 .head {
     font-weight: normal;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_3 .content-box > div > .content > li, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_4 .content-box > div > .content > li, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_5 .content-box > div > .content > li {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_3 .content-box > div > .content > li, #wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_4 .content-box > div > .content > li, #wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_5 .content-box > div > .content > li {
     line-height: 80px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_3 .content-box > div > .content > li + li, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_4 .content-box > div > .content > li + li, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_5 .content-box > div > .content > li + li {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_3 .content-box > div > .content > li + li, #wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_4 .content-box > div > .content > li + li, #wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_5 .content-box > div > .content > li + li {
     margin-top: 30px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_3 .content-box > div > .content > li > div, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_4 .content-box > div > .content > li > div, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_5 .content-box > div > .content > li > div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_3 .content-box > div > .content > li > div, #wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_4 .content-box > div > .content > li > div, #wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_5 .content-box > div > .content > li > div {
     display: inline-block;
     position: relative;
     color: #323232;
@@ -7144,7 +7144,7 @@ body {
     vertical-align: middle;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_3 .table-item-btn, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_4 .table-item-btn, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_5 .table-item-btn {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_3 .table-item-btn, #wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_4 .table-item-btn, #wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_5 .table-item-btn {
     top: 13px;
     right: 14px;
     width: 50px;
@@ -7152,27 +7152,27 @@ body {
     background-size: 100%;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_3 .options-box.bottom, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_4 .options-box.bottom, #wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_5 .options-box.bottom {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_3 .options-box.bottom, #wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_4 .options-box.bottom, #wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_5 .options-box.bottom {
     overflow: hidden;
     left: 0 !important;
     border-radius: 0 0 7px 7px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_4 .content-box > div > .content {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_4 .content-box > div > .content {
     padding-bottom: 50px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_4 .content-box > div > .content:after {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_4 .content-box > div > .content:after {
     display: block;
     content: "";
     clear: both;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_4 .content-box > div > .content > li {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item.type_4 .content-box > div > .content > li {
     margin-top: 40px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item > .swiper-container
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item > .swiper-container
 > .swiper-wrapper
 > .swiper-slide
 > div
@@ -7183,7 +7183,7 @@ body {
     line-height: 1.3;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item > .swiper-container
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item > .swiper-container
 > .swiper-wrapper
 > .swiper-slide
 > div
@@ -7192,7 +7192,7 @@ body {
     text-indent: 0 !important;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item > .swiper-container
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container > .swiper-wrapper > .swiper-slide > .table-item > .swiper-container
 > .swiper-wrapper
 > .swiper-slide
 > div
@@ -7201,18 +7201,18 @@ body {
     margin-bottom: 25px !important;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container .swiper-scrollbar {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container .swiper-scrollbar {
     display: unset;
     width: 7px;
     margin-right: 10px;
     background-color: transparent;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .table_popup > .swiper-container .swiper-scrollbar .swiper-scrollbar-drag {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .table_popup > .swiper-container .swiper-scrollbar .swiper-scrollbar-drag {
     background-color: rgba(255, 255, 255, 0.6);
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .sheet_popup {
     position: absolute;
     left: 0px;
     width: 100%;
@@ -7228,7 +7228,7 @@ body {
     height: 800px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup.open {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .sheet_popup.open {
     pointer-events: unset;
     z-index: 10001;
     opacity: 1;
@@ -7236,7 +7236,7 @@ body {
     transition: transform 0.3s cubic-bezier(0.405, 0.42, 0.135, 1.2);
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup.closing {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .sheet_popup.closing {
     pointer-events: unset;
     z-index: 10001;
     opacity: 0;
@@ -7244,11 +7244,11 @@ body {
     transition: transform 0.3s, opacity 0.3s;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup.closed {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .sheet_popup.closed {
     display: none;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup .title {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .sheet_popup .title {
     display: inline-block;
     position: absolute;
     top: 185px;
@@ -7258,7 +7258,7 @@ body {
     line-height: 1.2;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup .btn_close {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .sheet_popup .btn_close {
     position: absolute;
     top: 183px;
     right: 260px;
@@ -7275,17 +7275,17 @@ body {
     cursor: pointer;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup .btn_close:disabled {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .sheet_popup .btn_close:disabled {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_pop_close.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup .btn_close.down {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .sheet_popup .btn_close.down {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_pop_close_down.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup .btn_close:before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .sheet_popup .btn_close:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -7296,7 +7296,7 @@ body {
     content: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_pop_close.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_pop_close_down.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_pop_close.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup > div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .sheet_popup > div {
     width: 788px;
     height: 411px;
     position: absolute;
@@ -7305,7 +7305,7 @@ body {
     text-align: center;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup > div > span.content {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .sheet_popup > div > span.content {
     font-size: 43px;
     letter-spacing: -1px;
     word-spacing: -1px;
@@ -7313,12 +7313,12 @@ body {
     top: 38px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup > div .sheet_btns {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .sheet_popup > div .sheet_btns {
     position: relative;
     top: 67px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup > div .sheet_btns .btn_pentool {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .sheet_popup > div .sheet_btns .btn_pentool {
     margin: 15px;
     touch-action: none;
     padding: 0px;
@@ -7333,11 +7333,11 @@ body {
     pointer-events: unset;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup > div .sheet_btns .btn_pentool.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .sheet_popup > div .sheet_btns .btn_pentool.on {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_pentool_down.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup > div .sheet_btns .btn_pentool:before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .sheet_popup > div .sheet_btns .btn_pentool:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -7348,7 +7348,7 @@ body {
     content: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_pentool.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_pentool_down.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup > div .sheet_btns .btn_keyboard {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .sheet_popup > div .sheet_btns .btn_keyboard {
     margin: 15px;
     touch-action: none;
     padding: 0px;
@@ -7363,11 +7363,11 @@ body {
     pointer-events: unset;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup > div .sheet_btns .btn_keyboard.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .sheet_popup > div .sheet_btns .btn_keyboard.on {
     background-image: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_keyboard_down.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup > div .sheet_btns .btn_keyboard:before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .sheet_popup > div .sheet_btns .btn_keyboard:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -7378,7 +7378,7 @@ body {
     content: url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_keyboard.png") url("/content/digenglish_lib/B/rw_comprehension/teacher/images/btn_keyboard_down.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup > .fel_topad {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .sheet_popup > .fel_topad {
     position: absolute;
     z-index: 11;
     touch-action: none;
@@ -7402,11 +7402,11 @@ body {
     right: 253px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup > .fel_topad.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .sheet_popup > .fel_topad.on {
     background-image: url("/content/digenglish_lib/images/topad_on.svg");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup > .fel_topad:before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .sheet_popup > .fel_topad:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -7417,11 +7417,11 @@ body {
     content: url("/content/digenglish_lib/images/topad.svg") url("/content/digenglish_lib/images/topad_on.svg");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .sheet_popup > .fel_topad.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .sheet_popup > .fel_topad.on {
     filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool {
     position: absolute;
     left: 0px;
     width: 100%;
@@ -7432,7 +7432,7 @@ body {
     display: none;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .draw_box {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .draw_box {
     display: inline-block;
     margin-top: 0px;
     width: auto;
@@ -7442,7 +7442,7 @@ body {
     border-radius: 6px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .draw_box > canvas {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .draw_box > canvas {
     position: relative;
     touch-action: none;
     z-index: 11;
@@ -7450,7 +7450,7 @@ body {
     vertical-align: top;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .return_cnt_box {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .return_cnt_box {
     width: auto;
     height: auto;
     border: none;
@@ -7460,7 +7460,7 @@ body {
     right: 70px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .return_cnt_box > div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .return_cnt_box > div {
     width: 70px;
     height: 30px;
     /* background-color 추가 */
@@ -7476,7 +7476,7 @@ body {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui {
     position: absolute;
     background-image: url("/content/digenglish_lib/images/penui/pen_box.png");
     left: 50%;
@@ -7515,17 +7515,17 @@ body {
 	*/
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui.on {
     bottom: 0px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_select {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_select {
     position: absolute;
     left: 315px;
     top: 37px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_select > .pen_icon {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_select > .pen_icon {
     touch-action: none;
     padding: 0px;
     border: none;
@@ -7540,17 +7540,17 @@ body {
     cursor: pointer;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_select > .pen_icon:disabled {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_select > .pen_icon:disabled {
     background-image: url("/content/digenglish_lib/images/penui/icon_pen_dis.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_select > .pen_icon.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_select > .pen_icon.on {
     background-image: url("/content/digenglish_lib/images/penui/icon_pen_on.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_select > .pen_icon:before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_select > .pen_icon:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -7561,7 +7561,7 @@ body {
     content: url("/content/digenglish_lib/images/penui/icon_pen.png") url("/content/digenglish_lib/images/penui/icon_pen_on.png") url("/content/digenglish_lib/images/penui/icon_pen_dis.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_select > .pen_thick {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_select > .pen_thick {
     touch-action: none;
     padding: 0px;
     border: none;
@@ -7576,17 +7576,17 @@ body {
     cursor: pointer;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_select > .pen_thick:disabled {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_select > .pen_thick:disabled {
     background-image: url("/content/digenglish_lib/images/penui/icon_thick_dis.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_select > .pen_thick.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_select > .pen_thick.on {
     background-image: url("/content/digenglish_lib/images/penui/icon_thick_on.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_select > .pen_thick:before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_select > .pen_thick:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -7597,13 +7597,13 @@ body {
     content: url("/content/digenglish_lib/images/penui/icon_thick.png") url("/content/digenglish_lib/images/penui/icon_thick_on.png") url("/content/digenglish_lib/images/penui/icon_thick_dis.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_color {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_color {
     position: absolute;
     left: 45px;
     top: 37px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_color > .btn_000000 {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_color > .btn_000000 {
     vertical-align: top;
     touch-action: none;
     padding: 0px;
@@ -7618,17 +7618,17 @@ body {
     cursor: pointer;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_color > .btn_000000:disabled {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_color > .btn_000000:disabled {
     background-image: url("/content/digenglish_lib/images/penui/btn_000000_dis.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_color > .btn_000000.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_color > .btn_000000.on {
     background-image: url("/content/digenglish_lib/images/penui/btn_000000_on.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_color > .btn_000000:before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_color > .btn_000000:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -7639,7 +7639,7 @@ body {
     content: url("/content/digenglish_lib/images/penui/btn_000000.png") url("/content/digenglish_lib/images/penui/btn_000000_on.png") url("/content/digenglish_lib/images/penui/btn_000000_dis.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_color > .btn_1347e9 {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_color > .btn_1347e9 {
     vertical-align: top;
     touch-action: none;
     padding: 0px;
@@ -7654,17 +7654,17 @@ body {
     cursor: pointer;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_color > .btn_1347e9:disabled {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_color > .btn_1347e9:disabled {
     background-image: url("/content/digenglish_lib/images/penui/btn_1347e9_dis.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_color > .btn_1347e9.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_color > .btn_1347e9.on {
     background-image: url("/content/digenglish_lib/images/penui/btn_1347e9_on.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_color > .btn_1347e9:before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_color > .btn_1347e9:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -7675,7 +7675,7 @@ body {
     content: url("/content/digenglish_lib/images/penui/btn_1347e9.png") url("/content/digenglish_lib/images/penui/btn_1347e9_on.png") url("/content/digenglish_lib/images/penui/btn_1347e9_dis.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_color > .btn_ec1919 {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_color > .btn_ec1919 {
     vertical-align: top;
     touch-action: none;
     padding: 0px;
@@ -7690,17 +7690,17 @@ body {
     cursor: pointer;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_color > .btn_ec1919:disabled {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_color > .btn_ec1919:disabled {
     background-image: url("/content/digenglish_lib/images/penui/btn_ec1919_dis.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_color > .btn_ec1919.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_color > .btn_ec1919.on {
     background-image: url("/content/digenglish_lib/images/penui/btn_ec1919_on.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_color > .btn_ec1919:before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_color > .btn_ec1919:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -7711,7 +7711,7 @@ body {
     content: url("/content/digenglish_lib/images/penui/btn_ec1919.png") url("/content/digenglish_lib/images/penui/btn_ec1919_on.png") url("/content/digenglish_lib/images/penui/btn_ec1919_dis.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_color > .btn_30aa01 {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_color > .btn_30aa01 {
     vertical-align: top;
     touch-action: none;
     padding: 0px;
@@ -7726,17 +7726,17 @@ body {
     cursor: pointer;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_color > .btn_30aa01:disabled {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_color > .btn_30aa01:disabled {
     background-image: url("/content/digenglish_lib/images/penui/btn_30aa01_dis.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_color > .btn_30aa01.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_color > .btn_30aa01.on {
     background-image: url("/content/digenglish_lib/images/penui/btn_30aa01_on.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_color > .btn_30aa01:before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_color > .btn_30aa01:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -7747,7 +7747,7 @@ body {
     content: url("/content/digenglish_lib/images/penui/btn_30aa01.png") url("/content/digenglish_lib/images/penui/btn_30aa01_on.png") url("/content/digenglish_lib/images/penui/btn_30aa01_dis.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_color > .btn_fddc00 {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_color > .btn_fddc00 {
     vertical-align: top;
     touch-action: none;
     padding: 0px;
@@ -7762,17 +7762,17 @@ body {
     cursor: pointer;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_color > .btn_fddc00:disabled {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_color > .btn_fddc00:disabled {
     background-image: url("/content/digenglish_lib/images/penui/btn_fddc00_dis.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_color > .btn_fddc00.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_color > .btn_fddc00.on {
     background-image: url("/content/digenglish_lib/images/penui/btn_fddc00_on.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_color > .btn_fddc00:before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_color > .btn_fddc00:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -7783,13 +7783,13 @@ body {
     content: url("/content/digenglish_lib/images/penui/btn_fddc00.png") url("/content/digenglish_lib/images/penui/btn_fddc00_on.png") url("/content/digenglish_lib/images/penui/btn_fddc00_dis.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_button {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_button {
     position: absolute;
     right: 30px;
     top: 37px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_button .btn_eraser {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_button .btn_eraser {
     vertical-align: top;
     touch-action: none;
     padding: 0px;
@@ -7804,17 +7804,17 @@ body {
     cursor: pointer;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_button .btn_eraser:disabled {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_button .btn_eraser:disabled {
     background-image: url("/content/digenglish_lib/images/penui/btn_eraser_dis.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_button .btn_eraser.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_button .btn_eraser.on {
     background-image: url("/content/digenglish_lib/images/penui/btn_eraser_on.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_button .btn_eraser:before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_button .btn_eraser:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -7825,7 +7825,7 @@ body {
     content: url("/content/digenglish_lib/images/penui/btn_eraser.png") url("/content/digenglish_lib/images/penui/btn_eraser_on.png") url("/content/digenglish_lib/images/penui/btn_eraser_dis.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_button .btn_undo {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_button .btn_undo {
     vertical-align: top;
     touch-action: none;
     padding: 0px;
@@ -7840,17 +7840,17 @@ body {
     cursor: pointer;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_button .btn_undo:disabled {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_button .btn_undo:disabled {
     background-image: url("/content/digenglish_lib/images/penui/btn_undo_dis.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_button .btn_undo.down {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_button .btn_undo.down {
     background-image: url("/content/digenglish_lib/images/penui/btn_undo_on.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_button .btn_undo:before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_button .btn_undo:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -7861,7 +7861,7 @@ body {
     content: url("/content/digenglish_lib/images/penui/btn_undo.png") url("/content/digenglish_lib/images/penui/btn_undo_on.png") url("/content/digenglish_lib/images/penui/btn_undo_dis.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_button .btn_reset {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_button .btn_reset {
     vertical-align: top;
     touch-action: none;
     padding: 0px;
@@ -7876,17 +7876,17 @@ body {
     cursor: pointer;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_button .btn_reset:disabled {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_button .btn_reset:disabled {
     background-image: url("/content/digenglish_lib/images/penui/btn_reset_dis.png");
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_button .btn_reset.down {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_button .btn_reset.down {
     background-image: url("/content/digenglish_lib/images/penui/btn_reset_on.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .penui > .pen_button .btn_reset:before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .penui > .pen_button .btn_reset:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -7897,7 +7897,7 @@ body {
     content: url("/content/digenglish_lib/images/penui/btn_reset.png") url("/content/digenglish_lib/images/penui/btn_reset_on.png") url("/content/digenglish_lib/images/penui/btn_reset_dis.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .btn_back {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .btn_back {
     background-size: 100% 100%;
     touch-action: none;
     padding: 0px;
@@ -7916,17 +7916,17 @@ body {
     z-index: 2;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .btn_back:disabled {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .btn_back:disabled {
     background-image: "";
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .btn_back.down {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .btn_back.down {
     background-image: url("/content/digenglish_lib/images/btn_back_down.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .btn_back:before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .btn_back:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -7937,11 +7937,11 @@ body {
     content: url("/content/digenglish_lib/images/btn_back.png") url("/content/digenglish_lib/images/btn_back_down.png") "";
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .pentool .btn_back.down {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .pentool .btn_back.down {
     transform: scale(1.1, 1.1);
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .keyboard {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .keyboard {
     position: absolute;
     left: 0px;
     width: 100%;
@@ -7951,7 +7951,7 @@ body {
     display: none;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .keyboard .k-tarea {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .keyboard .k-tarea {
     position: absolute;
     width: auto;
     height: 552px;
@@ -7965,7 +7965,7 @@ body {
     transition: height 0.3s;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .keyboard .k-tarea .k-tarea-bg {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .keyboard .k-tarea .k-tarea-bg {
     width: 968px;
     background-color: #fff;
     height: auto;
@@ -7975,7 +7975,7 @@ body {
     background-position-y: -10px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .keyboard .k-tarea textarea {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .keyboard .k-tarea textarea {
     padding: 0px 40px;
     caret-color: #5d80b4;
     line-height: 77px;
@@ -7984,11 +7984,11 @@ body {
     font-weight: bold;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .keyboard .k-tarea.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .keyboard .k-tarea.on {
     height: 396px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .keyboard .return_cnt_box {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .keyboard .return_cnt_box {
     width: auto;
     height: auto;
     border: none;
@@ -7998,7 +7998,7 @@ body {
     right: 75px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .keyboard .return_cnt_box > div {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .keyboard .return_cnt_box > div {
     width: 70px;
     height: 30px;
     /* background-color 추가 */
@@ -8014,7 +8014,7 @@ body {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .keyboard .btn_back {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .keyboard .btn_back {
     background-size: 100% 100%;
     touch-action: none;
     padding: 0px;
@@ -8033,17 +8033,17 @@ body {
     z-index: 2;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .keyboard .btn_back:disabled {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .keyboard .btn_back:disabled {
     background-image: "";
     pointer-events: none;
     cursor: auto;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .keyboard .btn_back.down {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .keyboard .btn_back.down {
     background-image: url("/content/digenglish_lib/images/btn_back_down.png");
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .keyboard .btn_back:before {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .keyboard .btn_back:before {
     position: absolute;
     pointer-events: none;
     width: 0px;
@@ -8054,63 +8054,63 @@ body {
     content: url("/content/digenglish_lib/images/btn_back.png") url("/content/digenglish_lib/images/btn_back_down.png") "";
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .keyboard .btn_back.down {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .keyboard .btn_back.down {
     transform: scale(1.1, 1.1);
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .keyboard .keyboard-box {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .keyboard .keyboard-box {
     transform: scale(0.65, 0.65);
     transform-origin: 50% 100%;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .keyboard .keyboard-box.off {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .keyboard .keyboard-box.off {
     bottom: -255px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .keyboard .keyboard-box .key_view {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .keyboard .keyboard-box .key_view {
     left: unset;
     right: 5px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER > .keyboard .keyboard-box .key_hide {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer > .keyboard .keyboard-box .key_hide {
     left: unset;
     right: 5px;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER.keyboard .nav {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer.keyboard .nav {
     display: none;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER.keyboard > .swiper-container {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer.keyboard > .swiper-container {
     visibility: hidden;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER.keyboard .keyboard {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer.keyboard .keyboard {
     display: block;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER.pentool .nav {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer.pentool .nav {
     display: none;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER.pentool > .swiper-container {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer.pentool > .swiper-container {
     visibility: hidden;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER.pentool .pentool {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer.pentool .pentool {
     display: block;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER.done .select-box > .text-box {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer.done .select-box > .text-box {
     color: #1a40e1 !important;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER.done .select-box > .options-box.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer.done .select-box > .options-box.on {
     background-color: #cacaca !important;
     color: #878787 !important;
 }
 
-#wrap .t_compre.VISUALIZING .GRAPHICORANIZER.done .select-box > .options-box.on > div.on {
+#wrap .t_compre.VISUALIZING .GraphicOrganizer.done .select-box > .options-box.on > div.on {
     background-color: #249bfa !important;
     color: #fff !important;
 }

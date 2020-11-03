@@ -1,22 +1,19 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { Observer, observer } from 'mobx-react';
+import { observer } from 'mobx-react';
 
-import { IStateCtx, IActionsCtx, BTN_DISABLE } from './t_store';
+import { IStateCtx, IActionsCtx, BTN_DISABLE } from '../t_store';
 import { ToggleBtn } from '@common/component/button';
-import { observable, action } from 'mobx';
-import { App } from '../../App';
+import { observable } from 'mobx';
+import { App } from '../../../App';
 
 import * as _ from 'lodash';
-import WARMUP from './t_warmup';
-import PASSAGE from './t_passage';
-import QUESTION from './t_question';
-import GRAPHICORANIZER from './t_graphic';
-import SUMMARY from './t_summary';
-import VideoPopup from './t_video_box';
-import TStoryBook from './t_storybook';
-import { hot } from 'react-hot-loader';
-import * as felsocket from '../../felsocket';
+import WARMUP from '../t_warmup';
+import Passage from '../t_passage';
+import QUESTION from '../t_question';
+import GraphicOrganizer from '../t_graphic';
+import SUMMARY from '../t_summary';
+import VideoPopup from '../t_video_box';
+import TStoryBook from '../t_storybook';
 
 interface ITComprehension {
 	view: boolean;
@@ -27,7 +24,7 @@ interface ITComprehension {
 @observer
 class TComprehension extends React.Component<ITComprehension> {
 	@observable private _Title: 'COMPREHENSION'|'VISUALIZING'|'SUMMARIZING' = 'COMPREHENSION';
-	@observable private _Tab: 'WARMUP'| 'PASSAGE'|'QUESTION' |'GRAPHICORANIZER'| 'SUMMARY' = 'WARMUP';
+	@observable private _Tab: 'WARMUP'| 'Passage'|'QUESTION' |'GraphicOrganizer'| 'SUMMARY' = 'WARMUP';
 	@observable private _btn_disable: BTN_DISABLE = '';
 
 	private _onBook = () => {
@@ -60,7 +57,7 @@ class TComprehension extends React.Component<ITComprehension> {
 		App.pub_playBtnTab();
 		this._btn_disable = '';
 		this._Title = 'VISUALIZING';
-		this._Tab = 'GRAPHICORANIZER';
+		this._Tab = 'GraphicOrganizer';
 		this.props.state.isNaviBack = false;
 	}
 	private _clickSummar = (ev: React.MouseEvent<HTMLElement>) => {
@@ -81,10 +78,10 @@ class TComprehension extends React.Component<ITComprehension> {
 		this.props.state.isNaviBack = false;
 	}
 	private _clickPassage = (ev: React.MouseEvent<HTMLElement>) => {
-		if(this._Tab === 'PASSAGE') return;
+		if(this._Tab === 'Passage') return;
 		App.pub_playBtnTab();
 		this._btn_disable = '';
-		this._Tab = 'PASSAGE';
+		this._Tab = 'Passage';
 		this.props.state.isNaviBack = false;
 	}
 	private _clickQuestion = (ev: React.MouseEvent<HTMLElement>) => {
@@ -95,7 +92,7 @@ class TComprehension extends React.Component<ITComprehension> {
 		this.props.state.isNaviBack = false;
 	}
 
-	private _onSetNavi = (title: 'COMPREHENSION'|'VISUALIZING'|'SUMMARIZING', tab: 'WARMUP'| 'PASSAGE'|'QUESTION' |'GRAPHICORANIZER'| 'SUMMARY') => {
+	private _onSetNavi = (title: 'COMPREHENSION'|'VISUALIZING'|'SUMMARIZING', tab: 'WARMUP'| 'Passage'|'QUESTION' |'GraphicOrganizer'| 'SUMMARY') => {
 		this._btn_disable = '';
 		this._Title = title;
 		this._Tab = tab;
@@ -130,7 +127,7 @@ class TComprehension extends React.Component<ITComprehension> {
 
 				<div className="btn_tab" style={{display: this._Title === 'COMPREHENSION' ? '' : 'none'}}>
 					<ToggleBtn className="btn_warmup" on={this._Tab === 'WARMUP' && this._Title === 'COMPREHENSION'} disabled={this._btn_disable !== ''} onClick={this._clickWarmup} />
-					<ToggleBtn className="btn_passage" on={this._Tab === 'PASSAGE' && this._Title === 'COMPREHENSION'} disabled={this._btn_disable !== ''} onClick={this._clickPassage} />
+					<ToggleBtn className="btn_passage" on={this._Tab === 'Passage' && this._Title === 'COMPREHENSION'} disabled={this._btn_disable !== ''} onClick={this._clickPassage} />
 					<ToggleBtn className="btn_question" on={this._Tab === 'QUESTION' && this._Title === 'COMPREHENSION'} disabled={this._btn_disable !== ''} onClick={this._clickQuestion} />
 				</div>
 
@@ -145,12 +142,12 @@ class TComprehension extends React.Component<ITComprehension> {
 					onStudy={this._onStuding}
 					onSetNavi={this._onSetNavi}
 				/>
-				<PASSAGE 
+				<Passage 
 					view={view}
 					videoPopup={this.props.state.videoPopup}
 					viewStoryBook={this.props.state.viewStoryBook}
 					studying={this._btn_disable !== ''}
-					inview={this._Tab === 'PASSAGE' && this._Title === 'COMPREHENSION'} 
+					inview={this._Tab === 'Passage' && this._Title === 'COMPREHENSION'} 
 					data={data}
 					state={state}
 					actions={actions}
@@ -170,11 +167,11 @@ class TComprehension extends React.Component<ITComprehension> {
 					onSetNavi={this._onSetNavi}
 				/>
 
-				<GRAPHICORANIZER 
+				<GraphicOrganizer 
 					view={view}
 					videoPopup={this.props.state.videoPopup}
 					viewStoryBook={this.props.state.viewStoryBook}
-					inview={this._Tab === 'GRAPHICORANIZER' && this._Title === 'VISUALIZING'} 
+					inview={this._Tab === 'GraphicOrganizer' && this._Title === 'VISUALIZING'} 
 					data={data}
 					state={state}
 					actions={actions}

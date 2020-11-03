@@ -276,7 +276,7 @@ interface IQUESTION {
 	state: IStateCtx;
 	actions: IActionsCtx;
 	onStudy: (studying: BTN_DISABLE) => void;
-	onSetNavi: (title: 'COMPREHENSION'|'VISUALIZING', tab: 'PASSAGE'|'GRAPHICORANIZER') => void;
+	onSetNavi: (title: 'COMPREHENSION'|'VISUALIZING', tab: 'Passage'|'GraphicOrganizer') => void;
 }
 
 @observer
@@ -427,7 +427,7 @@ class QUESTION extends React.Component<IQUESTION> {
 			() => {
 				if(this._curIdx === 0) {
 					this.props.state.isNaviBack = true;
-					this.props.onSetNavi('COMPREHENSION','PASSAGE');
+					this.props.onSetNavi('COMPREHENSION','Passage');
 				} else {
 					App.pub_playBtnPage();
 					this._curIdx = this._curIdx - 1;
@@ -435,7 +435,7 @@ class QUESTION extends React.Component<IQUESTION> {
 			},
 			() => {
 				if(this._curIdx >= this.props.data.question.length - 1) {
-					this.props.onSetNavi('VISUALIZING','GRAPHICORANIZER');
+					this.props.onSetNavi('VISUALIZING','GraphicOrganizer');
 				} else {
 					App.pub_playBtnPage();
 					this._curIdx = this._curIdx + 1;

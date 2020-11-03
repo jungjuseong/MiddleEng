@@ -1,15 +1,9 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import * as _ from 'lodash';
 import { observable, action } from 'mobx';
-import { App, IMain } from '../../App';
-import * as felsocket from '../../felsocket';
+
+import * as _ from 'lodash';
 import * as common from '../common';
 import { StudentContextBase, IActionsBase, IStateBase, VIEWDIV } from '../../share/scontext';
-import { isUndefined } from 'util';
-import { setFlagsFromString } from 'v8';
-
-type MYPROG = ''|'question';
 
 const enum QPROG {
 	UNINIT,
@@ -230,24 +224,14 @@ class StudentContext extends StudentContextBase {
 					})
 				}</>
 			);
-
-			/* teacher만 해당 ?
-			if(i < q_arr.length) q.app_preview = q_arr[i];
-			else q.app_preview = -1;
-			this.state.quizResult[i] = {result: 0, c1: 0, c2: 0, c3: 0};
-			*/
 		}
 		scripts.forEach((script) => {
-			/* teacher만 해당 ?
-			script.app_preview = isUndefined(s_obj[script.dms_seq]) ? -1 : s_obj[script.dms_seq];
-			*/
 			if(script.dms_speaker === speakerA) script.roll = 'A';
 			else if (script.dms_speaker === speakerB) script.roll = 'B';
 			else if (script.dms_speaker === speakerC) script.roll = 'C';
 			else if (script.dms_speaker === speakerD) script.roll = 'D';
 			else script.roll = 'E';
 		});
-
 	}
 }
 
@@ -262,6 +246,7 @@ class StudentProvider extends React.Component<{}> {
 		);
 	}
 }
+
 function useStudent(WrappedComponent: any) {
 	return function UseAnother(props: any) {
 		return (

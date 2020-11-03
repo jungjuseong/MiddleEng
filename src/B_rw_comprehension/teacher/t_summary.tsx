@@ -515,7 +515,7 @@ interface ISUMMARY {
 	state: IStateCtx;
 	actions: IActionsCtx;
 	onStudy: (studying: BTN_DISABLE) => void;
-	onSetNavi: (title: 'VISUALIZING', tab: 'GRAPHICORANIZER') => void;
+	onSetNavi: (title: 'VISUALIZING', tab: 'GraphicOrganizer') => void;
 }
 @observer
 class SUMMARY extends React.Component<ISUMMARY> {
@@ -667,7 +667,7 @@ class SUMMARY extends React.Component<ISUMMARY> {
 
 		this.props.actions.setNaviFnc(
 			() => {
-				this.props.onSetNavi('VISUALIZING','GRAPHICORANIZER');
+				this.props.onSetNavi('VISUALIZING','GraphicOrganizer');
 			},
 			() => {
 				this.props.actions.gotoNextBook();
