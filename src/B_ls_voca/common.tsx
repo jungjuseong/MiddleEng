@@ -7,7 +7,6 @@ import * as _ from 'lodash';
 import { App } from '../App';
 
 export interface IQuizPage extends IQuizPageProps<IWordData> {
-
 }
 
 export type TypeQuiz = ''|'sound'|'meaning'|'spelling'|'usage';
@@ -17,6 +16,23 @@ type MYMSGTYPE =  'spelling'|'spelling_return'|'speak_audio'|'speak_video'|'spea
 								'recorded_return'|'quiz'|
 								QUIZ_RESULT_MSG|TEAM_GROUPING_MSG|TEAM_SPINDLE_MSG;
 
+export interface IPzSrc {
+	idx: number;
+	char: string;
+	disabled: boolean;
+	isTeacher: boolean;
+	quizProg: TypeQuizProg;
+	onMountSrc: (src: any, idx: number) => void;
+	onDown: (src: any) => void;
+}
+
+export interface IPzTgt {
+	idx: number;
+	char: string;
+	isTeacher: boolean;
+	quizProg: TypeQuizProg;
+	onMountTgt: (tgt: any, idx: number) => void;
+}
 
 export interface IMsg extends IMessage<MYMSGTYPE> {
 
@@ -113,7 +129,6 @@ export interface IWordData extends IShareQuizData, IInClassStudyProps {
 	usage_end: number;
 	usage_script: string;
 	topic: boolean;
-
 	
 	app_checked: boolean;
 	app_studied: boolean;
@@ -125,7 +140,6 @@ export interface IWordData extends IShareQuizData, IInClassStudyProps {
 	// for pre-view result class
 	tmq_COD: ITmqCOD;
 	avgPercent: number;// 한 단어에 대한 반 전체 평균
-
 
 	quiz_sound: IQuizSound;
 	quiz_meaning: IQuizMeaning;

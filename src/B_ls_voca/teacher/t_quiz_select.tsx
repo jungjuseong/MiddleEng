@@ -190,22 +190,16 @@ class QuizSelect extends React.Component<IQuizSelect> {
 		}
 	}
 	public render() {
-		const {state} = this.props;
 		const qtype = this._qtype;
 		const selected = this._qtype !== '';
 		const viewSingle = this._souns_s || this._meaning_s || this._spelling_s || this._sentence_s;
 		const style: React.CSSProperties = {};
+
 		if(!this.props.view) {
 			style.visibility = 'hidden';
 			style.transition = 'visibility 0.3s 0.3s';
 		}
-		/*
 
-	view_s: boolean;
-	view_g: boolean;
-	onClick: (qtype: common.TypeQuiz) => void;
-	onResult: (qtype: common.TypeQuiz, isGroup: boolean) => void;
-		*/
 		return (
 			<div className="t_quiz_select" style={style}>
 				<div className="title">QUIZ</div>
