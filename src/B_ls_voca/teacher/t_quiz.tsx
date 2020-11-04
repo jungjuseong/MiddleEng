@@ -1,17 +1,14 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import { observer } from 'mobx-react';
-import { hot } from 'react-hot-loader';
 
 import { IStateCtx, IActionsCtx } from './t_store';
-import * as common from '../common';
+import { IWordData,TypeQuiz } from '../common';
 
 import QuizSound from '../quiz_sound';
 import QuizMeaning from '../quiz_meaning';
 import QuizSpelling from '../quiz_spelling';
 import QuizUsage from '../quiz_usage';
 import QuizTeacher from '../../share/QuizTeacher';
-
 
 interface ITQuiz {
 	view: boolean;
@@ -20,11 +17,11 @@ interface ITQuiz {
 	state: IStateCtx;
 	actions: IActionsCtx;
 }
+
 @observer
 class TQuiz extends React.Component<ITQuiz> {
-	private _quizs: common.IWordData[] = [];
-	private _qtype: common.TypeQuiz = '';
-
+	private _quizs: IWordData[] = [];
+	private _qtype: TypeQuiz = '';
 	private _qtime: number = 0;
 
 	public componentWillUpdate(next: ITQuiz) {
@@ -39,13 +36,12 @@ class TQuiz extends React.Component<ITQuiz> {
 					const q = group.questions[i];
 					this._quizs[i] = words[q.qidx];
 				}
-
 				qtime = group.qtime;
 			} else {
 				const single = next.actions.getSingleInfo();
 				for(let i = 0; i < single.questions.length; i++) {
-					const q = single.questions[i];
-					this._quizs[i] = words[q.qidx];
+					const quiz = single.questions[i];
+					this._quizs[i] = words[quiz.qidx];
 				}
 				qtime = single.qtime;
 			}
@@ -53,8 +49,6 @@ class TQuiz extends React.Component<ITQuiz> {
 			this._qtime = qtime;
 		}
 	}
-
-
 
 	public render() {
 		const {view, state, actions, quizProg, numOfReturn} = this.props;
@@ -64,7 +58,6 @@ class TQuiz extends React.Component<ITQuiz> {
 		else if(this._qtype === 'meaning') ItemComponent = QuizMeaning;
 		else if(this._qtype === 'spelling') ItemComponent = QuizSpelling;
 		else if(this._qtype === 'usage') ItemComponent = QuizUsage;
-
 
 		return (
 			<QuizTeacher 
@@ -90,11 +83,7 @@ class TQuiz extends React.Component<ITQuiz> {
 				waitResult={actions.waitResult}
 			/>
 		);
-
 	}
-
-
-
 }
 export default TQuiz;
 

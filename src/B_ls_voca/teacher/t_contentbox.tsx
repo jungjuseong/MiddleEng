@@ -1,9 +1,8 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { Observer, observer } from 'mobx-react';
+import { observer } from 'mobx-react';
 import * as _ from 'lodash';
 
-import { TeacherContext, useTeacher, IStateCtx, IActionsCtx, TProg } from './t_store';
+import { IStateCtx, IActionsCtx, TProg } from './t_store';
 import { App } from '../../App';
 import { observable } from 'mobx';
 import VocaList from './t_voca_list';
@@ -11,7 +10,6 @@ import QuizSelect from './t_quiz_select';
 import Timer from './t_timer';
 import TQuiz from './t_quiz';
 import Grouping from './t_grouping';
-
 import TBoard from './t_board';
 
 import VideoDirection from '../../share/video-direction';
@@ -28,33 +26,35 @@ interface IContentBox {
 class ContentBox extends React.Component<IContentBox> {
 	@observable private _idx = 0;
 	@observable private _idx_sub = 0;
+
 	private _bRapid_sub = false;
 	private _grouping: React.CSSProperties = {};
 	private _timer: React.CSSProperties = {};
 	private _board: React.CSSProperties = {};
 
 	public componentWillUpdate(next: IContentBox) {
-		if(this.props.prog !== next.prog) {
-			if(this.props.state.isGroup) {
+		const { prog, state } = this.props;
+		if(prog !== next.prog) {
+			if(state.isGroup) {
 				this._grouping.display = '';
 				this._board.display = '';
-				this._grouping.opacity = (next.prog === 'grouping' || this.props.prog === 'grouping') ? 1 : 0;
-				this._timer.opacity = (next.prog === 'timer' || this.props.prog === 'timer') ? 1 : 0;
-				this._board.opacity = (next.prog === 'board' || this.props.prog === 'board') ? 1 : 0;
+				this._grouping.opacity = (next.prog === 'grouping' || prog === 'grouping') ? 1 : 0;
+				this._timer.opacity = (next.prog === 'timer' || prog === 'timer') ? 1 : 0;
+				this._board.opacity = (next.prog === 'board' || prog === 'board') ? 1 : 0;
 			} else {
 				this._grouping.display = 'none';
 				this._board.display = 'none';
-				this._timer.opacity = (next.prog === 'timer' || this.props.prog === 'timer') ? 1 : 0;
+				this._timer.opacity = (next.prog === 'timer' || prog === 'timer') ? 1 : 0;
 			}
 		}
 	}
 	public componentDidUpdate(prev: IContentBox) {
-		if(this.props.prog !== prev.prog) {
-			const state = this.props.state;
+		const { prog, state } = this.props;
+		if(prog !== prev.prog) {
 			let idx = 0;
 			let idx_sub = 0;
 			if(state.isGroup) {
-				switch(this.props.prog) {
+				switch(prog) {
 					case 'list': 			idx = 1; idx_sub = 0; break;
 					case 'quiz-select': 	idx = 2; idx_sub = 0; break;
 					case 'grouping': 		idx = 3; idx_sub = 0; break;
@@ -64,7 +64,7 @@ class ContentBox extends React.Component<IContentBox> {
 					default: 				break;
 				}
 			} else {
-				switch(this.props.prog) {
+				switch(prog) {
 					case 'list': 			idx = 1; idx_sub = 0; break;
 					case 'quiz-select': 	idx = 2; idx_sub = 0; break;
 					case 'timer': 			idx = 3; idx_sub = 0; break;
@@ -97,7 +97,7 @@ class ContentBox extends React.Component<IContentBox> {
 		}
 	}
 	public render() {
-		const {state, actions, prog} = this.props;
+		const { state, actions } = this.props;
 		const style_sub: React.CSSProperties = {
 			left: (-this._idx_sub * _WIDTH) + 'px',
 			transitionDelay: this._bRapid_sub ? '0s' : '',
@@ -105,7 +105,8 @@ class ContentBox extends React.Component<IContentBox> {
 		return (
 			<div className={'content-container'}>
 				<div className="content-wrapper" style={{left: (-this._idx * _WIDTH) + 'px'}}>
-				<div><VideoDirection 
+					<div>
+						<VideoDirection 
 							className="video-direction" 
 							view={state.viewDiv === 'direction'} 
 							on={state.directionON} 
@@ -114,10 +115,10 @@ class ContentBox extends React.Component<IContentBox> {
 							video_frame={125}
 							onEndStart={actions.onDirectionEndStart}
 							onEnd={actions.onDirectionEnded}
-				>
-					<div className="lesson">{App.lesson}</div>
-				</VideoDirection></div>
-
+						>
+							<div className="lesson">{App.lesson}</div>
+						</VideoDirection>
+					</div>
 					<div><VocaList view={state.prog === 'list'} state={state} actions={actions}/></div>
 					<div><QuizSelect view={state.prog === 'quiz-select'} state={state} actions={actions}/></div>
 					<div className="sub-container">
