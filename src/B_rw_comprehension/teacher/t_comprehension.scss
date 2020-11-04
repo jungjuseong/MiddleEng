@@ -1,11 +1,12 @@
-@import '../../../share/CoverPopup.scss';
-@import '../t_warmup.scss';
-@import '../t_passage.scss';
-@import '../t_question.scss';
-@import '../t_graphic/index.scss';
-@import '../t_summary.scss';
-@import '../t_video_box.scss';
-@import '../t_storybook.scss';
+@import '../../share/CoverPopup.scss';
+@import './t_warmup/index.scss';
+@import './t_passage/index.scss';
+@import './t_question/index.scss';
+@import './t_graphic/index.scss';
+@import './t_summary.scss';
+@import './t_video_box.scss';
+@import './t_storybook.scss';
+
 @mixin t_comprehension{
 	.t_compre {
 		
@@ -128,13 +129,13 @@
 		}
 		@include t_video_popup;
 		@include t_storybook;
-		&.COMPREHENSION {
+		&.Compreshension {
 			background-image: resolve('teacher/images/bg_compre.png');
 			width: 100%; height: height('teacher/images/bg_compre.png');
 
-			@include WARMUP;
+			@include Warmup;
 			@include Passage;
-			@include QUESTION;
+			@include Question;
 		}
 		&.VISUALIZING {
 			background-image: resolve('teacher/images/bg_visual.png');
@@ -146,7 +147,7 @@
 			background-image: resolve('teacher/images/bg_visual.png');
 			width: 100%; height: height('teacher/images/bg_visual.png');
 
-			@include SUMMARY;
+			@include Summary;
 		}
 
 		.img_popup{
@@ -186,6 +187,7 @@
 	position: absolute;	
 	top: 150px;	
 }
+
 @mixin mixin_page_box{
 	.btn_page_box {
 		width: 100%; height: 0px;

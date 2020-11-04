@@ -16,10 +16,10 @@ import { MPlayer, MConfig, IMedia, MPRState } from '@common/mplayer/mplayer';
 import { CountDown2, TimerState } from '../../../share/Timer';
 import Yourturn from '../../../share/yourturn';
 
-import TransPopup from './TransPopup';
-import PassagePopup from './PassagePopup';
-import ImgPassage from './ImgPassage';
-import ScriptItem from './ScriptItem';
+import TransPopup from './_trans_popup';
+import PassagePopup from './_passage_popup';
+import ImgPassage from './_img_passage';
+import ScriptItem from './_script_item';
 
 const SwiperComponent = require('react-id-swiper').default;
 
@@ -39,7 +39,7 @@ interface IPassage {
 	state: IStateCtx;
 	actions: IActionsCtx;
 	onStudy: (studying: BTN_DISABLE) => void;
-	onSetNavi: (title: 'COMPREHENSION', tab: 'WARMUP'|'QUESTION') => void;
+	onSetNavi: (title: 'Compreshension', tab: 'Warmup'|'Question') => void;
 }
 
 @observer
@@ -448,7 +448,7 @@ class Passage extends React.Component<IPassage> {
 			async () => {
 				if(this._curIdx === 0) {
 					this.props.state.isNaviBack = true;
-					this.props.onSetNavi('COMPREHENSION','WARMUP');
+					this.props.onSetNavi('Compreshension','Warmup');
 				} else {
 					App.pub_playBtnPage();
 					// const info = this._infos[this._curIdx + 1];
@@ -468,7 +468,7 @@ class Passage extends React.Component<IPassage> {
 			},
 			async () => {
 				if(this._curIdx >= this._infos.length - 1) {
-					this.props.onSetNavi('COMPREHENSION','QUESTION');
+					this.props.onSetNavi('Compreshension','Question');
 				} else {
 					App.pub_playBtnPage();
 					// const info = this._infos[this._curIdx + 1];
@@ -702,7 +702,6 @@ class Passage extends React.Component<IPassage> {
 		}
 	}
 
-
 	public render() {
 		const {inview} = this.props;
 		const curIdx = this._curIdx;
@@ -712,7 +711,7 @@ class Passage extends React.Component<IPassage> {
 		const qnaRets = info.qnaRets;
 
 		return (
-			<div className="Passage" style={inview ? undefined : style.NONE}>
+			<div className="passage" style={inview ? undefined : style.NONE}>
 				<div className="nav">
 					<div className="btn_page_box">
 						{this._infos.map((item, idx) => {

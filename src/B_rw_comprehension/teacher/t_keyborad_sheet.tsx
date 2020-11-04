@@ -1,19 +1,16 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import * as _ from 'lodash';
 import { observable } from 'mobx';
 import {  observer } from 'mobx-react';
 
-import { IStateCtx, IActionsCtx } from './t_store';
+import { IActionsCtx } from './t_store';
 import { ToggleBtn } from '@common/component/button';
 import * as common from '../common';
 import { KTextArea } from '@common/component/KTextArea';
 import { Keyboard, state as keyBoardState } from '@common/component/Keyboard';
 
-
 import { App } from '../../App';
 import * as felsocket from '../../felsocket';
-
 
 interface IKeyboard {
 	view: boolean;

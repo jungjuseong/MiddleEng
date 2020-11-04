@@ -1,12 +1,9 @@
-@import "../common/component/button.scss";
-@import "../config.scss";
-@import "../share/video-direction.scss";
-@import "../share/sendui.scss";
+@import "../../common/component/button.scss";
+@import "../../config.scss";
+@import "../../share/video-direction.scss";
+@import "../../share/sendui.scss";
 
-@import "./student/s_quiz.scss";
-@import "./student/s_voca_typing.scss";
-
-@import "./student/s_speak_record.scss";
+@import "./s_content.scss";
 
 #wrap{
 
@@ -18,6 +15,7 @@
 	}
 	.goodjob-svg{
 		@include page;
+		z-index: 100;
 	}
 	.content-container{
 		@include page;
@@ -45,8 +43,8 @@
 
 		&>.movieclip{
 			position: absolute;
-			right: 20px;
-			bottom: -40px;
+			right: -30px;
+			bottom: -70px;
 			width: 330px;
 			height: 550px;
 		}
@@ -66,38 +64,9 @@
 			color: #fff;
 		}
 	}
-/*	
-	.new-direction{
-		@include new-direction;
-		background-image: resolve('common/bg1.jpg');
-		&>div.direction{
-			position: absolute;
-			background-image: resolve("common/direction.png");
-			width: width("common/direction.png");
-			height:  height("common/direction.png");
-			left: calc(50% - width("common/direction.png")/2);
-			top: calc(50% - height("common/direction.png")/2);
-		}
-		&>div.icon{
-			position: absolute;
-			left: 0px;
-			top: 0px;
-			background-image: resolve("common/bear.png");
-			width: width("common/bear.png");
-			height:  height("common/bear.png");
-		}
-		&>div.lesson{
-			font-size: 40px;
-			position: absolute;
-			left: 30px;
-			top: 20px;		
-			color: #fff;
-		}
-	}
-*/
-	@include s_quiz;
-	@include s_voca_typing;
-	@include s-speak-record;
+
+	@include s_content;
+
 	.fel_toteacher{
 		@include fel_toteacher;
 	}

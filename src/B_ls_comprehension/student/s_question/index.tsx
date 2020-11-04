@@ -11,7 +11,7 @@ import { IStateCtx, IActionsCtx, QPROG, SPROG } from '../s_store';
 import * as common from '../../common';
 import SendUINew from '../../../share/sendui_new';
 
-import QuizItem from './QuizItem';
+import QuizItem from './_quiz_item';
 
 const SwiperComponent = require('react-id-swiper').default;
 

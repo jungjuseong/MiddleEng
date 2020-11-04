@@ -1,24 +1,20 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+
 import * as _ from 'lodash';
 import { observer } from 'mobx-react';
 import { observable, } from 'mobx';
-import { DraggableCore, DraggableData, DraggableEvent } from 'react-draggable';
 
 import { MPlayer, IMedia, MPRState } from '@common/mplayer/mplayer';
-
-import { ToggleBtn } from '@common/component/button';
 
 import { App } from '../../../App';
 import { Loading } from '../../../share/loading';
 import { CountDown2, TimerState } from '../../../share/Timer';
-
 import Yourturn from '../../../share/yourturn';
 
 import * as common from '../../common';
 
-import ControlBox from './ControlBox';
-import CaptionBox from './CaptionBox';
+import ControlBox from './_control_box';
+import CaptionBox from './_caption_box';
 
 
 function _getCurrentIdx(scripts: common.IScript[], time: number) {

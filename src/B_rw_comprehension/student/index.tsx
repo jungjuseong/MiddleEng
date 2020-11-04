@@ -1,12 +1,11 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { observable, action } from 'mobx';
+
 import { observer, Observer } from 'mobx-react';
 import { hot } from 'react-hot-loader/root';
 import * as _ from 'lodash';
 
-import { SVGBg, SVGEmbed, SVGAni } from '../share/svg_object';
-import VideoDirection from '../share/video-direction';
+import { SVGEmbed, SVGAni } from '../../share/svg_object';
+import VideoDirection from '../../share/video-direction';
 import { 
 	sContext, 
 	StudentProvider, 
@@ -15,21 +14,19 @@ import {
 	useStudent, 
 	IStateCtx,
 	IActionsCtx
-} from './student/s_store';
-import { Loading } from '../share/loading';
+} from './s_store';
+import { Loading } from '../../share/loading';
 
-import '../font.scss';
-import './student.scss';
+import '../../font.scss';
+import './index.scss';
 
-import SWarmup from './student/s_warmup';
-import SPassage from './student/s_passage';
-import SQuestion from './student/s_question';
-import SGraphic from './student/s_graphic';
-import SSumary from './student/s_summary';
-
-import SVScript from './student/s_v_script';
-
-import SCheckup from './student/s_checkup';
+import SWarmup from './s_warmup';
+import SPassage from './s_passage';
+import SQuestion from './s_question';
+import SGraphic from './s_graphic';
+import SSumary from './s_summary';
+import SVScript from './s_v_script';
+import SCheckup from './s_checkup';
 
 @observer
 class Comp extends React.Component<{state: IStateCtx, actions: IActionsCtx}> {
@@ -121,5 +118,5 @@ const Student = useStudent((store: StudentContext) => (
 		/>
 	)}</Observer>
 ));
-export {StudentProvider as AppProvider, sContext as appContext};
+export { StudentProvider as AppProvider, sContext as appContext };
 export default hot(Student);

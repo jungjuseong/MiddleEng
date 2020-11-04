@@ -32,8 +32,8 @@ class ScriptItem extends React.Component<IScriptItem> {
 		}
 		this.props.onChoose(this.props.script);
 	}
-	// 	script.seq === curSeq ? 'on' : '' 
-	public render() {
+
+    public render() {
 		const { script, curSeq, qnaRet, retCnt, viewReturn } = this.props;
 		const arr: string[] = [
 			'script_line', 

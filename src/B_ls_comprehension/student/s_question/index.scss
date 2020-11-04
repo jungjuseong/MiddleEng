@@ -1,5 +1,5 @@
-@import '../../share/sendui.scss';
-@import '../../share/QuizMCBtn.scss';
+@import '../../../share/sendui.scss';
+@import '../../../share/QuizMCBtn.scss';
 @mixin s_question{
 	.s_question{
 		@include page;

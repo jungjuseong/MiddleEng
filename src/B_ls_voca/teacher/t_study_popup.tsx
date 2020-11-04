@@ -40,6 +40,7 @@ class NItem extends React.Component<{idx: number, on: boolean, onClick: (idx: nu
 		return <span className={on ? 'on' : ''} onClick={this._click}>{idx + 1}</span>;
 	}
 }
+
 interface ILectureItem {
 	type: POPUPTYPE;
 	view: boolean; 

@@ -1,27 +1,21 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { observable, action } from 'mobx';
-import { observer, inject, Observer } from 'mobx-react';
+import { observer } from 'mobx-react';
 import { hot } from 'react-hot-loader';
 import * as _ from 'lodash';
-import ReactResizeDetector from 'react-resize-detector';
-const SwiperComponent = require('react-id-swiper').default;
 
-import '../font.scss';
-import './teacher.scss';
+import '../../font.scss';
+import './index.scss';
 
-import { SVGBg, } from '../share/svg_object';
-import { Navi } from '../share/navi';
+import { SVGBg, } from '../../share/svg_object';
+import { Navi } from '../../share/navi';
 
-import { tContext, TeacherContext, TeacherProvider, useTeacher, IStateCtx, IActionsCtx } from './teacher/t_store';
-import ContentBox from './teacher/t_contentbox';
-
+import { tContext, TeacherContext, TeacherProvider, useTeacher, IStateCtx, IActionsCtx } from './t_store';
+import ContentBox from './t_contentbox';
 
 interface ITeacher {
 	state: IStateCtx;
 	actions: IActionsCtx;
 }
-
 @observer
 class TeacherComponent extends React.Component<ITeacher> {
 

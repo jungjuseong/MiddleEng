@@ -33,7 +33,6 @@ class ContentBox extends React.Component<IContentBox> {
 	private _timer: React.CSSProperties = {};
 	private _board: React.CSSProperties = {};
 
-
 	public componentWillUpdate(next: IContentBox) {
 		if(this.props.prog !== next.prog) {
 			if(this.props.state.isGroup) {
@@ -95,7 +94,6 @@ class ContentBox extends React.Component<IContentBox> {
 				this._bRapid_sub = false;
 				this._idx_sub = idx_sub;
 			}
-			// this._left = -1280 * idx;
 		}
 	}
 	public render() {

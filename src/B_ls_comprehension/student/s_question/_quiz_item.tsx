@@ -3,7 +3,7 @@ import * as React from 'react';
 import { QPROG } from '../s_store';
 import * as common from '../../common';
 import WrapTextNew from '@common/component/WrapTextNew';
-import QuizChoice from './QuizChoice';
+import QuizChoice from './_quiz_choice';
 
 interface IQuizItem {
 	view: boolean;

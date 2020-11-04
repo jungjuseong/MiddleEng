@@ -25,7 +25,6 @@ const m_soption: SwiperOptions = {
 	scrollbar: { el: '.swiper-scrollbar', draggable: true, hide: false },
 };
 
-
 interface ITablePopup {
 	className: string;
 	headerColor?: string | null;

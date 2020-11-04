@@ -1,10 +1,9 @@
-@import '../../share/CoverPopup.scss';
-@import '../../share/Progress_bar.scss';
+@import '../../../share/CoverPopup.scss';
+@import '../../../share/Progress_bar.scss';
+@import '../../../share/QuizMCBtn.scss';
 
-@import '../../share/QuizMCBtn.scss';
-
-@mixin QUESTION {
-	.QUESTION{
+@mixin Question {
+	.question{
 		@include page;
 		.nav {
 			@include mixin_nav;

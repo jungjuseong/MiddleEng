@@ -1,19 +1,19 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
 
-import { IStateCtx, IActionsCtx, BTN_DISABLE } from '../t_store';
+import { IStateCtx, IActionsCtx, BTN_DISABLE } from './t_store';
 import { ToggleBtn } from '@common/component/button';
 import { observable } from 'mobx';
-import { App } from '../../../App';
+import { App } from '../../App';
 
 import * as _ from 'lodash';
-import WARMUP from '../t_warmup';
-import Passage from '../t_passage';
-import QUESTION from '../t_question';
-import GraphicOrganizer from '../t_graphic';
-import SUMMARY from '../t_summary';
-import VideoPopup from '../t_video_box';
-import TStoryBook from '../t_storybook';
+import Warmup from './t_warmup';
+import Passage from './t_passage';
+import Question from './t_question';
+import GraphicOrganizer from './t_graphic';
+import Summary from './t_summary';
+import VideoPopup from './t_video_box';
+import TStoryBook from './t_storybook';
 
 interface ITComprehension {
 	view: boolean;
@@ -23,8 +23,8 @@ interface ITComprehension {
 
 @observer
 class TComprehension extends React.Component<ITComprehension> {
-	@observable private _Title: 'COMPREHENSION'|'VISUALIZING'|'SUMMARIZING' = 'COMPREHENSION';
-	@observable private _Tab: 'WARMUP'| 'Passage'|'QUESTION' |'GraphicOrganizer'| 'SUMMARY' = 'WARMUP';
+	@observable private _Title: 'Compreshension'|'VISUALIZING'|'SUMMARIZING' = 'Compreshension';
+	@observable private _Tab: 'Warmup'| 'Passage'|'Question' |'GraphicOrganizer'| 'Summary' = 'Warmup';
 	@observable private _btn_disable: BTN_DISABLE = '';
 
 	private _onBook = () => {
@@ -45,11 +45,11 @@ class TComprehension extends React.Component<ITComprehension> {
 	}
 
 	private _clickCompre = (ev: React.MouseEvent<HTMLElement>) => {
-		if(this._Title === 'COMPREHENSION') return;
+		if(this._Title === 'Compreshension') return;
 		App.pub_playBtnTab();
 		this._btn_disable = '';
-		this._Title = 'COMPREHENSION';
-		this._Tab = 'WARMUP';
+		this._Title = 'Compreshension';
+		this._Tab = 'Warmup';
 		this.props.state.isNaviBack = false;
 	}
 	private _clickVisual = (ev: React.MouseEvent<HTMLElement>) => {
@@ -65,16 +65,16 @@ class TComprehension extends React.Component<ITComprehension> {
 		App.pub_playBtnTab();
 		this._btn_disable = '';
 		this._Title = 'SUMMARIZING';
-		this._Tab = 'SUMMARY';
+		this._Tab = 'Summary';
 		this.props.state.isNaviBack = false;
 	}
 
 	// 탭 활성화
 	private _clickWarmup = (ev: React.MouseEvent<HTMLElement>) => {
-		if(this._Tab === 'WARMUP') return;
+		if(this._Tab === 'Warmup') return;
 		App.pub_playBtnTab();
 		this._btn_disable = '';
-		this._Tab = 'WARMUP';
+		this._Tab = 'Warmup';
 		this.props.state.isNaviBack = false;
 	}
 	private _clickPassage = (ev: React.MouseEvent<HTMLElement>) => {
@@ -85,14 +85,14 @@ class TComprehension extends React.Component<ITComprehension> {
 		this.props.state.isNaviBack = false;
 	}
 	private _clickQuestion = (ev: React.MouseEvent<HTMLElement>) => {
-		if(this._Tab === 'QUESTION') return;
+		if(this._Tab === 'Question') return;
 		App.pub_playBtnTab();
 		this._btn_disable = '';
-		this._Tab = 'QUESTION';
+		this._Tab = 'Question';
 		this.props.state.isNaviBack = false;
 	}
 
-	private _onSetNavi = (title: 'COMPREHENSION'|'VISUALIZING'|'SUMMARIZING', tab: 'WARMUP'| 'Passage'|'QUESTION' |'GraphicOrganizer'| 'SUMMARY') => {
+	private _onSetNavi = (title: 'Compreshension'|'VISUALIZING'|'SUMMARIZING', tab: 'Warmup'| 'Passage'|'Question' |'GraphicOrganizer'| 'Summary') => {
 		this._btn_disable = '';
 		this._Title = title;
 		this._Tab = tab;
@@ -103,8 +103,8 @@ class TComprehension extends React.Component<ITComprehension> {
 	}
 	public componentDidUpdate(prev: ITComprehension) {
 		if(this.props.view && !prev.view) {
-			this._Title = 'COMPREHENSION';
-			this._Tab = 'WARMUP';
+			this._Title = 'Compreshension';
+			this._Tab = 'Warmup';
 			this._btn_disable = '';
 		} else if(!this.props.view && prev.view) {
 			//
@@ -118,22 +118,22 @@ class TComprehension extends React.Component<ITComprehension> {
 		return (
 			<div className={'t_compre ' + this._Title}>
 				<div className="top">
-					<ToggleBtn className="btn_comprehension" on={this._Title === 'COMPREHENSION'} disabled={this._btn_disable !== ''} onClick={this._clickCompre}/>
+					<ToggleBtn className="btn_comprehension" on={this._Title === 'Compreshension'} disabled={this._btn_disable !== ''} onClick={this._clickCompre}/>
 					<ToggleBtn className="btn_visualizing" on={this._Title === 'VISUALIZING'} disabled={this._btn_disable !== ''} onClick={this._clickVisual}/>
 					<ToggleBtn className="btn_summarizing" on={this._Title === 'SUMMARIZING'} disabled={this._btn_disable !== ''} onClick={this._clickSummar}/>
 				</div>
-				<ToggleBtn disabled={this._btn_disable === 'all'} className={'btn_book' + (this._Title === 'COMPREHENSION' ? '' : ' up')} onClick={this._onBook}/>
-				<ToggleBtn disabled={this._btn_disable === 'all'} className={'btn_video' + (this._Title === 'COMPREHENSION' ? '' : ' up')} onClick={this._onVideo}/>
+				<ToggleBtn disabled={this._btn_disable === 'all'} className={'btn_book' + (this._Title === 'Compreshension' ? '' : ' up')} onClick={this._onBook}/>
+				<ToggleBtn disabled={this._btn_disable === 'all'} className={'btn_video' + (this._Title === 'Compreshension' ? '' : ' up')} onClick={this._onVideo}/>
 
-				<div className="btn_tab" style={{display: this._Title === 'COMPREHENSION' ? '' : 'none'}}>
-					<ToggleBtn className="btn_warmup" on={this._Tab === 'WARMUP' && this._Title === 'COMPREHENSION'} disabled={this._btn_disable !== ''} onClick={this._clickWarmup} />
-					<ToggleBtn className="btn_passage" on={this._Tab === 'Passage' && this._Title === 'COMPREHENSION'} disabled={this._btn_disable !== ''} onClick={this._clickPassage} />
-					<ToggleBtn className="btn_question" on={this._Tab === 'QUESTION' && this._Title === 'COMPREHENSION'} disabled={this._btn_disable !== ''} onClick={this._clickQuestion} />
+				<div className="btn_tab" style={{display: this._Title === 'Compreshension' ? '' : 'none'}}>
+					<ToggleBtn className="btn_warmup" on={this._Tab === 'Warmup' && this._Title === 'Compreshension'} disabled={this._btn_disable !== ''} onClick={this._clickWarmup} />
+					<ToggleBtn className="btn_passage" on={this._Tab === 'Passage' && this._Title === 'Compreshension'} disabled={this._btn_disable !== ''} onClick={this._clickPassage} />
+					<ToggleBtn className="btn_question" on={this._Tab === 'Question' && this._Title === 'Compreshension'} disabled={this._btn_disable !== ''} onClick={this._clickQuestion} />
 				</div>
 
-				<WARMUP 
+				<Warmup 
 					view={view}
-					inview={this._Tab === 'WARMUP' && this._Title === 'COMPREHENSION'} 
+					inview={this._Tab === 'Warmup' && this._Title === 'Compreshension'} 
 					videoPopup={this.props.state.videoPopup}
 					viewStoryBook={this.props.state.viewStoryBook}
 					data={data}
@@ -147,19 +147,19 @@ class TComprehension extends React.Component<ITComprehension> {
 					videoPopup={this.props.state.videoPopup}
 					viewStoryBook={this.props.state.viewStoryBook}
 					studying={this._btn_disable !== ''}
-					inview={this._Tab === 'Passage' && this._Title === 'COMPREHENSION'} 
+					inview={this._Tab === 'Passage' && this._Title === 'Compreshension'} 
 					data={data}
 					state={state}
 					actions={actions}
 					onStudy={this._onStuding}
 					onSetNavi={this._onSetNavi}
 				/>
-				<QUESTION 
+				<Question 
 					view={view}
 					videoPopup={this.props.state.videoPopup}
 					viewStoryBook={this.props.state.viewStoryBook}
 					studying={this._btn_disable !== ''}
-					inview={this._Tab === 'QUESTION' && this._Title === 'COMPREHENSION'} 
+					inview={this._Tab === 'Question' && this._Title === 'Compreshension'} 
 					data={data}
 					state={state}
 					actions={actions}
@@ -178,11 +178,11 @@ class TComprehension extends React.Component<ITComprehension> {
 					onStudy={this._onStuding}
 					onSetNavi={this._onSetNavi}
 				/>
-				<SUMMARY 
+				<Summary 
 					view={view}
 					videoPopup={this.props.state.videoPopup}
 					viewStoryBook={this.props.state.viewStoryBook}
-					inview={this._Tab === 'SUMMARY' && this._Title === 'SUMMARIZING'} 
+					inview={this._Tab === 'Summary' && this._Title === 'SUMMARIZING'} 
 					data={data}
 					state={state}
 					actions={actions}

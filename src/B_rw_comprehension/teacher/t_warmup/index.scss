@@ -1,7 +1,7 @@
-@import './wormup_video.scss';
+@import './_warmup_video.scss';
 
-@mixin WARMUP {
-	.WARMUP{
+@mixin Warmup {
+	.warmup{
 		position: absolute;
 		top: 0px;
 		width: 100%; height: 100%;

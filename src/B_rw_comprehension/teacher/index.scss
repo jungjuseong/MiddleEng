@@ -1,10 +1,10 @@
-@import "../common/component/button.scss";
-@import "../config.scss";
-@import "../share/video-direction.scss";
-@import "../share/navi.scss";
-@import "../share/sendui.scss";
+@import "../../common/component/button.scss";
+@import "../../config.scss";
+@import "../../share/video-direction.scss";
+@import "../../share/navi.scss";
+@import "../../share/sendui.scss";
 
-@import "./teacher/t_comprehension/index.scss";
+@import "./t_comprehension.scss";
 
 body{
 	background-color: transparent;
@@ -51,16 +51,17 @@ body{
 			opacity: 0;
 			pointer-events: none;
 		}
-	}
-	
+	}	
+
+
 	.video-direction{
 		@include video-direction;
-		background-image: resolve('common/bg1.jpg');
+		background-image: resolve('common/bg_direction.jpg');
 
 		&>.movieclip{
 			position: absolute;
-			right: -30px;
-			bottom: -70px;
+			right: 0px;
+			bottom: 0px;
 			width: 330px;
 			height: 550px;
 		}
@@ -69,7 +70,7 @@ body{
 			background-image: resolve("common/direction.png");
 			width: width("common/direction.png");
 			height:  height("common/direction.png");
-			left: calc(50% - width("common/direction.png")/2);
+			left: calc(43% - width("common/direction.png")/2);
 			top: calc(50% - height("common/direction.png")/2);
 		}
 		&>div.lesson{
@@ -79,9 +80,9 @@ body{
 			color: #fff;
 		}
 	}
-
-	@include comprehension;
+	@include t_comprehension;
 	.fel_topad{
 		@include fel_topad;
+		bottom: 6px; right: 6px;
 	}
 }

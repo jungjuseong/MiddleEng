@@ -23,8 +23,8 @@ import VideoBox from '../t_video_box';
 import { TimerState } from '../../../share/Timer';
 import QuizMCBtn from '../../../share/QuizMCBtn';
 
-import LetsTalk from './LetsTalk';
-import ComprePopup from './ComprePopup';
+import LetsTalk from './_lets_talk';
+import ComprePopup from './_compre_popup';
 
 const SwiperComponent = require('react-id-swiper').default;
 

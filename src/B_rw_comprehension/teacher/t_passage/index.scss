@@ -1,7 +1,7 @@
 @import '../../../share/CoverPopup.scss';
 @import '../../../share/Timer.scss';
 @mixin Passage {
-	.Passage { 
+	.passage { 
 		.nav {
 			@include mixin_nav;
 			@include mixin_page_box;

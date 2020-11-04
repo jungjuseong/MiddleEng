@@ -11,7 +11,7 @@ import { CoverPopup } from '../../../share/CoverPopup';
 import * as common from '../../common';
 
 import { BtnAudio } from '../../../share/BtnAudio';
-import ImgPopup from './ImgPopup';
+import ImgPopup from './_img_popup';
 
 const SwiperComponent = require('react-id-swiper').default;
 

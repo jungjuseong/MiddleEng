@@ -23,6 +23,7 @@ interface IBtnItem {
 	onClick: (qtype: common.TypeQuiz) => void;
 	onResult: (qtype: common.TypeQuiz, isGroup: boolean) => void;
 }
+
 class BtnItem extends React.Component<IBtnItem> {
 	private _onClick = () => {
 		this.props.onClick(this.props.myqtype);
@@ -38,7 +39,6 @@ class BtnItem extends React.Component<IBtnItem> {
 		return (
 			<div className={'quiz_' + myqtype}>
 				<ToggleBtn className={'btn_quiz_' + myqtype} on={myqtype === qtype} onClick={this._onClick}/>
-
 				
 				<div className="result_btns">
 					<div className="quiz_progress">
@@ -57,11 +57,13 @@ class BtnItem extends React.Component<IBtnItem> {
 		);		
 	}
 }
+
 interface IQuizSelect {
 	view: boolean;
 	state: IStateCtx;
 	actions: IActionsCtx;
 }
+
 @observer
 class QuizSelect extends React.Component<IQuizSelect> {
 	private _sound_avg = -1;

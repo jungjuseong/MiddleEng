@@ -1,9 +1,16 @@
-@import "../common/component/button.scss";
-@import "../config.scss";
-@import "../share/video-direction.scss";
-@import "../share/sendui.scss";
+@import "../../common/component/button.scss";
+@import "../../config.scss";
+@import "../../share/video-direction.scss";
+@import "../../share/sendui.scss";
 
-@import "./student/s_content.scss";
+@import './s_warmup.scss';
+@import './s_passage.scss';
+@import './s_question.scss';
+@import './s_graphic.scss';
+
+@import './s_summary.scss';
+@import './s_v_script.scss';
+@import './s_checkup.scss';
 
 #wrap{
 
@@ -39,12 +46,12 @@
 	}
 	.video-direction{
 		@include video-direction;
-		background-image: resolve('common/bg1.jpg');
+		background-image: resolve('common/bg_direction.jpg');
 
 		&>.movieclip{
 			position: absolute;
-			right: -30px;
-			bottom: -70px;
+			right: 0px;
+			bottom: 0px;
 			width: 330px;
 			height: 550px;
 		}
@@ -53,7 +60,7 @@
 			background-image: resolve("common/direction.png");
 			width: width("common/direction.png");
 			height:  height("common/direction.png");
-			left: calc(50% - width("common/direction.png")/2);
+			left: calc(43% - width("common/direction.png")/2);
 			top: calc(50% - height("common/direction.png")/2);
 		}
 		&>div.lesson{
@@ -65,12 +72,18 @@
 		}
 	}
 
-	@include s_content;
+	@include s_warmup;
+	@include s_passage;
+	@include s_question;
+	@include s_graphic;
 
+	@include s_summary;
+
+	
+
+	@include s_v_script;
+	@include s_checkup;
 	.fel_toteacher{
 		@include fel_toteacher;
 	}
 }
-
-
-

@@ -1,9 +1,8 @@
-@import "../common/component/button.scss";
-@import "../config.scss";
-@import "../share/navi.scss";
-@import "../share/sendui.scss";
-@import "./teacher/t_contentbox.scss";
-
+@import "../../common/component/button.scss";
+@import "../../config.scss";
+@import "../../share/navi.scss";
+@import "../../share/sendui.scss";
+@import "./t_contentbox.scss";
 
 body{
 	background-color: transparent;

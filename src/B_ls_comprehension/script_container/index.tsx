@@ -2,7 +2,7 @@ import * as React from 'react';
 import { observer } from 'mobx-react';
 
 import * as common from '../common';
-import ScriptBox from './ScriptBox';
+import ScriptBox from './_script_box';
 
 const SwiperComponent = require('react-id-swiper').default;
 

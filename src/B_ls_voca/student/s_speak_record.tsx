@@ -8,9 +8,6 @@ import * as _ from 'lodash';
 
 import { ToggleBtn } from '@common/component/button';
 
-import * as StrUtil from '@common/util/StrUtil';
-import * as kutil from '@common/util/kutil';
-
 import * as common from '../common';
 import SendUINew from '../../share/sendui_new';
 
@@ -19,9 +16,8 @@ import { MPlayer, MConfig, MPRState, IMedia } from '@common/mplayer/mplayer';
 import * as butil from '@common/component/butil';
 import * as felsocket from '../../felsocket';
 import { IActionsCtx, useStudent, StudentContext } from './s_store';
-import { ResponsiveText } from '../../share/ResponsiveText';
-import { hot } from 'react-hot-loader';
 import WrapTextNew from '@common/component/WrapTextNew';
+
 const notifyStartVoice = 'notifyStartVoice';
 const notifyStartCamera = 'notifyStartCamera';
 const notifyStopCamera = 'notifyStopCamera';

@@ -1,29 +1,22 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { observable, action } from 'mobx';
+
 import { observer, Observer } from 'mobx-react';
 import { hot } from 'react-hot-loader/root';
 import * as _ from 'lodash';
 
-import * as felsocket from '../felsocket';
-import { SVGBg, SVGEmbed, SVGAni } from '../share/svg_object';
-import VideoDirection from '../share/video-direction';
+import { SVGBg, SVGEmbed, SVGAni } from '../../share/svg_object';
+import VideoDirection from '../../share/video-direction';
 
+import { sContext, StudentProvider, StudentContext, useStudent, IStateCtx, IActionsCtx } from './s_store';
 
-import { sContext, StudentProvider, StudentContext, useStudent, IStateCtx, IActionsCtx } from './student/s_store';
+import { Loading } from '../../share/loading';
 
-import { Loading } from '../share/loading';
+import Quiz from './s_quiz';
+import VocaTyping from './s_voca_typing';
+import SSpeakRecord from './s_speak_record';
 
-import { LikeSend } from '../share/like';
-
-import Quiz from './student/s_quiz';
-import VocaTyping from './student/s_voca_typing';
-import SSpeakRecord from './student/s_speak_record';
-
-import './student.scss';
-import '../font.scss';
-import { IWordData } from './common';
-import { App } from '../App';
+import './index.scss';
+import '../../font.scss';
 
 /*
 @observer

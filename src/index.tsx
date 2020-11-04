@@ -11,15 +11,11 @@ setConfig({
 	ErrorOverlay: (errors) => <div/>,
 });
 
-
 const app_o = {
 	clear: App.pub_clear,
 	importLink: importer.importLink,
 	importHTML: importer.importHTML,
 };
-
-
-
 
 let _require: any;
 let _isTeacher = true;
@@ -30,23 +26,21 @@ if(p_base_template_t) {
 	_require =  require('./p_base_template/student');
 	_isTeacher = false;
 } else if(b_rw_comprehension_t) {
-	_require =  require('./b_rw_comprehension/teacher');
+	_require =  require('./b_rw_comprehension/teacher/index');
 } else if(b_rw_comprehension_s) {
 	_require =  require('./b_rw_comprehension/student');
 	_isTeacher = false;
 } else if(b_ls_comprehension_t) {
-	_require =  require('./b_ls_comprehension/teacher');
+	_require =  require('./b_ls_comprehension/teacher/index');
 } else if(b_ls_comprehension_s) {
 	_require =  require('./b_ls_comprehension/student');
 	_isTeacher = false;
 } else if(b_ls_voca_t) {
 	_require =  require('./b_ls_voca/teacher');
-} else if(b_ls_voca_s) {
-	
+} else if(b_ls_voca_s) {	
 	_require =  require('./b_ls_voca/student');
 	_isTeacher = false;
 }
-
 
 interface IMoudule {
 	default: IMain;
@@ -59,8 +53,6 @@ interface IMoudule {
 	uploaded: (url: string) => void;
 */
 }
-
-// console.log(window.navigator.userAgent);
 
 let _started = false;
 const _module = _require as IMoudule;

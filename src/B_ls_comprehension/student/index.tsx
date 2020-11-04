@@ -4,8 +4,8 @@ import { observer, Observer } from 'mobx-react';
 import { hot } from 'react-hot-loader';
 import * as _ from 'lodash';
 
-import { SVGEmbed, SVGAni } from '../share/svg_object';
-import VideoDirection from '../share/video-direction';
+import { SVGEmbed, SVGAni } from '../../share/svg_object';
+import VideoDirection from '../../share/video-direction';
 import { 
 	sContext, 
 	StudentProvider, 
@@ -14,12 +14,13 @@ import {
 	useStudent, 
 	IStateCtx,
 	IActionsCtx
-} from './student/s_store';
-import { Loading } from '../share/loading';
-import SContent from './student/s_content';
+} from './s_store';
 
-import './student.scss';
-import '../font.scss';
+import { Loading } from '../../share/loading';
+import SContent from './s_content';
+
+import './index.scss';
+import '../../font.scss';
 
 @observer
 class StudentPage extends React.Component<{state: IStateCtx, actions: IActionsCtx}> {

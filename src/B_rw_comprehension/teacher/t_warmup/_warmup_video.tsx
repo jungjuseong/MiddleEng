@@ -7,11 +7,10 @@ import { DraggableCore, DraggableData, DraggableEvent } from 'react-draggable';
 import { MPlayer, MConfig, IMedia, MPRState } from '@common/mplayer/mplayer';
 import { ToggleBtn } from '@common/component/button';
 
-import { App } from '../../App';
-import { Loading } from '../../share/loading';
+import { App } from '../../../App';
+import { Loading } from '../../../share/loading';
 
-import * as common from '../common';
-
+import * as common from '../../common';
 
 function _getCurrentIdx(scripts: common.IScriptWarmup[], time: number) {
     let timeRound = Math.round(time / 0.01) * 0.01;
@@ -224,7 +223,7 @@ interface IVideoItem {
 	onZoomed?: () => void;
 }
 @observer
-class LeftVideo extends React.Component<IVideoItem> {
+class WarmupVideo extends React.Component<IVideoItem> {
 	
 	private m_box!: HTMLElement;
 	@observable private m_viewCaption = false;
@@ -280,6 +279,7 @@ class LeftVideo extends React.Component<IVideoItem> {
 			if(this.props.onZoomed) this.props.onZoomed();
 		} else {
 			if (this.m_box.requestFullscreen) this.m_box.requestFullscreen();
+			// tslint:disable-next-line:no-string-literal
 			else if (this.m_box['webkitRequestFullscreen']) this.m_box['webkitRequestFullscreen']();
 		}
 	}
@@ -410,4 +410,4 @@ class LeftVideo extends React.Component<IVideoItem> {
 		);
 	}
 }
-export default LeftVideo;
+export default WarmupVideo;

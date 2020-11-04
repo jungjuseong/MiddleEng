@@ -506,7 +506,7 @@ class SummaryBox extends React.Component<ISummaryBox> {
 	}
 }
 
-interface ISUMMARY {
+interface ISummary {
 	view: boolean;
 	inview: boolean;
 	videoPopup: boolean;
@@ -518,7 +518,7 @@ interface ISUMMARY {
 	onSetNavi: (title: 'VISUALIZING', tab: 'GraphicOrganizer') => void;
 }
 @observer
-class SUMMARY extends React.Component<ISUMMARY> {
+class Summary extends React.Component<ISummary> {
 	@observable private _prog = SENDPROG.READY;
 	@observable private _retCnt = 0;
 	@observable private _numOfStudent = 0;
@@ -535,7 +535,7 @@ class SUMMARY extends React.Component<ISUMMARY> {
 	@observable private _curScritSeq = 0;
 	private _scripts: common.IScriptSummarizing[][] = [];
 
-	public constructor(props: ISUMMARY) {
+	public constructor(props: ISummary) {
 		super(props);
 		this._data = props.actions.getData();
 
@@ -695,7 +695,7 @@ class SUMMARY extends React.Component<ISUMMARY> {
 		this.props.actions.setSummaryFnc(null);
 		felsocket.sendPAD($SocketType.PAD_ONSCREEN, null);
 	}
-	public componentDidUpdate(prev: ISUMMARY) {
+	public componentDidUpdate(prev: ISummary) {
 		if(this.props.videoPopup && !prev.videoPopup) {
 			if(this.props.state.isVideoStudied) this.props.state.isVideoStudied = false;
 		} else if (!this.props.videoPopup && prev.videoPopup) {
@@ -814,7 +814,7 @@ class SUMMARY extends React.Component<ISUMMARY> {
         const viewLetstalk = !(letstalk.sentence === '' || letstalk.audio === '' || letstalk.img1 === '' || letstalk.sample === '' || letstalk.hint === '');
         
         return (
-            <div className="SUMMARY" style={inview ? undefined : style.NONE}>
+            <div className="summary" style={inview ? undefined : style.NONE}>
                 <ToggleBtn className="btn_lets_talk" view={viewLetstalk} on={this._letstalk} onClick={this._onLetsTalk} />
             
                 <div className="right" style={this._prog >= SENDPROG.SENDED ? undefined : style.NONE}>
@@ -864,6 +864,6 @@ class SUMMARY extends React.Component<ISUMMARY> {
 	}
 }
 
-export default SUMMARY;
+export default Summary;
 
 

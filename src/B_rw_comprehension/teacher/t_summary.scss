@@ -1,6 +1,6 @@
 @import '../../share/CoverPopup.scss';
-@mixin SUMMARY {
-	.SUMMARY{
+@mixin Summary {
+	.summary{
 		@include page;
 		.btn_lets_talk{
 			@include btn_on_dis(

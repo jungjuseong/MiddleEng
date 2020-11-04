@@ -6,7 +6,7 @@ import * as _ from 'lodash';
 import { ToggleBtn } from '@common/component/button';
 
 import * as common from '../common';
-import SelectBox from './SelectBox';
+import SelectBox from './_select_box';
 
 const SwiperComponent = require('react-id-swiper').default;
 

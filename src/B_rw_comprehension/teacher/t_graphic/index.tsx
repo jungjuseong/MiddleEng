@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import * as _ from 'lodash';
 import { observable } from 'mobx';
 import { observer } from 'mobx-react';
@@ -12,21 +11,19 @@ import { ToggleBtn } from '@common/component/button';
 import * as kutil from '@common/util/kutil';
 import * as common from '../../common';
 
-import { CoverPopup } from '../../../share/CoverPopup';
 import SendUI from '../../../share/sendui_new';
-
 import * as style from '../../../share/style';
 
 import { PentoolSheet } from '../t_pentool_sheet';
 import { KeyboardSheet } from '../t_keyborad_sheet';
 import TableItem from '../../table-item';
 
-import SheetPopup from './SheetPopup';
-import TablePopup from './TablePopup';
+import SheetPopup from './_sheet_popup';
+import TablePopup from './_table_popup';
 
 const SwiperComponent = require('react-id-swiper').default;
 
-const m_soption: SwiperOptions = {
+const m_swiper_option: SwiperOptions = {
 	direction: 'vertical',
 	observer: true,
 	slidesPerView: 'auto',
@@ -47,7 +44,7 @@ interface IGraphicOrganizer {
 	state: IStateCtx;
 	actions: IActionsCtx;
 	onStudy: (studying: BTN_DISABLE) => void;
-	onSetNavi: (title: 'COMPREHENSION' | 'SUMMARIZING', tab: 'QUESTION' | 'SUMMARY') => void;
+	onSetNavi: (title: 'Compreshension' | 'SUMMARIZING', tab: 'Question' | 'Summary') => void;
 }
 @observer
 class GraphicOrganizer extends React.Component<IGraphicOrganizer> {
@@ -225,10 +222,10 @@ class GraphicOrganizer extends React.Component<IGraphicOrganizer> {
 		this.props.actions.setNaviFnc(
 			() => {
 				this.props.state.isNaviBack = true;
-				this.props.onSetNavi('COMPREHENSION', 'QUESTION');
+				this.props.onSetNavi('Compreshension', 'Question');
 			},
 			() => {
-				this.props.onSetNavi('SUMMARIZING', 'SUMMARY');
+				this.props.onSetNavi('SUMMARIZING', 'Summary');
 			}
 		);
 	}
@@ -725,7 +722,7 @@ class GraphicOrganizer extends React.Component<IGraphicOrganizer> {
 			);
 		} else {
 			this._cont = (
-				<SwiperComponent id="table-container" {...m_soption} ref={this._refSwiper}>
+				<SwiperComponent id="table-container" {...m_swiper_option} ref={this._refSwiper}>
 					<div className={'table_box ' + tableClass} hidden={tableView}>{jsx}</div>
 				</SwiperComponent>
 			);
