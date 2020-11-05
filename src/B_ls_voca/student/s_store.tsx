@@ -1,16 +1,15 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import * as _ from 'lodash';
 import { observable, action } from 'mobx';
-import { App, IMain } from '../../App';
-import * as felsocket from '../../felsocket';
-import * as common from '../common';
+import { App } from '../../App';
+
+import { TypeQuiz, IWordData, IData, IMsg, IQuizMsg, IDrillMsg, initData } from '../common';
 import { StudentContextBase, IActionsBase, IStateBase, VIEWDIV } from '../../share/scontext';
 
 type MYPROG = ''|'quiz'|'spelling'|'record';
 
 interface IQuizInfo extends IStudentQuizInfo {
-	qtype: common.TypeQuiz;
+	qtype: TypeQuiz;
 }
 
 interface IStateCtx extends IStateBase {
@@ -31,9 +30,10 @@ interface IStateCtx extends IStateBase {
 	uploaded: string;
 	notice: string;
 }
+
 interface IActionsCtx extends IActionsBase {
-	getWord: () => common.IWordData;
-	getWords: () => common.IWordData[];
+	getWord: () => IWordData;
+	getWords: () => IWordData[];
 	getQuizInfo: () => IQuizInfo;
 	setQuizProg: (prog: TypeQuizProg) => void;
 	unsetForceStop: () => void;
@@ -47,7 +47,7 @@ interface IActionsCtx extends IActionsBase {
 class StudentContext extends StudentContextBase {
 	@observable public state!: IStateCtx;
 	public actions!: IActionsCtx;
-	private _data!: common.IData;
+	private _data!: IData;
 
 	private _quizInfo: IQuizInfo = {
 		qidxs: [],
@@ -56,7 +56,7 @@ class StudentContext extends StudentContextBase {
 		qtype: '',
 	};
 
-	private _word!: common.IWordData;
+	private _word!: IWordData;
 
 	constructor() {
 		super();
@@ -115,7 +115,6 @@ class StudentContext extends StudentContextBase {
 				}, 300);
 			}
 		};
-
 	}
 
 	@action protected _setViewDiv(viewDiv: VIEWDIV) {
@@ -133,9 +132,9 @@ class StudentContext extends StudentContextBase {
 	@action public receive(data: ISocketData) {
 		super.receive(data);
 		if(data.type === $SocketType.MSGTOPAD && data.data) {
-			const msg = data.data as  common.IMsg;
+			const msg = data.data as  IMsg;
 			if(msg.msgtype === 'quiz') {           // 문제수/시간 설정에서 start 버튼 클릭시
-				const qmsg = msg as common.IQuizMsg;
+				const qmsg = msg as IQuizMsg;
 
 				this._quizInfo.qidxs = qmsg.qidxs;
 				this._quizInfo.points = [];
@@ -235,7 +234,7 @@ class StudentContext extends StudentContextBase {
 					msg.msgtype === 'speaking_audio' || 
 					msg.msgtype === 'speaking_video' 
 			) {
-				const qmsg = msg as common.IDrillMsg;
+				const qmsg = msg as IDrillMsg;
 
 				const word = _.find(this._data.page1.words, {idx: qmsg.word_idx});
 				if(word) {
@@ -296,8 +295,8 @@ class StudentContext extends StudentContextBase {
 		}
 	}
 
-	public setData(data: common.IData) {
-		data = common.initData(data);
+	public setData(data: IData) {
+		data = initData(data);
 		const words = data.page1.words;
 		for(let i = 0; i < words.length; i++) {
 			const word = words[i];

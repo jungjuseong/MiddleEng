@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 
 import { observable, action } from 'mobx';
 import { Observer, observer } from 'mobx-react';
@@ -8,7 +7,7 @@ import * as _ from 'lodash';
 
 import { ToggleBtn } from '@common/component/button';
 
-import * as common from '../common';
+import { IRecordedMsg, IWordData } from '../common';
 import SendUINew from '../../share/sendui_new';
 
 import { App } from '../../App';
@@ -19,9 +18,7 @@ import { IActionsCtx, useStudent, StudentContext } from './s_store';
 import WrapTextNew from '@common/component/WrapTextNew';
 
 const notifyStartVoice = 'notifyStartVoice';
-const notifyStartCamera = 'notifyStartCamera';
 const notifyStopCamera = 'notifyStopCamera';
-const notifySwitchCamera = 'notifySwitchCamera';
 
 const notifyStartVideoRecord = 'notifyStartVideoRecord';
 const notifyVideoRecordCanceled = 'notifyVideoRecordCanceled';
@@ -37,7 +34,6 @@ function _toStr(n: number) {
 	return (m < 10 ? '0' + m : '' + m) + ':' + (s < 10 ? '0' + s : '' + s);
 }
 
-
 const enum MYSTATE {
 	VIEW,
 	READY,
@@ -49,9 +45,9 @@ const enum MYSTATE {
 	SENDED,
 }
 
-interface ISpeakRecord {
+interface IRecordSpeak {
 	view: boolean;
-	word: common.IWordData;
+	word: IWordData;
 	mediaType: 'audio'|'video';
 	bRecordSend: boolean;
 	recorded: string;
@@ -62,7 +58,7 @@ interface ISpeakRecord {
 
 }
 @observer
-class Comp extends React.Component<ISpeakRecord> {
+class RecordSpeak extends React.Component<IRecordSpeak> {
 	private _video = new MPlayer(new MConfig(true));
 	private _audio = new MPlayer(new MConfig(true));
 
@@ -76,17 +72,13 @@ class Comp extends React.Component<ISpeakRecord> {
 	@observable private _playCnt = 0;
 	
 	@observable private _recorded = '';
-
 	@observable private _loaded = false;
-	private _mediaType: 'audio'|'video' = 'audio';
 
 	private _jsx: JSX.Element;
-
 	private _stime = 0;
 
-	constructor(props: ISpeakRecord) {
+	constructor(props: IRecordSpeak) {
 		super(props);
-
 		this._jsx = this._getJSX(props.word.sentence);
 	}
 
@@ -97,7 +89,6 @@ class Comp extends React.Component<ISpeakRecord> {
 				{nodes.map((node) => node)}
 			</>
 		);
-
 	}
 
 	@action private _countDown = (t: number) => {
@@ -114,63 +105,56 @@ class Comp extends React.Component<ISpeakRecord> {
 	}
 
 	private _onStartRecord = () => {
-		if(!this.props.view) return;
+		const { view,actions,mediaType } = this.props;
+
+		if(!view) return;
 		else if(this._state !== MYSTATE.READY && this._state !== MYSTATE.RECORDED) return;
 		this._video.pause();
 		this._audio.pause();
 		
 		this._time = 0;
 		this._state = MYSTATE.WAIT_START;
-		this.props.actions.onStartRecord();
+		actions.onStartRecord();
 		if(!App.isDvlp) {
-			if(this.props.mediaType === 'video') felsocket.startVideoRecord();
+			if(mediaType === 'video') felsocket.startVideoRecord();
 			else felsocket.startVoiceRecord();
 		}
 	}
 	private _onStopRecord = () => {
-		if(!this.props.view) return;
+
+		const { view,actions,mediaType } = this.props;
+
+		if(!view) return;
 		else if(this._state !== MYSTATE.RECORDING && this._state !== MYSTATE.WAIT_START) return;
 		else if(this._time >= 0 && this._time <= 2.0) return;
 		
 		if(this._state === MYSTATE.RECORDING) {
 			this._state = MYSTATE.WAIT_END;
-			this.props.actions.onStopRecord();
+			actions.onStopRecord();
 		} else {
 			if(this._recorded && this._recorded !== '') this._state = MYSTATE.RECORDED;
 			else this._state = MYSTATE.READY;
 		}
 		
 		if(!App.isDvlp) {
-			if(this.props.mediaType === 'video') felsocket.stopVideoRecord();
+			if(mediaType === 'video') felsocket.stopVideoRecord();
 			else felsocket.stopVoiceRecord();
 		}
 	}
 	private _onSend = () => {
-		if(!this.props.view) return;
+		const { view, actions, recorded } = this.props;
+
+		if(!view) return;
 		else if(this._state !== MYSTATE.RECORDED) return;
 
 		this._state = MYSTATE.SENDING;
-		this.props.actions.onUploadMedia(this.props.recorded);
-		this.props.actions.setLoading(true);
+		actions.onUploadMedia(recorded);
+		actions.setLoading(true);
 		App.pub_playToPad();
 		if(!App.isDvlp) {
-			felsocket.uploadFileToServer(this.props.recorded);
+			felsocket.uploadFileToServer(recorded);
 		}
 	}
-	/*
-	private _onContents = () => {
-		if(!this.props.view) return;
-		else if(this._state < MYSTATE.SENDED) return;
-
-		this._hideContents = !this._hideContents;
-	}
-	private _onQuestion = () => {
-		if(!this.props.view) return;
-		else if(this._state < MYSTATE.SENDED) return;
-
-		this._viewQ = !this._viewQ;
-	}
-	*/
 	private _onPlayStop = () => {
 		if(!this.props.view) return;
 		else if(this._state < MYSTATE.RECORDED) return;
@@ -225,32 +209,23 @@ class Comp extends React.Component<ISpeakRecord> {
 	private _onSentence = () => {
 		if(!this.props.view) return;
 	}
-	public componentWillReceiveProps(next: ISpeakRecord) {
+	public componentWillReceiveProps(next: IRecordSpeak) {
 		if(next.word !== this.props.word) {
 			this._jsx = this._getJSX(next.word.sentence);
 		}
 	}
-	public componentDidUpdate(prev: ISpeakRecord) {
-		
-
-		if(this.props.view) {
-			if(this.props.notice !== prev.notice) {
-				// console.log(this.props.notice, this.props.mediaType, this._state === MYSTATE.WAIT_START);
-				switch(this.props.notice) {
+	public componentDidUpdate(prev: IRecordSpeak) {	
+		const { view, notice, word, mediaType, recorded, actions, uploaded } = this.props;
+		if(view) {
+			if(notice !== prev.notice) {
+				switch(notice) {
 				case notifyStartVoice:
-					if(this.props.mediaType === 'audio' && this._state === MYSTATE.WAIT_START) {
+					if(mediaType === 'audio' && this._state === MYSTATE.WAIT_START) {
 						this._startedRecord();
 					}						
 					break;
-				/*
-				case notifyStartCamera:
-					if(this.props.mediaType === 'video' && this._state === MYSTATE.WAIT_START) {
-						felsocket.startVideoRecord();
-					}
-					break;
-				*/
 				case notifyStartVideoRecord:
-					if(this.props.mediaType === 'video' && this._state === MYSTATE.WAIT_START) {
+					if(mediaType === 'video' && this._state === MYSTATE.WAIT_START) {
 						this._startedRecord();
 					}
 					break;
@@ -262,55 +237,50 @@ class Comp extends React.Component<ISpeakRecord> {
 					break;
 				default:
 					break;
-				}
-					
+				}					
 			}
-
-			if(this.props.recorded !== prev.recorded) {
+			if (recorded !== prev.recorded) {
 				if(this._state === MYSTATE.WAIT_END) {
-					if(this.props.recorded !== '') {
+					if(recorded !== '') {
 						this._loaded = false;
 						this._player.unload();
 						this._playCnt = 0;
-						this._recorded = this.props.recorded;
+						this._recorded = recorded;
 						this._player.load(this._recorded);
 					}
 					if(this._recorded && this._recorded !== '') this._state = MYSTATE.RECORDED;
 					else this._state = MYSTATE.READY;
 				}
 			}
-
-			if(this.props.uploaded !== prev.uploaded) {
-				if(this.props.uploaded && this.props.uploaded !== '' && this._state === MYSTATE.SENDING) {
-					this.props.actions.startGoodJob();
+			if (uploaded !== prev.uploaded) {
+				if (uploaded && uploaded !== '' && this._state === MYSTATE.SENDING) {
+					actions.startGoodJob();
 					this._state = MYSTATE.SENDED;
-					this.props.actions.setLoading(false);
+					actions.setLoading(false);
 
 					if(App.student) {
-						const msg: common.IRecordedMsg = {
+						const msg: IRecordedMsg = {
 							msgtype: 'recorded_return',
 							id: App.student.id,
-							url: this.props.uploaded,
+							url: uploaded,
 							stime: this._stime,
 							etime: this._stime + (this._time * 1000),
-							word_idx: this.props.word.idx,
+							word_idx: word.idx,
 						};
-						if(this.props.mediaType === 'video') {
-							felsocket.uploadStudentReport($ReportType.VIDEO, this.props.uploaded, '');
+						if (mediaType === 'video') {
+							felsocket.uploadStudentReport($ReportType.VIDEO, uploaded, '');
 						} else {
-							felsocket.uploadStudentReport($ReportType.AUDIO, this.props.uploaded, '');
+							felsocket.uploadStudentReport($ReportType.AUDIO, uploaded, '');
 						}
 						felsocket.sendTeacher($SocketType.MSGTOTEACHER, msg);
 					}
 					App.pub_playGoodjob();
-					this.props.actions.startGoodJob();
-					// this.props.actions.setProg(SProg.COMPLETE);
+					actions.startGoodJob();
 				}
 			}
-
 			if(!prev.view) {
 				this._state = MYSTATE.READY;
-				if(this.props.mediaType === 'video') {
+				if(mediaType === 'video') {
 					felsocket.startCamera();
 					const wrap = document.getElementById('wrap');
 					if(wrap) {
@@ -319,13 +289,11 @@ class Comp extends React.Component<ISpeakRecord> {
 					}
 				}
 			}
-		} else if(!this.props.view && prev.view) {
-			const mediaType = prev.mediaType;
+		} else if(!view && prev.view) {
 			if(this._state === MYSTATE.RECORDING || this._state === MYSTATE.WAIT_START) {
-				if(mediaType === 'video') felsocket.stopVideoRecord();
+				if(prev.mediaType === 'video') felsocket.stopVideoRecord();
 				else felsocket.stopVoiceRecord();
 			}
-
 			this._video.unload();
 			this._audio.unload();
 			this._loaded = false;
@@ -341,16 +309,13 @@ class Comp extends React.Component<ISpeakRecord> {
 				wrap.style.backgroundImage = '';
 				wrap.style.backgroundColor = '';
 			}
-
 			_.delay(() => {
-				if(!this.props.view && mediaType === 'video') felsocket.stopCamera();
+				if(!view && prev.mediaType === 'video') felsocket.stopCamera();
 			}, 300);
-		}
-
-		
+		}		
 	}
 	public render() {
-		const {view, mediaType, notice, recorded, uploaded, likeOn, word} = this.props;
+		const {view, mediaType, notice, recorded, bRecordSend, uploaded, likeOn, word} = this.props;
 		
 		let subClass = ' ' + mediaType as string;
 		if(this._state === MYSTATE.SENDED && likeOn) subClass = subClass + ' like-on';
@@ -361,8 +326,7 @@ class Comp extends React.Component<ISpeakRecord> {
 		if(this._state >= MYSTATE.WAIT_START && this._state <= MYSTATE.WAIT_END) {
 			timeStr = _toStr(Math.floor(this._time) * 1000) + ' / ' + MAX_TIME_STR;
 		} else if(this._state >= MYSTATE.RECORDED) {
-			let duration = this._player.duration / 1000;
-			if(duration > MAX_TIME) duration = MAX_TIME;
+			const duration = (this._player.duration / 1000 <= MAX_TIME) ? this._player.duration / 1000 : MAX_TIME;
 
 			if(this._playCnt > 0) {
 				let viewTime = this._player.viewTime / 1000;
@@ -426,7 +390,7 @@ class Comp extends React.Component<ISpeakRecord> {
 
 					<SendUINew 
 						type="pad"
-						view={this.props.view && this.props.bRecordSend && this._state >= MYSTATE.RECORDED}
+						view={view && bRecordSend && this._state >= MYSTATE.RECORDED}
 						sended={this._state === MYSTATE.SENDED}
 						originY={0}
 						onSend={this._onSend}
@@ -450,31 +414,22 @@ class Comp extends React.Component<ISpeakRecord> {
 		);
 	}
 }
-/*
-	view: boolean;
-	mediaType: 'audio'|'video';
-	recorded: string;
-	uploaded: string;
-	notice: string;
-	likeOn: boolean;
-	actions: IActionsCtx;
-*/
+
 const SSpeakRecord = useStudent((store: StudentContext) => (
 	<Observer>{() => {
-		const view = store.state.viewDiv === 'content' && 
-					( 	store.state.prog === 'record' );
-		
+		const { viewDiv, prog, mediaType, bRecordSend,recorded,uploaded, notice, likeSet } = store.state;
+		const view = (viewDiv === 'content' && prog === 'record' );
 		const word = store.actions.getWord();
 		return (
-			<Comp 
+			<RecordSpeak 
 				view={view}
 				word={word}
-				mediaType={store.state.mediaType}
-				bRecordSend={store.state.bRecordSend}
-				recorded={store.state.recorded}
-				uploaded={store.state.uploaded}
-				notice={store.state.notice}
-				likeOn={store.state.likeSet.on}
+				mediaType={mediaType}
+				bRecordSend={bRecordSend}
+				recorded={recorded}
+				uploaded={uploaded}
+				notice={notice}
+				likeOn={likeSet.on}
 				actions={store.actions}
 			/>
 		);

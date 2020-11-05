@@ -1,24 +1,14 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { hot } from 'react-hot-loader';
-import { observable } from 'mobx';
+
 import { Observer, observer } from 'mobx-react';
 import { StudentContext, useStudent, IStateCtx, IActionsCtx } from './s_store';
-import * as common from '../common';
-
-import { App } from '../../App';
-import * as felsocket from '../../felsocket';
-
-import * as kutil from '@common/util/kutil';
+import { IWordData, TypeQuiz } from '../common';
 
 import QuizSound from '../quiz_sound';
 import QuizMeaning from '../quiz_meaning';
 import QuizSpelling from '../quiz_spelling';
 import QuizUsage from '../quiz_usage';
 import QuizStudent from '../../share/QuizStudent';
-
-
-
 
 interface IQuiz {
 	view: boolean;
@@ -32,11 +22,10 @@ interface IQuiz {
 }
 @observer
 class Comp extends React.Component<IQuiz> {
-	private _quizs: common.IWordData[] = [];
-	private _qtype: common.TypeQuiz = '';
+	private _quizs: IWordData[] = [];
+	private _qtype: TypeQuiz = '';
 	private _isGroup = false;
 	private _qtime = 60;
-
 
 	public componentWillUpdate(next: IQuiz) {
 		let bReset = false;
@@ -62,7 +51,6 @@ class Comp extends React.Component<IQuiz> {
 			this._qtime = qtime;
 		}
 	}
-
 
 	public render() {
 		const {view, quizProg, state, groupProg, actions, qidx, forceStopIdx, groupResult} = this.props;

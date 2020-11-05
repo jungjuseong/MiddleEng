@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+
 import { Observer, observer } from 'mobx-react';
 
 import { StudentContext, useStudent, IStateCtx, IActionsCtx } from './s_store';
@@ -12,7 +12,7 @@ import KTextInput from '@common/component/KTextInput';
 import { App } from '../../App';
 import SendUINew from '../../share/sendui_new';
 import * as felsocket from '../../felsocket';
-import * as common from '../common';
+import { ISpellingReturnMsg } from '../common';
 
 const enum MYSTATE {
 	READY,
@@ -30,7 +30,7 @@ interface ITypingQuiz {
 }
 
 @observer
-class Comp extends React.Component<ITypingQuiz> {
+class VocaTypingQuiz extends React.Component<ITypingQuiz> {
 	@observable private _focusIdx: number = -1;
 	@observable private _result: ''|'correct'|'wrong' = '';
 
@@ -38,9 +38,7 @@ class Comp extends React.Component<ITypingQuiz> {
 	@observable private _state = MYSTATE.READY;
 
 	private _inputs: KTextInput[] = [];
-
 	private _results: boolean[] = [];
-
 	private _inputWrong: string[] = [];
 
 	private _stime = 0;
@@ -115,70 +113,7 @@ class Comp extends React.Component<ITypingQuiz> {
 		if(!this.props.view) return;
 		App.pub_playCorrect();
 		keyBoardState.state = 'hide';
-		this._state = MYSTATE.DONE;
-
-		/*
-		let isComplete = true;
-		let isCorrect = true;
-		const spell = this.props.entry.split('');
-
-		while(this._results.length > 0) this._results.pop();
-
-		for(let i = 0; i  < this._inputs.length; i++) {
-			const char = spell[i];
-			const ipt = this._inputs[i];
-			const val = (ipt && ipt.ipt) ? ipt.ipt.value : '';
-			if(ipt && ipt.ipt) ipt.ipt.value = char;
-			
-			
-
-			if(isComplete && val.length === 0 && char !== ' ') {
-				isComplete = false;
-				isCorrect = false;
-			}
-
-			this._results[i] = (char === ' ' && val.length === 0)  || val === char;
-			if(this._results[i]) this._inputWrong[i] = '';
-			else {
-				this._inputWrong[i] = val;
-				isCorrect = false;
-			}
-		}
-
-		// console.log('isCorrect', isCorrect, isCorrect, this._inputWrong);
-
-		if(isComplete) {
-			this._focusIdx = -1;
-			keyBoardState.disableDone = true;
-
-			if(isCorrect) {
-				this._view_ox = true;
-				this._result = 'correct';
-				App.pub_playCorrect();
-				keyBoardState.state = 'hide';
-			} else {
-				this._view_ox = true;
-				this._result = 'wrong';
-				App.pub_playWrong();
-				keyBoardState.state = 'hide';
-				*/
-				/*  틀렸을 경우 재 시작 
-				await kutil.wait(1500);
-				this._result = '';
-				for(let i = 0; i  < this._inputs.length; i++) {
-					const ipt = this._inputs[i];
-					if(ipt && ipt.ipt) ipt.ipt.value = '';
-				}
-				this._focusIdx = 0;
-				*/
-			/*
-
-			}
-
-			await kutil.wait(1800);
-			this._view_ox = false;
-		}
-		*/
+		this._state = MYSTATE.DONE;		
 	}
 	private _onChange = (idx: number, value: string) => {
 		if(this._stime === 0) this._stime = Date.now();
@@ -198,24 +133,18 @@ class Comp extends React.Component<ITypingQuiz> {
 	}
 
 	private _onSend = async () => {
-		if(!this.props.view) return;
+		const { entry,view,actions } = this.props;
+		if(!view) return;
 		else if(this._state !== MYSTATE.DONE) return;
-
-
-		// App.pub_playGoodjob();
-		// this.props.actions.startGoodJob();
-
-		// await kutil.wait(2500);
 
 		let isComplete = true;
 		let isCorrect = true;
-		const spell = this.props.entry.split('');
+		const spell = entry.split('');
 
 		for(let i = 0; i  < this._inputs.length; i++) {
 			const char = spell[i];
 			const ipt = this._inputs[i];
 			const val = (ipt && ipt.ipt) ? ipt.ipt.value : '';
-			// if(ipt && ipt.ipt) ipt.ipt.value = char;
 			
 			if(isComplete && val.length === 0 && char !== ' ') {
 				isComplete = false;
@@ -233,7 +162,7 @@ class Comp extends React.Component<ITypingQuiz> {
 		if(!isComplete) return;
 
 		App.pub_playGoodjob();
-		this.props.actions.startGoodJob();
+		actions.startGoodJob();
 
 		await kutil.wait(3000);
 
@@ -246,13 +175,13 @@ class Comp extends React.Component<ITypingQuiz> {
 					user_input += (ipt && ipt.ipt) ? ipt.ipt.value : '';
 				}
 
-				const msg: common.ISpellingReturnMsg = {
+				const msg: ISpellingReturnMsg = {
 					msgtype: 'spelling_return',
 					id: App.student.id,
 					isCorrect,
 					stime: this._stime,
 					etime: Date.now(),
-					word_idx: this.props.actions.getWord().idx,
+					word_idx: actions.getWord().idx,
 					user_input,
 				};
 				felsocket.sendTeacher($SocketType.MSGTOTEACHER, msg);
@@ -359,15 +288,13 @@ class Comp extends React.Component<ITypingQuiz> {
 
 const VocaTyping = useStudent((store: StudentContext) => (
 	<Observer>{() => {
-		const view = store.state.viewDiv === 'content' && store.state.prog === 'spelling';
-		let entry = '';
-		if(view) {
-			entry = store.actions.getWord().entry;	
-		}
+		const { viewDiv, prog } = store.state;
+		const view = (viewDiv === 'content' && prog === 'spelling');
+
 		return (
-			<Comp 
+			<VocaTypingQuiz 
 				view={view}
-				entry={entry}
+				entry={(view) ? store.actions.getWord().entry : ''}
 				actions={store.actions} 
 				state={store.state}
 			/>
