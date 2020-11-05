@@ -1053,6 +1053,43 @@ body {
     content: url("/content/digenglish_lib/B/ls_comprehension/teacher/images/btn_answer.png") url("/content/digenglish_lib/B/ls_comprehension/teacher/images/btn_answer_down.png");
 }
 
+#wrap .t_comprehension .info_box .btn_trans {
+    display: inline-block;
+    vertical-align: middle;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/teacher/images/btn_translate.png");
+    background-repeat: no-repeat;
+    width: 65px;
+    height: 59px;
+    pointer-events: unset;
+    cursor: pointer;
+}
+
+#wrap .t_comprehension .info_box .btn_trans:disabled {
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/teacher/images/btn_translate_down.png");
+    pointer-events: none;
+    cursor: auto;
+}
+
+#wrap .t_comprehension .info_box .btn_trans.on {
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/teacher/images/btn_translate_down.png");
+}
+
+#wrap .t_comprehension .info_box .btn_trans:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_comprehension/teacher/images/btn_translate.png") url("/content/digenglish_lib/B/ls_comprehension/teacher/images/btn_translate_down.png") url("/content/digenglish_lib/B/ls_comprehension/teacher/images/btn_translate_down.png");
+}
+
 #wrap .t_comprehension .info_box .btn_clue {
     display: inline-block;
     vertical-align: middle;

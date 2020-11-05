@@ -324,6 +324,17 @@
 				);
 				pointer-events: unset;	
 			}
+			.btn_trans {
+				display: inline-block;
+				vertical-align: middle;
+				@include btn_on_dis(
+					resolve('teacher/images/btn_translate.png'),
+					resolve('teacher/images/btn_translate_down.png'),
+					resolve('teacher/images/btn_translate_down.png'),
+					width('teacher/images/btn_translate.png'),
+					height('teacher/images/btn_translate.png')
+				);
+			}
 			.btn_clue {
 				display: inline-block;
 				vertical-align: middle;

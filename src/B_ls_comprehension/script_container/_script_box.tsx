@@ -321,8 +321,9 @@ class ScriptBox  extends React.Component<IScriptBox> {
 		} else {
 			this.m_clue = <></>;
 		}
-		this.m_prog = <StandBar percent={this.props.script.app_preview} />;
+		// this.m_prog = <StandBar percent={this.props.script.app_preview} />;
 		// else this.m_prog = <></>;
+		this.m_prog = <></>;
 	}
 
 	private _draw() {

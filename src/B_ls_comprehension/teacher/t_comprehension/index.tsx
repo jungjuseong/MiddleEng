@@ -235,6 +235,26 @@ class Comprehension extends React.Component<IComprehension> {
             }, 300);
         }
         this.props.actions.setNavi(false, false);
+    }
+    /* Hint Bubble */
+	private _clickTranslate = () => {
+		const {state, actions} = this.props;
+		if(this._Title !== 'COMPREHENSION') return;
+		else if(this._Tab !== 'SCRIPT') return;
+		
+        App.pub_playBtnTab();
+		if(this._viewTrans) {
+			this._viewTrans = false;
+			
+			// let msg: common.IMsg = {msgtype: 'hide_clue',};
+			// felsocket.sendPAD($SocketType.MSGTOPAD, msg);
+		} else {
+			this._viewTrans = true;
+			
+			// let msg: common.IMsg = {msgtype: 'view_clue',};
+			// felsocket.sendPAD($SocketType.MSGTOPAD, msg);
+		}	
+
 	}
 	/* Hint Bubble */
 	private _clickClue = () => {
@@ -835,6 +855,7 @@ class Comprehension extends React.Component<IComprehension> {
                         <div>{state.retCnt}/{state.numOfStudent}</div>
                     </div>
                     <ToggleBtn className="btn_answer" on={isQComplete} onClick={this._clickAnswer} view={isViewAnswer}/>
+                    <ToggleBtn className="btn_trans" onClick={this._clickTranslate} on={this._viewTrans} view={isViewClue}/>
                     <ToggleBtn className="btn_clue" onClick={this._clickClue} on={this._viewClue} view={isViewClue}/>
                 </div>	
                 <div className="right_box">
@@ -865,8 +886,8 @@ class Comprehension extends React.Component<IComprehension> {
                             </div>
                         </div>
                         
-                        <ToggleBtn className="btn_lets_talk" view={viewLetstalk} on={this._letstalk} onClick={this._onLetsTalk} disabled={this._shadowing || this._roll === 'A' || this._roll === 'B'}/>
-                        {/* <ToggleBtn className={'btn_script_trans' + (this._viewTrans ? ' on' : '')} on={this._viewTrans} onClick={this._toggleTrans} /> */}
+                        {/* <ToggleBtn className="btn_lets_talk" view={viewLetstalk} on={this._letstalk} onClick={this._onLetsTalk} disabled={this._shadowing || this._roll === 'A' || this._roll === 'B'}/> */}
+                        <ToggleBtn className={'btn_script_trans' + (this._viewTrans ? ' on' : '')} on={this._viewTrans} onClick={this._toggleTrans} />
                         <ToggleBtn className={'btn_script_show' + (this._viewScript ? ' on' : '')} on={this._viewScript} onClick={this._toggleScript} />
                     </div>
                     <div className={'question' + (state.questionProg >= SENDPROG.COMPLETE ? ' complete' : '')} style={{display: this._Tab === 'QUESTION' ? '' : 'none'}}>

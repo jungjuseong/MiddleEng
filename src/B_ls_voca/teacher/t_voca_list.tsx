@@ -75,11 +75,7 @@ class VocaItem extends React.Component<IVocaItem> {
 					</div>
 				</div>
 				<div className="topic_progress">
-					<span className={'icon_topic ' + word.topic} />
-					<div className={'quiz_progress true'} style={{display: avr < 0 ? 'none' : ''}}>
-					<div className="percent_data" style={{height: avr < 0 ? '0%' : avr + '%'}}/>
-						<span>{avr < 0 ? '' : avr + '%'}</span>
-					</div>				
+					<span className={'icon_topic ' + word.topic} />				
 				</div>	
 			</div>
 		);
