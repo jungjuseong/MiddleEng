@@ -326,9 +326,10 @@ class Comprehension extends React.Component<IComprehension> {
 		App.pub_stop();
 		App.pub_playBtnTab();
 		if(this._Title !== 'COMPREHENSION') return;
-
-        this._curQidx = idx;
-        if(this._curQidx === 0) this.props.actions.setNavi(false, true);
+        else
+            this._curQidx = idx;
+            if(this._Tab === 'QUESTION' && this._curQidx === 0) this.props.actions.setNavi(false, true);
+            else this.props.actions.setNavi(true, true);
 		this._Hint = (this._Tab === 'SCRIPT');
 	}
 	private _clearAll() {
@@ -353,6 +354,7 @@ class Comprehension extends React.Component<IComprehension> {
         this._lastFocusIdx = -1;
         this._focusIdx = -1;
 
+        this.props.actions.setNavi(true, true);
         this.m_player.setMutedTemp(false);
         if(this.m_player.currentTime !== this.m_player_inittime
             || this.m_player.currentTime < this.m_player_inittime) this.m_player.gotoAndPause(this.m_player_inittime * 1000);
@@ -371,7 +373,8 @@ class Comprehension extends React.Component<IComprehension> {
 		if(this.m_player.bPlay) this.m_player.pause();
 		this._clearAll();
 		this._Title = 'COMPREHENSION';
-		this._Tab = 'QUESTION';
+        this._Tab = 'QUESTION';
+        if(this._Tab === 'QUESTION' && this._curQidx === 0) this.props.actions.setNavi(false, true);
 	}
 	private _clickDial = (ev: React.MouseEvent<HTMLElement>) => {
 		if(this._Title === 'DIALOGUE') return;
@@ -407,7 +410,7 @@ class Comprehension extends React.Component<IComprehension> {
 			felsocket.sendPAD($SocketType.PAD_ONSCREEN, null);
 			this.props.actions.clearQnaReturns();
 		}
-		
+        if(this._curQidx === 0) this.props.actions.setNavi(false, true);
 	}
 	private _clickScript = (ev: React.MouseEvent<HTMLElement>) => {
 		if(this._Title !== 'COMPREHENSION') return;
@@ -421,7 +424,8 @@ class Comprehension extends React.Component<IComprehension> {
 		App.pub_stop();
 		App.pub_playBtnTab();
 		this._Hint = false;
-		this._Tab = 'SCRIPT';
+        this._Tab = 'SCRIPT';
+        this.props.actions.setNavi(true, true);
 	}
 	private _clickReturn = () => {
 		App.pub_playBtnTab();
