@@ -17,7 +17,7 @@
             "audio": "another_word.mp3",
             "meaning_eng": "different from the first one",
             "meaning_audio": "another_meaning.mp3",
-            "sentence": "그는 {다른} 가방이 필요하다.",
+            "sentence": "He needs {another} backpack.",
             "sentence_audio": "another_usage.mp3",
             "video": "another.mp4",
             "sound_start": 0.5,
