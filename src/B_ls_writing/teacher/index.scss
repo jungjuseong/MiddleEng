@@ -1,0 +1,104 @@
+@import "../../common/component/button.scss";
+@import "../../config.scss";
+@import "../../share/video-direction.scss";
+@import "../../share/navi.scss";
+@import "../../share/sendui.scss";
+
+@import "./t_writing/index.scss";
+
+body{
+	background-color: transparent;
+}
+#wrap{
+	background-image:resolve("teacher/images/bg_t.png");
+
+	@mixin my-scroll-container($W, $H){
+		width: $W;
+		height: $H;
+		overflow: hidden;
+	}
+	@mixin my-scroll-wrapper($W, $H){
+		position: relative;
+		white-space: nowrap;
+		width:auto;
+		height: $H;
+		transition: left 0.3s;
+		transition-timing-function: ease-in;
+		&>div{
+			position: relative;
+			display: inline-block;
+			white-space: unset;
+			width: $W;
+			height: $H;
+			overflow: hidden;
+		}
+	}
+	
+	&>.content-container{
+		$W: 1280px;
+		$H: 800px;
+		@include my-scroll-container($W, $H);
+		position: absolute;
+		.content-wrapper{
+			@include my-scroll-wrapper($W, $H);
+			.sub-container{
+				.sub-wrapper {
+					@include my-scroll-wrapper($W, $H);
+				}
+			}
+		}
+		&.hide{
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+	/*인트로 페이지로 이동*/
+	.close_box{
+		position: absolute;	top: 5px; right: 5px;
+		width: auto;
+		height: auto;
+		z-index: 5;
+		opacity: 1;
+		.btn_intro {
+			display: inline-block;
+			@include btn_on(
+				resolve('teacher/images/btn_close.png'),
+				resolve('teacher/images/btn_close_down.png'),
+				width('teacher/images/btn_close.png'),
+				height('teacher/images/btn_close.png')
+			);
+		}
+	}
+	
+	.video-direction{
+		@include video-direction;
+		background-image: resolve('common/bg1.jpg');
+
+		&>.movieclip{
+			position: absolute;
+			right: -30px;
+			bottom: -70px;
+			width: 330px;
+			height: 550px;
+		}
+		&>div.direction{
+			position: absolute;
+			background-image: resolve("common/direction.png");
+			width: width("common/direction.png");
+			height:  height("common/direction.png");
+			left: calc(50% - width("common/direction.png")/2);
+			top: calc(50% - height("common/direction.png")/2);
+		}
+		&>div.lesson{
+			position: absolute;
+			left: 30px; top: 20px;		
+			font-size: 40px;
+			color: #fff;
+		}
+	}
+
+	@include comprehension;
+	.fel_topad{
+		@include fel_topad;
+	}
+}
