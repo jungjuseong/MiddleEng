@@ -25,6 +25,11 @@ if(p_base_template_t) {
 } else if(p_base_template_s) {
 	_require =  require('./p_base_template/student');
 	_isTeacher = false;
+} else if(B_ls_writing_t) {
+	_require =  require('./B_ls_writing/teacher');
+} else if(B_ls_writing_s) {
+	_require =  require('./B_ls_writing/student');
+	_isTeacher = false;
 } else if(b_rw_comprehension_t) {
 	_require =  require('./b_rw_comprehension/teacher/index');
 } else if(b_rw_comprehension_s) {

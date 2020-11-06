@@ -1,0 +1,35 @@
+@import "../common/component/button.scss";
+@import "../config.scss";
+@import "../share/page_direction.scss";
+@import "../share/navi.scss";
+@import "../share/sendui.scss";
+
+@import "./teacher/t_sample.scss";
+
+body{
+	background-color: transparent;
+}
+#wrap{
+	background-image:resolve("digenglish_lib/images/theme2_bg.png");
+	&>.page_direction{
+		@include page_direction;
+		&>div{
+			position: absolute;
+			background-image: resolve("teacher/images/direction.png");
+			width: width("teacher/images/direction.png");
+			height:  height("teacher/images/direction.png");
+			left: calc(50% - width("teacher/images/direction.png")/2);
+			top: calc(50% - height("teacher/images/direction.png")/2);
+		}
+	}
+
+
+	@include t_sample;
+	
+
+
+
+	.fel_topad{
+		@include fel_topad;
+	}
+}

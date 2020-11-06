@@ -1553,7 +1553,7 @@ body {
     color: #1322b5;
 }
 
-#wrap .t_voca_list .t_study_popup .t_voca_detail > .detail_box > .sentence_box > .sentence > .re_sentence_kor {
+#wrap .t_voca_list .t_study_popup .t_voca_detail > .detail_box > .sentence_box > .sentence > .re_sentence_meaning {
     position: relative;
     display: inline-block;
     width: 10px;
@@ -1568,7 +1568,7 @@ body {
     letter-spacing: -0.8px;
 }
 
-#wrap .t_voca_list .t_study_popup .t_voca_detail > .detail_box > .sentence_box > .sentence > .re_sentence_kor .block {
+#wrap .t_voca_list .t_study_popup .t_voca_detail > .detail_box > .sentence_box > .sentence > .re_sentence_meaning .block {
     color: #1322b5;
 }
 
