@@ -123,10 +123,29 @@
 						font-size: 60px;
 					}
 				}
+				&>.re_meaning {
+					position: relative;	
+					display: inline-block;
+					width:  10px;
+					flex-grow: 1;
+					margin-right: 25px;
+					margin-left: 33px;
+					height:auto;
+					font-size:35px;
+					color: rgb(255, 255, 255);
+					line-height: 1.2;
+					white-space: normal;	
+					letter-spacing: -2.3px;
+					word-break: break-all;
+
+					&.small {
+						font-size: 60px;
+					}
+				}
 
 				&>.btn_audio {
 					position: relative;
-					margin-top: 10px;
+					margin-top: -25px;
 					margin-left: 46px;	
 					flex-grow: 0;
 				}	
@@ -193,6 +212,25 @@
 					.block{
 						color: rgb(19, 34, 181);
 					}
+				}
+				&>.re_sentence_kor {
+					position: relative;	
+					display: inline-block;
+					width:  10px;
+					flex-grow: 1;
+
+					margin-left: 35px;
+					margin-right: 35px;
+					height:auto;
+					font-size: 35px;
+					color: rgb(0, 0, 0);
+					line-height: 1.2;
+					white-space: normal;	
+					letter-spacing: -0.8px;
+
+					.block{
+						color: rgb(19, 34, 181);
+					}
 				}	
 				&>.btn_audio {						
 					position: relative;
@@ -228,7 +266,7 @@
 			);
 		}
 		&>.btn_meaning {
-			margin-left: 10px;
+			margin-left: 65px;
 			@include btn_down_dis(
 				resolve('teacher/images/btn_meaning.png'),
 				resolve('teacher/images/btn_meaning_on.png'),
@@ -258,7 +296,7 @@
 			);
 		}
 		&>.btn_usage {
-			margin-left: 10px;
+			margin-left: 65px;
 			@include btn_down_dis(
 				resolve('teacher/images/btn_usage.png'),
 				resolve('teacher/images/btn_usage_on.png'),
