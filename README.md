@@ -50,7 +50,7 @@ node version 10.22.1
 
 ## browser
 
-http://localhost:8082/content/B_ls_comprehension/teacher.html?kdmtdvlp=y
+http://localhost:8082/content/B_ls_voca/teacher.html?kdmtdvlp=y
 
 
 

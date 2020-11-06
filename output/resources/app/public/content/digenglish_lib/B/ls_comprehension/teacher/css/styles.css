@@ -411,6 +411,7 @@ body {
     background: url("/content/digenglish_lib/B/ls_comprehension/teacher/images/bg_playing.png") no-repeat;
     width: 1280px;
     height: 800px;
+    /*인트로 페이지로 이동*/
     /* 제출수*/
     /* 비디오 관련 */
     /* 화면에 따라 내용이 바뀌는 오른쪽*/
@@ -975,6 +976,46 @@ body {
     overflow: hidden;
     z-index: -1;
     content: url("/content/digenglish_lib/B/ls_comprehension/teacher/images/btn_tab_script.png") url("/content/digenglish_lib/B/ls_comprehension/teacher/images/btn_tab_script_down.png");
+}
+
+#wrap .t_comprehension .close_box {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: auto;
+    height: auto;
+    z-index: 5;
+    opacity: 1;
+}
+
+#wrap .t_comprehension .close_box .btn_intro {
+    display: block;
+    touch-action: none;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/teacher/images/btn_close.png");
+    background-repeat: no-repeat;
+    width: 52px;
+    height: 54px;
+    cursor: pointer;
+    pointer-events: unset;
+}
+
+#wrap .t_comprehension .close_box .btn_intro.on {
+    background-image: url("/content/digenglish_lib/B/ls_comprehension/teacher/images/btn_close_down.png");
+}
+
+#wrap .t_comprehension .close_box .btn_intro:before {
+    position: absolute;
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/content/digenglish_lib/B/ls_comprehension/teacher/images/btn_close.png") url("/content/digenglish_lib/B/ls_comprehension/teacher/images/btn_close_down.png");
 }
 
 #wrap .t_comprehension .info_box {
