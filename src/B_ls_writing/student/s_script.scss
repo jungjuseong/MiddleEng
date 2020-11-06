@@ -1,0 +1,72 @@
+@import "../script_container/index.scss";
+@import "../../share/sendui.scss";
+
+@mixin s_script{
+	.s_script{
+		.btn_QUESTION {
+			position: absolute; top: 19px; right: 26px;
+			@include btn_down_dis(
+				resolve('student/images/btn_question.png'),
+				resolve('student/images/btn_question_down.png'),
+				resolve('student/images/btn_question_dis.png'),
+				width('student/images/btn_question.png'),
+				height('student/images/btn_question.png')
+			);
+		}
+		.script_container {
+			position: absolute; 
+			left: 0px; width: 100%; 
+			top: 70px; bottom: 0px;
+			
+			padding: 0px 18px;
+			overflow: hidden;
+			.swiper-container { 
+				height: 100%; 
+				
+				.swiper-scrollbar{
+					top: 4%;
+					height: 93%;
+					background-color: transparent;
+					width: 8px;
+					.swiper-scrollbar-drag{
+						background-color: rgba(255, 255, 255, 0.6) !important;
+					}
+				}
+				.script_box {		
+					@include script_box;
+				}
+
+				.script_box:first-child {
+					margin-top: 20px;	
+				}
+			}
+			&.hide{
+				opacity: 0;
+				pointer-events: none;
+			}
+		}
+		.fel_toteacher {
+			@include fel_toteacher;
+			position: absolute; bottom: 7px; right: 7px;
+		}
+
+		&.DIALOGUE{
+			.script_container {
+				top: 0px;
+
+				.script_box:first-child {
+					margin-top: 60px;	
+				}
+				.script_box:last-child {
+					margin-bottom: 60px;	
+				}
+
+				.swiper-scrollbar{
+					top: 60px;
+					bottom: 60px;
+					height: unset;
+				}
+			}
+		}
+	}
+}

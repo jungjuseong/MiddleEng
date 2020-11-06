@@ -52,6 +52,23 @@
 			pointer-events: none;
 		}
 	}
+	/*인트로 페이지로 이동*/
+	.close_box{
+		position: absolute;	top: 5px; right: 5px;
+		width: auto;
+		height: auto;
+		z-index: 5;
+		opacity: 1;
+		.btn_intro {
+			display: block;
+			@include btn_on(
+				resolve('teacher/images/btn_intro_close.png'),
+				resolve('teacher/images/btn_intro_close.png'),
+				width('teacher/images/btn_intro_close.png'),
+				height('teacher/images/btn_intro_close.png')
+			);
+		}
+	}
 	.video-direction{
 		@include video-direction;
 		overflow: hidden;

@@ -1,0 +1,505 @@
+@import '../../share/Progress_bar.scss';
+
+@mixin clue-span($color) {
+	&>span>span>span.block{
+		background-color: $color;
+	}
+}
+
+@mixin script_box{
+	$colorA: #9628ca;
+	$colorB: #002ae3;
+	$colorC: #c137a9;
+	$colorD: #ff7200;
+	$colorE: #0092ee;
+
+	$clue1: #59cdee;
+	$clue2: #002ae3;
+	$clue3: #c137a9;
+	$clue4: #ff7200;
+	$clue5: #0092ee;
+
+	$focus: #ff0;
+
+	width: 454px; height: auto;
+	vertical-align: middle;
+	position: relative; top: 0px; left: 0px;
+	
+	margin-bottom: 22px;
+	.thumb{
+		position: relative;
+		display: inline-block; 
+		vertical-align: top;
+		width: 74px;
+		height: 74px;
+        .progress {
+			@include StandBar(54px,25px,40px,7px); 
+            .stand_bar{
+                margin-top:3px;
+                &>.data_percent{
+                    font-size:14px;
+                }    
+            }
+        }
+
+		&>.img_cls{
+			position: absolute; top: 4px; left: 15px;
+			width: 54px;
+			height: 54px;
+		}
+		&>div.img_cls{
+			box-sizing: border-box;
+			border: 3px solid transparent;
+			border-radius: 50%;
+		}
+		&>img.img_cls { 
+			border-radius: 50%;
+		}
+		&>span{
+			display: none;
+			position: absolute;
+			left: 4px;
+			top: 0px;
+			width: 26px;
+			height: 22px;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+
+		&.rollA{
+			&>div.img_cls { border-color: $colorA;}
+
+			&.in-roll{
+				&>span{
+					display: inline-block;
+					background-image: resolve('common/icon_check1.png');
+				}
+			}
+			&.on-roll{
+				&>div.img_cls { 
+					/* border-color: $focus; */
+					border-width: 4px;
+				}								
+			}
+			&.shadowing{
+				&>div.img_cls { 
+					/* border-color: $focus; */
+					border-width: 4px;
+				}
+			}
+		}
+		&.rollB{
+			&>div.img_cls { border-color: $colorB;}
+			&.in-roll{
+				&>span{
+					display: inline-block;
+					background-image: resolve('common/icon_check2.png');
+				}
+			}
+			&.on-roll{
+				&>div.img_cls { 
+					/* border-color: $focus; */
+					border-width: 4px;
+				}								
+			}
+			&.shadowing{
+				&>div.img_cls { 
+					/* border-color: $focus; */
+					border-width: 4px;
+				}
+			}
+		}
+		&.rollC{
+			&>div.img_cls { 
+				border-color: $colorC;
+			}
+			&.shadowing{
+				&>div.img_cls { 
+					/* border-color: $focus; */
+					border-width: 4px;
+				}
+			}
+        }
+        &.rollD{
+			&>div.img_cls { 
+				border-color: $colorD;
+			}
+			&.shadowing{
+				&>div.img_cls { 
+					/* border-color: $focus; */
+					border-width: 4px;
+				}
+			}
+        }
+        &.rollE{
+			&>div.img_cls { 
+				border-color: $colorE;
+			}
+			&.shadowing{
+				&>div.img_cls { 
+					/* border-color: $focus; */
+					border-width: 4px;
+				}
+			}
+		}
+
+	}
+	.ballon{
+		touch-action: none;
+		display: inline-block; 
+		vertical-align: top;
+		/* width: 437px; */
+		width: 378px;
+		height: auto;
+		position: relative;
+		word-spacing: 2px;
+		
+	  	&>span{
+			display: inline-block;
+			position: relative;
+			vertical-align: top; 
+			text-align: left;
+			font-size: 35px; 
+			color: rgb(255, 255, 255);
+			word-break: keep-all; 
+			white-space: normal;
+			padding: 14px 13px 10px 24px;
+			z-index: 2;
+			line-height: 120%;
+			&>span{
+				padding: 0px;
+				&>span{
+					border-bottom: 2px solid transparent;
+					&.block{
+						display: inline-block;
+						vertical-align: baseline;
+					}
+					&.space{
+						display: inline;
+						vertical-align: baseline;
+					}
+				}
+			}
+
+			&.view-trans{
+				font-size: 28px; 
+				padding: 18px 2px 6px 24px;
+			}
+		}
+		&>canvas{
+			position: absolute;
+			left: 0px;
+			top: -5px;
+		}
+		&.hide-script{
+			&>span>span>span.block{
+				color: transparent;
+				border-bottom-color: #fff;
+			}
+		}
+
+		/*
+		&.focus{
+			&.rollA{
+				&>span{
+					color: $colorA;
+				}
+			}
+			&.rollB{
+				&>span{
+					color: $colorB;
+				}
+			}		
+			&.rollC{
+				&>span{
+					color: $colorC;
+				}
+			}
+		}
+		*/	
+
+		.student-clue{
+			position: absolute;
+			top: -38px;
+			left: 10px;
+			white-space: nowrap;
+			
+
+			.clue_qnum{
+				vertical-align: middle;
+				font-size: 16px;
+				line-height: 100%;
+				display: none;
+				&>span{
+					display: inline-block;
+					vertical-align: top;
+					width: 30px;
+					border-radius: 8px;
+					text-align: center;
+					padding-top: 2px;
+					padding-bottom: 4px;
+					margin: 0px 2px;
+
+					&.qnum1{
+						background-color: $clue1;
+					}
+					&.qnum2{
+						background-color: $clue2;
+					}
+					&.qnum3{
+						background-color: $clue3;
+					}
+					&.qnum4{
+						background-color: $clue4;
+					}
+					&.qnum5{
+						background-color: $clue5;
+					}
+				}
+			}
+
+			.btn_student{
+				@include btn_down_dis(
+					resolve('teacher/images/btn_student.png'),
+					resolve('teacher/images/btn_student_down.png'),
+					resolve('teacher/images/btn_student.png'),
+					width('teacher/images/btn_student.png'),
+					height('teacher/images/btn_student.png')
+				);
+				color: #fff;
+				font-size: 12px;
+				text-align: center;
+				padding-left: 8px;
+				display: inline-block;
+				vertical-align: middle;	
+
+				&.single{
+					position: relative;
+					top: 5px;
+				}
+			}
+		}
+
+		&.clue{
+
+			&.qnum1{
+				@include clue-span($clue1);
+			}
+			&.qnum2{
+				@include clue-span($clue2);
+			}
+			&.qnum3{
+				@include clue-span($clue3);
+			}
+			&.qnum4{
+				@include clue-span($clue4);
+			}
+			&.qnum5{
+				@include clue-span($clue5);
+			}
+			.student-clue .clue_qnum{
+				display: inline-block;
+			}			
+		}
+	}
+	&.COMPREHENSION{
+		margin-bottom: 10px;
+		.thumb.teacher{
+			vertical-align: middle;
+		}
+		.ballon.teacher{
+			vertical-align: middle;
+			box-sizing:border-box;
+			&>span{
+				/*
+				padding-top: 5px;
+				padding-left: 18px;
+				padding-top: 0px;
+				
+				*/
+				margin: 10px 0px;
+				padding-top: 0px;
+				padding-left: 5px;
+
+				&>span{
+					line-height: 1.2;
+					&>span{
+						line-height: 1;
+						&.space{
+							display: none;
+						}
+						&.block{
+							height: 36px;
+							/*padding-right: 12px;*/
+							&::before{
+								color: transparent;
+								font-size: 20px;
+								content: 'i';
+							}
+							&::after{
+								color: transparent;
+								font-size: 20px;
+								content: 'i';
+							}
+						}
+					}
+				}
+			}
+
+		}
+	}
+
+	&.student{
+		width: 100%;
+		margin-bottom: 32px;
+		padding-left: 57px;
+		.thumb{
+			width: 118px;
+			height: 105px;
+			/*.progress {	display: none }*/
+			&>.img_cls{
+				width: 100px;
+				height: 100px;
+			}
+			&>div.img_cls{
+				border-width: 4px;
+				box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2) inset;
+			}
+			&>img.img_cls { 
+				border-radius: 50%;
+				box-shadow: 1px 5px 4px rgba(0, 0, 0, 0.2);
+			}
+			&>span{
+				left: -8px;	top: 0px;
+				width: 46px; height: 38px;
+			}
+	
+			&.rollA{
+				&.on-roll{
+					&>div.img_cls{
+						box-shadow: none;
+					}
+					&>img.img_cls{
+						box-shadow: none;
+					}	
+				}
+				&.shadowing{
+					&>div.img_cls{
+						box-shadow: none;
+					}
+					&>img.img_cls{
+						box-shadow: none;
+					}	
+				}
+			}
+			&.rollB{
+				&.on-roll{
+					&>div.img_cls{
+						box-shadow: none;
+					}
+					&>img.img_cls{
+						box-shadow: none;
+					}	
+								
+				}
+				&.shadowing{
+					&>div.img_cls{
+						box-shadow: none;
+					}
+					&>img.img_cls{
+						box-shadow: none;
+					}	
+				}
+			}
+			&.rollC{
+				&.shadowing{
+					&>div.img_cls{
+						box-shadow: none;
+					}
+					&>img.img_cls{
+						box-shadow: none;
+					}	
+				}
+			}
+
+			&.focus{
+				&>div.img_cls{
+					border-width: 5px;
+					/*
+					border-color: $focus;
+					
+					*/
+					box-shadow: none;
+				}
+				&>img.img_cls{
+					border-width: 5px;
+					/*
+					border-color: $focus;
+					
+					*/
+					box-shadow: none;
+				}
+			}
+		}
+		&>.ballon{
+			width: 995px;
+			&>span{
+				font-size: 40px; 
+				padding: 25px 35px 20px 35px;
+
+				&>span{
+					&>span{
+						line-height: 1;
+						height: 44px;
+						&.block{
+							&::before{
+								color: transparent;
+								font-size: 24px;
+								content: 'i';
+							}
+							&::after{
+								color: transparent;
+								font-size: 24px;
+								content: 'i';
+							}							
+						}
+						&.space{
+							display: none;
+						}
+					}
+				}
+			}
+
+			.student-clue{
+				position: absolute;
+				top: -40px;
+				left: 34px;
+
+				.clue_qnum{
+					vertical-align: middle;
+					font-size: 20px;
+					line-height: 100%;
+					padding-top: 2px;
+					padding-bottom: 4px;
+					width: 40px;
+				}
+			}
+
+			/*
+			.clue_qnum{
+				top: -12px;
+				left: 40px;
+				width: 40px;
+				border-radius: 12px;
+
+
+				font-size: 20px;
+				line-height: 100%;
+				padding-top: 2px;
+				padding-bottom: 4px;
+			}
+			*/
+
+		}
+	}
+}
