@@ -2,6 +2,7 @@ import * as React from 'react';
 import { observer } from 'mobx-react';
 import * as _ from 'lodash';
 
+import { ToggleBtn } from '@common/component/button';
 import { IStateCtx, IActionsCtx, TProg } from './t_store';
 import { App } from '../../App';
 import { observable } from 'mobx';
@@ -31,6 +32,11 @@ class ContentBox extends React.Component<IContentBox> {
 	private _grouping: React.CSSProperties = {};
 	private _timer: React.CSSProperties = {};
 	private _board: React.CSSProperties = {};
+	
+	private _goToIntro = () => {
+        alert("go to Intro page");
+        return;
+    }
 
 	public componentWillUpdate(next: IContentBox) {
 		const { prog, state } = this.props;
@@ -104,6 +110,9 @@ class ContentBox extends React.Component<IContentBox> {
 		};
 		return (
 			<div className={'content-container'}>
+				<div className="close_box">
+                    <ToggleBtn className="btn_intro" onClick={this._goToIntro}/>
+                </div>
 				<div className="content-wrapper" style={{left: (-this._idx * _WIDTH) + 'px'}}>
 					<div>
 						<VideoDirection 

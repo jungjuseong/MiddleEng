@@ -55,7 +55,7 @@ function DetailItem(props: {word: common.IWordData}) {
 						<ResponsiveText className="re_entry" maxSize={70} minSize={54} lineHeight={120} length={word.entry.length}>
 							{word.entry}
 						</ResponsiveText>
-						<ResponsiveText className="re_meaning" maxSize={45} minSize={24} lineHeight={120} length={word.meaning.length}>
+						<ResponsiveText className="re_meaning" maxSize={35} minSize={24} lineHeight={120} length={word.meaning.length}>
 							{word.meaning}
 						</ResponsiveText>
 					</AudioText>
@@ -88,7 +88,7 @@ function DetailItem(props: {word: common.IWordData}) {
 						text_className="re_sentence"
 					>
 						{butil.parseBlock(word.sentence, 'block')}
-						<ResponsiveText className="re_sentence_meaning" maxSize={55} minSize={40} lineHeight={120} length={word.sentence_meaning.length}>
+						<ResponsiveText className="re_sentence_meaning" maxSize={35} minSize={25} lineHeight={120} length={word.sentence_meaning.length}>
 						{butil.parseBlock(word.sentence_meaning, 'block')}
 					</ResponsiveText>
 					</AudioText>

@@ -5,7 +5,6 @@ import * as _ from 'lodash';
 
 import '../../font.scss';
 import './index.scss';
-
 import { SVGBg, } from '../../share/svg_object';
 import { Navi } from '../../share/navi';
 
@@ -16,13 +15,14 @@ interface ITeacher {
 	state: IStateCtx;
 	actions: IActionsCtx;
 }
+
+
 @observer
 class TeacherComponent extends React.Component<ITeacher> {
 
 	public componentDidUpdate() {
 		this.props.state.hasPreview = true; // pre-class 초록색그래프 사전 학습 원상복구 
 	}
-
 	public render() {
 		const {state, actions} = this.props;
 		return (
@@ -39,6 +39,7 @@ class TeacherComponent extends React.Component<ITeacher> {
 				/>
 				<ContentBox prog={state.prog} state={state} actions={actions}/>
 				<Navi {...state.navi} onLeftClick={actions.naviLeft} onRightClick={actions.naviRight}/>
+				
 			</>
 		);
 	}

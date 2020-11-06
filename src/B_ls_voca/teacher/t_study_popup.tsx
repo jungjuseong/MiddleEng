@@ -40,13 +40,28 @@ class NItem extends React.Component<{idx: number, on: boolean, onClick: (idx: nu
 		return <span className={on ? 'on' : ''} onClick={this._click}>{idx + 1}</span>;
 	}
 }
-class NItemInd extends React.Component<{curidx : number, on : boolean , onClick:(start: number) => void}>{
+class NItemNavL extends React.Component<{curidx : number, on : boolean , onClick:(start: number) => void}>{
 	private _click = () => {
-		this.props.onClick(this.props.curidx);
+		const {curidx} = this.props;
+		if(curidx>0){
+			this.props.onClick((curidx-1)*10);
+		}
 	}
 	public render() {
 		const {curidx, on} = this.props;
-		return <span className={on ? 'on' : ''} onClick={this._click}>{curidx + 1}</span>;
+		return <span className={on ? 'on' : ''} onClick={this._click}>{'<'}</span>;
+	}
+}
+class NItemNavR extends React.Component<{maxidx : number , curidx : number, on : boolean , onClick:(start: number) => void}>{
+	private _click = () => {
+		const {maxidx, curidx} = this.props;
+		if(curidx < maxidx){
+			this.props.onClick((curidx+1)*10);
+		}	
+	}
+	public render() {
+		const {curidx, on} = this.props;
+		return <span className={on ? 'on' : ''} onClick={this._click}>{'>'}</span>;
 	}
 }
 
@@ -667,19 +682,21 @@ class StudyPopup extends React.Component<IComp> {
 		if(isRecording) arr.push('recording');
 		if(this._speak_auto) arr.push('auto');
 		if(words.length < 2) arr.push('hide-navi');
-		const navstart = -1
-		const navend =-1
-		const navcur = curIdx_tgt/10
+
+		const navcur = parseInt((curIdx_tgt/10).toString())
+		const maxnav = parseInt((words.length/10).toString())
 		// console.log('---->', words.length);
 		return (
 			<CoverPopup className={arr.join(' ')}  view={view && this.m_view} onClosed={this.props.onClosed} >
 				<div className="btn_page_box">
+					<NItemNavL curidx = {navcur} on = {false} onClick={this._onPage}/>
 					{words.map((word, idx) => {
-						if(idx>=navcur && idx < navcur+10){return <NItem key={idx} on={idx === curIdx_tgt} idx={idx} onClick={this._onPage}/>	
+						if(idx>=(navcur*10) && idx < (navcur*10)+10){return <NItem key={idx} on={idx === curIdx_tgt} idx={idx} onClick={this._onPage}/>	
 					}else{
 							return
 						}
-					})}	
+					})}
+					<NItemNavR maxidx = {maxnav} curidx = {navcur} on = {false} onClick={this._onPage}/>	
 				</div>
 				<div className="t_btns">
 						<div className="return_cnt_box white" onClick={this._onReturn}>
