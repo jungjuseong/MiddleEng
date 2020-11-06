@@ -1463,9 +1463,29 @@ body {
     font-size: 60px;
 }
 
+#wrap .t_voca_list .t_study_popup .t_voca_detail > .detail_box > .entry_box > .entry > .re_meaning {
+    position: relative;
+    display: inline-block;
+    width: 10px;
+    flex-grow: 1;
+    margin-right: 25px;
+    margin-left: 33px;
+    height: auto;
+    font-size: 35px;
+    color: white;
+    line-height: 1.2;
+    white-space: normal;
+    letter-spacing: -2.3px;
+    word-break: break-all;
+}
+
+#wrap .t_voca_list .t_study_popup .t_voca_detail > .detail_box > .entry_box > .entry > .re_meaning.small {
+    font-size: 60px;
+}
+
 #wrap .t_voca_list .t_study_popup .t_voca_detail > .detail_box > .entry_box > .entry > .btn_audio {
     position: relative;
-    margin-top: 10px;
+    margin-top: -25px;
     margin-left: 46px;
     flex-grow: 0;
 }
@@ -1530,6 +1550,25 @@ body {
 }
 
 #wrap .t_voca_list .t_study_popup .t_voca_detail > .detail_box > .sentence_box > .sentence > .re_sentence .block {
+    color: #1322b5;
+}
+
+#wrap .t_voca_list .t_study_popup .t_voca_detail > .detail_box > .sentence_box > .sentence > .re_sentence_kor {
+    position: relative;
+    display: inline-block;
+    width: 10px;
+    flex-grow: 1;
+    margin-left: 35px;
+    margin-right: 35px;
+    height: auto;
+    font-size: 35px;
+    color: black;
+    line-height: 1.2;
+    white-space: normal;
+    letter-spacing: -0.8px;
+}
+
+#wrap .t_voca_list .t_study_popup .t_voca_detail > .detail_box > .sentence_box > .sentence > .re_sentence_kor .block {
     color: #1322b5;
 }
 
@@ -1617,7 +1656,7 @@ body {
 }
 
 #wrap .t_voca_list .t_study_popup .t_voca_detail > .lecture_btns > .btn_meaning {
-    margin-left: 10px;
+    margin-left: 65px;
     touch-action: none;
     padding: 0px;
     border: none;
@@ -1725,7 +1764,7 @@ body {
 }
 
 #wrap .t_voca_list .t_study_popup .t_voca_detail > .lecture_btns > .btn_usage {
-    margin-left: 10px;
+    margin-left: 65px;
     touch-action: none;
     padding: 0px;
     border: none;
