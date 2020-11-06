@@ -92,7 +92,7 @@
         "qnums": [],
         "dms_eng": "Hello!",
         "dms_kor": {
-            "ko": "",
+            "ko": "안녕",
             "ja": "",
             "zh-Hans": "",
             "zh-Hant": "",

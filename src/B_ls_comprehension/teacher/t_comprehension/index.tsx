@@ -327,7 +327,8 @@ class Comprehension extends React.Component<IComprehension> {
 		App.pub_playBtnTab();
 		if(this._Title !== 'COMPREHENSION') return;
 
-		this._curQidx = idx;
+        this._curQidx = idx;
+        if(this._curQidx === 0) this.props.actions.setNavi(false, true);
 		this._Hint = (this._Tab === 'SCRIPT');
 	}
 	private _clearAll() {
