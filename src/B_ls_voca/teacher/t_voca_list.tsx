@@ -186,7 +186,7 @@ class VocaList extends React.Component<IComp> {
 
 	private _setNavi() {
 		this.props.actions.setNaviView(true); //
-		this.props.actions.setNavi(true, true); //
+		this.props.actions.setNavi(false, true); //
 		this.props.actions.setNaviFnc(
 			null,
 			() => {
