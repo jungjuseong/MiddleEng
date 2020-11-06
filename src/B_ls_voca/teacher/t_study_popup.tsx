@@ -40,6 +40,15 @@ class NItem extends React.Component<{idx: number, on: boolean, onClick: (idx: nu
 		return <span className={on ? 'on' : ''} onClick={this._click}>{idx + 1}</span>;
 	}
 }
+class NItemInd extends React.Component<{curidx : number, on : boolean , onClick:(start: number) => void}>{
+	private _click = () => {
+		this.props.onClick(this.props.curidx);
+	}
+	public render() {
+		const {curidx, on} = this.props;
+		return <span className={on ? 'on' : ''} onClick={this._click}>{curidx + 1}</span>;
+	}
+}
 
 interface ILectureItem {
 	type: POPUPTYPE;
@@ -658,13 +667,15 @@ class StudyPopup extends React.Component<IComp> {
 		if(isRecording) arr.push('recording');
 		if(this._speak_auto) arr.push('auto');
 		if(words.length < 2) arr.push('hide-navi');
-		
+		const navstart = -1
+		const navend =-1
+		const navcur = curIdx_tgt/10
 		// console.log('---->', words.length);
 		return (
 			<CoverPopup className={arr.join(' ')}  view={view && this.m_view} onClosed={this.props.onClosed} >
-				<div className="btn_page_box">	
+				<div className="btn_page_box">
 					{words.map((word, idx) => {
-						if(idx > 9){return <NItem key={idx} on={idx === curIdx_tgt} idx={idx} onClick={this._onPage}/>	
+						if(idx>=navcur && idx < navcur+10){return <NItem key={idx} on={idx === curIdx_tgt} idx={idx} onClick={this._onPage}/>	
 					}else{
 							return
 						}

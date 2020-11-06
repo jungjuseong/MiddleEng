@@ -6,6 +6,7 @@ const PROJECTS = [
 	{value: "b_ls_voca", isNew: true},
 	{value: "b_ls_comprehension", isNew: true},
 	{value: "b_rw_comprehension", isNew: true},
+	{value: "B_ls_writing", isNew: true},
 ];
 console.log(PROJECT, process.argv, process.argv0);
 

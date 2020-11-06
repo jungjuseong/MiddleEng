@@ -9,6 +9,8 @@ const PROJECTS = [
 	'b_ls_comprehension_s',
 	'b_rw_comprehension_t',
 	'b_rw_comprehension_s',
+	'B_ls_writing_t',
+	'B_ls_writing_s',
 ];// end
 async function _exec(cmd: string) {
 	return new Promise<void>((resolve, reject) => {

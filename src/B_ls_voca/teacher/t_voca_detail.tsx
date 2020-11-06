@@ -56,7 +56,7 @@ function DetailItem(props: {word: common.IWordData}) {
 							{word.entry}
 						</ResponsiveText>
 						<ResponsiveText className="re_meaning" maxSize={45} minSize={24} lineHeight={120} length={word.meaning.length}>
-							{word.pumsa}.{word.meaning}
+							{word.meaning}
 						</ResponsiveText>
 					</AudioText>
 					{/*  19-02-11 190211 LS_voca 검수 p.8 수정
@@ -88,10 +88,10 @@ function DetailItem(props: {word: common.IWordData}) {
 						text_className="re_sentence"
 					>
 						{butil.parseBlock(word.sentence, 'block')}
-					</AudioText>
-					<ResponsiveText className="re_sentence_kor" maxSize={55} minSize={40} lineHeight={120} length={word.sentence.length}>
-						{butil.parseBlock(word.sentence, 'block')}
+						<ResponsiveText className="re_sentence_meaning" maxSize={55} minSize={40} lineHeight={120} length={word.sentence_meaning.length}>
+						{butil.parseBlock(word.sentence_meaning, 'block')}
 					</ResponsiveText>
+					</AudioText>
 					{/*  19-02-11 190211 LS_voca 검수 p.8 수정	
 					<ResponsiveText className="re_sentence" maxSize={55} minSize={40} lineHeight={120} length={word.entry.length}>
 						{butil.parseBlock(word.sentence, 'block')}

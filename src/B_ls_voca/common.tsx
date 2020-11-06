@@ -128,8 +128,10 @@ export interface IWordData extends IShareQuizData, IInClassStudyProps {
 	usage_start: number;
 	usage_end: number;
 	usage_script: string;
-	topic: boolean;
-	
+	key_word: boolean;
+	sentence_meaning: string;
+	reading : boolean;
+
 	app_checked: boolean;
 	app_studied: boolean;
 	app_sound: number;
