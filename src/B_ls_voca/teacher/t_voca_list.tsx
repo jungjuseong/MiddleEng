@@ -218,7 +218,7 @@ class VocaList extends React.Component<IComp> {
 	}
 	public render() {
 		const { view, state, actions } = this.props;
-		const words = this.props.actions.getWords();
+		const words = actions.getWords();
 		const total = words.length;
 		const style: React.CSSProperties = {};
 		if(!this.props.view) {

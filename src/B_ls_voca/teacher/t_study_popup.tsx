@@ -664,7 +664,10 @@ class StudyPopup extends React.Component<IComp> {
 			<CoverPopup className={arr.join(' ')}  view={view && this.m_view} onClosed={this.props.onClosed} >
 				<div className="btn_page_box">	
 					{words.map((word, idx) => {
-						return <NItem key={idx} on={idx === curIdx_tgt} idx={idx} onClick={this._onPage}/>;
+						if(idx > 9){return <NItem key={idx} on={idx === curIdx_tgt} idx={idx} onClick={this._onPage}/>	
+					}else{
+							return
+						}
 					})}	
 				</div>
 				<div className="t_btns">

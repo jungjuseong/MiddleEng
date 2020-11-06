@@ -39,20 +39,6 @@ class BtnItem extends React.Component<IBtnItem> {
 		return (
 			<div className={'quiz_' + myqtype}>
 				<ToggleBtn className={'btn_quiz_' + myqtype} on={myqtype === qtype} onClick={this._onClick}/>
-				
-				<div className="result_btns">
-					<div className="quiz_progress">
-						<div className="percent_data" style={{display: average < 0 ? 'none' : ''}}>
-							<span style={{width: average < 0 ? '0%' : average + '%'}} />
-						</div>
-						<span style={{display: average < 0 ? 'none' : ''}}>{average < 0 ? '' : average + '%'}</span>
-					</div>
-					<ToggleBtn className={'btn_result_single' + (viewSingleBtn && view_s ? '' : ' off')} onClick={this._onResultS}/>
-					{/*
-					<ToggleBtn className={'btn_result_single' + (view_s ? '' : ' off') + (view_s ? '' : ' hide')} onClick={this._onResultS}/>
-					*/}
-					<ToggleBtn className={'btn_result_group' + (view_g ? '' : ' off')} onClick={this._onResultG}/>
-				</div>
 			</div>
 		);		
 	}

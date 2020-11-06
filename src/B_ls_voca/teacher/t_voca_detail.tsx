@@ -55,6 +55,9 @@ function DetailItem(props: {word: common.IWordData}) {
 						<ResponsiveText className="re_entry" maxSize={70} minSize={54} lineHeight={120} length={word.entry.length}>
 							{word.entry}
 						</ResponsiveText>
+						<ResponsiveText className="re_meaning" maxSize={45} minSize={24} lineHeight={120} length={word.meaning.length}>
+							{word.pumsa}.{word.meaning}
+						</ResponsiveText>
 					</AudioText>
 					{/*  19-02-11 190211 LS_voca 검수 p.8 수정
 					<ResponsiveText className="re_entry" maxSize={100} minSize={75} lineHeight={120} length={word.entry.length}>
@@ -86,6 +89,9 @@ function DetailItem(props: {word: common.IWordData}) {
 					>
 						{butil.parseBlock(word.sentence, 'block')}
 					</AudioText>
+					<ResponsiveText className="re_sentence_kor" maxSize={55} minSize={40} lineHeight={120} length={word.sentence.length}>
+						{butil.parseBlock(word.sentence, 'block')}
+					</ResponsiveText>
 					{/*  19-02-11 190211 LS_voca 검수 p.8 수정	
 					<ResponsiveText className="re_sentence" maxSize={55} minSize={40} lineHeight={120} length={word.entry.length}>
 						{butil.parseBlock(word.sentence, 'block')}
@@ -147,18 +153,17 @@ class VocaDetail extends React.Component<IVocaDetail> {
 		let sum = word.app_sound + word.app_meaning + word.app_spelling + word.app_sentence;
 		return (
 			<>
-				<div className="preview-box" style={{display: hasPreview && !(sum < 0) ? '' : 'none'}}>
+				{/* <div className="preview-box" style={{display: hasPreview && !(sum < 0) ? '' : 'none'}}>
 					<ProgItem name="SOUND" percent={word.app_sound} min={min}/>
 					<ProgItem name="MEANING" percent={word.app_meaning} min={min}/>
 					<ProgItem name="SPELLING" percent={word.app_spelling} min={min}/>
 					<ProgItem name="USAGE" percent={word.app_sentence} min={min}/>
-				</div>
+				</div> */}
 				<DetailItem word={word} />
 				<div className="lecture_btns">
 					<ToggleBtn className="btn_sound" onClick={this._onSoundClick} />	
 					<ToggleBtn className="btn_meaning"  onClick={this._onMeaningClick}/>	
 					<ToggleBtn className="btn_usage"  onClick={this._onSentenceClick}/>	
-					<ToggleBtn className="btn_video"  onClick={this._onUsageClick}/>	
 				</div>
 				<div className="drill_btns">
 					<ToggleBtn className="btn_spelling" onClick={this._onSpellingClick}/>	
