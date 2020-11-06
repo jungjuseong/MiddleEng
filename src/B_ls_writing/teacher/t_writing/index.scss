@@ -8,9 +8,9 @@
 
 @mixin comprehension{
 	.t_comprehension {
-		background:resolve('teacher/images/bg_playing.png') no-repeat;
-		width:width('teacher/images/bg_playing.png');
-		height:height('teacher/images/bg_playing.png');
+		background:resolve('teacher/images/bg_write.png') no-repeat;
+		width:width('teacher/images/bg_write.png');
+		height:height('teacher/images/bg_write.png');
 
 		.lets_talk{
 			@include CoverPopup(10001);
@@ -271,7 +271,7 @@
 			}
 		}
 		.btn_tabs {
-			position: absolute; top: 85px; left: 87px;
+			position: absolute; top: 100px; left: 87px;
 			.btn_tab_question {
 				@include btn_on(
 					resolve('teacher/images/btn_tab_question.png'),
@@ -351,14 +351,6 @@
 		.left_box {
 			width: 633px; height: 515px;
 			position: absolute; top: 163px; left: 88px;
-			.video_container {
-				position: relative;
-				margin-top: 10px; height: 494px;
-				overflow: hidden;
-				z-index: 0;
-				@include t_video_box;
-				
-			}
 		}
 		/* 화면에 따라 내용이 바뀌는 오른쪽*/
 		.right_box {

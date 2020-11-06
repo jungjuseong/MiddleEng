@@ -110,12 +110,6 @@ class Comprehension extends React.Component<IComprehension> {
             felsocket.sendPAD($SocketType.MSGTOPAD, msg);
         });
 	}
-	
-	private _refScriptContainer = (el: ScriptContainer) => {
-		if(this._scontainer || !el) return;
-		this._scontainer = el;
-	}
-
 	public componentDidMount() {
 		this.m_data = this.props.actions.getData();
 		const quizs = this.m_data.quizs;
@@ -579,65 +573,10 @@ class Comprehension extends React.Component<IComprehension> {
             }
         }
 	}
-
-	private _onLetsTalk = () => {
-		if(this.m_player.bPlay) this.m_player.pause();
-		App.pub_playBtnTab();
-		this._letstalk = true;
-		this.props.actions.setNaviView(false);
-	}
 	private _letstalkClosed = () => {
 		this._letstalk = false;
 		this.props.actions.setNaviView(true);
 	}
-	private _toggleTrans = () => {
-		if(this._Title !== 'DIALOGUE') return;
-		App.pub_playBtnTab();
-		this._viewTrans = !this._viewTrans;
-		if(this._viewTrans) this._viewScript = true;
-		
-		if(this._lastFocusIdx >= 0 && this._scontainer && this.m_player.bPlay) {
-			this._scontainer.scrollTo(this._lastFocusIdx, 0);
-			_.delay(() => {
-				if(this._lastFocusIdx >= 0 && this._scontainer) {
-					this._scontainer.scrollTo(this._lastFocusIdx, 0);
-				}
-			}, 5);
-			_.delay(() => {
-				if(this._lastFocusIdx >= 0 && this._scontainer) {
-					this._scontainer.scrollTo(this._lastFocusIdx, 0);
-				}
-			}, 50);
-			_.delay(() => {
-				if(this._lastFocusIdx >= 0 && this._scontainer) {
-					this._scontainer.scrollTo(this._lastFocusIdx, 0);
-				}
-			}, 300);
-		}
-		
-	}
-	private _toggleScript = () => {
-		if(this._Title !== 'DIALOGUE') return;
-		App.pub_playBtnTab();
-		this._viewScript = !this._viewScript;
-	}
-	private _stopClick = () => {
-        this._sendFocusIdx(-1);
-        this._lastFocusIdx = -1;
-        this._focusIdx = -1;
-
-        this.m_player.setMutedTemp(false);
-
-        this._sendDialogueEnd();
-        
-        const isOnStudy = this._roll === 'A' || this._roll === 'B' || this._shadowing;
-        if(this._Title === 'COMPREHENSION' && this._Tab === 'SCRIPT' && (this.props.state.qnaProg < SENDPROG.SENDING || this.props.state.qnaProg >= SENDPROG.COMPLETE)) this._setNavi();
-        else if(this._Title === 'DIALOGUE') {
-            this._isShadowPlay = false;
-            if(!isOnStudy) this._setNavi();
-        }
-	}
-
 	private _setNavi() {
         this.props.actions.setNaviView(true);
         if(this._curQidx === 0) this.props.actions.setNavi(false, true);
@@ -836,33 +775,15 @@ class Comprehension extends React.Component<IComprehension> {
         
         return (
             <div className={'t_comprehension ' + this._Title} style={style}>
-                <div className="top">
-                    <ToggleBtn onClick={this._clickCompre} on={this._Title === 'COMPREHENSION'} disabled={this._Title === 'COMPREHENSION' || isOnStudy} className="btn_compre" />
-                    <ToggleBtn onClick={this._clickDial} on={this._Title === 'DIALOGUE'} disabled={this._Title === 'DIALOGUE' || isOnStudy} className="btn_dialogue" />
-                </div>
                 <div className="close_box">
                     <ToggleBtn className="btn_intro" onClick={this._goToIntro}/>
-                </div>
-                <div className="left_box" >
-                    <div className="video_container">
-                        <VideoBox 
-                            player={this.m_player} 
-                            playerInitTime={this.m_player_inittime} 
-                            data={this.m_data}
-                            compDiv={this._Title}
-                            roll={this._roll}
-                            shadowing={this._shadowing}
-                            countdown={this._countdown}
-                            onChangeScript={this._onChangeScript}
-                            stopClick={this._stopClick}
-                            isShadowPlay={this._isShadowPlay}
-                            setShadowPlay={this._setShadowPlay}
-                        />
-                    </div>
                 </div>
                 <div className="btn_tabs">
                     <ToggleBtn className="btn_tab_question" onClick={this._clickQuestion} on={this._Tab === 'QUESTION'} disabled={this._Tab === 'QUESTION' || isOnStudy} />
                     <ToggleBtn className="btn_tab_script" onClick={this._clickScript} on={this._Tab === 'SCRIPT'} disabled={this._Tab === 'SCRIPT' || isOnStudy} />
+                    <ToggleBtn className="btn_tab_question" onClick={this._clickQuestion} on={this._Tab === 'QUESTION'} disabled={this._Tab === 'QUESTION' || isOnStudy} />
+                    <ToggleBtn className="btn_tab_script" onClick={this._clickScript} on={this._Tab === 'SCRIPT'} disabled={this._Tab === 'SCRIPT' || isOnStudy} />
+                    <ToggleBtn className="btn_tab_question" onClick={this._clickQuestion} on={this._Tab === 'QUESTION'} disabled={this._Tab === 'QUESTION' || isOnStudy} />
                 </div>
                 <div className={'info_box' + (isViewInfo ? ' on' : '')}>
                     <div className="return_cnt_box white" style={{display: isViewReturn ? '' : 'none'}} onClick={this._clickReturn}>
@@ -872,118 +793,10 @@ class Comprehension extends React.Component<IComprehension> {
                     <ToggleBtn className="btn_trans" onClick={this._clickTranslate} on={this._viewTrans} view={isViewClue}/>
                     <ToggleBtn className="btn_clue" onClick={this._clickClue} on={this._viewClue} view={isViewClue}/>
                 </div>	
-                <div className="right_box">
-                    <div className="btn_page_box">
-                        {quizs.map((page, idx) => {
-                            return <NItem key={idx} on={(this._Hint === true || this._Tab === 'QUESTION') && idx === this._curQidx} idx={idx} onClick={this._onPage}/>;
-                        })}
-                    </div>
-                    <div className="right_top">
-                        <CorrectBar 
-                            className={'correct_box' + (isCompQ ? '' : ' hide') + (qResult < 0 ? ' no-result' : '')} 
-                            preview={-1} 
-                            result={qResult}
-                        />
-                        <div className="hint_box"  style={{display: (isCompS && this._Hint ? '' : 'none'), left: '13px'}} >
-                            <div className="arrow" style={{left: arrowL + 'px'}}/>
-                            <div className="content">
-                                <ToggleBtn className="btn_hint_close" onClick={this._clickCloseHint}/>
-
-                                <div>
-                                    <WrapTextNew view={isCompS && this._Hint} rcalcNum={this._curQidx}>
-                                        {quizs[this._curQidx].app_question}
-                                    </WrapTextNew>
-                                </div>
-                                {/* quizs.map((quiz, idx) => {
-                                    return <div key={idx} style={{ display: idx === this._curQidx ? '' : 'none' }}></div>;
-                                }) */}
-                            </div>
-                        </div>
-                        
-                        {/* <ToggleBtn className="btn_lets_talk" view={viewLetstalk} on={this._letstalk} onClick={this._onLetsTalk} disabled={this._shadowing || this._roll === 'A' || this._roll === 'B'}/> */}
-                        <ToggleBtn className={'btn_script_trans' + (this._viewTrans ? ' on' : '')} on={this._viewTrans} onClick={this._toggleTrans} />
-                        <ToggleBtn className={'btn_script_show' + (this._viewScript ? ' on' : '')} on={this._viewScript} onClick={this._toggleScript} />
-                    </div>
-                    <div className={'question' + (state.questionProg >= SENDPROG.COMPLETE ? ' complete' : '')} style={{display: this._Tab === 'QUESTION' ? '' : 'none'}}>
-                            {quizs.map((quiz, idx) => {
-                                return (
-                                    <div key={idx} style={{ display: idx === this._curQidx ? '' : 'none' }}>
-                                        <div className="quiz">
-                                            {/*<span>{quiz.question}</span>*/}
-                                            <WrapTextNew view={this.props.view && idx === this._curQidx} maxLineNum={2} minSize={24} maxSize={36} lineHeight={120} textAlign="left" onClick={this._onClickQuestion}>
-                                                {quiz.app_question}
-                                            </WrapTextNew>
-                                        </div>
-                                        <hr className="line"/>
-                                        <div className={'choice' + (isQComplete ? ' correct' : '')}>
-                                            <span onClick={this._clickPerson1}>{quizResult[idx].c1}</span>
-                                            <QuizMCBtn 
-                                                className="btn_choice" 
-                                                num={1} 
-                                                on={isQComplete ? quiz.answer === 1 : this._qselected[idx] === 1} 
-                                                onClick={this._onMc} 
-                                                disabled={isQComplete}
-                                            >
-                                                <WrapTextNew view={this.props.view && idx === this._curQidx} maxLineNum={2} minSize={24} maxSize={33} lineHeight={120} textAlign="left">
-                                                    {quiz.choice_1}
-                                                </WrapTextNew>
-                                            </QuizMCBtn>
-
-                                            <span onClick={this._clickPerson2}>{quizResult[idx].c2}</span>
-                                            <QuizMCBtn 
-                                                className="btn_choice" 
-                                                num={2} 
-                                                on={isQComplete ? quiz.answer === 2 : this._qselected[idx] === 2} 
-                                                onClick={this._onMc} 
-                                                disabled={isQComplete}
-                                            >
-                                                <WrapTextNew view={this.props.view && idx === this._curQidx} maxLineNum={2} minSize={24} maxSize={33} lineHeight={120} textAlign="left">
-                                                    {quiz.choice_2}
-                                                </WrapTextNew>
-                                            </QuizMCBtn>
-                                            <span onClick={this._clickPerson3}>{quizResult[idx].c3}</span>
-                                            <QuizMCBtn 
-                                                className="btn_choice" 
-                                                num={3} 
-                                                on={isQComplete ? quiz.answer === 3 : this._qselected[idx] === 3} 
-                                                onClick={this._onMc} 
-                                                disabled={isQComplete}
-                                            >
-                                                <WrapTextNew view={this.props.view && idx === this._curQidx} maxLineNum={2} minSize={24} maxSize={33} lineHeight={120} textAlign="left">
-                                                    {quiz.choice_3}
-                                                </WrapTextNew>
-                                            </QuizMCBtn>
-                                        </div>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    
-                    <div className={'script_container' + (this._Tab === 'SCRIPT' ? '' : ' hide')}>
-                        <ScriptContainer
-                            ref={this._refScriptContainer}
-                            view={this.props.view}
-                            data={this.m_data}
-                            focusIdx={this._focusIdx}
-                            selected={this._selected}
-                            qnaReturns={this.props.actions.getQnaReturns()}
-                            qnaReturnsClick={this._qnaReturnsClick}
-                            roll={this._roll}
-                            shadowing={this._shadowing}
-                            clickThumb={this._clickItem}
-                            noSwiping={this._Title === 'DIALOGUE' && ((this._shadowing && this._isShadowPlay) || (!this._shadowing && this.m_player.bPlay))}
-                            compDiv={this._Title}
-                            viewClue={this._viewClue}
-                            viewScript={this._viewScript}
-                            viewTrans={this._viewTrans}
-                            numRender={state.retCnt}
-                        />
-                    </div>
-                </div>
-                <div className="bottom">
-                    <ToggleBtn className="btn_QA"  view={isCompS || isScriptSended} disabled={!isScriptSended} on={state.qnaProg >= SENDPROG.SENDING} onClick={this._onQAClick} />
-                    <ToggleBtn className="btn_role" view={isDialogue} on={this._roll === 'A' || this._roll === 'B'} disabled={!isDialogueSended || this._shadowing} onClick={this._onRollClick} />
-                    <ToggleBtn className="btn_shadowing" view={isDialogue} on={this._shadowing} disabled={!isDialogueSended || this._roll !== ''} onClick={this._onShadowClick} />
+                <div className="btn_page_box">
+                    {quizs.map((page, idx) => {
+                         return <NItem key={idx} on={(this._Hint === true || this._Tab === 'QUESTION') && idx === this._curQidx} idx={idx} onClick={this._onPage}/>;
+                     })}
                 </div>
                 <ComprePopup 
                     type={this.c_popup}
