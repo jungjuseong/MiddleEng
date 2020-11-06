@@ -236,6 +236,11 @@ class Comprehension extends React.Component<IComprehension> {
         }
         this.props.actions.setNavi(false, false);
     }
+	private _goToIntro = () => {
+        alert("go to Intro page");
+        this.props.actions.gotoDirection();
+        return;
+    }
     /* Hint Bubble */
 	private _clickTranslate = () => {
 		const {state, actions} = this.props;
@@ -630,7 +635,8 @@ class Comprehension extends React.Component<IComprehension> {
 
 	private _setNavi() {
         this.props.actions.setNaviView(true);
-        if(this.props.state.questionProg === SENDPROG.SENDED) this.props.actions.setNavi(this._curQidx === 0 ? false : true, this._curQidx === this.m_data.quizs.length - 1 ? false : true);
+        if(this._curQidx === 0) this.props.actions.setNavi(false, true);
+        else if(this.props.state.questionProg === SENDPROG.SENDED) this.props.actions.setNavi(this._curQidx === 0 ? false : true, this._curQidx === this.m_data.quizs.length - 1 ? false : true);
 		else this.props.actions.setNavi(true, true);
 		
         this.props.actions.setNaviFnc(
@@ -828,6 +834,9 @@ class Comprehension extends React.Component<IComprehension> {
                 <div className="top">
                     <ToggleBtn onClick={this._clickCompre} on={this._Title === 'COMPREHENSION'} disabled={this._Title === 'COMPREHENSION' || isOnStudy} className="btn_compre" />
                     <ToggleBtn onClick={this._clickDial} on={this._Title === 'DIALOGUE'} disabled={this._Title === 'DIALOGUE' || isOnStudy} className="btn_dialogue" />
+                </div>
+                <div className="close_box">
+                    <ToggleBtn className="btn_intro" onClick={this._goToIntro}/>
                 </div>
                 <div className="left_box" >
                     <div className="video_container">
