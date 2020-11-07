@@ -7,7 +7,7 @@
 @import '../../../share/QuizMCBtn.scss';
 
 @mixin comprehension{
-	.t_comprehension {
+	.t_writing {
 		background:resolve('teacher/images/bg_write.png') no-repeat;
 		width:width('teacher/images/bg_write.png');
 		height:height('teacher/images/bg_write.png');
@@ -281,7 +281,6 @@
 				);
 			}
 			.btn_tab_script {
-				margin-left: 10px;
 				@include btn_on(
 					resolve('teacher/images/btn_tab_script.png'),
 					resolve('teacher/images/btn_tab_script_down.png'),
@@ -352,10 +351,10 @@
 			width: 633px; height: 515px;
 			position: absolute; top: 163px; left: 88px;
 		}
-		/* 화면에 따라 내용이 바뀌는 오른쪽*/
-		.right_box {
-			width: 480px; height: 600px;
-			position: absolute;	top: 127px;	right: 70px;
+		/* 화면에 따라 내용이 바뀌는 가운데*/
+		.writing_content_box {
+			width: 1150px; height: 600px;
+			position: absolute;	top: 140px;	right: 65px;
 			.btn_page_box {
 				position: absolute;	
 				top: 8px; 
