@@ -544,7 +544,7 @@ class Writing extends React.Component<IWriting> {
 
 	public render() {
         const { state, actions } = this.props;
-        const { questionProg,qnaProg,scriptProg,dialogueProg,numOfStudent } = this.props.state;
+        const { questionProg,qnaProg,numOfStudent } = this.props.state;
 
         const quizs = this.m_data.quizs;
         const isQComplete = questionProg >= SENDPROG.COMPLETE;
@@ -553,23 +553,18 @@ class Writing extends React.Component<IWriting> {
                             || (this._title === 'DIALOGUE' && (this._roll === 'A' || this._roll === 'B' || this._shadowing));
         
         const quizResult = actions.getResult();
-        let qResult = -1;
+        let qResult = -1;        
         if(isQComplete) {
             if(numOfStudent > 0) qResult = Math.round(100 * quizResult[this._curQidx].numOfCorrect / numOfStudent);
             else qResult = 0;
             if(qResult > 100) qResult = 100;
         }
 
-        const isDialogue = (this._title === 'DIALOGUE');
         const isCompQ = (this._title === 'COMPREHENSION' && this._tab === 'QUESTION');
         const isCompS = (this._title === 'COMPREHENSION' && this._tab === 'SCRIPT');
     
-        const isViewSend = (isCompQ && questionProg < SENDPROG.SENDED) || (isCompS && scriptProg < SENDPROG.SENDED) || (isDialogue && dialogueProg < SENDPROG.SENDED);
-
         const isViewInfo = (isCompQ && questionProg >= SENDPROG.SENDED) || isCompS;
         const isViewReturn = (isCompQ && questionProg >= SENDPROG.SENDED) || (isCompS && qnaProg >=  SENDPROG.SENDED);
-        const isViewAnswer = (isCompQ && questionProg >= SENDPROG.SENDED);
-        const isViewClue = isCompS;
 
         const style: React.CSSProperties = {};
     
