@@ -30,10 +30,10 @@
 		"hot_b_rw_comprehension_t": "cross-env kproject=b_rw_comprehension_t yarn run hot",
 		"b_rw_comprehension_s": "cross-env kproject=b_rw_comprehension_s yarn run build",
 		"hot_b_rw_comprehension_s": "cross-env kproject=b_rw_comprehension_s yarn run hot",
-		"B_ls_writing_t": "cross-env kproject=B_ls_writing_t yarn run build",
-		"hot_B_ls_writing_t": "cross-env kproject=B_ls_writing_t yarn run hot",
-		"B_ls_writing_s": "cross-env kproject=B_ls_writing_s yarn run build",
-		"hot_B_ls_writing_s": "cross-env kproject=B_ls_writing_s yarn run hot"
+		"b_ls_writing_t": "cross-env kproject=b_ls_writing_t yarn run build",
+		"hot_b_ls_writing_t": "cross-env kproject=b_ls_writing_t yarn run hot",
+		"b_ls_writing_s": "cross-env kproject=b_ls_writing_s yarn run build",
+		"hot_b_ls_writing_s": "cross-env kproject=b_ls_writing_s yarn run hot"
 	},
 	"author": "sychae@kdmt.com",
 	"license": "MIT",

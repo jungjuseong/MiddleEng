@@ -44,7 +44,7 @@ class TComprehension extends React.Component<ITComprehension> {
 		this.props.state.videoPopup = false;
 	}
 
-	private _clickCompre = (ev: React.MouseEvent<HTMLElement>) => {
+	private _clickComprension = (ev: React.MouseEvent<HTMLElement>) => {
 		if(this._Title === 'Compreshension') return;
 		App.pub_playBtnTab();
 		this._btn_disable = '';
@@ -60,7 +60,7 @@ class TComprehension extends React.Component<ITComprehension> {
 		this._Tab = 'GraphicOrganizer';
 		this.props.state.isNaviBack = false;
 	}
-	private _clickSummar = (ev: React.MouseEvent<HTMLElement>) => {
+	private _clickSummary = (ev: React.MouseEvent<HTMLElement>) => {
 		if(this._Title === 'SUMMARIZING') return;
 		App.pub_playBtnTab();
 		this._btn_disable = '';
@@ -118,9 +118,9 @@ class TComprehension extends React.Component<ITComprehension> {
 		return (
 			<div className={'t_compre ' + this._Title}>
 				<div className="top">
-					<ToggleBtn className="btn_comprehension" on={this._Title === 'Compreshension'} disabled={this._btn_disable !== ''} onClick={this._clickCompre}/>
+					<ToggleBtn className="btn_comprehension" on={this._Title === 'Compreshension'} disabled={this._btn_disable !== ''} onClick={this._clickComprension}/>
 					<ToggleBtn className="btn_visualizing" on={this._Title === 'VISUALIZING'} disabled={this._btn_disable !== ''} onClick={this._clickVisual}/>
-					<ToggleBtn className="btn_summarizing" on={this._Title === 'SUMMARIZING'} disabled={this._btn_disable !== ''} onClick={this._clickSummar}/>
+					<ToggleBtn className="btn_summarizing" on={this._Title === 'SUMMARIZING'} disabled={this._btn_disable !== ''} onClick={this._clickSummary}/>
 				</div>
 				<ToggleBtn disabled={this._btn_disable === 'all'} className={'btn_book' + (this._Title === 'Compreshension' ? '' : ' up')} onClick={this._onBook}/>
 				<ToggleBtn disabled={this._btn_disable === 'all'} className={'btn_video' + (this._Title === 'Compreshension' ? '' : ' up')} onClick={this._onVideo}/>

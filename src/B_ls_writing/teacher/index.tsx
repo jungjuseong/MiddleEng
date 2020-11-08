@@ -13,21 +13,19 @@ import * as t_store from './t_store';
 import { TeacherProvider, tContext } from './t_store';
 import VideoDirection from '../../share/video-direction';
 import { App } from '../../App';
-import Comprehension from './t_writing';
+import Writing from './t_writing';
 
 const _WIDTH = 1280;
 
-interface ITeacher {
+interface ITeacherPage {
 	state: t_store.IStateCtx;
 	actions: t_store.IActionsCtx;
 }
 
 @observer
-class TeacherPage extends React.Component<ITeacher> {
-	constructor(props: ITeacher) {
+class TeacherPage extends React.Component<ITeacherPage> {
+	constructor(props: ITeacherPage) {
 		super(props);
-
-		// console.log('==>', props.actions.getData());
 	}
 	public render() {
 		const {state, actions} = this.props;
@@ -53,26 +51,25 @@ class TeacherPage extends React.Component<ITeacher> {
 							view={viewDiv === 'direction'} 
 							on={state.directionON} 
 							isTeacher={true}
-							video_url=''
+							video_url={''}
 							video_frame={125}
 							onEndStart={actions.onDirectionEndStart}
 							onEnd={actions.onDirectionEnded}
 						>
 							<div className="lesson">{App.lesson}</div>
 						</VideoDirection></div>
-						<div><Comprehension view={viewDiv === 'content'}  state={state} actions={actions}/></div>
+						<div><Writing view={viewDiv === 'content'}  state={state} actions={actions}/></div>
 					</div>
 				</div>
-
 				<Navi {...state.navi} onLeftClick={actions.naviLeft} onRightClick={actions.naviRight}/>
 			</>
 		);
 	}
 }
 const Teacher = t_store.useTeacher((val: t_store.TeacherContext) => (
-	<Observer>{() => (
-		<TeacherPage state={val.state} actions={val.actions}/>
-	)}</Observer>
+	<Observer>
+		{() => (<TeacherPage state={val.state} actions={val.actions}/>)}
+	</Observer>
 ));
 
 export { TeacherProvider as AppProvider, tContext as appContext };

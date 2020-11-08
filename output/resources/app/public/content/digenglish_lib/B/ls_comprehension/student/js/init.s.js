@@ -19,46 +19,7 @@
 					var el = doc.body.removeChild(doc.body.firstElementChild);
 					document.body.appendChild(el);	
 					
-					setTimeout(resolve, 100);
-					/*
-					var cnt = 2;
-		
-
-					app_o.importHTML('/content/digenglish_lib/BASIC/voca/common/ball.svg').then(
-						function(el){
-							cnt--;
-							var page_quiz = document.getElementById("page_quiz");
-							var quiz_meaning = page_quiz.querySelector(":scope .quiz_meaning");
-							if(quiz_meaning.firstChild) quiz_meaning.insertBefore(el, quiz_meaning.firstChild);
-							else quiz_meaning.appendChild(el);	
-							if(cnt==0) setTimeout(resolve, 100);
-						}
-					,	function(err){
-							reject(err);
-						}
-					);	
-					app_o.importHTML('/content/digenglish_lib/BASIC/voca/common/egg.svg').then(
-						function(el){
-							cnt--;
-							var page_quiz = document.getElementById("page_quiz");
-							var quiz_sound = page_quiz.querySelector(":scope .quiz_sound");
-							
-							var mc_1 = el;
-							var mc_2 = el.cloneNode(true);
-							var mc_3 = el.cloneNode(true);
-							mc_1.classList.add("mc_1");
-							mc_2.classList.add("mc_2");
-							mc_3.classList.add("mc_3");
-							quiz_sound.appendChild(mc_1);
-							quiz_sound.appendChild(mc_2);
-							quiz_sound.appendChild(mc_3);
-							if(cnt==0) setTimeout(resolve, 100);
-						}
-					,	function(err){
-							reject(err);
-						}
-					);
-					*/
+					setTimeout(resolve, 100);					
 				}
 			,	function(err){
 					// console.log(err);

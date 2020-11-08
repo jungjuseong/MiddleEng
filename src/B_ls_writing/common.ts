@@ -53,15 +53,18 @@ interface IMultiLang {
 	id: string;
 	es: string;
 }
+
 interface ISpeaker {
 	name: string; 
 	image_s: string;
 	image_l: string;
 }
+
 interface IScCod {
 	codType: string;
 	codSeq: string;
 }
+
 export interface IScript {
 	readonly seq: number;
 	readonly dms_speaker: string;

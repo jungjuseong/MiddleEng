@@ -5,7 +5,7 @@ import {  observer } from 'mobx-react';
 
 import { IActionsCtx } from './t_store';
 import { ToggleBtn } from '@common/component/button';
-import * as common from '../common';
+import { IGraphSheetMsg } from '../common';
 import { KTextArea } from '@common/component/KTextArea';
 import { Keyboard, state as keyBoardState } from '@common/component/Keyboard';
 
@@ -29,16 +29,13 @@ class KeyboardSheet extends React.Component<IKeyboard> {
 		keyBoardState.state = 'on';
 	}
 	
-	private _onReturn = (msg: common.IGraphSheetMsg) => {
-		// console.log('Keyboard, _onReturn', msg.id, msg.type, msg);
-		if(!this.props.view) return;
-		else if(msg.type !== 'keyboard') return;
+	private _onReturn = (msg: IGraphSheetMsg) => {
+		const { view,numOfStudent } = this.props;
 
-		const student = _.find(App.students, {id: msg.id});
-		if(!student) return;
-		let retCnt = this._retCnt + 1;
-		if(retCnt >= this.props.numOfStudent) retCnt =  this.props.numOfStudent;
-		this._retCnt = retCnt;
+		if (!view || msg.type !== 'keyboard') return;
+		if (!_.find(App.students, {id: msg.id})) return;
+		
+		this._retCnt = (this._retCnt + 1 >= numOfStudent) ? numOfStudent : this._retCnt + 1;
 	}
 
 	private _refArea = (el: KTextArea|null) => {
@@ -53,37 +50,40 @@ class KeyboardSheet extends React.Component<IKeyboard> {
 	}
 
 	public componentDidUpdate(prev: IKeyboard) {
-		if(this.props.view && !prev.view) {
+		const { view,actions } = this.props;
+		if(view && !prev.view) {
 			keyBoardState.state = 'on';
 			this._retCnt = 0;
-			this.props.actions.setGraphSheetFnc(this._onReturn);
-		} else if(!this.props.view && prev.view) {
+			actions.setGraphSheetFnc(this._onReturn);
+		} else if(!view && prev.view) {
 			keyBoardState.state = 'hide';
 		}
 	} 
 	public _clickReturn = () => {
-		if(!this.props.view) return;
+		const { view } = this.props;
+		if(!view) return;
 		App.pub_playBtnTab();
 		felsocket.showStudentReportListPage();
 	}
 	
 	public render() {
+		const { view,numOfStudent,onBack } = this.props;
 		return (
 			<>
 				<KTextArea 
 					className={keyBoardState.state}
 					ref={this._refArea} 
-					view={this.props.view}
-					on={this.props.view}
+					view={view}
+					on={view}
 					maxLineNum={7}
 					onChange={this._onChange}
 					onDone={this._onDone}
 				/>
 				<div className="return_cnt_box white" onClick={this._clickReturn}>
-					<div>{this._retCnt}/{this.props.numOfStudent}</div>
+					<div>{this._retCnt}/{numOfStudent}</div>
 				</div>
 				<Keyboard/>
-				<ToggleBtn className="btn_back" onClick={this.props.onBack}/>
+				<ToggleBtn className="btn_back" onClick={onBack}/>
 			</>
 		);
 	}

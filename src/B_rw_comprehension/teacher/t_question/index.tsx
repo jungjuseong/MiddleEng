@@ -6,7 +6,7 @@ import { IStateCtx, IActionsCtx, BTN_DISABLE } from '../t_store';
 import { App } from '../../../App';
 import * as felsocket from '../../../felsocket';
 import { ToggleBtn } from '@common/component/button';
-import * as common from '../../common';
+import { IData,IMsg,IQuizReturnMsg } from '../../common';
 import { observable } from 'mobx';
 import SendUI from '../../../share/sendui_new';
 import * as style from '../../../share/style';
@@ -24,7 +24,7 @@ interface IQuestion {
     videoPopup: boolean;
     viewStoryBook: boolean;
 	studying: boolean;
-	data: common.IData;
+	data: IData;
 	state: IStateCtx;
 	actions: IActionsCtx;
 	onStudy: (studying: BTN_DISABLE) => void;
@@ -77,7 +77,7 @@ class Question extends React.Component<IQuestion> {
 		else if(this._viewAnswer) return;
 		App.pub_playBtnTab();
 		this.props.actions.setQuestionFnc(null);
-		const msg: common.IMsg = {msgtype: 'question_end'};
+		const msg: IMsg = {msgtype: 'question_end'};
 		felsocket.sendPAD($SocketType.MSGTOPAD, msg);
 
 		this._prog = SENDPROG.COMPLETE;
@@ -110,7 +110,7 @@ class Question extends React.Component<IQuestion> {
 		while(this._retUsers.length > 0) this._retUsers.pop();
 		
 		App.pub_playToPad();
-		const msg: common.IMsg = {
+		const msg: IMsg = {
 			msgtype: 'question_send',
 		};
 		felsocket.sendPAD($SocketType.MSGTOPAD, msg);
@@ -128,7 +128,7 @@ class Question extends React.Component<IQuestion> {
 			this.props.actions.setNavi(false, false);
 		});
 	}
-	private _onReturn = (qmsg: common.IQuizReturnMsg) => {
+	private _onReturn = (qmsg: IQuizReturnMsg) => {
 		if(this._prog < SENDPROG.SENDED) return;
 		else if(this._viewAnswer) return;
 		let sidx = -1;

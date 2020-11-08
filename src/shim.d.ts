@@ -24,8 +24,6 @@ declare const b_ls_comprehension_t: boolean;
 declare const b_ls_comprehension_s: boolean;
 declare const b_rw_comprehension_t: boolean;
 declare const b_rw_comprehension_s: boolean;
+declare const b_ls_writing_t: boolean;
+declare const b_ls_writing_s: boolean;
 declare const _build_timestamp_:string;
-
-
-declare const B_ls_writing_t: boolean;
-declare const B_ls_writing_s: boolean;

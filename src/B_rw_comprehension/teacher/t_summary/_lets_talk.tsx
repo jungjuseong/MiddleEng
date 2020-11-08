@@ -1,17 +1,20 @@
 import * as React from 'react';
-import * as _ from 'lodash';
 import { observer } from 'mobx-react';
-import { observable } from 'mobx';
 
-import { ToggleBtn } from '@common/component/button';
+import * as _ from 'lodash';
 
 import { App } from '../../../App';
+import { ToggleBtn } from '@common/component/button';
 
-import { CoverPopup } from '../../../share/CoverPopup';
 import * as common from '../../common';
+import { observable } from 'mobx';
+import { CoverPopup } from '../../../share/CoverPopup';
 
+import WrapTextNew from '@common/component/WrapTextNew';
 import { BtnAudio } from '../../../share/BtnAudio';
+
 import ImgPopup from './_img_popup';
+
 import { _getJSX, _getBlockJSX } from '../../../get_jsx';
 
 const SwiperComponent = require('react-id-swiper').default;
@@ -21,7 +24,6 @@ interface ILetsTalk {
 	onClosed: () => void;
 	data: common.ILetstalk;
 }
-
 @observer
 class LetsTalk extends React.Component<ILetsTalk> {
 	@observable private _view = false;
@@ -50,18 +52,18 @@ class LetsTalk extends React.Component<ILetsTalk> {
 	private _btnAudio?: BtnAudio;
 	
 	public constructor(props: ILetsTalk) {
-		super(props);
-		
-		this._jsx_sentence = _getJSX(props.data.sentence);
-		this._jsx_sample = _getBlockJSX(props.data.sample);
-		this._jsx_hint = _getJSX(props.data.hint);
+        super(props);
+        
+        this._jsx_sentence = _getJSX(props.data.sentence);
+        this._jsx_sample = _getBlockJSX(props.data.sample);
+        this._jsx_hint = _getBlockJSX(props.data.hint);
 
-		const rnd = Math.floor(Math.random() * 3);
-		if(rnd === 0) this._character = _project_ + 'teacher/images/letstalk_bear.png';
-		else if(rnd === 1) this._character = _project_ + 'teacher/images/letstalk_boy.png';
-		else this._character = _project_ + 'teacher/images/letstalk_girl.png';
-	}
-
+        const rnd = Math.floor(Math.random() * 3);
+        if(rnd === 0) this._character = _project_ + 'teacher/images/letstalk_bear.png';
+        else if(rnd === 1) this._character = _project_ + 'teacher/images/letstalk_boy.png';
+        else this._character = _project_ + 'teacher/images/letstalk_girl.png';
+    }
+    
 	private _viewHint = () => {
 		App.pub_playBtnTab();
 		this._hint = !this._hint;
@@ -171,7 +173,13 @@ class LetsTalk extends React.Component<ILetsTalk> {
 								<div>
 									<BtnAudio className="btn_audio" url={App.data_url + data.audio} ref={this._refAudio} />
 									<div className="question_box" onClick={this._onClick}>
-										{this._jsx_sentence}
+                                        {data.sentence.length > 170 ? (
+                                            <WrapTextNew lineHeight={120} maxLineNum={3} minSize={26}  maxSize={34} className={'text'} view={true} textAlign="left"     viewWhenInit={true}>
+                                                {this._jsx_sentence}
+                                            </WrapTextNew>
+                                        ) : (
+                                          <>{this._jsx_sentence}</>
+                                        )}
 									</div>
 								</div>
 							</div>
@@ -183,7 +191,7 @@ class LetsTalk extends React.Component<ILetsTalk> {
 									<div className={'balloon' + (this._hint ? ' view-hint' : '')}>
 										<SwiperComponent {...this._soption} ref={this._refSwiper}>
 											<div>
-												<div className={'sample' + (this._hint ? ' hide' : '')}>{this._jsx_sample}</div>
+                                                <div className={'sample' + (this._hint ? ' hide' : '')}>{this._jsx_sample}</div>
 												<div className={'hint' + (this._hint ? '' : ' hide')}>{this._jsx_hint}</div>
 											</div>
 										</SwiperComponent>
@@ -191,8 +199,8 @@ class LetsTalk extends React.Component<ILetsTalk> {
 								</div>
 							</div>
 						</div>
-					{/* </SwiperComponent> */}
-				</div>
+					
+    			</div>
 			</CoverPopup>
 			<ImgPopup url={this._zoomImgUrl} view={this._zoom} onClosed={this._closedZoom}/> 
 			</>

@@ -1,4 +1,5 @@
-@import '../../share/CoverPopup.scss';
+@import '../../../share/CoverPopup.scss';
+
 @mixin Summary {
 	.summary{
 		@include page;
