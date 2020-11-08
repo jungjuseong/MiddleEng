@@ -1,10 +1,9 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import * as _ from 'lodash';
 import { observable, action } from 'mobx';
-import { App, IMain } from '../../App';
 import * as felsocket from '../../felsocket';
-import * as common from '../common';
+
+import { initData,IMsg,IScript,IWarmupReturn,IData,IWarmupReturnMsg,IQuizReturnMsg,IQNAMsg,IGraphMsg,IGraphSheetMsg } from '../common';
 import { TeacherContextBase, VIEWDIV, IStateBase, IActionsBase } from '../../share/tcontext';
 import * as StrUtil from '@common/util/StrUtil';
 
@@ -20,39 +19,40 @@ const enum SENDPROG {
 interface IStateCtx extends IStateBase {
 	videoPopup: boolean;
 	viewStoryBook: boolean;
-	warmup_returns: common.IWarmupReturn[][];
+	warmup_returns: IWarmupReturn[][];
 	isNaviBack: boolean;
 	isVideoStudied: boolean;
 }
+
 interface IActionsCtx extends IActionsBase {
-	getData: () => common.IData;
+	getData: () => IData;
 	gotoDirection: () => void;
 	gotoNextBook: () => void;
-	setWarmupFnc: (fnc: ((msg: common.IWarmupReturnMsg) => void)|null) => void;
-	setQuestionFnc: (fnc: ((msg: common.IQuizReturnMsg) => void)|null) => void;
-	setQNAFnc: (fnc: ((msg: common.IQNAMsg) => void)|null) => void;
+	setWarmupFnc: (fnc: ((msg: IWarmupReturnMsg) => void)|null) => void;
+	setQuestionFnc: (fnc: ((msg: IQuizReturnMsg) => void)|null) => void;
+	setQNAFnc: (fnc: ((msg: IQNAMsg) => void)|null) => void;
 
-    setGraphFnc: (fnc: ((msg: common.IGraphMsg) => void)|null) => void;
-    setGraphSheetFnc: (fnc: ((msg: common.IGraphSheetMsg) => void)|null) => void;
+    setGraphFnc: (fnc: ((msg: IGraphMsg) => void)|null) => void;
+    setGraphSheetFnc: (fnc: ((msg: IGraphSheetMsg) => void)|null) => void;
 
-    setSummaryFnc: (fnc: ((msg: common.IQuizReturnMsg) => void)|null) => void;
-    setCheckupFnc: (fnc: ((msg: common.IQNAMsg) => void)|null) => void;
+    setSummaryFnc: (fnc: ((msg: IQuizReturnMsg) => void)|null) => void;
+    setCheckupFnc: (fnc: ((msg: IQNAMsg) => void)|null) => void;
 }
 
 class TeacherContext extends TeacherContextBase {
 	@observable public state!: IStateCtx;
 	public actions!: IActionsCtx;
 
-	private _data!: common.IData;
+	private _data!: IData;
 
-	private _warmupFnc: ((msg: common.IWarmupReturnMsg) => void)|null = null;
-	private _questionFnc: ((msg: common.IQuizReturnMsg) => void)|null = null;
-	private _qnaFnc: ((msg: common.IQNAMsg) => void)|null = null;
-    private _graphFnc: ((msg: common.IGraphMsg) => void)|null = null;
-    private _graphSheetFnc: ((msg: common.IGraphSheetMsg) => void)|null = null;
+	private _warmupFnc: ((msg: IWarmupReturnMsg) => void)|null = null;
+	private _questionFnc: ((msg: IQuizReturnMsg) => void)|null = null;
+	private _qnaFnc: ((msg: IQNAMsg) => void)|null = null;
+    private _graphFnc: ((msg: IGraphMsg) => void)|null = null;
+    private _graphSheetFnc: ((msg: IGraphSheetMsg) => void)|null = null;
 
-	private _summaryFnc: ((msg: common.IQuizReturnMsg) => void)|null = null;
-    private _checkupFnc: ((msg: common.IQNAMsg) => void)|null = null;
+	private _summaryFnc: ((msg: IQuizReturnMsg) => void)|null = null;
+    private _checkupFnc: ((msg: IQNAMsg) => void)|null = null;
 
 	constructor() {
 		super();
@@ -67,29 +67,28 @@ class TeacherContext extends TeacherContextBase {
 			felsocket.sendLauncher($SocketType.GOTO_NEXT_BOOK, null);
 		};
 
-		this.actions.setWarmupFnc = (fnc: ((msg: common.IWarmupReturnMsg) => void)|null) => {
+		this.actions.setWarmupFnc = (fnc: ((msg: IWarmupReturnMsg) => void)|null) => {
 			this._warmupFnc = fnc;
 		};
-		this.actions.setQuestionFnc = (fnc: ((msg: common.IQuizReturnMsg) => void)|null) => {
+		this.actions.setQuestionFnc = (fnc: ((msg: IQuizReturnMsg) => void)|null) => {
 			this._questionFnc = fnc;
 		};
-		this.actions.setQNAFnc = (fnc: ((msg: common.IQNAMsg) => void)|null) => {
+		this.actions.setQNAFnc = (fnc: ((msg: IQNAMsg) => void)|null) => {
 			this._qnaFnc = fnc;
 		};
-		this.actions.setGraphFnc = (fnc: ((msg: common.IGraphMsg) => void)|null) => {
+		this.actions.setGraphFnc = (fnc: ((msg: IGraphMsg) => void)|null) => {
 			this._graphFnc = fnc;
 		};
-		this.actions.setGraphSheetFnc = (fnc: ((msg: common.IGraphSheetMsg) => void)|null) => {
+		this.actions.setGraphSheetFnc = (fnc: ((msg: IGraphSheetMsg) => void)|null) => {
 			this._graphSheetFnc = fnc;
 		};
-		this.actions.setSummaryFnc = (fnc: ((msg: common.IQuizReturnMsg) => void)|null) => {
+		this.actions.setSummaryFnc = (fnc: ((msg: IQuizReturnMsg) => void)|null) => {
 			this._summaryFnc = fnc;
 		};
-		this.actions.setCheckupFnc = (fnc: ((msg: common.IQNAMsg) => void)|null) => {
+		this.actions.setCheckupFnc = (fnc: ((msg: IQNAMsg) => void)|null) => {
 			this._checkupFnc = fnc;
 		};
-	}
-	
+	}	
 
 	@action protected _setViewDiv(viewDiv: VIEWDIV) {
 		if(viewDiv !== this.state.viewDiv) {
@@ -98,7 +97,7 @@ class TeacherContext extends TeacherContextBase {
 		}
 		super._setViewDiv(viewDiv);
 	}
-	private _uploadInclassReport = (qmsg: common.IQuizReturnMsg) => {
+	private _uploadInclassReport = (qmsg: IQuizReturnMsg) => {
 		const questions = this._data.question;
 
 		const userReports: IInClassReport[] = [];
@@ -135,7 +134,7 @@ class TeacherContext extends TeacherContextBase {
 	public receive(data: ISocketData) {
 		super.receive(data);
 		if(data.type === $SocketType.MSGTOTEACHER && data.data) {
-			const msg = data.data as common.IMsg;
+			const msg = data.data as IMsg;
 			
 			let files: string[]|null = null;
 			let userReports: IInClassReport[] = [];
@@ -143,7 +142,7 @@ class TeacherContext extends TeacherContextBase {
 			let etime;
 			
 			if(msg.msgtype === 'warmup_return') {
-				const wmsg = msg as common.IWarmupReturnMsg;
+				const wmsg = msg as IWarmupReturnMsg;
 				if(this._warmupFnc) {
 					this._warmupFnc(wmsg);
 					
@@ -166,7 +165,7 @@ class TeacherContext extends TeacherContextBase {
                     });	 
 				}
 			} else if(msg.msgtype === 'qna_return') {
-				const qmsg = msg as common.IQNAMsg;
+				const qmsg = msg as IQNAMsg;
 				if(this._qnaFnc) {
                     this._qnaFnc(qmsg);
 
@@ -176,7 +175,7 @@ class TeacherContext extends TeacherContextBase {
                     etime = StrUtil._toStringTimestamp(new Date(qmsg.etime));
 
                     let ans_submit = 'qna;';
-                    let scripts: common.IScript[] = [];
+                    let scripts: IScript[] = [];
                     for(let i = 0; i < this._data.scripts.length; i++) {
                         if(this._data.scripts[i].passage_page === qmsg.seq) scripts.push(this._data.scripts[i]);
                     }
@@ -206,13 +205,13 @@ class TeacherContext extends TeacherContextBase {
                     });
     			}
 			} else if(msg.msgtype === 'question_return') {
-				const qmsg = msg as common.IQuizReturnMsg;
+				const qmsg = msg as IQuizReturnMsg;
 				if(this._questionFnc) {
 					this._questionFnc(qmsg);
 					this._uploadInclassReport(qmsg);
 				}			
 			} else if(msg.msgtype === 'graphic_return') {
-				const qmsg = msg as common.IGraphMsg;
+				const qmsg = msg as IGraphMsg;
 				if(this._graphFnc) {
                     this._graphFnc(qmsg);
 
@@ -249,7 +248,7 @@ class TeacherContext extends TeacherContextBase {
 
 				}				
         	} else if(msg.msgtype === 'sheet_return') {
-				const qmsg = msg as common.IGraphSheetMsg;
+				const qmsg = msg as IGraphSheetMsg;
 				if(this._graphSheetFnc) {
                     this._graphSheetFnc(qmsg);
                     
@@ -283,7 +282,7 @@ class TeacherContext extends TeacherContextBase {
                     });
 				}				
             } else if(msg.msgtype === 'summary_return') {
-				const qmsg = msg as common.IQuizReturnMsg;
+				const qmsg = msg as IQuizReturnMsg;
 				if(this._summaryFnc) {
                     this._summaryFnc(qmsg);
                     
@@ -314,7 +313,7 @@ class TeacherContext extends TeacherContextBase {
                     
 				}				
 			} else if(msg.msgtype === 'v_checkup_return') {
-                const qmsg = msg as common.IQNAMsg;
+                const qmsg = msg as IQNAMsg;
                 if(this._checkupFnc) {
                     this._checkupFnc(qmsg);
 				
@@ -352,13 +351,12 @@ class TeacherContext extends TeacherContextBase {
 		}
 	}
 	public setData(data: any) {
-		this._data = common.initData(data);
+		this._data = initData(data);
 		for(let i = 0; i < this._data.warmup.length; i++) {
 			this.state.warmup_returns[i] = [];
 		}
 	}
 }
-
 
 const tContext = new TeacherContext();
 const  { Provider: TProvider, Consumer: TeacherConsumer } = React.createContext( tContext );

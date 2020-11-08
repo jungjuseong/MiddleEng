@@ -113,7 +113,7 @@ interface IBallon {
 const _brd_focus = _RGBA(255, 250, 23, 1);
 const _bg_normal = _RGBA(0, 0, 0, 0.2);
 const _brdThick = 2;
-const _brdThick_focus = B_ls_writing_s ? 4 : 2; 
+const _brdThick_focus = b_ls_writing_s ? 4 : 2; 
 
 const _bgA = _RGBA(150, 40, 202, 1);
 const _bgB = _RGBA(0, 42, 227, 1);
@@ -332,7 +332,7 @@ class ScriptBox  extends React.Component<IScriptBox> {
 		this.m_canvas.width = this.m_width + 15;
 		this.m_canvas.height = this.m_height + 20;
 
-		if(!this.props.view || (this.props.compDiv !== 'DIALOGUE' && !B_ls_writing_s)) return;
+		if(!this.props.view || (this.props.compDiv !== 'DIALOGUE' && !b_ls_writing_s)) return;
 
 		const props = this.props;
 		let skin: IBallon;
@@ -393,7 +393,7 @@ class ScriptBox  extends React.Component<IScriptBox> {
 		let top;	// 상단 면
 		let px;    // 꼭지점 x위치
 		let py;    // 꼭지점 x위치
-		if(B_ls_writing_s) {
+		if(b_ls_writing_s) {
 			left = 16;
 			top = 10;
 			brdR = 20;
@@ -444,7 +444,7 @@ class ScriptBox  extends React.Component<IScriptBox> {
 
 			this._draw();
 		}
-		if(B_ls_writing_s) this.m_viewScript = true;
+		if(b_ls_writing_s) this.m_viewScript = true;
 		else {
 			if(this.props.viewScript !== prev.viewScript) {
 				this.m_viewScript = this.props.viewScript;
@@ -475,7 +475,7 @@ class ScriptBox  extends React.Component<IScriptBox> {
 
 		if(!isClick) return;
 
-		if(B_ls_writing_s) {
+		if(b_ls_writing_s) {
 			if(this.props.clickText) this.props.clickText(this.props.idx, this.props.script);
 		} else {
 			if(this.props.compDiv === 'DIALOGUE') {
@@ -496,7 +496,7 @@ class ScriptBox  extends React.Component<IScriptBox> {
 		const {script, roll, sroll, focus, viewClue, viewTrans, shadowing, numOfReturn} = this.props;
 		const arr: string[] = ['roll' + roll];
 
-		if(B_ls_writing_s) arr.push('student');
+		if(b_ls_writing_s) arr.push('student');
 		else arr.push('teacher');
 
 		if(this.props.selected) arr.push('focus'); 

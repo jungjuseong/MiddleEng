@@ -1,624 +1,54 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import * as _ from 'lodash';
-import { observer, Observer } from 'mobx-react';
-import { observable, observe, _allowStateChangesInsideComputed } from 'mobx';
-import { DraggableCore, DraggableData, DraggableEvent } from 'react-draggable';
+import { observer } from 'mobx-react';
+import { observable, _allowStateChangesInsideComputed } from 'mobx';
 
-import { IStateCtx, IActionsCtx } from './t_store';
+import { IStateCtx, IActionsCtx } from '../t_store';
 import { MPlayer, MConfig, IMedia, MPRState } from '@common/mplayer/mplayer';
 
-import * as t_store from './t_store';
 import { ToggleBtn } from '@common/component/button';
 
-import { App } from '../../App';
-import * as felsocket from '../../felsocket';
-import { CoverPopup } from '../../share/CoverPopup';
-import { Loading } from '../../share/loading';
+import { App } from '../../../App';
+import * as felsocket from '../../../felsocket';
+import { CoverPopup } from '../../../share/CoverPopup';
+import { Loading } from '../../../share/loading';
 
-import * as common from '../common';
+import { IScript,IData,IMsgForIdx,IMsg } from '../../common';
 import * as kutil from '@common/util/kutil';
-import * as butil from '@common/component/butil';
-import SendUI from '../../share/sendui_new';
-import * as style from '../../share/style';
-import { SENDPROG } from './t_store';
-import { CountDown2, TimerState } from '../../share/Timer';
-import WrapTextNew from '@common/component/WrapTextNew';
+
+import { CountDown2, TimerState } from '../../../share/Timer';
+import { _getJSX, _getBlockJSX,_sentence2jsx } from '../../../get_jsx';
+
+import ControlBox from './_control_box';
+import CaptionBox from './_caption_box';
+import Script from './_script';
+import VPopup from './_v_popup';
 
 const SwiperComponent = require('react-id-swiper').default;
 
-function _getCurrentIdx(scripts: common.IScript[], time: number) {
+function _getCurrentIdx(scripts: IScript[], time: number) {
     let timeRound = Math.round(time / 0.01) * 0.01;
     for (let i = 0, len = scripts.length; i < len; i++) {
         const s = scripts[i];
         if (timeRound >= s.dms_start && timeRound <= s.dms_end) {
             return i;
-            break;
         } else if (timeRound < s.dms_start) {
             break;
         }
     }
     return -1;
 }
-function _getLastIdx(scripts: common.IScript[], time: number) {
-	for (let i = 0, len = scripts.length; i < len; i++) {
-		const s = scripts[i];
-		if (time >= s.dms_start && time <= s.dms_end) {
-			return i;
-		} else if (time < s.dms_start) {
-			return i;
-		}
-	}
-	return -1;
-}
-
-function _getTimeStr(ms: number, max: number) {
-	const maxSec = Math.round(max / 1000);
-
-	let sec = Math.round(ms / 1000);
-	let min = Math.floor(sec / 60);
-	let hour = Math.floor(min / 60);
-	let ret = '';
-	sec = sec % 60;
-	min = min % 60;
-	if (hour > 0 || maxSec >= 3600) {
-		ret = hour + ':';
-		if (min >= 10) ret += min + ':';
-		else ret += '0' + min + ':';
-	} else if (maxSec >= 600) {
-		if (min >= 10) ret += min + ':';
-		else ret += '0' + min + ':';
-	} else ret = min + ':';
-
-	if (sec >= 10) ret += sec;
-	else ret += '0' + sec;
-
-	return ret;
-}
-@observer
-class ProgBox extends React.Component<{ player: MPlayer, disable: boolean, checkups: common.IScript[] }> {
-	private m_dragging = false;
-	private m_bg!: HTMLElement;
-	private m_bgW = 0;
-	private m_s = 0;
-	@observable private m_dragLeft = 0;
-	private m_dragLeft_s = 0;
-	private _seek = _.throttle((percent: number) => {
-		if(this.props.disable) return;
-		const player = this.props.player;
-		player.seek(player.duration * percent / 100);
-	}, 300, { leading: false });
-	private _refBG = (el: HTMLElement | null) => {
-		if (this.m_bg || !el) return;
-		this.m_bg = el;
-	}
-
-	private _start = (evt: DraggableEvent, data: DraggableData) => {
-		if (!this.m_bg || this.props.disable) return;
-		const player = this.props.player;
-		if (player.duration <= 0) return;
-
-		this.m_bgW = this.m_bg.getBoundingClientRect().width;
-		if (this.m_bgW <= 0) return;
-
-		let left = 100 * data.x / this.m_bgW;
-		if (left < 0) left = 0;
-		else if (left > 100) left = 100;
-		this.m_dragLeft_s = left;
-		this.m_dragLeft = left;
-		this.m_s = data.x;
-		this.m_dragging = true;
-	}
-	private _drag = (evt: DraggableEvent, data: DraggableData) => {
-		if (!this.m_dragging || this.props.disable) return;
-		let left = this.m_dragLeft_s + 100 * (data.x - this.m_s) / this.m_bgW;
-		if (left < 0) left = 0;
-		else if (left > 100) left = 100;
-		this.m_dragLeft = left;
-
-		const player = this.props.player;
-		if (!player.bPlay) this._seek(left);
-	}
-	private _stop = (evt: DraggableEvent, data: DraggableData) => {
-		if (!this.m_dragging || this.props.disable) return;
-
-		this.m_dragging = false;
-		const player = this.props.player;
-		player.seek(player.duration * this.m_dragLeft / 100);
-	}
-
-	public render() {
-		const {player, checkups} = this.props;
-		let percent = 0;
-		const duration = player.duration;
-		if (duration > 0) {
-			percent = (player.viewTime / duration) * 100;
-		}
-		let btnLeft = 0;
-		let dragLeft = this.m_dragLeft;
-		if (this.m_dragging) btnLeft = dragLeft;
-		else btnLeft = percent;
-
-		return (
-			<>
-				<div className="prog_box">
-					<DraggableCore
-						onDrag={this._drag}
-						onStart={this._start}
-						onStop={this._stop}
-					>
-						<div className="prog_bg" ref={this._refBG}>
-							<div className="prog_bar" style={{ width: percent + '%' }} />
-							<div className="prog_tmp" />
-							{checkups.map((script, idx) => {
-								let per = (duration > 0) ? (script.dms_end * 1000 / duration) * 100 : 0;
-								return <span key={idx} className="checkup" style={{ left: per + '%' }}/>;
-							})}
-
-							<ToggleBtn className="prog_btn" style={{ left: btnLeft + '%' }} />
-
-
-						</div>
-					</DraggableCore>
-				</div>
-				<div className="video_time" style={{ width: (player.duration >= 600000 ? 110 : 135) + 'px' }}><span>{_getTimeStr(player.viewTime, player.duration)}</span> / <span>{_getTimeStr(player.duration, player.duration)}</span></div>
-			</>
-		);
-	}
-}
-
-/*
-	roll: ''|'A'|'B';
-	shadowing: boolean;
-	viewCountDown: boolean;
-*/
-interface IControlBox {
-	player: MPlayer;
-	viewCaption: boolean;
-	disable: boolean;
-	vpop: POPUPTYPE;
-	study: POPUPTYPE;
-	checkups: common.IScript[];
-	isPlay: boolean;
-	toggleMute: () => void;
-	toggleFullscreen: () => void;
-	toggleCaption: () => void;
-	togglePlay: () => void;
-	stopClick: () => void;
-
-	readaloudClick: () => void;
-	shadowingClick: () => void;
-	checkupClick: () => void;
-
-	prevClick: () => void;
-	nextClick: () => void;
-}
-@observer
-class ControlBox extends React.Component<IControlBox> {
-	public render() {
-		const {player, study, vpop} = this.props;
-		return (
-			<div className="control">
-				<div className="control_left">
-					<ToggleBtn className="btn_play_pause" on={this.props.isPlay} onClick={this.props.togglePlay} />
-					<ToggleBtn className="btn_stop" onClick={this.props.stopClick} />
-					<ToggleBtn className="btn_prev" onClick={this.props.prevClick} />
-					<ToggleBtn className="btn_next" onClick={this.props.nextClick} />
-				</div>
-				<div className={'control_top ' + study}>
-					<div>
-						<ProgBox player={player} checkups={this.props.checkups} disable={this.props.disable}/>
-					</div>
-				</div>
-				{/* btn_subscript, btn_audio 추가*/}
-				<div className="control_right">
-					<ToggleBtn className={'btn_subscript ' + study} on={this.props.viewCaption} onClick={this.props.toggleCaption} />
-					<ToggleBtn className="btn_audio" onClick={this.props.toggleMute} on={player.muted} />
-					<ToggleBtn className="btn_fullscreen" onClick={this.props.toggleFullscreen} />
-					<ToggleBtn className="btn_fullscreen_off" onClick={this.props.toggleFullscreen} />
-				</div>
-				<div className="control_center">
-					<ToggleBtn 
-						className="btn_v_listen_repeat" 
-						on={vpop === 'SHADOWING' || study === 'SHADOWING'}
-						disabled={study === 'READALOUD' || study === 'CHECKUP'}
-						onClick={this.props.shadowingClick}
-					/>
-					<ToggleBtn 
-						className="btn_v_readalong"
-						on={vpop === 'READALOUD' || study === 'READALOUD'}
-						disabled={study === 'CHECKUP' || study === 'SHADOWING'}
-						onClick={this.props.readaloudClick}
-					/>
-					<ToggleBtn 
-						className="btn_v_checkup" 
-						on={vpop === 'CHECKUP' || study === 'CHECKUP'}
-						disabled={study === 'READALOUD' || study === 'SHADOWING'}
-						onClick={this.props.checkupClick}
-					/>
-				</div>
-			</div>
-		);
-	}
-}
-
-@observer
-class CaptionBox extends React.Component<{view: boolean, inview: boolean, script?: common.IScript}> {
-	@observable private _viewEng = true;
-	@observable private _viewTrans = true;
-	private _toggleEng = () => {
-		this._viewEng = !this._viewEng;
-	}
-	private _toggleTrans = () => {
-		this._viewTrans = !this._viewTrans;
-	}
-	public componentDidUpdate(prev: {view: boolean, inview: boolean}) {
-		if(this.props.view && !prev.view) {
-			this._viewEng = true;
-			this._viewTrans = true;
-		}
-	}	
-	public render() {
-		const {inview, script} = this.props;
-		// console.log(App.lang);
-		let eng;
-		let trans;
-		if(script) {
-			if(this._viewEng) eng = script.dms_eng;
-			else eng = <>&nbsp;</>;
-			if(this._viewTrans) trans = script.dms_kor[App.lang];
-			else trans = <>&nbsp;</>;
-		} else {
-			eng = <>&nbsp;</>;
-			trans = <>&nbsp;</>;
-		}
-		return (
-			<div className="caption_box" style={{display: inview ? '' : 'none'}}>
-				<div className="caption_eng"><span>{eng}</span><ToggleBtn className="btn_eng" on={this._viewEng} onClick={this._toggleEng}/></div>
-				{/* <div className="caption_trans"><span>{trans}</span><ToggleBtn className="btn_trans" on={this._viewTrans} onClick={this._toggleTrans}/></div> */}
-			</div>
-		);
-	}
-}
-
-function _splitSpace(sentence: string, keyObj: {key: number}, splitClass?: string) {
-    const arrS = sentence.split(/\s/g);
-    const pattern = new RegExp(/[\s]/g);
-
-    let ret: JSX.Element[] = [];
-    for(let i = 0; i < arrS.length; i++ ) {
-        const txt = arrS[i];
-        if(txt === '') continue;
-
-        let arr: React.ReactNode[] = [];
-
-        let result = pattern.exec(txt);
-        let lastIdx = 0;
-        let sTmp = '';
-
-        while (result) {
-            if(result.index > lastIdx) {
-                sTmp = txt.substring(lastIdx, result.index);
-                sTmp = sTmp.replace(/@@1@@/g, '."').replace(/@@2@@/g, '?"').replace(/@@3@@/g, '!"');
-                arr.push(<span key={keyObj.key++}>{sTmp}</span>);
-            }
-            sTmp = result[0];
-            
-            arr.push(sTmp);
-
-            lastIdx = pattern.lastIndex;
-            result = pattern.exec(txt);
-        }
-        if(lastIdx < txt.length) {
-            sTmp = txt.substring(lastIdx);
-            sTmp = sTmp.replace(/@@1@@/g, '."').replace(/@@2@@/g, '?"').replace(/@@3@@/g, '!"');
-            arr.push(<span key={keyObj.key++}>{sTmp}</span>);
-        }
-
-        ret.push(<span key={keyObj.key++} className={splitClass}>{arr.map((node) => node)}</span>);
-    }
-
-    return ret;
-
-}
-
-function _sentence2jsx(
-    sentence: string,
-    blockClass: string|null = 'block',
-    blockStr?: string,
-    isBlockWorkWrap?: boolean,
-    splitClass?: string,
-) {
-    const pattern = new RegExp(/\{(.*?)\}/g);
-    let keyObj = {key: 0};
-
-    const ret: JSX.Element[] = [];
-    sentence = sentence.replace(/\.\"/g, '@@1@@').replace(/\?\"/g, '@@2@@').replace(/\!\"/g, '@@3@@');
-    const arrLine = sentence.replace(/\s\s+/ig, ' ').replace(/<\s*br\s*\/*\s*>/ig, '<br>').split('<br>');
-
-    let jsx;
-    arrLine.forEach((line, idx) => {
-        if(blockClass) {
-            let result = pattern.exec(line);
-            let lastIdx = 0;
-            let sTmp = '';
-            let arr: React.ReactNode[] = [];
-
-            while (result) {
-                if(result.index > lastIdx) {
-                    sTmp = line.substring(lastIdx, result.index);
-                    arr.push(_splitSpace(sTmp, keyObj, splitClass));
-                }
-                
-                sTmp = result[1];
-                let str = blockStr;
-                if(!str) str = sTmp;
-                
-                if(isBlockWorkWrap) jsx = _splitSpace(str, keyObj, splitClass);
-                else jsx = str;
-
-                arr.push((<span key={keyObj.key++} className={blockClass} data-correct={sTmp}>{jsx}</span>));
-        
-                lastIdx = pattern.lastIndex;
-                result = pattern.exec(line);
-            }
-            if(lastIdx < line.length) {
-                sTmp = line.substring(lastIdx);
-                arr.push(_splitSpace(sTmp, keyObj, splitClass));
-            }
-            ret[idx] = <React.Fragment key={keyObj.key++}>{arr}</React.Fragment>;
-        } else {
-            ret[idx] = <React.Fragment key={keyObj.key++}>{_splitSpace(line, keyObj, splitClass)}</React.Fragment>;
-        }
-        
-    });
-    return ret;
-}
-
-interface IScript {
-	idx: number;
-	on: boolean;
-	studentturn: boolean;
-	script: common.IScript;
-	viewScript: boolean;
-}
-class Script extends React.Component<IScript> {
-	private _jsx: JSX.Element[];
-	constructor(props: IScript) {
-        super(props);
-        this._jsx = _sentence2jsx(props.script.dms_eng, 'closure', undefined, false, 'word');
-	}
-	public render() {
-		const {on, viewScript, studentturn} = this.props;
-		const arr: string[] = [];
-		const img_arr: string[] = [];
-		
-		if(viewScript) arr.push('view');
-		if(on) arr.push('on');
-
-		const className = arr.join(' ');
-
-		if(viewScript) img_arr.push('view');
-		if(on && studentturn) img_arr.push('on');
-
-		const imgClassName = img_arr.join(' ');
-
-		return (
-			<>
-				<span>
-					<img className={imgClassName} src={_project_ + 'teacher/images/arrow_script.png'} draggable={false}/>
-				</span>
-				<div className={className}>{this._jsx}</div>
-			</>
-		);
-	}
-}
 
 type POPUPTYPE = 'off'|'READALOUD' | 'SHADOWING' | 'CHECKUP' | 'CHECKUPSET';
-
-interface IVPopup {
-	type: POPUPTYPE;
-	data: common.IData;
-    checkupIdx: number;
-    actions: IActionsCtx;
-	onSend: (type: POPUPTYPE) => void;
-	onClosed: () => void;
-}
-@observer
-class VPopup extends React.Component<IVPopup> {
-	@observable private _view = false;
-	@observable private _prog = SENDPROG.READY;
-    @observable private _selected = 0;
-    @observable private _retCnt = 0;
-    @observable private _numOfStudent = 0;
-    private _returnUsers: string[] = [];
-	private _onClose = () => {
-		App.pub_playBtnTab();
-		this._view = false;
-	}
-	public componentDidUpdate(prev: IVPopup) {
-		if (this.props.type !== 'off' && prev.type === 'off') {
-			this._view = true;
-			this._selected = 0;
-			this._prog = SENDPROG.READY;
-			this._retCnt = 0;
-			this._numOfStudent = 0;
-			while(this._returnUsers.length > 0) this._returnUsers.pop();
-			this.props.actions.setCheckupFnc(null);
-		} else if (this.props.type === 'off' && prev.type !== 'off') {
-			this._view = false;
-			this._selected = 0;
-		}
-	}
-	private _onSend = () => {
-        if (this.props.type === 'off') return;
-        else if(this._prog !== SENDPROG.READY) return;
-
-        if(this.props.type === 'CHECKUP') {
-            const msg: common.IMsgForIdx = {msgtype: 'v_checkup_send', idx: this.props.checkupIdx};
-            felsocket.sendPAD($SocketType.MSGTOPAD, msg);
-            this._retCnt = 0;
-            while(this._returnUsers.length > 0) this._returnUsers.pop();
-        } else if(this.props.type !== 'CHECKUPSET') {
-            const msg: common.IMsg = {msgtype: this.props.type === 'READALOUD' ? 'v_readaloud_send' : 'v_shadowing_send',};
-            felsocket.sendPAD($SocketType.MSGTOPAD, msg);
-        }
-        
-        this._prog = SENDPROG.SENDING;
-        App.pub_playToPad();
-        
-        if(this.props.type === 'CHECKUP') this.props.actions.setCheckupFnc(this._onReturn);
-        App.pub_reloadStudents(async () => {
-            if(this._prog !== SENDPROG.SENDING) return;
-
-            await kutil.wait(500);
-
-            if(this._prog !== SENDPROG.SENDING) return;
-
-            this._prog = SENDPROG.SENDED;
-            this.props.onSend(this.props.type);
-
-            if(this.props.type !== 'CHECKUP') {
-                this._view = false;
-            } else {
-                this._retCnt = 0;
-                this._numOfStudent = App.students.length;
-            }
-        });
-	}
-	private _clickTrue = () => {
-		if(this._prog >= SENDPROG.COMPLETE) return;
-		App.pub_playBtnTab();
-		if(this._selected === 1) this._selected = 0;
-		else this._selected = 1;
-	}
-	private _clickFalse = () => {
-		if(this._prog >= SENDPROG.COMPLETE) return;
-		App.pub_playBtnTab();
-		if(this._selected === 2) this._selected = 0;
-		else this._selected = 2;
-    }
-    private _onReturn = (msg: common.IQNAMsg) => {
-        if(!this._view) return;
-
-        const student = _.find(App.students, {id: msg.id});
-        if(!student) return;
-        
-        this._returnUsers.push(msg.id);
-        felsocket.addStudentForStudentReportType6(msg.id);
-        let retCnt = this._retCnt + 1;
-        if(retCnt >= this._numOfStudent) retCnt =  this._numOfStudent;
-        this._retCnt = retCnt;
-    }
-    private _clickReturn = () => {
-        App.pub_playBtnTab();
-        felsocket.startStudentReportProcess($ReportType.JOIN, this._returnUsers);	
-    }
-	private _clickAnswer = () => {
-		if(this._prog !== SENDPROG.SENDED) return;
-		App.pub_playBtnTab();
-
-		const msg: common.IMsg = {msgtype: 'v_checkup_end',};
-		felsocket.sendPAD($SocketType.MSGTOPAD, msg);
-		this._prog = SENDPROG.COMPLETE;
-		this.props.actions.setCheckupFnc(null);
-	}
-	public render() {
-		const { type, checkupIdx, data } = this.props;
-		let title;
-		if(this.props.type === 'READALOUD') title = 'READ ALONG';
-		else if(this.props.type === 'SHADOWING') title = 'LISTEN & REPEAT';
-		else if(type === 'CHECKUP' || type === 'CHECKUPSET') title = 'CHECK UP';
-		else title = type;
-
-		let question = '';
-		let answer = 0;
-		if(type === 'CHECKUP') {
-			const checkup = data.checkup[checkupIdx];
-			if(checkup) {
-				question = checkup.question;
-				answer = checkup.answer;
-			}
-		}
-
-		return (
-			<CoverPopup className="v_popup" view={this._view} onClosed={this.props.onClosed} >
-				<div>
-					<div className="head">
-						<span>{title}</span>
-						<ToggleBtn className="btn_close" onClick={this._onClose} />
-					</div>
-					<div className="READALOUD content" style={type === 'READALOUD' ? undefined : style.NONE}>
-						Read along together.
-					</div>
-					<div className="SHADOWING content" style={type === 'SHADOWING' ? undefined : style.NONE}>
-						Listen and repeat.
-					</div>
-                    <div className="CHECKUPSET content" style={type === 'CHECKUPSET' ? undefined : style.NONE}>
-						Watch the video and answer.
-					</div>
-
-					<div className="CHECKUP content" style={type === 'CHECKUP' ? undefined : style.NONE}>
-						
-						<div className="question">
-							<span>{checkupIdx + 1}.</span>
-							<div className="qtext">
-							<WrapTextNew 
-								view={type === 'CHECKUP'}
-								maxLineNum={2}
-								maxSize={44}
-								minSize={36}
-								lineHeight={160}
-								textAlign={'left'}
-							>
-								{question}
-							</WrapTextNew>
-							</div>
-						</div>
-						<div className="choice-box">
-							<ToggleBtn 
-								className="btn_true" 
-								on={ 
-										(this._selected === 1 && this._prog < SENDPROG.COMPLETE)
-									||  ( answer === 1 && this._prog === SENDPROG.COMPLETE)
-								} 
-								onClick={this._clickTrue}
-							/>
-							<ToggleBtn 
-								className="btn_false" 
-								on={ 
-									(this._selected === 2 && this._prog < SENDPROG.COMPLETE)
-								||  ( answer === 2 && this._prog === SENDPROG.COMPLETE)
-								} 
-								onClick={this._clickFalse}
-							/>
-						</div>
-						<div className="return_cnt_box white" style={{display: this._prog >= SENDPROG.SENDED ? '' : 'none'}} onClick={this._clickReturn}>
-							<div>{this._retCnt}/{this._numOfStudent}</div>
-						</div>
-						<ToggleBtn className="btn_answer" view={this._prog >= SENDPROG.SENDED} disabled={this._prog === SENDPROG.COMPLETE} onClick={this._clickAnswer}/>
-						<ToggleBtn className="btn_v_next" view={this._prog === SENDPROG.COMPLETE} onClick={this._onClose}/>
-					</div>
-					<SendUI
-						view={this._prog < SENDPROG.SENDED}
-						type={'teacher'}
-						sended={false}
-						originY={0}
-						onSend={this._onSend}
-					/>
-				</div>
-			</CoverPopup>
-		);
-	}
-}
 
 interface IVideoBox {
 	view: boolean;
 	state: IStateCtx;
 	actions: IActionsCtx;
-	data: common.IData;
+	data: IData;
 	onClosed: () => void;
 }
+
 @observer
 class VideoPopup extends React.Component<IVideoBox> {
 	private _box!: HTMLElement;
@@ -643,8 +73,7 @@ class VideoPopup extends React.Component<IVideoBox> {
 
 	
 	private _ytNext = -1;
-	private _checkups: common.IScript[] = [];
-
+	private _checkups: IScript[] = [];
 
 	constructor(props: IVideoBox) {
         super(props);
@@ -693,15 +122,12 @@ class VideoPopup extends React.Component<IVideoBox> {
 				if(this._study === 'SHADOWING') {
 					if(this._yourturn < 0) {
 						if(this._curIdx >= 0 && this._player.bPlay) {
-							const msg: common.IMsgForIdx = {msgtype: 'view_yourturn',idx: this._curIdx,};
+							const msg: IMsgForIdx = {msgtype: 'view_yourturn',idx: this._curIdx,};
 							felsocket.sendPAD($SocketType.MSGTOPAD, msg);
 							this._ytNext = curIdx;
 							
 							const script = scripts[this._curIdx];
 							const delay = (script.dms_end - script.dms_start) * 2000;
-
-							// const ymsg: common.IMsg = {msgtype: 'view_yourturn'};
-							// felsocket.sendPAD($SocketType.MSGTOPAD, ymsg);
 
 							this._yourturn = _.delay(() => {
 								if(this._yourturn >= 0) {
@@ -709,7 +135,7 @@ class VideoPopup extends React.Component<IVideoBox> {
 									this._curIdx = this._ytNext;
 									this._yourturn = -1;
 
-									const fmsg: common.IMsgForIdx = {msgtype: 'focusidx',idx: this._curIdx,};
+									const fmsg: IMsgForIdx = {msgtype: 'focusidx',idx: this._curIdx,};
 									felsocket.sendPAD($SocketType.MSGTOPAD, fmsg);
 									if(this._curIdx >= 0 && this._swiper) this._swiper.slideTo(this._curIdx === 0 ? 0 : this._curIdx - 1);
 								}
@@ -719,12 +145,12 @@ class VideoPopup extends React.Component<IVideoBox> {
 
 							return;
 						} else if(this._player.bPlay) {
-							const msg: common.IMsgForIdx = {msgtype: 'focusidx',idx: curIdx,};
+							const msg: IMsgForIdx = {msgtype: 'focusidx',idx: curIdx,};
 							felsocket.sendPAD($SocketType.MSGTOPAD, msg);
 						} else return;
 					} else return;
 				} else if(this._study === 'READALOUD') {
-					const msg: common.IMsgForIdx = {msgtype: 'focusidx',idx: curIdx,};
+					const msg: IMsgForIdx = {msgtype: 'focusidx',idx: curIdx,};
 					felsocket.sendPAD($SocketType.MSGTOPAD, msg);					
 				}
 				this._curIdx = curIdx;
@@ -754,7 +180,7 @@ class VideoPopup extends React.Component<IVideoBox> {
 			else if(this._viewCountDown) msgtype = 'playing';
 			else if(newState !== MPRState.PAUSED && this._player.bPlay) msgtype = 'playing';
 			else msgtype = 'paused';
-			const msg: common.IMsg = {
+			const msg: IMsg = {
 				msgtype,
 			};
 			felsocket.sendPAD($SocketType.MSGTOPAD, msg);
@@ -895,7 +321,7 @@ class VideoPopup extends React.Component<IVideoBox> {
 			} else {
 				if(this._ytNext >= 0 ) this._curIdx = this._ytNext;
 				this._ytNext = -1;
-				const msg: common.IMsgForIdx = {msgtype: 'focusidx',idx: this._curIdx,};
+				const msg: IMsgForIdx = {msgtype: 'focusidx',idx: this._curIdx,};
 				felsocket.sendPAD($SocketType.MSGTOPAD, msg);				
 			}
 		}
@@ -925,7 +351,7 @@ class VideoPopup extends React.Component<IVideoBox> {
 		this._viewCountDown = false;
 		this._study = 'off';
 
-		const msg: common.IMsg = {msgtype: 'v_dialogue_end',};
+		const msg: IMsg = {msgtype: 'v_dialogue_end',};
 		felsocket.sendPAD($SocketType.MSGTOPAD, msg);
 	
 	}
@@ -947,12 +373,6 @@ class VideoPopup extends React.Component<IVideoBox> {
         this._countdown.pause();
         this._countdown.reset();
         this._viewCountDown = false;
-        // this._study = 'off';
-
-        // const msg: common.IMsg = {msgtype: 'v_dialogue_end',};
-        // felsocket.sendPAD($SocketType.MSGTOPAD, msg);
-        
-        // this.props.stopClick();
 	}
 
 	private _toggleCaption = () => {
@@ -1115,7 +535,7 @@ class VideoPopup extends React.Component<IVideoBox> {
 	}
 	private _offVideo = () => {
         if(this._vpop === 'CHECKUP') {
-        	const msg: common.IMsg = {msgtype: 'v_dialogue_end',};
+        	const msg: IMsg = {msgtype: 'v_dialogue_end',};
         	felsocket.sendPAD($SocketType.MSGTOPAD, msg);			
         	this._player.play();
         }
@@ -1148,7 +568,7 @@ class VideoPopup extends React.Component<IVideoBox> {
             this._curIdx = -1;
             if(this._swiper) this._swiper.slideTo(0, 0);
 
-            const msg: common.IMsg = {
+            const msg: IMsg = {
                 msgtype: 'playing',
             };
             felsocket.sendPAD($SocketType.MSGTOPAD, msg);			

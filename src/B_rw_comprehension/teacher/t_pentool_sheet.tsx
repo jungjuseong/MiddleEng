@@ -30,20 +30,17 @@ class PentoolSheet extends React.Component<IPentool> implements IForDraw {
 		if(!this._kpen) return;
 
 		this._kpen.clear();
-
 		this._penui.setUndoLen(0);
 		this._penui.setErase(false);
 	}
 
 	public reset() {
 		if(!this._kpen) return;
-
 		this._kpen.reset();
 		this._penui.setUndoLen(0);
 	}
 	public undo() {
 		if(!this._kpen) return;
-
 		const last = this._kpen.undo();
 		const len = this._kpen.undoLen;
 		this._penui.setUndoLen(len);

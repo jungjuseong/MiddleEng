@@ -25,10 +25,10 @@ if(p_base_template_t) {
 } else if(p_base_template_s) {
 	_require =  require('./p_base_template/student');
 	_isTeacher = false;
-} else if(B_ls_writing_t) {
-	_require =  require('./B_ls_writing/teacher');
-} else if(B_ls_writing_s) {
-	_require =  require('./B_ls_writing/student');
+} else if(b_ls_writing_t) {
+	_require =  require('./B_ls_writing/teacher/index');
+} else if(b_ls_writing_s) {
+	_require =  require('./B_ls_writing/student/index');
 	_isTeacher = false;
 } else if(b_rw_comprehension_t) {
 	_require =  require('./b_rw_comprehension/teacher/index');
@@ -51,12 +51,6 @@ interface IMoudule {
 	default: IMain;
 	AppProvider: any;
 	appContext: IMain;
-/*
-	start: () => void;
-	getStore: () => any;
-	receive: (data: ISocketData) => void;
-	uploaded: (url: string) => void;
-*/
 }
 
 let _started = false;
@@ -64,7 +58,7 @@ const _module = _require as IMoudule;
 const AppComp: any = _module.default;
 const AppProvider = _module.AppProvider;
 const appContext = _module.appContext;
-// console.log('*****************************************************************');
+
 app_o['set'] = (data: any, isDvlp: boolean, lang: string) => { // tslint:disable-line
 	App.pub_set(data, isDvlp, lang);
 	appContext.setData(data);
@@ -85,33 +79,25 @@ if(_isTeacher) { // *********************** 전자칠판 ***********************
 		App.pub_load(students, null, book, lesson, nextBook, prevBook);
 	};
 
-	app_o['start'] = () => {  // tslint:disable-line
-		// console.log('start  App.isStarted', App.isStarted, '_started', _started);
+	// tslint:disable-next-line:no-string-literal
+	app_o['start'] = () => {
 		_started = true;
 		setTimeout(() => appContext.start(), 500);
 
 	};
 	
 	app_o['receive'] = (obj: ISocketData) => {  // tslint:disable-line
-		// console.log('teacher app_o.receive', obj);
 		if (obj.type === $SocketType.PAD_INIT_COMPLETE) {
 			const student = obj.data as IStudent;
-
-			// console.log('receive  $SocketType.PAD_INIT_COMPLETE App.isStarted', App.isStarted, '_started', _started);
 			if (_started) {
 				if (student && student.id && student.id !== '') {
-					if(App.isStarted) {
-						felsocket.sendPADToID(student.id, $SocketType.PAD_ONSCREEN, null);
-					} else {
-						felsocket.sendPADToID(student.id, $SocketType.PAD_START_DIRECTION, null);
-					}
+					felsocket.sendPADToID(student.id, (App.isStarted) ? $SocketType.PAD_ONSCREEN : $SocketType.PAD_START_DIRECTION, null);
 				}
 			} else {
 				if ( App.pub_addInitedStudent(student) ) {					
 					if (!_started) {
 						_started = true;
-						appContext.start();
-	
+						appContext.start();	
 					}
 				}
 			}
@@ -124,7 +110,8 @@ if(_isTeacher) { // *********************** 전자칠판 ***********************
 		//
 	};
 } else {   // *********************** PAD 시작 ***********************
-	app_o['init'] = (student: IStudent, book: string, lesson: string, nextBook :boolean, prevBook: boolean) => {    // tslint:disable-line
+	// tslint:disable-next-line:no-string-literal
+	app_o['init'] = (student: IStudent, book: string, lesson: string, nextBook: boolean, prevBook: boolean) => {
 		// console.log(_isTeacher, 'app_o.init', student);
 		if(b_ls_voca_s || b_rw_comprehension_s ) {
 			felsocket.disableSoftwareKeyboard();
@@ -132,17 +119,14 @@ if(_isTeacher) { // *********************** 전자칠판 ***********************
 		App.pub_load(null, student, book, lesson, nextBook, prevBook);
 		felsocket.sendTeacher($SocketType.PAD_INIT_COMPLETE, student);
 	};
-
 	app_o['receive'] = (obj: ISocketData) => {  // tslint:disable-line
 		if (App.student == null) return;
 		appContext.receive(obj);
-	};
-    
+	};    
     app_o['notifyUploadToServerResult'] = (url: string) => { // tslint:disable-line
-        console.log("app_o['notifyUploadToServerResult']")
+		console.log('app_o[\'notifyUploadToServerResult\']');
 		appContext.uploaded(url);
 	};
-
 	app_o['notify'] = (type: string) => { // tslint:disable-line
 		appContext.notify(type);
 	};
@@ -158,10 +142,11 @@ if(_isTeacher) { // *********************** 전자칠판 ***********************
 		appContext.notifyRecorded(url);
 	};
 
-    app_o['notifyTakePicture'] = (url: string, src: string) => {
+	// tslint:disable-next-line:no-string-literal
+	app_o['notifyTakePicture'] = (url: string, src: string) => {
 		if(!appContext.notifyTakePicture) return;
 		appContext.notifyTakePicture(url, src);
-	}
+	};
 } // *********************** PAD 종료 ***********************
 
 import './index.scss';

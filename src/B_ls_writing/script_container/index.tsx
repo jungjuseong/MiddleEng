@@ -133,7 +133,7 @@ class ScriptContainer extends React.Component<IScriptContainer> {
 
 		const arr: string[] = ['script_box'];
 
-		if(B_ls_writing_s) {
+		if(b_ls_writing_s) {
 			arr.push('student');
 			arr.push('DIALOGUE');
 		} else {

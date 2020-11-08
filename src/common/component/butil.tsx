@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+
 export function parseBlock(txt: string, className: string, newStr?: string) {
 	const arr: React.ReactNode[] = [];
 
@@ -139,7 +139,6 @@ function _splitSpace(sentence: string, keyObj: {key: number}, splitClass?: strin
 	return ret;
 
 }
-
 
 export function sentence2jsx(
 	sentence: string,

@@ -1,6 +1,5 @@
 (function(app_o, comm_o, tsoc_o){
-	if(window.my_o) return;
-	
+	if(window.my_o) return;	
 
 	var href = document.location.href;
 	var ns = href.indexOf("/", 10);
@@ -34,6 +33,7 @@
 	}
 	var my_o = {};
 	var _control = null;
+	
 	function _load(){
 		return new Promise(function(resolve, reject){
 			app_o.importLink('/content/digenglish_lib/B/ls_writing/teacher/import.html').then(
@@ -42,50 +42,11 @@
 					for(var i=0; i<links.length; i++){
 						document.head.appendChild(links.item(i));
 					}
-
 					var el = doc.body.removeChild(doc.body.firstElementChild);
-					document.body.appendChild(el);	
-					
+					document.body.appendChild(el);					
 					setTimeout(resolve, 100);
-					/*
-					var cnt = 2;
-					app_o.importHTML('/content/digenglish_lib/BASIC/voca/common/ball.svg').then(
-						function(el){
-							cnt--;
-							var page_quiz = document.getElementById("page_quiz");
-							var quiz_meaning = page_quiz.querySelector(":scope .quiz_meaning");
-							if(quiz_meaning.firstChild) quiz_meaning.insertBefore(el, quiz_meaning.firstChild);
-							else quiz_meaning.appendChild(el);	
-							if(cnt==0) setTimeout(resolve, 100);
-						}
-					,	function(err){
-							reject(err);
-						}
-					);	
-					app_o.importHTML('/content/digenglish_lib/BASIC/voca/common/egg.svg').then(
-						function(el){
-							cnt--;
-							var page_quiz = document.getElementById("page_quiz");
-							var quiz_sound = page_quiz.querySelector(":scope .quiz_sound");
-							
-							var mc_1 = el;
-							var mc_2 = el.cloneNode(true);
-							var mc_3 = el.cloneNode(true);
-							mc_1.classList.add("mc_1");
-							mc_2.classList.add("mc_2");
-							mc_3.classList.add("mc_3");
-							quiz_sound.appendChild(mc_1);
-							quiz_sound.appendChild(mc_2);
-							quiz_sound.appendChild(mc_3);
-							if(cnt==0) setTimeout(resolve, 100);
-						}
-					,	function(err){
-							reject(err);
-						}
-					);
-					*/
-				}
-			,	function(err){
+				},	
+				function(err){
 					reject(err);
 				}
 			);
@@ -93,57 +54,32 @@
 	};
 	my_o.player = null;
 	my_o.scriptBox = null;
-	my_o.init = function(){
-		
+	my_o.init = function(){		
 		_load().then(
 			function(){
 				app_o.render();
-
 				var chkPopup = null;
 				chkPopup = function(t){
-					var students = [];
-					
-
-					if(_isDvlp){
-						
-						if(tsoc_o){
-							
+					var students = [];					
+					if(_isDvlp) {						
+						if(tsoc_o){							
 							tsoc_o.getStudents(function(arr, isOk){
-									// console.log(arr, isOk);
 								if(isOk){
 									app_o.init(arr, "어휘", "연습", true, true);
 									app_o.start();
 									
 								}else{
-									//console.log("chkPopup - wait");
 									window.requestAnimationFrame(chkPopup);
 								}
 									
 							});
-							/*
-							for(var i=0; i<tsoc_o.popups.length; i++){
-								var popup = tsoc_o.popups[i];
-								if(!popup.psoc_o){
-									window.requestAnimationFrame(chkPopup);
-									return;
-								}else if(!popup.psoc_o.isInited){
-									window.requestAnimationFrame(chkPopup);
-									return;								
-								}
-								students[i] = tsoc_o.getStudent(i);
-							}
-							*/
 						}else{
 							app_o.init(students, "어휘", "연습", true, true);
 							app_o.start();
 						}
 						
-					}else{
-						/*
-						tsoc_o.getPreviewResult(function(data){
-							// console.log(data);	
-						});
-						*/
+					}
+					else{
 						tsoc_o.getStudents(function(arr, isOk){
 							for(var i=0; i<arr.length;i++){
 								var data = arr[i];
@@ -184,6 +120,6 @@
 document.addEventListener("DOMContentLoaded", function(event) {	
 	my_o.init();
 });
+
 function _movePrev(){
-	//window.parent.postMessage({ from: 'content', type: 'movePrevContent' }, '*');
 }
