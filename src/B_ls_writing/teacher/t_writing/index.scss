@@ -272,12 +272,36 @@
 		}
 		.btn_tabs {
 			position: absolute; top: 100px; left: 87px;
-			.btn_tab_question {
+			.btn_tab_introduction {
 				@include btn_on(
 					resolve('teacher/images/btn_tab_question.png'),
 					resolve('teacher/images/btn_tab_question_down.png'),
 					width('teacher/images/btn_tab_question.png'),
 					height('teacher/images/btn_tab_question.png')
+				);
+			}
+			.btn_tab_confirm {
+				@include btn_on(
+					resolve('teacher/images/btn_tab_script.png'),
+					resolve('teacher/images/btn_tab_script_down.png'),
+					width('teacher/images/btn_tab_script.png'),
+					height('teacher/images/btn_tab_script.png')
+				);
+			}
+			.btn_tab_additional {
+				@include btn_on(
+					resolve('teacher/images/btn_tab_script.png'),
+					resolve('teacher/images/btn_tab_script_down.png'),
+					width('teacher/images/btn_tab_script.png'),
+					height('teacher/images/btn_tab_script.png')
+				);
+			}
+			.btn_tab_dictation {
+				@include btn_on(
+					resolve('teacher/images/btn_tab_script.png'),
+					resolve('teacher/images/btn_tab_script_down.png'),
+					width('teacher/images/btn_tab_script.png'),
+					height('teacher/images/btn_tab_script.png')
 				);
 			}
 			.btn_tab_script {

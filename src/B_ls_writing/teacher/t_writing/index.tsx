@@ -779,11 +779,11 @@ class Comprehension extends React.Component<IComprehension> {
                     <ToggleBtn className="btn_intro" onClick={this._goToIntro}/>
                 </div>
                 <div className="btn_tabs">
-                    <ToggleBtn className="btn_tab_question" onClick={this._clickQuestion} on={this._Tab === 'QUESTION'} disabled={this._Tab === 'QUESTION' || isOnStudy} />
-                    <ToggleBtn className="btn_tab_script" onClick={this._clickScript} on={this._Tab === 'SCRIPT'} disabled={this._Tab === 'SCRIPT' || isOnStudy} />
-                    <ToggleBtn className="btn_tab_question" onClick={this._clickQuestion} on={this._Tab === 'QUESTION'} disabled={this._Tab === 'QUESTION' || isOnStudy} />
-                    <ToggleBtn className="btn_tab_script" onClick={this._clickScript} on={this._Tab === 'SCRIPT'} disabled={this._Tab === 'SCRIPT' || isOnStudy} />
-                    <ToggleBtn className="btn_tab_question" onClick={this._clickQuestion} on={this._Tab === 'QUESTION'} disabled={this._Tab === 'QUESTION' || isOnStudy} />
+                    <ToggleBtn className="btn_tab_introduction" onClick={this._clickQuestion} on={this._Tab === 'QUESTION'} disabled={this._Tab === 'QUESTION' || isOnStudy} />
+                    <ToggleBtn className="btn_tab_confirm" onClick={this._clickScript} on={this._Tab === 'SCRIPT'} disabled={this._Tab === 'SCRIPT' || isOnStudy} />
+                    <ToggleBtn className="btn_tab_additional" onClick={this._clickQuestion} on={this._Tab === 'QUESTION'} disabled={this._Tab === 'QUESTION' || isOnStudy} />
+                    <ToggleBtn className="btn_tab_dictation" onClick={this._clickScript} on={this._Tab === 'SCRIPT'} disabled={this._Tab === 'SCRIPT' || isOnStudy} />
+                    <ToggleBtn className="btn_tab_script" onClick={this._clickQuestion} on={this._Tab === 'QUESTION'} disabled={this._Tab === 'QUESTION' || isOnStudy} />
                 </div>
                 <div className={'info_box' + (isViewInfo ? ' on' : '')}>
                     <div className="return_cnt_box white" style={{display: isViewReturn ? '' : 'none'}} onClick={this._clickReturn}>
