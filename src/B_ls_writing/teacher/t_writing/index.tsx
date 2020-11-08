@@ -574,7 +574,7 @@ class Writing extends React.Component<IWriting> {
         const style: React.CSSProperties = {};
     
         return (
-            <div className={'t_comprehension ' + this._title} style={style}>
+            <div className={'t_writing ' + this._title} style={style}>
                 <div className="close_box">
                     <ToggleBtn className="btn_intro" onClick={this._goToIntro}/>
                 </div>
@@ -588,15 +588,14 @@ class Writing extends React.Component<IWriting> {
                 <div className={'info_box' + (isViewInfo ? ' on' : '')}>
                     <div className="return_cnt_box white" style={{display: isViewReturn ? '' : 'none'}} onClick={this._clickReturn}>
                         <div>{state.retCnt}/{state.numOfStudent}</div>
-                    </div>
-                    <ToggleBtn className="btn_answer" on={isQComplete} onClick={this._clickAnswer} view={isViewAnswer}/>
-                    <ToggleBtn className="btn_trans" onClick={this._clickTranslate} on={this._viewTrans} view={isViewClue}/>
-                    <ToggleBtn className="btn_clue" onClick={this._clickClue} on={this._viewClue} view={isViewClue}/>
+                    </div>            
                 </div>	
-                <div className="btn_page_box">
-                    {quizs.map((page, idx) => {
-                         return <NItem key={idx} on={(this._hint === true || this._tab === 'QUESTION') && idx === this._curQidx} idx={idx} onClick={this._onPage}/>;
-                     })}
+                <div className="writing_content_box">
+                    <div className="btn_page_box">
+                        {quizs.map((page, idx) => {
+                            return <NItem key={idx} on={(this._hint === true || this._tab === 'QUESTION') && idx === this._curQidx} idx={idx} onClick={this._onPage}/>;
+                        })}
+                    </div>
                 </div>
                 <ComprePopup 
                     type={this.c_popup}
@@ -605,13 +604,6 @@ class Writing extends React.Component<IWriting> {
                     imgB={this.m_data.speakerB.image_l}
                     onSend={this._onPopupSend}
                     onClosed={this._onPopupClosed}
-                />
-                <SendUINew
-                    view={isViewSend}
-                    type={'teacher'}
-                    sended={false}
-                    originY={0}
-                    onSend={this.onSend}
                 />
                 <LetsTalk 
                     view={this._letstalk} 
