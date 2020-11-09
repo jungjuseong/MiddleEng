@@ -1,14 +1,11 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 
-import { observable, action } from 'mobx';
 import { observer } from 'mobx-react';
 import * as _ from 'lodash';
 
 import { App } from '../../App';
 import { IStateCtx, IActionsCtx } from './t_store';
 import TeamGrouping from '../../share/TeamGrouping';
-
 
 interface IGroup {
 	view: boolean;
@@ -17,12 +14,12 @@ interface IGroup {
 }
 @observer
 class Grouping extends React.Component<IGroup> {
-
-
+	
 	public componentDidUpdate(prev: IGroup) {
-		if(this.props.view && !prev.view) {
-			this.props.actions.setNaviView(false);
-			this.props.actions.setNavi(false, false);
+		const { view,actions } = this.props;
+		if(view && !prev.view) {
+			actions.setNaviView(false);
+			actions.setNavi(false, false);
 		}
 	}
 	private _onStart = () => {
@@ -35,13 +32,6 @@ class Grouping extends React.Component<IGroup> {
 	}
 	public render() {
 		const {view, state} = this.props;
-		/*
-	view: boolean;
-	gas: IStudent[];
-	nas: IStudent[];
-	onStart: () => void;
-	onBack: () => void;
-		*/
 		return (
 			<div className="t_grouping">
 				<TeamGrouping

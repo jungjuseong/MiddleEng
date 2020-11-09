@@ -1,57 +1,24 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import { observer } from 'mobx-react';
-import { hot } from 'react-hot-loader';
 
-import * as common from '../common';
+import { IWordData } from '../../common';
 import { ToggleBtn } from '@common/component/button';
-import { App } from '../../App';
-import { BtnAudio } from '../../share/BtnAudio';
-import { ResponsiveText } from '../../share/ResponsiveText';
+import { App } from '../../../App';
+import { ResponsiveText } from '../../../share/ResponsiveText';
 
 import * as butil from '@common/component/butil';
+import AudioText from './_audio_text';
 
 export type POPUPTYPE = ''|'sound'|'meaning'|'usage'|'main video'|'spelling'|'speak';
 
-interface IAudioText {
-	audio_url: string;
-	audio_className: string;
-	text_className: string;
-}
-class AudioText extends React.Component<IAudioText> {
-	private _btn: BtnAudio| null = null;
-	private _refBtn = (btn: BtnAudio) => {
-		if(this._btn || !btn) return;
-		this._btn = btn;
-	}
-	private _clickText = () => {
-		if(!this._btn) return;
-		
-		this._btn.toggle();
-	}
-	public render() {
-		const {audio_url, audio_className, text_className} = this.props;
-		return (
-			<>
-			<BtnAudio ref={this._refBtn} className={audio_className} url={audio_url}/>
-			<div className={text_className} onClick={this._clickText}>{this.props.children}</div>
-			</>
-		);
-	}
-}
-
-function DetailItem(props: {word: common.IWordData}) {
+function DetailItem(props: {word: IWordData}) {
 	const word = props.word;
 	return (
 		<div className="detail_box">
 			<img  src={App.data_url + word.image} draggable={false} />
 			<div className="entry_box">
 				<div className="entry">
-					<AudioText
-						audio_className="btn_audio"
-						audio_url={App.data_url + word.audio}
-						text_className="re_entry"
-					>
+					<AudioText audio_className="btn_audio" audio_url={App.data_url + word.audio} text_className="re_entry">
 						<ResponsiveText className="re_entry" maxSize={70} minSize={54} lineHeight={120} length={word.entry.length}>
 							{word.entry}
 						</ResponsiveText>
@@ -66,11 +33,7 @@ function DetailItem(props: {word: common.IWordData}) {
 					*/}
 				</div>					
 				<div className="meaning_eng">
-					<AudioText
-						audio_className="btn_audio"
-						audio_url={App.data_url + word.meaning_audio}
-						text_className="re_meaning"
-					>
+					<AudioText audio_className="btn_audio" audio_url={App.data_url + word.meaning_audio} text_className="re_meaning">
 						{word.pumsa}. {word.meaning_eng}
 					</AudioText>
 					{/*  19-02-11 190211 LS_voca 검수 p.8 수정
@@ -82,11 +45,7 @@ function DetailItem(props: {word: common.IWordData}) {
 			</div>
 			<div className="sentence_box">
 				<div className="sentence">
-					<AudioText
-						audio_className="btn_audio"
-						audio_url={App.data_url + word.sentence_audio}
-						text_className="re_sentence"
-					>
+					<AudioText audio_className="btn_audio" audio_url={App.data_url + word.sentence_audio} text_className="re_sentence">
 						{butil.parseBlock(word.sentence, 'block')}
 						<ResponsiveText className="re_sentence_meaning" maxSize={35} minSize={25} lineHeight={120} length={word.sentence_meaning.length}>
 						{butil.parseBlock(word.sentence_meaning, 'block')}
@@ -103,26 +62,15 @@ function DetailItem(props: {word: common.IWordData}) {
 	);
 }
 
-	// 무조건 on되게  수정 2020_07_31
-function ProgItem(props: {name: string, percent: number, min: number}) {
-	// console.log('what?',props.percent, props.max);
-	return (
-		<div className={'on'}>
-			<div>{props.name}</div>
-			<div><span style={{width: props.percent < 0 ? '0%' : props.percent + '%'}}/></div>
-			<div>{props.percent < 0 ? '' : props.percent + '%'}</div>
-		</div>
-	);
-}
-
 interface IVocaDetail {
 	view: boolean;
 	idx: number;
 	current: number;
 	hasPreview: boolean;
-	word: common.IWordData;
-	onPopup: (word: common.IWordData, type: POPUPTYPE) => void;
+	word: IWordData;
+	onPopup: (word: IWordData, type: POPUPTYPE) => void;
 }
+
 @observer
 class VocaDetail extends React.Component<IVocaDetail> {
 	private _onSoundClick = () => this.props.onPopup(this.props.word, 'sound');
@@ -147,10 +95,8 @@ class VocaDetail extends React.Component<IVocaDetail> {
 	}
 	
 	public render() {
-		const { view, word, hasPreview } = this.props;
-		const min = Math.min(word.app_sound, word.app_meaning, word.app_spelling, word.app_sentence);
+		const { word } = this.props;
 
-		let sum = word.app_sound + word.app_meaning + word.app_spelling + word.app_sentence;
 		return (
 			<>
 				{/* <div className="preview-box" style={{display: hasPreview && !(sum < 0) ? '' : 'none'}}>

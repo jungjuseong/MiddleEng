@@ -1,14 +1,11 @@
 ﻿import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 
-import { observable, action } from 'mobx';
 import { observer } from 'mobx-react';
 import { IStateCtx, IActionsCtx } from './t_store';
 import TeamSpindle from '../../share/TeamSpindle';
 import * as kutil from '@common/util/kutil';
 
-
-interface ITBoard {
+interface IBoard {
 	view: boolean;
 	numOfReturn: number; 
 	state: IStateCtx;
@@ -16,7 +13,7 @@ interface ITBoard {
 }
 
 @observer
-class TBoard extends React.Component<ITBoard> {
+class Board extends React.Component<IBoard> {
 
 	private _getAudio = (idx: number) => {
 		const word = this.props.actions.getWords()[idx];
@@ -57,4 +54,4 @@ class TBoard extends React.Component<ITBoard> {
 	}
 }
 
-export default TBoard;
+export default Board;

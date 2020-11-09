@@ -21,14 +21,6 @@ const enum MYProg {
 	SENTENCE_PLAYING,
 	COMPLETE,
 }
-function _getProgStr(prog: MYProg): string {
-	switch(prog) {
-		case MYProg.ENTRY: return 'entry';
-		case MYProg.SENTENCE: return 'sentence';
-		case MYProg.COMPLETE: return 'complete';
-		default: return '';
-	}
-}
 
 interface ISpeak {
 	view: boolean;
@@ -39,6 +31,7 @@ interface ISpeak {
 	isAuto: boolean;
 	onComplete: () => void;
 }
+
 @observer
 class Speak extends React.Component<ISpeak> {
 	@observable private _prog: MYProg = MYProg.UNMOUNT;
@@ -130,7 +123,7 @@ class Speak extends React.Component<ISpeak> {
 		}
 	}
 	public render() {
-		const word = this.props.word;
+		const { word } = this.props;
 		
 		let fontSize = '100px';
 		if(word.entry.length > 14) fontSize = '80px';
@@ -138,18 +131,18 @@ class Speak extends React.Component<ISpeak> {
 
 		return (
 			<>
-				<img src={App.data_url + word.image_pad} draggable={false}/>			
-				<div className="speak_contents">
-					<div className="entry_box" style={{opacity: (this._prog >= MYProg.ENTRY ? 1 : 0)}} onClick={this._onEntry}>
-						<span className="speak_entry" style={{fontSize}}>{word.entry}</span>
-					</div>
-					<div className="sentence_box" style={{opacity: (this._prog >= MYProg.SENTENCE ? 1 : 0)}} onClick={this._onSentence}>
-						<div className="speak_sentence">
-							<WrapTextNew maxSize={55} minSize={52} lineHeight={120} view={this._prog >= MYProg.ENTRY_PLAYING}>{this._jsx}</WrapTextNew>
-						</div>
-
-					</div>					
+			<img src={App.data_url + word.image_pad} draggable={false}/>			
+			<div className="speak_contents">
+				<div className="entry_box" style={{opacity: (this._prog >= MYProg.ENTRY ? 1 : 0)}} onClick={this._onEntry}>
+					<span className="speak_entry" style={{fontSize}}>{word.entry}</span>
 				</div>
+				<div className="sentence_box" style={{opacity: (this._prog >= MYProg.SENTENCE ? 1 : 0)}} onClick={this._onSentence}>
+					<div className="speak_sentence">
+						<WrapTextNew maxSize={55} minSize={52} lineHeight={120} view={this._prog >= MYProg.ENTRY_PLAYING}>{this._jsx}</WrapTextNew>
+					</div>
+
+				</div>					
+			</div>
 			</>
 		);
 	}

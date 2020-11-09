@@ -10,9 +10,6 @@ import { App } from '../../../App';
 import * as felsocket from '../../../felsocket';
 
 import { SENDPROG, IStateCtx, IActionsCtx } from '../t_store';
-
-import SendUINew from '../../../share/sendui_new';
-
 import { IMsg,IData,IRollMsg,IFocusMsg } from '../../common';
 
 import ScriptContainer from '../../script_container';

@@ -1,18 +1,18 @@
 import * as React from 'react';
 
-import { Observer, observer } from 'mobx-react';
+import { observer } from 'mobx-react';
 
-import { StudentContext, useStudent, IStateCtx, IActionsCtx } from './s_store';
+import { IStateCtx, IActionsCtx } from '../s_store';
 import { observable } from 'mobx';
 
 import { Keyboard, state as keyBoardState } from '@common/component/Keyboard';
 import * as kutil from '@common/util/kutil';
 
 import KTextInput from '@common/component/KTextInput';
-import { App } from '../../App';
-import SendUINew from '../../share/sendui_new';
-import * as felsocket from '../../felsocket';
-import { ISpellingReturnMsg } from '../common';
+import { App } from '../../../App';
+import SendUINew from '../../../share/sendui_new';
+import * as felsocket from '../../../felsocket';
+import { ISpellingReturnMsg } from '../../common';
 
 const enum MYSTATE {
 	READY,
@@ -22,7 +22,7 @@ const enum MYSTATE {
 	COMPLETE,
 }
 
-interface ITypingQuiz {
+interface IVocaTypingQuiz {
 	view: boolean;
 	entry: string;
 	state: IStateCtx;
@@ -30,7 +30,7 @@ interface ITypingQuiz {
 }
 
 @observer
-class VocaTypingQuiz extends React.Component<ITypingQuiz> {
+class VocaTypingQuiz extends React.Component<IVocaTypingQuiz> {
 	@observable private _focusIdx: number = -1;
 	@observable private _result: ''|'correct'|'wrong' = '';
 
@@ -43,19 +43,21 @@ class VocaTypingQuiz extends React.Component<ITypingQuiz> {
 
 	private _stime = 0;
 
-	constructor(props: ITypingQuiz) {
+	constructor(props: IVocaTypingQuiz) {
 		super(props);
 		keyBoardState.state = 'on';
 	}
-	public componentWillUpdate(next: ITypingQuiz) {
+	public componentWillUpdate(next: IVocaTypingQuiz) {
 		if(next.entry !== this.props.entry) {
 			while(this._inputs.length > 0) this._inputs.pop();
 			while(this._results.length > 0) this._results.pop();
 			while(this._inputWrong.length > 0) this._inputWrong.pop();
 		}
 	}	
-	public componentDidUpdate(prev: ITypingQuiz) {
-		if(this.props.view && !prev.view) {
+	public componentDidUpdate(prev: IVocaTypingQuiz) {
+		const { view } = this.props;
+
+		if(view && !prev.view) {
 			keyBoardState.state = 'on';
 			keyBoardState.capslock = false;
 			keyBoardState.disableDone = true;
@@ -64,7 +66,7 @@ class VocaTypingQuiz extends React.Component<ITypingQuiz> {
 			this._focusIdx = 0;
 			this._state = MYSTATE.READY;
 			this._stime = 0;
-		} else if(!this.props.view && prev.view) {
+		} else if(!view && prev.view) {
 			keyBoardState.state = 'hide';
 			keyBoardState.capslock = false;
 			keyBoardState.disableDone = false;
@@ -74,6 +76,7 @@ class VocaTypingQuiz extends React.Component<ITypingQuiz> {
 			while(this._inputs.length > 0) this._inputs.pop();
 		}
 	}
+
 	private _onRef = (idx: number, input: KTextInput) => {
 		if(!this.props.view) return;
 		this._inputs[idx] = input;
@@ -105,8 +108,7 @@ class VocaTypingQuiz extends React.Component<ITypingQuiz> {
 			input.ipt.selectionStart = 0;
 			input.ipt.selectionEnd = 0;
 			this._focusIdx = idx + 1;
-			input.ipt.focus();
-			
+			input.ipt.focus();			
 		}		
 	}
 	private _onDone = async (idx: number) => {
@@ -187,7 +189,6 @@ class VocaTypingQuiz extends React.Component<ITypingQuiz> {
 				felsocket.sendTeacher($SocketType.MSGTOTEACHER, msg);
 			}
 			this._state = MYSTATE.SENDED;
-
 
 			for(let i = 0; i  < this._inputs.length; i++) {
 				const ipt = this._inputs[i];
@@ -286,22 +287,4 @@ class VocaTypingQuiz extends React.Component<ITypingQuiz> {
 	}
 }
 
-const VocaTyping = useStudent((store: StudentContext) => (
-	<Observer>{() => {
-		const { viewDiv, prog } = store.state;
-		const view = (viewDiv === 'content' && prog === 'spelling');
-
-		return (
-			<VocaTypingQuiz 
-				view={view}
-				entry={(view) ? store.actions.getWord().entry : ''}
-				actions={store.actions} 
-				state={store.state}
-			/>
-		);
-	}}</Observer>
-));
-
-export default VocaTyping;
-
-
+export default VocaTypingQuiz;

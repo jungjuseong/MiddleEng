@@ -1,26 +1,23 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import { observable } from 'mobx';
 import { observer } from 'mobx-react';
 
-import { ToggleBtn } from '@common/component/button';
 import * as butil from '@common/component/butil';
 import * as kutil from '@common/util/kutil';
-import * as common from './common';
+import { IQuizPage } from './common';
 import { App } from '../App';
 import PreInBox from '../share/PreInBox';
 
 import QuizMCBtn from '../share/QuizMCBtn';
 import WrapTextNew from '@common/component/WrapTextNew';
-import { getNextId } from 'mobx/lib/internal';
 
 @observer
-class QuizUsage extends React.Component<common.IQuizPage> {
+class QuizUsage extends React.Component<IQuizPage> {
 	@observable private _selected: number = 0;
 	@observable private _rcalcNum = 0;
 	private _jsx: JSX.Element;
 	private _div?: HTMLElement;
-	constructor(props: common.IQuizPage) {
+	constructor(props: IQuizPage) {
 		super(props);
 
 		const qs = props.quiz.quiz_usage;
@@ -41,6 +38,7 @@ class QuizUsage extends React.Component<common.IQuizPage> {
 
 		this._jsx = this._getJSX(qs.sentence, sMax);
 	}
+
 	private _getJSX(text: string, max: string) {
 		const nodes = butil.parseBlock(text, 'block', max);
 		return (
@@ -50,6 +48,7 @@ class QuizUsage extends React.Component<common.IQuizPage> {
 		);
 
 	}
+
 	private async _soundComplete() {
 		if(this.props.idx > 0) await kutil.wait(300);
 		if(this.props.on) this.props.onSoundComplete(this.props.idx);
@@ -59,48 +58,49 @@ class QuizUsage extends React.Component<common.IQuizPage> {
 		this._selected = 0;
 		this._setBlock(0, false);
 	}
-	public componentDidUpdate(prev: common.IQuizPage) {
-		if(this.props.on && !prev.on) {
-			if(this.props.isTeacher) this._selected = 0;
+
+	public componentDidUpdate(prev: IQuizPage) {
+		const { on,view, quiz, isTeacher,quizProg } = this.props;
+		if(on && !prev.on) {
+			if(isTeacher) this._selected = 0;
 
 			this._soundComplete();
 			
-		} else if(!this.props.on && prev.on) {
-			if(this.props.isTeacher) this._selected = 0;
+		} else if(!on && prev.on) {
+			if(isTeacher) this._selected = 0;
 		}
 		
-		if(this.props.view && !prev.view) {
+		if(view && !prev.view) {
 			this._rcalcNum = 0;
 			this._selected = 0;
 			this._setBlock(0, false);
-		} else if(!this.props.view && prev.view) {
+		} else if(!view && prev.view) {
 			this._rcalcNum = 0;
 			this._selected = 0;
 			this._setBlock(0, false);
 		}
 
-		if(this.props.view && this.props.quizProg === 'result' && prev.quizProg !== 'result') {
-			const quiz = this.props.quiz.quiz_usage;
-
-			this._setBlock(quiz.correct, false);
+		if(view && quizProg === 'result' && prev.quizProg !== 'result') {
+			this._setBlock(quiz.quiz_usage.correct, false);
 		}
 	}
 
 	private _onMc = (num: number) => {
-		if(!this.props.on) return;
-		else if(this.props.quizProg !== 'quiz') return;
+		const { on,idx, quiz,onItemChange, isTeacher,quizProg } = this.props;
+
+		if(!on) return;
+		else if(quizProg !== 'quiz') return;
 
 		if(this._selected === num) this._selected = 0;
 		else this._selected = num;
 
-		if(!this.props.isTeacher) {
-			const word = this.props.quiz;
-			word.app_result = this._selected === word.quiz_usage.correct;
+		if(!isTeacher) {
+			quiz.app_result = (this._selected === quiz.quiz_usage.correct);
 		}
 
 		this._setBlock(this._selected, true);
 
-		if(this.props.onItemChange) this.props.onItemChange(this.props.idx, this._selected + '');
+		if(onItemChange) onItemChange(idx, this._selected + '');
 	}
 
 	private _refSentence = (div: HTMLDivElement) => {
@@ -110,23 +110,21 @@ class QuizUsage extends React.Component<common.IQuizPage> {
 	}
 
 	private _setBlock = (num: number, bView: boolean) => {
+		const { quiz } = this.props;
 		if(!this._div) return;
 
 		let block = this._div.querySelector('.block');
 		if(!block) return;
 
-		const quiz = this.props.quiz.quiz_usage;
-
 		if(num < 1 || num > 3) {
-			num = quiz.correct;
+			num = quiz.quiz_usage.correct;
 			bView = false;
 		}
 
 		let choice: string|undefined;
-		if(num === 1) choice = quiz.choice1;
-		else if(num === 2) choice = quiz.choice2;
-		else choice = quiz.choice3;
-		
+		if(num === 1) choice = quiz.quiz_usage.choice1;
+		else if(num === 2) choice = quiz.quiz_usage.choice2;
+		else choice = quiz.quiz_usage.choice3;		
 
 		if(bView && !block.classList.contains('view')) block.classList.add('view');
 		else if(!bView && block.classList.contains('view')) block.classList.remove('view');
@@ -134,11 +132,10 @@ class QuizUsage extends React.Component<common.IQuizPage> {
 
 		block.innerHTML = choice;
 		this._rcalcNum++;
-	}
-	
+	}	
 
 	public render() {
-		const {isGroup, group, isTeacher, quizProg, hasPreview, percent}  = this.props;
+		const { isTeacher, quizProg, hasPreview, percent }  = this.props;
 		const word = this.props.quiz;
 		const quiz = word.quiz_usage;
 		const correct = quiz.correct;

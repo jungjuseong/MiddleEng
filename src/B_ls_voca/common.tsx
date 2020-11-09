@@ -104,6 +104,7 @@ interface ITmqCOD {
 	codType: string;
 	codSeq: number;
 }
+
 export interface IWordData extends IShareQuizData, IInClassStudyProps {
 	idx: string;
 	entry: string;
@@ -130,7 +131,7 @@ export interface IWordData extends IShareQuizData, IInClassStudyProps {
 	usage_script: string;
 	key_word: boolean;
 	sentence_meaning: string;
-	reading : boolean;
+	reading: boolean;
 
 	app_checked: boolean;
 	app_studied: boolean;

@@ -1,5 +1,5 @@
 @import "../../share/video-direction.scss";
-@import "./t_voca_list.scss";
+@import "./t_voca_list/index.scss";
 @import './t_quiz_select.scss';
 @import './t_timer.scss';
 @import './t_quiz.scss';
@@ -31,10 +31,6 @@
 @mixin t_contentbox{
 	$W: 1280px;
 	$H: 800px;
-
-
-
-
 	.content-container{
 		@include my-scroll-container($W, $H);
 		position: absolute;
