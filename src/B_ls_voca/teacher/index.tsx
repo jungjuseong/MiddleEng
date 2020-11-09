@@ -16,7 +16,6 @@ interface ITeacher {
 	actions: IActionsCtx;
 }
 
-
 @observer
 class TeacherComponent extends React.Component<ITeacher> {
 
@@ -24,7 +23,7 @@ class TeacherComponent extends React.Component<ITeacher> {
 		this.props.state.hasPreview = true; // pre-class 초록색그래프 사전 학습 원상복구 
 	}
 	public render() {
-		const {state, actions} = this.props;
+		const { state, actions } = this.props;
 		return (
 			<>
 				<div id="preload_hidden">
@@ -32,14 +31,9 @@ class TeacherComponent extends React.Component<ITeacher> {
 					<span className="set" /> <span className="unlimit" /> <span className="start" />
 					<span className="time1" /><span className="time2" /> <span className="time3" />
 				</div>
-				<SVGBg 
-					className="bg_svg" 
-					data="/content/digenglish_lib/images/theme0_bg.svg" 
-					{...state.svg_bg}
-				/>
+				<SVGBg className="bg_svg" data="/content/digenglish_lib/images/theme0_bg.svg" {...state.svg_bg}/>
 				<ContentBox prog={state.prog} state={state} actions={actions}/>
-				<Navi {...state.navi} onLeftClick={actions.naviLeft} onRightClick={actions.naviRight}/>
-				
+				<Navi {...state.navi} onLeftClick={actions.naviLeft} onRightClick={actions.naviRight}/>				
 			</>
 		);
 	}

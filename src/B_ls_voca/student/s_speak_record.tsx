@@ -120,13 +120,13 @@ class RecordSpeak extends React.Component<IRecordSpeak> {
 			else felsocket.startVoiceRecord();
 		}
 	}
-	private _onStopRecord = () => {
 
+	private _onStopRecord = () => {
 		const { view,actions,mediaType } = this.props;
 
 		if(!view) return;
-		else if(this._state !== MYSTATE.RECORDING && this._state !== MYSTATE.WAIT_START) return;
-		else if(this._time >= 0 && this._time <= 2.0) return;
+		if(this._state !== MYSTATE.RECORDING && this._state !== MYSTATE.WAIT_START) return;
+		if(this._time >= 0 && this._time <= 2.0) return;
 		
 		if(this._state === MYSTATE.RECORDING) {
 			this._state = MYSTATE.WAIT_END;
@@ -141,11 +141,11 @@ class RecordSpeak extends React.Component<IRecordSpeak> {
 			else felsocket.stopVoiceRecord();
 		}
 	}
+
 	private _onSend = () => {
 		const { view, actions, recorded } = this.props;
 
-		if(!view) return;
-		else if(this._state !== MYSTATE.RECORDED) return;
+		if(!view || this._state !== MYSTATE.RECORDED) return;
 
 		this._state = MYSTATE.SENDING;
 		actions.onUploadMedia(recorded);
@@ -156,13 +156,13 @@ class RecordSpeak extends React.Component<IRecordSpeak> {
 		}
 	}
 	private _onPlayStop = () => {
-		if(!this.props.view) return;
-		else if(this._state < MYSTATE.RECORDED) return;
+		if(!this.props.view || this._state < MYSTATE.RECORDED) return;
 
 		this._playCnt++;
 		if(this._player.bPlay) this._player.pause();
 		else this._player.play();
 	}
+
 	@action private _startedRecord = () => {
 		if(!this.props.view) return;
 		if(this._state !== MYSTATE.WAIT_START) return;
@@ -173,6 +173,7 @@ class RecordSpeak extends React.Component<IRecordSpeak> {
 
 		window.requestAnimationFrame(this._countDown);
 	}
+
 	@action private _stopedRecord = () => {
 		if(!this.props.view) return;
 		else if(this._state !== MYSTATE.WAIT_END) return;
@@ -198,9 +199,7 @@ class RecordSpeak extends React.Component<IRecordSpeak> {
 		this._audio.mediaInited(audio as IMedia);
 	}
 	private _onContents = () => {
-		if(!this.props.view) return;
-		else if(this._state < MYSTATE.SENDED) return;
-
+		if(!this.props.view || this._state < MYSTATE.SENDED) return;
 		this._hideContents = !this._hideContents;
 	}
 	private _onEntry = () => {

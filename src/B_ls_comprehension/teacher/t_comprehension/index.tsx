@@ -26,8 +26,6 @@ import QuizMCBtn from '../../../share/QuizMCBtn';
 import LetsTalk from './_lets_talk';
 import ComprePopup from './_compre_popup';
 
-const SwiperComponent = require('react-id-swiper').default;
-
 /* 페이지 관련 class */
 class NItem extends React.Component<{ idx: number, on: boolean, onClick: (idx: number) => void }> {
 	private _click = () => {

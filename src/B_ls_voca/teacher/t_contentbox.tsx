@@ -1,17 +1,17 @@
 import * as React from 'react';
+import { observable } from 'mobx';
 import { observer } from 'mobx-react';
 import * as _ from 'lodash';
 
 import { ToggleBtn } from '@common/component/button';
 import { IStateCtx, IActionsCtx, TProg } from './t_store';
 import { App } from '../../App';
-import { observable } from 'mobx';
 import VocaList from './t_voca_list';
 import QuizSelect from './t_quiz_select';
 import Timer from './t_timer';
 import TQuiz from './t_quiz';
 import Grouping from './t_grouping';
-import TBoard from './t_board';
+import Board from './t_board';
 
 import VideoDirection from '../../share/video-direction';
 
@@ -34,13 +34,14 @@ class ContentBox extends React.Component<IContentBox> {
 	private _board: React.CSSProperties = {};
 	
 	private _goToIntro = () => {
-        alert("go to Intro page");
+        alert('go to Intro page');
         return;
     }
 
 	public componentWillUpdate(next: IContentBox) {
-		const { prog, state } = this.props;
-		if(prog !== next.prog) {
+		const { state,prog } = this.props;
+		
+		if(state.prog !== next.state.prog) {
 			if(state.isGroup) {
 				this._grouping.display = '';
 				this._board.display = '';
@@ -54,13 +55,15 @@ class ContentBox extends React.Component<IContentBox> {
 			}
 		}
 	}
+
 	public componentDidUpdate(prev: IContentBox) {
-		const { prog, state } = this.props;
+		const { state,prog } = this.props;
+
 		if(prog !== prev.prog) {
 			let idx = 0;
 			let idx_sub = 0;
 			if(state.isGroup) {
-				switch(prog) {
+				switch (prog) {
 					case 'list': 			idx = 1; idx_sub = 0; break;
 					case 'quiz-select': 	idx = 2; idx_sub = 0; break;
 					case 'grouping': 		idx = 3; idx_sub = 0; break;
@@ -70,7 +73,7 @@ class ContentBox extends React.Component<IContentBox> {
 					default: 				break;
 				}
 			} else {
-				switch(prog) {
+				switch (prog) {
 					case 'list': 			idx = 1; idx_sub = 0; break;
 					case 'quiz-select': 	idx = 2; idx_sub = 0; break;
 					case 'timer': 			idx = 3; idx_sub = 0; break;
@@ -102,12 +105,14 @@ class ContentBox extends React.Component<IContentBox> {
 			}
 		}
 	}
+
 	public render() {
-		const { state, actions } = this.props;
+		const { prog, state, actions } = this.props;
 		const style_sub: React.CSSProperties = {
 			left: (-this._idx_sub * _WIDTH) + 'px',
 			transitionDelay: this._bRapid_sub ? '0s' : '',
 		};
+
 		return (
 			<div className={'content-container'}>
 				<div className="close_box">
@@ -116,7 +121,7 @@ class ContentBox extends React.Component<IContentBox> {
 				<div className="content-wrapper" style={{left: (-this._idx * _WIDTH) + 'px'}}>
 					<div>
 						<VideoDirection 
-							className="video-direction" 
+							className="video-direction"
 							view={state.viewDiv === 'direction'} 
 							on={state.directionON} 
 							isTeacher={true}
@@ -128,14 +133,18 @@ class ContentBox extends React.Component<IContentBox> {
 							<div className="lesson">{App.lesson}</div>
 						</VideoDirection>
 					</div>
-					<div><VocaList view={state.prog === 'list'} state={state} actions={actions}/></div>
-					<div><QuizSelect view={state.prog === 'quiz-select'} state={state} actions={actions}/></div>
+					<div>
+						<VocaList view={prog === 'list'} state={state} actions={actions}/>
+					</div>
+					<div>
+						<QuizSelect view={prog === 'quiz-select'} state={state} actions={actions}/>
+					</div>
 					<div className="sub-container">
 						<div className="sub-wrapper" style={style_sub}>
-							<div style={{...this._grouping}}><Grouping view={state.prog === 'grouping'} state={state} actions={actions}/></div>
-							<div style={{...this._timer}}><Timer view={state.prog === 'timer'} state={state} actions={actions}/></div>
-							<div style={{...this._board}}><TBoard view={state.prog === 'board'} numOfReturn={state.numOfReturn} state={state} actions={actions}/></div>
-							<div><TQuiz view={state.prog === 'quiz'} quizProg={state.quizProg} numOfReturn={state.numOfReturn} state={state} actions={actions}/></div>
+							<div style={{...this._grouping}}><Grouping view={prog === 'grouping'} state={state} actions={actions}/></div>
+							<div style={{...this._timer}}><Timer view={prog === 'timer'} state={state} actions={actions}/></div>
+							<div style={{...this._board}}><Board view={prog === 'board'} numOfReturn={state.numOfReturn} state={state} actions={actions}/></div>
+							<div><TQuiz view={prog === 'quiz'} quizProg={state.quizProg} numOfReturn={state.numOfReturn} state={state} actions={actions}/></div>
 						</div>
 					</div>
 				</div>

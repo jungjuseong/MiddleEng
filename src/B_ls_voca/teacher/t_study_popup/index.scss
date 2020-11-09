@@ -1,7 +1,7 @@
 
-@import '../../share/CoverPopup.scss';
-@import './t_voca_detail.scss';
-@import './t_speak.scss';
+@import '../../../share/CoverPopup.scss';
+@import '../t_voca_detail/index.scss';
+@import '../t_speak.scss';
 
 @mixin t_study_popup{
 	.t_study_popup{

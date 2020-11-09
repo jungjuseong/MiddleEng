@@ -28,14 +28,8 @@ class BtnItem extends React.Component<IBtnItem> {
 	private _onClick = () => {
 		this.props.onClick(this.props.myqtype);
 	}
-	private _onResultS = () => {
-		this.props.onResult(this.props.myqtype, false);
-	}
-	private _onResultG = () => {
-		this.props.onResult(this.props.myqtype, true);
-	}
 	public render() {
-		const {myqtype, qtype, average, viewSingleBtn, view_s, view_g} = this.props;
+		const {myqtype, qtype} = this.props;
 		return (
 			<div className={'quiz_' + myqtype}>
 				<ToggleBtn className={'btn_quiz_' + myqtype} on={myqtype === qtype} onClick={this._onClick}/>
@@ -94,27 +88,34 @@ class QuizSelect extends React.Component<IQuizSelect> {
 		this.props.state.qtype = this._qtype;
 		this.props.state.prog = 'timer';
 	}
+
 	private _onGroup = () => {
+		const { state, actions} = this.props;
 		if(this._qtype === '') return;
 		if(this._numOfStudent < 2) return;
 		App.pub_playBtnTab();
-		this.props.actions.setQuizInfo([], 5, true);
+		actions.setQuizInfo([], 5, true);
 		// this.props.state.isGroup = true;
-		this.props.state.qtype = this._qtype;
-		this.props.state.prog = 'grouping';
+		state.qtype = this._qtype;
+		state.prog = 'grouping';
 	}
+
 	private _setNavi() {
-		this.props.actions.setNaviView(true);
-		this.props.actions.setNavi(true, App.nextBook);
-		this.props.actions.setNaviFnc(
+		const { state, actions} = this.props;
+
+		actions.setNaviView(true);
+		actions.setNavi(true, App.nextBook);
+		actions.setNaviFnc(
 			() => {
-				this.props.state.prog = 'list';
+				state.prog = 'list';
 			},
 			null
 		);
 	}
 	private _reloadedStudent = async () => {
-		if(this.props.view) {
+		const { view} = this.props;
+
+		if(view) {
 			this._numOfStudent = App.students.length;
 		} else {
 			this._numOfStudent = 0;
@@ -122,14 +123,16 @@ class QuizSelect extends React.Component<IQuizSelect> {
 		}
 		
 		await kutil.wait(3000);
-		if(this.props.view) {
+		if(view) {
 			App.pub_reloadStudents(this._reloadedStudent);
 		} else {
 			this._numOfStudent = 0;
 		}
 	}
 	public componentWillUpdate(next: IQuizSelect) {
-		if(next.view && !this.props.view) {
+		const { view } = this.props;
+
+		if(next.view && !view) {
 			felsocket.sendPAD($SocketType.PAD_ONSCREEN, null);
 			this._setNavi();
 			this._qtype = '';
@@ -176,12 +179,14 @@ class QuizSelect extends React.Component<IQuizSelect> {
 		}
 	}
 	public render() {
+		const { view } = this.props;
+
 		const qtype = this._qtype;
 		const selected = this._qtype !== '';
 		const viewSingle = this._souns_s || this._meaning_s || this._spelling_s || this._sentence_s;
 		const style: React.CSSProperties = {};
 
-		if(!this.props.view) {
+		if(!view) {
 			style.visibility = 'hidden';
 			style.transition = 'visibility 0.3s 0.3s';
 		}

@@ -20,7 +20,6 @@ interface INItem {
 	on: boolean;
 	OX: ''|'O'|'X';
 	onClick: (idx: number) => void;
-
 }
 
 /*  페이지 인디게이터 관련  */

@@ -32,10 +32,12 @@ class Timer extends React.Component<ITimer> {
 	}
 
 	public componentWillUpdate(next: ITimer) {
-		if(next.view && !this.props.view) {
+		const { view, actions} = this.props;
+
+		if(next.view && !view) {
 			const qtype = next.state.qtype;
 			const hasPreview = next.state.hasPreview;
-			const words = this.props.actions.getWords();
+			const words = actions.getWords();
 			this._numAll = words.length;
 			let numStudied = 0;
 			let numAi = 0;

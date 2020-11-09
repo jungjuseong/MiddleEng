@@ -1,4 +1,5 @@
-@import './t_study_popup.scss';
+@import '../t_study_popup/index.scss';
+
 @mixin t_voca_list {
     .t_voca_list {
         @include page;
