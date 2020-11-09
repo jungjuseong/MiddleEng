@@ -693,11 +693,19 @@ class Writing extends React.Component<IWriting> {
                             return <NItem key={idx} on={idx === this._curQidx} idx={idx} onClick={this._onPage}/>;
                         })}
                     </div>
-                    <QuizBox 
-                        view={this._viewQuiz} 
-                        data={this.m_data.letstalk} 
-                        onClosed={this._letstalkClosed}
-                    />
+                    <div className={'question' + (state.questionProg >= SENDPROG.COMPLETE ? ' complete' : '')} style={{display: this._tab === 'INTRODUCTION' ? '' : 'none'}}>
+                            {quizs.map((quiz, idx) => {
+                                return (
+                                    <div key={idx} style={{ display: idx === this._curQidx ? '' : 'none' }}>
+                                        <QuizBox 
+                                            view={this.props.view && idx === this._curQidx}
+                                            data={this.m_data.letstalk} 
+                                            onClosed={this._letstalkClosed}
+                                        />                          
+                                    </div>
+                                );
+                            })}
+                        </div>
                 </div>
                 <ComprePopup 
                     type={this.c_popup}
