@@ -290,7 +290,7 @@ class ScriptBox  extends React.Component<IScriptBox> {
 			</>
 		);
 
-		sScript =  props.script.dms_kor[App.lang];
+		sScript =  props.script.dms_kor;
 		sScript = sScript.replace(/<\s*br\s*\/*\s*>/ig, '<br>');
 		arrLine = sScript.split('<br>');
 

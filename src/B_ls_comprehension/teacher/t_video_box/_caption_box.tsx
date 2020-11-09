@@ -26,7 +26,7 @@ export class CaptionBox extends React.Component<{view: boolean, script?: common.
 		if(script) {
 			if(this._viewEng) eng = script.dms_eng;
 			else eng = <>&nbsp;</>;
-			if(this._viewTrans) trans = script.dms_kor[App.lang];
+			if(this._viewTrans) trans = script.dms_kor;
 			else trans = <>&nbsp;</>;
 		} else {
 			eng = <>&nbsp;</>;

@@ -22,15 +22,30 @@ import { TimerState } from '../../../share/Timer';
 
 import LetsTalk from './_lets_talk';
 import ComprePopup from './_compre_popup';
+import { SSL_OP_TLS_BLOCK_PADDING_BUG } from 'constants';
 
 /* 페이지 관련 class */
-class NItem extends React.Component<{ idx: number, on: boolean, onClick: (idx: number) => void }> {
+class NItem_w extends React.Component<{ idx: number, on: boolean, tab: 'INTRODUCTION'|'CONFIRM'|'ADDITIONAL'|'DICTATION'|'SCRIPT', onClick: (idx: number) => void }> {
 	private _click = () => {
 		this.props.onClick(this.props.idx);
 	}
 	public render() {
-		const { idx, on } = this.props;
-		return <span className={on ? 'on' : ''} onClick={this._click}>{idx + 1}</span>;
+        const { idx, on, tab } = this.props;
+        if(tab === 'INTRODUCTION' || tab === 'SCRIPT'){
+            return <span className={on ? 'on' : ''} onClick={this._click}>{idx + 1}</span>;
+        }else if(tab === 'CONFIRM' || tab === 'ADDITIONAL' || tab === 'DICTATION'){
+            var pagetxt = ''
+            if(idx === 0){
+                pagetxt = '보충'
+            }else if (idx === 1){
+                pagetxt = '기본'
+            }else if (idx === 2){
+                pagetxt = '심화'
+            }
+            return <span className={on ? 'on' : ''} onClick={this._click}>{pagetxt}</span>;
+        }else{
+            return <span className={on ? 'on' : ''} onClick={this._click}>{idx + 1}</span>;
+        }
 	}
 }
 
@@ -718,7 +733,7 @@ class Writing extends React.Component<IWriting> {
                 <div className="writing_content_box">
                     <div className="btn_page_box">
                         {quizs.map((page, idx) => {
-                            return <NItem key={idx} on={idx === this._curQidx} idx={idx} onClick={this._onPage}/>;
+                            return <NItem_w key={idx} tab ={this._tab} on={idx === this._curQidx} idx={idx} onClick={this._onPage}/>;
                         })}
                     </div>
                     <div className="img-box">
