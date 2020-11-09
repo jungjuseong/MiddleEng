@@ -69,7 +69,7 @@ var ls_voca = {
 				meaning_end: {_type:obj_e.TYPE_FLOAT, _excel:"W"},
 				sentence_start: {_type:obj_e.TYPE_FLOAT, _excel:"X"},
 				sentence_end: {_type:obj_e.TYPE_FLOAT, _excel:"Y"},
-				usage_video: {_type:obj_e.TYPE_MOVIE, _excel:"Z"},
+				usage_video: {_type:obj_e.TYPE_MOVIE, _excel:"Z",_default:''},
 				usage_start: {_type:obj_e.TYPE_FLOAT, _excel:"AA"},
 				usage_end: {_type:obj_e.TYPE_FLOAT, _excel:"AB"},
 				usage_script: {_type:obj_e.TYPE_TEXT, _excel:"AC"},
@@ -178,7 +178,7 @@ var ls_voca = {
 
 var ls_comprehension = {
 	_type:obj_e.TYPE_OBJECT,
-	_excelSheets:"comprehension",
+	_excelSheets:"Comprehension",
 	_startRow:3,	
 	video: {_type:obj_e.TYPE_MOVIE, _excel:"A"},
     video_start: {_type:obj_e.TYPE_SECOND, _excel:"Q", default: 0},
@@ -214,7 +214,7 @@ var ls_comprehension = {
 	},
 	quizs: {
 		_type:obj_e.TYPE_LIST,
-		_excelSheets:"quiz",
+		_excelSheets:"Question",
 		_startRow:2,
 		_typeOfQuiz: 'mc',
 		_key:"seq",		
@@ -237,10 +237,9 @@ var ls_comprehension = {
 	},
 	scripts: {
 		_type:obj_e.TYPE_LIST,
-		_excelSheets:"script",
+		_excelSheets:"Script",
 		_startRow:2,
 		_key:"seq",			
-		
 		_item: {
 			_type: obj_e.TYPE_OBJECT,
 			seq: {_type:obj_e.TYPE_INT, _excel:"A"},
@@ -250,20 +249,8 @@ var ls_comprehension = {
 			dms_end: {_type:obj_e.TYPE_SECOND, _excel:"E"},
 			qnums: {_type:obj_e.TYPE_ARRAY, _excel:"F", _default: []},
 			dms_eng: {_type:obj_e.TYPE_TEXT, _excel:"G"},
-			dms_kor: {_type:obj_e.TYPE_MULTI_LANG, _excel:"H", _langs:["ko", "ja", "zh-Hans", "zh-Hant", "vi", "id", "es"]},
+			dms_kor: {_type:obj_e.TYPE_TEXT, _excel:"H"},
 		}
-	},
-	letstalk: {
-		_type:obj_e.TYPE_OBJECT,
-		_excelSheets:"lets_talk",
-		_startRow:2,
-		_type: obj_e.TYPE_OBJECT,
-        sentence: {_type:obj_e.TYPE_TEXT, _excel:"A", _default: ''},
-        audio: {_type:obj_e.TYPE_SOUND, _excel:"B", _default: ''},
-        img1: {_type:obj_e.TYPE_IMAGE, _excel:"C", _default: ''},
-        img2: {_type:obj_e.TYPE_IMAGE, _excel:"D", _default: ''},
-        sample: {_type:obj_e.TYPE_TEXT, _excel:"E", _default: ''},
-        hint: {_type:obj_e.TYPE_TEXT, _excel:"F", _default: ''}
 	}
 };
 
@@ -492,10 +479,10 @@ var b_rw_comprehension = {
 
 
 var area = document.getElementById('area');
-alert('b_rw_comprehension_y3');
-area.value = JSON.stringify(b_rw_comprehension_y3);
+alert('ls_comprehension');
+area.value = JSON.stringify(ls_comprehension);
 // document.write(JSON.stringify(korea_speak_quiz ))
-console.log(JSON.stringify(b_rw_comprehension_y3));
+console.log(JSON.stringify(ls_comprehension));
 	</script>
  </body>
 </html>

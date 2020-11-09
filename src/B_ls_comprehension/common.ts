@@ -68,7 +68,7 @@ export interface IScript {
 	readonly dms_start: number;
 	readonly dms_end: number;
 	readonly dms_eng: string;
-	readonly dms_kor: IMultiLang;
+	readonly dms_kor: string;
 	readonly _sort_idx: number; 
 	readonly dms_seq: number;
 	qnums: number[]|undefined;
@@ -106,7 +106,6 @@ export interface IData {
 	speakerE: ISpeaker;
 	quizs: IQuiz[];
 	scripts: IScript[];
-	letstalk: ILetstalk;
 }
 
 interface IRGBA {

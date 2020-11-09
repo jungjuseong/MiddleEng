@@ -830,10 +830,7 @@ class Comprehension extends React.Component<IComprehension> {
         const qlen = quizs.length;
         const gap = 32;
         const arrowL = (this._curQidx - (qlen - 1) / 2) * gap;
-        
-        const letstalk = this.m_data.letstalk;
-        const viewLetstalk = !(letstalk.sentence === '' || letstalk.audio === '' || letstalk.img1 === '' || letstalk.sample === '' || letstalk.hint === '');
-        
+            
         return (
             <div className={'t_comprehension ' + this._Title} style={style}>
                 <div className="top">
@@ -1000,12 +997,7 @@ class Comprehension extends React.Component<IComprehension> {
                     originY={0}
                     onSend={this.onSend}
                 />
-                <LetsTalk 
-                    view={this._letstalk} 
-                    data={this.m_data.letstalk} 
-                    onClosed={this._letstalkClosed}
-                />
-            </div>
+                </div>
         );
     }
 }
