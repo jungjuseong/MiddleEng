@@ -13,7 +13,7 @@
 		height:height('teacher/images/bg_write.png');
 
 			.pop_bg{
-				padding-top:45px;
+				padding-top:10px;
 				margin:0 auto;
 				position:relative;
 				
@@ -100,7 +100,7 @@
 								border-radius: 10px;
 							}
 							.btn_zoom {
-								top: 60px; right: 86px;
+								top: 40px; right: 86px;
 								@include btn_down_dis(
 									resolve('teacher/images/btn_close.png'),
 									resolve('teacher/images/btn_close_down.png'),
@@ -109,36 +109,6 @@
 									height('teacher/images/btn_close.png')
 								);
 							}
-						}
-					}
-					.sentence_box{
-						position: relative;
-						height: 160px;
-						&>div{
-							position: relative;
-							display: inline-block;
-							top: 80px;
-							transform: translateY(-50%);
-
-							.btn_audio{
-								@include btn_on(
-									resolve('teacher/images/btn_speaker.png'),
-									resolve('teacher/images/btn_speaker_on.png'),
-									width('teacher/images/btn_speaker.png'),
-									height('teacher/images/btn_speaker.png')
-								);
-								vertical-align: top;
-								margin-top: 12px;
-								margin-right: 12px;
-							}
-							.question_box{
-								text-align: left;
-								display: inline-block;
-								vertical-align: top;
-
-								max-width: 1000px;
-							}
-
 						}
 					}
 
@@ -153,12 +123,42 @@
 								vertical-align: middle;
 							}
 						}
+						.sentence_box{
+							position: relative;
+							height: 100px;
+							&>div{
+								position: relative;
+								display: inline-block;
+								top: 80px;
+								transform: translateY(-50%);
+	
+								.btn_audio{
+									@include btn_on(
+										resolve('teacher/images/btn_speaker.png'),
+										resolve('teacher/images/btn_speaker_on.png'),
+										width('teacher/images/btn_speaker.png'),
+										height('teacher/images/btn_speaker.png')
+									);
+									vertical-align: top;
+									margin-top: 12px;
+									margin-right: 12px;
+								}
+								.question_box{
+									text-align: left;
+									display: inline-block;
+									vertical-align: top;
+	
+									max-width: 1000px;
+								}
+	
+							}
+						}
 						.balloon { 
 							position: relative; 
 							background-color: #fff; 
 							border-radius: 10px; 
 							width: 900px;
-							height: 120px;
+							height: 240px;
 							text-align: left;
 							padding: 0 20px;
 
@@ -200,21 +200,6 @@
                                         }
                                     }
 								}
-							}
-
-							&:after { 
-								content: ''; 
-								position: absolute; 
-								left: 0; 
-								top: 50%; 
-								width: 0; 
-								height: 0; 
-								border: 15px solid transparent; 
-								border-right-color: #fff; 
-								border-left: 0; 
-								margin-top: -15px; 
-								margin-left: -15px; 
-
 							}
 
 							&.view-hint{
