@@ -2,7 +2,7 @@
     "introduction": [{
         "activity_code": "A",
         "seq": 1,
-        "img": "y3l1u1_011_letstalk_01.jpg",
+        "img": "001.png",
         "questions": "What are the people doing?",
         "audio": "talk_001.mp3",
         "ex_answer": "They are skiing.",
@@ -11,7 +11,7 @@
     }, {
         "activity_code": "A",
         "seq": 2,
-        "img": "",
+        "img": "002.png",
         "questions": "What are the people doing? And where are they?",
         "audio": "talk_002.mp3",
         "ex_answer": "They are riding a horse. And they are in the park.",
@@ -20,7 +20,7 @@
     }, {
         "activity_code": "A",
         "seq": 3,
-        "img": "",
+        "img": "003.png",
         "questions": "Where are the people?",
         "audio": "talk_003.mp3",
         "ex_answer": "They are in the water park.",
