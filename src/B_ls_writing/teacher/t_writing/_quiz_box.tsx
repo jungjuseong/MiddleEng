@@ -139,7 +139,7 @@ class LetsTalk extends React.Component<ILetsTalk> {
 								<div className={'balloon' + (this._hint ? ' view-hint' : '')}>
 									<div className="sentence_box">
 										<div>
-											<BtnAudio className="btn_audio" url={App.data_url + data.audio} ref={this._refAudio} />
+											{/* <BtnAudio className="btn_audio" url={App.data_url + data.audio} ref={this._refAudio} /> */}
 											<div className="question_box" onClick={this._onClick}>
 												{this._jsx_sentence}
 											</div>
@@ -147,7 +147,7 @@ class LetsTalk extends React.Component<ILetsTalk> {
 									</div>
 									<SwiperComponent {...this._soption} ref={this._refSwiper}>
 										<div>
-											{/* <div className={'sample' + (this._hint ? ' hide' : '')}>{this._jsx_sample}</div> */}
+											<div className={'sample' + (this._hint ? ' hide' : '')}></div>
 											<div className={'hint' + (this._hint ? '' : ' hide')}>{this._jsx_hint}</div>
 										</div>
 									</SwiperComponent>
