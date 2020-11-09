@@ -12,6 +12,208 @@
 		width:width('teacher/images/bg_write.png');
 		height:height('teacher/images/bg_write.png');
 
+			.question_bg{
+				padding-top:10px;
+				margin:0 auto;
+				position:relative;
+				
+				.closed_hint{
+					display:none;
+				}
+				
+				.btn_hint{
+					@include btn_on(
+						resolve('teacher/images/btn_hint.png'),
+						resolve('teacher/images/btn_hint_down.png'),
+						width('teacher/images/btn_hint.png'),
+						height('teacher/images/btn_hint.png'),
+					);
+					position:absolute;
+					right:20px;
+					top:65px;
+					z-index: 2;
+				}
+
+				.popbox{
+					position: absolute;
+					top: 50px; bottom: 0px;
+					left: 0px; right: 0px;
+					text-align: center;
+					letter-spacing: -0.6px;
+					white-space: normal;
+					font-size: 34px;
+
+					span.word{
+						display: inline-block;
+						padding: 0px 6px;
+						white-space: nowrap;
+					}
+
+					.image_box{
+						position:relative;
+						margin-top: 40px;
+						&>img{
+							width: 409px;
+							height: 249px;
+							margin: 0px 10px;
+						}
+						.btn_zoom1 {
+							position: absolute; top: 5px; right: 368px;
+							z-index: 1;
+							@include btn_on(
+								resolve('teacher/images/btn_zoom.png'),
+								resolve('teacher/images/btn_zoom.png'),
+								width('teacher/images/btn_zoom.png'),
+								height('teacher/images/btn_zoom.png')
+							);
+							background-size: cover;
+							transition-duration: 0.3s;
+							&.notonly{
+								position: absolute; top: 5px; right: 583px;
+							}
+						}
+						.btn_zoom2 {
+							position: absolute; top: 5px; right: 153px;
+							z-index: 1;
+							@include btn_on(
+								resolve('teacher/images/btn_zoom.png'),
+								resolve('teacher/images/btn_zoom.png'),
+								width('teacher/images/btn_zoom.png'),
+								height('teacher/images/btn_zoom.png')
+							);
+							background-size: cover;
+							transition-duration: 0.3s;
+							&.notonly{
+								position: absolute; top: 5px; right: 368px;
+							}
+						}
+
+						&.zoom{
+							z-index: 10001;
+							width:100%; height: 100%;
+							top: 0px; bottom:0px;
+			
+							padding: 80px 108px;
+							background-color: rgba(0, 0, 0, 0.9);
+							
+							&>.img{
+								border-radius: 10px;
+							}
+							.btn_zoom {
+								top: 40px; right: 86px;
+								@include btn_down_dis(
+									resolve('teacher/images/btn_close.png'),
+									resolve('teacher/images/btn_close_down.png'),
+									resolve('teacher/images/btn_close.png'),
+									width('teacher/images/btn_close.png'),
+									height('teacher/images/btn_close.png')
+								);
+							}
+						}
+					}
+
+					.speechbubble_box{
+						position: relative;
+						margin-bottom: 20px;
+
+						&>div{
+							display: inline-table;
+							&>div{
+								display: table-cell;
+								vertical-align: middle;
+							}
+						}
+						.sentence_box{
+							position: relative;
+							height: 100px;
+							&>div{
+								position: relative;
+								display: inline-block;
+								top: 80px;
+								transform: translateY(-50%);
+	
+								.btn_audio{
+									@include btn_on(
+										resolve('teacher/images/btn_speaker.png'),
+										resolve('teacher/images/btn_speaker_on.png'),
+										width('teacher/images/btn_speaker.png'),
+										height('teacher/images/btn_speaker.png')
+									);
+									vertical-align: top;
+									margin-top: 12px;
+									margin-right: 12px;
+								}
+								.question_box{
+									text-align: left;
+									display: inline-block;
+									vertical-align: top;
+	
+									max-width: 1000px;
+								}
+	
+							}
+						}
+						.balloon { 
+							position: relative; 
+							background-color: #fff; 
+							border-radius: 10px; 
+							width: 900px;
+							height: 220px;
+							text-align: left;
+							padding: 0 20px;
+
+							.swiper-container {	
+								width: 885px;
+								left: 10px;
+
+								.swiper-scrollbar{
+									width: 9px;
+									right: 3px;
+									top: 5%;
+									height: 90%;
+									background-color: transparent;
+									.swiper-scrollbar-drag {
+										background-color: rgba(0, 0, 0, 0.25);
+									}
+								}
+								&>div{
+									width: 850px;
+									max-height: 120px;
+
+									.sample{
+										min-height: 55px;
+										padding-bottom: 5px;
+										span.block{
+											color: transparent;
+											border-bottom: 2px solid #000;
+										}
+									}
+									.hide{
+										display: none;
+									}
+									.hint{
+										min-height: 55px;
+                                        padding-bottom: 5px;
+                                        span.block{
+                                            display: inline;
+                                            border-bottom: 2px solid rgb(0,240,255);
+                                        }
+                                    }
+								}
+							}
+
+							&.view-hint{
+								background-color: rgb(13, 92, 155); 
+								color: rgb(0,240,255);
+								&:after{
+									border-right-color: rgb(13, 92, 155); 
+								}
+							}	
+						} 
+					}
+				}
+			
+		}
 		.lets_talk{
 			@include CoverPopup(10001);
 			background-color:rgba(0,0,0,0.5);
@@ -272,12 +474,36 @@
 		}
 		.btn_tabs {
 			position: absolute; top: 100px; left: 87px;
-			.btn_tab_question {
+			.btn_tab_introduction {
 				@include btn_on(
 					resolve('teacher/images/btn_tab_question.png'),
 					resolve('teacher/images/btn_tab_question_down.png'),
 					width('teacher/images/btn_tab_question.png'),
 					height('teacher/images/btn_tab_question.png')
+				);
+			}
+			.btn_tab_confirm {
+				@include btn_on(
+					resolve('teacher/images/btn_tab_script.png'),
+					resolve('teacher/images/btn_tab_script_down.png'),
+					width('teacher/images/btn_tab_script.png'),
+					height('teacher/images/btn_tab_script.png')
+				);
+			}
+			.btn_tab_additional {
+				@include btn_on(
+					resolve('teacher/images/btn_tab_script.png'),
+					resolve('teacher/images/btn_tab_script_down.png'),
+					width('teacher/images/btn_tab_script.png'),
+					height('teacher/images/btn_tab_script.png')
+				);
+			}
+			.btn_tab_dictation {
+				@include btn_on(
+					resolve('teacher/images/btn_tab_script.png'),
+					resolve('teacher/images/btn_tab_script_down.png'),
+					width('teacher/images/btn_tab_script.png'),
+					height('teacher/images/btn_tab_script.png')
 				);
 			}
 			.btn_tab_script {
