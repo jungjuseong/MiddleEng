@@ -6,8 +6,6 @@ import { observable } from 'mobx';
 import { MPlayer, MConfig, MPRState } from '@common/mplayer/mplayer';
 import { ToggleBtn } from '@common/component/button';
 
-import * as common from '../../common';
-
 import { App } from '../../../App';
 import * as felsocket from '../../../felsocket';
 
@@ -21,6 +19,7 @@ import ScriptContainer from '../../script_container';
 import { TimerState } from '../../../share/Timer';
 
 import LetsTalk from './_lets_talk';
+import QuizBox from './_quiz_box';
 import ComprePopup from './_compre_popup';
 
 /* 페이지 관련 class */
@@ -60,6 +59,7 @@ class Writing extends React.Component<IWriting> {
 	@observable private _viewTrans = false;
 	@observable private _viewScript = true;
 	@observable private _letstalk = false;
+	@observable private _viewQuiz = true;
 
 	@observable private _roll: ''|'A'|'B' = '';
 	@observable private _shadowing = false;
@@ -105,36 +105,7 @@ class Writing extends React.Component<IWriting> {
             felsocket.sendPAD($SocketType.MSGTOPAD, msg);
         });
     }
-    private _refScriptContainer = (el: ScriptContainer) => {
-		if(this._scontainer || !el) return;
-		this._scontainer = el;
-    }
-    private _clickItem = (idx: number, script: common.IScript) => {
-		if(this._roll !== '' || this._shadowing) {
-			/*
-			if(!this._countdown.isRunning) {
-				this.m_player.seek(script.dms_start * 1000);
-				if(!this.m_player.bPlay) this.m_player.play();
-			}
-			*/
-		} else {
-			this.m_player.gotoAndPlay(script.dms_start * 1000, script.dms_end * 1000, 1);
-		}
-	}
-    private _qnaReturnsClick = (idx: number) => {
-		if(this._title !== 'COMPREHENSION') return;
-		else if(this._tab !== 'SCRIPT') return;
-		else if(this.props.state.qnaProg < SENDPROG.SENDED) return;
-
-		const returns = this.props.actions.getQnaReturns();
-		if(idx >= returns.length) return;
-		const ret = returns[idx];
-		if(ret.users.length <= 0) return;
-		
-		App.pub_playBtnTab();
-
-		felsocket.startStudentReportProcess($ReportType.JOIN, ret.users);	
-	}
+    
 	public componentDidMount() {
 		this.m_data = this.props.actions.getData();
 		const quizs = this.m_data.quizs;
@@ -255,10 +226,11 @@ class Writing extends React.Component<IWriting> {
         }
         this.props.actions.setNavi(false, false);
     }
-
+    // 인트로 페이지로 이동
 	private _goToIntro = () => {
         alert('go to Intro page');
         this.props.actions.gotoDirection();
+        // this._testQuiz = true;
         return;
     }
 
@@ -721,32 +693,11 @@ class Writing extends React.Component<IWriting> {
                             return <NItem key={idx} on={idx === this._curQidx} idx={idx} onClick={this._onPage}/>;
                         })}
                     </div>
-                    <div className="img-box">
-					{/* <div>
-						<img src={App.data_url + summary.image} />
-						<ToggleBtn className="btn_zoom" onClick={this._clickZoom}/>
-					</div> */}
-                    </div>
-                    <div className={'script_container' + (this._tab === 'INTRODUCTION' ? '' : ' hide')}>
-                        <ScriptContainer
-                            ref={this._refScriptContainer}
-                            view={this.props.view}
-                            data={this.m_data}
-                            focusIdx={this._focusIdx}
-                            selected={this._selected}
-                            qnaReturns={this.props.actions.getQnaReturns()}
-                            qnaReturnsClick={this._qnaReturnsClick}
-                            roll={this._roll}
-                            shadowing={this._shadowing}
-                            clickThumb={this._clickItem}
-                            noSwiping={this._title === 'COMPREHENSION' && ((this._shadowing && this._isShadowPlay) || (!this._shadowing && this.m_player.bPlay))}
-                            compDiv={this._title}
-                            viewClue={this._viewClue}
-                            viewScript={this._viewScript}
-                            viewTrans={this._viewTrans}
-                            numRender={state.retCnt}
-                        />
-                    </div>
+                    <QuizBox 
+                        view={this._viewQuiz} 
+                        data={this.m_data.letstalk} 
+                        onClosed={this._letstalkClosed}
+                    />
                 </div>
                 <ComprePopup 
                     type={this.c_popup}
