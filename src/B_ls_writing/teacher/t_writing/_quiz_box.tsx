@@ -16,7 +16,7 @@ const SwiperComponent = require('react-id-swiper').default;
 interface ILetsTalk {
 	view: boolean;
 	onClosed: () => void;
-	data: common.ILetstalk;
+	data: common.IIntroduction;
 }
 /*
 2020 10 09 작업
@@ -44,7 +44,7 @@ class LetsTalk extends React.Component<ILetsTalk> {
 	};
 
 	private _jsx_sentence: JSX.Element;
-	private _jsx_sample: JSX.Element;
+	//private _jsx_sample: JSX.Element;
 	private _jsx_hint: JSX.Element;
 	private _character: string;
 
@@ -53,9 +53,9 @@ class LetsTalk extends React.Component<ILetsTalk> {
 	public constructor(props: ILetsTalk) {
 		super(props);
 		
-		this._jsx_sentence = _getJSX(props.data.sentence);
-		this._jsx_sample = _getBlockJSX(props.data.sample);
-		this._jsx_hint = _getJSX(props.data.hint);
+		this._jsx_sentence = _getJSX(props.data.questions); // 문제
+		//this._jsx_sample = _getBlockJSX(props.data.sample);
+		this._jsx_hint = _getJSX(props.data.ex_answer); // 답
 
 		const rnd = Math.floor(Math.random() * 3);
 		if(rnd === 0) this._character = _project_ + 'teacher/images/letstalk_bear.png';
@@ -95,20 +95,6 @@ class LetsTalk extends React.Component<ILetsTalk> {
 		if(this._btnAudio) this._btnAudio.toggle();
 	}
 
-	private _clickZoom1 = () => {
-		if(!this._view) return;
-		App.pub_playBtnTab();
-		this._zoomImgUrl = App.data_url + this.props.data.img1;
-		this._zoom = true;
-	}
-
-	private _clickZoom2 = () => {
-		if(!this._view) return;
-		App.pub_playBtnTab();
-		this._zoomImgUrl = App.data_url + this.props.data.img2;
-		this._zoom = true;
-	}
-
  	public componentDidUpdate(prev: ILetsTalk) {
 		if(this.props.view && !prev.view) {
 			this._view = true;
@@ -138,9 +124,6 @@ class LetsTalk extends React.Component<ILetsTalk> {
 	
 	public render() {
 		const { view, data, } = this.props;
-
-		const img2 = (data.img2 && data.img2 !== '') ? <img  src={App.data_url + data.img2} draggable={false}/> : undefined;
-
 		return (
 			<>
 			<div className="question_bg" style={{ display: this._view ? '' : 'none' }}>
@@ -148,10 +131,7 @@ class LetsTalk extends React.Component<ILetsTalk> {
 
 					<div className="popbox">
 						<div className="image_box">
-							<img  src={App.data_url + data.img1} draggable={false}/>
-							{img2}
-							<ToggleBtn className={'btn_zoom1' + (img2 !== undefined ? ' notonly' : '')} onClick={this._clickZoom1} />
-							<ToggleBtn className="btn_zoom2" onClick={this._clickZoom2} view={img2 !== undefined} />
+							<img  src={App.data_url + data.img} draggable={false}/>
 						</div>
 						
 						<div className="speechbubble_box" >
@@ -167,7 +147,7 @@ class LetsTalk extends React.Component<ILetsTalk> {
 									</div>
 									<SwiperComponent {...this._soption} ref={this._refSwiper}>
 										<div>
-											<div className={'sample' + (this._hint ? ' hide' : '')}>{this._jsx_sample}</div>
+											{/* <div className={'sample' + (this._hint ? ' hide' : '')}>{this._jsx_sample}</div> */}
 											<div className={'hint' + (this._hint ? '' : ' hide')}>{this._jsx_hint}</div>
 										</div>
 									</SwiperComponent>

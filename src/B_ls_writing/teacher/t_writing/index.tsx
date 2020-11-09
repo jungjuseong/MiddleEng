@@ -660,7 +660,7 @@ class Writing extends React.Component<IWriting> {
         const { state, actions } = this.props;
         const { questionProg,qnaProg,numOfStudent } = this.props.state;
 
-        const quizs = this.m_data.quizs;
+        const introductions = this.m_data.introduction;
         const isQComplete = questionProg >= SENDPROG.COMPLETE;
 
         const isOnStudy = (this._title === 'COMPREHENSION' && (questionProg === SENDPROG.SENDING || questionProg === SENDPROG.SENDED || qnaProg >= SENDPROG.SENDING)) 
@@ -704,17 +704,17 @@ class Writing extends React.Component<IWriting> {
                 </div>	
                 <div className="writing_content_box">
                     <div className="btn_page_box">
-                        {quizs.map((page, idx) => {
+                        {introductions.map((introduction, idx) => {
                             return <NItem_w key={idx} tab ={this._tab} on={idx === this._curQidx} idx={idx} onClick={this._onPage}/>;
                         })}
                     </div>
                     <div className={'question' + (state.questionProg >= SENDPROG.COMPLETE ? ' complete' : '')} style={{display: this._tab === 'INTRODUCTION' ? '' : 'none'}}>
-                            {quizs.map((quiz, idx) => {
+                            {introductions.map((introduction, idx) => {
                                 return (
                                     <div key={idx} style={{ display: idx === this._curQidx ? '' : 'none' }}>
                                         <QuizBox 
                                             view={this.props.view && idx === this._curQidx}
-                                            data={this.m_data.letstalk} 
+                                            data={introduction} 
                                             onClosed={this._letstalkClosed}
                                         />                          
                                     </div>

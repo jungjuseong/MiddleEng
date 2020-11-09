@@ -79,6 +79,13 @@ export interface IScript {
 	app_preview: number;
 	sc_COD: IScCod[];
 }
+export interface IIntroduction {
+	readonly seq: number;
+	readonly img: string;
+	readonly questions: string;
+	readonly audio: string;
+	readonly ex_answer: string;
+}
 
 export interface IQuiz extends IInClassStudyProps {
 	question: string;
@@ -110,6 +117,7 @@ export interface IData {
 	quizs: IQuiz[];
 	scripts: IScript[];
 	letstalk: ILetstalk;
+	introduction :IIntroduction[];
 }
 
 interface IRGBA {

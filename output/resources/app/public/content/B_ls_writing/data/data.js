@@ -1,4 +1,32 @@
 ﻿var _data = {
+    "introduction": [{
+        "activity_code": "A",
+        "seq": 1,
+        "img": "y3l1u1_011_letstalk_01.jpg",
+        "questions": "What are the people doing?",
+        "audio": "talk_001.mp3",
+        "ex_answer": "They are skiing.",
+        "movie": "",
+        "img2": ""
+    }, {
+        "activity_code": "A",
+        "seq": 2,
+        "img": "",
+        "questions": "What are the people doing? And where are they?",
+        "audio": "talk_002.mp3",
+        "ex_answer": "They are riding a horse. And they are in the park.",
+        "movie": "",
+        "img2": ""
+    }, {
+        "activity_code": "A",
+        "seq": 3,
+        "img": "",
+        "questions": "Where are the people?",
+        "audio": "talk_003.mp3",
+        "ex_answer": "They are in the water park.",
+        "movie": "",
+        "img2": ""
+    }],
     "video": "y3_l1_u1_011_main.mp4",
     "video_start": 0,
     "speakerA": {

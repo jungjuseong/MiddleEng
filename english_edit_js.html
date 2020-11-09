@@ -476,13 +476,49 @@ var b_rw_comprehension = {
 	}
 }
 
+var ls_writing ={
+	_type:obj_e.TYPE_OBJECT,
+	_excelSheets:"Activity 선택 화면",
+	_startRow:2,
+	_activity_code: {
+		_type:obj_e.TYPE_OBJECT,
+		num1: {_type:obj_e.TYPE_TEXT, _excel:"C"},
+		num2: {_type:obj_e.TYPE_TEXT, _excel:"D"},
+		num3: {_type:obj_e.TYPE_TEXT, _excel:"E"},
+		num4: {_type:obj_e.TYPE_TEXT, _excel:"F"},
+		num5: {_type:obj_e.TYPE_TEXT, _excel:"G"},
+		num6: {_type:obj_e.TYPE_TEXT, _excel:"H"},
+		num7: {_type:obj_e.TYPE_TEXT, _excel:"I"},
+		num8: {_type:obj_e.TYPE_TEXT, _excel:"J"},
+		num9: {_type:obj_e.TYPE_TEXT, _excel:"K"},
+		num10: {_type:obj_e.TYPE_TEXT, _excel:"L"},
+	},
+	introduction: {
+		_type:obj_e.TYPE_LIST,
+		_excelSheets:"도입질문",
+		_startRow:2,
+		_key:"seq",			
+		_item: {
+			_type: obj_e.TYPE_OBJECT,
+			activity_code:{_type:obj_e.TYPE_TEXT, _excel:"A"},
+			seq: {_type:obj_e.TYPE_INT, _excel:"B"},
+			img: {_type:obj_e.TYPE_IMAGE, _excel:"C", _default: ''},
+			questions: {_type:obj_e.TYPE_TEXT, _excel:"D"},
+			audio: {_type:obj_e.TYPE_SOUND, _excel:"E", _default: ''},
+			ex_answer: {_type:obj_e.TYPE_TEXT, _excel:"F"},
+			movie: {_type:obj_e.TYPE_MOVIE, _excel:"G", _default: ''},
+			img2: {_type:obj_e.TYPE_IMAGE, _excel:"H", _default: ''}
+		}
+	}
+}
+
 
 
 var area = document.getElementById('area');
-alert('ls_comprehension');
-area.value = JSON.stringify(ls_comprehension);
+alert('ls_writing');
+area.value = JSON.stringify(ls_writing);
 // document.write(JSON.stringify(korea_speak_quiz ))
-console.log(JSON.stringify(ls_comprehension));
+console.log(JSON.stringify(ls_writing));
 	</script>
  </body>
 </html>
