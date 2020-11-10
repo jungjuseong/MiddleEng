@@ -159,7 +159,7 @@ class VocaList extends React.Component<IVocaList> {
 		const { view, state, actions } = this.props;
 		const words = actions.getWords();
 		const style: React.CSSProperties = {};
-
+		console.log(this.m_ncheck);
 		if(!view) {
 			style.visibility = 'hidden';
 			style.transition = 'visibility 0.3s 0.3s';
@@ -172,8 +172,9 @@ class VocaList extends React.Component<IVocaList> {
 				<SwiperComponent ref={this._refSwiper} direction="vertical" scrollbar={{ el: '.swiper-scrollbar', draggable: true}} observer={true}>
 					{this._pages.map((items, idx) => 
 						<div key={idx} className={'box' + (numOfPage < 2 ? ' swiper-no-swiping' : '')}>
-							{items.map((word, kidx) => 
-								<VocaItem 
+							{items.map((word, kidx) => {
+								console.log('in map' + this.m_ncheck);
+								return <VocaItem 
 									key={kidx}
 									onCheckChange={this._onCheckChange}
 									word={word}
@@ -181,7 +182,7 @@ class VocaList extends React.Component<IVocaList> {
 									onStudy={this._onStudy}
 									state={state}
 								/>								
-							)}
+						})}
 						</div>
 					)}
 				</SwiperComponent>

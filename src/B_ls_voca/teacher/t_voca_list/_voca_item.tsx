@@ -37,7 +37,7 @@ class VocaItem extends React.Component<IVocaItem> {
         const { word,onCheckChange } = this.props;
 
         App.pub_playBtnTab(); // 효과음 추가 2018-12-26 
-        word.app_checked = !word.app_checked;
+		word.app_checked = !word.app_checked;
         onCheckChange();
     }
     
@@ -48,9 +48,11 @@ class VocaItem extends React.Component<IVocaItem> {
 
 	public render() {
 		const { word,state } = this.props;
+		console.log(word.app_checked)
 		return (
 			<div className={'voca_box' + (word.app_studied ? ' click' : '' )}>
-				<ToggleBtn className="check" on={word.app_checked} onClick={this._onCheck} />
+				<ToggleBtn className="check" on = {word.app_checked} onClick={this._onCheck} />
+				<div>{`true?false ${word.app_checked}`}</div>
 				<img src={App.data_url + word.thumbnail} draggable={false} onClick={this._onCheck}/>
 				<div className="voca_btns">
 					<ToggleBtn className="btn_study" onClick={this._onStudy}/>
