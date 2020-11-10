@@ -21,25 +21,21 @@ import ComprePopup from './_compre_popup';
 import { SSL_OP_TLS_BLOCK_PADDING_BUG } from 'constants';
 
 /* 페이지 관련 class */
-class NItem_w extends React.Component<{ idx: number, on: boolean, tab: 'INTRODUCTION'|'CONFIRM'|'ADDITIONAL'|'DICTATION'|'SCRIPT', onClick: (idx: number) => void }> {
+class NItemW extends React.Component<{ idx: number, on: boolean, tab: 'INTRODUCTION'|'CONFIRM'|'ADDITIONAL'|'DICTATION'|'SCRIPT', onClick: (idx: number) => void }> {
 	private _click = () => {
 		this.props.onClick(this.props.idx);
 	}
 	public render() {
         const { idx, on, tab } = this.props;
-        if(tab === 'INTRODUCTION' || tab === 'SCRIPT'){
+        if(['INTRODUCTION','SCRIPT'].includes(tab)) {
             return <span className={on ? 'on' : ''} onClick={this._click}>{idx + 1}</span>;
-        }else if(tab === 'CONFIRM' || tab === 'ADDITIONAL' || tab === 'DICTATION'){
-            var pagetxt = ''
-            if(idx === 0){
-                pagetxt = '보충'
-            }else if (idx === 1){
-                pagetxt = '기본'
-            }else if (idx === 2){
-                pagetxt = '심화'
-            }
-            return <span className={on ? 'on' : ''} onClick={this._click}>{pagetxt}</span>;
-        }else{
+        } else if(['CONFIRM','ADDITIONAL','DICTATION'].includes(tab)) {           
+            let pageText = '보충';
+            if (idx === 1) pageText = '기본';
+            else if (idx === 2) pageText = '심화';
+            
+            return <span className={on ? 'on' : ''} onClick={this._click}>{pageText}</span>;
+        } else {
             return <span className={on ? 'on' : ''} onClick={this._click}>{idx + 1}</span>;
         }
 	}
@@ -504,7 +500,7 @@ class Writing extends React.Component<IWriting> {
                             this._curQidx = this._curQidx - 1;
                             this._setNavi();
                         }
-                    } else if(this._tab === 'CONFIRM'){
+                    } else if(this._tab === 'CONFIRM') {
                         // if(questionProg === SENDPROG.SENDED || questionProg === SENDPROG.SENDING || qnaProg >= SENDPROG.SENDING) return;
                         if(this._curQidx === 0) {
                             this._hint = false;
@@ -520,7 +516,7 @@ class Writing extends React.Component<IWriting> {
                         //     felsocket.sendPAD($SocketType.PAD_ONSCREEN, null);
                         //     actions.clearQnaReturns();
                         // }
-                    }else if(this._tab === 'ADDITIONAL'){
+                    } else if(this._tab === 'ADDITIONAL') {
                         if(this._curQidx === 0) {
                             this._hint = false;
                             this._tab = 'CONFIRM';
@@ -530,7 +526,7 @@ class Writing extends React.Component<IWriting> {
                             this._curQidx = this._curQidx - 1;
                             this._setNavi();
                         }
-                    }else if(this._tab === 'DICTATION'){
+                    } else if(this._tab === 'DICTATION') {
                         if(this._curQidx === 0) {
                             this._hint = false;
                             this._tab = 'ADDITIONAL';
@@ -540,7 +536,7 @@ class Writing extends React.Component<IWriting> {
                             this._curQidx = this._curQidx - 1;
                             this._setNavi();
                         }
-                    }else if(this._tab === 'SCRIPT'){
+                    } else if(this._tab === 'SCRIPT') {
                         if(this._curQidx === 0) {
                             this._hint = false;
                             this._tab = 'DICTATION';
@@ -573,7 +569,7 @@ class Writing extends React.Component<IWriting> {
                             this._curQidx = this._curQidx + 1;
                             this._setNavi();
                         }
-                    }else if(this._tab === 'CONFIRM') {
+                    } else if(this._tab === 'CONFIRM') {
                         if(this._curQidx === this.m_data.quizs.length - 1) {
                             if(questionProg === SENDPROG.SENDED || questionProg === SENDPROG.SENDING || qnaProg >= SENDPROG.SENDING) return;
                             this._hint = false;
@@ -584,7 +580,7 @@ class Writing extends React.Component<IWriting> {
                             this._curQidx = this._curQidx + 1;
                             this._setNavi();
                         }
-                    }else if(this._tab === 'ADDITIONAL') {
+                    } else if(this._tab === 'ADDITIONAL') {
                         if(this._curQidx === this.m_data.quizs.length - 1) {
                             if(questionProg === SENDPROG.SENDED || questionProg === SENDPROG.SENDING || qnaProg >= SENDPROG.SENDING) return;
                             this._hint = false;
@@ -595,7 +591,7 @@ class Writing extends React.Component<IWriting> {
                             this._curQidx = this._curQidx + 1;
                             this._setNavi();
                         }
-                    }else if(this._tab === 'DICTATION') {
+                    } else if(this._tab === 'DICTATION') {
                         if(this._curQidx === this.m_data.quizs.length - 1) {
                             if(questionProg === SENDPROG.SENDED || questionProg === SENDPROG.SENDING || qnaProg >= SENDPROG.SENDING) return;
                             this._hint = false;
@@ -606,18 +602,12 @@ class Writing extends React.Component<IWriting> {
                             this._curQidx = this._curQidx + 1;
                             this._setNavi();
                         }
-                    }else if(this._tab === 'SCRIPT'){
-                        if(this._curQidx === this.m_data.quizs.length - 1) {
-                        } else {
+                    } else if(this._tab === 'SCRIPT') {
+                        if(this._curQidx !== this.m_data.quizs.length - 1) {                        
                             this._hint = false;
                             this._curQidx = this._curQidx + 1;
                             this._setNavi();
                         }
-                        // if(this.m_player.bPlay) this.m_player.pause();
-                        // this._clearAll();
-                        // this._tab_save = this._tab;
-                        // this._tab = 'SCRIPT';
-                        // this._viewScript = false;
                     }
                 } else {
                     actions.gotoNextBook();
@@ -654,8 +644,8 @@ class Writing extends React.Component<IWriting> {
     }
 
 	public render() {
-        const { state, actions } = this.props;
-        const { questionProg,qnaProg,numOfStudent } = this.props.state;
+        const { view, state, actions } = this.props;
+        const { questionProg,qnaProg,numOfStudent,retCnt } = state;
 
         const introductions = this.m_data.introduction;
         const isQComplete = questionProg >= SENDPROG.COMPLETE;
@@ -672,14 +662,10 @@ class Writing extends React.Component<IWriting> {
         }
 
         const isCompI = (this._title === 'COMPREHENSION' && this._tab === 'INTRODUCTION');
-        const isCompC = (this._title === 'COMPREHENSION' && this._tab === 'CONFIRM');
-        const isCompA = (this._title === 'COMPREHENSION' && this._tab === 'ADDITIONAL');
-        const isCompD = (this._title === 'COMPREHENSION' && this._tab === 'DICTATION');
         const isCompS = (this._title === 'COMPREHENSION' && this._tab === 'SCRIPT');
     
         const isViewInfo = (isCompI && questionProg >= SENDPROG.SENDED) || isCompS;
         const isViewReturn = (isCompI && questionProg >= SENDPROG.SENDED) || (isCompS && qnaProg >=  SENDPROG.SENDED);
-
         const style: React.CSSProperties = {};
     
         return (
@@ -696,21 +682,21 @@ class Writing extends React.Component<IWriting> {
                 </div>
                 <div className={'info_box' + (isViewInfo ? ' on' : '')}>
                     <div className="return_cnt_box white" style={{display: isViewReturn ? '' : 'none'}} onClick={this._clickReturn}>
-                        <div>{state.retCnt}/{state.numOfStudent}</div>
+                        <div>{retCnt}/{numOfStudent}</div>
                     </div>            
                 </div>	
                 <div className="writing_content_box">
                     <div className="btn_page_box">
                         {introductions.map((introduction, idx) => {
-                            return <NItem_w key={idx} tab ={this._tab} on={idx === this._curQidx} idx={idx} onClick={this._onPage}/>;
+                            return <NItemW key={idx} tab={this._tab} on={idx === this._curQidx} idx={idx} onClick={this._onPage}/>;
                         })}
                     </div>
-                    <div className={'question' + (state.questionProg >= SENDPROG.COMPLETE ? ' complete' : '')} style={{display: this._tab === 'INTRODUCTION' ? '' : 'none'}}>
+                    <div className={'question' + (questionProg >= SENDPROG.COMPLETE ? ' complete' : '')} style={{display: this._tab === 'INTRODUCTION' ? '' : 'none'}}>
                             {introductions.map((introduction, idx) => {
                                 return (
                                     <div key={idx} style={{ display: idx === this._curQidx ? '' : 'none' }}>
                                         <QuizBox 
-                                            view={this.props.view && idx === this._curQidx}
+                                            view={view && idx === this._curQidx}
                                             data={introduction} 
                                             onClosed={this._letstalkClosed}
                                         />                          

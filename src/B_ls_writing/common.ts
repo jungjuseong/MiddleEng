@@ -117,7 +117,7 @@ export interface IData {
 	quizs: IQuiz[];
 	scripts: IScript[];
 	letstalk: ILetstalk;
-	introduction :IIntroduction[];
+	introduction: IIntroduction[];
 }
 
 interface IRGBA {

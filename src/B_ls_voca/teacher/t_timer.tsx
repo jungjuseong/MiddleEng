@@ -1,7 +1,5 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { Observer, observer } from 'mobx-react';
-import { hot } from 'react-hot-loader';
+import { observer } from 'mobx-react';
 import * as _ from 'lodash';
 
 import { App } from '../../App';
@@ -9,9 +7,8 @@ import * as felsocket from '../../felsocket';
 
 import QuizNumTime from '../../share/QuizNumTime';
 
-import { TeacherContext, useTeacher, IStateCtx, IActionsCtx } from './t_store';
-import * as common from '../common';
-import { action } from 'mobx';
+import { IStateCtx, IActionsCtx } from './t_store';
+import { IQuizMsg } from '../common';
 
 const limit = 50;
 
@@ -20,6 +17,7 @@ interface ITimer {
 	state: IStateCtx;
 	actions: IActionsCtx;
 }
+
 @observer
 class Timer extends React.Component<ITimer> {
 	private _numAll = 0;
@@ -41,20 +39,20 @@ class Timer extends React.Component<ITimer> {
 			this._numAll = words.length;
 			let numStudied = 0;
 			let numAi = 0;
+
 			for(const word of words) {
 				if(word.app_studied) numStudied++;
-				if( hasPreview 
-					&& (	(qtype === 'sound' && word.app_sound <= limit)
-						|| 	(qtype === 'meaning' && word.app_meaning <= limit)
-						|| 	(qtype === 'spelling' && word.app_spelling <= limit)
-						|| 	(qtype === 'usage' && word.app_sentence <= limit)
-					)
-				) numAi++;
+				if(hasPreview) { 
+					if((qtype === 'sound' && word.app_sound <= limit) || (qtype === 'meaning' && word.app_meaning <= limit) ||
+						(qtype === 'spelling' && word.app_spelling <= limit)	|| (qtype === 'usage' && word.app_sentence <= limit)
+					) numAi++;
+				}
 			}
 			this._numStudied = numStudied;
 			this._numAi = numAi;
 		}
 	}
+	
 	public componentDidUpdate(prev: ITimer) {
 		if(this.props.view && !prev.view) {
 			this._setNavi();
@@ -62,11 +60,11 @@ class Timer extends React.Component<ITimer> {
 	}
 
 	private _onStart = (nqType: QUIZ_SELECT_TYPE, numOfQuiz: number, timeOfQuiz: number) => {
+		const { view,state, actions } = this.props;
 		App.pub_reloadStudents(() => {
-			if(!this.props.view) return;
+			if(!view) return;
 			if(timeOfQuiz <= 0) return;
 
-			const {state, actions} = this.props;
 			const words = actions.getWords();
 			let arr: number[] = [];
 			const qtype = state.qtype;
@@ -97,7 +95,7 @@ class Timer extends React.Component<ITimer> {
 			}
 
 			actions.setQuizInfo(arr, timeOfQuiz, this.props.state.isGroup);
-			const msg: common.IQuizMsg = {
+			const msg: IQuizMsg = {
 				msgtype: 'quiz',
 				qidxs: arr,
 				qtime: timeOfQuiz,
@@ -125,7 +123,6 @@ class Timer extends React.Component<ITimer> {
 				numAll={this._numAll}
 				numStudied={this._numStudied}
 				numAi={this._numAi}
-
 				gotoQuizSelect={actions.gotoQuizSelect}
 				onStart={this._onStart}
 			/>

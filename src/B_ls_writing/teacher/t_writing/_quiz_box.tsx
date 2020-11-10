@@ -13,7 +13,7 @@ import { _getJSX, _getBlockJSX } from '../../../get_jsx';
 
 const SwiperComponent = require('react-id-swiper').default;
 
-interface ILetsTalk {
+interface IQuizBox {
 	view: boolean;
 	onClosed: () => void;
 	data: common.IIntroduction;
@@ -24,7 +24,7 @@ _lets_talk.tsx 참고
 이동윤
 */
 @observer
-class LetsTalk extends React.Component<ILetsTalk> {
+class QuizBox extends React.Component<IQuizBox> {
 	@observable private _view = false;
 	@observable private _hint = false;
 	@observable private _zoom = false;
@@ -44,22 +44,20 @@ class LetsTalk extends React.Component<ILetsTalk> {
 	};
 
 	private _jsx_sentence: JSX.Element;
-	//private _jsx_sample: JSX.Element;
 	private _jsx_hint: JSX.Element;
 	private _character: string;
 
 	private _btnAudio?: BtnAudio;
 	
-	public constructor(props: ILetsTalk) {
+	public constructor(props: IQuizBox) {
 		super(props);
 		
 		this._jsx_sentence = _getJSX(props.data.questions); // 문제
-		//this._jsx_sample = _getBlockJSX(props.data.sample);
 		this._jsx_hint = _getJSX(props.data.ex_answer); // 답
 
-		const rnd = Math.floor(Math.random() * 3);
-		if(rnd === 0) this._character = _project_ + 'teacher/images/letstalk_bear.png';
-		else if(rnd === 1) this._character = _project_ + 'teacher/images/letstalk_boy.png';
+		const randomIndex = Math.floor(Math.random() * 3);
+		if(randomIndex === 0) this._character = _project_ + 'teacher/images/letstalk_bear.png';
+		else if(randomIndex === 1) this._character = _project_ + 'teacher/images/letstalk_boy.png';
 		else this._character = _project_ + 'teacher/images/letstalk_girl.png';
 	}
 
@@ -95,12 +93,14 @@ class LetsTalk extends React.Component<ILetsTalk> {
 		if(this._btnAudio) this._btnAudio.toggle();
 	}
 
- 	public componentDidUpdate(prev: ILetsTalk) {
-		if(this.props.view && !prev.view) {
+ 	public componentDidUpdate(prev: IQuizBox) {
+		const { view } = this.props;
+		if(view && !prev.view) {
 			this._view = true;
 			this._hint = false;
 			this._zoom = false;
 			this._zoomImgUrl = '';
+
 			if(this._swiper) {
 				this._swiper.slideTo(0, 0);
 				this._swiper.update();
@@ -123,23 +123,20 @@ class LetsTalk extends React.Component<ILetsTalk> {
 	}
 	
 	public render() {
-		const { view, data, } = this.props;
+		const { data, } = this.props;
 		return (
 			<>
 			<div className="question_bg" style={{ display: this._view ? '' : 'none' }}>
 				<ToggleBtn className="btn_hint" on={this._hint} onClick={this._viewHint}/>
-
 					<div className="popbox">
 						<div className="image_box">
 							<img  src={App.data_url + data.img} draggable={false}/>
-						</div>
-						
+						</div>						
 						<div className="speechbubble_box" >
 							<div>
 								<div className={'balloon' + (this._hint ? ' view-hint' : '')}>
 									<div className="sentence_box">
 										<div>
-											{/* <BtnAudio className="btn_audio" url={App.data_url + data.audio} ref={this._refAudio} /> */}
 											<div className="question_box" onClick={this._onClick}>
 												{this._jsx_sentence}
 											</div>
@@ -147,7 +144,7 @@ class LetsTalk extends React.Component<ILetsTalk> {
 									</div>
 									<SwiperComponent {...this._soption} ref={this._refSwiper}>
 										<div>
-											<div className={'sample' + (this._hint ? ' hide' : '')}></div>
+											<div className={'sample' + (this._hint ? ' hide' : '')}/>
 											<div className={'hint' + (this._hint ? '' : ' hide')}>{this._jsx_hint}</div>
 										</div>
 									</SwiperComponent>
@@ -155,12 +152,10 @@ class LetsTalk extends React.Component<ILetsTalk> {
 							</div>
 						</div>
 					</div>
-				{/* </SwiperComponent> */}
 			</div>
-			{/* <ImgPopup url={this._zoomImgUrl} view={this._zoom} onClosed={this._closedZoom}/>  */}
 			</>
 		);
 	}
 }
 
-export default LetsTalk;
+export default QuizBox;

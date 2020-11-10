@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import { observer } from 'mobx-react';
 
 import { observable } from 'mobx';
@@ -9,7 +8,7 @@ import * as kutil from '@common/util/kutil';
 import { IStateCtx, IActionsCtx, QPROG, SPROG } from './s_store';
 import SendUINew from '../../share/sendui_new';
 import ScriptContainer from '../script_container';
-import * as common from '../common';
+import { IQNAMsg,IScript } from '../common';
 import { App } from '../../App';
 
 import * as felsocket from '../../felsocket';
@@ -30,20 +29,23 @@ class SScript extends React.Component<ISScript> {
 
 	private _stime = 0;
 	
-	private _clickText = (idx: number, script: common.IScript) => {
+	private _clickText = (idx: number, script: IScript) => {
+		const { scriptProg } = this.props;
 		if(this._stime === 0) this._stime = Date.now();
 
-		if(this.props.scriptProg !== SPROG.SELECTING) return; 
+		if(scriptProg !== SPROG.SELECTING) return; 
 
 		const cidx = this._selected.indexOf(idx);
 		if(cidx < 0) this._selected.push(idx);
 		else this._selected.splice(cidx, 1);
 	}
+
 	private _onSend = async () => {
-		if(!App.student || this.props.scriptProg !== SPROG.SELECTING) return; 
+		const { scriptProg, state,actions } = this.props;
+		if(!App.student || scriptProg !== SPROG.SELECTING) return; 
 
 		App.pub_playToPad();
-		const msg: common.IQNAMsg = {
+		const msg: IQNAMsg = {
 			msgtype: 'qna_return',
 			id: App.student.id,
 			returns: this._selected.slice(0), 
@@ -51,18 +53,19 @@ class SScript extends React.Component<ISScript> {
             etime: Date.now(),
 		};
 		felsocket.sendTeacher($SocketType.MSGTOTEACHER, msg);
-		this.props.state.scriptProg = SPROG.SENDING;
+		state.scriptProg = SPROG.SENDING;
 		await kutil.wait(600);
-		if(this.props.state.scriptProg === SPROG.SENDING) {
-			this.props.state.scriptProg = SPROG.SENDED;
+		if(state.scriptProg === SPROG.SENDING) {
+			state.scriptProg = SPROG.SENDED;
 			// console.log('startGoodJob');
 			App.pub_playGoodjob();
-			this.props.actions.startGoodJob(); // 추가
+			actions.startGoodJob(); // 추가
 		}
 	}
 	private _gotoQuestion = () => {
-		if(this.props.state.scriptMode !== 'COMPREHENSION') return;
-		else if(this.props.state.qsMode === 'question') return;
+		const { scriptMode,qsMode } = this.props.state;
+		if(scriptMode !== 'COMPREHENSION') return;
+		else if(qsMode === 'question') return;
 		App.pub_playBtnTab();
 		this.props.state.qsMode = 'question';
 		
@@ -76,7 +79,7 @@ class SScript extends React.Component<ISScript> {
 		}
 	}
 	public render() {
-		const { view, scriptProg, actions, state, questionProg} = this.props;
+		const { scriptMode,scriptProg, actions, state, questionProg} = this.props;
 		const c_data = actions.getData();
 		return (
 			<div className={'s_script ' + state.scriptMode}>
@@ -95,7 +98,7 @@ class SScript extends React.Component<ISScript> {
 						roll={state.roll}
 						shadowing={state.shadowing}
 						noSwiping={state.scriptMode === 'DIALOGUE' && state.isPlay}
-						compDiv={this.props.scriptMode}
+						compDiv={scriptMode}
 						viewClue={state.viewClue}
 						viewScript={true}
 						viewTrans={false}
