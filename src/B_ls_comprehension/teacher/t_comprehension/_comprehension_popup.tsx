@@ -9,10 +9,9 @@ import * as kutil from '@common/util/kutil';
 import { App } from '../../../App';
 import SendUINew from '../../../share/sendui_new';
 import { CoverPopup } from '../../../share/CoverPopup';
-import * as butil from '@common/component/butil';
 
 /* 팝업Page */
-interface IComprePopup {
+interface IComprehensionPopup {
 	type: 'off'|'Q&A' |'ROLE PLAY'|'SHADOWING';	// 19-02-01 190108_검수사항 p.13 수정 
 	view: boolean;
 	imgA: string;
@@ -22,7 +21,7 @@ interface IComprePopup {
 }
 
 @observer
-class ComprePopup extends React.Component<IComprePopup> {
+class ComprehensionPopup extends React.Component<IComprehensionPopup> {
 	@observable private m_view = false;
 	@observable private m_sendView = false;
 
@@ -47,7 +46,7 @@ class ComprePopup extends React.Component<IComprePopup> {
 		this.m_roll = 'B';
 		this.m_sendView = true;
 	}
-	public componentDidUpdate(prev: IComprePopup) {
+	public componentDidUpdate(prev: IComprehensionPopup) {
 		if (this.props.view && !prev.view) {
 			this.m_view = true;
 			this.m_sendView = this.props.type !== 'ROLE PLAY' ;
@@ -91,4 +90,4 @@ class ComprePopup extends React.Component<IComprePopup> {
 	}
 }
 
-export default ComprePopup;
+export default ComprehensionPopup;

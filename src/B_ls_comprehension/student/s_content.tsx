@@ -10,7 +10,7 @@ import * as kutil from '@common/util/kutil';
 
 import { IStateCtx, IActionsCtx, QPROG, SPROG } from '../student/s_store';
 import * as felsocket from '../../felsocket';
-import * as common from '../common';
+import { IQNAMsg } from '../common';
 
 import SQuestion from './s_question';
 import SScript from './s_script';
@@ -34,9 +34,9 @@ class SContent extends React.Component<ISContent> {
 	private _stime = 0;
 	
 	private _clickYes = () => {
+		const { state } = this.props;
 		if(this._stime === 0) this._stime = Date.now();
 
-		const state = this.props.state;
 		if(state.scriptProg !== SPROG.YESORNO) return;
 		else if(state.scriptMode !== 'COMPREHENSION') return;
 
@@ -49,17 +49,18 @@ class SContent extends React.Component<ISContent> {
 			this._img_pop_on = false;
 		}, 2000); // 시간수정
 	}
+	
 	private _clickNo = async () => {
+		const { state,actions } = this.props;
 		if(this._stime === 0) this._stime = Date.now();
 
-		const state = this.props.state;
 		if(state.scriptProg !== SPROG.YESORNO) return;
 		else if(state.scriptMode !== 'COMPREHENSION') return;
 		App.pub_playBtnTab();
 		state.scriptProg = SPROG.SENDED;
 		if(!App.student) return;
-		const script = this.props.actions.getData().scripts[this.props.state.focusIdx];
-		const msg: common.IQNAMsg = {
+		const script = actions.getData().scripts[state.focusIdx];
+		const msg: IQNAMsg = {
 			msgtype: 'qna_return',
 			id: App.student.id,
 			returns: [],
@@ -67,15 +68,12 @@ class SContent extends React.Component<ISContent> {
             etime: Date.now(),
 		};
 		felsocket.sendTeacher($SocketType.MSGTOTEACHER, msg);
-		// console.log('startGoodJob');
 
 		await kutil.wait(300);
 		App.pub_playGoodjob();
-		this.props.actions.startGoodJob(); // 추가
+		actions.startGoodJob(); // 추가
 	}
-	public componentWillUpdate(next: ISContent) {
-		//
-	}
+
 	public render() {
 		const {view, state, actions, questionProg, scriptProg, scriptMode, qsMode} = this.props;
 		const style: React.CSSProperties = {};

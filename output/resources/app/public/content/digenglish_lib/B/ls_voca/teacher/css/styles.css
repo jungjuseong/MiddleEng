@@ -758,12 +758,11 @@ body {
 #wrap .t_voca_list > .swiper-container .box .voca_box > .topic_progress > .icon_topic.true {
     position: relative;
     top: 1px;
-    right: 80px;
     display: inline-block;
     vertical-align: top;
     background: url("/content/digenglish_lib/B/ls_voca/teacher/images/topic_reading.png") no-repeat;
-    width: 425px;
-    height: 137px;
+    width: 59px;
+    height: 44px;
 }
 
 #wrap .t_voca_list > .swiper-container .box .voca_box > .topic_progress > .quiz_progress {

@@ -53,9 +53,6 @@ interface IActionsCtx extends IActionsBase {
 
 	getReturnUsersForQuiz: () => string[];
 	clearReturnUsersForQuiz: () => void;
-
-	// getQuizReturns: () => common.IReturn[];
-	// clearQuizReturns: () => void;
 	
 	getQnaReturns: () => common.IQnaReturn[];
 	clearQnaReturns: () => void;

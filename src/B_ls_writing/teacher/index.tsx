@@ -37,28 +37,16 @@ class TeacherPage extends React.Component<ITeacherPage> {
 					<span className="set" /> <span className="unlimit" /> <span className="start" />
 					<span className="time1" /><span className="time2" /> <span className="time3" />
 				</div>
-				{/*
-				<SVGBg 
-					className="bg_svg" 
-					data="/content/digenglish_lib/images/theme0_bg.svg" 
-					{...state.svg_bg}
-				/>
-				*/}
 				<div className="content-container">
 					<div className="content-wrapper" style={{left: (viewDiv === 'direction' ? 0 : -_WIDTH) + 'px'}}>
-						<div><VideoDirection 
-							className="video-direction" 
-							view={viewDiv === 'direction'} 
-							on={state.directionON} 
-							isTeacher={true}
-							video_url={''}
-							video_frame={125}
-							onEndStart={actions.onDirectionEndStart}
-							onEnd={actions.onDirectionEnded}
-						>
-							<div className="lesson">{App.lesson}</div>
-						</VideoDirection></div>
-						<div><Writing view={viewDiv === 'content'}  state={state} actions={actions}/></div>
+						<div>
+							<VideoDirection className="video-direction" view={viewDiv === 'direction'} on={state.directionON} isTeacher={true} video_url={''} video_frame={125}	onEndStart={actions.onDirectionEndStart} onEnd={actions.onDirectionEnded}>
+								<div className="lesson">{App.lesson}</div>
+							</VideoDirection>
+						</div>
+						<div>
+							<Writing view={viewDiv === 'content'}  state={state} actions={actions}/>
+						</div>
 					</div>
 				</div>
 				<Navi {...state.navi} onLeftClick={actions.naviLeft} onRightClick={actions.naviRight}/>
