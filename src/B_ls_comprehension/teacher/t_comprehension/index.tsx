@@ -36,6 +36,10 @@ class NItem extends React.Component<{ idx: number, on: boolean, onClick: (idx: n
 	}
 }
 
+function _isSendingProgram(state: IStateCtx): boolean {
+    return (state.questionProg === SENDPROG.SENDED || state.questionProg === SENDPROG.SENDING || state.qnaProg >= SENDPROG.SENDING);
+}
+
 interface IComprehension {
 	view: boolean;
 	state: IStateCtx;
@@ -139,9 +143,9 @@ class Comprehension extends React.Component<IComprehension> {
         App.pub_reloadStudents(() => {
             let msg: common.IMsg;
             if(	this._title === 'COMPREHENSION' ) {
-                this.props.actions.clearReturnUsers();
-                this.props.actions.setRetCnt(0);
-                this.props.actions.setNumOfStudent(App.students.length);
+                actions.clearReturnUsers();
+                actions.setRetCnt(0);
+                actions.setNumOfStudent(App.students.length);
                 
                 if(this._tab === 'QUESTION') {
                     if(state.questionProg !==  SENDPROG.SENDING) return;
@@ -354,14 +358,14 @@ class Comprehension extends React.Component<IComprehension> {
 
 	/* 화면전환 */
 	private _clickCompre = (ev: React.MouseEvent<HTMLElement>) => {
-		if(this._title === 'COMPREHENSION') return;
-		else if(this._roll === 'A' || this._roll === 'B' || this._shadowing) return;
+        if(this._title === 'COMPREHENSION') return;
+        else if(this._roll === 'A' || this._roll === 'B' || this._shadowing) return;
 
-		App.pub_stop();
+        App.pub_stop();
         App.pub_playBtnTab();
-        
+
         if(this.m_player.bPlay) this.m_player.pause();
-        
+
         this._clearAll();
         this._tab = 'QUESTION';
         this._title = 'COMPREHENSION';
@@ -369,10 +373,11 @@ class Comprehension extends React.Component<IComprehension> {
         if(this._curQidx === 0) this.props.actions.setNavi(false, true);
     }
     
+
 	private _clickDial = (ev: React.MouseEvent<HTMLElement>) => {
         const { state } = this.props;
-        if(this._title === 'DIALOGUE') return;
-        if ([SENDPROG.SENDED,SENDPROG.SENDING].includes(state.questionProg) || state.qnaProg >= SENDPROG.SENDING) return;		
+        if (this._title === 'DIALOGUE') return;
+        if (_isSendingProgram(state)) return;		
 
         App.pub_playBtnTab();
         if(this.m_player.bPlay) this.m_player.pause();
@@ -384,17 +389,19 @@ class Comprehension extends React.Component<IComprehension> {
     }
     
 	private _clickQuestion = (ev: React.MouseEvent<HTMLElement>) => {
-		const {state,actions} = this.props;
-		if(this._title !== 'COMPREHENSION') return;
-		if(this._tab === 'QUESTION') return;
-		if(state.questionProg === SENDPROG.SENDED || state.questionProg === SENDPROG.SENDING ||	state.qnaProg >= SENDPROG.SENDING) return;
-		App.pub_playBtnTab();
-		this._hint = false;
-		this._tab = 'QUESTION';
-		if(state.scriptProg > SENDPROG.READY) {
-			state.scriptProg = SENDPROG.READY;
-			felsocket.sendPAD($SocketType.PAD_ONSCREEN, null);
-			actions.clearQnaReturns();
+        const {state,actions} = this.props;
+        if(this._title !== 'COMPREHENSION') return;
+        if(this._tab === 'QUESTION') return;
+        if (_isSendingProgram(state)) return;
+
+        App.pub_playBtnTab();
+        this._hint = false;
+        this._tab = 'QUESTION';
+
+        if(state.scriptProg > SENDPROG.READY) {
+            state.scriptProg = SENDPROG.READY;
+            felsocket.sendPAD($SocketType.PAD_ONSCREEN, null);
+            actions.clearQnaReturns();
         }        
         if(this._curQidx === 0) actions.setNavi(false, true);
     }
@@ -402,9 +409,8 @@ class Comprehension extends React.Component<IComprehension> {
 	private _clickScript = (ev: React.MouseEvent<HTMLElement>) => {
         const {state,actions} = this.props;
 
-        if(this._title !== 'COMPREHENSION') return;
-        if(this._tab === 'SCRIPT') return;
-        if(state.questionProg === SENDPROG.SENDED || state.questionProg === SENDPROG.SENDING ||	state.qnaProg >= SENDPROG.SENDING) return;
+        if(this._title !== 'COMPREHENSION' || this._tab === 'SCRIPT') return;
+        if (_isSendingProgram(state)) return;
 
         App.pub_stop();
         App.pub_playBtnTab();
@@ -414,16 +420,16 @@ class Comprehension extends React.Component<IComprehension> {
     }
     
 	private _clickReturn = () => {
-		App.pub_playBtnTab();
+        const { actions } = this.props;
+        App.pub_playBtnTab();
 
-		const isCompQ = (this._title === 'COMPREHENSION' && this._tab === 'QUESTION');
-
-		if(isCompQ) felsocket.startStudentReportProcess($ReportType.JOIN, this.props.actions.getReturnUsersForQuiz());
-        else felsocket.startStudentReportProcess($ReportType.JOIN, this.props.actions.getReturnUsers());
+        if(this._title === 'COMPREHENSION' && this._tab === 'QUESTION') felsocket.startStudentReportProcess($ReportType.JOIN, actions.getReturnUsersForQuiz());
+        else felsocket.startStudentReportProcess($ReportType.JOIN, actions.getReturnUsers());
 	}
 
 	/* 누른 학생만 보이게 하는 런쳐결과  수정안됨*/
 	private _clickPerson = (idx: number) => {
+        
 		App.pub_playBtnTab();
 		const quizResults = this.props.actions.getResult();
 		const quizResult = quizResults[this._curQidx];
@@ -432,14 +438,15 @@ class Comprehension extends React.Component<IComprehension> {
 		if(idx === 1) felsocket.startStudentReportProcess($ReportType.JOIN, quizResult.u1);
 		else if(idx === 2) felsocket.startStudentReportProcess($ReportType.JOIN, quizResult.u2);
 		else if(idx === 3) felsocket.startStudentReportProcess($ReportType.JOIN, quizResult.u3);
-	}
+    }
+    
 	/* 누른 학생만 보이게 하는 런쳐결과  수정안됨*/
 	private _clickPerson1 = () => this._clickPerson(1);
 	private _clickPerson2 = () => this._clickPerson(2);
 	private _clickPerson3 = () => this._clickPerson(3);
 
 	private _clickAnswer = () => {
-        const {state, actions} = this.props;
+        const { state, actions } = this.props;
         const quizProg = state.questionProg;
 
         if(	this._title !== 'COMPREHENSION' || 
@@ -455,15 +462,17 @@ class Comprehension extends React.Component<IComprehension> {
 
         actions.quizComplete();
         this.props.actions.setNavi(true, true);
-	}	
+    }
+    
 	/* Popup화면 */
 	private _onPopupClosed = () => {
         if(this._title === 'COMPREHENSION' && this._tab === 'SCRIPT' && this.props.state.qnaProg === SENDPROG.READY) this.props.actions.setNavi(true, true);
         else if (this._title === 'DIALOGUE' && this._roll === '' && !this._shadowing) this.props.actions.setNavi(true, true);
         this.c_popup = 'off';
     }
+
     private _onQAClick = () => {
-        const {state} = this.props;
+        const {state,actions} = this.props;
 
         if(	this._title !== 'COMPREHENSION') return;
         else if(this.c_popup !== 'off') return;
@@ -482,8 +491,8 @@ class Comprehension extends React.Component<IComprehension> {
             felsocket.sendPAD($SocketType.MSGTOPAD, msg);	
             state.qnaProg = SENDPROG.READY;	
             
-            this.props.actions.clearQnaReturns();
-            this.props.actions.setNavi(true, true);
+            actions.clearQnaReturns();
+            actions.setNavi(true, true);
         }
 
 	}
@@ -491,7 +500,6 @@ class Comprehension extends React.Component<IComprehension> {
 		if(this._title === 'DIALOGUE') {
 			const scripts = this.m_data.scripts;
 			if(idx >= 0 && idx < scripts.length) {
-
 				if(this._roll !== '' || this._shadowing) {
 					const script = scripts[idx];
 					if(this._roll !== '') {
@@ -521,39 +529,37 @@ class Comprehension extends React.Component<IComprehension> {
 		felsocket.sendPAD($SocketType.MSGTOPAD, msg);
 	}
 
-
 	private _onRollClick = () => {
-        if(
-            this._title === 'DIALOGUE' && 
-            this.props.state.dialogueProg >= SENDPROG.SENDED && 
-            !this._shadowing
-        ) {		
+        const {state,actions} = this.props;
+        if(this._title === 'DIALOGUE' && state.dialogueProg >= SENDPROG.SENDED && !this._shadowing) {		
             App.pub_playBtnTab();
             if(this._roll === '') {
                 this.c_popup = 'ROLE PLAY';
                 this.m_player.pause();
-                this.props.actions.setNavi(false, false);
+                actions.setNavi(false, false);
             } else {
                 this._lastFocusIdx = -1;
                 this._focusIdx = -1;
                 this.m_player.setMutedTemp(false);
                 this._roll = '';
                 this._sendDialogueEnd();
-                this.props.actions.setNavi(true, true);
+                actions.setNavi(true, true);
             }
         }
-	}
+    }
+    
 	private _onShadowClick = () => {
+        const {state,actions} = this.props;
         if(
             this._title === 'DIALOGUE' && 
-            this.props.state.dialogueProg >= SENDPROG.SENDED && 
+            state.dialogueProg >= SENDPROG.SENDED && 
             this._roll === ''
         ) {
             App.pub_playBtnTab();
             if(this._shadowing) {
                 this._isShadowPlay = false;
                 this._shadowing = false;
-                this.props.actions.setNavi(true, true);
+                actions.setNavi(true, true);
             } else {
                 this._lastFocusIdx = -1;
                 this._focusIdx = -1;
@@ -561,7 +567,7 @@ class Comprehension extends React.Component<IComprehension> {
                 this.c_popup = 'SHADOWING';
                 this.m_player.pause();	
                 this._sendDialogueEnd();
-                this.props.actions.setNavi(false, false);		
+                actions.setNavi(false, false);		
             }
         }
 	}
@@ -606,7 +612,8 @@ class Comprehension extends React.Component<IComprehension> {
 		if(this._title !== 'DIALOGUE') return;
 		App.pub_playBtnTab();
 		this._viewScript = !this._viewScript;
-	}
+    }
+    
 	private _stopClick = () => {
         this._sendFocusIdx(-1);
         this._lastFocusIdx = -1;
@@ -646,17 +653,13 @@ class Comprehension extends React.Component<IComprehension> {
                             this._setNavi();
                         }
                     } else {
-                        if(
-                            state.questionProg === SENDPROG.SENDED ||
-                            state.questionProg === SENDPROG.SENDING ||
-                            state.qnaProg >= SENDPROG.SENDING
-                        ) return;
+                        if(_isSendingProgram(state)) return;
 
                         App.pub_stop();
                         App.pub_playBtnTab();
                         this._hint = false;
                         this._tab = 'QUESTION';
-                        if(this.props.state.scriptProg > SENDPROG.READY) {
+                        if(state.scriptProg > SENDPROG.READY) {
                             state.scriptProg = SENDPROG.READY;
                             felsocket.sendPAD($SocketType.PAD_ONSCREEN, null);
                             actions.clearQnaReturns();
@@ -679,11 +682,7 @@ class Comprehension extends React.Component<IComprehension> {
                 if(this._title === 'COMPREHENSION') {
                     if(this._tab === 'QUESTION') {
                         if(this._curQidx === this.m_data.quizs.length - 1) {
-                            if(
-                                state.questionProg === SENDPROG.SENDED ||
-                                state.questionProg === SENDPROG.SENDING ||
-                                state.qnaProg >= SENDPROG.SENDING
-                            ) return;
+                            if(_isSendingProgram(state)) return;
                     
                             App.pub_stop();
                             App.pub_playBtnTab();
@@ -698,12 +697,7 @@ class Comprehension extends React.Component<IComprehension> {
                             this._setNavi();
                         }
                     } else {
-                        if(
-                            state.questionProg === SENDPROG.SENDED ||
-                            state.questionProg === SENDPROG.SENDING ||
-                            state.qnaProg >= SENDPROG.SENDING
-                        ) return;
-                        
+                        if(_isSendingProgram(state)) return;                        
                         App.pub_stop();
                         App.pub_playBtnTab();
                         if(this.m_player.bPlay) this.m_player.pause();
@@ -766,7 +760,7 @@ class Comprehension extends React.Component<IComprehension> {
         const quizs = this.m_data.quizs;
         const isQComplete = state.questionProg >= SENDPROG.COMPLETE;
 
-        const isOnStudy = (this._title === 'COMPREHENSION' && (state.questionProg === SENDPROG.SENDING || state.questionProg === SENDPROG.SENDED || state.qnaProg >= SENDPROG.SENDING)) 
+        const isOnStudy = (this._title === 'COMPREHENSION' && (_isSendingProgram(state))) 
                         || (this._title === 'DIALOGUE' && (this._roll === 'A' || this._roll === 'B' || this._shadowing));
         
         const quizPreview = quizs[this._curQidx].app_preview;
