@@ -61,7 +61,7 @@ class VocaItem extends React.Component<IVocaItem> {
 						</WrapTextNew>
 					</div>
 				</div>
-				<div className="topic_progress">
+				<div className="topic_reading">
 					<span className={'icon_topic ' + word.reading} />				
 				</div>	
 			</div>

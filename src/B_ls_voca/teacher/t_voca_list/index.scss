@@ -1,5 +1,4 @@
 @import '../t_study_popup/index.scss';
-
 @mixin t_voca_list {
     .t_voca_list {
         @include page;
@@ -58,9 +57,9 @@
                         left: 0;
                         border-radius: 18px 0 0 18px;
                     }
-                    &>.topic_progress {
+                    &>.topic_reading {
                         position: absolute;
-                        top: 10px;
+                        top: 0px;
                         right: 8px;
                         white-space: nowrap;
                         &>.icon_topic {
@@ -68,6 +67,7 @@
                             &.true {
                                 position: relative;
                                 top: 1px;
+                                margin: 10px;
                                 display: inline-block;
                                 vertical-align: top;
                                 background: resolve('teacher/images/topic_reading.png') no-repeat;
