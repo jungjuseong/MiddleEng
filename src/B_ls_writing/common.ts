@@ -106,6 +106,7 @@ export interface ILetstalk {
 	sample: string;
 	hint: string;
 }
+
 export interface IData {
     video: string;
     video_start: number;
